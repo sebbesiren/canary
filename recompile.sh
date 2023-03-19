@@ -9,17 +9,10 @@ if [ -d "build" ]; then
 	echo "Clean build directory"
 	rm -rf *
 	echo "Configuring"
-	# for root directory
-	cmake -DCMAKE_TOOLCHAIN_FILE=../../vcpkg/scripts/buildsystems/vcpkg.cmake .. --preset linux-release
-	# for home directory
-	# cmake -DCMAKE_TOOLCHAIN_FILE=~/vcpkg/scripts/buildsystems/vcpkg.cmake .. --preset linux-release
+	cmake -DCMAKE_TOOLCHAIN_FILE=../vcpkg/scripts/buildsystems/vcpkg.cmake .. --preset linux-release
 else
 	mkdir "build" && cd build
-	export VCPKG_FORCE_SYSTEM_BINARIES=1
-	# for root directory
-	cmake -DCMAKE_TOOLCHAIN_FILE=../../vcpkg/scripts/buildsystems/vcpkg.cmake .. --preset linux-release	
-	# for home directory
-	# cmake -DCMAKE_TOOLCHAIN_FILE=~/vcpkg/scripts/buildsystems/vcpkg.cmake .. --preset linux-release
+	cmake -DCMAKE_TOOLCHAIN_FILE=../vcpkg/scripts/buildsystems/vcpkg.cmake .. --preset linux-release
 fi
 
 cmake --build linux-release || exit 1

@@ -4,72 +4,44 @@
 experienceStages = {
 	{
 		minlevel = 1,
-		maxlevel = 8,
-		multiplier = 7
+		maxlevel = 30,
+		multiplier = 13
 	}, {
-		minlevel = 9,
-		maxlevel = 20,
-		multiplier = 6
-	}, {
-		minlevel = 21,
+		minlevel = 31,
 		maxlevel = 50,
-		multiplier = 5
+		multiplier = 10
 	}, {
 		minlevel = 51,
-		maxlevel = 100,
-		multiplier = 4
+		maxlevel = 150,
+		multiplier = 7
 	}, {
-		minlevel = 101,
-		multiplier = 2
+		minlevel = 151,
+		maxlevel = 250,
+		multiplier = 5
+	}, {
+		minlevel = 251,
+		multiplier = 3
 	}
 }
 
 skillsStages = {
 	{
-		minlevel = 10,
-		maxlevel = 60,
-		multiplier = 15
+		minlevel = 1,
+		maxlevel = 250,
+		multiplier = 5
 	}, {
-		minlevel = 61,
-		maxlevel = 80,
-		multiplier = 10
-	}, {
-		minlevel = 81,
-		maxlevel = 110,
-		multiplier = 6
-	}, {
-		minlevel = 111,
-		maxlevel = 125,
-		multiplier = 4
-	}, {
-		minlevel = 126,
-		multiplier = 2
+		minlevel = 251,
+		multiplier = 3
 	}
 }
 
 magicLevelStages = {
 	{
-		minlevel = 0,
-		maxlevel = 60,
-		multiplier = 10
-	}, {
-		minlevel = 61,
-		maxlevel = 80,
-		multiplier = 7
-	}, {
-		minlevel = 81,
-		maxlevel = 100,
+		minlevel = 1,
+		maxlevel = 250,
 		multiplier = 5
 	}, {
-		minlevel = 101,
-		maxlevel = 110,
-		multiplier = 4
-	}, {
-		minlevel = 111,
-		maxlevel = 125,
+		minlevel = 251,
 		multiplier = 3
-	}, {
-		minlevel = 126,
-		multiplier = 2
 	}
 }
