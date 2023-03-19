@@ -877,6 +877,7 @@ QuestDoorAction = {
 		itemPos = {
 			{ x = 32422, y = 32499, z = 8 }
 		}
+
 	}
 }
 
