@@ -1274,10 +1274,10 @@ Storage = {
 			Statue = 51528,
 			LastMissionState = 51529
 		},
-	TheCursedCrystal = {
-		Oneeyedjoe = 51530,
-		MedusaOil = 51531,
-		Questline = 51532
+		TheCursedCrystal = {
+			Oneeyedjoe = 51530,
+			MedusaOil = 51531,
+			Questline = 51532
 		}
 	},
 	TheShatteredIsles = {
@@ -1420,7 +1420,7 @@ Storage = {
 		TrophyWarlord = 51720,
 		GreenhornDoor = 51721,
 		ScrapperDoor = 51722,
-		WarlordDoor= 51723
+		WarlordDoor = 51723
 	},
 	QuestChests = {
 		-- Reserved storage from 51730 - 51999
@@ -2263,7 +2263,7 @@ Storage = {
 					FahimCount = 42384,
 				},
 				AltKillCount = {
-				-- Grizzly Adams
+					-- Grizzly Adams
 					-- Apes
 					KongraCount = 42450,
 					MerlkinCount = 42451,
@@ -2297,7 +2297,7 @@ Storage = {
 					DrakenEliteCount = 42473,
 					DrakenSpellweaverCount = 42474,
 					DrakenWarmasterCount = 42475,
-				-- Others
+					-- Others
 					-- Minotaurs
 					MinotaurCount = 42476,
 					MinotaurGuardCount = 42477,
@@ -2815,7 +2815,7 @@ Storage = {
 				GoshnarMegalomaniaTimer = 47221,
 				GoshnarMegalomaniaKilled = 47222,
 				QuestReward = 47223,
-			},
+			}
 		},
 		U12_60 = { -- update 12.60 - Reserved Storages 47501 - 47600
 			APiratesTail = {
@@ -2834,7 +2834,7 @@ Storage = {
 				MegasylvanYseldaTimer = 47602,
 			},
 			CitizenOfIssaviOutfits = {},
-			RoyalBounaceanAdvisorOutfits= {},
+			RoyalBounaceanAdvisorOutfits = {},
 			TooHotToHandle = {}
 		},
 		U12_80 = { -- update 12.80 - Reserved Storages 47801 - 47850
@@ -3081,7 +3081,7 @@ table.sort(extraction) -- Sort the table
 -- Scroll through the extracted table for duplicates
 if #extraction > 1 then
 	for i = 1, #extraction - 1 do
-		if extraction[i] == extraction[i+1] then
+		if extraction[i] == extraction[i + 1] then
 			Spdlog.warn(string.format("Duplicate storage value found: %d",
 				extraction[i]))
 		end
