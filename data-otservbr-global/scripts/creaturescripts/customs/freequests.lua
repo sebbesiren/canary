@@ -314,6 +314,8 @@ local questTable = {
 	{storage = Storage.Quest.U12_60.APiratesTail.TentuglyDoor, storageValue = 1},
 	{storage = Storage.Quest.U12_60.APiratesTail.RascacoonShortcut, storageValue = 1},
 	{storage = Storage.Quest.U12_70.AdventuresOfGalthen.AccessDoor, storageValue = 1},
+	{storage = Storage.TheSecretLibrary.Mota, storageValue = 1},
+	{storage = Storage.TheSecretLibrary.MotaDoor, storageValue = 1},
 }
 
 local function playerFreeQuestStart(playerId, index)
