@@ -2,10 +2,10 @@ local mType = Game.createMonsterType("Balrog")
 local monster = {}
 
 monster.description = "a Balrog"
-monster.health = 400000
+monster.health = 425000
 monster.maxHealth = monster.health
 
-monster.experience = monster.health * 8
+monster.experience = monster.health * 6
 monster.outfit = {
 	lookType = 1468,
 	lookHead = 0,
@@ -72,22 +72,22 @@ monster.voices = {
 
 monster.loot = {
 	{ id = 3039, chance = 2220, maxCount = 20 }, -- red gem
-	{ name = "crystal coin", chance = 90540, minCount = 10, maxCount = 30 },
+	{ name = "crystal coin", chance = 100000, minCount = 10, maxCount = 30 },
 	{ name = "golden legs", chance = 2000 },
 	{ name = "magic plate armor", chance = 130 },
 	{ name = "mastermind shield", chance = 480 },
 	{ name = "demon shield", chance = 2000 },
-	{ name = "fire mushroom", chance = 19660, maxCount = 100 },
+	{ name = "fire mushroom", chance = 100000, maxCount = 100 },
 	{ name = "demon horn", chance = 40920, maxCount = 10 },
 	{ name = "demonrage sword", chance = 1500 },
-	{ id = 32616, chance = 300 }, -- phantasmal axe
-	{ name = "ghost chestplate", chance = 150 },
-	{ name = "fabulous legs", chance = 150 },
-	{ name = "soulful legs", chance = 150 },
-	{ name = "galea mortis", chance = 150 },
+	{ id = 32616, chance = 500 }, -- phantasmal axe
+	{ name = "ghost chestplate", chance = 500 },
+	{ name = "fabulous legs", chance = 500 },
+	{ name = "soulful legs", chance = 500 },
+	{ name = "galea mortis", chance = 500 },
 	{ name = "toga mortis", chance = 500 },
+	{ id = 27649, chance = 500 }, -- gnome legs
 	{ id = 16114, chance = 10000 }, -- prismatic ring
-	{ id = 27649, chance = 510 }, -- gnome legs
 }
 
 monster.attacks = {

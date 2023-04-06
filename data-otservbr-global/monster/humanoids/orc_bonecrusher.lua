@@ -5,7 +5,7 @@ monster.health = 6000
 monster.maxHealth = monster.health
 
 monster.description = "an Orc Bonecrusher"
-monster.experience = monster.health * 1.2
+monster.experience = monster.health * 1.1
 monster.outfit = {
 	lookType = 8,
 	lookHead = 0,
@@ -70,14 +70,15 @@ monster.loot = {
 }
 
 monster.attacks = {
-	{ name = "melee", interval = 6000, chance = 100, minDamage = 0, maxDamage = -2000 },
-	{ name = "Berserk", interval = 1000, chance = 100, minDamage = 0, maxDamage = -500, target = false },
+	{ name = "melee", interval = 6000, chance = 100, minDamage = 0, maxDamage = -1800 },
+	{ name = "Berserk", interval = 1000, chance = 100, minDamage = 0, maxDamage = -600, target = false },
 	{ name = "condition", type = CONDITION_BLEEDING, interval = 12000, chance = 10, minDamage = -300, maxDamage = -400, radius = 4, target = true },
 }
 
 monster.defenses = {
 	defense = 50,
 	armor = 50,
+	{ name = "speed", interval = 6000, chance = 100, speedChange = 600, effect = CONST_ME_POFF, target = false, duration = 3000 }
 }
 
 monster.elements = {

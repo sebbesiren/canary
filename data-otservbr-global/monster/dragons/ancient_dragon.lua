@@ -5,7 +5,7 @@ monster.health = 8000
 monster.maxHealth = monster.health
 
 monster.description = "an Ancient Dragon"
-monster.experience = monster.health * 1.4
+monster.experience = monster.health * 1.3
 monster.outfit = {
 	lookType = 927,
 	lookHead = 0,
@@ -78,9 +78,9 @@ monster.loot = {
 }
 
 monster.attacks = {
-	{ name = "combat", interval = 2000, chance = 100, type = COMBAT_FIREDAMAGE, minDamage = -300, maxDamage = -600, range = 7, radius = 4, shootEffect = CONST_ANI_FIRE, effect = CONST_ME_FIREAREA, target = true },
-	{ name = "combat", interval = 8000, chance = 100, type = COMBAT_FIREDAMAGE, minDamage = -300, maxDamage = -600, length = 10, spread = 5, effect = CONST_ME_FIREAREA, target = false },
-	{ name = "firefield", interval = 15000, chance = 100, range = 7, radius = 8, shootEffect = CONST_ANI_FIRE, target = true },
+	{ name = "combat", interval = 2000, chance = 100, type = COMBAT_FIREDAMAGE, minDamage = -200, maxDamage = -600, range = 7, radius = 4, shootEffect = CONST_ANI_FIRE, effect = CONST_ME_FIREAREA, target = true },
+	{ name = "combat", interval = 8000, chance = 100, type = COMBAT_FIREDAMAGE, minDamage = -200, maxDamage = -600, length = 10, spread = 5, effect = CONST_ME_FIREAREA, target = false },
+	{ name = "firefield", interval = 15000, chance = 100, range = 5, radius = 5, shootEffect = CONST_ANI_FIRE, target = true },
 }
 
 monster.defenses = {

@@ -5,7 +5,7 @@ monster.health = 6000
 monster.maxHealth = monster.health
 
 monster.description = "an Orc Blademaster"
-monster.experience = monster.health * 1.2
+monster.experience = monster.health * 1.1
 monster.outfit = {
 	lookType = 59,
 	lookHead = 0,
@@ -70,7 +70,7 @@ monster.loot = {
 }
 
 monster.attacks = {
-	{ name = "melee", interval = 1000, chance = 100, minDamage = 0, maxDamage = -700 },
+	{ name = "melee", interval = 1000, chance = 100, minDamage = 0, maxDamage = -800 },
 	{ name = "condition", type = CONDITION_BLEEDING, interval = 15000, chance = 100, minDamage = -300, maxDamage = -400, radius = 1, target = true },
 }
 
@@ -78,7 +78,7 @@ monster.defenses = {
 	defense = 50,
 	armor = 50,
 	{ name = "combat", interval = 6000, chance = 100, type = COMBAT_HEALING, minDamage = 50, maxDamage = 200, effect = CONST_ME_MAGIC_BLUE, target = false },
-	{ name = "speed", interval = 10000, chance = 100, speedChange = 200, effect = CONST_ME_MAGIC_RED, target = false, duration = 3000 }
+	{ name = "speed", interval = 6000, chance = 100, speedChange = 600, effect = CONST_ME_POFF, target = false, duration = 3000 }
 }
 
 monster.elements = {
