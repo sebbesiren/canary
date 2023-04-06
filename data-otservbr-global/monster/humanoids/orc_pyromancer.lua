@@ -41,7 +41,7 @@ monster.flags = {
 	canPushItems = false,
 	canPushCreatures = false,
 	staticAttackChance = 90,
-	targetDistance = 7,
+	targetDistance = 5,
 	runHealth = 0,
 	healthHidden = false,
 	isBlockable = false,
@@ -69,9 +69,9 @@ monster.loot = {
 }
 
 monster.attacks = {
-	{ name = "combat", interval = 2000, chance = 100, type = COMBAT_FIREDAMAGE, minDamage = -300, maxDamage = -600, range = 7, radius = 1, shootEffect = CONST_ANI_FIRE, target = true },
+	{ name = "combat", interval = 2000, chance = 100, type = COMBAT_FIREDAMAGE, minDamage = -300, maxDamage = -600, range = 5, radius = 1, shootEffect = CONST_ANI_FIRE, target = true },
 	{ name = "combat", interval = 8000, chance = 100, type = COMBAT_FIREDAMAGE, minDamage = -200, maxDamage = -1000, radius = 8, shootEffect = CONST_ANI_FIRE, target = false },
-	{ name = "condition", type = CONDITION_FIRE, interval = 8000, chance = 100, minDamage = -0, maxDamage = -100, range = 7, radius = 4, target = true },
+	{ name = "condition", type = CONDITION_FIRE, interval = 8000, chance = 100, minDamage = -0, maxDamage = -100, range = 5, radius = 4, target = true },
 }
 
 monster.defenses = {
