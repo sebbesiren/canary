@@ -1,8 +1,8 @@
 local mType = Game.createMonsterType("Balrog")
 local monster = {}
 
-monster.description = "A mighty demon"
-monster.health = 500000
+monster.description = "a Balrog"
+monster.health = 400000
 monster.maxHealth = monster.health
 
 monster.experience = monster.health * 8

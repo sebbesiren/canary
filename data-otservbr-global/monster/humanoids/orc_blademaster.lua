@@ -4,7 +4,7 @@ local monster = {}
 monster.health = 6000
 monster.maxHealth = monster.health
 
-monster.description = "An orc blademaster"
+monster.description = "an Orc Blademaster"
 monster.experience = monster.health
 monster.outfit = {
 	lookType = 59,

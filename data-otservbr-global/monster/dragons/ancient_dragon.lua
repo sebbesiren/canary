@@ -4,7 +4,7 @@ local monster = {}
 monster.health = 8000
 monster.maxHealth = monster.health
 
-monster.description = "An ancient dragon"
+monster.description = "an Ancient Dragon"
 monster.experience = monster.health * 1.2
 monster.outfit = {
 	lookType = 927,
