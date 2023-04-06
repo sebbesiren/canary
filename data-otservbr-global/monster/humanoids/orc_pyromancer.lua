@@ -62,7 +62,7 @@ monster.voices = {
 }
 
 monster.loot = {
-	{ name = "platinum coin", chance = 100000, minCount = 10, maxCount = 40 },
+	{ name = "platinum coin", chance = 100000, minCount = 10, maxCount = 100 },
 	{ id = 20089, chance = 200 }, -- umbral spellbook
 	{ id = 16114, chance = 200 }, -- prismatic ring
 	{ id = 16129, chance = 200 }, -- major crystalline token
@@ -70,7 +70,7 @@ monster.loot = {
 
 monster.attacks = {
 	{ name = "combat", interval = 2000, chance = 100, type = COMBAT_FIREDAMAGE, minDamage = -300, maxDamage = -600, range = 7, radius = 1, shootEffect = CONST_ANI_FIRE, target = true },
-	{ name = "combat", interval = 8000, chance = 100, type = COMBAT_FIREDAMAGE, minDamage = -200, maxDamage = -400, range = 7, radius = 4, shootEffect = CONST_ANI_FIRE, target = true },
+	{ name = "Hell's Core", interval = 10000, chance = 100, type = COMBAT_FIREDAMAGE, minDamage = -200, maxDamage = -800, target = false },
 	{ name = "condition", type = CONDITION_FIRE, interval = 8000, chance = 100, minDamage = -0, maxDamage = -100, range = 7, radius = 4, target = true },
 }
 

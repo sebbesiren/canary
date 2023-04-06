@@ -62,7 +62,7 @@ monster.voices = {
 }
 
 monster.loot = {
-	{ name = "platinum coin", chance = 100000, minCount = 10, maxCount = 40 },
+	{ name = "platinum coin", chance = 100000, minCount = 10, maxCount = 100 },
 	{ id = 20086, chance = 50 }, -- umbral crossbow
 	{ id = 20071, chance = 50 }, -- umbral axe
 	{ id = 20074, chance = 50 }, -- umbral chopper
@@ -70,8 +70,8 @@ monster.loot = {
 }
 
 monster.attacks = {
-	{ name = "melee", interval = 5000, chance = 100, minDamage = 0, maxDamage = -1600 },
-	{ name = "Berserk", interval = 1000, chance = 100, minDamage = 0, maxDamage = -400, target = false },
+	{ name = "melee", interval = 6000, chance = 100, minDamage = 0, maxDamage = -2000 },
+	{ name = "Berserk", interval = 1000, chance = 100, minDamage = 0, maxDamage = -500, target = false },
 	{ name = "condition", type = CONDITION_BLEEDING, interval = 12000, chance = 10, minDamage = -300, maxDamage = -400, radius = 4, target = true },
 }
 
