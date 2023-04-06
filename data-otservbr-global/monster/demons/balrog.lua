@@ -59,14 +59,10 @@ monster.light = {
 }
 
 monster.summon = {
-	maxSummons = 6,
-	summons = {
-		{ name = "demon", chance = 100, interval = 10000, count = 1 }
-	}
 }
 
 monster.voices = {
-	interval = 5000,
+	interval = 10000,
 	chance = 10,
 	{ text = "MUST KILL TRANAN!", yell = false },
 	{ text = "I SMELL TRANAN!", yell = false },
@@ -76,7 +72,7 @@ monster.voices = {
 
 monster.loot = {
 	{ id = 3039, chance = 2220, maxCount = 20 }, -- red gem
-	{ name = "crystal coin", chance = 90540, minCount=10, maxCount = 30 },
+	{ name = "crystal coin", chance = 90540, minCount = 10, maxCount = 30 },
 	{ name = "golden legs", chance = 2000 },
 	{ name = "magic plate armor", chance = 130 },
 	{ name = "mastermind shield", chance = 480 },
@@ -91,7 +87,7 @@ monster.loot = {
 	{ name = "galea mortis", chance = 150 },
 	{ name = "toga mortis", chance = 500 },
 	{ id = 16114, chance = 10000 }, -- prismatic ring
-	{id = 27649, chance = 510}, -- gnome legs
+	{ id = 27649, chance = 510 }, -- gnome legs
 }
 
 monster.attacks = {
@@ -100,7 +96,7 @@ monster.attacks = {
 	{ name = "combat", interval = 4000, chance = 35, type = COMBAT_ICEDAMAGE, minDamage = -900, maxDamage = -1100, range = 7, radius = 7, shootEffect = CONST_ANI_ICE, effect = CONST_ME_ICEAREA, target = true },
 	{ name = "combat", interval = 1200, chance = 20, type = COMBAT_FIREDAMAGE, minDamage = -1000, maxDamage = -3000, length = 8, spread = 3, effect = CONST_ME_HITBYFIRE, target = false },
 	{ name = "gaz'haragoth iceball", interval = 10000, chance = 100, minDamage = -1000, maxDamage = -1500, target = false },
-	{ name = "gaz'haragoth death", interval = 30000, chance = 100, target = false },
+	{ name = "gaz'haragoth death", interval = 60000, chance = 100, target = false },
 	{ name = "gaz'haragoth paralyze", interval = 8000, chance = 100, target = false },
 }
 
