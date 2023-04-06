@@ -62,7 +62,7 @@ monster.voices = {
 }
 
 monster.loot = {
-	{ name = "platinum coin", chance = 100000, maxCount = 20 },
+	{ name = "platinum coin", chance = 100000, minCount = 10, maxCount = 40 },
 	{ id = 20089, chance = 200 }, -- umbral spellbook
 	{ id = 16114, chance = 200 }, -- prismatic ring
 	{ id = 16129, chance = 200 }, -- major crystalline token

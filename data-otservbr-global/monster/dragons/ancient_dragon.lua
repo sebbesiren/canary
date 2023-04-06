@@ -66,6 +66,7 @@ monster.voices = {
 }
 
 monster.loot = {
+	{ name = "platinum coin", chance = 100000, minCount = 10, maxCount = 40 },
 	{ name = "strange helmet", chance = 360 },
 	{ name = "dragon scale mail", chance = 170 },
 	{ name = "royal helmet", chance = 280 },
@@ -77,7 +78,7 @@ monster.loot = {
 }
 
 monster.attacks = {
-	{ name = "combat", interval = 2000, chance = 100, type = COMBAT_FIREDAMAGE, minDamage = -300, maxDamage = -600, range = 7, radius = 6, shootEffect = CONST_ANI_FIRE, effect = CONST_ME_FIREAREA, target = true },
+	{ name = "combat", interval = 2000, chance = 100, type = COMBAT_FIREDAMAGE, minDamage = -300, maxDamage = -600, range = 7, radius = 4, shootEffect = CONST_ANI_FIRE, effect = CONST_ME_FIREAREA, target = true },
 	{ name = "combat", interval = 8000, chance = 100, type = COMBAT_FIREDAMAGE, minDamage = -300, maxDamage = -600, length = 10, spread = 5, effect = CONST_ME_FIREAREA, target = false },
 	{ name = "firefield", interval = 15000, chance = 100, range = 7, radius = 8, shootEffect = CONST_ANI_FIRE, target = true },
 }
