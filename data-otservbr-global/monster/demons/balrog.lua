@@ -91,6 +91,7 @@ monster.loot = {
 	{ name = "galea mortis", chance = 150 },
 	{ name = "toga mortis", chance = 500 },
 	{ id = 16114, chance = 10000 }, -- prismatic ring
+	{id = 27649, chance = 510}, -- gnome legs
 }
 
 monster.attacks = {
