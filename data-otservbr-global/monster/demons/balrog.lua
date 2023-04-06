@@ -2,10 +2,10 @@ local mType = Game.createMonsterType("Balrog")
 local monster = {}
 
 monster.description = "A mighty demon"
-monster.health = 600000
+monster.health = 500000
 monster.maxHealth = monster.health
 
-monster.experience = monster.health * 5
+monster.experience = monster.health * 8
 monster.outfit = {
 	lookType = 1468,
 	lookHead = 0,
@@ -95,10 +95,10 @@ monster.loot = {
 }
 
 monster.attacks = {
-	{ name = "combat", interval = 2000, chance = 100, type = COMBAT_PHYSICALDAMAGE, minDamage = -0, maxDamage = -5000, range = 1, radius = 5, effect = CONST_ME_MAGIC_GREEN, target = true },
+	{ name = "combat", interval = 2000, chance = 100, type = COMBAT_PHYSICALDAMAGE, minDamage = -0, maxDamage = -3000, range = 1, radius = 3, effect = CONST_ME_MAGIC_GREEN, target = true },
 	{ name = "combat", interval = 2000, chance = 20, type = COMBAT_DEATHDAMAGE, minDamage = -100, maxDamage = -800, range = 7, radius = 6, shootEffect = CONST_ANI_SUDDENDEATH, effect = CONST_ME_MORTAREA, target = true },
 	{ name = "combat", interval = 4000, chance = 35, type = COMBAT_ICEDAMAGE, minDamage = -900, maxDamage = -1100, range = 7, radius = 7, shootEffect = CONST_ANI_ICE, effect = CONST_ME_ICEAREA, target = true },
-	{ name = "combat", interval = 1200, chance = 20, type = COMBAT_FIREDAMAGE, minDamage = -4000, maxDamage = -6000, length = 8, spread = 3, effect = CONST_ME_HITBYFIRE, target = false },
+	{ name = "combat", interval = 1200, chance = 20, type = COMBAT_FIREDAMAGE, minDamage = -1000, maxDamage = -3000, length = 8, spread = 3, effect = CONST_ME_HITBYFIRE, target = false },
 	{ name = "gaz'haragoth iceball", interval = 10000, chance = 100, minDamage = -1000, maxDamage = -1500, target = false },
 	{ name = "gaz'haragoth death", interval = 30000, chance = 100, target = false },
 	{ name = "gaz'haragoth paralyze", interval = 8000, chance = 100, target = false },
