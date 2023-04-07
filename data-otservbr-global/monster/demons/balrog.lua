@@ -88,6 +88,7 @@ monster.loot = {
 	{ name = "toga mortis", chance = 500 },
 	{ id = 27649, chance = 500 }, -- gnome legs
 	{ id = 16114, chance = 10000 }, -- prismatic ring
+	{id = 20062, chance = 2000, maxCount = 14}, -- cluster of solace
 }
 
 monster.attacks = {

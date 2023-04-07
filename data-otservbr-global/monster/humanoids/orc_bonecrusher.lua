@@ -5,7 +5,7 @@ monster.health = 6000
 monster.maxHealth = monster.health
 
 monster.description = "an Orc Bonecrusher"
-monster.experience = monster.health * 1.1
+monster.experience = monster.health * 1.4
 monster.outfit = {
 	lookType = 8,
 	lookHead = 0,
@@ -62,7 +62,7 @@ monster.voices = {
 }
 
 monster.loot = {
-	{ name = "platinum coin", chance = 100000, minCount = 10, maxCount = 100 },
+	{ name = "platinum coin", chance = 100000, minCount = 10, maxCount = 80 },
 	{ id = 20086, chance = 50 }, -- umbral crossbow
 	{ id = 20071, chance = 50 }, -- umbral axe
 	{ id = 20074, chance = 50 }, -- umbral chopper
