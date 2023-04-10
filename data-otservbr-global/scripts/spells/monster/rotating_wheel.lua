@@ -159,6 +159,7 @@ end
 spell:name("Rotating Wheel")
 spell:words("###rotatingweel")
 spell:needDirection(false)
+spell:blockWalls(false)
 spell:isAggressive(true)
 spell:needLearn(true)
 spell:register()

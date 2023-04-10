@@ -26,6 +26,19 @@ monster.changeTarget = {
 	chance = 10
 }
 
+monster.Bestiary = {
+	class = "Dragon",
+	race = BESTY_RACE_DRAGON,
+	toKill = 1000,
+	FirstUnlock = 50,
+	SecondUnlock = 500,
+	CharmsPoints = 50,
+	Stars = 4,
+	Occurrence = 0,
+	Locations = "Orc Main Fortress."
+	}
+
+
 monster.strategiesTarget = {
 	nearest = 70,
 	health = 10,
