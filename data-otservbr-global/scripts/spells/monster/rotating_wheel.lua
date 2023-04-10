@@ -1,11 +1,11 @@
 local spell = Spell("instant")
 
 local combatConfig = {
-	delay = 1250,
+	delay = 1500,
 	standStill = true,
 	initialDelay = 5000,
 	message = 'Rotating Flames in 5 seconds!!!',
-	fullRotation = 1,
+	fullRotation = 2,
 	numberOfAreas = 2,
 	areas = {
 		{
