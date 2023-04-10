@@ -106,6 +106,7 @@ monster.loot = {
 	{ name = "feverbloom boots", chance = 200},
 	{ id = 39234, chance = 200}, -- enchanted turtle amulet
 	{ name = "frostflower boots", chance = 200},
+	{id = 5903, chance = 100, unique = true}, -- ferumbras' hat
 
 	{ id = 20062, chance = 2000, maxCount = 14 }, -- cluster of solace
 	{ name = "gold token", chance = 5000 },
@@ -137,7 +138,7 @@ monster.elements = {
 	{ type = COMBAT_DROWNDAMAGE, percent = 0 },
 	{ type = COMBAT_ICEDAMAGE, percent = 0 },
 	{ type = COMBAT_HOLYDAMAGE, percent = -25 },
-	{ type = COMBAT_DEATHDAMAGE, percent = 100 }
+	{ type = COMBAT_DEATHDAMAGE, percent = 0 }
 }
 
 monster.immunities = {
