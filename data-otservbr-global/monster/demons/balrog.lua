@@ -5,7 +5,7 @@ monster.description = "a Balrog"
 monster.health = 425000
 monster.maxHealth = monster.health
 
-monster.experience = monster.health * 6
+monster.experience = monster.health * 8
 monster.outfit = {
 	lookType = 1468,
 	lookHead = 0,

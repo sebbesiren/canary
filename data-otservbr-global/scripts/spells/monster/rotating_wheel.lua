@@ -5,7 +5,7 @@ local combatConfig = {
 	standStill = true,
 	initialDelay = 3000,
 	message = 'Rotating Flames in 3 seconds!!!',
-	fullRotation = 3,
+	fullRotation = 1,
 	numberOfAreas = 2,
 	areas = {
 		{

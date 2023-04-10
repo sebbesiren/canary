@@ -8,8 +8,7 @@ athelstanConfig = {
 	AmountLife = 3,
 	Monster = {
 		"Death Knight",
-		"Death Paladin",
-		"Death Necromancer"
+		"Death Paladin"
 	},
 }
 
@@ -26,7 +25,7 @@ monster.outfit = {
 
 monster.health = 100000
 monster.maxHealth = monster.health
-monster.experience = monster.health * 6 * athelstanConfig.AmountLife
+monster.experience = monster.health * 8 * athelstanConfig.AmountLife
 monster.race = "blood"
 monster.corpse = 28625
 monster.speed = 115
@@ -120,7 +119,7 @@ monster.attacks = {
 	{ name = "combat", interval = 2000, chance = 20, type = COMBAT_DEATHDAMAGE, minDamage = -860, maxDamage = -1500, range = 7, shootEffect = CONST_ANI_SUDDENDEATH, effect = CONST_ME_MORTAREA, target = false },
 	{ name = "Shotgun", interval = 2000, chance = 10, minDamage = -860, maxDamage = -1500, target = false },
 	{ name = "Holy Bomb Slash", interval = 2000, chance = 20, minDamage = -820, maxDamage = -1450, target = false },
-	{ name = "Rotating Wheel", interval = 90 * 1000, chance = 100, target = false },
+	{ name = "Rotating Wheel", interval = 120000, chance = 100, target = false },
 }
 
 monster.defenses = {
