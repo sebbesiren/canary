@@ -81,7 +81,7 @@ monster.loot = {
 
 monster.attacks = {
 	{ name = "combat", interval = 2000, chance = 100, type = COMBAT_FIREDAMAGE, minDamage = -200, maxDamage = -450, range = 5, radius = 1, shootEffect = CONST_ANI_FIRE, target = true },
-	{ name = "combat", interval = 10000, chance = 100, type = COMBAT_FIREDAMAGE, minDamage = -500, maxDamage = -800, radius = 8, shootEffect = CONST_ANI_FIRE, effect = CONST_ME_FIREAREA, target = false },
+	{ name = "combat", interval = 10000, chance = 100, type = COMBAT_FIREDAMAGE, minDamage = -500, maxDamage = -800, radius = 6, shootEffect = CONST_ANI_FIRE, effect = CONST_ME_FIREAREA, target = false },
 	{ name = "condition", type = CONDITION_FIRE, interval = 8000, chance = 100, minDamage = -0, maxDamage = -100, range = 5, radius = 4, target = true },
 }
 

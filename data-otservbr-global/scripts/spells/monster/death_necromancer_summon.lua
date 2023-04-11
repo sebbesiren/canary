@@ -8,7 +8,6 @@ combat:setArea(area)
 local spell = Spell("instant")
 
 local necromancerSummons = {
-	"Demon Outcast",
 	"Frazzlemaw",
 	"Choking Fear"
 }
