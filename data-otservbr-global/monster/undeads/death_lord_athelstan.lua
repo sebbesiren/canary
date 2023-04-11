@@ -119,7 +119,7 @@ monster.attacks = {
 	{ name = "combat", interval = 2000, chance = 20, type = COMBAT_DEATHDAMAGE, minDamage = -860, maxDamage = -1500, range = 7, shootEffect = CONST_ANI_SUDDENDEATH, effect = CONST_ME_MORTAREA, target = false },
 	{ name = "Shotgun", interval = 2000, chance = 10, minDamage = -860, maxDamage = -1500, target = false },
 	{ name = "Holy Bomb Slash", interval = 2000, chance = 20, minDamage = -820, maxDamage = -1450, target = false },
-	{ name = "Rotating Wheel", interval = 60000, chance = 50, target = false },
+	{ name = "Rotating Wheel", interval = 40000, chance = 1000, target = false },
 }
 
 monster.defenses = {
