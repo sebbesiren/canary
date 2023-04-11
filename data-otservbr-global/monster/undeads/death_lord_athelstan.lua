@@ -11,7 +11,7 @@ athelstanConfig = {
 		"Death Paladin"
 	},
 }
-
+monster.name = "Death Lord Athelstan"
 monster.description = "Death Lord Athelstan"
 monster.outfit = {
 	lookType = 1072,
@@ -37,10 +37,10 @@ monster.changeTarget = {
 }
 
 monster.bosstiary = {
-	bossRaceId = 1576,
-	bossRace = RARITY_ARCHFOE,
-	storageCooldown = Storage.TheSecretLibrary.TheOrderOfTheFalcon.OberonTimer
+	bossRaceId = 2295,
+	bossRace = RARITY_ARCHFOE
 }
+
 
 monster.strategiesTarget = {
 	nearest = 100,

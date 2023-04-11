@@ -1,6 +1,8 @@
 local mType = Game.createMonsterType("Ancient Dragon")
 local monster = {}
 
+monster.name = "Ancient Dragon"
+
 monster.health = 8000
 monster.maxHealth = monster.health
 
@@ -26,6 +28,7 @@ monster.changeTarget = {
 	chance = 10
 }
 
+monster.raceId = 2290
 monster.Bestiary = {
 	class = "Dragon",
 	race = BESTY_RACE_DRAGON,

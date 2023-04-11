@@ -1,6 +1,7 @@
 local mType = Game.createMonsterType("Orc Bonecrusher")
 local monster = {}
 
+monster.name = "Orc Bonecrusher"
 monster.health = 6000
 monster.maxHealth = monster.health
 
@@ -20,6 +21,7 @@ monster.race = "blood"
 monster.corpse = 5980
 monster.speed = 125
 monster.manaCost = 0
+monster.raceId = 2296
 monster.Bestiary = {
 	class = "Humanoid",
 	race = BESTY_RACE_HUMANOID,

@@ -1,9 +1,15 @@
 local mType = Game.createMonsterType("Balrog")
 local monster = {}
 
+monster.name = "Balrog"
 monster.description = "a Balrog"
 monster.health = 425000
 monster.maxHealth = monster.health
+
+monster.bosstiary = {
+	bossRaceId = 2294,
+	bossRace = RARITY_ARCHFOE
+}
 
 monster.experience = monster.health * 8
 monster.outfit = {

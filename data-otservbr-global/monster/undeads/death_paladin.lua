@@ -1,6 +1,7 @@
 local mType = Game.createMonsterType("Death Paladin")
 local monster = {}
 
+monster.name = "Death Paladin"
 monster.description = "a death paladin"
 monster.outfit = {
 	lookType = 1071,
@@ -12,7 +13,7 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 1647
+monster.raceId = 2292
 monster.Bestiary = {
 	class = "Undead",
 	race = BESTY_RACE_UNDEAD,
@@ -22,7 +23,7 @@ monster.Bestiary = {
 	CharmsPoints = 50,
 	Stars = 4,
 	Occurrence = 0,
-	Locations = "Falcon Bastion."
+	Locations = "Death fortress"
 }
 
 monster.health = 10000

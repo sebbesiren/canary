@@ -1,6 +1,7 @@
 local mType = Game.createMonsterType("Death Necromancer")
 local monster = {}
 
+monster.name = "Death Necromancer"
 monster.description = "a death necromancer"
 
 monster.outfit = {
@@ -13,7 +14,7 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 1647
+monster.raceId = 2293
 monster.Bestiary = {
 	class = "Undead",
 	race = BESTY_RACE_UNDEAD,
@@ -23,7 +24,7 @@ monster.Bestiary = {
 	CharmsPoints = 50,
 	Stars = 4,
 	Occurrence = 0,
-	Locations = "Falcon Bastion."
+	Locations = "Death fortress"
 }
 
 monster.health = 8000

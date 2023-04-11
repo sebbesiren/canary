@@ -1,6 +1,7 @@
 local mType = Game.createMonsterType("Orc Pyromancer")
 local monster = {}
 
+monster.name = "Orc Pyromancer"
 monster.health = 6000
 monster.maxHealth = monster.health
 
@@ -15,6 +16,7 @@ monster.outfit = {
 	lookAddons = 0,
 	lookMount = 0
 }
+monster.raceId = 2288
 monster.Bestiary = {
 	class = "Humanoid",
 	race = BESTY_RACE_HUMANOID,
