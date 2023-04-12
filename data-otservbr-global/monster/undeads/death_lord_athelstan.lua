@@ -3,7 +3,8 @@ local monster = {}
 
 athelstanConfig = {
 	Storage = {
-		Life = 1,
+		Initialized = 1,
+		Life = 2
 	},
 	AmountLife = 3,
 	Monster = {
@@ -40,7 +41,6 @@ monster.bosstiary = {
 	bossRaceId = 2295,
 	bossRace = RARITY_ARCHFOE
 }
-
 
 monster.strategiesTarget = {
 	nearest = 100,
@@ -92,20 +92,20 @@ monster.loot = {
 	{ name = "falcon greaves", chance = 200, maxCount = 1 },
 	{ name = "falcon plate", chance = 200, maxCount = 1 },
 
-	{ name = "naga wand", chance = 200},
-	{ name = "naga sword", chance = 200},
-	{ name = "naga rod", chance = 200},
-	{ name = "naga quiver", chance = 200},
-	{ name = "naga club", chance = 200},
-	{ name = "naga crossbow", chance = 200},
-	{ name = "dawnfire sherwani", chance = 200},
-	{ name = "dawnfire pantaloons", chance = 200},
-	{ name = "midnight sarong", chance = 200},
-	{ name = "midnight tunic", chance = 200},
-	{ name = "feverbloom boots", chance = 200},
-	{ id = 39234, chance = 200}, -- enchanted turtle amulet
-	{ name = "frostflower boots", chance = 200},
-	{id = 5903, chance = 100, unique = true}, -- ferumbras' hat
+	{ name = "naga wand", chance = 200 },
+	{ name = "naga sword", chance = 200 },
+	{ name = "naga rod", chance = 200 },
+	{ name = "naga quiver", chance = 200 },
+	{ name = "naga club", chance = 200 },
+	{ name = "naga crossbow", chance = 200 },
+	{ name = "dawnfire sherwani", chance = 200 },
+	{ name = "dawnfire pantaloons", chance = 200 },
+	{ name = "midnight sarong", chance = 200 },
+	{ name = "midnight tunic", chance = 200 },
+	{ name = "feverbloom boots", chance = 200 },
+	{ id = 39234, chance = 200 }, -- enchanted turtle amulet
+	{ name = "frostflower boots", chance = 200 },
+	{ id = 5903, chance = 100, unique = true }, -- ferumbras' hat
 
 	{ id = 20062, chance = 2000, maxCount = 14 }, -- cluster of solace
 	{ name = "gold token", chance = 5000 },
@@ -147,7 +147,20 @@ monster.immunities = {
 	{ type = "bleed", condition = false }
 }
 
+local function initialize(monster)
+	if (monster:getStorageValue(athelstanConfig.Storage.Initialized) == true) then
+		return
+	end
+
+	monster:setStorageValue(athelstanConfig.Storage.Life, athelstanConfig.AmountLife)
+	monster:setStorageValue(athelstanConfig.Storage.Initialized, true)
+end
+
 mType.onThink = function(monster, interval)
+	if (monster:getStorageValue(athelstanConfig.Storage.Initialized) == -1) then
+		initialize(monster)
+	end
+
 	local currentLives = monster:getStorageValue(athelstanConfig.Storage.Life)
 	if currentLives == 0 then
 		return
@@ -162,7 +175,7 @@ end
 
 mType.onAppear = function(monster, creature)
 	if monster:getId() == creature:getId() then
-		monster:setStorageValue(athelstanConfig.Storage.Life, athelstanConfig.AmountLife)
+		initialize(monster)
 	end
 	if monster:getType():isRewardBoss() then
 		monster:setReward(true)

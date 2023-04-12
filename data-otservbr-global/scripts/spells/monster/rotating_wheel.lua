@@ -5,6 +5,7 @@ local combatConfig = {
 	standStill = true,
 	initialDelay = 500,
 	message = 'Rotating Flames!!!',
+	rotations = 2,
 	areas = {
 		{
 			{ 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1 },
@@ -163,9 +164,11 @@ end
 
 local function castSpell(cid, var, creatureSpeed)
 	local currentDelay = 0
-	for _, combat in ipairs(combatConfig.combats) do
-		addEvent(delayedCastSpell, currentDelay, combat, cid, var)
-		currentDelay = currentDelay + combatConfig.delay
+	for _ = 1, combatConfig.rotations do
+		for _, combat in ipairs(combatConfig.combats) do
+			addEvent(delayedCastSpell, currentDelay, combat, cid, var)
+			currentDelay = currentDelay + combatConfig.delay
+		end
 	end
 
 	if creatureSpeed > 0 then
