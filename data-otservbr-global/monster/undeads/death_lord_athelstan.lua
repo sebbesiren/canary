@@ -26,7 +26,7 @@ monster.outfit = {
 
 monster.health = 100000
 monster.maxHealth = monster.health
-monster.experience = monster.health * 8 * athelstanConfig.AmountLife
+monster.experience = monster.health * 6 * athelstanConfig.AmountLife
 monster.race = "blood"
 monster.corpse = 28625
 monster.speed = 115

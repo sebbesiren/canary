@@ -1,11 +1,11 @@
 local spell = Spell("instant")
 
 local combatConfig = {
-	delay = 1750,
+	noticeDelay = 850,
+	boomDelay = 1500,
 	standStill = true,
-	initialDelay = 500,
 	message = 'Rotating Flames!!!',
-	rotations = 2,
+	numberOfCasts = 3,
 	areas = {
 		{
 			{ 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1 },
@@ -52,9 +52,10 @@ local combatConfig = {
 			{ 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0 },
 			{ 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0 },
 			{ 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0 },
+
 		}
 	},
-	combats = {},
+	combatRotations = {},
 	noticeEffect = CONST_ME_BLOCKHIT,
 	noticeType = COMBAT_HOLYDAMAGE,
 	boomEffect = CONST_ME_FIREAREA,
@@ -69,11 +70,9 @@ local vocation = {
 }
 
 for _, area in ipairs(combatConfig.areas) do
-	local combatNotice = Combat()
-	combatNotice:setArea(createCombatArea(area))
+	noticeCombat = Combat()
+	boomCombat = Combat()
 
-	local combatBoom = Combat()
-	combatBoom:setArea(createCombatArea(area))
 	function onNoticeTargetTile(creature, pos)
 		local creatureTable = {}
 		local n, i = Tile({ x = pos.x, y = pos.y, z = pos.z }).creatures, 1
@@ -128,8 +127,8 @@ for _, area in ipairs(combatConfig.areas) do
 		if #creatureTable ~= nil and #creatureTable > 0 then
 			for r = 1, #creatureTable do
 				if creatureTable[r] ~= creature then
-					local min = 3000
-					local max = 3000
+					local min = 3500
+					local max = 3500
 					local player = Player(creatureTable[r])
 
 					if isPlayer(creatureTable[r]) == true and table.contains(vocation, player:getVocation():getBaseId()) then
@@ -144,12 +143,13 @@ for _, area in ipairs(combatConfig.areas) do
 		return true
 	end
 
-	-- Custom damage in callback
-	combatNotice:setCallback(CALLBACK_PARAM_TARGETTILE, "onNoticeTargetTile")
-	combatBoom:setCallback(CALLBACK_PARAM_TARGETTILE, "onBoomTargetTile")
+	noticeCombat:setArea(createCombatArea(area))
+	boomCombat:setArea(createCombatArea(area))
 
-	table.insert(combatConfig.combats, combatNotice)
-	table.insert(combatConfig.combats, combatBoom)
+	noticeCombat:setCallback(CALLBACK_PARAM_TARGETTILE, "onNoticeTargetTile")
+	boomCombat:setCallback(CALLBACK_PARAM_TARGETTILE, "onBoomTargetTile")
+
+	table.insert(combatConfig.combatRotations, { noticeCombat, boomCombat })
 end
 
 local function delayedCastSpell(combat, cid, var)
@@ -160,22 +160,6 @@ local function delayedCastSpell(combat, cid, var)
 	end
 
 	return combat:execute(creature, positionToVariant(creature:getPosition()))
-end
-
-local function castSpell(cid, var, creatureSpeed)
-	local currentDelay = 0
-	for _ = 1, combatConfig.rotations do
-		for _, combat in ipairs(combatConfig.combats) do
-			addEvent(delayedCastSpell, currentDelay, combat, cid, var)
-			currentDelay = currentDelay + combatConfig.delay
-		end
-	end
-
-	if creatureSpeed > 0 then
-		addEvent(doChangeSpeed, currentDelay, cid, creatureSpeed)
-	end
-
-	return true
 end
 
 function spell.onCastSpell(creature, var)
@@ -192,7 +176,27 @@ function spell.onCastSpell(creature, var)
 		creature:say(combatConfig.message, TALKTYPE_ORANGE_2)
 	end
 
-	return addEvent(castSpell, combatConfig.initialDelay, cid, var, creatureSpeed)
+	local currentDelay = 0
+	for _ = 1, combatConfig.numberOfCasts do
+		randomCombatRotation = combatConfig.combatRotations[math.random(#combatConfig.combatRotations)]
+		for i = 1, #randomCombatRotation do
+			if i == 1 then
+				delay = combatConfig.boomDelay
+			else
+				delay = combatConfig.noticeDelay
+			end
+
+			combat = randomCombatRotation[i]
+			addEvent(delayedCastSpell, currentDelay, combat, cid, var)
+			currentDelay = currentDelay + delay
+		end
+	end
+
+	if creatureSpeed > 0 then
+		addEvent(doChangeSpeed, currentDelay, cid, creatureSpeed)
+	end
+
+	return true
 end
 
 spell:name("Rotating Wheel")
