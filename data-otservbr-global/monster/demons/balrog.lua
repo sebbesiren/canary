@@ -3,7 +3,7 @@ local monster = {}
 
 monster.name = "Balrog"
 monster.description = "a Balrog"
-monster.health = 425000
+monster.health = 325000
 monster.maxHealth = monster.health
 
 monster.bosstiary = {
