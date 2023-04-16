@@ -95,6 +95,7 @@ monster.loot = {
 	{ id = 27649, chance = 500 }, -- gnome legs
 	{ id = 16114, chance = 10000 }, -- prismatic ring
 	{ id = 20062, chance = 2000, maxCount = 14 }, -- cluster of solace
+	{ id = 18339, chance = 5000 }, -- zaoan chess box
 }
 
 monster.attacks = {
