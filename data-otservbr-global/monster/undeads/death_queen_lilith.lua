@@ -1,5 +1,3 @@
-dofile(DATA_DIRECTORY .. "/monster/quests/the_secret_library/bosses/grand_master_oberon_functions.lua")
-
 local mType = Game.createMonsterType("Death Queen Lilith")
 local monster = {}
 
@@ -14,9 +12,9 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.health = 600000
+monster.health = 425000
 monster.maxHealth = monster.health
-monster.experience = monster.health * 6
+monster.experience = monster.health * 8
 monster.race = "blood"
 monster.corpse = 28625
 monster.speed = 115
@@ -28,9 +26,8 @@ monster.changeTarget = {
 }
 
 monster.bosstiary = {
-	bossRaceId = 1576,
+	bossRaceId = 2296,
 	bossRace = RARITY_ARCHFOE,
-	storageCooldown = Storage.TheSecretLibrary.TheOrderOfTheFalcon.OberonTimer
 }
 
 monster.strategiesTarget = {
@@ -120,19 +117,10 @@ monster.immunities = {
 }
 
 mType.onThink = function(monster, interval)
-	if monster:getStorageValue(GrandMasterOberonConfig.Storage.Life) <= GrandMasterOberonConfig.AmountLife then
-		local percentageHealth = (monster:getHealth()*100)/monster:getMaxHealth()
-		if percentageHealth <= 20 then
-			SendOberonAsking(monster)
-		end
-	end
+
 end
 
 mType.onAppear = function(monster, creature)
-	if monster:getId() == creature:getId() then
-		monster:setStorageValue(GrandMasterOberonConfig.Storage.Asking, 1)
-		monster:setStorageValue(GrandMasterOberonConfig.Storage.Life, 1)
-	end
 	if monster:getType():isRewardBoss() then
 		monster:setReward(true)
 	end
@@ -145,22 +133,7 @@ mType.onMove = function(monster, creature, fromPosition, toPosition)
 end
 
 mType.onSay = function(monster, creature, type, message)
-	local exhaust = GrandMasterOberonConfig.Storage.Exhaust
-	if creature:isPlayer() and monster:getStorageValue(exhaust) <= os.time() then
-		message = message:lower()
-		monster:setStorageValue(exhaust, os.time() + 1)
-		for i, v in pairs(GrandMasterOberonResponses) do
-			if message == v.msg:lower() then
-				local asking_storage = monster:getStorageValue(GrandMasterOberonConfig.Storage.Asking)
-				if GrandMasterOberonAsking[i].msg:lower() == GrandMasterOberonAsking[asking_storage].msg:lower() then
-					monster:say("GRRRAAANNGH!", TALKTYPE_MONSTER_SAY)
-					monster:unregisterEvent('OberonImmunity')
-				else
-					monster:say("HAHAHAHA!", TALKTYPE_MONSTER_SAY)
-				end
-			end
-		end
-	end
+
 end
 
 mType:register(monster)

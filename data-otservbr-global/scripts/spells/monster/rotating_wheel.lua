@@ -2,7 +2,7 @@ local spell = Spell("instant")
 
 local combatConfig = {
 	noticeDelay = 850,
-	boomDelay = 1500,
+	boomDelay = 1600,
 	standStill = true,
 	message = 'Rotating Flames!!!',
 	numberOfCasts = 3,

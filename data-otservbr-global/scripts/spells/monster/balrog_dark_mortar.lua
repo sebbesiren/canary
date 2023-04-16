@@ -2,7 +2,7 @@ local spell = Spell("instant")
 
 local combatConfig = {
 	noticeDelay = 850,
-	boomDelay = 1500,
+	boomDelay = 1600,
 	standStill = true,
 	message = 'Balrog Dark Mortar!!!',
 	numberOfCasts = 6,
@@ -215,8 +215,8 @@ for _, area in ipairs(combatConfig.areas) do
 		if #creatureTable ~= nil and #creatureTable > 0 then
 			for r = 1, #creatureTable do
 				if creatureTable[r] ~= creature then
-					local min = 3500
-					local max = 3500
+					local min = 3200
+					local max = 3200
 					local player = Player(creatureTable[r])
 
 					if isPlayer(creatureTable[r]) == true and table.contains(vocation, player:getVocation():getBaseId()) then

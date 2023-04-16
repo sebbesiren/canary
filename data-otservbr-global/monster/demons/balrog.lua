@@ -105,7 +105,7 @@ monster.attacks = {
 	{ name = "gaz'haragoth iceball", interval = 10000, chance = 100, minDamage = -1000, maxDamage = -1500, target = false },
 	{ name = "gaz'haragoth death", interval = 60000, chance = 100, target = false },
 	{ name = "gaz'haragoth paralyze", interval = 8000, chance = 100, target = false },
-	{ name = "Balrog Dark Mortar", interval = 40000, chance = 1000, target = false },
+	{ name = "Balrog Dark Mortar", interval = 40000, chance = 100, target = false },
 }
 
 monster.defenses = {
