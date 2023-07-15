@@ -99,7 +99,6 @@ bool Map::loadMap(const std::string &identifier, bool mainMap /*= false*/, bool 
 	return true;
 }
 
-
 bool Map::loadMapCustom(const std::string &mapName, bool loadHouses, bool loadMonsters, bool loadNpcs, int customMapIndex) {
 	// Load the map
 	std::string path = g_configManager().getString(DATA_DIRECTORY) + "/world/custom/" + mapName + ".otbm";
@@ -1098,6 +1097,13 @@ int_fast32_t AStarNodes::getTileWalkCost(const Creature &creature, const Tile* t
 		CombatType_t combatType = field->getCombatType();
 		const Monster* monster = creature.getMonster();
 		if (!creature.isImmune(combatType) && !creature.hasCondition(Combat::DamageToConditionType(combatType)) && (monster && !monster->canWalkOnFieldType(combatType))) {
+			cost += MAP_NORMALWALKCOST * 18;
+		}
+		/**
+		 * Make player try to avoid magic fields, when calculating pathing
+		 */
+		const Player* player = creature.getPlayer();
+		if (player && !field->isBlocking() && field->getDamage() != 0) {
 			cost += MAP_NORMALWALKCOST * 18;
 		}
 	}

@@ -10,6 +10,7 @@
 #include "pch.hpp"
 
 #include "core.hpp"
+#include "items/item.h"
 #include "utils/tools.h"
 
 void printXMLError(const std::string &where, const std::string &fileName, const pugi::xml_parse_result &result) {
@@ -189,7 +190,7 @@ std::string transformToSHA1(const std::string &input) {
 uint16_t getStashSize(StashItemList itemList) {
 	uint16_t size = 0;
 	for (auto item : itemList) {
-		size += ceil(item.second / 100.0);
+		size += ceil(item.second / (float_t)Item::items[item.first].stackSize);
 	}
 	return size;
 }
@@ -951,15 +952,17 @@ bool booleanString(const std::string &str) {
 std::string getWeaponName(WeaponType_t weaponType) {
 	switch (weaponType) {
 		case WEAPON_SWORD:
-			return "stabbing weapon";
+			return "sword";
 		case WEAPON_CLUB:
-			return "blunt instrument";
+			return "club";
 		case WEAPON_AXE:
-			return "cutting weapon";
+			return "axe";
 		case WEAPON_DISTANCE:
-			return "firearm";
+			return "distance";
 		case WEAPON_WAND:
-			return "wand/rod";
+			return "wand";
+		case WEAPON_AMMO:
+			return "ammunition";
 		case WEAPON_MISSILE:
 			return "missile";
 		default:
@@ -1003,7 +1006,9 @@ CombatType_t indexToCombatType(size_t v) {
 }
 
 ItemAttribute_t stringToItemAttribute(const std::string &str) {
-	if (str == "aid") {
+	if (str == "store") {
+		return ItemAttribute_t::STORE;
+	} else if (str == "aid") {
 		return ItemAttribute_t::ACTIONID;
 	} else if (str == "uid") {
 		return ItemAttribute_t::UNIQUEID;
@@ -1053,7 +1058,11 @@ ItemAttribute_t stringToItemAttribute(const std::string &str) {
 		return ItemAttribute_t::DURATION_TIMESTAMP;
 	} else if (str == "amount") {
 		return ItemAttribute_t::AMOUNT;
+	} else if (str == "tier") {
+		return ItemAttribute_t::TIER;
 	}
+
+	SPDLOG_ERROR("[{}] attribute type {} is not registered", __FUNCTION__, str);
 	return ItemAttribute_t::NONE;
 }
 
@@ -1372,7 +1381,9 @@ void capitalizeWords(std::string &source) {
  */
 void consoleHandlerExit() {
 	SPDLOG_ERROR("The program will close after pressing the enter key...");
-	getchar();
+	if (isatty(STDIN_FILENO)) {
+		getchar();
+	}
 	return;
 }
 

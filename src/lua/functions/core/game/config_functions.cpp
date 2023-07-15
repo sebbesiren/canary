@@ -20,10 +20,10 @@ void ConfigFunctions::init(lua_State* L) {
 	registerMethod(L, "configManager", "getFloat", ConfigFunctions::luaConfigManagerGetFloat);
 
 #define registerEnumIn(L, tableName, value)                                                     \
-	{                                                                                           \
+	do {                                                                                        \
 		std::string enumName = #value;                                                          \
 		registerVariable(L, tableName, enumName.substr(enumName.find_last_of(':') + 1), value); \
-	}
+	} while (0)
 	registerTable(L, "configKeys");
 	registerEnumIn(L, "configKeys", ALLOW_CHANGEOUTFIT);
 	registerEnumIn(L, "configKeys", ONE_PLAYER_ON_ACCOUNT);
@@ -32,7 +32,6 @@ void ConfigFunctions::init(lua_State* L) {
 	registerEnumIn(L, "configKeys", EXPERIENCE_FROM_PLAYERS);
 	registerEnumIn(L, "configKeys", FREE_PREMIUM);
 	registerEnumIn(L, "configKeys", REPLACE_KICK_ON_LOGIN);
-	registerEnumIn(L, "configKeys", ALLOW_CLONES);
 	registerEnumIn(L, "configKeys", BIND_ONLY_GLOBAL_ADDRESS);
 	registerEnumIn(L, "configKeys", OPTIMIZE_DATABASE);
 	registerEnumIn(L, "configKeys", MARKET_PREMIUM);
@@ -192,6 +191,43 @@ void ConfigFunctions::init(lua_State* L) {
 	registerEnumIn(L, "configKeys", TOGGLE_GOLD_POUCH_ALLOW_ANYTHING);
 	registerEnumIn(L, "configKeys", TOGGLE_SERVER_IS_RETRO);
 	registerEnumIn(L, "configKeys", TOGGLE_TRAVELS_FREE);
+
+	registerEnumIn(L, "configKeys", HAZARD_SPAWN_PLUNDER_MULTIPLIER);
+	registerEnumIn(L, "configKeys", HAZARD_CRITICAL_INTERVAL);
+	registerEnumIn(L, "configKeys", HAZARD_CRITICAL_CHANCE);
+	registerEnumIn(L, "configKeys", HAZARD_CRITICAL_MULTIPLIER);
+	registerEnumIn(L, "configKeys", HAZARD_DAMAGE_MULTIPLIER);
+	registerEnumIn(L, "configKeys", HAZARD_DODGE_MULTIPLIER);
+	registerEnumIn(L, "configKeys", HAZARD_PODS_DROP_MULTIPLIER);
+	registerEnumIn(L, "configKeys", HAZARD_PODS_TIME_TO_DAMAGE);
+	registerEnumIn(L, "configKeys", HAZARD_PODS_TIME_TO_SPAWN);
+	registerEnumIn(L, "configKeys", HAZARD_EXP_BONUS_MULTIPLIER);
+	registerEnumIn(L, "configKeys", HAZARD_LOOT_BONUS_MULTIPLIER);
+	registerEnumIn(L, "configKeys", HAZARD_PODS_DAMAGE);
+	registerEnumIn(L, "configKeys", TOGGLE_HAZARDSYSTEM);
+	registerEnumIn(L, "configKeys", LOW_LEVEL_BONUS_EXP);
+	registerEnumIn(L, "configKeys", LOYALTY_ENABLED);
+	registerEnumIn(L, "configKeys", LOYALTY_POINTS_PER_CREATION_DAY);
+	registerEnumIn(L, "configKeys", LOYALTY_POINTS_PER_PREMIUM_DAY_SPENT);
+	registerEnumIn(L, "configKeys", LOYALTY_POINTS_PER_PREMIUM_DAY_PURCHASED);
+	registerEnumIn(L, "configKeys", LOYALTY_BONUS_PERCENTAGE_MULTIPLIER);
+
+	registerEnumIn(L, "configKeys", PARTY_SHARE_LOOT_BOOSTS);
+	registerEnumIn(L, "configKeys", TIBIADROME_CONCOCTION_COOLDOWN);
+	registerEnumIn(L, "configKeys", TIBIADROME_CONCOCTION_DURATION);
+	registerEnumIn(L, "configKeys", TIBIADROME_CONCOCTION_TICK_TYPE);
+
+	registerEnumIn(L, "configKeys", AUTH_TYPE);
+	registerEnumIn(L, "configKeys", RESET_SESSIONS_ON_STARTUP);
+
+	registerEnumIn(L, "configKeys", TOGGLE_ATTACK_SPEED_ONFIST);
+	registerEnumIn(L, "configKeys", MULTIPLIER_ATTACKONFIST);
+	registerEnumIn(L, "configKeys", MAX_SPEED_ATTACKONFIST);
+
+	registerEnumIn(L, "configKeys", M_CONST);
+	registerEnumIn(L, "configKeys", T_CONST);
+	registerEnumIn(L, "configKeys", PARALLELISM);
+
 #undef registerEnumIn
 }
 

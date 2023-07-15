@@ -19,8 +19,8 @@ function getFormattedWorldTime()
 	return hours .. ':' .. minutes
 end
 
-function getLootRandom()
-	local multi = (configManager.getNumber(configKeys.RATE_LOOT) * SCHEDULE_LOOT_RATE)
+function getLootRandom(modifier)
+	local multi = (configManager.getNumber(configKeys.RATE_LOOT) * SCHEDULE_LOOT_RATE) * (modifier or 1)
 	return math.random(0, MAX_LOOTCHANCE) * 100 / math.max(1, multi)
 end
 
@@ -258,7 +258,7 @@ function playerExists(name)
 	return false
 end
 
-function functionRevert()
+function resetFerumbrasAscendantHabitats()
 	Game.setStorageValue(GlobalStorage.FerumbrasAscendant.Habitats.Corrupted, 0)
 	Game.setStorageValue(GlobalStorage.FerumbrasAscendant.Habitats.Desert, 0)
 	Game.setStorageValue(GlobalStorage.FerumbrasAscendant.Habitats.Dimension, 0)
@@ -268,13 +268,8 @@ function functionRevert()
 	Game.setStorageValue(GlobalStorage.FerumbrasAscendant.Habitats.Roshamuul, 0)
 	Game.setStorageValue(GlobalStorage.FerumbrasAscendant.Habitats.Venom, 0)
 	Game.setStorageValue(GlobalStorage.FerumbrasAscendant.Habitats.AllHabitats, 0)
-	for a = 1, #basins do
-		local item = Tile(basins[a].pos):getItemById(22196)
-		item:transform(11114)
-	end
-	local specs, spec = Game.getSpectators(Position(33629, 32693, 12), false, false, 25, 25, 85, 85)
-	for i = 1, #specs do
-		spec = specs[i]
+
+	for _, spec in pairs(Game.getSpectators(Position(33629, 32693, 12), false, false, 25, 25, 85, 85)) do
 		if spec:isPlayer() then
 			spec:teleportTo(Position(33630, 32648, 12))
 			spec:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
@@ -283,6 +278,7 @@ function functionRevert()
 			spec:remove()
 		end
 	end
+
 	for x = 33611, 33625 do
 		for y = 32658, 32727 do
 			local position = Position(x, y, 12)
@@ -912,4 +908,37 @@ function SetInfluenced(monsterType, monster, player, influencedLevel)
 	end
 	Game.addInfluencedMonster(monster)
 	monster:setForgeStack(influencedLevel)
+end
+
+
+function durationString(duration)
+	local durationHours = math.floor(duration / 3600)
+	duration = duration % 3600
+	local durationMinutes = math.floor(duration / 60)
+	local durationSeconds = duration % 60
+	local s = ""
+	if durationHours > 0 then
+		s = s .. durationHours .. " hours"
+	end
+	if durationMinutes > 0 then
+		if durationHours > 0 and durationSeconds > 0 then
+			s = s .. ", "
+		elseif durationHours > 0 then
+			s = s .. " and "
+		end
+		s = s .. durationMinutes .. " minutes"
+	end
+	if durationSeconds > 0 then
+		s = s .. " and " .. durationSeconds .. " seconds"
+	end
+	return s
+end
+
+function ReloadDataEvent(cid)
+	local player = Player(cid)
+	if not player then
+		return
+	end
+
+	player:reloadData()
 end
