@@ -6,10 +6,10 @@ monster.description = "a Balrog"
 monster.health = 325000
 monster.maxHealth = monster.health
 
-monster.bosstiary = {
-	bossRaceId = 2294,
-	bossRace = RARITY_ARCHFOE
-}
+--monster.bosstiary = {
+--	bossRaceId = 5000,
+--	bossRace = RARITY_ARCHFOE
+--}
 
 monster.experience = monster.health * 6
 monster.outfit = {

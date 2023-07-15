@@ -28,7 +28,7 @@ monster.changeTarget = {
 	chance = 10
 }
 
-monster.raceId = 2290
+monster.raceId = 4002
 monster.Bestiary = {
 	class = "Dragon",
 	race = BESTY_RACE_DRAGON,

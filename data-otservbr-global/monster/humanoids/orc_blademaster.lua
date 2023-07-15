@@ -17,7 +17,7 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 2289
+monster.raceId = 4000
 monster.Bestiary = {
 	class = "Humanoid",
 	race = BESTY_RACE_HUMANOID,
