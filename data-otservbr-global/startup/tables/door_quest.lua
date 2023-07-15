@@ -919,7 +919,7 @@ QuestDoorAction = {
 			{x = 32953, y = 31450, z = 6},
 			{x = 32953, y = 31451, z = 4}
 		}
-	}
+	},
 	[Storage.Quest.U13_10.CradleOfMonsters.Access.LowerIngol] = {
 		itemId = false,
 		itemPos = {

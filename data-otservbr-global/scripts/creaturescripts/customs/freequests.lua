@@ -298,7 +298,7 @@ local questTable = {
 	{storage = Storage.Quest.U12_70.AdventuresOfGalthen.AccessDoor, storageValue = 1},
 	{storage = Storage.TheSecretLibrary.Mota, storageValue = 1},
 	{storage = Storage.TheSecretLibrary.MotaDoor, storageValue = 1},
-	{storage = Storage.Quest.U8_4.BloodBrothers.VengothAccess, storageValue = 1}
+	{storage = Storage.Quest.U8_4.BloodBrothers.VengothAccess, storageValue = 1},
 
 	{storage = Storage.CultsOfTibia.Barkless.AccessDoor, storageValue = 1},
 	{storage = Storage.CultsOfTibia.Barkless.TrialAccessDoor, storageValue = 1},
