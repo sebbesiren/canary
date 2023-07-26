@@ -12,4 +12,10 @@
 		<colors colordark="#235c00" colorlight="#2d7400" />
 		<details displaypriority="6" isseasonal="0" specialevent="1"/>
 	</event>
+	<event name="Permanent event" startdate="03/26/2023" enddate="03/26/2025" script="" >
+		<ingame exprate="100" lootrate="100" spawnrate="70" skillrate="100" />
+		<description description="Permanent event to reduce spawnrate :)" />
+		<colors colordark="#235c00" colorlight="#2d7400" />
+		<details displaypriority="1" isseasonal="0" specialevent="0"/>
+	</event>
 </events>
