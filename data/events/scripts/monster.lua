@@ -1,5 +1,5 @@
 local function calculateBonus(bonus)
-	local bonusCount = math.floor(bonus/100)
+	local bonusCount = math.floor(bonus / 100)
 	local remainder = bonus % 100
 	if remainder > 0 then
 		local probability = math.random(0, 100)
@@ -45,9 +45,10 @@ function Monster:onDropLoot(corpse)
 
 		local participants = {}
 		local modifier = 1
+		local vipBoost = 0
 
 		if player then
-			participants = {player}
+			participants = { player }
 			if configManager.getBoolean(PARTY_SHARE_LOOT_BOOSTS) then
 				local party = player:getParty()
 				if party and party:isSharedExperienceEnabled() then
@@ -71,27 +72,29 @@ function Monster:onDropLoot(corpse)
 			Spdlog.warn("[Monster:onDropLoot] - Could not find WealthDuplex concoction.")
 		end
 
+		for i = 1, #participants do
+			local participant = participants[i]
+			if participant:isVip() then
+				local boost = configManager.getNumber(configKeys.VIP_BONUS_LOOT)
+				boost = ((boost > 100 and 100) or boost) / 100
+				vipBoost = vipBoost + boost
+			end
+		end
+		vipBoost = vipBoost / ((#participants) ^ 0.5)
+		modifier = modifier * (1 + vipBoost)
+
 		for i = 1, #monsterLoot do
-			local item = corpse:createLootItem(monsterLoot[i], charmBonus)
+			corpse:createLootItem(monsterLoot[i], charmBonus, modifier)
 			if self:getName():lower() == Game.getBoostedCreature():lower() then
-				local itemBoosted = corpse:createLootItem(monsterLoot[i], charmBonus, modifier)
-				if not itemBoosted then
-					Spdlog.warn(string.format("[1][Monster:onDropLoot] - Could not add loot item to boosted monster: %s, from corpse id: %d.", self:getName(), corpse:getId()))
-				end
+				 corpse:createLootItem(monsterLoot[i], charmBonus, modifier)
 			end
 			if self:hazard() and player then
 				local chanceTo = math.random(1, 100)
 				if chanceTo <= (2 * player:getHazardSystemPoints() * configManager.getNumber(configKeys.HAZARDSYSTEM_LOOT_BONUS_MULTIPLIER)) then
-					local podItem = corpse:createLootItem(monsterLoot[i], charmBonus, preyChanceBoost)
-					if not podItem then
-						Spdlog.warn(string.format("[Monster:onDropLoot] - Could not add loot item to hazard monster: %s, from corpse id: %d.", self:getName(), corpse:getId()))
-					else
+					if corpse:createLootItem(monsterLoot[i], charmBonus, modifier) then
 						hazardMsg = true
 					end
 				end
-			end
-			if not item then
-				Spdlog.warn(string.format("[2][Monster:onDropLoot] - Could not add loot item to monster: %s, from corpse id: %d.", self:getName(), corpse:getId()))
 			end
 		end
 
@@ -108,18 +111,15 @@ function Monster:onDropLoot(corpse)
 			if preyLootPercent > 0 then
 				local probability = math.random(0, 100)
 				if probability < preyLootPercent then
-					for i, loot in pairs(monsterLoot) do
-						local item = corpse:createLootItem(monsterLoot[i], charmBonus)
-						if not item then
-							Spdlog.warn(string.format("[3][Monster:onDropLoot] - Could not add loot item to monster: %s, from corpse id: %d.", self:getName(), corpse:getId()))
-						end
+					for _, loot in pairs(monsterLoot) do
+						 corpse:createLootItem(loot, charmBonus, modifier)
 					end
 				end
 			end
 
 			local boostedMessage
 			local isBoostedBoss = self:getName():lower() == (Game.getBoostedBoss()):lower()
-			local bossRaceIds = {player:getSlotBossId(1), player:getSlotBossId(2)}
+			local bossRaceIds = { player:getSlotBossId(1), player:getSlotBossId(2) }
 			local isBoss = table.contains(bossRaceIds, mType:bossRaceId()) or isBoostedBoss
 			if isBoss and mType:bossRaceId() ~= 0 then
 				local bonus
@@ -157,6 +157,9 @@ function Monster:onDropLoot(corpse)
 			end
 			if preyLootPercent > 0 then
 				text = text .. " (active prey bonus)"
+			end
+			if (vipBoost > 0) then
+				text = text .. " (vip loot bonus " .. (vipBoost * 100) .. "%)"
 			end
 			if charmBonus then
 				text = text .. " (active charm bonus)"
@@ -219,7 +222,7 @@ function Monster:onSpawn(position)
 			if self:getName():lower() == 'iron servant replica' then
 				local chance = math.random(100)
 				if Game.getStorageValue(GlobalStorage.ForgottenKnowledge.MechanismDiamond) >= 1
-				and Game.getStorageValue(GlobalStorage.ForgottenKnowledge.MechanismGolden) >= 1 then
+					and Game.getStorageValue(GlobalStorage.ForgottenKnowledge.MechanismGolden) >= 1 then
 					if chance > 30 then
 						local chance2 = math.random(2)
 						if chance2 == 1 then

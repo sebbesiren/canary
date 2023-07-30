@@ -1877,7 +1877,7 @@ ReturnValue Game::internalAddItem(Cylinder* toCylinder, Item* item, int32_t inde
 	return RETURNVALUE_NOERROR;
 }
 
-ReturnValue Game::internalRemoveItem(Item* item, int32_t count /*= -1*/, bool test /*= false*/, uint32_t flags /*= 0*/) {
+ReturnValue Game::internalRemoveItem(Item* item, int32_t count /*= -1*/, bool test /*= false*/, uint32_t flags /*= 0*/, bool force /*= false*/) {
 	if (item == nullptr) {
 		SPDLOG_DEBUG("{} - Item is nullptr", __FUNCTION__);
 		return RETURNVALUE_NOTPOSSIBLE;
@@ -1897,19 +1897,18 @@ ReturnValue Game::internalRemoveItem(Item* item, int32_t count /*= -1*/, bool te
 	if (count == -1) {
 		count = item->getItemCount();
 	}
-	// check if we can remove this item
 	ReturnValue ret = cylinder->queryRemove(*item, count, flags | FLAG_IGNORENOTMOVEABLE);
-	if (ret != RETURNVALUE_NOERROR) {
+	if (!force && ret != RETURNVALUE_NOERROR) {
 		SPDLOG_DEBUG("{} - Failed to execute query remove", __FUNCTION__);
 		return ret;
 	}
-	if (!item->canRemove()) {
+	if (!force && !item->canRemove()) {
 		SPDLOG_DEBUG("{} - Failed to remove item", __FUNCTION__);
 		return RETURNVALUE_NOTPOSSIBLE;
 	}
 
 	// Not remove item with decay loaded from map
-	if (item->canDecay() && cylinder->getTile() && item->getLoadedFromMap()) {
+	if (!force && item->canDecay() && cylinder->getTile() && item->getLoadedFromMap()) {
 		SPDLOG_DEBUG("Cannot remove item with id {}, name {}, on position {}", item->getID(), item->getName(), cylinder->getPosition().toString());
 		item->stopDecaying();
 		return RETURNVALUE_THISISIMPOSSIBLE;
@@ -2421,6 +2420,9 @@ void Game::internalQuickLootCorpse(Player* player, Container* corpse) {
 		ss << "No loot";
 	}
 
+	if (player->checkAutoLoot()) {
+		ss << " (automatic looting)";
+	}
 	ss << ".";
 	player->sendTextMessage(MESSAGE_LOOT, ss.str());
 
@@ -3646,18 +3648,22 @@ void Game::playerWrapableItem(uint32_t playerId, const Position &pos, uint8_t st
 	}
 
 	if (item->isWrapable() && item->getID() != ITEM_DECORATION_KIT) {
-		wrapItem(item);
+		wrapItem(item, houseTile->getHouse());
 	} else if (item->getID() == ITEM_DECORATION_KIT && unWrapId != 0) {
-		unwrapItem(item, unWrapId);
+		unwrapItem(item, unWrapId, houseTile->getHouse(), player);
 	}
 	addMagicEffect(pos, CONST_ME_POFF);
 }
 
-Item* Game::wrapItem(Item* item) {
+Item* Game::wrapItem(Item* item, House* house) {
 	uint16_t hiddenCharges = 0;
 	uint16_t amount = item->getItemCount();
 	if (isCaskItem(item->getID())) {
 		hiddenCharges = item->getSubType();
+	}
+	if (house != nullptr && Item::items.getItemType(item->getID()).isBed()) {
+		item->getBed()->wakeUp(nullptr);
+		house->removeBed(item->getBed());
 	}
 	uint16_t oldItemID = item->getID();
 	Item* newItem = transformItem(item, ITEM_DECORATION_KIT);
@@ -3673,13 +3679,21 @@ Item* Game::wrapItem(Item* item) {
 	return newItem;
 }
 
-void Game::unwrapItem(Item* item, uint16_t unWrapId) {
+void Game::unwrapItem(Item* item, uint16_t unWrapId, House* house, Player* player) {
 	auto hiddenCharges = item->getAttribute<uint16_t>(DATE);
+	const ItemType &newiType = Item::items.getItemType(unWrapId);
+	if (player != nullptr && house != nullptr && newiType.isBed() && house->getMaxBeds() > -1 && house->getBedCount() >= house->getMaxBeds()) {
+		player->sendCancelMessage("You reached the maximum beds in this house");
+		return;
+	}
 	auto amount = item->getAttribute<uint16_t>(AMOUNT);
 	if (!amount) {
 		amount = 1;
 	}
 	Item* newItem = transformItem(item, unWrapId, amount);
+	if (house && newiType.isBed()) {
+		house->addBed(newItem->getBed());
+	}
 	if (newItem) {
 		if (hiddenCharges > 0 && isCaskItem(unWrapId)) {
 			newItem->setSubType(hiddenCharges);
@@ -4639,8 +4653,10 @@ void Game::playerQuickLoot(uint32_t playerId, const Position &pos, uint16_t item
 		player->lastQuickLootNotification = OTSYS_TIME();
 	} else {
 		if (corpse->isRewardCorpse()) {
-			if (auto returnValue = player->rewardChestCollect(corpse); returnValue != RETURNVALUE_NOERROR) {
-				player->sendCancelMessage(returnValue);
+			auto rewardId = corpse->getAttribute<time_t>(ItemAttribute_t::DATE);
+			auto reward = player->getReward(rewardId, false);
+			if (reward) {
+				internalQuickLootCorpse(player, reward->getContainer());
 			}
 		} else {
 			if (!lootAllCorpses) {
@@ -6647,13 +6663,17 @@ void Game::sendEffects(
 void Game::applyCharmRune(
 	const Monster* targetMonster, Player* attackerPlayer, Creature* target, const int32_t &realDamage
 ) const {
-	if (!targetMonster) {
+	if (!targetMonster || !attackerPlayer) {
 		return;
 	}
 	if (charmRune_t activeCharm = g_iobestiary().getCharmFromTarget(attackerPlayer, g_monsters().getMonsterTypeByRaceId(targetMonster->getRaceId()));
 		activeCharm != CHARM_NONE) {
-		if (Charm* charm = g_iobestiary().getBestiaryCharm(activeCharm);
-			charm->type == CHARM_OFFENSIVE && (charm->chance >= normal_random(0, 100))) {
+		Charm* charm = g_iobestiary().getBestiaryCharm(activeCharm);
+		int8_t chance = charm->id == CHARM_CRIPPLE ? charm->chance : charm->chance + attackerPlayer->getCharmChanceModifier();
+		if (isDevMode()) {
+			spdlog::info("charm chance: {}, base: {}, bonus: {}", chance, charm->chance, attackerPlayer->getCharmChanceModifier());
+		}
+		if (charm->type == CHARM_OFFENSIVE && (chance >= normal_random(0, 100))) {
 			g_iobestiary().parseCharmCombat(charm, attackerPlayer, target, realDamage);
 		}
 	}
@@ -7292,7 +7312,7 @@ void Game::updatePremium(account::Account &account) {
 		save = true;
 	}
 
-	if (save && !account.SaveAccountDB()) {
+	if (save && account.SaveAccountDB() != 0) {
 		account.GetAccountIdentifier(&accountIdentifier);
 		SPDLOG_ERROR("Failed to save account: {}", accountIdentifier);
 	}
@@ -9518,7 +9538,7 @@ void Game::playerRewardChestCollect(uint32_t playerId, const Position &pos, uint
 		return;
 	}
 
-	ReturnValue returnValue = player->rewardChestCollect(nullptr, maxMoveItems);
+	ReturnValue returnValue = player->rewardChestCollect(maxMoveItems);
 	if (returnValue != RETURNVALUE_NOERROR) {
 		player->sendCancelMessage(returnValue);
 	}

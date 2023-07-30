@@ -70,9 +70,9 @@ local questTable = {
 	{storage = Storage.CultsOfTibia.MotA.Respostas, storageValue = 1},
 	{storage = Storage.CultsOfTibia.MotA.Perguntaid, storageValue = 1},
 	{storage = Storage.CultsOfTibia.Barkless.Mission, storageValue = 1},
-	{storage = Storage.CultsOfTibia.Barkless.sulphur, storageValue = 1},
-	{storage = Storage.CultsOfTibia.Barkless.tar, storageValue = 1},
-	{storage = Storage.CultsOfTibia.Barkless.ice, storageValue = 1},
+	{storage = Storage.CultsOfTibia.Barkless.sulphur, storageValue = 4},
+	{storage = Storage.CultsOfTibia.Barkless.tar, storageValue = 3},
+	{storage = Storage.CultsOfTibia.Barkless.ice, storageValue = 3},
 	{storage = Storage.CultsOfTibia.Barkless.Objects, storageValue = 1},
 	{storage = Storage.CultsOfTibia.Barkless.Temp, storageValue = 1},
 	{storage = Storage.CultsOfTibia.Barkless.bossTimer, storageValue = 1},
@@ -134,8 +134,8 @@ local questTable = {
 	{storage = Storage.ChildrenoftheRevolution.SpyBuilding03, storageValue = 1},
 	{storage = Storage.ChildrenoftheRevolution.StrangeSymbols, storageValue = 1},
 	{storage = Storage.DjinnWar.Faction.Greeting, storageValue = 2},
-	{storage = Storage.DjinnWar.Faction.Marid, storageValue = 2},
-	{storage = Storage.DjinnWar.Faction.Efreet, storageValue = 2},
+	{storage = Storage.DjinnWar.Faction.MaridDoor, storageValue = 2},
+	{storage = Storage.DjinnWar.Faction.EfreetDoor, storageValue = 2},
 	{storage = Storage.DjinnWar.EfreetFaction.Start, storageValue = 1},
 	{storage = Storage.DjinnWar.EfreetFaction.Mission01, storageValue = 3},
 	{storage = Storage.DjinnWar.EfreetFaction.Mission02, storageValue = 3},
@@ -351,6 +351,8 @@ local questTable = {
 	{storage = Storage.Quest.U13_10.CradleOfMonsters.Access.LowerIngol, storageValue = 1},
 	{storage = Storage.Quest.U13_10.CradleOfMonsters.Access.Monster, storageValue = 1},
 	{storage = Storage.Quest.U13_10.CradleOfMonsters.Access.MutatedAbomination, storageValue = 1},
+	{storage = Storage.Quest.U8_54.TheNewFrontier.SnakeHeadTeleport, storageValue = 1},
+	{storage = Storage.LiquidBlackQuest.Visitor, storageValue = 5},
 }
 
 local function playerFreeQuestStart(playerId, index)
