@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Choking Fear")
 local monster = {}
 
 monster.description = "a choking fear"
-monster.experience = 4700
+monster.experience = 5800
 monster.outfit = {
 	lookType = 586,
 	lookHead = 0,
@@ -24,7 +24,7 @@ monster.Bestiary = {
 	Stars = 4,
 	Occurrence = 0,
 	Locations = "All over the surface of Upper Roshamuul and Nightmare Isles."
-	}
+}
 
 monster.health = 5800
 monster.maxHealth = 5800
