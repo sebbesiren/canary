@@ -111,7 +111,7 @@ monster.defenses = {
 }
 
 monster.reflects = {
-	{type = COMBAT_FIREDAMAGE, percent = 133}
+	{type = COMBAT_FIREDAMAGE, percent = 60}
 }
 
 monster.elements = {

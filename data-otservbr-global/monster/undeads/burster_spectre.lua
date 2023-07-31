@@ -115,7 +115,7 @@ monster.defenses = {
 }
 
 monster.reflects = {
-	{type = COMBAT_ICEDAMAGE, percent = 133}
+	{type = COMBAT_ICEDAMAGE, percent = 60}
 }
 
 monster.elements = {
