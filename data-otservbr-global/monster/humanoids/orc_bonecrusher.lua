@@ -75,7 +75,7 @@ monster.voices = {
 }
 
 monster.loot = {
-	{ name = "platinum coin", chance = 100000, minCount = 10, maxCount = 80 },
+	{ name = "platinum coin", chance = 100000, minCount = 10, maxCount = 50 },
 	{ id = 20086, chance = 50 }, -- umbral crossbow
 	{ id = 20071, chance = 50 }, -- umbral axe
 	{ id = 20074, chance = 50 }, -- umbral chopper
