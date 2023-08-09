@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Rustheap Golem")
 local monster = {}
 
 monster.description = "a rustheap golem"
-monster.experience = 2100
+monster.experience = 2800
 monster.outfit = {
 	lookType = 603,
 	lookHead = 0,
