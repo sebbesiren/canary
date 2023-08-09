@@ -98,6 +98,7 @@ monster.loot = {
 	{ name = "naga quiver", chance = 200 },
 	{ name = "naga club", chance = 200 },
 	{ name = "naga crossbow", chance = 200 },
+	{ name = "naga axe", chance = 200 },
 	{ name = "dawnfire sherwani", chance = 200 },
 	{ name = "dawnfire pantaloons", chance = 200 },
 	{ name = "midnight sarong", chance = 200 },
@@ -105,7 +106,7 @@ monster.loot = {
 	{ name = "feverbloom boots", chance = 200 },
 	{ id = 39234, chance = 200 }, -- enchanted turtle amulet
 	{ name = "frostflower boots", chance = 200 },
-	{ id = 5903, chance = 100, unique = true }, -- ferumbras' hat
+	{ id = 5903, chance = 50, unique = true }, -- ferumbras' hat
 
 	{ id = 20062, chance = 2000, maxCount = 14 }, -- cluster of solace
 	{ name = "gold token", chance = 5000 },

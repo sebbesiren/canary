@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Frost Flower Asura")
 local monster = {}
 
 monster.description = "a frost flower asura"
-monster.experience = 4200
+monster.experience = 3700
 monster.outfit = {
 	lookType = 150,
 	lookHead = 0,
