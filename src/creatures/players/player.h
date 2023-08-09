@@ -563,6 +563,9 @@ class Player final : public Creature, public Cylinder {
 		bool isAccessPlayer() const {
 			return group->access;
 		}
+		bool isPlayerGroup() const {
+			return group->id <= account::GROUP_TYPE_SENIORTUTOR;
+		}
 		bool isPremium() const;
 		void setPremiumDays(int32_t v);
 
@@ -716,9 +719,7 @@ class Player final : public Creature, public Cylinder {
 		void getRewardList(std::vector<uint64_t> &rewards) const;
 		RewardChest* getRewardChest();
 
-		ReturnValue recurseMoveItemToContainer(Item* item, Container* container);
 		std::vector<Item*> getRewardsFromContainer(const Container* container) const;
-		ReturnValue rewardChestCollect(uint32_t maxMoveItems = 0);
 
 		DepotChest* getDepotChest(uint32_t depotId, bool autoCreate);
 		DepotLocker* getDepotLocker(uint32_t depotId);
@@ -2456,6 +2457,10 @@ class Player final : public Creature, public Cylinder {
 		std::unique_ptr<PlayerWheel> &wheel();
 		const std::unique_ptr<PlayerWheel> &wheel() const;
 
+		void sendLootMessage(const std::string &message) const;
+
+		Container* getLootPouch() const;
+
 	private:
 		static uint32_t playerFirstID;
 		static uint32_t playerLastID;
@@ -2846,9 +2851,6 @@ class Player final : public Creature, public Cylinder {
 		void updateDamageReductionFromItemImbuement(std::array<double_t, COMBAT_COUNT> &combatReductionMap, Item* item, uint16_t combatTypeIndex) const;
 		void updateDamageReductionFromItemAbility(std::array<double_t, COMBAT_COUNT> &combatReductionMap, const Item* item, uint16_t combatTypeIndex) const;
 		double_t calculateDamageReduction(double_t currentTotal, int16_t resistance) const;
-
-		void removeEmptyRewards();
-		bool hasOtherRewardContainerOpen(const Container* container) const;
 };
 
 #endif // SRC_CREATURES_PLAYERS_PLAYER_H_

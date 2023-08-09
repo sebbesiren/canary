@@ -737,28 +737,15 @@ bool Creature::dropCorpse(Creature* lastHitCreature, Creature* mostDamageCreatur
 			dropLoot(corpse->getContainer(), lastHitCreature);
 			corpse->startDecaying();
 			bool corpses = corpse->isRewardCorpse() || (corpse->getID() == ITEM_MALE_CORPSE || corpse->getID() == ITEM_FEMALE_CORPSE);
-			if (mostDamageCreature && mostDamageCreature->getPlayer() && !corpses) {
+			if (corpse->getContainer() && mostDamageCreature && mostDamageCreature->getPlayer() && !corpses) {
 				Player* player = mostDamageCreature->getPlayer();
-				if (g_configManager().getBoolean(AUTOBANK)) {
-					if (!corpse->getContainer()) {
-						return true;
-					}
-
-					int32_t money = 0;
-					for (Item* item : corpse->getContainer()->getItems()) {
-						if (uint32_t worth = item->getWorth(); worth > 0) {
-							money += worth;
-							g_game().internalRemoveItem(item);
-						}
-					}
-
-					if (money > 0) {
-						player->setBankBalance(player->getBankBalance() + money);
-						std::ostringstream ss;
-						ss << "Added " << money << " gold coins to your bank account.";
-						player->sendTextMessage(MESSAGE_STATUS, ss.str());
-					}
+				std::ostringstream lootMessage;
+				lootMessage << "Loot of " << getNameDescription() << ": " << corpse->getContainer()->getContentDescription(player->getProtocolVersion() < 1200);
+				auto suffix = corpse->getContainer()->getAttribute<std::string>(ItemAttribute_t::LOOTMESSAGE_SUFFIX);
+				if (!suffix.empty()) {
+					lootMessage << suffix;
 				}
+				player->sendLootMessage(lootMessage.str());
 
 				if (player->checkAutoLoot()) {
 					int32_t pos = tile->getStackposOfItem(player, corpse);

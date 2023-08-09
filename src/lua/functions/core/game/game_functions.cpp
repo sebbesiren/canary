@@ -23,6 +23,8 @@
 #include "lua/scripts/lua_environment.hpp"
 #include "lua/scripts/scripts.h"
 #include "lua/creature/events.h"
+#include "lua/callbacks/event_callback.hpp"
+#include "lua/callbacks/events_callbacks.hpp"
 
 // Game
 int GameFunctions::luaGameCreateMonsterType(lua_State* L) {
@@ -402,6 +404,7 @@ int GameFunctions::luaGameCreateMonster(lua_State* L) {
 	bool force = getBoolean(L, 4, false);
 	if (g_game().placeCreature(monster, position, extended, force)) {
 		g_events().eventMonsterOnSpawn(monster, position);
+		g_callbacks().executeCallback(EventCallback_t::MonsterOnSpawn, &EventCallback::monsterOnSpawn, monster, position);
 		auto mtype = monster->getMonsterType();
 		if (mtype && mtype->info.bossRaceId > 0 && mtype->info.bosstiaryRace == BosstiaryRarity_t::RARITY_ARCHFOE) {
 			SpectatorHashSet spectators;
@@ -646,6 +649,39 @@ int GameFunctions::luaGameGetInfluencedMonsters(lua_State* L) {
 		lua_rawseti(L, -2, index);
 	}
 
+	return 1;
+}
+
+int GameFunctions::luaGameGetLadderIds(lua_State* L) {
+	// Game.getLadderIds()
+	const auto ladders = Item::items.getLadders();
+	lua_createtable(L, static_cast<int>(ladders.size()), 0);
+	int index = 0;
+	for (const auto ladderId : ladders) {
+		++index;
+		lua_pushnumber(L, static_cast<lua_Number>(ladderId));
+		lua_rawseti(L, -2, index);
+	}
+
+	return 1;
+}
+
+int GameFunctions::luaGameGetDummies(lua_State* L) {
+	/**
+	 * @brief Retrieve dummy IDs categorized by type.
+	 * @details This function provides a table containing two sub-tables: one for free dummies and one for house (or premium) dummies.
+
+	* @note usage on lua:
+		local dummies = Game.getDummies()
+		local rate = dummies[1] -- Retrieve dummy rate
+	*/
+
+	const auto &dummies = Item::items.getDummys();
+	lua_createtable(L, dummies.size(), 0);
+	for (const auto &[dummyId, rate] : dummies) {
+		lua_pushnumber(L, static_cast<lua_Number>(rate));
+		lua_rawseti(L, -2, dummyId);
+	}
 	return 1;
 }
 
