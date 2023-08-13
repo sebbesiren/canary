@@ -29,6 +29,7 @@ function onTargetCreature(creature, target)
 			local spectatorPosition = spectator:getPosition()
 			if (combatBounce:execute(creature, var)) then
 				casterPosition:sendDistanceEffect(spectatorPosition, effect)
+				casterPosition = spectatorPosition
 			end
 		end
 	end
