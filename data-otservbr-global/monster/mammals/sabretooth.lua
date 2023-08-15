@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Sabretooth")
 local monster = {}
 
 monster.description = "a sabretooth"
-monster.experience = 11931
+monster.experience = 12931
 monster.outfit = {
 	lookType = 1549,
 	lookHead = 85,
@@ -82,8 +82,8 @@ monster.loot = {
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 300, maxDamage = -450, effect = CONST_ME_ORANGE_ENERGY_SPARK},
-	{name ="combat", interval = 1000, chance = 10, type = COMBAT_PHYSICALDAMAGE, minDamage = -260, maxDamage = -300, length = 4, spread = 1, effect = CONST_ME_EXPLOSIONAREA, target = false},
+	{name ="melee", interval = 2000, chance = 100, minDamage = 300, maxDamage = -800, effect = CONST_ME_ORANGE_ENERGY_SPARK},
+	{name ="combat", interval = 1000, chance = 10, type = COMBAT_PHYSICALDAMAGE, minDamage = -260, maxDamage = -600, length = 4, spread = 1, effect = CONST_ME_EXPLOSIONAREA, target = false},
 }
 
 monster.defenses = {

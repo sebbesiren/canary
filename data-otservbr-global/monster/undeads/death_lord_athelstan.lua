@@ -9,7 +9,8 @@ athelstanConfig = {
 	AmountLife = 3,
 	Monster = {
 		"Death Knight",
-		"Death Paladin"
+		"Death Paladin",
+		"Death Necromancer"
 	},
 }
 monster.name = "Death Lord Athelstan"
@@ -24,9 +25,9 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.health = 100000
+monster.health = 200000
 monster.maxHealth = monster.health
-monster.experience = monster.health * 6 * athelstanConfig.AmountLife
+monster.experience = monster.health * 12 * athelstanConfig.AmountLife
 monster.race = "blood"
 monster.corpse = 28625
 monster.speed = 115
@@ -114,7 +115,7 @@ monster.loot = {
 }
 
 monster.attacks = {
-	{ name = "melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -1200 },
+	{ name = "melee", interval = 2000, chance = 100, minDamage = -400, maxDamage = -2000 },
 	{ name = "combat", interval = 6000, chance = 80, type = COMBAT_HOLYDAMAGE, minDamage = -1000, maxDamage = -2250, length = 8, spread = 3, effect = CONST_ME_HOLYAREA, target = false },
 	{ name = "combat", interval = 2000, chance = 20, type = COMBAT_EARTHDAMAGE, minDamage = -820, maxDamage = -1450, radius = 5, effect = CONST_ME_HITAREA, target = false },
 	{ name = "combat", interval = 2000, chance = 20, type = COMBAT_DEATHDAMAGE, minDamage = -860, maxDamage = -1500, range = 7, shootEffect = CONST_ANI_SUDDENDEATH, effect = CONST_ME_MORTAREA, target = false },
@@ -171,7 +172,9 @@ mType.onThink = function(monster, interval)
 	if percentageHealth <= 20 then
 		monster:setStorageValue(athelstanConfig.Storage.Life, currentLives - 1)
 		monster:addHealth(monster:getMaxHealth())
-		Game.createMonster(athelstanConfig.Monster[math.random(#athelstanConfig.Monster)], monster:getPosition(), true, true)
+		for i = 1, 5 do
+			Game.createMonster(athelstanConfig.Monster[math.random(#athelstanConfig.Monster)], monster:getPosition(), true, true)
+		end
 	end
 end
 

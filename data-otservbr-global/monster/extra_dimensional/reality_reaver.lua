@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Reality Reaver")
 local monster = {}
 
 monster.description = "a reality reaver"
-monster.experience = 2480
+monster.experience = 3900
 monster.outfit = {
 	lookType = 879,
 	lookHead = 0,
@@ -98,7 +98,9 @@ monster.loot = {
 	{id = 3036, chance = 370}, -- violet gem
 	{id = 23529, chance = 370}, -- ring of blue plasma
 	{id = 23544, chance = 300}, -- collar of red plasma
-	{id = 23531, chance = 220} -- ring of green plasma
+	{id = 23531, chance = 220}, -- ring of green plasma
+	{name = "wand of starstorm", chance = 1000},
+	{name = "focus cape", chance = 300},
 }
 
 monster.attacks = {

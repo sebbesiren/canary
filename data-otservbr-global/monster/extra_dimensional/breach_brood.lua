@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Breach Brood")
 local monster = {}
 
 monster.description = "a breach brood"
-monster.experience = 1760
+monster.experience = 3500
 monster.outfit = {
 	lookType = 878,
 	lookHead = 0,
@@ -94,7 +94,8 @@ monster.loot = {
 	{id = 16119, chance = 4400}, -- blue crystal shard
 	{id = 16121, chance = 4100}, -- green crystal shard
 	{id = 23544, chance = 470}, -- collar of red plasma
-	{id = 23542, chance = 470} -- collar of blue plasma
+	{id = 23542, chance = 470}, -- collar of blue plasma
+	{name = "lightning legs", chance = 6},
 }
 
 monster.attacks = {

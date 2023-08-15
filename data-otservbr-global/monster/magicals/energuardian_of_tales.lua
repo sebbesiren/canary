@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Energuardian of Tales")
 local monster = {}
 
 monster.description = "an energuardian of tales"
-monster.experience = 11361
+monster.experience = 14000
 monster.outfit = {
 	lookType = 1063,
 	lookHead = 86,
@@ -73,15 +73,18 @@ monster.voices = {
 }
 
 monster.loot = {
-	{id = 28569, chance = 10000, maxCount = 5}, -- book page
-	{id = 28570, chance = 10000, maxCount = 5}, -- glowing rune
-	{name = "small amethyst", chance = 10000, maxCount = 5},
+	{id = 28569, chance = 50000, maxCount = 5}, -- book page
+	{id = 28570, chance = 20000, maxCount = 5}, -- glowing rune
+	{name = "small amethyst", chance = 50000, maxCount = 5},
 	{name = "flash arrow", chance = 10000, maxCount = 5},
-	{name = "lightning legs", chance = 250},
-	{name = "spellbook of warding", chance = 350},
+	{name = "lightning legs", chance = 7500},
+	{name = "spellbook of warding", chance = 10000},
 	{name = "ultimate health potion", chance = 10000, maxCount = 5},
-	{name = "ultimate mana potion", chance = 10000, maxCount = 5},
-	{name = "wand of starstorm", chance = 300}
+	{name = "ultimate mana potion", chance = 15000, maxCount = 5},
+	{name = "wand of starstorm", chance = 7000},
+	{name = "wand of defiance", chance = 1000},
+	{name = "spellweaver's robe", chance = 1000},
+	{name = "shockwave amulet", chance = 1000}
 }
 
 monster.attacks = {

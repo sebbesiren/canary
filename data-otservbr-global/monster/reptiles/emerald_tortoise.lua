@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Emerald Tortoise")
 local monster = {}
 
 monster.description = "a emerald tortoise"
-monster.experience = 12129
+monster.experience = 13129
 monster.outfit = {
 	lookType = 1550,
 	lookHead = 85,
@@ -93,9 +93,9 @@ monster.loot = {
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 450, maxDamage = -500},
-	{name ="combat", interval = 2000, chance = 40, type = COMBAT_ENERGYDAMAGE, minDamage = -400, maxDamage = -500, range = 5, shootEffect = CONST_ANI_ENERGY, target = true},
-	{name ="lavafungus ring", interval = 2000, chance = 20, minDamage = -600, maxDamage = -650},
+	{name ="melee", interval = 2000, chance = 100, minDamage = -450, maxDamage = -800},
+	{name ="combat", interval = 2000, chance = 40, type = COMBAT_ENERGYDAMAGE, minDamage = -400, maxDamage = -1500, range = 5, shootEffect = CONST_ANI_ENERGY, target = true},
+	{name ="lavafungus ring", interval = 2000, chance = 20, minDamage = -600, maxDamage = -800},
 }
 
 monster.defenses = {

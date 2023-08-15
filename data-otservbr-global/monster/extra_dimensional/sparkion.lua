@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Sparkion")
 local monster = {}
 
 monster.description = "a sparkion"
-monster.experience = 1520
+monster.experience = 2700
 monster.outfit = {
 	lookType = 877,
 	lookHead = 0,

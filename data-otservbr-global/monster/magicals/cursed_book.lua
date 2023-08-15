@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Cursed Book")
 local monster = {}
 
 monster.description = "a cursed book"
-monster.experience = 13345
+monster.experience = 20000
 monster.outfit = {
 	lookType = 1061,
 	lookHead = 79,
@@ -73,22 +73,22 @@ monster.voices = {
 }
 
 monster.loot = {
-	{id = 28569, chance = 10000, maxCount = 3}, -- book page
+	{id = 28569, chance = 60000, maxCount = 3}, -- book page
 	{name = "platinum coin", chance = 10000, maxCount = 10},
 	{id = 28566, chance = 10000, maxCount = 3}, -- silken bookmark
 	{name = "small diamond", chance = 10000, maxCount = 7},
 	{name = "small stone", chance = 10000, maxCount = 7},
 	{name = "small topaz", chance = 10000, maxCount = 7},
 	{name = "protection amulet", chance = 10000},
-	{name = "terra boots", chance = 350},
-	{name = "terra hood", chance = 600},
-	{name = "diamond sceptre", chance = 600},
+	{name = "terra boots", chance = 6000},
+	{name = "terra hood", chance = 4000},
+	{name = "diamond sceptre", chance = 6000},
 	{name = "terra mantle", chance = 250},
 	{name = "terra legs", chance = 250},
-	{name = "terra amulet", chance = 500},
-	{name = "stone skin amulet", chance = 350},
-	{name = "springsprout rod", chance = 350},
-	{name = "sacred tree amulet", chance = 350},
+	{name = "terra amulet", chance = 4000},
+	{name = "stone skin amulet", chance = 1800},
+	{name = "springsprout rod", chance = 600},
+	{name = "sacred tree amulet", chance = 1800},
 	{name = "swamplair armor", chance = 250}
 }
 

@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Animated Feather")
 local monster = {}
 
 monster.description = "an animated feather"
-monster.experience = 9860
+monster.experience = 13000
 monster.outfit = {
 	lookType = 1058,
 	lookHead = 0,
@@ -75,19 +75,23 @@ monster.voices = {
 monster.loot = {
 	{name = "small sapphire", chance = 8700, maxCount = 5},
 	{name = "platinum coin", chance = 87000, maxCount = 50},
-	{id = 28570, chance = 500, maxCount = 10}, -- glowing rune
+	{id = 28570, chance = 70000, maxCount = 10}, -- glowing rune
 	{id = 3051, chance = 8700}, -- energy ring
 	{id = 7441, chance = 4000}, -- ice cube
 	{name = "shard", chance = 250, maxCount = 3},
-	{name = "glacier mask", chance = 250},
-	{name = "hailstorm rod", chance = 250},
+	{name = "glacier mask", chance = 7500},
+	{name = "hailstorm rod", chance = 2500},
 	{name = "life crystal", chance = 8700},
 	{name = "great mana potion", chance = 900, maxCount = 6},
 	{name = "golden mug", chance = 500},
-	{name = "glowing rune", chance = 500, maxCount = 10},
 	{id = 3051, chance = 8700}, -- energy ring
-	{name = "quill", chance = 250},
-	{name = "small diamond", chance = 500, maxCount = 5}
+	{name = "quill", chance = 13000},
+	{name = "small diamond", chance = 5000, maxCount = 5},
+	{name = "diamond sceptre", chance = 5000},
+	{name = "crystal mace", chance = 3000},
+	{name = "glacial rod", chance = 2500},
+	{name = "crystalline armor", chance = 200},
+	{name = "leviathan's amulet", chance = 500},
 }
 
 monster.attacks = {

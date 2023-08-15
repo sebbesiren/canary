@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Icecold Book")
 local monster = {}
 
 monster.description = "an icecold book"
-monster.experience = 12750
+monster.experience = 21000
 monster.outfit = {
 	lookType = 1061,
 	lookHead = 87,
@@ -73,27 +73,29 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "platinum coin", chance = 100000, maxCount = 8},
-	{name = "book page", chance = 100000, maxCount = 3},
-	{name = "small diamond", chance = 100000, maxCount = 8},
-	{name = "small sapphire", chance = 100000, maxCount = 8},
-	{name = "quill", chance = 100000, maxCount = 8},
-	{name = "ultimate health potion", chance = 100000, maxCount = 8},
-	{name = "ultimate mana potion", chance = 100000, maxCount = 8},
-	{name = "diamond sceptre", chance = 100000},
-	{name = "frosty heart", chance = 100000, maxCount = 8},
-	{name = "glacier mask", chance = 350},
-	{name = "ice rapier", chance = 250},
+	{name = "platinum coin", chance = 90000, maxCount = 8},
+	{name = "book page", chance = 62000, maxCount = 3},
+	{name = "small diamond", chance = 50000, maxCount = 8},
+	{name = "small sapphire", chance = 50000, maxCount = 8},
+	{name = "quill", chance = 18000, maxCount = 8},
+	{name = "ultimate health potion", chance = 18000, maxCount = 8},
+	{name = "ultimate mana potion", chance = 21000, maxCount = 8},
+	{name = "diamond sceptre", chance = 7000},
+	{name = "frosty heart", chance = 12000, maxCount = 8},
+	{name = "glacier mask", chance = 13500},
+	{name = "ice rapier", chance = 21000},
 	{name = "silken bookmark", chance = 100000, maxCount = 8},
-	{name = "crystal mace", chance = 250},
-	{name = "glacier kilt", chance = 250},
-	{name = "glacier robe", chance = 250},
-	{name = "glacier shoes", chance = 350},
-	{name = "strange helmet", chance = 1000},
-	{name = "sapphire hammer", chance = 300},
+	{name = "crystal mace", chance = 2500},
+	{name = "glacier kilt", chance = 5000},
+	{name = "glacier robe", chance = 1700},
+	{name = "glacier shoes", chance = 3500},
+	{name = "strange helmet", chance = 1700},
+	{name = "sapphire hammer", chance = 1700},
 	{id = 7441, chance = 100000}, -- ice cube
-	{name = "glacial rod", chance = 150},
-	{name = "crystalline armor", chance = 250}
+	{name = "glacial rod", chance = 600},
+	{name = "crystalline armor", chance = 800},
+	{name = "leviathan's amulet", chance = 150},
+
 }
 
 monster.attacks = {

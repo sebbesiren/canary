@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Energetic Book")
 local monster = {}
 
 monster.description = "an energetic book"
-monster.experience = 12034
+monster.experience = 18500
 monster.outfit = {
 	lookType = 1061,
 	lookHead = 15,
@@ -74,20 +74,20 @@ monster.voices = {
 
 monster.loot = {
 	{name = "platinum coin", chance = 100000, maxCount = 28},
-	{id = 28569, chance = 900, maxCount = 8}, -- book page
-	{id = 28570, chance = 900, maxCount = 7}, -- glowing rune
-	{name = "ultimate health potion", chance = 10000, maxCount = 7},
-	{name = "ultimate mana potion", chance = 10000, maxCount = 7},
-	{name = "energy ball", chance = 900, maxCount = 7},
-	{id = 28566, chance = 800, maxCount = 7}, -- silken bookmark
-	{name = "lightning pendant", chance = 500},
-	{name = "lightning boots", chance = 500},
-	{name = "lightning headband", chance = 500},
-	{name = "might ring", chance = 500},
-	{name = "spellweaver's robe", chance = 350},
-	{name = "wand of defiance", chance = 350},
+	{id = 28569, chance = 45000, maxCount = 8}, -- book page
+	{id = 28570, chance = 60000, maxCount = 7}, -- glowing rune
+	{name = "ultimate health potion", chance = 11000, maxCount = 7},
+	{name = "ultimate mana potion", chance = 15000, maxCount = 7},
+	{name = "energy ball", chance = 11000, maxCount = 7},
+	{id = 28566, chance = 11000, maxCount = 7}, -- silken bookmark
+	{name = "lightning pendant", chance = 2500},
+	{name = "lightning boots", chance = 1500},
+	{name = "lightning headband", chance = 3000},
+	{name = "might ring", chance = 1700},
+	{name = "spellweaver's robe", chance = 850},
+	{name = "wand of defiance", chance = 1850},
 	{name = "haunted blade", chance = 550},
-	{name = "lightning legs", chance = 350}
+	{name = "lightning legs", chance = 1750}
 }
 
 monster.attacks = {

@@ -74,20 +74,21 @@ monster.voices = {
 
 monster.loot = {
 	{name = "platinum coin", chance = 100000, maxCount = 9},
-	{name = "book page", chance = 10000, maxCount = 6},
-	{name = "small amethyst", chance = 10000, maxCount = 8},
-	{name = "glowing rune", chance = 10000, maxCount = 3},
-	{name = "quill", chance = 10000, maxCount = 3},
-	{name = "silken bookmark", chance = 10000, maxCount = 3},
-	{name = "flash arrow", chance = 10000, maxCount = 6},
+	{name = "book page", chance = 30000, maxCount = 6},
+	{name = "small amethyst", chance = 70000, maxCount = 8},
+	{name = "glowing rune", chance = 30000, maxCount = 3},
+	{name = "quill", chance = 22000, maxCount = 3},
+	{name = "silken bookmark", chance = 26000, maxCount = 3},
+	{name = "flash arrow", chance = 15000, maxCount = 6},
 	{name = "throwing star", chance = 10000, maxCount = 10},
-	{name = "crystal sword", chance = 10000},
+	{name = "crystal sword", chance = 5000},
 	{id = 3051, chance = 10000}, -- energy ring
 	{name = "guardian shield", chance = 10000},
 	{name = "mana potion", chance = 10000, maxCount = 10},
-	{name = "ultimate mana potion", chance = 10000, maxCount = 8},
+	{name = "ultimate mana potion", chance = 15000, maxCount = 8},
 	{name = "ultimate health potion", chance = 10000, maxCount = 8},
-	{name = "wand of cosmic energy", chance = 300}
+	{name = "wand of cosmic energy", chance = 4700},
+	{name = "spellweaver's robe", chance = 500},
 }
 
 monster.attacks = {

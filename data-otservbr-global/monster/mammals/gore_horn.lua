@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Gore Horn")
 local monster = {}
 
 monster.description = "a gore horn"
-monster.experience = 12595
+monster.experience = 13595
 monster.outfit = {
 	lookType = 1548,
 	lookHead = 85,
@@ -87,8 +87,8 @@ monster.loot = {
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 300, maxDamage = -400},
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_PHYSICALDAMAGE, minDamage = 0, maxDamage = -400, range = 7, shootEffect = CONST_ANI_SUDDENDEATH, target = true}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -300, maxDamage = -700},
+	{name ="combat", interval = 2000, chance = 15, type = COMBAT_PHYSICALDAMAGE, minDamage = -200, maxDamage = -1000, range = 7, shootEffect = CONST_ANI_SUDDENDEATH, target = true}
 
 }
 

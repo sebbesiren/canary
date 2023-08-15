@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Brain Squid")
 local monster = {}
 
 monster.description = "a brain squid"
-monster.experience = 17672
+monster.experience = 18000
 monster.outfit = {
 	lookType = 1059,
 	lookHead = 17,
@@ -73,33 +73,33 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "violet crystal shard", chance = 900, maxCount = 4},
+	{name = "violet crystal shard", chance = 34000, maxCount = 4},
 	{name = "platinum coin", chance = 100000, maxCount = 12},
-	{name = "glowing rune", chance = 900, maxCount = 4},
-	{name = "instable proto matter", chance = 1200, maxCount = 4},
-	{name = "energy ball", chance = 1200, maxCount = 4},
-	{name = "energy bar", chance = 1200, maxCount = 4},
-	{name = "energy drink", chance = 1200, maxCount = 4},
-	{name = "odd organ", chance = 1200, maxCount = 4},
-	{name = "frozen lightning", chance = 1200, maxCount = 4},
-	{id = 28568, chance = 1200, maxCount = 3}, -- inkwell
-	{name = "small ruby", chance = 1200, maxCount = 4},
-	{name = "violet gem", chance = 1200, maxCount = 4},
-	{name = "blue crystal splinter", chance = 1200, maxCount = 4},
-	{name = "cyan crystal fragment", chance = 1200, maxCount = 4},
-	{name = "ultimate mana potion", chance = 1200, maxCount = 4},
+	{name = "glowing rune", chance = 23000, maxCount = 4},
+	{name = "instable proto matter", chance = 18000, maxCount = 4},
+	{name = "energy ball", chance = 20000, maxCount = 4},
+	{name = "energy bar", chance = 14000, maxCount = 4},
+	{name = "energy drink", chance = 15000, maxCount = 4},
+	{name = "odd organ", chance = 7500, maxCount = 4},
+	{name = "frozen lightning", chance = 12000, maxCount = 4},
+	{id = 28568, chance = 11300, maxCount = 3}, -- inkwell
+	{name = "small ruby", chance = 6000, maxCount = 4},
+	{name = "violet gem", chance = 4000, maxCount = 4},
+	{name = "blue crystal splinter", chance = 7000, maxCount = 4},
+	{name = "cyan crystal fragment", chance = 4000, maxCount = 4},
+	{name = "ultimate mana potion", chance = 12000, maxCount = 4},
 	{name = "piece of dead brain", chance = 1200, maxCount = 4},
-	{name = "wand of defiance", chance = 800},
-	{name = "lightning headband", chance = 950},
-	{name = "lightning pendant", chance = 850},
+	{name = "wand of defiance", chance = 1200},
+	{name = "lightning headband", chance = 5000},
+	{name = "lightning pendant", chance = 1800},
 	{name = "might ring", chance = 1300},
-	{name = "slime heart", chance = 1200, maxCount = 4},
-	{id = 23544, chance = 560}, -- collar of red plasma
-	{id = 23542, chance = 560}, -- collar of blue plasma
-	{id = 23543, chance = 560}, -- collar of green plasma
-	{id = 23533, chance = 560}, -- ring of red plasma
-	{id = 23529, chance = 560}, -- ring of blue plasma
-	{id = 23531, chance = 560} -- ring of green plasma
+	{name = "slime heart", chance = 7, maxCount = 4},
+	{id = 23544, chance = 1500}, -- collar of red plasma
+	{id = 23542, chance = 1500}, -- collar of blue plasma
+	{id = 23543, chance = 1500}, -- collar of green plasma
+	{id = 23533, chance = 2500}, -- ring of red plasma
+	{id = 23529, chance = 2500}, -- ring of blue plasma
+	{id = 23531, chance = 2500} -- ring of green plasma
 }
 
 monster.attacks = {
