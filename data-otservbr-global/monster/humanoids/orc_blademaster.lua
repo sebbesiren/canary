@@ -2,11 +2,11 @@ local mType = Game.createMonsterType("Orc Blademaster")
 local monster = {}
 
 monster.name = "Orc Blademaster"
-monster.health = 6000
+monster.health = 8000
 monster.maxHealth = monster.health
 
 monster.description = "an Orc Blademaster"
-monster.experience = monster.health * 1.4
+monster.experience = monster.health * 1.6
 monster.outfit = {
 	lookType = 59,
 	lookHead = 0,
@@ -77,10 +77,10 @@ monster.voices = {
 
 monster.loot = {
 	{ name = "platinum coin", chance = 100000, minCount = 10, maxCount = 50 },
-	{ id = 20065, chance = 50 }, -- umbral blade
-	{ id = 20068, chance = 50 }, -- umbral slayer
-	{ id = 20083, chance = 50 }, -- umbral bow
-	{ id = 16129, chance = 100 }, -- major crystalline token
+	{ id = 20065, chance = 500 }, -- umbral blade
+	{ id = 20068, chance = 500 }, -- umbral slayer
+	{ id = 20083, chance = 500 }, -- umbral bow
+	{ id = 16129, chance = 500 }, -- major crystalline token
 }
 
 monster.attacks = {

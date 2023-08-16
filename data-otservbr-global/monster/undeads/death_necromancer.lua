@@ -27,9 +27,9 @@ monster.Bestiary = {
 	Locations = "Death fortress"
 }
 
-monster.health = 8000
+monster.health = 10000
 monster.maxHealth = monster.health
-monster.experience = monster.health * 1.3
+monster.experience = monster.health * 1.7
 
 monster.race = "blood"
 monster.corpse = 28861

@@ -3,11 +3,11 @@ local monster = {}
 
 monster.name = "Ancient Dragon"
 
-monster.health = 8000
+monster.health = 10000
 monster.maxHealth = monster.health
 
 monster.description = "an Ancient Dragon"
-monster.experience = monster.health * 1.5
+monster.experience = monster.health * 1.6
 monster.outfit = {
 	lookType = 927,
 	lookHead = 0,
@@ -87,15 +87,15 @@ monster.loot = {
 	{ name = "dragon scale mail", chance = 170 },
 	{ name = "royal helmet", chance = 280 },
 	{ name = "dragon slayer", chance = 100 },
-	{ id = 20080, chance = 200 }, -- umbral hammer
-	{ id = 20077, chance = 200 }, -- umbral mace
-	{ id = 16114, chance = 200 }, -- prismatic ring
-	{ id = 16129, chance = 200 }, -- major crystalline token
-	{ id = 14143, chance = 200 }, -- four-leaf clover
+	{ id = 20080, chance = 1500 }, -- umbral hammer
+	{ id = 20077, chance = 1500 }, -- umbral mace
+	{ id = 16114, chance = 500 }, -- prismatic ring
+	{ id = 16129, chance = 500 }, -- major crystalline token
+	{ id = 14143, chance = 1000 }, -- four-leaf clover
 }
 
 monster.attacks = {
-	{ name = "combat", interval = 2000, chance = 100, type = COMBAT_FIREDAMAGE, minDamage = -200, maxDamage = -600, range = 7, radius = 4, shootEffect = CONST_ANI_FIRE, effect = CONST_ME_FIREAREA, target = true },
+	{ name = "combat", interval = 2000, chance = 100, type = COMBAT_FIREDAMAGE, minDamage = -200, maxDamage = -800, range = 7, radius = 4, shootEffect = CONST_ANI_FIRE, effect = CONST_ME_FIREAREA, target = true },
 	{ name = "combat", interval = 8000, chance = 100, type = COMBAT_FIREDAMAGE, minDamage = -500, maxDamage = -700, length = 10, spread = 5, effect = CONST_ME_FIREAREA, target = false },
 	{ name = "firefield", interval = 15000, chance = 100, range = 5, radius = 5, shootEffect = CONST_ANI_FIRE, target = true },
 }

@@ -2,11 +2,11 @@ local mType = Game.createMonsterType("Orc Pyromancer")
 local monster = {}
 
 monster.name = "Orc Pyromancer"
-monster.health = 6000
+monster.health = 8000
 monster.maxHealth = monster.health
 
 monster.description = "an Orc Pyromancer"
-monster.experience = monster.health * 1.5
+monster.experience = monster.health * 1.6
 monster.outfit = {
 	lookType = 6,
 	lookHead = 0,
@@ -76,9 +76,9 @@ monster.voices = {
 
 monster.loot = {
 	{ name = "platinum coin", chance = 100000, minCount = 10, maxCount = 50 },
-	{ id = 20089, chance = 200 }, -- umbral spellbook
-	{ id = 16114, chance = 800 }, -- prismatic ring
-	{ id = 16129, chance = 200 }, -- major crystalline token
+	{ id = 20089, chance = 2000 }, -- umbral spellbook
+	{ id = 16114, chance = 2000 }, -- prismatic ring
+	{ id = 16129, chance = 500 }, -- major crystalline token
 }
 
 monster.attacks = {
