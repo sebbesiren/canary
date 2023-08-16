@@ -102,12 +102,12 @@ monster.loot = {
 	{ id = 3481, chance = 370 }, -- closed trap
 	{ id = 3019, chance = 100 }, -- demonbone amulet
 	{ name = "cluster of solace", chance = 400 },
-	{ name = "gold token", chance = 100 },
-	{ name = "silver token", chance = 100 },
+	{ name = "gold token", chance = 1000 },
+	{ name = "silver token", chance = 1000 },
 }
 
 monster.attacks = {
-	{ name = "melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -500 },
+	{ name = "melee", interval = 2000, chance = 100, minDamage = -100, maxDamage = -1250 },
 	{ name = "combat", interval = 2000, chance = 25, type = COMBAT_EARTHDAMAGE, minDamage = -400, maxDamage = -600, radius = 2, effect = CONST_ME_GROUNDSHAKER, target = false },
 	{ name = "combat", interval = 2000, chance = 20, type = COMBAT_HOLYDAMAGE, minDamage = -300, maxDamage = -500, length = 5, spread = 3, effect = CONST_ME_BLOCKHIT, target = false },
 	{ name = "Holy Slash", interval = 2000, chance = 20, minDamage = -300, maxDamage = -600, target = false },

@@ -95,12 +95,12 @@ monster.loot = {
 	{ name = "golden armor", chance = 310 },
 	{ name = "mastermind shield", chance = 310 },
 	{ name = "cluster of solace", chance = 400 },
-	{ name = "gold token", chance = 100 },
-	{ name = "silver token", chance = 100 },
+	{ name = "gold token", chance = 1000 },
+	{ name = "silver token", chance = 1000 },
 }
 
 monster.attacks = {
-	{ name = "combat", interval = 2000, chance = 100, type = COMBAT_DEATHDAMAGE, minDamage = -500, maxDamage = -1000, range = 5, shootEffect = CONST_ANI_SUDDENDEATH, effect = CONST_ME_SMALLCLOUDS, target = true },
+	{ name = "combat", interval = 2000, chance = 100, type = COMBAT_DEATHDAMAGE, minDamage = -300, maxDamage = -1250, range = 5, shootEffect = CONST_ANI_SUDDENDEATH, effect = CONST_ME_SMALLCLOUDS, target = true },
 	{ name = "combat", interval = 2000, chance = 20, type = COMBAT_DEATHDAMAGE, minDamage = -300, maxDamage = -500, length = 5, spread = 3, effect = CONST_ME_MORTAREA, target = false },
 	{ name = "Death Necromancer Summon", interval = 2000, chance = 5, minDamage = -300, maxDamage = -600, target = false },
 }

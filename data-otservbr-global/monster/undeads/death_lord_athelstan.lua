@@ -110,8 +110,8 @@ monster.loot = {
 	{ id = 5903, chance = 50, unique = true }, -- ferumbras' hat
 
 	{ id = 20062, chance = 2000, maxCount = 14 }, -- cluster of solace
-	{ name = "gold token", chance = 5000 },
-	{ name = "silver token", chance = 5000 },
+	{ name = "gold token", chance = 10000, maxCount = 20 },
+	{ name = "silver token", chance = 10000, maxCount = 20 },
 }
 
 monster.attacks = {
@@ -172,7 +172,7 @@ mType.onThink = function(monster, interval)
 	if percentageHealth <= 20 then
 		monster:setStorageValue(athelstanConfig.Storage.Life, currentLives - 1)
 		monster:addHealth(monster:getMaxHealth())
-		for i = 1, 5 do
+		for i = 1, 3 do
 			Game.createMonster(athelstanConfig.Monster[math.random(#athelstanConfig.Monster)], monster:getPosition(), true, true)
 		end
 	end

@@ -93,12 +93,12 @@ monster.loot = {
 	{ name = "golden armor", chance = 310 },
 	{ name = "mastermind shield", chance = 310 },
 	{ name = "cluster of solace", chance = 400 },
-	{ name = "gold token", chance = 100 },
-	{ name = "silver token", chance = 100 },
+	{ name = "gold token", chance = 1000 },
+	{ name = "silver token", chance = 1000 },
 }
 
 monster.attacks = {
-	{ name = "melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -350 },
+	{ name = "melee", interval = 2000, chance = 100, minDamage = -100, maxDamage = -1250 },
 	{ name = "combat", interval = 2000, chance = 50, type = COMBAT_PHYSICALDAMAGE, minDamage = -500, maxDamage = -650, range = 5, shootEffect = CONST_ANI_ROYALSPEAR, target = true },
 	{ name = "combat", interval = 2000, chance = 20, type = COMBAT_PHYSICALDAMAGE, minDamage = -250, maxDamage = -600, range = 5, shootEffect = CONST_ANI_BOLT, target = true },
 	{ name = "combat", interval = 2000, chance = 15, type = COMBAT_ENERGYDAMAGE, minDamage = -400, maxDamage = -500, range = 7, radius = 2, shootEffect = CONST_ANI_POWERBOLT, effect = CONST_ME_ENERGYHIT, target = true },

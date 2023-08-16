@@ -90,7 +90,7 @@ monster.loot = {
 	{ id = 20080, chance = 1500 }, -- umbral hammer
 	{ id = 20077, chance = 1500 }, -- umbral mace
 	{ id = 16114, chance = 500 }, -- prismatic ring
-	{ id = 16129, chance = 500 }, -- major crystalline token
+	{ id = 16129, chance = 1000 }, -- major crystalline token
 	{ id = 14143, chance = 1000 }, -- four-leaf clover
 }
 

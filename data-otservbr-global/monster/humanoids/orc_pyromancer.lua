@@ -78,7 +78,7 @@ monster.loot = {
 	{ name = "platinum coin", chance = 100000, minCount = 10, maxCount = 50 },
 	{ id = 20089, chance = 2000 }, -- umbral spellbook
 	{ id = 16114, chance = 2000 }, -- prismatic ring
-	{ id = 16129, chance = 500 }, -- major crystalline token
+	{ id = 16129, chance = 1000 }, -- major crystalline token
 }
 
 monster.attacks = {

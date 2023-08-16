@@ -80,7 +80,7 @@ monster.loot = {
 	{ id = 20065, chance = 500 }, -- umbral blade
 	{ id = 20068, chance = 500 }, -- umbral slayer
 	{ id = 20083, chance = 500 }, -- umbral bow
-	{ id = 16129, chance = 500 }, -- major crystalline token
+	{ id = 16129, chance = 1000 }, -- major crystalline token
 }
 
 monster.attacks = {

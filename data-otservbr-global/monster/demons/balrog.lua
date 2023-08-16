@@ -11,7 +11,7 @@ monster.maxHealth = monster.health
 --	bossRace = RARITY_ARCHFOE
 --}
 
-monster.experience = monster.health * 6
+monster.experience = monster.health * 12
 monster.outfit = {
 	lookType = 1468,
 	lookHead = 0,
@@ -96,6 +96,7 @@ monster.loot = {
 	{ id = 16114, chance = 10000 }, -- prismatic ring
 	{ id = 20062, chance = 2000, maxCount = 14 }, -- cluster of solace
 	{ id = 18339, chance = 5000 }, -- zaoan chess box
+	{ name = "silver token", chance = 10000, maxCount = 20 },
 }
 
 monster.attacks = {
