@@ -19,7 +19,7 @@
 		<details displaypriority="1" isseasonal="0" specialevent="0"/>
 	</event>
 	<event name="Downtime event" startdate="08/16/2023" enddate="08/20/2023" script="" >
-		<ingame exprate="150" lootrate="100" spawnrate="100" skillrate="125" />
+		<ingame exprate="125" lootrate="100" spawnrate="100" skillrate="125" />
 		<description description="Experience and skill week!" />
 		<colors colordark="#235c00" colorlight="#2d7400" />
 		<details displaypriority="1" isseasonal="0" specialevent="1"/>
