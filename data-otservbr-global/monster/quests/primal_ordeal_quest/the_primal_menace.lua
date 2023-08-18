@@ -311,33 +311,22 @@ local function handlePrimalBeasts(monster)
 		local monster = beastData.Monster
 		local created = beastData.Created
 		if not monster:getHealth() then
-			Spdlog.info("Removing monster that has dissappeared")
 			table.insert(indexesToRemove, index)
 		elseif  monster:getHealth() == 0 then
-			Spdlog.info("Removing dead monster")
 			table.insert(indexesToRemove, index)
 		elseif (os.time() - created > 20 and monster:getHealth() > 0) then
-			Spdlog.info("Converting mob to fungosaurus")
 			local position = monster:getPosition()
-			Spdlog.info("Converting mob to fungosaurus - 1")
 			monster:remove()
-			Spdlog.info("Converting mob to fungosaurus - 2")
 			table.insert(indexesToRemove, index)
-			Spdlog.info("Converting mob to fungosaurus - 3")
 			if position then
 				Game.createMonster("Fungosaurus", position)
 			end
-			Spdlog.info("Converting mob to fungosaurus - 4")
-
 		end
 	end
 
-	Spdlog.info("Size of primal beasts: " .. #primalBeasts)
-	Spdlog.info("Nbr of indexes to remove: " .. #indexesToRemove)
 	for i = #indexesToRemove, 1, -1 do
 		local indexToRemove = indexesToRemove[i]
 		table.remove(primalBeasts, indexToRemove)
-		Spdlog.info("Removed index: " .. #indexesToRemove)
 	end
 
 	monster:setStorageValue(thePrimalMenaceConfig.Storage.PrimalBeasts, primalBeasts)
@@ -349,15 +338,11 @@ mType.onThink = function(monster, interval)
 	end
 
 	local hazardPoints = getHazardPoints(monster)
-	Spdlog.info("hazardPoints: " .. hazardPoints)
 
-	Spdlog.info("handleMonsterSpawn")
 	handleMonsterSpawn(monster, hazardPoints)
 
-	Spdlog.info("handlePodSpawn")
 	handlePodSpawn(monster, hazardPoints)
 
-	Spdlog.info("handlePrimalBeasts")
 	handlePrimalBeasts(monster)
 end
 
