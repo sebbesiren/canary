@@ -94,7 +94,7 @@ monster.loot = {
 
 monster.attacks = {
 	{name ="melee", interval = 2000, chance = 100, minDamage = -450, maxDamage = -800},
-	{name ="combat", interval = 2000, chance = 40, type = COMBAT_ENERGYDAMAGE, minDamage = -400, maxDamage = -1500, range = 5, shootEffect = CONST_ANI_ENERGY, target = true},
+	{name ="combat", interval = 2000, chance = 20, type = COMBAT_ENERGYDAMAGE, minDamage = -400, maxDamage = -1500, range = 5, shootEffect = CONST_ANI_ENERGY, target = true},
 	{name ="lavafungus ring", interval = 2000, chance = 20, minDamage = -600, maxDamage = -800},
 }
 
