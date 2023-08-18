@@ -39,9 +39,9 @@ local thePrimalMenaceConfig = {
 	},
 
 	PodConfig = {
-		IntervalBase = 22.5,
+		IntervalBase = 30,
 		IntervalReductionPer10PercentHp = 0.97,
-		IntervalReductionPerHazard = 0.99,
+		IntervalReductionPerHazard = 0.985,
 
 		CountBase = 2,
 		CountVarianceRate = 0.5,
@@ -154,7 +154,7 @@ local function initialize(monster)
 	end
 
 	monster:setStorageValue(thePrimalMenaceConfig.Storage.SpawnPos, monster:getPosition())
-	monster:setStorageValue(thePrimalMenaceConfig.Storage.NextPodSpawn, os.time() + 5)
+	monster:setStorageValue(thePrimalMenaceConfig.Storage.NextPodSpawn, os.time() + 20)
 	monster:setStorageValue(thePrimalMenaceConfig.Storage.NextMonsterSpawn, os.time() + 10)
 	monster:setStorageValue(thePrimalMenaceConfig.Storage.PrimalBeasts, {})
 
@@ -278,6 +278,8 @@ local function spawnMonster(monster, spawnPosition)
 		Monster = Game.createMonster(thePrimalMenaceConfig.MonsterConfig.MonsterPool[randomMonsterIndex], spawnPosition),
 		Created = os.time()
 	}
+	local monsterMaxHealth = primalBeastEntry.Monster:getMaxHealth()
+	primalBeastEntry.Monster:setHealth(monsterMaxHealth * 0.7)
 
 	local primalBeasts = monster:getStorageValue(thePrimalMenaceConfig.Storage.PrimalBeasts)
 	table.insert(primalBeasts, primalBeastEntry)
