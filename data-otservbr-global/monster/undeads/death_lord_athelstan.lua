@@ -10,7 +10,6 @@ athelstanConfig = {
 	Monster = {
 		"Death Knight",
 		"Death Paladin",
-		"Death Necromancer"
 	},
 }
 monster.name = "Death Lord Athelstan"
@@ -172,7 +171,7 @@ mType.onThink = function(monster, interval)
 	if percentageHealth <= 20 then
 		monster:setStorageValue(athelstanConfig.Storage.Life, currentLives - 1)
 		monster:addHealth(monster:getMaxHealth())
-		for i = 1, 3 do
+		for i = 1, 5 do
 			Game.createMonster(athelstanConfig.Monster[math.random(#athelstanConfig.Monster)], monster:getPosition(), true, true)
 		end
 	end

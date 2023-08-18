@@ -214,7 +214,7 @@ local function getSpawnPosition(monster)
 	local radius = thePrimalMenaceConfig.SpawnRadius
 	local centerPos = monster:getStorageValue(thePrimalMenaceConfig.Storage.SpawnPos)
 
-	while (not spawnPosition or attempt < attempts) do
+	while (not spawnPosition and attempt < attempts) do
 
 		local centerX = centerPos.x
 		local centerY = centerPos.y
