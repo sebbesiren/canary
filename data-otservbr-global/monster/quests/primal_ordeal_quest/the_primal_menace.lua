@@ -319,9 +319,16 @@ local function handlePrimalBeasts(monster)
 		elseif (os.time() - created > 20 and monster:getHealth() > 0) then
 			Spdlog.info("Converting mob to fungosaurus")
 			local position = monster:getPosition()
+			Spdlog.info("Converting mob to fungosaurus - 1")
 			monster:remove()
+			Spdlog.info("Converting mob to fungosaurus - 2")
 			table.insert(indexesToRemove, index)
-			Game.createMonster("Fungosaurus", position)
+			Spdlog.info("Converting mob to fungosaurus - 3")
+			if position then
+				Game.createMonster("Fungosaurus", position)
+			end
+			Spdlog.info("Converting mob to fungosaurus - 4")
+
 		end
 	end
 
