@@ -16,13 +16,15 @@ local thePrimalMenaceConfig = {
 	-- Monster spawn time
 	MonsterConfig = {
 		IntervalBase = 30,
-		IntervalReductionPer10PercentHp = 0.97,
+		IntervalReductionPer10PercentHp = 0.98,
 		IntervalReductionPerHazard = 0.985,
 
 		CountBase = 4,
 		CountVarianceRate = 0.5,
 		CountGrowthPerHazard = 1.05,
-		CountMax = 7,
+		CountMax = 6,
+
+		HpRateOnSpawn = 0.7,
 		MonsterPool = {
 			"Emerald Tortoise",
 			"Beast Gore Horn",
@@ -40,7 +42,7 @@ local thePrimalMenaceConfig = {
 
 	PodConfig = {
 		IntervalBase = 30,
-		IntervalReductionPer10PercentHp = 0.97,
+		IntervalReductionPer10PercentHp = 0.98,
 		IntervalReductionPerHazard = 0.985,
 
 		CountBase = 2,
@@ -66,8 +68,8 @@ monster.events = {
 	"ThePrimalMenaceDeath"
 }
 
-monster.health = 650000
-monster.maxHealth = 650000
+monster.health = 400000
+monster.maxHealth = 400000
 monster.race = "blood"
 monster.corpse = 39530
 monster.speed = 180
@@ -279,7 +281,7 @@ local function spawnMonster(monster, spawnPosition)
 		Created = os.time()
 	}
 	local monsterMaxHealth = primalBeastEntry.Monster:getMaxHealth()
-	primalBeastEntry.Monster:setHealth(monsterMaxHealth * 0.7)
+	primalBeastEntry.Monster:setHealth(monsterMaxHealth * thePrimalMenaceConfig.MonsterConfig.HpRateOnSpawn)
 
 	local primalBeasts = monster:getStorageValue(thePrimalMenaceConfig.Storage.PrimalBeasts)
 	table.insert(primalBeasts, primalBeastEntry)
@@ -310,9 +312,8 @@ local function handlePrimalBeasts(monster)
 	for index, beastData in pairs(primalBeasts) do
 		local monster = beastData.Monster
 		local created = beastData.Created
-		if not monster:getHealth() then
-			table.insert(indexesToRemove, index)
-		elseif  monster:getHealth() == 0 then
+
+		if not monster:getHealth() or monster:getHealth() == 0 then
 			table.insert(indexesToRemove, index)
 		elseif (os.time() - created > 20 and monster:getHealth() > 0) then
 			local position = monster:getPosition()
@@ -338,11 +339,8 @@ mType.onThink = function(monster, interval)
 	end
 
 	local hazardPoints = getHazardPoints(monster)
-
 	handleMonsterSpawn(monster, hazardPoints)
-
 	handlePodSpawn(monster, hazardPoints)
-
 	handlePrimalBeasts(monster)
 end
 
