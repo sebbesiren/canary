@@ -1,8 +1,12 @@
 local thePrimalMenaceDeath = CreatureEvent("ThePrimalMenaceDeath")
 
 function thePrimalMenaceDeath.onDeath(creature, corpse, killer, mostDamage, unjustified, mostDamage_unjustified)
+	if not creature then
+		return
+	end
+
 	local damageMap = creature:getMonster():getDamageMap()
-	local gnompronaHazard = Hazard.getByName("Gnomprona Gardens")
+	local gnompronaHazard = Hazard.getByName("hazard:gnomprona-gardens")
 	local _, hazardPoints = gnompronaHazard:getHazardPlayerAndPoints(damageMap)
 
 	for key, value in pairs(damageMap) do

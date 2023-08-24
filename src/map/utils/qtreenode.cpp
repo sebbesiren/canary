@@ -7,71 +7,71 @@
  * Website: https://docs.opentibiabr.com/
  */
 
-#include "qtreenode.h"
-#include <creatures/creature.h>
+#include "pch.hpp"
 
-template <typename T>
-bool QTreeLeafNode<T>::newLeaf = false;
+#include "creatures/creature.hpp"
+#include "map/mapcache.hpp"
+#include "qtreenode.hpp"
 
-template <typename T>
-QTreeLeafNode<T>* QTreeNode<T>::getLeaf(uint32_t x, uint32_t y) {
-	if (leaf)
-		return static_cast<QTreeLeafNode<T>*>(this);
+bool QTreeLeafNode::newLeaf = false;
+
+QTreeLeafNode* QTreeNode::getLeaf(uint32_t x, uint32_t y) {
+	if (leaf) {
+		return static_cast<QTreeLeafNode*>(this);
+	}
 
 	const auto node = child[((x & 0x8000) >> 15) | ((y & 0x8000) >> 14)];
 	return node ? node->getLeaf(x << 1, y << 1) : nullptr;
 }
 
-template <typename T>
-QTreeLeafNode<T>* QTreeNode<T>::createLeaf(uint32_t x, uint32_t y, uint32_t level) {
-	if (isLeaf())
-		return static_cast<QTreeLeafNode<T>*>(this);
+QTreeLeafNode* QTreeNode::createLeaf(uint32_t x, uint32_t y, uint32_t level) {
+	if (isLeaf()) {
+		return static_cast<QTreeLeafNode*>(this);
+	}
 
 	const uint32_t index = ((x & 0x8000) >> 15) | ((y & 0x8000) >> 14);
 	if (!child[index]) {
 		if (level != FLOOR_BITS) {
-			child[index] = new QTreeNode<T>();
+			child[index] = new QTreeNode();
 		} else {
-			child[index] = new QTreeLeafNode<T>();
-			QTreeLeafNode<T>::newLeaf = true;
+			child[index] = new QTreeLeafNode();
+			QTreeLeafNode::newLeaf = true;
 		}
 	}
 
 	return child[index]->createLeaf(x * 2, y * 2, level - 1);
 }
 
-template <typename T>
-QTreeLeafNode<T>* QTreeNode<T>::getBestLeaf(uint32_t x, uint32_t y, uint32_t level) {
-	QTreeLeafNode<T>::newLeaf = false;
-	auto leaf = createLeaf(x, y, 15);
+QTreeLeafNode* QTreeNode::getBestLeaf(uint32_t x, uint32_t y, uint32_t level) {
+	QTreeLeafNode::newLeaf = false;
+	auto tempLeaf = createLeaf(x, y, level);
 
-	if (QTreeLeafNode<T>::newLeaf) {
+	if (QTreeLeafNode::newLeaf) {
 		// update north
 		if (const auto northLeaf = getLeaf(x, y - FLOOR_SIZE)) {
-			northLeaf->leafS = leaf;
+			northLeaf->leafS = tempLeaf;
 		}
 
 		// update west leaf
 		if (const auto westLeaf = getLeaf(x - FLOOR_SIZE, y)) {
-			westLeaf->leafE = leaf;
+			westLeaf->leafE = tempLeaf;
 		}
 
 		// update south
 		if (const auto southLeaf = getLeaf(x, y + FLOOR_SIZE)) {
-			leaf->leafS = southLeaf;
+			tempLeaf->leafS = southLeaf;
 		}
 
 		// update east
 		if (const auto eastLeaf = getLeaf(x + FLOOR_SIZE, y)) {
-			leaf->leafE = eastLeaf;
+			tempLeaf->leafE = eastLeaf;
 		}
 	}
 
-	return leaf;
+	return tempLeaf;
 }
 
-template <typename T>
-void QTreeLeafNode<T>::addCreature(Creature* c) {
+void QTreeLeafNode::addCreature(Creature* c) {
 	creature_list.push_back(c);
 
 	if (c->getPlayer()) {
@@ -79,8 +79,7 @@ void QTreeLeafNode<T>::addCreature(Creature* c) {
 	}
 }
 
-template <typename T>
-void QTreeLeafNode<T>::removeCreature(Creature* c) {
+void QTreeLeafNode::removeCreature(Creature* c) {
 	auto iter = std::find(creature_list.begin(), creature_list.end(), c);
 	assert(iter != creature_list.end());
 	*iter = creature_list.back();

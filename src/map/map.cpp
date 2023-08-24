@@ -7,27 +7,30 @@
  * Website: https://docs.opentibiabr.com/
  */
 
-#include "map.h"
-#include "utils/astarnodes.h"
+#include "pch.hpp"
 
-#include <creatures/monsters/monster.h>
-#include <game/game.h>
-#include <io/iomap.h>
-#include <io/iomapserialize.h>
+#include "map.hpp"
+#include "utils/astarnodes.hpp"
 
-bool Map::load(const std::string &identifier, const Position &pos, bool unload) {
+#include "creatures/monsters/monster.hpp"
+#include "game/game.hpp"
+#include "io/iomap.hpp"
+#include "io/iomapserialize.hpp"
+
+void Map::load(const std::string &identifier, const Position &pos) {
 	try {
-		IOMap::loadMap(this, identifier, pos, unload);
-		return true;
-	} catch (const IOMapException &e) {
-		g_logger().error("[Map::load] - {}", e.what());
-	} catch (const std::exception &) {
-		g_logger().error("[Map::load] - The map in folder {} is missing or corrupted", identifier);
+		path = identifier;
+		IOMap::loadMap(this, pos);
+	} catch (const std::exception &e) {
+		throw IOMapException(fmt::format(
+			"\n[Map::load] - The map in folder {} is missing or corrupted"
+			"\n            - {}",
+			identifier, e.what()
+		));
 	}
-	return false;
 }
 
-bool Map::loadMap(const std::string &identifier, bool mainMap /*= false*/, bool loadHouses /*= false*/, bool loadMonsters /*= false*/, bool loadNpcs /*= false*/, const Position &pos /*= Position()*/, bool unload /*= false*/) {
+void Map::loadMap(const std::string &identifier, bool mainMap /*= false*/, bool loadHouses /*= false*/, bool loadMonsters /*= false*/, bool loadNpcs /*= false*/, const Position &pos /*= Position()*/) {
 	// Only download map if is loading the main map and it is not already downloaded
 	if (mainMap && g_configManager().getBoolean(TOGGLE_DOWNLOAD_MAP) && !std::filesystem::exists(identifier)) {
 		const auto mapDownloadUrl = g_configManager().getString(MAP_DOWNLOAD_URL);
@@ -49,7 +52,7 @@ bool Map::loadMap(const std::string &identifier, bool mainMap /*= false*/, bool 
 	}
 
 	// Load the map
-	load(identifier, pos, unload);
+	load(identifier, pos);
 
 	// Only create items from lua functions if is loading main map
 	// It needs to be after the load map to ensure the map already exists before creating the items
@@ -59,12 +62,12 @@ bool Map::loadMap(const std::string &identifier, bool mainMap /*= false*/, bool 
 		g_game().createLuaItemsOnMap();
 	}
 
-	if (loadMonsters && !IOMap::loadMonsters(this))
-		g_logger().warn("Failed to load spawn data");
+	if (loadMonsters) {
+		IOMap::loadMonsters(this);
+	}
 
 	if (loadHouses) {
-		if (!IOMap::loadHouses(this))
-			g_logger().warn("Failed to load house data");
+		IOMap::loadHouses(this);
 
 		/**
 		 * Only load houses items if map custom load is disabled
@@ -77,8 +80,9 @@ bool Map::loadMap(const std::string &identifier, bool mainMap /*= false*/, bool 
 		}
 	}
 
-	if (loadNpcs && !IOMap::loadNpcs(this))
-		g_logger().warn("Failed to load npc spawn data");
+	if (loadNpcs) {
+		IOMap::loadNpcs(this);
+	}
 
 	// Files need to be cleaned up if custom map is enabled to open, or will try to load main map files
 	if (g_configManager().getBoolean(TOGGLE_MAP_CUSTOM)) {
@@ -86,29 +90,28 @@ bool Map::loadMap(const std::string &identifier, bool mainMap /*= false*/, bool 
 		housefile.clear();
 		npcfile.clear();
 	}
-	return true;
 }
 
-bool Map::loadMapCustom(const std::string &mapName, bool loadHouses, bool loadMonsters, bool loadNpcs, int customMapIndex) {
+void Map::loadMapCustom(const std::string &mapName, bool loadHouses, bool loadMonsters, bool loadNpcs, int customMapIndex) {
 	// Load the map
-	std::string path = g_configManager().getString(DATA_DIRECTORY) + "/world/custom/" + mapName + ".otbm";
-	load(path, Position(0, 0, 0), true);
-	load(path);
+	load(g_configManager().getString(DATA_DIRECTORY) + "/world/custom/" + mapName + ".otbm");
 
-	if (loadMonsters && !IOMap::loadMonstersCustom(this, mapName, customMapIndex))
+	if (loadMonsters && !IOMap::loadMonstersCustom(this, mapName, customMapIndex)) {
 		g_logger().warn("Failed to load monster custom data");
+	}
 
-	if (loadHouses && !IOMap::loadHousesCustom(this, mapName, customMapIndex))
+	if (loadHouses && !IOMap::loadHousesCustom(this, mapName, customMapIndex)) {
 		g_logger().warn("Failed to load house custom data");
+	}
 
-	if (loadNpcs && !IOMap::loadNpcsCustom(this, mapName, customMapIndex))
+	if (loadNpcs && !IOMap::loadNpcsCustom(this, mapName, customMapIndex)) {
 		g_logger().warn("Failed to load npc custom spawn data");
+	}
 
 	// Files need to be cleaned up or will try to load previous map files again
 	monsterfile.clear();
 	housefile.clear();
 	npcfile.clear();
-	return true;
 }
 
 void Map::loadHouseInfo() {
@@ -132,10 +135,11 @@ bool Map::save() {
 Tile* Map::getOrCreateTile(uint16_t x, uint16_t y, uint8_t z, bool isDynamic) {
 	auto tile = getTile(x, y, z);
 	if (!tile) {
-		if (isDynamic)
+		if (isDynamic) {
 			tile = new DynamicTile(x, y, z);
-		else
+		} else {
 			tile = new StaticTile(x, y, z);
+		}
 
 		setTile(x, y, z, tile);
 	}
@@ -144,16 +148,19 @@ Tile* Map::getOrCreateTile(uint16_t x, uint16_t y, uint8_t z, bool isDynamic) {
 }
 
 Tile* Map::getTile(uint16_t x, uint16_t y, uint8_t z) {
-	if (z >= MAP_MAX_LAYERS)
+	if (z >= MAP_MAX_LAYERS) {
 		return nullptr;
+	}
 
 	const auto leaf = getQTNode(x, y);
-	if (!leaf)
+	if (!leaf) {
 		return nullptr;
+	}
 
 	const auto &floor = leaf->getFloor(z);
-	if (!floor)
+	if (!floor) {
 		return nullptr;
+	}
 
 	const auto tile = floor->getTile(x, y);
 	return tile ? tile : getOrCreateTileFromCache(floor, x, y);
@@ -165,7 +172,11 @@ void Map::setTile(uint16_t x, uint16_t y, uint8_t z, Tile* newTile) {
 		return;
 	}
 
-	root.getBestLeaf(x, y, 15)->createFloor(z)->setTile(x, y, newTile);
+	if (const auto leaf = getQTNode(x, y)) {
+		leaf->createFloor(z)->setTile(x, y, newTile);
+	} else {
+		root.getBestLeaf(x, y, 15)->createFloor(z)->setTile(x, y, newTile);
+	}
 }
 
 bool Map::placeCreature(const Position &centerPos, Creature* creature, bool extendedPos /* = false*/, bool forceLogin /* = false*/) {
@@ -357,9 +368,9 @@ void Map::getSpectatorsInternal(SpectatorHashSet &spectators, const Position &ce
 	int32_t endx2 = x2 - (x2 % FLOOR_SIZE);
 	int32_t endy2 = y2 - (y2 % FLOOR_SIZE);
 
-	const auto startLeaf = QTreeNode<Floor>::getLeafStatic<const QTreeLeafNode<Floor>*, const QTreeNode<Floor>*>(&root, startx1, starty1);
-	const QTreeLeafNode<Floor>* leafS = startLeaf;
-	const QTreeLeafNode<Floor>* leafE;
+	const auto startLeaf = QTreeNode::getLeafStatic<const QTreeLeafNode*, const QTreeNode*>(&root, startx1, starty1);
+	const QTreeLeafNode* leafS = startLeaf;
+	const QTreeLeafNode* leafE;
 
 	for (int_fast32_t ny = starty1; ny <= endy2; ny += FLOOR_SIZE) {
 		leafE = leafS;
@@ -381,14 +392,14 @@ void Map::getSpectatorsInternal(SpectatorHashSet &spectators, const Position &ce
 				}
 				leafE = leafE->leafE;
 			} else {
-				leafE = QTreeNode<Floor>::getLeafStatic<const QTreeLeafNode<Floor>*, const QTreeNode<Floor>*>(&root, nx + FLOOR_SIZE, ny);
+				leafE = QTreeNode::getLeafStatic<const QTreeLeafNode*, const QTreeNode*>(&root, nx + FLOOR_SIZE, ny);
 			}
 		}
 
 		if (leafS) {
 			leafS = leafS->leafS;
 		} else {
-			leafS = QTreeNode<Floor>::getLeafStatic<const QTreeLeafNode<Floor>*, const QTreeNode<Floor>*>(&root, startx1, ny + FLOOR_SIZE);
+			leafS = QTreeNode::getLeafStatic<const QTreeLeafNode*, const QTreeNode*>(&root, startx1, ny + FLOOR_SIZE);
 		}
 	}
 }
