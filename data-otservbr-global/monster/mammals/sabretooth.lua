@@ -69,16 +69,16 @@ monster.light = {
 }
 
 monster.loot = {
-	{name = "Sabretooth Fur", chance = 23640},
-	{name = "Crystal Coin", chance = 23350, minCount = 1, maxCount = 2},
-	{name = "Elven Amulet", chance = 5010},
-	{name = "Wand of Inferno", chance = 4720},
-	{name = "Dragon Necklace", chance = 3850},
-	{name = "Magma Coat", chance = 3820},
-	{name = "Sacred Tree Amulet", chance = 2730},
-	{name = "Fire Sword", chance = 2650},
-	{name = "Wand of Dragonbreath", chance = 2330},
-	{name = "Metal Spats", chance = 2260},
+	{ name = "Sabretooth Fur", chance = 23640 },
+	{ name = "Crystal Coin", chance = 23350, minCount = 1, maxCount = 2 },
+	{ name = "Elven Amulet", chance = 5010 },
+	{ name = "Wand of Inferno", chance = 4720 },
+	{ name = "Dragon Necklace", chance = 3850 },
+	{ name = "Magma Coat", chance = 3820 },
+	{ name = "Sacred Tree Amulet", chance = 2730 },
+	{ name = "Fire Sword", chance = 2650 },
+	{ name = "Wand of Dragonbreath", chance = 2330 },
+	{ name = "Metal Spats", chance = 2260 },
 }
 
 monster.attacks = {
@@ -92,23 +92,23 @@ monster.defenses = {
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = -10},
-	{type = COMBAT_ENERGYDAMAGE, percent = 10},
-	{type = COMBAT_EARTHDAMAGE, percent = -10},
-	{type = COMBAT_FIREDAMAGE, percent = -10},
-	{type = COMBAT_LIFEDRAIN, percent = 0},
-	{type = COMBAT_MANADRAIN, percent = 0},
-	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = -10},
-	{type = COMBAT_HOLYDAMAGE , percent = 0},
-	{type = COMBAT_DEATHDAMAGE , percent = 10}
+	{ type = COMBAT_PHYSICALDAMAGE, percent = -10 },
+	{ type = COMBAT_ENERGYDAMAGE, percent = 10 },
+	{ type = COMBAT_EARTHDAMAGE, percent = -10 },
+	{ type = COMBAT_FIREDAMAGE, percent = -10 },
+	{ type = COMBAT_LIFEDRAIN, percent = 0 },
+	{ type = COMBAT_MANADRAIN, percent = 0 },
+	{ type = COMBAT_DROWNDAMAGE, percent = 0 },
+	{ type = COMBAT_ICEDAMAGE, percent = -10 },
+	{ type = COMBAT_HOLYDAMAGE, percent = 0 },
+	{ type = COMBAT_DEATHDAMAGE, percent = 10 }
 }
 
 monster.immunities = {
-	{type = "paralyze", condition = true},
-	{type = "outfit", condition = false},
-	{type = "invisible", condition = true},
-	{type = "bleed", condition = false}
+	{ type = "paralyze", condition = true },
+	{ type = "outfit", condition = false },
+	{ type = "invisible", condition = true },
+	{ type = "bleed", condition = false }
 }
 
 mType:register(monster)

@@ -71,21 +71,21 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "Sizzzle...", yell = false},
+	{ text = "Sizzzle...", yell = false },
 }
 
 monster.loot = {
-	{name = "Stalking Seeds", chance = 21520},
-	{name = "Crystal Coin", chance = 16570, minCount = 1, maxCount = 3},
-	{name = "Small Diamond", chance = 7140, minCount = 1, maxCount = 3},
-	{name = "Green Crystal Fragment", chance = 5030},
-	{name = "Dragon Necklace", chance = 4540},
-	{name = "Opal", chance = 3960, minCount = 1, maxCount = 2},
-	{name = "Magma Coat", chance = 2160},
-	{name = "Bow", chance = 2000},
-	{name = "Green Gem", chance = 1780},
-	{name = "Warrior's Axe", chance = 1700},
-	{name = "Muck Rod", chance = 1310},
+	{ name = "Stalking Seeds", chance = 21520 },
+	{ name = "Crystal Coin", chance = 16570, minCount = 1, maxCount = 3 },
+	{ name = "Small Diamond", chance = 7140, minCount = 1, maxCount = 3 },
+	{ name = "Green Crystal Fragment", chance = 5030 },
+	{ name = "Dragon Necklace", chance = 4540 },
+	{ name = "Opal", chance = 3960, minCount = 1, maxCount = 2 },
+	{ name = "Magma Coat", chance = 2160 },
+	{ name = "Bow", chance = 2000 },
+	{ name = "Green Gem", chance = 1780 },
+	{ name = "Warrior's Axe", chance = 1700 },
+	{ name = "Muck Rod", chance = 1310 },
 }
 
 monster.attacks = {
@@ -101,23 +101,23 @@ monster.defenses = {
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = -25},
-	{type = COMBAT_ENERGYDAMAGE, percent = 0},
-	{type = COMBAT_EARTHDAMAGE, percent = 25},
-	{type = COMBAT_FIREDAMAGE, percent = 25},
-	{type = COMBAT_LIFEDRAIN, percent = 0},
-	{type = COMBAT_MANADRAIN, percent = 0},
-	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = -10},
-	{type = COMBAT_HOLYDAMAGE , percent = 0},
-	{type = COMBAT_DEATHDAMAGE , percent = 10}
+	{ type = COMBAT_PHYSICALDAMAGE, percent = -25 },
+	{ type = COMBAT_ENERGYDAMAGE, percent = 0 },
+	{ type = COMBAT_EARTHDAMAGE, percent = 25 },
+	{ type = COMBAT_FIREDAMAGE, percent = 25 },
+	{ type = COMBAT_LIFEDRAIN, percent = 0 },
+	{ type = COMBAT_MANADRAIN, percent = 0 },
+	{ type = COMBAT_DROWNDAMAGE, percent = 0 },
+	{ type = COMBAT_ICEDAMAGE, percent = -10 },
+	{ type = COMBAT_HOLYDAMAGE, percent = 0 },
+	{ type = COMBAT_DEATHDAMAGE, percent = 10 }
 }
 
 monster.immunities = {
-	{type = "paralyze", condition = true},
-	{type = "outfit", condition = false},
-	{type = "invisible", condition = true},
-	{type = "bleed", condition = false}
+	{ type = "paralyze", condition = true },
+	{ type = "outfit", condition = false },
+	{ type = "invisible", condition = true },
+	{ type = "bleed", condition = false }
 }
 
 mType:register(monster)

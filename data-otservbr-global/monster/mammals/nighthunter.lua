@@ -71,21 +71,21 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "Shriiiiek! Shriiiiek!", yell = false},
+	{ text = "Shriiiiek! Shriiiiek!", yell = false },
 }
 
 monster.loot = {
-	{name = "Crystal Coin", chance = 34190},
-	{name = "Nighthunter Wing", chance = 24370, minCount = 1, maxCount = 2},
-	{name = "Ultimate Health Potion", chance = 12640, minCount = 1, maxCount = 3},
-	{name = "Red Crystal Fragment", chance = 3980},
-	{name = "Green Crystal Shard", chance = 3670},
-	{name = "Cyan Crystal Fragment", chance = 3080},
-	{name = "Yellow Gem", chance = 2940},
-	{name = "Crystal Sword", chance = 1590},
-	{name = "Warrior's Axe", chance = 1400},
-	{name = "Spellbook of Mind Control", chance = 960},
-	{name = "Stone Skin Amulet", chance = 850},
+	{ name = "Crystal Coin", chance = 34190 },
+	{ name = "Nighthunter Wing", chance = 24370, minCount = 1, maxCount = 2 },
+	{ name = "Ultimate Health Potion", chance = 12640, minCount = 1, maxCount = 3 },
+	{ name = "Red Crystal Fragment", chance = 3980 },
+	{ name = "Green Crystal Shard", chance = 3670 },
+	{ name = "Cyan Crystal Fragment", chance = 3080 },
+	{ name = "Yellow Gem", chance = 2940 },
+	{ name = "Crystal Sword", chance = 1590 },
+	{ name = "Warrior's Axe", chance = 1400 },
+	{ name = "Spellbook of Mind Control", chance = 960 },
+	{ name = "Stone Skin Amulet", chance = 850 },
 }
 
 monster.attacks = {
@@ -100,23 +100,23 @@ monster.defenses = {
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 20},
-	{type = COMBAT_ENERGYDAMAGE, percent = -5},
-	{type = COMBAT_EARTHDAMAGE, percent = -5},
-	{type = COMBAT_FIREDAMAGE, percent = 10},
-	{type = COMBAT_LIFEDRAIN, percent = 0},
-	{type = COMBAT_MANADRAIN, percent = 0},
-	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = 10},
-	{type = COMBAT_HOLYDAMAGE , percent = -20},
-	{type = COMBAT_DEATHDAMAGE , percent = 10}
+	{ type = COMBAT_PHYSICALDAMAGE, percent = 20 },
+	{ type = COMBAT_ENERGYDAMAGE, percent = -5 },
+	{ type = COMBAT_EARTHDAMAGE, percent = -5 },
+	{ type = COMBAT_FIREDAMAGE, percent = 10 },
+	{ type = COMBAT_LIFEDRAIN, percent = 0 },
+	{ type = COMBAT_MANADRAIN, percent = 0 },
+	{ type = COMBAT_DROWNDAMAGE, percent = 0 },
+	{ type = COMBAT_ICEDAMAGE, percent = 10 },
+	{ type = COMBAT_HOLYDAMAGE, percent = -20 },
+	{ type = COMBAT_DEATHDAMAGE, percent = 10 }
 }
 
 monster.immunities = {
-	{type = "paralyze", condition = true},
-	{type = "outfit", condition = false},
-	{type = "invisible", condition = true},
-	{type = "bleed", condition = false}
+	{ type = "paralyze", condition = true },
+	{ type = "outfit", condition = false },
+	{ type = "invisible", condition = true },
+	{ type = "bleed", condition = false }
 }
 
 mType:register(monster)

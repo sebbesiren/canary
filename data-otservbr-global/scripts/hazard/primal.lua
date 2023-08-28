@@ -1,6 +1,6 @@
 local hazard = Hazard.new({
-	name = "hazard:gnomprona-gardens",
-	from = Position(33502, 32740,13),
+	name = "hazard.gnomprona-gardens",
+	from = Position(33502, 32740, 13),
 	to = Position(33796, 32996, 15),
 	maxLevel = 12,
 	storageMax = Storage.Quest.U12_90.PrimalOrdeal.Hazard.Max,
@@ -88,7 +88,6 @@ function primalKill.onKill(_player, creature)
 	if monster:getType():isRewardBoss() then
 		return true
 	end
-
 
 	local player, points = hazard:getHazardPlayerAndPoints(monster:getDamageMap())
 	if points < 1 then
