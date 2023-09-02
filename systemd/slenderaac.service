@@ -1,0 +1,16 @@
+[Unit]
+Description=Mehra Tibia Frontend
+After=mysql.service
+StartLimitIntervalSec=1
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+
+WorkingDirectory=/home/main-server/mehra-tibia-frontend
+ExecStart=/bin/bash /home/main-server/mehra-tibia-frontend/start.sh
+Environment=NODE_ENV=production
+User=main-server
+
+[Install]
+WantedBy=multi-user.target
