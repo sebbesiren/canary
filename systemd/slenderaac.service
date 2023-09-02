@@ -1,6 +1,6 @@
 [Unit]
 Description=Mehra Tibia Frontend
-After=mysql.service
+After=mariadb.service
 StartLimitIntervalSec=1
 [Service]
 Type=simple
