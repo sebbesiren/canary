@@ -1,7 +1,7 @@
 local config = {
-	enabled = false,
+	enabled = true,
 	storage = Storage.VipSystem.OnlineCoinsGain,
-	checkDuplicateIps = false,
+	checkDuplicateIps = true,
 
 	interval = 60 * 1000,
 
@@ -13,7 +13,7 @@ local config = {
 	},
 
 	-- system will distribute when the player accumulate x coins
-	awardOn = 5,
+	awardOn = 3,
 }
 
 local onlineCoinsEvent = GlobalEvent("GainCoinInterval")
