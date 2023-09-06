@@ -9,7 +9,7 @@ local config = {
 	-- put 0 in coinsPerHour.free to disable free from receiving coins
 	coinsPerHour = {
 		free = 1,
-		vip = 5,
+		vip = 3,
 	},
 
 	-- system will distribute when the player accumulate x coins
