@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Sea Serpent")
 local monster = {}
 
 monster.description = "a sea serpent"
-monster.experience = 2300
+monster.experience = 2500
 monster.outfit = {
 	lookType = 275,
 	lookHead = 0,

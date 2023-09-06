@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Nighthunter")
 local monster = {}
 
 monster.description = "a nighthunter"
-monster.experience = 14647
+monster.experience = 19200
 monster.outfit = {
 	lookType = 1552,
 	lookHead = 85,

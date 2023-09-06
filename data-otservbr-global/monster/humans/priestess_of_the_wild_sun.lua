@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Priestess of the Wild Sun")
 local monster = {}
 
 monster.description = "a priestess of the wild sun"
-monster.experience = 6400
+monster.experience = 10000
 monster.outfit = {
 	lookType = 1199,
 	lookHead = 95,
