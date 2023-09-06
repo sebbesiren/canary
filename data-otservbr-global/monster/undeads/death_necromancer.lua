@@ -29,7 +29,7 @@ monster.Bestiary = {
 
 monster.health = 10000
 monster.maxHealth = monster.health
-monster.experience = monster.health * 1.7
+monster.experience = monster.health * 2
 
 monster.race = "blood"
 monster.corpse = 28861
