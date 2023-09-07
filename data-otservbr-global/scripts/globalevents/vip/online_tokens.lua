@@ -3,7 +3,7 @@ local config = {
 	storage = Storage.VipSystem.OnlineTokensGain,
 	checkDuplicateIps = false,
 
-	tokenItemId = 30180, -- Hexagonal Ruby
+	tokenItemId = 34140, -- Hazardous Heart
 
 	interval = 60 * 1000,
 
