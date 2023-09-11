@@ -10,7 +10,7 @@ monster.outfit = {
 	lookLegs = 61,
 	lookFeet = 94,
 	lookAddons = 0,
-	lookMount = 0
+	lookMount = 0,
 }
 
 monster.raceId = 1724
@@ -23,7 +23,7 @@ monster.Bestiary = {
 	CharmsPoints = 50,
 	Stars = 4,
 	Occurrence = 0,
-	Locations = "Haunted Cellar, Buried Cathedral"
+	Locations = "Haunted Cellar, Buried Cathedral",
 }
 
 monster.health = 3800
@@ -90,21 +90,21 @@ monster.loot = {
 	{ name = "hexagonal ruby", chance = 800 },
 	{ name = "assassin dagger", chance = 970 },
 	{ name = "spike sword", chance = 530 },
-	{ name = "wyvern fang", chance = 120 }
+	{ name = "wyvern fang", chance = 120 },
 }
 
 monster.attacks = {
 	{ name = "melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -370 },
 	{ name = "combat", interval = 2000, chance = 18, type = COMBAT_EARTHDAMAGE, minDamage = -200, maxDamage = -425, radius = 4, effect = CONST_ME_GREEN_RINGS, target = false },
 	{ name = "combat", interval = 2800, chance = 25, type = COMBAT_PHYSICALDAMAGE, minDamage = -350, maxDamage = -450, radius = 3, effect = CONST_ME_DRAWBLOOD, target = false },
-	{ name = "combat", interval = 3500, chance = 37, type = COMBAT_PHYSICALDAMAGE, minDamage = -250, maxDamage = -375, length = 3, spread = 2, effect = CONST_ME_GROUNDSHAKER, target = false }
+	{ name = "combat", interval = 3500, chance = 37, type = COMBAT_PHYSICALDAMAGE, minDamage = -250, maxDamage = -375, length = 3, spread = 2, effect = CONST_ME_GROUNDSHAKER, target = false },
 }
 
 monster.defenses = {
 	defense = 69,
 	armor = 69,
 	mitigation = 1.91,
-	{ name = "combat", interval = 2000, chance = 10, type = COMBAT_HEALING, minDamage = 150, maxDamage = 200, effect = CONST_ME_MAGIC_BLUE, target = false }
+	{ name = "combat", interval = 2000, chance = 10, type = COMBAT_HEALING, minDamage = 150, maxDamage = 200, effect = CONST_ME_MAGIC_BLUE, target = false },
 }
 
 monster.reflects = {
@@ -128,7 +128,7 @@ monster.immunities = {
 	{ type = "paralyze", condition = true },
 	{ type = "outfit", condition = false },
 	{ type = "invisible", condition = true },
-	{ type = "bleed", condition = false }
+	{ type = "bleed", condition = false },
 }
 
 mType:register(monster)
