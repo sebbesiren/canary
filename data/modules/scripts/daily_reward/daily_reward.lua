@@ -479,6 +479,13 @@ function Player.selectDailyReward(self, msg)
 			return false
 		end
 
+		-- Adding items to store inbox
+		local inbox = self:getSlotItem(CONST_SLOT_STORE_INBOX)
+		if inbox then
+			self:sendError("You do not have enough space in your store inbox.")
+			return false
+		end
+
 		local description = ""
 		for k, v in ipairs(items) do
 			if dailyTable.itemCharges then
