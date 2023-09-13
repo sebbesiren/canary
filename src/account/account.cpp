@@ -170,23 +170,23 @@ namespace account {
 	}
 
 	void Account::addPremiumDays(const int32_t &days) {
-		logger.info("m_account.premiumLastDay {}", m_account.premiumLastDay)
+		logger.info("m_account.premiumLastDay {}", m_account.premiumLastDay);
 		uint32_t timeLeft = static_cast<int>((m_account.premiumLastDay - getTimeNow()) % 86400);
 
-		logger.info("timeleft {}", timeLeft)
+		logger.info("timeleft {}", timeLeft);
 		setPremiumDays(m_account.premiumRemainingDays + days);
 
 		if (timeLeft > 0) {
 			m_account.premiumLastDay += timeLeft;
-			logger.info("timeLeft > 0 => m_account.premiumLastDay = {}" m_account.premiumLastDay)
+			logger.info("timeLeft > 0 => m_account.premiumLastDay = {}" m_account.premiumLastDay);
 		}
 	}
 
 	void Account::setPremiumDays(const int32_t &days) {
 		m_account.premiumRemainingDays = days;
-		logger.info("days in setPremiumDays {}", days)
+		logger.info("days in setPremiumDays {}", days);
 		m_account.premiumLastDay = getTimeNow() + (days * 86400);
-		logger.info("premiumLastDay {}", getTimeNow() + (days * 86400))
+		logger.info("premiumLastDay {}", getTimeNow() + (days * 86400));
 
 		if (days <= 0) {
 			m_account.premiumLastDay = 0;
