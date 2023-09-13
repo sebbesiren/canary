@@ -178,7 +178,7 @@ namespace account {
 
 		if (timeLeft > 0) {
 			m_account.premiumLastDay += timeLeft;
-			logger.info("timeLeft > 0 => m_account.premiumLastDay = {}" m_account.premiumLastDay);
+			logger.info("timeLeft > 0 => m_account.premiumLastDay = {}", m_account.premiumLastDay);
 		}
 	}
 
