@@ -389,6 +389,7 @@ sftp-config.json
 # Binaries
 canary
 canary.old
+canary_old
 
 # VCPKG
 vcpkg_installed
