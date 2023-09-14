@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Vibrant Phantom")
 local monster = {}
 
 monster.description = "a vibrant phantom"
-monster.experience = 27000
+monster.experience = 27000 * 1.5
 monster.outfit = {
 	lookType = 1298,
 	lookHead = 85,
