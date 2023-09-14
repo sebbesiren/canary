@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Betrayed Wraith")
 local monster = {}
 
 monster.description = "a betrayed wraith"
-monster.experience = 4200
+monster.experience = 5200
 monster.outfit = {
 	lookType = 233,
 	lookHead = 0,

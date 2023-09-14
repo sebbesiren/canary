@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Massive Fire Elemental")
 local monster = {}
 
 monster.description = "a massive fire elemental"
-monster.experience = 1400
+monster.experience = 2500
 monster.outfit = {
 	lookType = 242,
 	lookHead = 0,
