@@ -108,46 +108,72 @@ DailyReward = {
 		[1] = {
 			type = DAILY_REWARD_TYPE_ITEM,
 			systemType = DAILY_REWARD_SYSTEM_TYPE_ONE,
-			freeAccount = 5,
-			premiumAccount = 10,
+			items = { 28540, 28541, 28542, 28543, 28544, 28545 },
+			freeAccount = 1,
+			premiumAccount = 4,
+			itemCharges = 50,
 		},
 		[2] = {
 			type = DAILY_REWARD_TYPE_ITEM,
 			systemType = DAILY_REWARD_SYSTEM_TYPE_ONE,
-			freeAccount = 5,
-			premiumAccount = 10,
+			items = { Concoction.Ids.WealthDuplex },
+			freeAccount = 1,
+			premiumAccount = 1,
 		},
 		[3] = {
 			type = DAILY_REWARD_TYPE_PREY_REROLL,
 			systemType = DAILY_REWARD_SYSTEM_TYPE_TWO,
 			freeAccount = 1,
-			premiumAccount = 2,
+			premiumAccount = 5,
 		},
 		[4] = {
 			type = DAILY_REWARD_TYPE_ITEM,
 			systemType = DAILY_REWARD_SYSTEM_TYPE_ONE,
-			freeAccount = 10,
-			premiumAccount = 20,
+			items = {
+				Concoction.Ids.KooldownAid,
+				Concoction.Ids.StrikeEnhancement,
+				Concoction.Ids.CharmUpgrade,
+				Concoction.Ids.BestiaryBetterment
+			},
+			freeAccount = 1,
+			premiumAccount = 1,
 		},
 		[5] = {
-			type = DAILY_REWARD_TYPE_PREY_REROLL,
+			type = DAILY_REWARD_TYPE_ITEM,
 			systemType = DAILY_REWARD_SYSTEM_TYPE_TWO,
+			items = {
+				Concoction.Ids.FireResilience,
+				Concoction.Ids.IceResilience,
+				Concoction.Ids.EarthResilience,
+				Concoction.Ids.EnergyResilience,
+				Concoction.Ids.HolyResilience,
+				Concoction.Ids.DeathResilience,
+				Concoction.Ids.PhysicalResilience,
+			},
 			freeAccount = 1,
-			premiumAccount = 2,
+			premiumAccount = 1,
 		},
 		[6] = {
 			type = DAILY_REWARD_TYPE_ITEM,
 			systemType = DAILY_REWARD_SYSTEM_TYPE_ONE,
-			items = { 28540, 28541, 28542, 28543, 28544, 28545 },
+			items = {
+
+				Concoction.Ids.FireAmplification,
+				Concoction.Ids.IceAmplification,
+				Concoction.Ids.EarthAmplification,
+				Concoction.Ids.EnergyAmplification,
+				Concoction.Ids.HolyAmplification,
+				Concoction.Ids.DeathAmplification,
+				Concoction.Ids.PhysicalAmplification,
+			},
 			freeAccount = 1,
-			premiumAccount = 2,
-			itemCharges = 50,
+			premiumAccount = 1,
 		},
 		[7] = {
 			type = DAILY_REWARD_TYPE_XP_BOOST,
 			systemType = DAILY_REWARD_SYSTEM_TYPE_TWO,
 			freeAccount = 10,
-			premiumAccount = 30,
+			premiumAccount = 60,
 		},
 		-- Storage reward template
 		--[[[5] = {
@@ -246,7 +272,8 @@ DailyReward.loadDailyReward = function(playerId, target)
 		return false
 	end
 
-	if target == REWARD_FROM_SHRINE then -- if you receive 0 (shrine) send 1
+	if target == REWARD_FROM_SHRINE then
+		-- if you receive 0 (shrine) send 1
 		target = 1
 	else
 		target = 0 -- if you receive 1 (panel) send 0
@@ -322,7 +349,8 @@ DailyReward.init = function(playerId)
 				player:sendTextMessage(MESSAGE_LOGIN, "You lost " .. timeMath .. " joker tokens to prevent loosing your streak.")
 			else
 				player:setStreakLevel(0)
-				if player:getLastLoginSaved() > 0 then -- message wont appear at first character login
+				if player:getLastLoginSaved() > 0 then
+					-- message wont appear at first character login
 					player:setJokerTokens(-(player:getJokerTokens()))
 					player:sendTextMessage(MESSAGE_LOGIN, "You just lost your daily reward streak.")
 				end
@@ -365,7 +393,8 @@ function Player.sendOpenRewardWall(self, shrine)
 		msg:addU32(GetDailyRewardLastServerSave() + DailyReward.serverTimeThreshold)
 	end
 	msg:addByte(self:getDayStreak()) -- current reward? day = 0, day 1, ... this should be resetted to 0 every week imo
-	if DailyReward.isRewardTaken(self:getId()) then -- state (player already took reward? but just make sure noone wpe)
+	if DailyReward.isRewardTaken(self:getId()) then
+		-- state (player already took reward? but just make sure noone wpe)
 		msg:addByte(1)
 		msg:addString("Sorry, you have already taken your daily reward or you are unable to collect it.") -- Unknown message
 		if self:getJokerTokens() > 0 then
