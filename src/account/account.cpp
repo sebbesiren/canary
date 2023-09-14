@@ -171,7 +171,6 @@ namespace account {
 
 	void Account::addPremiumDays(const int32_t &days) {
 		auto timeLeft = static_cast<int32_t>((m_account.premiumLastDay - getTimeNow()) % 86400);
-
 		setPremiumDays(m_account.premiumRemainingDays + days);
 
 		if (timeLeft > 0) {
