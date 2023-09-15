@@ -74,7 +74,8 @@ local DailyRewardItems = {
 }
 
 DailyReward = {
-	testMode = false,
+	-- TODO: set false
+	testMode = true,
 	serverTimeThreshold = (25 * 60 * 60), -- Counting down 24hours from last server save
 
 	storages = {
@@ -110,10 +111,11 @@ DailyReward = {
 			systemType = DAILY_REWARD_SYSTEM_TYPE_ONE,
 			items = { 28540, 28541, 28542, 28543, 28544, 28545 },
 			freeAccount = 1,
-			premiumAccount = 4,
-			itemCharges = 50,
+			premiumAccount = 2,
+			itemCharges = 100,
 		},
 		[2] = {
+			-- WealthDuplex
 			type = DAILY_REWARD_TYPE_ITEM,
 			systemType = DAILY_REWARD_SYSTEM_TYPE_ONE,
 			items = { Concoction.Ids.WealthDuplex },
@@ -127,6 +129,7 @@ DailyReward = {
 			premiumAccount = 5,
 		},
 		[4] = {
+			-- Concoction
 			type = DAILY_REWARD_TYPE_ITEM,
 			systemType = DAILY_REWARD_SYSTEM_TYPE_ONE,
 			items = {
@@ -139,8 +142,15 @@ DailyReward = {
 			premiumAccount = 1,
 		},
 		[5] = {
-			type = DAILY_REWARD_TYPE_ITEM,
+			type = DAILY_REWARD_TYPE_PREY_REROLL,
 			systemType = DAILY_REWARD_SYSTEM_TYPE_TWO,
+			freeAccount = 1,
+			premiumAccount = 5,
+		},
+		[6] = {
+			-- Elemental damage
+			type = DAILY_REWARD_TYPE_ITEM,
+			systemType = DAILY_REWARD_SYSTEM_TYPE_ONE,
 			items = {
 				Concoction.Ids.FireResilience,
 				Concoction.Ids.IceResilience,
@@ -149,15 +159,6 @@ DailyReward = {
 				Concoction.Ids.HolyResilience,
 				Concoction.Ids.DeathResilience,
 				Concoction.Ids.PhysicalResilience,
-			},
-			freeAccount = 1,
-			premiumAccount = 1,
-		},
-		[6] = {
-			type = DAILY_REWARD_TYPE_ITEM,
-			systemType = DAILY_REWARD_SYSTEM_TYPE_ONE,
-			items = {
-
 				Concoction.Ids.FireAmplification,
 				Concoction.Ids.IceAmplification,
 				Concoction.Ids.EarthAmplification,
@@ -172,7 +173,7 @@ DailyReward = {
 		[7] = {
 			type = DAILY_REWARD_TYPE_XP_BOOST,
 			systemType = DAILY_REWARD_SYSTEM_TYPE_TWO,
-			freeAccount = 10,
+			freeAccount = 30,
 			premiumAccount = 60,
 		},
 		-- Storage reward template
