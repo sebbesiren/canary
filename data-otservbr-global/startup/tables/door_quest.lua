@@ -945,6 +945,16 @@ QuestDoorAction = {
 			{ x = 33782, y = 32576, z = 12 },
 		},
 	},
+	[Storage.CustomDoors] = {
+		itemId = false,
+		itemPos = {
+			{ x = 32639, y = 32723, z = 12 },
+			{ x = 32649, y = 32707, z = 12 },
+			{ x = 32609, y = 32672, z = 12 },
+			{ x = 32612, y = 32613, z = 12 }
+		}
+	}
+
 }
 
 QuestDoorUnique = {

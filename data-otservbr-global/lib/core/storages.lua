@@ -3003,6 +3003,9 @@ Storage = {
 		OnlineCoinsGain = 150002,
 		OnlineTokensGain = 150003,
 	},
+
+	-- Custom
+	CustomDoors = 300000,
 }
 
 GlobalStorage = {
@@ -3152,6 +3155,8 @@ GlobalStorage = {
 	IceCrack = 65016,
 	UglyMonster = 65017,
 	KeysUpdate = 40000, -- Reserved storage from 40000 - 40000
+
+
 }
 
 startupGlobalStorages = {
