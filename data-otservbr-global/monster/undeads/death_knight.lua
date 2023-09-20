@@ -102,7 +102,7 @@ monster.loot = {
 	{ id = 3481, chance = 370 }, -- closed trap
 	{ id = 3019, chance = 100 }, -- demonbone amulet
 	{ name = "cluster of solace", chance = 400 },
-	{ name = "gold token", chance = 1000 },
+	{ name = "gold token", chance = 2500 },
 	{ name = "silver token", chance = 1000 },
 }
 
