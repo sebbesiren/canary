@@ -28,7 +28,7 @@ monster.Bestiary = {
 
 monster.health = 14000
 monster.maxHealth = monster.health
-monster.experience = monster.health * 2
+monster.experience = monster.health * 1.8
 monster.race = "blood"
 monster.corpse = 28861
 monster.speed = 110
@@ -75,7 +75,7 @@ monster.voices = {
 }
 
 monster.loot = {
-	{ name = "platinum coin", chance = 90000, maxCount = 5 },
+	{ name = "platinum coin", chance = 90000, maxCount = 50 },
 	{ name = "small diamond", chance = 41000, maxCount = 2 },
 	{ name = "great spirit potion", chance = 41000, maxCount = 2 },
 	{ name = "small emerald", chance = 40000, maxCount = 2 },

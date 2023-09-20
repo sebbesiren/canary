@@ -28,7 +28,7 @@ monster.Bestiary = {
 
 monster.health = 14000
 monster.maxHealth = monster.health
-monster.experience = monster.health * 2
+monster.experience = monster.health * 1.8
 monster.race = "blood"
 monster.corpse = 28621
 monster.speed = 110
@@ -82,9 +82,9 @@ monster.loot = {
 	{ name = "flask of demonic blood", chance = 30000, maxCount = 4 },
 	{ name = "small amethyst", chance = 24950, maxCount = 3 },
 	{ name = "assassin star", chance = 24670, maxCount = 10 },
-	{ name = "small diamond", chance = 15700, maxCount = 3 },
-	{ name = "small ruby", chance = 15333, maxCount = 3 },
-	{ name = "small emerald", chance = 15110, maxCount = 3 },
+	{ name = "small diamond", chance = 15700, maxCount = 20 },
+	{ name = "small ruby", chance = 15333, maxCount = 30 },
+	{ name = "small emerald", chance = 15110, maxCount = 10 },
 	{ name = "onyx arrow", chance = 14480, maxCount = 15 },
 	{ name = "small topaz", chance = 4580, maxCount = 3 },
 	{ name = "titan axe", chance = 3000 },
