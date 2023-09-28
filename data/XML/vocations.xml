@@ -39,7 +39,7 @@
 	<vocation id="3" clientid="2" baseid="3" name="Paladin" description="a paladin" magicshield="0" gaincap="20" gainhp="10" gainmana="15" gainhpticks="8000" gainhpamount="1" gainmanaticks="4000" gainmanaamount="2" manamultiplier="1.4" attackspeed="2000" basespeed="110" soulmax="100" gainsoulticks="120000" fromvoc="3">
 		<formula meleeDamage="1.0" distDamage="1.0" defense="1.0" armor="1.0" />
 		<mitigation multiplier="1.28" primaryShield="2.08" secondaryShield="1.2" />
-		<pvp damageReceivedMultiplier="1.75" damageDealtMultiplier ="1.75"/>
+		<pvp damageReceivedMultiplier="1.75" damageDealtMultiplier ="2.5"/>
 		<skill id="0" multiplier="1.2" />
 		<skill id="1" multiplier="1.2" />
 		<skill id="2" multiplier="1.2" />
@@ -87,7 +87,7 @@
 	<vocation id="7" clientid="12" baseid="3" name="Royal Paladin" description="a royal paladin" magicshield="0" gaincap="20" gainhp="10" gainmana="15" gainhpticks="6000" gainhpamount="1" gainmanaticks="3000" gainmanaamount="2" manamultiplier="1.4" attackspeed="2000" basespeed="110" soulmax="200" gainsoulticks="15000" fromvoc="3">
 		<formula meleeDamage="1.0" distDamage="1.0" defense="1.0" armor="1.0" />
 		<mitigation multiplier="1.28" primaryShield="2.08" secondaryShield="1.2" />
-		<pvp damageReceivedMultiplier="1.75" damageDealtMultiplier ="1.75"/>
+		<pvp damageReceivedMultiplier="1.75" damageDealtMultiplier ="2.5"/>
 		<skill id="0" multiplier="1.2" />
 		<skill id="1" multiplier="1.2" />
 		<skill id="2" multiplier="1.2" />

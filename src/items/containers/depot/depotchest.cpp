@@ -14,7 +14,7 @@
 
 DepotChest::DepotChest(uint16_t type) :
 	Container(type) {
-	maxDepotItems = 2000;
+	maxDepotItems = 10000;
 	maxSize = 32;
 	pagination = true;
 }
