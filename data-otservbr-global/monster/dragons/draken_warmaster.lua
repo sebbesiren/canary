@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Draken Warmaster")
 local monster = {}
 
 monster.description = "a draken warmaster"
-monster.experience = 2400
+monster.experience = 4500
 monster.outfit = {
 	lookType = 334,
 	lookHead = 0,
