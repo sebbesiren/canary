@@ -646,6 +646,14 @@ npcConfig.shop = {
 	{ itemName = "young lich worm", clientId = 31590, sell = 25000 },
 	{ itemName = "zaogun flag", clientId = 10413, sell = 600 },
 	{ itemName = "zaogun shoulderplates", clientId = 10414, sell = 150 },
+
+	-- Custom
+	{ itemName = "demonic essence", clientId = 6499, sell = 1000},
+	{ itemName = "watermelon tourmaline piece", clientId = 33779, sell = 30000 },
+	{ itemName = "watermelon tourmaline", clientId = 33780, sell = 230000 },
+	{ itemName = "royal almandine", clientId = 39038, sell = 460000},
+	{ itemName = "giant amethyst", clientId = 30061, sell = 60000 },
+	{ itemName = "nighthunter wing", clientId = 39381, sell = 2000 }
 }
 -- On buy npc shop message
 npcType.onBuyItem = function(npc, player, itemId, subType, amount, ignore, inBackpacks, totalCost)
