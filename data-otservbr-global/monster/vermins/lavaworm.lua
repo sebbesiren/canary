@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Lavaworm")
 local monster = {}
 
 monster.description = "a lavaworm"
-monster.experience = 6500
+monster.experience = 8800
 monster.outfit = {
 	lookType = 1394,
 	lookHead = 0,

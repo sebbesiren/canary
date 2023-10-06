@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Cave Chimera")
 local monster = {}
 
 monster.description = "a cave chimera"
-monster.experience = 6800
+monster.experience = 11000
 monster.outfit = {
 	lookType = 1406,
 	lookHead = 60,

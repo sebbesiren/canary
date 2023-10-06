@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Eyeless Devourer")
 local monster = {}
 
 monster.description = "an eyeless devourer"
-monster.experience = 6000
+monster.experience = 12000
 monster.outfit = {
 	lookType = 1399,
 	lookHead = 0,
