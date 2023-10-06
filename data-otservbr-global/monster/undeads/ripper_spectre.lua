@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Ripper Spectre")
 local monster = {}
 
 monster.description = "a ripper spectre"
-monster.experience = 4000
+monster.experience = 4500
 monster.outfit = {
 	lookType = 1122,
 	lookHead = 81,
