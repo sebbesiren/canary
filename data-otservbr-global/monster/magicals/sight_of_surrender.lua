@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Sight of Surrender")
 local monster = {}
 
 monster.description = "a sight of surrender"
-monster.experience = 17000
+monster.experience = 28000
 monster.outfit = {
 	lookType = 583,
 	lookHead = 0,
