@@ -21,13 +21,19 @@ function uglyMonsterSpawn.onHealthChange(creature, attacker, primaryDamage, prim
 	if not creature then
 		return primaryDamage, primaryType, secondaryDamage, secondaryType
 	end
-	if creatureToSpawn[creature:getId()] then
+	if creatureToSpawn[creature:getId()] and creatureToSpawn[creature:getId()] > 3 then
 		return primaryDamage, primaryType, secondaryDamage, secondaryType
 	end
-	local chance = math.random(1, 1000000)
-	if chance < (primaryDamage + secondaryDamage) and Game.getStorageValue(GlobalStorage.UglyMonster) ~= 1 then
+	local chance = math.random(100)
+	if chance > 98 and Game.getStorageValue(GlobalStorage.UglyMonster) ~= 1 then
 		uglyMonster = Game.createMonster("Ugly Monster", creature:getPosition())
-		creatureToSpawn[creature:getId()] = true
+
+		if not creatureToSpawn[creature:getId()]  then
+			creatureToSpawn[creature:getId()] = 1
+		else
+			creatureToSpawn[creature:getId()] = creatureToSpawn[creature:getId()] + 1
+		end
+
 		removeEvent = addEvent(function()
 			if uglyMonster then
 				uglyMonster:remove()
