@@ -75,27 +75,27 @@ monster.loot = {
 	{ name = "one of timira's many heads", chance = 2041 },
 	{ name = "giant sapphire", chance = 2041 },
 	{ name = "giant topaz", chance = 2041 },
-	{ name = "dawnfire sherwani", chance = 200 },
-	{ name = "frostflower boots", chance = 200 },
-	{ id = 39233, chance = 200 }, -- enchanted turtle amulet
-	{ name = "midnight tunic", chance = 200 },
-	{ name = "midnight sarong", chance = 200 },
-	{ name = "naga sword", chance = 200 },
-	{ name = "naga axe", chance = 200 },
-	{ name = "naga club", chance = 200 },
-	{ name = "naga wand", chance = 200 },
-	{ name = "naga rod", chance = 200 },
-	{ name = "naga crossbow", chance = 200 },
+	{ name = "dawnfire sherwani", chance = 300 },
+	{ name = "frostflower boots", chance = 300 },
+	{ id = 39233, chance = 300 }, -- enchanted turtle amulet
+	{ name = "midnight tunic", chance = 300 },
+	{ name = "midnight sarong", chance = 300 },
+	{ name = "naga sword", chance = 300 },
+	{ name = "naga axe", chance = 300 },
+	{ name = "naga club", chance = 300 },
+	{ name = "naga wand", chance = 300 },
+	{ name = "naga rod", chance = 300 },
+	{ name = "naga crossbow", chance = 300 },
 }
 
 monster.attacks = {
-	{ name = "melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -600 },
+	{ name = "melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -900 },
 	{ name = "timira fire ring", interval = 3500, chance = 50, minDamage = -360, maxDamage = -425 },
-	{ name = "death chain", interval = 2500, chance = 30, minDamage = -190, maxDamage = -225, range = 3, target = true },
-	{ name = "mana drain chain", interval = 2500, chance = 20, minDamage = -100, maxDamage = -130 },
-	{ name = "timira explosion", interval = 4200, chance = 40, minDamage = -350, maxDamage = -560 },
+	{ name = "death chain", interval = 2500, chance = 30, minDamage = -190, maxDamage = -300, range = 3, target = true },
+	{ name = "mana drain chain", interval = 2500, chance = 20, minDamage = -100, maxDamage = -300 },
+	{ name = "timira explosion", interval = 4200, chance = 40, minDamage = -350, maxDamage = -700 },
 	{ name = "combat", interval = 5500, chance = 45, type = COMBAT_PHYSICALDAMAGE, minDamage = -580, maxDamage = -620, length = 6, spread = 2, effect = CONST_ME_EXPLOSIONAREA, target = false },
-	{ name = "combat", interval = 5000, chance = 60, type = COMBAT_ENERGYDAMAGE, minDamage = -230, maxDamage = -450, range = 1, radius = 1, shootEffect = CONST_ANI_ENERGYBALL, effect = CONST_ME_ENERGYHIT, target = true },
+	{ name = "combat", interval = 5000, chance = 60, type = COMBAT_ENERGYDAMAGE, minDamage = -230, maxDamage = -650, range = 1, radius = 1, shootEffect = CONST_ANI_ENERGYBALL, effect = CONST_ME_ENERGYHIT, target = true },
 }
 
 monster.defenses = {
