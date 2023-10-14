@@ -688,8 +688,6 @@ npcConfig.shop = {
 	{ itemName = "cobra wand", clientId = 30399, sell = 500000 },
 	{ itemName = "cobra rod", clientId = 30400, sell = 500000 },
 
-
-
 	{ itemName = "lion longbow", clientId = 34150, sell = 500000 },
 	{ itemName = "lion rod", clientId = 34151, sell = 500000 },
 	{ itemName = "lion wand", clientId = 34152, sell = 500000 },
@@ -700,6 +698,26 @@ npcConfig.shop = {
 	{ itemName = "lion plate", clientId = 34157, sell = 500000 },
 	{ itemName = "lion amulet", clientId = 34158, sell = 500000 },
 
+	{ itemName = "eldritch breeches", clientId = 36667, sell = 500000 },
+	{ itemName = "eldritch cowl", clientId = 36670, sell = 500000 },
+	{ itemName = "eldritch hood", clientId = 36671, sell = 500000 },
+	{ itemName = "eldritch bow", clientId = 36664, sell = 500000 },
+	{ itemName = "eldritch quiver", clientId = 36666, sell = 500000},
+	{ itemName = "eldritch claymore", clientId = 36657, sell = 500000 },
+	{ itemName = "eldritch greataxe", clientId = 36661, sell = 500000 },
+	{ itemName = "eldritch warmace", clientId = 36659, sell = 500000 },
+	{ itemName = "eldritch shield", clientId = 36656, sell = 500000 },
+	{ itemName = "eldritch cuirass", clientId = 36663, sell = 500000 },
+	{ itemName = "eldritch folio", clientId = 36672, sell = 500000 },
+	{ itemName = "eldritch tome", clientId = 36673, sell = 500000 },
+	{ itemName = "eldritch rod", clientId = 36674, sell = 500000 },
+	{ itemName = "eldritch wand", clientId = 36668, sell = 500000 },
+	{ itemName = "gilded eldritch claymore", clientId = 36658, sell = 500000 },
+	{ itemName = "gilded eldritch greataxe", clientId = 36662, sell = 500000 },
+	{ itemName = "gilded eldritch warmace", clientId = 36660, sell = 500000 },
+	{ itemName = "gilded eldritch wand", clientId = 36669, sell = 500000 },
+	{ itemName = "gilded eldritch rod", clientId = 36675, sell = 500000 },
+	{ itemName = "gilded eldritch bow", clientId = 36665, sell = 500000 },
 
 	-- Custom T3 - Naga, Falcon,
 	{ itemName = "falcon circlet", clientId = 28714, sell = 750000 },
