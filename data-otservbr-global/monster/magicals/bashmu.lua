@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Bashmu")
 local monster = {}
 
 monster.description = "a bashmu"
-monster.experience = 5000
+monster.experience = 10000
 monster.outfit = {
 	lookType = 1408,
 	lookHead = 0,

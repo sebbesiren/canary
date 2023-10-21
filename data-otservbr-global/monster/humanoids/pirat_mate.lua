@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Pirat Mate")
 local monster = {}
 
 monster.description = "a pirat mate"
-monster.experience = 2400
+monster.experience = 3800
 monster.outfit = {
 	lookType = 1346,
 	lookHead = 0,
