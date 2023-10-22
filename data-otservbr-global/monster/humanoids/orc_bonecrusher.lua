@@ -14,7 +14,7 @@ monster.outfit = {
 	lookLegs = 0,
 	lookFeet = 0,
 	lookAddons = 0,
-	lookMount = 0
+	lookMount = 0,
 }
 
 monster.race = "blood"
@@ -31,12 +31,12 @@ monster.Bestiary = {
 	CharmsPoints = 50,
 	Stars = 4,
 	Occurrence = 0,
-	Locations = "Orc Main Fortress."
+	Locations = "Orc Main Fortress.",
 }
 
 monster.changeTarget = {
 	interval = 2000,
-	chance = 10
+	chance = 10,
 }
 
 monster.strategiesTarget = {
@@ -60,18 +60,18 @@ monster.flags = {
 	isBlockable = false,
 	canWalkOnEnergy = true,
 	canWalkOnFire = true,
-	canWalkOnPoison = true
+	canWalkOnPoison = true,
 }
 
 monster.light = {
 	level = 0,
-	color = 0
+	color = 0,
 }
 
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{ text = "WH-I-I-I-R-L-WIND!", yell = false }
+	{ text = "WH-I-I-I-R-L-WIND!", yell = false },
 }
 
 monster.loot = {
@@ -91,7 +91,7 @@ monster.attacks = {
 monster.defenses = {
 	defense = 50,
 	armor = 50,
-	{ name = "speed", interval = 6000, chance = 100, speedChange = 600, effect = CONST_ME_POFF, target = false, duration = 3000 }
+	{ name = "speed", interval = 6000, chance = 100, speedChange = 600, effect = CONST_ME_POFF, target = false, duration = 3000 },
 }
 
 monster.elements = {
@@ -104,14 +104,14 @@ monster.elements = {
 	{ type = COMBAT_DROWNDAMAGE, percent = 0 },
 	{ type = COMBAT_ICEDAMAGE, percent = 0 },
 	{ type = COMBAT_HOLYDAMAGE, percent = 10 },
-	{ type = COMBAT_DEATHDAMAGE, percent = -10 }
+	{ type = COMBAT_DEATHDAMAGE, percent = -10 },
 }
 
 monster.immunities = {
 	{ type = "paralyze", condition = false },
 	{ type = "outfit", condition = false },
 	{ type = "invisible", condition = true },
-	{ type = "bleed", condition = true }
+	{ type = "bleed", condition = true },
 }
 
 mType:register(monster)

@@ -4,7 +4,7 @@ local monster = {}
 athelstanConfig = {
 	Storage = {
 		Initialized = 1,
-		Life = 2
+		Life = 2,
 	},
 	AmountLife = 3,
 	Monster = {
@@ -21,7 +21,7 @@ monster.outfit = {
 	lookLegs = 115,
 	lookFeet = 132,
 	lookAddons = 3,
-	lookMount = 0
+	lookMount = 0,
 }
 
 monster.health = 200000
@@ -34,7 +34,7 @@ monster.manaCost = 0
 
 monster.changeTarget = {
 	interval = 4000,
-	chance = 10
+	chance = 10,
 }
 
 --monster.bosstiary = {
@@ -63,12 +63,12 @@ monster.flags = {
 	isBlockable = false,
 	canWalkOnEnergy = true,
 	canWalkOnFire = true,
-	canWalkOnPoison = true
+	canWalkOnPoison = true,
 }
 
 monster.light = {
 	level = 0,
-	color = 0
+	color = 0,
 }
 
 monster.voices = {
@@ -121,7 +121,7 @@ monster.attacks = {
 	{ name = "Shotgun", interval = 2000, chance = 10, minDamage = -860, maxDamage = -1500, target = false },
 	{ name = "Holy Bomb Slash", interval = 2000, chance = 20, minDamage = -820, maxDamage = -1450, target = false },
 	{ name = "Rotating Wheel", interval = 40000, chance = 100, target = false },
-	{ name = "Athelstan Axe Throw", interval = 3000, chance = 35, minDamage = -800, maxDamage = -1500 }
+	{ name = "Athelstan Axe Throw", interval = 3000, chance = 35, minDamage = -800, maxDamage = -1500 },
 }
 
 monster.defenses = {
@@ -139,18 +139,18 @@ monster.elements = {
 	{ type = COMBAT_DROWNDAMAGE, percent = 0 },
 	{ type = COMBAT_ICEDAMAGE, percent = 0 },
 	{ type = COMBAT_HOLYDAMAGE, percent = -25 },
-	{ type = COMBAT_DEATHDAMAGE, percent = 0 }
+	{ type = COMBAT_DEATHDAMAGE, percent = 0 },
 }
 
 monster.immunities = {
 	{ type = "paralyze", condition = true },
 	{ type = "outfit", condition = true },
 	{ type = "invisible", condition = true },
-	{ type = "bleed", condition = false }
+	{ type = "bleed", condition = false },
 }
 
 local function initialize(monster)
-	if (monster:getStorageValue(athelstanConfig.Storage.Initialized) == true) then
+	if monster:getStorageValue(athelstanConfig.Storage.Initialized) == true then
 		return
 	end
 
@@ -159,7 +159,7 @@ local function initialize(monster)
 end
 
 mType.onThink = function(monster, interval)
-	if (monster:getStorageValue(athelstanConfig.Storage.Initialized) == -1) then
+	if monster:getStorageValue(athelstanConfig.Storage.Initialized) == -1 then
 		initialize(monster)
 	end
 
@@ -186,13 +186,10 @@ mType.onAppear = function(monster, creature)
 	end
 end
 
-mType.onDisappear = function(monster, creature)
-end
+mType.onDisappear = function(monster, creature) end
 
-mType.onMove = function(monster, creature, fromPosition, toPosition)
-end
+mType.onMove = function(monster, creature, fromPosition, toPosition) end
 
-mType.onSay = function(monster, creature, type, message)
-end
+mType.onSay = function(monster, creature, type, message) end
 
 mType:register(monster)

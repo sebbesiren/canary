@@ -28,7 +28,7 @@ function uglyMonsterSpawn.onHealthChange(creature, attacker, primaryDamage, prim
 	if chance > 98 and Game.getStorageValue(GlobalStorage.UglyMonster) ~= 1 then
 		uglyMonster = Game.createMonster("Ugly Monster", creature:getPosition())
 
-		if not creatureToSpawn[creature:getId()]  then
+		if not creatureToSpawn[creature:getId()] then
 			creatureToSpawn[creature:getId()] = 1
 		else
 			creatureToSpawn[creature:getId()] = creatureToSpawn[creature:getId()] + 1

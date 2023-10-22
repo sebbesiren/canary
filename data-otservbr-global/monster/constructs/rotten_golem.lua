@@ -100,7 +100,7 @@ monster.attacks = {
 	{ name = "combat", interval = 2000, chance = 15, type = COMBAT_EARTHDAMAGE, minDamage = -800, maxDamage = -1000, radius = 5, effect = CONST_ME_BIGPLANTS, target = false },
 	{ name = "combat", interval = 2000, chance = 15, type = COMBAT_EARTHDAMAGE, minDamage = -500, maxDamage = -600, radius = 7, effect = CONST_ME_BIGPLANTS, target = false },
 	{ name = "energy chain", interval = 2000, chance = 15, minDamage = -1050, maxDamage = -1200, radius = 7, effect = CONST_ME_BIGPLANTS, target = false },
-	{ name = "root", interval = 2000, chance = 5, target = true }
+	{ name = "root", interval = 2000, chance = 5, target = true },
 }
 
 monster.defenses = {

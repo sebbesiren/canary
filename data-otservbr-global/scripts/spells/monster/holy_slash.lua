@@ -20,11 +20,11 @@ local combatConfig = {
 			{ 0, 0, 0, 0, 0, 1, 0 },
 			{ 0, 0, 0, 2, 1, 1, 1 },
 			{ 0, 0, 0, 0, 1, 1, 1 },
-		}
+		},
 	},
 	combats = {},
 	effect = CONST_ME_BLOCKHIT,
-	type = COMBAT_HOLYDAMAGE
+	type = COMBAT_HOLYDAMAGE,
 }
 
 for _, area in ipairs(combatConfig.areas) do

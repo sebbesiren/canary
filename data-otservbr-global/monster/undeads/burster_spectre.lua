@@ -35,7 +35,7 @@ monster.manaCost = 0
 
 monster.changeTarget = {
 	interval = 4000,
-	chance = 0
+	chance = 0,
 }
 
 monster.strategiesTarget = {
@@ -117,7 +117,7 @@ monster.defenses = {
 }
 
 monster.reflects = {
-	{type = COMBAT_ICEDAMAGE, percent = 60}
+	{ type = COMBAT_ICEDAMAGE, percent = 60 },
 }
 
 monster.elements = {

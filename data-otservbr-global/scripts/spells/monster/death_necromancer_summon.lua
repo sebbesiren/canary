@@ -9,7 +9,7 @@ local spell = Spell("instant")
 
 local necromancerSummons = {
 	"Frazzlemaw",
-	"Choking Fear"
+	"Choking Fear",
 }
 
 function spell.onCastSpell(creature, var)

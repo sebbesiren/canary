@@ -4,7 +4,7 @@ local combatConfig = {
 	noticeDelay = 850,
 	boomDelay = 1600,
 	standStill = true,
-	message = 'Rotating Flames!!!',
+	message = "Rotating Flames!!!",
 	numberOfCasts = 3,
 	areas = {
 		{
@@ -52,21 +52,20 @@ local combatConfig = {
 			{ 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0 },
 			{ 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0 },
 			{ 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0 },
-
-		}
+		},
 	},
 	combatRotations = {},
 	noticeEffect = CONST_ME_BLOCKHIT,
 	noticeType = COMBAT_HOLYDAMAGE,
 	boomEffect = CONST_ME_FIREAREA,
-	boomType = COMBAT_FIREDAMAGE
+	boomType = COMBAT_FIREDAMAGE,
 }
 
 local vocation = {
 	VOCATION.BASE_ID.SORCERER,
 	VOCATION.BASE_ID.DRUID,
 	VOCATION.BASE_ID.PALADIN,
-	VOCATION.BASE_ID.KNIGHT
+	VOCATION.BASE_ID.KNIGHT,
 }
 
 for _, area in ipairs(combatConfig.areas) do
