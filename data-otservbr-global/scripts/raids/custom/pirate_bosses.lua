@@ -17,8 +17,7 @@ raid:addBroadcast("Pirates have invaded the fortress."):autoAdvance("5s")
 
 local bosses = { "Ron the Ripper", "Lethal Lissy", "Brutus Bloodbeard", "Deadeye Devious" }
 
-raid
-	:addSpawnMonsters({
+raid:addSpawnMonsters({
 	{
 		name = "Pirate Corsair",
 		amount = 60,
@@ -41,8 +40,8 @@ raid
 	},
 	{
 		name = bosses[math.random(#bosses)],
-		amount = 1
-	}
+		amount = 1,
+	},
 })
 
 raid:register()
