@@ -135,7 +135,7 @@ DailyReward = {
 				Concoction.Ids.KooldownAid,
 				Concoction.Ids.StrikeEnhancement,
 				Concoction.Ids.CharmUpgrade,
-				Concoction.Ids.BestiaryBetterment
+				Concoction.Ids.BestiaryBetterment,
 			},
 			freeAccount = 1,
 			premiumAccount = 1,

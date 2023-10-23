@@ -2767,7 +2767,7 @@ Storage = {
 				GoshnarMegalomaniaAccess = 47220,
 				GoshnarMegalomaniaKilled = 47222,
 				QuestReward = 47223,
-			}
+			},
 		},
 		U12_60 = { -- update 12.60 - Reserved Storages 47501 - 47600
 			APiratesTail = {
@@ -3086,8 +3086,6 @@ GlobalStorage = {
 	IceCrack = 65016,
 	UglyMonster = 65017,
 	KeysUpdate = 40000, -- Reserved storage from 40000 - 40000
-
-
 }
 
 startupGlobalStorages = {

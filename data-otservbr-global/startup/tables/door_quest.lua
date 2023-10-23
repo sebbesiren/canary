@@ -874,14 +874,14 @@ QuestDoorAction = {
 		itemId = false,
 		itemPos = {
 			{ x = 32429, y = 32461, z = 7 },
-			{ x = 32430, y = 32461, z = 8 }
-		}
+			{ x = 32430, y = 32461, z = 8 },
+		},
 	},
 	[Storage.Quest.U12_40.TheOrderOfTheLion.AccessSouthernSide] = {
 		itemId = false,
 		itemPos = {
-			{ x = 32422, y = 32499, z = 8 }
-		}
+			{ x = 32422, y = 32499, z = 8 },
+		},
 	},
 	[Storage.Quest.U12_00.TheDreamCourts.DreamScarAccess] = {
 		itemId = false,
@@ -905,20 +905,20 @@ QuestDoorAction = {
 	[Storage.Quest.U8_4.BloodBrothers.VengothAccess] = {
 		itemId = false,
 		itemPos = {
-			{x = 32959, y = 31541, z = 7},
-			{x = 32953, y = 31469, z = 7},
-			{x = 32948, y = 31465, z = 7},
-			{x = 32958, y = 31465, z = 7},
-			{x = 32953, y = 31460, z = 7},
-			{x = 32956, y = 31446, z = 8},
-			{x = 32953, y = 31460, z = 9},
-			{x = 32956, y = 31481, z = 6},
-			{x = 32950, y = 31474, z = 6},
-			{x = 32956, y = 31468, z = 6},
-			{x = 32950, y = 31464, z = 6},
-			{x = 32953, y = 31450, z = 6},
-			{x = 32953, y = 31451, z = 4}
-		}
+			{ x = 32959, y = 31541, z = 7 },
+			{ x = 32953, y = 31469, z = 7 },
+			{ x = 32948, y = 31465, z = 7 },
+			{ x = 32958, y = 31465, z = 7 },
+			{ x = 32953, y = 31460, z = 7 },
+			{ x = 32956, y = 31446, z = 8 },
+			{ x = 32953, y = 31460, z = 9 },
+			{ x = 32956, y = 31481, z = 6 },
+			{ x = 32950, y = 31474, z = 6 },
+			{ x = 32956, y = 31468, z = 6 },
+			{ x = 32950, y = 31464, z = 6 },
+			{ x = 32953, y = 31450, z = 6 },
+			{ x = 32953, y = 31451, z = 4 },
+		},
 	},
 	[Storage.Quest.U13_10.CradleOfMonsters.Access.LowerIngol] = {
 		itemId = false,
@@ -951,10 +951,9 @@ QuestDoorAction = {
 			{ x = 32639, y = 32723, z = 12 },
 			{ x = 32649, y = 32707, z = 12 },
 			{ x = 32609, y = 32672, z = 12 },
-			{ x = 32612, y = 32613, z = 12 }
-		}
-	}
-
+			{ x = 32612, y = 32613, z = 12 },
+		},
+	},
 }
 
 QuestDoorUnique = {

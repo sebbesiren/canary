@@ -24,10 +24,10 @@ function onTargetCreature(creature, target)
 
 	local spectators = Game.getSpectators(casterPosition, false, false, 10, 10, 10, 10)
 	for _, spectator in ipairs(spectators) do
-		if (spectator and spectator:getId() ~= targetId and spectator:isPlayer()) then
+		if spectator and spectator:getId() ~= targetId and spectator:isPlayer() then
 			var.number = spectator:getId()
 			local spectatorPosition = spectator:getPosition()
-			if (combatBounce:execute(creature, var)) then
+			if combatBounce:execute(creature, var) then
 				casterPosition:sendDistanceEffect(spectatorPosition, effect)
 				casterPosition = spectatorPosition
 			end

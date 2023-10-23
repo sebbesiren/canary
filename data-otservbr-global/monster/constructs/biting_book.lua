@@ -73,12 +73,12 @@ monster.voices = {
 }
 
 monster.loot = {
-	{id = 3116, chance = 500, maxCount = 2}, -- big bone
-	{name = "book page", chance = 50000, maxCount = 4},
-	{name = "glowing rune", chance = 40000, maxCount = 2},
-	{name = "platinum coin", chance = 10000, maxCount = 5},
-	{name = "silken bookmark", chance = 28000, maxCount = 3},
-	{name = "ruby necklace", chance = 2000}
+	{ id = 3116, chance = 500, maxCount = 2 }, -- big bone
+	{ name = "book page", chance = 50000, maxCount = 4 },
+	{ name = "glowing rune", chance = 40000, maxCount = 2 },
+	{ name = "platinum coin", chance = 10000, maxCount = 5 },
+	{ name = "silken bookmark", chance = 28000, maxCount = 3 },
+	{ name = "ruby necklace", chance = 2000 },
 }
 
 monster.attacks = {

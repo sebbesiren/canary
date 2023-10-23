@@ -4,7 +4,7 @@ local combatConfig = {
 	noticeDelay = 850,
 	boomDelay = 1600,
 	standStill = true,
-	message = 'Balrog Dark Mortar!!!',
+	message = "Balrog Dark Mortar!!!",
 	numberOfCasts = 6,
 	areas = {
 		{
@@ -141,20 +141,20 @@ local combatConfig = {
 			{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
 			{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
 			{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-		}
+		},
 	},
 	combatRotations = {},
 	noticeEffect = CONST_ME_HITAREA,
 	noticeType = COMBAT_PHYSICALDAMAGE,
 	boomEffect = CONST_ME_MORTAREA,
-	boomType = COMBAT_DEATHDAMAGE
+	boomType = COMBAT_DEATHDAMAGE,
 }
 
 local vocation = {
 	VOCATION.BASE_ID.SORCERER,
 	VOCATION.BASE_ID.DRUID,
 	VOCATION.BASE_ID.PALADIN,
-	VOCATION.BASE_ID.KNIGHT
+	VOCATION.BASE_ID.KNIGHT,
 }
 
 for _, area in ipairs(combatConfig.areas) do

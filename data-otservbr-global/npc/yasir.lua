@@ -677,7 +677,6 @@ npcConfig.shop = {
 	{ itemName = "tagralt blade", clientId = 31614, sell = 250000 },
 	{ itemName = "enchanted theurgic amulet", clientId = 30403, sell = 250000 },
 
-
 	-- Custom T2 - Cobra, Lion, Eldritch
 	{ itemName = "cobra crossbow", clientId = 30393, sell = 500000 },
 	{ itemName = "cobra boots", clientId = 30394, sell = 500000 },
@@ -702,7 +701,7 @@ npcConfig.shop = {
 	{ itemName = "eldritch cowl", clientId = 36670, sell = 500000 },
 	{ itemName = "eldritch hood", clientId = 36671, sell = 500000 },
 	{ itemName = "eldritch bow", clientId = 36664, sell = 500000 },
-	{ itemName = "eldritch quiver", clientId = 36666, sell = 500000},
+	{ itemName = "eldritch quiver", clientId = 36666, sell = 500000 },
 	{ itemName = "eldritch claymore", clientId = 36657, sell = 500000 },
 	{ itemName = "eldritch greataxe", clientId = 36661, sell = 500000 },
 	{ itemName = "eldritch warmace", clientId = 36659, sell = 500000 },
@@ -784,8 +783,6 @@ npcConfig.shop = {
 	{ itemName = "soulshell", clientId = 34094, sell = 1000000 },
 	{ itemName = "pair of soulwalkers", clientId = 34097, sell = 1000000 },
 	{ itemName = "pair of soulstalkers", clientId = 34098, sell = 1000000 },
-
-
 }
 -- On buy npc shop message
 npcType.onBuyItem = function(npc, player, itemId, subType, amount, ignore, inBackpacks, totalCost)
@@ -796,8 +793,7 @@ npcType.onSellItem = function(npc, player, itemId, subtype, amount, ignore, name
 	player:sendTextMessage(MESSAGE_INFO_DESCR, string.format("Sold %ix %s for %i gold.", amount, name, totalCost))
 end
 -- On check npc shop message (look item)
-npcType.onCheckItem = function(npc, player, clientId, subType)
-end
+npcType.onCheckItem = function(npc, player, clientId, subType) end
 
 local function creatureSayCallback(npc, creature, type, message)
 	local player = Player(creature)
