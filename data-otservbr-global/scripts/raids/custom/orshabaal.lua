@@ -24,6 +24,5 @@ raid
 			amount = 1,
 		},
 	})
-	:autoAdvance("12h")
 
 raid:register()
