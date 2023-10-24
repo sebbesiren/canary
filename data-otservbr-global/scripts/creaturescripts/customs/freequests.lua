@@ -371,7 +371,7 @@ local questTable = {
 
 	{ storage = Storage.HeroRathleton.AccessDoor, storageValue = 1 },
 	{ storage = Storage.HeroRathleton.FastWay, storageValue = 1 },
-	{ storage = Storage.PitsOfInferno.ShortcutHubDoor, storageValue = 1 }
+	{ storage = Storage.PitsOfInferno.ShortcutHubDoor, storageValue = 1 },
 }
 
 -- from Position: (33201, 31762, 1)
