@@ -654,7 +654,6 @@ npcConfig.shop = {
 	{ itemName = "royal almandine", clientId = 39038, sell = 460000 },
 	{ itemName = "giant amethyst", clientId = 30061, sell = 60000 },
 	{ itemName = "nighthunter wing", clientId = 39381, sell = 2000 },
-
 }
 -- On buy npc shop message
 npcType.onBuyItem = function(npc, player, itemId, subType, amount, ignore, inBackpacks, totalCost)
