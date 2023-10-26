@@ -507,7 +507,7 @@ uint32_t Party::getHighestLevel() {
 }
 
 uint32_t Party::getMinLevel() {
-	return static_cast<uint32_t>(std::ceil(static_cast<float>(getHighestLevel())  / 2));
+	return static_cast<uint32_t>(std::ceil(static_cast<float>(getHighestLevel()) / 2));
 }
 
 uint32_t Party::getLowestLevel() {
