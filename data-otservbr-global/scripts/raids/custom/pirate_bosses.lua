@@ -8,7 +8,7 @@ local raid = Raid("liberty_bay.pirate-bosses", {
 	initialChance = 5,
 	targetChancePerDay = 50,
 	maxChancePerCheck = 50,
-	maxChecksPerDay = 3,
+	maxChecksPerDay = 10,
 	minGapBetween = "23h",
 })
 
