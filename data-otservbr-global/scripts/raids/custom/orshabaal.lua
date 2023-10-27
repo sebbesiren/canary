@@ -5,9 +5,9 @@ local raid = Raid("edron.orshabaal", {
 	zone = zone,
 	allowedDays = { "Friday" },
 	minActivePlayers = 0,
-	initialChance = 15,
-	targetChancePerDay = 15,
-	maxChancePerCheck = 15,
+	initialChance = 25,
+	targetChancePerDay = 25,
+	maxChancePerCheck = 25,
 	maxChecksPerDay = 1,
 	minGapBetween = "672h",
 })
