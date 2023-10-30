@@ -12,8 +12,8 @@ local raid = Raid("liberty_bay.pirate-bosses", {
 	minGapBetween = "23h",
 })
 
-raid:addServerBroadcast("Pirates are launching a surprise attack on Liberty Bay! Take care, they seem to be everywhere.", WEBHOOK_COLOR_RAID):autoAdvance("10s")
-raid:addServerBroadcast("Pirates have invaded the fortress.", WEBHOOK_COLOR_RAID):autoAdvance("5s")
+raid:addServerBroadcast("Incoming raid!", "Pirates are launching a surprise attack on Liberty Bay! Take care, they seem to be everywhere.", WEBHOOK_COLOR_RAID):autoAdvance("10s")
+raid:addServerBroadcast("Incoming raid!", "Pirates have invaded the fortress.", WEBHOOK_COLOR_RAID):autoAdvance("5s")
 
 local bosses = { "Ron the Ripper", "Lethal Lissy", "Brutus Bloodbeard", "Deadeye Devious" }
 
@@ -42,6 +42,6 @@ raid:addSpawnMonsters({
 		name = bosses[math.random(#bosses)],
 		amount = 1,
 	},
-}):autoAdvance("12h")
+})  :autoAdvance("12h")
 
 raid:register()
