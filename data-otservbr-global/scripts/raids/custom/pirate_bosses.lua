@@ -17,31 +17,33 @@ raid:addBroadcast("Pirates have invaded the fortress.", WEBHOOK_COLOR_RAID, "Inc
 
 local bosses = { "Ron the Ripper", "Lethal Lissy", "Brutus Bloodbeard", "Deadeye Devious" }
 
-raid:addSpawnMonsters({
-	{
-		name = "Pirate Corsair",
-		amount = 60,
-	},
-	{
-		name = "Pirate Buccaneer",
-		amount = 60,
-	},
-	{
-		name = "Pirate Cutthroat",
-		amount = 60,
-	},
-	{
-		name = "Pirate Marauder",
-		amount = 60,
-	},
-	{
-		name = "Smuggler",
-		amount = 60,
-	},
-	{
-		name = bosses[math.random(#bosses)],
-		amount = 1,
-	},
-})  :autoAdvance("12h")
+raid
+	:addSpawnMonsters({
+		{
+			name = "Pirate Corsair",
+			amount = 60,
+		},
+		{
+			name = "Pirate Buccaneer",
+			amount = 60,
+		},
+		{
+			name = "Pirate Cutthroat",
+			amount = 60,
+		},
+		{
+			name = "Pirate Marauder",
+			amount = 60,
+		},
+		{
+			name = "Smuggler",
+			amount = 60,
+		},
+		{
+			name = bosses[math.random(#bosses)],
+			amount = 1,
+		},
+	})
+	:autoAdvance("12h")
 
 raid:register()

@@ -16,11 +16,13 @@ raid:addBroadcast("Orshabaal's minions are working on his return to the World. L
 raid:addBroadcast("Orshabaal is about to make his way into the mortal realm. Run for your lives!", WEBHOOK_COLOR_RAID, "Incoming Boss!"):autoAdvance("20s")
 raid:addBroadcast("Orshabaal has been summoned from hell to plague the lands of mortals once again.", WEBHOOK_COLOR_RAID, "Incoming Boss!"):autoAdvance("60s")
 
-raid:addSpawnMonsters({
-	{
-		name = "Orshabaal",
-		amount = 1,
-	},
-}):autoAdvance("12h")
+raid
+	:addSpawnMonsters({
+		{
+			name = "Orshabaal",
+			amount = 1,
+		},
+	})
+	:autoAdvance("12h")
 
 raid:register()

@@ -15,15 +15,17 @@ local raid = Raid("orc_main_fortress.balrog", {
 raid:addBroadcast("Something is making the ground beneath Orc Main Fortress tremble.", WEBHOOK_COLOR_RAID, "Incoming Boss!"):autoAdvance("10m")
 raid:addBroadcast("The Balrog has risen from the depths of hell.", WEBHOOK_COLOR_RAID, "Incoming Boss!"):autoAdvance("5s")
 
-raid:addSpawnMonsters({
-	{
-		name = "Demon",
-		amount = 7,
-	},
-	{
-		name = "Balrog",
-		amount = 1,
-	},
-}):autoAdvance("12h")
+raid
+	:addSpawnMonsters({
+		{
+			name = "Demon",
+			amount = 7,
+		},
+		{
+			name = "Balrog",
+			amount = 1,
+		},
+	})
+	:autoAdvance("12h")
 
 raid:register()
