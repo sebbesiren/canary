@@ -7,13 +7,13 @@ local raid = Raid("orc_main_fortress.balrog", {
 	minActivePlayers = 0,
 	initialChance = 2,
 	targetChancePerDay = 33,
-	maxChancePerCheck = 50,
+	maxChancePerCheck = 100,
 	maxChecksPerDay = 10,
 	minGapBetween = "48h",
 })
 
-raid:addBroadcast("Something is making the ground beneath Orc Main Fortress tremble."):autoAdvance("10m")
-raid:addBroadcast("The Balrog has risen from the depths of hell."):autoAdvance("5s")
+raid:addServerBroadcast("Something is making the ground beneath Orc Main Fortress tremble.", WEBHOOK_COLOR_RAID):autoAdvance("10m")
+raid:addServerBroadcast("The Balrog has risen from the depths of hell.", WEBHOOK_COLOR_RAID):autoAdvance("5s")
 
 raid:addSpawnMonsters({
 	{
@@ -24,6 +24,6 @@ raid:addSpawnMonsters({
 		name = "Balrog",
 		amount = 1,
 	},
-})
+}):autoAdvance("12h")
 
 raid:register()

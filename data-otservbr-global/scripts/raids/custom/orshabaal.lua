@@ -5,22 +5,22 @@ local raid = Raid("edron.orshabaal", {
 	zone = zone,
 	allowedDays = { "Friday" },
 	minActivePlayers = 0,
-	initialChance = 25,
+	initialChance = 1,
 	targetChancePerDay = 25,
-	maxChancePerCheck = 25,
-	maxChecksPerDay = 1,
+	maxChancePerCheck = 100,
+	maxChecksPerDay = 25,
 	minGapBetween = "672h",
 })
 
-raid:addBroadcast("Orshabaal's minions are working on his return to the World. LEAVE Edron at once, mortals."):autoAdvance("5s")
-raid:addBroadcast("Orshabaal is about to make his way into the mortal realm. Run for your lives!"):autoAdvance("20s")
-raid:addBroadcast("Orshabaal has been summoned from hell to plague the lands of mortals once again."):autoAdvance("60s")
+raid:addServerBroadcast("Orshabaal's minions are working on his return to the World. LEAVE Edron at once, mortals.", WEBHOOK_COLOR_RAID):autoAdvance("5s")
+raid:addServerBroadcast("Orshabaal is about to make his way into the mortal realm. Run for your lives!", WEBHOOK_COLOR_RAID):autoAdvance("20s")
+raid:addServerBroadcast("Orshabaal has been summoned from hell to plague the lands of mortals once again.", WEBHOOK_COLOR_RAID):autoAdvance("60s")
 
 raid:addSpawnMonsters({
 	{
 		name = "Orshabaal",
 		amount = 1,
 	},
-})
+}):autoAdvance("12h")
 
 raid:register()

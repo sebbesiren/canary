@@ -308,6 +308,16 @@ function Encounter:addBroadcast(message, type)
 	})
 end
 
+function Encounter:addServerBroadcast(message, type)
+	type = type or MESSAGE_EVENT_ADVANCE
+	return self:addStage({
+		start = function()
+			broadcastMessage(message, type)
+			Webhook.sendMessage("Incoming raid!", message, WEBHOOK_COLOR_WARNING)
+		end
+	})
+end
+
 ---Adds a stage that spawns monsters
 ---@param configs SpawnMonsterConfig[] The configurations for spawning monsters
 ---@return boolean True if the spawn monsters stage is added successfully, false otherwise
