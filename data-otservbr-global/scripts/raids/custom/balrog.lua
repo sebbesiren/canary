@@ -5,10 +5,8 @@ local raid = Raid("orc_main_fortress.balrog", {
 	zone = zone,
 	allowedDays = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" },
 	minActivePlayers = 0,
-	initialChance = 2,
 	targetChancePerDay = 33,
 	maxChancePerCheck = 100,
-	maxChecksPerDay = 10,
 	minGapBetween = "48h",
 })
 

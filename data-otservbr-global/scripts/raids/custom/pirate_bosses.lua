@@ -5,10 +5,8 @@ local raid = Raid("liberty_bay.pirate-bosses", {
 	zone = zone,
 	allowedDays = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" },
 	minActivePlayers = 0,
-	initialChance = 10,
 	targetChancePerDay = 50,
 	maxChancePerCheck = 100,
-	maxChecksPerDay = 5,
 	minGapBetween = "23h",
 })
 
