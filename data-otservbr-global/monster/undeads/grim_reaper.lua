@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Grim Reaper")
 local monster = {}
 
 monster.description = "a grim reaper"
-monster.experience = 5500
+monster.experience = 6500
 monster.outfit = {
 	lookType = 300,
 	lookHead = 0,
