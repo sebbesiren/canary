@@ -51,6 +51,17 @@ npcType.onCloseChannel = function(npc, creature)
 end
 
 npcConfig.shop = {
+	-- Custom T0 - Umbral
+	{ itemName = "umbral blade", clientId = 20065, sell = 50000 },
+	{ itemName = "umbral slayer", clientId = 20068, sell = 50000 },
+	{ itemName = "umbral axe", clientId = 20071, sell = 50000 },
+	{ itemName = "umbral chopper", clientId = 20074, sell = 50000 },
+	{ itemName = "umbral mace", clientId = 20077, sell = 50000 },
+	{ itemName = "umbral hammer", clientId = 20080, sell = 50000 },
+	{ itemName = "umbral bow", clientId = 20083, sell = 50000 },
+	{ itemName = "umbral crossbow", clientId = 20086, sell = 50000 },
+	{ itemName = "umbral spellbook", clientId = 20089, sell = 50000 },
+
 	-- Custom T1 - Jungle, gnome, other
 	{ itemName = "exotic amulet", clientId = 35523, sell = 250000 },
 	{ itemName = "throwing axe", clientId = 35515, sell = 250000 },
