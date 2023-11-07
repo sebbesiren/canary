@@ -7,7 +7,7 @@ local raid = Raid("liberty_bay.pirate-bosses", {
 	minActivePlayers = 0,
 	targetChancePerDay = 33,
 	maxChancePerCheck = 100,
-	minGapBetween = "23h",
+	minGapBetween = "48h",
 })
 
 raid:addBroadcast("Pirates are launching a surprise attack on Liberty Bay! Take care, they seem to be everywhere.", WEBHOOK_COLOR_RAID, "Incoming raid!"):autoAdvance("10s")

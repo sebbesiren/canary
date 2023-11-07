@@ -7,7 +7,7 @@ local raid = Raid("orc_main_fortress.balrog", {
 	minActivePlayers = 0,
 	targetChancePerDay = 33,
 	maxChancePerCheck = 100,
-	minGapBetween = "48h",
+	minGapBetween = "60h",
 })
 
 raid:addBroadcast("Something is making the ground beneath Orc Main Fortress tremble.", WEBHOOK_COLOR_RAID, "Incoming Boss!"):autoAdvance("10m")
