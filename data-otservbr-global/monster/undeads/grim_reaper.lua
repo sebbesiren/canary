@@ -97,6 +97,7 @@ monster.loot = {
 	{ name = "underworld rod", chance = 910 },
 	{ id = 8896, chance = 2500 }, -- slightly rusted armor
 	{ name = "mystical hourglass", chance = 5300 },
+	{ name = "gold token", chance = 3000 },
 }
 
 monster.attacks = {
