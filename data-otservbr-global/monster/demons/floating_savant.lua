@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Floating Savant")
 local monster = {}
 
 monster.description = "a floating savant"
-monster.experience = 9500
+monster.experience = 11000
 monster.outfit = {
 	lookType = 1063,
 	lookHead = 113,

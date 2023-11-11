@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Hellhound")
 local monster = {}
 
 monster.description = "a hellhound"
-monster.experience = 8700
+monster.experience = 10000
 monster.outfit = {
 	lookType = 240,
 	lookHead = 0,
