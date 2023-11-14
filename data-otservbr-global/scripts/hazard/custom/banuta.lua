@@ -35,10 +35,10 @@ function deathEvent.onDeath(creature)
 	-- Level up if monster is a boss
 	if monster:getType():isRewardBoss() then
 		onDeathForDamagingPlayers(creature, function(creature, damagingPlayer)
-		if hazard:getPlayerMaxLevel(damagingPlayer) == points then
-			hazard:levelUp(damagingPlayer)
-		end
-	end)
+			if hazard:getPlayerMaxLevel(damagingPlayer) == points then
+				hazard:levelUp(damagingPlayer)
+			end
+		end)
 
 		return true
 	end
@@ -57,4 +57,3 @@ function deathEvent.onDeath(creature)
 	return true
 end
 deathEvent:register()
-
