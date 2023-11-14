@@ -52,7 +52,12 @@ function Hazard:getPlayerCurrentLevel(player)
 		local fromStorage = player:getStorageValue(self.storageCurrent)
 		return fromStorage <= 0 and 1 or fromStorage
 	end
-	local fromKV = player:kv():scoped(self.name):get("currentLevel") or 1
+	local fromKV = player:kv():scoped(self.name):get("currentLevel")
+
+	if fromKV == nil then
+		fromKV = 1
+	end
+
 	return fromKV <= 0 and 1 or fromKV
 end
 
@@ -89,6 +94,10 @@ function Hazard:getPlayerMaxLevel(player)
 		return fromStorage <= 0 and 1 or fromStorage
 	end
 	local fromKV = player:kv():scoped(self.name):get("maxLevel")
+	if fromKV == nil then
+		fromKV = 1
+	end
+
 	return fromKV <= 0 and 1 or fromKV
 end
 
@@ -102,10 +111,11 @@ function Hazard:levelUp(player)
 		return
 	end
 
-	local current = player:kv(self.name):get("currentLevel")
-	local max = player:kv(self.name):get("maxLevel")
+	local current = self:getPlayerCurrentLevel(player)
+	local max = self:getPlayerMaxLevel(player)
+
 	if current == max then
-		player:kv(self.name):set("maxLevel", max + 1)
+		self:setPlayerMaxLevel(player, max + 1)
 	end
 end
 

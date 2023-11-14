@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Prince Drazzak")
 local monster = {}
 
 monster.description = "Prince Drazzak"
-monster.experience = 210000
+monster.experience = 330000 * 4
 monster.outfit = {
 	lookType = 12,
 	lookHead = 77,

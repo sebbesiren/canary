@@ -1,7 +1,7 @@
 local hazard = Hazard.new({
-	name = "hazard.prison",
-	from = Position(33500, 32325, 8),
-	to = Position(33630, 32440, 10),
+	name = "hazard.edron-hero-cave",
+	from = Position(33240, 31520, 9),
+	to = Position(33370, 31626, 10),
 	maxLevel = 20,
 
 	crit = true,
@@ -13,7 +13,7 @@ hazard:register()
 
 local hazardZone = Zone.getByName(hazard.name)
 
-local deathEventName = "PrisonDeath"
+local deathEventName = "EdronHeroCaveDeath"
 local spawnEvent = ZoneEvent(hazardZone)
 function spawnEvent.onSpawn(monster, position)
 	monster:registerEvent(deathEventName)
@@ -43,21 +43,15 @@ function deathEvent.onDeath(creature)
 		return true
 	end
 
-	local chanceTo = math.random(1, 2000)
-	if chanceTo <= points then
-		local raids = { "Gaz", "Omrafir" }
-		Game.startRaid(raids[math.random(#raids)])
-	end
-
 	chanceTo = math.random(1, 1000)
 	if chanceTo <= points then
-		local miniBosses = { "Horadron", "Prince Drazzak", "Terofar", "Zavarash" }
+		local miniBosses = { "Shadowpelt", "Black Vixen", "Bloodback" }
 		local closestFreePosition = player:getClosestFreePosition(monster:getPosition(), 4, true)
 
 		local boss = miniBosses[math.random(#miniBosses)]
 		local boss_monster = Game.createMonster(boss, closestFreePosition.x == 0 and monster:getPosition() or closestFreePosition, false, true)
 		if boss_monster then
-			boss_monster:say(boss .. " has risen from the depths of hell.")
+			boss_monster:say(boss .. " has joined the fight.")
 		end
 	end
 	return true
