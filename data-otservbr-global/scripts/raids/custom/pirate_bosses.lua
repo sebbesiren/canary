@@ -10,8 +10,8 @@ local raid = Raid("liberty_bay.pirate-bosses", {
 	minGapBetween = "48h",
 })
 
-raid:addBroadcast("Pirates are launching a surprise attack on Liberty Bay! Take care, they seem to be everywhere.", WEBHOOK_COLOR_RAID, "Incoming raid!"):autoAdvance("10s")
-raid:addBroadcast("Pirates have invaded the fortress.", WEBHOOK_COLOR_RAID, "Incoming raid!"):autoAdvance("5s")
+raid:addBroadcast("Pirates are launching a surprise attack on Liberty Bay! Take care, they seem to be everywhere."):autoAdvance("10s")
+raid:addBroadcast("Pirates have invaded the fortress."):autoAdvance("5s")
 
 local bosses = { "Ron the Ripper", "Lethal Lissy", "Brutus Bloodbeard", "Deadeye Devious" }
 

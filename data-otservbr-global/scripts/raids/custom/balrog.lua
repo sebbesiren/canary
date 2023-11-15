@@ -10,8 +10,8 @@ local raid = Raid("orc_main_fortress.balrog", {
 	minGapBetween = "60h",
 })
 
-raid:addBroadcast("Something is making the ground beneath Orc Main Fortress tremble.", WEBHOOK_COLOR_RAID, "Incoming Boss!"):autoAdvance("10m")
-raid:addBroadcast("The Balrog has risen from the depths of hell.", WEBHOOK_COLOR_RAID, "Incoming Boss!"):autoAdvance("5s")
+raid:addBroadcast("Something is making the ground beneath Orc Main Fortress tremble."):autoAdvance("10m")
+raid:addBroadcast("The Balrog has risen from the depths of hell."):autoAdvance("5s")
 
 raid
 	:addSpawnMonsters({
