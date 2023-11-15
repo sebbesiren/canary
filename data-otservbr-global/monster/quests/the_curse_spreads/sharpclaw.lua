@@ -94,7 +94,7 @@ monster.loot = {
 	{ name = "underworld rod", chance = 400 },
 	{ name = "wand of voodoo", chance = 400 },
 	{ name = "wolf backpack", chance = 250 },
-	{ name = "foxtail amulet", chance = 3000 }
+	{ name = "foxtail amulet", chance = 3000 },
 }
 
 monster.attacks = {
@@ -134,8 +134,7 @@ monster.immunities = {
 	{ type = "bleed", condition = false },
 }
 
-mType.onThink = function(monster, interval)
-end
+mType.onThink = function(monster, interval) end
 
 mType.onAppear = function(monster, creature)
 	if monster:getType():isRewardBoss() then
@@ -143,13 +142,10 @@ mType.onAppear = function(monster, creature)
 	end
 end
 
-mType.onDisappear = function(monster, creature)
-end
+mType.onDisappear = function(monster, creature) end
 
-mType.onMove = function(monster, creature, fromPosition, toPosition)
-end
+mType.onMove = function(monster, creature, fromPosition, toPosition) end
 
-mType.onSay = function(monster, creature, type, message)
-end
+mType.onSay = function(monster, creature, type, message) end
 
 mType:register(monster)

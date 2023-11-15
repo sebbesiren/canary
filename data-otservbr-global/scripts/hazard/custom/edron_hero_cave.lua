@@ -45,7 +45,7 @@ function deathEvent.onDeath(creature)
 
 	chanceTo = math.random(1, 1000)
 	if chanceTo <= points then
-		local miniBosses = { "Shadowpelt", "Black Vixen", "Bloodback" , "Sharpclaw"}
+		local miniBosses = { "Shadowpelt", "Black Vixen", "Bloodback", "Sharpclaw" }
 		local closestFreePosition = player:getClosestFreePosition(monster:getPosition(), 4, true)
 
 		local boss = miniBosses[math.random(#miniBosses)]
