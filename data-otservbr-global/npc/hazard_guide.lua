@@ -5,14 +5,14 @@ local npcConfig = {}
 local hazards = {
 	{ name = "Prison", hazard = Hazard.getByName("hazard.prison") },
 	{ name = "Edron Hero Cave", hazard = Hazard.getByName("hazard.edron-hero-cave") },
-	{ name = "Banuta", hazard = Hazard.getByName("hazard.banuta") }
+	{ name = "Banuta", hazard = Hazard.getByName("hazard.banuta") },
 }
 local hazardKeys = ""
 for index, value in ipairs(hazards) do
 	hazardKeys = hazardKeys .. "{" .. value.name .. "}"
 
 	if index < #hazards then
-		hazardKeys = hazardKeys .. ', '
+		hazardKeys = hazardKeys .. ", "
 	end
 end
 local baseMessage = "Which hazard level do you wish to modify? (" .. hazardKeys .. ")"
