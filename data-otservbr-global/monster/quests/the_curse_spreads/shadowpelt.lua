@@ -97,6 +97,7 @@ monster.loot = {
 	{ name = "silver token", chance = 150 },
 	{ id = 22103, chance = 150 }, -- werebear trophy
 	{ name = "wolf backpack", chance = 100 },
+	{ name = "foxtail amulet", chance = 3000 }
 }
 
 monster.attacks = {
