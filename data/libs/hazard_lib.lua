@@ -102,15 +102,6 @@ function Hazard:getPlayerMaxLevel(player)
 end
 
 function Hazard:levelUp(player)
-	if self.storageMax and self.storageCurrent then
-		local current = self:getPlayerCurrentLevel(player)
-		local max = self:getPlayerMaxLevel(player)
-		if current == max then
-			self:setPlayerMaxLevel(player, max + 1)
-		end
-		return
-	end
-
 	local current = self:getPlayerCurrentLevel(player)
 	local max = self:getPlayerMaxLevel(player)
 
