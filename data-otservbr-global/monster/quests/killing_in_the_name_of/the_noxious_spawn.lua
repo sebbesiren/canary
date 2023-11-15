@@ -38,7 +38,7 @@ monster.flags = {
 	hostile = true,
 	convinceable = false,
 	pushable = false,
-	rewardBoss = false,
+	rewardBoss = true,
 	illusionable = false,
 	canPushItems = true,
 	canPushCreatures = true,
@@ -80,6 +80,7 @@ monster.loot = {
 	{ id = 8074, chance = 13000 }, -- spellbook of mind control
 	{ id = 3392, chance = 4000 }, -- royal helmet
 	{ id = 8052, chance = 2000 }, -- swamplair armor
+	{ id = 9392, chance = 44000}, -- claw of the noxious spawn
 }
 
 monster.attacks = {
