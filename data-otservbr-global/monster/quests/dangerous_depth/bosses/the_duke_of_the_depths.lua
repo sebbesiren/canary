@@ -107,6 +107,7 @@ monster.loot = {
 	{ name = "gold token", chance = 10420 },
 	{ name = "crystal coin", chance = 6250 },
 	{ name = "gnome shield", chance = 4170 },
+	{ name = "gnome legs", chance = 4170 },
 	{ name = "crystalline armor", chance = 4170 },
 	{ name = "gnome sword", chance = 4170 },
 	{ name = "terra mantle", chance = 2080 },
