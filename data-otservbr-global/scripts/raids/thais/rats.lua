@@ -5,8 +5,8 @@ local raid = Raid("thais.rats", {
 	zone = zone,
 	allowedDays = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" },
 	minActivePlayers = 0,
-	targetChancePerDay = 30,
-	maxChancePerCheck = 50,
+	targetChancePerDay = 0,
+	maxChancePerCheck = 0,
 	minGapBetween = "36h",
 })
 
