@@ -5,12 +5,12 @@ local raid = Raid("thais.rats", {
 	zone = zone,
 	allowedDays = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" },
 	minActivePlayers = 0,
-	targetChancePerDay = 0,
-	maxChancePerCheck = 0,
-	minGapBetween = "36h",
+	targetChancePerDay = 30,
+	maxChancePerCheck = 50,
+	minGapBetween = "100h",
 })
 
-raid:addBroadcast("Rat Plague in Thais!", WEBHOOK_COLOR_RAID, "Incoming Raid!"):autoAdvance("5s")
+raid:addBroadcast("Rat Plague in Thais!"):autoAdvance("5s")
 
 raid
 	:addSpawnMonsters({
