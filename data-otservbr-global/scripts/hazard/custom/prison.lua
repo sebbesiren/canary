@@ -50,7 +50,7 @@ function deathEvent.onDeath(creature)
 	end
 
 	chanceTo = math.random(1, 1000)
-	if chanceTo <= points then
+	if chanceTo <= math.min(points, 5) then
 		local miniBosses = { "Horadron", "Terofar", "Zavarash" }
 		local closestFreePosition = player:getClosestFreePosition(monster:getPosition(), 4, true)
 
@@ -62,7 +62,7 @@ function deathEvent.onDeath(creature)
 	end
 
 	chanceTo = math.random(1, 10000)
-	if chanceTo <= points then
+	if chanceTo <= 1 then
 		local miniBosses = { "Prince Drazzak" }
 		local closestFreePosition = player:getClosestFreePosition(monster:getPosition(), 4, true)
 
