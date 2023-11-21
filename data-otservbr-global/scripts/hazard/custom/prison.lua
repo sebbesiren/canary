@@ -49,8 +49,8 @@ function deathEvent.onDeath(creature)
 		Game.startRaid(raids[math.random(#raids)])
 	end
 
-	chanceTo = math.random(1, 1000)
-	if chanceTo <= math.min(points, 5) then
+	chanceTo = math.random(1, 1200)
+	if chanceTo <= math.min(points, 3) then
 		local miniBosses = { "Horadron", "Terofar", "Zavarash" }
 		local closestFreePosition = player:getClosestFreePosition(monster:getPosition(), 4, true)
 
