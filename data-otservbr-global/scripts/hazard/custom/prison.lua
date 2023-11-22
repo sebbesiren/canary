@@ -61,7 +61,7 @@ function deathEvent.onDeath(creature)
 		end
 	end
 
-	chanceTo = math.random(1, 10000)
+	chanceTo = math.random(1, 20000)
 	if chanceTo <= 1 then
 		local miniBosses = { "Prince Drazzak" }
 		local closestFreePosition = player:getClosestFreePosition(monster:getPosition(), 4, true)
