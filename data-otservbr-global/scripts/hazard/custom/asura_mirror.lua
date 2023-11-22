@@ -1,0 +1,59 @@
+local hazard = Hazard.new({
+	name = "hazard.asura-mirror",
+	from = Position(32783, 32721, 9),
+	to = Position(32894, 32827, 11),
+	maxLevel = 20,
+
+	crit = true,
+	dodge = true,
+	damageBoost = true,
+})
+
+hazard:register()
+
+local hazardZone = Zone.getByName(hazard.name)
+
+local deathEventName = "AsuraMirrorDeath"
+local spawnEvent = ZoneEvent(hazardZone)
+function spawnEvent.onSpawn(monster, position)
+	monster:registerEvent(deathEventName)
+end
+spawnEvent:register()
+
+local deathEvent = CreatureEvent(deathEventName)
+function deathEvent.onDeath(creature)
+	local monster = creature:getMonster()
+	if not creature or not monster or not monster:hazard() or not hazard:isInZone(monster:getPosition()) then
+		return true
+	end
+
+	local player, points = hazard:getHazardPlayerAndPoints(monster:getDamageMap())
+	if points < 1 then
+		return true
+	end
+
+	-- Level up if monster is a boss
+	if monster:getType():isRewardBoss() then
+		onDeathForDamagingPlayers(creature, function(creature, damagingPlayer)
+			if hazard:getPlayerMaxLevel(damagingPlayer) == points then
+				hazard:levelUp(damagingPlayer)
+			end
+		end)
+
+		return true
+	end
+
+	chanceTo = math.random(1, 1000 / 1000)
+	if chanceTo <= points then
+		local miniBosses = { "The Blazing Rose", "The Diamond Blossom", "The Lily of Night" }
+		local closestFreePosition = player:getClosestFreePosition(monster:getPosition(), 4, true)
+
+		local boss = miniBosses[math.random(#miniBosses)]
+		local boss_monster = Game.createMonster(boss, closestFreePosition.x == 0 and monster:getPosition() or closestFreePosition, false, true)
+		if boss_monster then
+			boss_monster:say(boss .. " has joined the fight.")
+		end
+	end
+	return true
+end
+deathEvent:register()
