@@ -4,7 +4,7 @@ local npcConfig = {}
 
 local hazards = {
 	{ name = "Prison", hazard = Hazard.getByName("hazard.prison") },
-	{ name = "Asura Mirror", hazard = Hazard.getByName("hazard.asura-mirror")},
+	{ name = "Asura Mirror", hazard = Hazard.getByName("hazard.asura-mirror") },
 	{ name = "Edron Hero Cave", hazard = Hazard.getByName("hazard.edron-hero-cave") },
 	{ name = "Banuta", hazard = Hazard.getByName("hazard.banuta") },
 }
