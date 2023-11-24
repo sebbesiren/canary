@@ -1,5 +1,5 @@
 local loyaltySystem = {
-	enable = configManager.getBoolean(LOYALTY_ENABLED),
+	enable = configManager.getBoolean(configKeys.LOYALTY_ENABLED),
 	titles = {
 		[1] = { name = "Scout of Mehra", points = 50 },
 		[2] = { name = "Sentinel of Mehra", points = 100 },
