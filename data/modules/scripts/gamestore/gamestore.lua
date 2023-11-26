@@ -21,8 +21,7 @@ if configManager.getBoolean(configKeys.VIP_SYSTEM_ENABLED) then
 	premiumOfferName = "VIP"
 end
 
-local premiumDescription =
-	"<i>Enhance your gaming experience by gaining additional abilities and advantages:</i>\n\n&#8226; access to Premium areas\n&#8226; use Tibia's transport system (ships, carpet)\n&#8226; more spells\n&#8226; rent houses\n&#8226; found guilds\n&#8226; offline training\n&#8226; larger depots\n&#8226; and many more\n\n{usablebyallicon} valid for all characters on this account\n{activated}"
+local premiumDescription = "<i>Enhance your gaming experience by gaining additional abilities and advantages:</i>\n\n&#8226; access to Premium areas\n&#8226; use Tibia's transport system (ships, carpet)\n&#8226; more spells\n&#8226; rent houses\n&#8226; found guilds\n&#8226; offline training\n&#8226; larger depots\n&#8226; and many more\n\n{usablebyallicon} valid for all characters on this account\n{activated}"
 if configManager.getBoolean(configKeys.VIP_SYSTEM_ENABLED) then
 	local vipBonusExp = configManager.getNumber(configKeys.VIP_BONUS_EXP)
 	local vipBonusLoot = configManager.getNumber(configKeys.VIP_BONUS_LOOT)
@@ -230,6 +229,113 @@ GameStore.Categories = {
 				type = GameStore.OfferTypes.OFFER_TYPE_BLESSINGS,
 			},
 		},
+	},
+	{
+		icons = { "Hot_Cuisine.png" },
+		name = "Hot Cuisine",
+		parent = "Consumables",
+		rookgaard = true,
+		state = GameStore.States.STATE_NONE,
+		offers = {
+			{
+				icons = { "Rotworm_Stew.png" },
+				name = "Rotworm Stew",
+				price = 30,
+				itemtype = 9079,
+				description = "It will heal you completely.",
+				type = GameStore.OfferTypes.OFFER_TYPE_STACKABLE,
+			},
+			{
+				icons = { "Hydra_Tongue_Salad.png" },
+				name = "Hydra Tongue Salad",
+				price = 30,
+				itemtype = 9080,
+				description = "It will cure you of all negative conditions.",
+				type = GameStore.OfferTypes.OFFER_TYPE_STACKABLE,
+			},
+			{
+				icons = { "Hydra_Tongue_Salad.png" },
+				name = "Roasted Dragon Wings",
+				price = 30,
+				itemtype = 9081,
+				description = "Increases your shielding skill by 10 for one hour.",
+				type = GameStore.OfferTypes.OFFER_TYPE_STACKABLE,
+			},
+			{
+				icons = { "Tropical_Fried_Terrorbird.png" },
+				name = "Tropical Fried Terrorbird",
+				price = 30,
+				itemtype = 9082,
+				description = "Increases your magic level by 5 for one hour.",
+				type = GameStore.OfferTypes.OFFER_TYPE_STACKABLE,
+			},
+			{
+				icons = { "banana_chocolate_shake.png" },
+				name = "Banana Chocolate Shake",
+				price = 30,
+				itemtype = 9083,
+				description = "Makes you a happy supporter of this server.",
+				type = GameStore.OfferTypes.OFFER_TYPE_STACKABLE,
+			},
+			{
+				icons = { "veggie_casserole.png" },
+				name = "Veggie Casserole",
+				price = 30,
+				itemtype = 9084,
+				description = "Increase your melee skills by 10 for one hour.",
+				type = GameStore.OfferTypes.OFFER_TYPE_STACKABLE,
+			},
+			{
+				icons = { "filled_jalapeno_peppers.png" },
+				name = "Filled Jalapeno Peppers",
+				price = 30,
+				itemtype = 9085,
+				description = "Increases your speed by 100 levels for one hour.",
+				type = GameStore.OfferTypes.OFFER_TYPE_STACKABLE,
+			},
+			{
+				icons = { "blessed_steak.png" },
+				name = "Blessed Steak",
+				price = 30,
+				itemtype = 9086,
+				description = "Refills your mana completely.",
+				type = GameStore.OfferTypes.OFFER_TYPE_STACKABLE,
+			},
+			{
+				icons = { "carrot_cake.png" },
+				name = "Carrot Cake",
+				price = 30,
+				itemtype = 9087,
+				description = "Increases your distance skill by 10 for one hour.",
+				type = GameStore.OfferTypes.OFFER_TYPE_STACKABLE,
+			},
+			{
+				icons = { "Coconut_Shrimp_Bake.png" },
+				name = "Coconut Shrimp Bake",
+				price = 30,
+				itemtype = 11584,
+				description = "Improve your underwater walking speed while wearing a helmet of the deep for 24 hours.",
+				type = GameStore.OfferTypes.OFFER_TYPE_STACKABLE,
+			},
+			{
+				icons = { "Pot_of_Blackjack.png" },
+				name = "Pot of Blackjack",
+				price = 30,
+				count = 4,
+				itemtype = 11586,
+				description = "It will heal you for 5000 hp and can be used 4 times.",
+				type = GameStore.OfferTypes.OFFER_TYPE_STACKABLE,
+			},
+			{
+				icons = { "Demonic_Candy_Ball.png" },
+				name = "Pot of Blackjack",
+				price = 30,
+				count = 1,
+				itemtype = 11587,
+				description = "Various (melee/distance/shielding/magic skill, speed or invisible).",
+				type = GameStore.OfferTypes.OFFER_TYPE_STACKABLE,
+			},
+		}
 	},
 	-- Consumables ~ Casks
 	{

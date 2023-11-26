@@ -92,6 +92,7 @@ monster.loot = {
 	{ name = "galea mortis", chance = 2500 },
 	{ name = "toga mortis", chance = 2500 },
 	{ name = "gnome shield", chance = 2500 },
+	{ name = "gnome armor", chance = 2500 },
 	{ name = "gnome helmet", chance = 2500 },
 	{ name = "gnome sword", chance = 2500 },
 	{ id = 27649, chance = 2500 }, -- gnome legs

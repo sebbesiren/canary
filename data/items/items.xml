@@ -61619,6 +61619,7 @@
 		<attribute key="weight" value="2600"/>
 		<attribute key="imbuementslot" value="2">
 			<attribute key="mana leech" value="3"/>
+			<attribute key="skillboost magic level" value="3"/>
 			<attribute key="skillboost axe" value="3"/>
 			<attribute key="skillboost sword" value="3"/>
 			<attribute key="skillboost club" value="3"/>
@@ -61634,6 +61635,7 @@
 		<attribute key="weight" value="2700"/>
 		<attribute key="imbuementslot" value="2">
 			<attribute key="mana leech" value="3"/>
+			<attribute key="skillboost magic level" value="3"/>
 			<attribute key="skillboost axe" value="3"/>
 			<attribute key="skillboost sword" value="3"/>
 			<attribute key="skillboost club" value="3"/>
