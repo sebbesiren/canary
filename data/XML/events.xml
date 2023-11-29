@@ -30,10 +30,36 @@
 		<colors colordark="#235c00" colorlight="#2d7400" />
 		<details displaypriority="1" isseasonal="0" specialevent="1"/>
 	</event>
-		<event name="Double spawn" startdate="11/16/2023" enddate="11/19/2023" script="" >
+	<event name="Double spawn" startdate="11/16/2023" enddate="11/19/2023" script="" >
 		<ingame exprate="100" lootrate="100" spawnrate="200" skillrate="100" />
 		<description description="Double Spawn Rate!" />
 		<colors colordark="#235c00" colorlight="#2d7400" />
 		<details displaypriority="1" isseasonal="0" specialevent="0"/>
 	</event>
+
+	<event name="Exp event" startdate="12/1/2023" enddate="12/3/2023" script="" >
+		<ingame exprate="125" lootrate="100" spawnrate="100" skillrate="100" />
+		<description description="Experience rate increased by 25%!" />
+		<colors colordark="#235c00" colorlight="#2d7400" />
+		<details displaypriority="1" isseasonal="0" specialevent="0"/>
+	</event>
+	<event name="Skill event" startdate="12/15/2023" enddate="12/17/2023" script="" >
+		<ingame exprate="100" lootrate="100" spawnrate="100" skillrate="125" />
+		<description description="Skill rate increased by 25%!" />
+		<colors colordark="#235c00" colorlight="#2d7400" />
+		<details displaypriority="1" isseasonal="0" specialevent="0"/>
+	</event>
+	<event name="Loot event" startdate="12/29/2023" enddate="12/31/2023" script="" >
+		<ingame exprate="100" lootrate="125" spawnrate="100" skillrate="100" />
+		<description description="Loot rate increased by 25%!" />
+		<colors colordark="#235c00" colorlight="#2d7400" />
+		<details displaypriority="1" isseasonal="0" specialevent="0"/>
+	</event>
+	<event name="Double spawn" startdate="1/12/2024" enddate="1/14/2024" script="" >
+		<ingame exprate="100" lootrate="100" spawnrate="200" skillrate="100" />
+		<description description="Double Spawn Rate!" />
+		<colors colordark="#235c00" colorlight="#2d7400" />
+		<details displaypriority="1" isseasonal="0" specialevent="0"/>
+	</event>
+
 </events>
