@@ -7,7 +7,7 @@ local hazards = {
 	{ name = "Asura Mirror", hazard = Hazard.getByName("hazard.asura-mirror") },
 	{ name = "Edron Hero Cave", hazard = Hazard.getByName("hazard.edron-hero-cave") },
 	{ name = "Banuta", hazard = Hazard.getByName("hazard.banuta") },
-	{ name = "Ferumbras Grimeleech", hazard = Hazard.getByName("hazard.ferumbras-ascension-grimeleech") }
+	{ name = "Ferumbras Grimeleech", hazard = Hazard.getByName("hazard.ferumbras-ascension-grimeleech") },
 }
 local hazardKeys = ""
 for index, value in ipairs(hazards) do
