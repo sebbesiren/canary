@@ -43,8 +43,8 @@ function deathEvent.onDeath(creature)
 		return true
 	end
 
-	chanceTo = math.random(1, 1000)
-	if chanceTo <= points then
+	chanceTo = math.random(1, 400)
+	if chanceTo <= 1 then
 		local miniBosses = { "The Blazing Rose", "The Diamond Blossom", "The Lily of Night" }
 		local closestFreePosition = player:getClosestFreePosition(monster:getPosition(), 4, true)
 
