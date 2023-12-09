@@ -241,7 +241,7 @@ GameStore.Categories = {
 			{
 				icons = { "Rotworm_Stew.png" },
 				name = "Rotworm Stew",
-				price = 30,
+				price = 10,
 				count = 1,
 				itemtype = 9079,
 				description = "It will heal you completely.",
@@ -250,7 +250,7 @@ GameStore.Categories = {
 			{
 				icons = { "Hydra_Tongue_Salad.png" },
 				name = "Hydra Tongue Salad",
-				price = 30,
+				price = 10,
 				count = 1,
 				itemtype = 9080,
 				description = "It will cure you of all negative conditions.",
@@ -259,7 +259,7 @@ GameStore.Categories = {
 			{
 				icons = { "Hydra_Tongue_Salad.png" },
 				name = "Roasted Dragon Wings",
-				price = 30,
+				price = 10,
 				count = 1,
 				itemtype = 9081,
 				description = "Increases your shielding skill by 10 for one hour.",
@@ -268,7 +268,7 @@ GameStore.Categories = {
 			{
 				icons = { "Tropical_Fried_Terrorbird.png" },
 				name = "Tropical Fried Terrorbird",
-				price = 30,
+				price = 10,
 				count = 1,
 				itemtype = 9082,
 				description = "Increases your magic level by 5 for one hour.",
@@ -277,7 +277,7 @@ GameStore.Categories = {
 			{
 				icons = { "banana_chocolate_shake.png" },
 				name = "Banana Chocolate Shake",
-				price = 30,
+				price = 10,
 				count = 1,
 				itemtype = 9083,
 				description = "Makes you a happy supporter of this server.",
@@ -286,7 +286,7 @@ GameStore.Categories = {
 			{
 				icons = { "veggie_casserole.png" },
 				name = "Veggie Casserole",
-				price = 30,
+				price = 10,
 				count = 1,
 				itemtype = 9084,
 				description = "Increase your melee skills by 10 for one hour.",
@@ -295,7 +295,7 @@ GameStore.Categories = {
 			{
 				icons = { "filled_jalapeno_peppers.png" },
 				name = "Filled Jalapeno Peppers",
-				price = 30,
+				price = 10,
 				count = 1,
 				itemtype = 9085,
 				description = "Increases your speed by 100 levels for one hour.",
@@ -304,7 +304,7 @@ GameStore.Categories = {
 			{
 				icons = { "blessed_steak.png" },
 				name = "Blessed Steak",
-				price = 30,
+				price = 10,
 				count = 1,
 				itemtype = 9086,
 				description = "Refills your mana completely.",
@@ -313,7 +313,7 @@ GameStore.Categories = {
 			{
 				icons = { "carrot_cake.png" },
 				name = "Carrot Cake",
-				price = 30,
+				price = 10,
 				count = 1,
 				itemtype = 9087,
 				description = "Increases your distance skill by 10 for one hour.",
@@ -322,7 +322,7 @@ GameStore.Categories = {
 			{
 				icons = { "Coconut_Shrimp_Bake.png" },
 				name = "Coconut Shrimp Bake",
-				price = 30,
+				price = 10,
 				count = 1,
 				itemtype = 11584,
 				description = "Improve your underwater walking speed while wearing a helmet of the deep for 24 hours.",
@@ -331,7 +331,7 @@ GameStore.Categories = {
 			{
 				icons = { "Pot_of_Blackjack.png" },
 				name = "Pot of Blackjack",
-				price = 30,
+				price = 10,
 				count = 1,
 				itemtype = 11586,
 				description = "It will heal you for 5000 hp and can be used 4 times.",
@@ -340,7 +340,7 @@ GameStore.Categories = {
 			{
 				icons = { "Demonic_Candy_Ball.png" },
 				name = "Pot of Blackjack",
-				price = 30,
+				price = 10,
 				count = 1,
 				itemtype = 11587,
 				description = "Various (melee/distance/shielding/magic skill, speed or invisible).",

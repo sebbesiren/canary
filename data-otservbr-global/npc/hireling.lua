@@ -405,6 +405,36 @@ function createHirelingType(HirelingName)
 		{ itemName = "ultimate mana potion", clientId = 23373, buy = 438 },
 		{ itemName = "ultimate spirit potion", clientId = 23374, buy = 438 },
 		{ itemName = "wild growth rune", clientId = 3156, buy = 160 },
+		{ itemName = "arrow", clientId = 3447, buy = 3 },
+		{ itemName = "assassin star", clientId = 7368, buy = 100 },
+		{ itemName = "blue quiver", clientId = 35848, buy = 400 },
+		{ itemName = "bolt", clientId = 3446, buy = 4 },
+		{ itemName = "bow", clientId = 3350, buy = 400 },
+		{ itemName = "burst arrow", clientId = 3449, buy = 15 },
+		{ itemName = "crossbow", clientId = 3349, buy = 500 },
+		{ itemName = "crystalline arrow", clientId = 15793, buy = 20 },
+		{ itemName = "diamond arrow", clientId = 35901, buy = 100 },
+		{ itemName = "drill bolt", clientId = 16142, buy = 12 },
+		{ itemName = "earth arrow", clientId = 774, buy = 5 },
+		{ itemName = "envenomed arrow", clientId = 16143, buy = 12 },
+		{ itemName = "flaming arrow", clientId = 763, buy = 5 },
+		{ itemName = "flash arrow", clientId = 761, buy = 5 },
+		{ itemName = "infernal bolt", clientId = 6528, buy = 13 },
+		{ itemName = "onyx arrow", clientId = 7365, buy = 7 },
+		{ itemName = "piercing bolt", clientId = 7363, buy = 5 },
+		{ itemName = "power bolt", clientId = 3450, buy = 7 },
+		{ itemName = "prismatic bolt", clientId = 16141, buy = 20 },
+		{ itemName = "quiver", clientId = 35562, buy = 400 },
+		{ itemName = "red quiver", clientId = 35849, buy = 400 },
+		{ itemName = "royal spear", clientId = 7378, buy = 15 },
+		{ itemName = "shiver arrow", clientId = 762, buy = 5 },
+		{ itemName = "small stone", clientId = 1781, buy = 100 },
+		{ itemName = "sniper arrow", clientId = 7364, buy = 5 },
+		{ itemName = "spear", clientId = 3277, buy = 9 },
+		{ itemName = "spectral bolt", clientId = 35902, buy = 70 },
+		{ itemName = "tarsal arrow", clientId = 14251, buy = 6 },
+		{ itemName = "throwing star", clientId = 3287, buy = 42 },
+		{ itemName = "vortex bolt", clientId = 14252, buy = 6 },
 	}
 
 	-- On buy npc shop message
@@ -416,7 +446,8 @@ function createHirelingType(HirelingName)
 		player:sendTextMessage(MESSAGE_INFO_DESCR, string.format("Sold %ix %s for %i gold.", amount, name, totalCost))
 	end
 	-- On check npc shop message (look item)
-	npcType.onCheckItem = function(npc, player, clientId, subType) end
+	npcType.onCheckItem = function(npc, player, clientId, subType)
+	end
 
 	local keywordHandler = KeywordHandler:new()
 	local npcHandler = NpcHandler:new(keywordHandler)
@@ -535,7 +566,8 @@ function createHirelingType(HirelingName)
 	]]
 	-- ========================[[ COOKER FUNCTIONS ]] ========================== --
 
-	local function getDeliveredMessageByFoodId(food_id) -- remove the hardcoded food ids
+	local function getDeliveredMessageByFoodId(food_id)
+		-- remove the hardcoded food ids
 		local message = ""
 		if food_id == 29408 then
 			message = "Oh yes, a tasty roasted wings to make you even tougher and skilled with the defensive arts."
@@ -554,6 +586,8 @@ function createHirelingType(HirelingName)
 		elseif food_id == 29415 then
 			message = "A tasty chunk of juicy beef with an aromatic sauce and parsley potatoes, mmh!"
 		elseif food_id == 29416 then
+			message = "Oooh, well... that one didn't quite turn out as it was supposed to be, I'm sorry."
+		elseif food_id == 29410 then
 			message = "Oooh, well... that one didn't quite turn out as it was supposed to be, I'm sorry."
 		end
 
@@ -588,7 +622,8 @@ function createHirelingType(HirelingName)
 			-- ask for preferred skill
 			npcHandler:setTopic(playerId, TOPIC_FOOD.SKILL_CHOOSE)
 			npcHandler:say("Yay! I have the ingredients to make a skill boost dish. Would you rather like to boost your {magic}, {melee}, {shielding} or {distance} skill?", npc, creature)
-		else -- deliver the random generated index
+		else
+			-- deliver the random generated index
 			deliverFood(npc, creature, HIRELING_FOODS_IDS[random])
 		end
 	end
