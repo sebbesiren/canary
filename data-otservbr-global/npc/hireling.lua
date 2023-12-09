@@ -446,8 +446,7 @@ function createHirelingType(HirelingName)
 		player:sendTextMessage(MESSAGE_INFO_DESCR, string.format("Sold %ix %s for %i gold.", amount, name, totalCost))
 	end
 	-- On check npc shop message (look item)
-	npcType.onCheckItem = function(npc, player, clientId, subType)
-	end
+	npcType.onCheckItem = function(npc, player, clientId, subType) end
 
 	local keywordHandler = KeywordHandler:new()
 	local npcHandler = NpcHandler:new(keywordHandler)
