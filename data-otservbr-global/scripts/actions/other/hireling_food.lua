@@ -83,5 +83,5 @@ function hirelingFood.onUse(player, item, frompos, item2, topos)
 	return true
 end
 
-hirelingFood:id(29408, 29409, 29410, 29411, 29412, 29413, 29414, 29415, 29416, 29410)
+hirelingFood:id(29408, 29409, 29410, 29411, 29412, 29413, 29414, 29415, 29416)
 hirelingFood:register()

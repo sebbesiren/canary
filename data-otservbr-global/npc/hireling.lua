@@ -587,8 +587,6 @@ function createHirelingType(HirelingName)
 			message = "A tasty chunk of juicy beef with an aromatic sauce and parsley potatoes, mmh!"
 		elseif food_id == 29416 then
 			message = "Oooh, well... that one didn't quite turn out as it was supposed to be, I'm sorry."
-		elseif food_id == 29410 then
-			message = "Oooh, well... that one didn't quite turn out as it was supposed to be, I'm sorry."
 		end
 
 		return message
