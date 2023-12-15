@@ -79,7 +79,7 @@ local itemsTable = {
 		{ itemName = "exercise wand", clientId = 28557, buy = 262500, subType = 500 },
 		{ itemName = "durable exercise wand", clientId = 35284, buy = 945000, subType = 1800 },
 		{ itemName = "lasting exercise wand", clientId = 35290, buy = 7560000, count = 14400 },
-	}
+	},
 }
 
 npcConfig.shop = {}
