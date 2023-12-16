@@ -2934,10 +2934,6 @@ Storage = {
 
 	-- Custom
 	CustomDoors = 300000,
-	PrisonHazard = {
-		Max = 300001,
-		Current = 300002,
-	},
 }
 
 GlobalStorage = {
