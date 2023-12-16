@@ -1,7 +1,6 @@
 local zone = Zone("ferumbras.ferumbras_mortal_shell")
 zone:addArea(Position(32117, 32684, 4), Position(32126, 32691, 4))
 
-
 local raid = Raid("ferumbras.ferumbras_mortal_shell", {
 	zone = zone,
 	allowedDays = { "Friday", "Saturday", "Sunday" },
