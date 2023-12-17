@@ -21,7 +21,8 @@ if configManager.getBoolean(configKeys.VIP_SYSTEM_ENABLED) then
 	premiumOfferName = "VIP"
 end
 
-local premiumDescription = "<i>Enhance your gaming experience by gaining additional abilities and advantages:</i>\n\n&#8226; access to Premium areas\n&#8226; use Tibia's transport system (ships, carpet)\n&#8226; more spells\n&#8226; rent houses\n&#8226; found guilds\n&#8226; offline training\n&#8226; larger depots\n&#8226; and many more\n\n{usablebyallicon} valid for all characters on this account\n{activated}"
+local premiumDescription =
+	"<i>Enhance your gaming experience by gaining additional abilities and advantages:</i>\n\n&#8226; access to Premium areas\n&#8226; use Tibia's transport system (ships, carpet)\n&#8226; more spells\n&#8226; rent houses\n&#8226; found guilds\n&#8226; offline training\n&#8226; larger depots\n&#8226; and many more\n\n{usablebyallicon} valid for all characters on this account\n{activated}"
 if configManager.getBoolean(configKeys.VIP_SYSTEM_ENABLED) then
 	local vipBonusExp = configManager.getNumber(configKeys.VIP_BONUS_EXP)
 	local vipBonusLoot = configManager.getNumber(configKeys.VIP_BONUS_LOOT)
@@ -303,7 +304,7 @@ GameStore.Categories = {
 				description = "2% holy protection",
 				type = GameStore.OfferTypes.OFFER_TYPE_ITEM,
 			},
-		}
+		},
 	},
 	{
 		icons = { "Hot_Cuisine.png" },
@@ -420,7 +421,6 @@ GameStore.Categories = {
 				description = "Various (melee/distance/shielding/magic skill, speed or invisible).",
 				type = GameStore.OfferTypes.OFFER_TYPE_STACKABLE,
 			},
-
 		},
 	},
 	-- Consumables ~ Casks
