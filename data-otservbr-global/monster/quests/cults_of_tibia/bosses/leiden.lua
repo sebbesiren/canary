@@ -53,7 +53,7 @@ monster.flags = {
 }
 
 monster.events = {
-	"LeidenHeal",
+	--"LeidenHeal",
 }
 
 monster.light = {

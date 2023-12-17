@@ -21,8 +21,7 @@ if configManager.getBoolean(configKeys.VIP_SYSTEM_ENABLED) then
 	premiumOfferName = "VIP"
 end
 
-local premiumDescription =
-	"<i>Enhance your gaming experience by gaining additional abilities and advantages:</i>\n\n&#8226; access to Premium areas\n&#8226; use Tibia's transport system (ships, carpet)\n&#8226; more spells\n&#8226; rent houses\n&#8226; found guilds\n&#8226; offline training\n&#8226; larger depots\n&#8226; and many more\n\n{usablebyallicon} valid for all characters on this account\n{activated}"
+local premiumDescription = "<i>Enhance your gaming experience by gaining additional abilities and advantages:</i>\n\n&#8226; access to Premium areas\n&#8226; use Tibia's transport system (ships, carpet)\n&#8226; more spells\n&#8226; rent houses\n&#8226; found guilds\n&#8226; offline training\n&#8226; larger depots\n&#8226; and many more\n\n{usablebyallicon} valid for all characters on this account\n{activated}"
 if configManager.getBoolean(configKeys.VIP_SYSTEM_ENABLED) then
 	local vipBonusExp = configManager.getNumber(configKeys.VIP_BONUS_EXP)
 	local vipBonusLoot = configManager.getNumber(configKeys.VIP_BONUS_LOOT)
@@ -232,6 +231,81 @@ GameStore.Categories = {
 		},
 	},
 	{
+		icons = { "Items.png" },
+		name = "Items",
+		parent = "Consumables",
+		rookgaard = true,
+		state = GameStore.States.STATE_NONE,
+		offers = {
+			------- Gears
+			{
+				name = "Squeezing gear of girlpower",
+				price = 50,
+				count = 1,
+				itemtype = 9596,
+				description = "Squeezing gear of girlpower!",
+				type = GameStore.OfferTypes.OFFER_TYPE_STACKABLE,
+			},
+			{
+				name = "Sneaky Stabber of Eliteness",
+				price = 50,
+				count = 1,
+				itemtype = 9594,
+				description = "Sneaky Stabber of Eliteness!",
+				type = GameStore.OfferTypes.OFFER_TYPE_STACKABLE,
+			},
+			{
+				name = "Whacking Driller of Fate",
+				price = 50,
+				count = 1,
+				itemtype = 9598,
+				description = "Whacking Driller of Fate!",
+				type = GameStore.OfferTypes.OFFER_TYPE_STACKABLE,
+			},
+			-------- Reistance
+			{
+				name = "Sun Catcher",
+				price = 100,
+				count = 1,
+				itemtype = 25977,
+				description = "5% fire protection",
+				type = GameStore.OfferTypes.OFFER_TYPE_ITEM,
+			},
+			{
+				name = "Moon Mirror",
+				price = 100,
+				count = 1,
+				itemtype = 25975,
+				description = "5% death protection",
+				type = GameStore.OfferTypes.OFFER_TYPE_ITEM,
+			},
+			{
+				name = "Bone Fiddle",
+				price = 100,
+				count = 1,
+				itemtype = 28493,
+				description = "5% lifedrain protection",
+				type = GameStore.OfferTypes.OFFER_TYPE_ITEM,
+			},
+			{
+				name = "Starlight Vial",
+				price = 100,
+				count = 1,
+				itemtype = 25976,
+				description = "5% manadrain protection",
+				type = GameStore.OfferTypes.OFFER_TYPE_ITEM,
+			},
+			{
+				name = "Lit Torch",
+				price = 100,
+				count = 1,
+				itemtype = 34016,
+				description = "2% holy protection",
+				type = GameStore.OfferTypes.OFFER_TYPE_ITEM,
+			},
+		}
+	},
+	{
 		icons = { "Hot_Cuisine.png" },
 		name = "Hot Cuisine",
 		parent = "Consumables",
@@ -346,6 +420,7 @@ GameStore.Categories = {
 				description = "Various (melee/distance/shielding/magic skill, speed or invisible).",
 				type = GameStore.OfferTypes.OFFER_TYPE_STACKABLE,
 			},
+
 		},
 	},
 	-- Consumables ~ Casks
