@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Crazed Winter Rearguard")
 local monster = {}
 
 monster.description = "a crazed winter rearguard"
-monster.experience = 6000
+monster.experience = 5200
 monster.outfit = {
 	lookType = 1136,
 	lookHead = 47,
@@ -100,9 +100,9 @@ monster.loot = {
 
 monster.attacks = {
 	{ name = "melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -400 },
-	{ name = "combat", interval = 2500, chance = 20, type = COMBAT_ICEDAMAGE, minDamage = -100, maxDamage = -300, range = 5, radius = 1, effect = CONST_ME_ICEAREA, target = true },
-	{ name = "combat", interval = 3000, chance = 25, type = COMBAT_ICEDAMAGE, minDamage = -100, maxDamage = -300, length = 4, spread = 0, effect = CONST_ME_GIANTICE, target = false },
-	{ name = "combat", interval = 3500, chance = 25, type = COMBAT_ICEDAMAGE, minDamage = -250, maxDamage = -300, radius = 3, effect = CONST_ME_ICEAREA, target = false },
+	{ name = "combat", interval = 2500, chance = 20, type = COMBAT_ICEDAMAGE, minDamage = -100, maxDamage = -350, range = 5, radius = 1, effect = CONST_ME_ICEAREA, target = true },
+	{ name = "combat", interval = 3000, chance = 25, type = COMBAT_ICEDAMAGE, minDamage = -100, maxDamage = -350, length = 4, spread = 0, effect = CONST_ME_GIANTICE, target = false },
+	{ name = "combat", interval = 3500, chance = 25, type = COMBAT_ICEDAMAGE, minDamage = -250, maxDamage = -350, radius = 3, effect = CONST_ME_ICEAREA, target = false },
 }
 
 monster.defenses = {
