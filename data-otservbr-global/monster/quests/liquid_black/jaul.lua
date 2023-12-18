@@ -93,7 +93,7 @@ monster.attacks = {
 	{ name = "combat", interval = 1000, chance = 5, type = COMBAT_FIREDAMAGE, minDamage = -500, maxDamage = -1000, length = 8, spread = 3, effect = CONST_ME_HITBYFIRE, target = false },
 	{ name = "combat", interval = 1000, chance = 5, type = COMBAT_ICEDAMAGE, minDamage = -1000, maxDamage = -2000, length = 8, spread = 3, effect = CONST_ME_ICEAREA, target = false },
 	{ name = "combat", interval = 4000, chance = 10, type = COMBAT_LIFEDRAIN, minDamage = -500, maxDamage = -1000, length = 8, spread = 3, effect = CONST_ME_WATERSPLASH, target = false },
-	{ name = "speed", interval = 1900, chance = 14, speedChange = -700, range = 7, radius = 1, target = true, duration = 15000 },
+	{ name = "speed", interval = 1900, chance = 14, speedChange = -200, range = 7, radius = 1, target = true, duration = 15000 },
 }
 
 monster.defenses = {

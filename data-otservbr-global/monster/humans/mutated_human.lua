@@ -99,7 +99,7 @@ monster.attacks = {
 	{ name = "combat", interval = 2000, chance = 15, type = COMBAT_DEATHDAMAGE, minDamage = -50, maxDamage = -60, length = 3, spread = 1, effect = CONST_ME_POISONAREA, target = false },
 	-- poison
 	{ name = "condition", type = CONDITION_POISON, interval = 2000, chance = 20, minDamage = -190, maxDamage = -280, effect = CONST_ME_HITBYPOISON, target = true },
-	{ name = "speed", interval = 2000, chance = 10, speedChange = -600, range = 7, effect = CONST_ME_STUN, target = true, duration = 30000 },
+	{ name = "speed", interval = 2000, chance = 10, speedChange = -200, range = 7, effect = CONST_ME_STUN, target = true, duration = 30000 },
 }
 
 monster.defenses = {

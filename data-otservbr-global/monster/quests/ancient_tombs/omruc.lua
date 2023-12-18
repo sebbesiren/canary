@@ -100,7 +100,7 @@ monster.attacks = {
 	{ name = "combat", interval = 2000, chance = 20, type = COMBAT_EARTHDAMAGE, minDamage = -200, maxDamage = -500, shootEffect = CONST_ANI_POISONARROW, target = false },
 	{ name = "combat", interval = 1000, chance = 20, type = COMBAT_FIREDAMAGE, minDamage = -120, maxDamage = -450, range = 3, shootEffect = CONST_ANI_BURSTARROW, effect = CONST_ME_EXPLOSIONAREA, target = false },
 	{ name = "melee", interval = 3000, chance = 20, minDamage = -150, maxDamage = -500 },
-	{ name = "speed", interval = 1000, chance = 25, speedChange = -900, range = 7, effect = CONST_ME_MAGIC_RED, target = false, duration = 50000 },
+	{ name = "speed", interval = 1000, chance = 25, speedChange = -200, range = 7, effect = CONST_ME_MAGIC_RED, target = false, duration = 50000 },
 }
 
 monster.defenses = {
