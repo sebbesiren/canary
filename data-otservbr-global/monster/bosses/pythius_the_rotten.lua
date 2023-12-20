@@ -85,7 +85,7 @@ monster.attacks = {
 	{ name = "combat", interval = 2000, chance = 17, type = COMBAT_EARTHDAMAGE, minDamage = -55, maxDamage = -155, range = 7, radius = 4, shootEffect = CONST_ANI_POISON, effect = CONST_ME_POISONAREA, target = true },
 	{ name = "combat", interval = 2500, chance = 14, type = COMBAT_EARTHDAMAGE, minDamage = -333, maxDamage = -413, length = 8, spread = 3, effect = CONST_ME_POISONAREA, target = false },
 	{ name = "combat", interval = 2500, chance = 22, type = COMBAT_MANADRAIN, minDamage = -85, maxDamage = -110, range = 7, radius = 4, shootEffect = CONST_ANI_ICE, effect = CONST_ME_LOSEENERGY, target = true },
-	{ name = "speed", interval = 2000, chance = 20, speedChange = -300, range = 7, shootEffect = CONST_ANI_SUDDENDEATH, effect = CONST_ME_MORTAREA, target = true, duration = 30000 },
+	--{ name = "speed", interval = 2000, chance = 20, speedChange = -300, range = 7, shootEffect = CONST_ANI_SUDDENDEATH, effect = CONST_ME_MORTAREA, target = true, duration = 30000 },
 	-- curse
 	{ name = "condition", type = CONDITION_CURSED, interval = 2000, chance = 15, range = 7, shootEffect = CONST_ANI_ICE, effect = CONST_ME_ICEATTACK, target = true },
 }
