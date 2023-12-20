@@ -150,6 +150,7 @@ npcConfig.shop = {
 	{ itemName = "countess sorrow's frozen tear", clientId = 6536, sell = 50000 },
 	{ itemName = "cow bell", clientId = 32012, sell = 120 },
 	{ itemName = "crab pincers", clientId = 10272, sell = 35 },
+	{ itemName = "crab man claws", clientId = 40582, sell = 550 },
 	{ itemName = "cracked alabaster vase", clientId = 24385, sell = 180 },
 	{ itemName = "crawler head plating", clientId = 14079, sell = 210 },
 	{ itemName = "crawler's essence", clientId = 33982, sell = 3700 },
@@ -297,6 +298,7 @@ npcConfig.shop = {
 	{ itemName = "hand", clientId = 33936, sell = 1450 },
 	{ itemName = "hardened bone", clientId = 5925, sell = 70 },
 	{ itemName = "harpoon of a giant snail", clientId = 27625, sell = 15000 },
+	{ itemName = "harpy feathers", clientId = 40585, sell = 680 },
 	{ itemName = "hatched rorc egg", clientId = 18997, sell = 30 },
 	{ itemName = "haunted piece of wood", clientId = 9683, sell = 115 },
 	{ itemName = "hazardous heart", clientId = 34140, sell = 5000 },
@@ -467,6 +469,7 @@ npcConfig.shop = {
 	{ itemName = "red goanna scale", clientId = 31558, sell = 270 },
 	{ itemName = "red hair dye", clientId = 17855, sell = 40 },
 	{ itemName = "red piece of cloth", clientId = 5911, sell = 300 },
+	{ itemName = "rhindeer antlers", clientId = 40587, sell = 680 },
 	{ itemName = "rhino hide", clientId = 24388, sell = 175 },
 	{ itemName = "rhino horn", clientId = 24389, sell = 265 },
 	{ itemName = "rhino horn carving", clientId = 24386, sell = 300 },
@@ -656,7 +659,8 @@ npcType.onSellItem = function(npc, player, itemId, subtype, amount, ignore, name
 	player:sendTextMessage(MESSAGE_INFO_DESCR, string.format("Sold %ix %s for %i gold.", amount, name, totalCost))
 end
 -- On check npc shop message (look item)
-npcType.onCheckItem = function(npc, player, clientId, subType) end
+npcType.onCheckItem = function(npc, player, clientId, subType)
+end
 
 local function creatureSayCallback(npc, creature, type, message)
 	local player = Player(creature)
