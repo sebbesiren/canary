@@ -56,7 +56,7 @@ function deathEvent.onDeath(creature)
 	end
 
 	chanceTo = math.random(0, 100)
-	if chanceTo <= 1 and points >= 5 then
+	if chanceTo <= 1 and points >= 3 then
 		createHazardPod(monster:getPosition(), monster:getName())
 	end
 	return true
