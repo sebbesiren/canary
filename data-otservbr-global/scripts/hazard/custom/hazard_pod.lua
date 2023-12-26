@@ -49,7 +49,6 @@ local function spawnPortal(position, monsterName)
 	spawnZone:setMonstersPerCluster(4, 8)
 	spawnZone:configureMonster(monsterName, 1)
 	spawnZone:register()
-
 end
 
 local function spawnFewEnemies(position, monsterName)
@@ -111,7 +110,3 @@ function createHazardPod(position, monsterName)
 		hazardPodEvent:register()
 	end
 end
-
-
-
-
