@@ -72,6 +72,12 @@ function deathEvent.onDeath(creature)
 			boss_monster:say(boss .. " has risen from the depths of hell.")
 		end
 	end
+
+	chanceTo = math.random(0, 100)
+	if chanceTo <= 1 and points >= 5 then
+		createHazardPod(monster:getPosition(), monster:getName())
+	end
+
 	return true
 end
 deathEvent:register()
