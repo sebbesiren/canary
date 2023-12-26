@@ -46,7 +46,7 @@ local function spawnPortal(position, monsterName)
 	local toPos = Position(position.x + 4, position.y + 4, position.z)
 	local spawnZone = SpawnZone(name, fromPos, toPos)
 	spawnZone:setPeriod("60s")
-	spawnZone:setMonstersPerCluster(8, 8)
+	spawnZone:setMonstersPerCluster(4, 8)
 	spawnZone:configureMonster(monsterName, 1)
 	spawnZone:register()
 

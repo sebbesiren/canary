@@ -1,7 +1,7 @@
 local hazard = Hazard.new({
-	name = "hazard.banuta",
-	from = Position(32707, 32488, 11),
-	to = Position(32905, 32670, 15),
+	name = "hazard.goroma-demons",
+	from = Position(32030, 32541, 13),
+	to = Position(32109, 32628, 14),
 	maxLevel = 20,
 
 	crit = true,
@@ -9,11 +9,12 @@ local hazard = Hazard.new({
 	damageBoost = true,
 })
 
+
 hazard:register()
 
 local hazardZone = Zone.getByName(hazard.name)
 
-local deathEventName = "BanutaDeath"
+local deathEventName = "GoromaDemonsDeath"
 local spawnEvent = ZoneEvent(hazardZone)
 function spawnEvent.onSpawn(monster, position)
 	monster:registerEvent(deathEventName)
@@ -43,15 +44,15 @@ function deathEvent.onDeath(creature)
 		return true
 	end
 
-	chanceTo = math.random(1, 400)
+	chanceTo = math.random(1, 200)
 	if chanceTo <= 1 then
-		local miniBosses = { "The Noxious Spawn", "The Many", "Gorgo" }
+		local miniBosses = { "Hellgorak" }
 		local closestFreePosition = player:getClosestFreePosition(monster:getPosition(), 4, true)
 
 		local boss = miniBosses[math.random(#miniBosses)]
 		local boss_monster = Game.createMonster(boss, closestFreePosition.x == 0 and monster:getPosition() or closestFreePosition, false, true)
 		if boss_monster then
-			boss_monster:say(boss .. " has joined the fight.")
+			boss_monster:say(boss .. " has risen from the depths of hell.")
 		end
 	end
 
@@ -59,6 +60,7 @@ function deathEvent.onDeath(creature)
 	if chanceTo <= 1 and points >= 4 then
 		createHazardPod(monster:getPosition(), monster:getName())
 	end
+
 	return true
 end
 deathEvent:register()
