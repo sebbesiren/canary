@@ -9,7 +9,6 @@ local hazard = Hazard.new({
 	damageBoost = true,
 })
 
-
 hazard:register()
 
 local hazardZone = Zone.getByName(hazard.name)
