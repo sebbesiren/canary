@@ -45,7 +45,7 @@ function deathEvent.onDeath(creature)
 
 	chanceTo = math.random(1, 200)
 	if chanceTo <= 1 then
-		local miniBosses = { "Hellgorak" }
+		local miniBosses = { "Golgordan", "Latrivan" }
 		local closestFreePosition = player:getClosestFreePosition(monster:getPosition(), 4, true)
 
 		local boss = miniBosses[math.random(#miniBosses)]

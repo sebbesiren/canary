@@ -5,8 +5,8 @@ local raid = Raid("ferumbras.ferumbras_mortal_shell", {
 	zone = zone,
 	allowedDays = { "Friday", "Saturday", "Sunday" },
 	minActivePlayers = 0,
-	targetChancePerDay = 20,
-	maxChancePerCheck = 100,
+	targetChancePerDay = 10,
+	maxChancePerCheck = 10,
 	minGapBetween = "170h",
 })
 

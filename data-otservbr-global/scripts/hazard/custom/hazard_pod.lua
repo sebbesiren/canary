@@ -85,13 +85,17 @@ local function hazardPodOnStepIn(creature, item, position, fromPosition)
 	end
 
 	local tile = Tile(position)
-	if tile then
-		local podItem = tile:getItemById(ITEM_PRIMAL_POD)
-		if podItem then
-			podItem:remove()
-		end
+	if not tile then
+		return
 	end
 
+	local podItem = tile:getItemById(ITEM_PRIMAL_POD)
+	if not podItem then
+		return
+	end
+
+
+	podItem:remove()
 	local events = { dealDamageToPlayer }
 	local event = events[math.random(#events)]
 	event(player)
@@ -103,10 +107,10 @@ function createHazardPod(position, monsterName)
 	if hazardPod then
 		local podPosition = hazardPod:getPosition()
 		addEvent(hazardPodExpire, 4000, podPosition, monsterName)
-
 		local hazardPodEvent = MoveEvent()
 		hazardPodEvent.onStepIn = hazardPodOnStepIn
 		hazardPodEvent:position(position)
 		hazardPodEvent:register()
 	end
 end
+
