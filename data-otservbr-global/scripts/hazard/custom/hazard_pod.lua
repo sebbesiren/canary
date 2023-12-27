@@ -94,7 +94,6 @@ local function hazardPodOnStepIn(creature, item, position, fromPosition)
 		return
 	end
 
-
 	podItem:remove()
 	local events = { dealDamageToPlayer }
 	local event = events[math.random(#events)]
@@ -113,4 +112,3 @@ function createHazardPod(position, monsterName)
 		hazardPodEvent:register()
 	end
 end
-
