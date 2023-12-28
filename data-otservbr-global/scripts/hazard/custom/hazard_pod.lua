@@ -45,8 +45,8 @@ local function spawnPortal(position, monsterName)
 	local fromPos = Position(position.x - 4, position.y - 4, position.z)
 	local toPos = Position(position.x + 4, position.y + 4, position.z)
 	local spawnZone = SpawnZone(name, fromPos, toPos)
-	spawnZone:setPeriod("60s")
-	spawnZone:setMonstersPerCluster(4, 8)
+	spawnZone:setPeriod("180s")
+	spawnZone:setMonstersPerCluster(2, 8)
 	spawnZone:configureMonster(monsterName, 1)
 	spawnZone:register()
 end
@@ -70,7 +70,7 @@ local function hazardPodExpire(position, monsterName)
 	if tile then
 		local podItem = tile:getItemById(ITEM_PRIMAL_POD)
 		if podItem then
-			local expireEvents = { dealDamageToAll, spawnPortal, spawnFewEnemies, spawnManyEnemies }
+			local expireEvents = { dealDamageToAll, dealDamageToAll, spawnPortal, spawnFewEnemies, spawnFewEnemies, spawnManyEnemies, spawnManyEnemies }
 			local event = expireEvents[math.random(#expireEvents)]
 			event(position, monsterName)
 			podItem:remove()
