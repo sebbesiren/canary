@@ -247,13 +247,13 @@ function Encounter:getSpawnZone()
 end
 
 ---Broadcasts a message to all players
-function Encounter:broadcast(type, message, webhook_title)
+function Encounter:broadcast(...)
 	if self.global then
-		broadcastMessage(message, type)
-		Webhook.sendMessage(webhook_title, message, type)
+		for _, player in ipairs(Game.getPlayers()) do
+			player:sendTextMessage(...)
+		end
 		return
 	end
-
 	self:getZone():sendTextMessage(...)
 end
 

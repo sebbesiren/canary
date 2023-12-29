@@ -1,3 +1,5 @@
+local hazardPortalPositions = {}
+
 local function spawnMonster(position, monsterName)
 	tile = Tile(position)
 	local creature = tile:getBottomCreature()
@@ -27,6 +29,19 @@ local function dealDamageToAll(position, monsterName)
 	end
 end
 
+local function portalName(position)
+	return "spawn_zone.x-" .. position.x .. ",y-" .. position.y .. ",z-" .. position.z
+end
+
+local function otherPortalTooClose(position)
+	for _, portalPos in ipairs(hazardPortalPositions) do
+		if portalPos.z == position.z and math.abs(portalPos.x - position.x) < 40 and math.abs(portalPos.y - position.y) < 40 then
+			return true
+		end
+	end
+	return false
+end
+
 local function spawnPortal(position, monsterName)
 	local tile = Tile(position)
 	if not tile then
@@ -40,15 +55,15 @@ local function spawnPortal(position, monsterName)
 	end
 
 	Game.createItem(portalId, 1, position)
-
-	local name = "spawn_zone.x-" .. position.x .. ",y-" .. position.y .. ",z-" .. position.z
+	local name = portalName(position)
 	local fromPos = Position(position.x - 4, position.y - 4, position.z)
 	local toPos = Position(position.x + 4, position.y + 4, position.z)
 	local spawnZone = SpawnZone(name, fromPos, toPos)
-	spawnZone:setPeriod("180s")
+	spawnZone:setPeriod("120s")
 	spawnZone:setMonstersPerCluster(2, 8)
 	spawnZone:configureMonster(monsterName, 1)
 	spawnZone:register()
+	table.insert(hazardPortalPositions, position)
 end
 
 local function spawnFewEnemies(position, monsterName)
@@ -70,7 +85,12 @@ local function hazardPodExpire(position, monsterName)
 	if tile then
 		local podItem = tile:getItemById(ITEM_PRIMAL_POD)
 		if podItem then
-			local expireEvents = { dealDamageToAll, dealDamageToAll, spawnPortal, spawnFewEnemies, spawnFewEnemies, spawnManyEnemies, spawnManyEnemies }
+			local expireEvents = { dealDamageToAll, dealDamageToAll, spawnFewEnemies, spawnFewEnemies, spawnManyEnemies, spawnManyEnemies }
+
+			if not otherPortalTooClose(position) then
+				table.insert(expireEvents, spawnPortal)
+			end
+
 			local event = expireEvents[math.random(#expireEvents)]
 			event(position, monsterName)
 			podItem:remove()
