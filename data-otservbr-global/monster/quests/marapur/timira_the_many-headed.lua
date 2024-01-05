@@ -74,17 +74,19 @@ monster.loot = {
 	{ name = "one of timira's many heads", chance = 2041 },
 	{ name = "giant sapphire", chance = 2041 },
 	{ name = "giant topaz", chance = 2041 },
-	{ name = "dawnfire sherwani", chance = 300 },
-	{ name = "frostflower boots", chance = 300 },
-	{ id = 39233, chance = 300 }, -- enchanted turtle amulet
-	{ name = "midnight tunic", chance = 300 },
-	{ name = "midnight sarong", chance = 300 },
-	{ name = "naga sword", chance = 300 },
-	{ name = "naga axe", chance = 300 },
-	{ name = "naga club", chance = 300 },
-	{ name = "naga wand", chance = 300 },
-	{ name = "naga rod", chance = 300 },
-	{ name = "naga crossbow", chance = 300 },
+	{ name = "dawnfire sherwani", chance = 200 },
+	{ name = "frostflower boots", chance = 200 },
+	{ name = "feverbloom boots", chance = 200 },
+	{ id = 39233, chance = 200 }, -- enchanted turtle amulet
+	{ name = "midnight tunic", chance = 200 },
+	{ name = "midnight sarong", chance = 200 },
+	{ name = "naga quiver", chance = 200 },
+	{ name = "naga sword", chance = 200 },
+	{ name = "naga axe", chance = 200 },
+	{ name = "naga club", chance = 200 },
+	{ name = "naga wand", chance = 200 },
+	{ name = "naga rod", chance = 200 },
+	{ name = "naga crossbow", chance = 200 },
 }
 
 monster.attacks = {
