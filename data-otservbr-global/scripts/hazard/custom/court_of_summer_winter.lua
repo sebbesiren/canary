@@ -7,7 +7,7 @@ local hazard = Hazard.new({
 	crit = true,
 	dodge = true,
 	damageBoost = true,
-	defenseBoost = true
+	defenseBoost = true,
 })
 Game.createMonster("Hazard Guide", Position(33676, 32227, 7))
 Game.createMonster("Hazard Guide", Position(33683, 32149, 7))
