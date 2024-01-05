@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("The Blazing Rose")
 local monster = {}
 
 monster.description = "The Blazing Rose"
-monster.experience = 10000 * 4
+monster.experience = 10000 * 2
 monster.outfit = {
 	lookType = 1068,
 	lookHead = 114,

@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("The Diamond Blossom")
 local monster = {}
 
 monster.description = "The Diamond Blossom"
-monster.experience = 20000 * 4
+monster.experience = 20000 * 2
 monster.outfit = {
 	lookType = 1068,
 	lookHead = 9,

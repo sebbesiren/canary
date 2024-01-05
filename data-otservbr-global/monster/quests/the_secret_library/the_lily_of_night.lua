@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("The Lily of Night")
 local monster = {}
 
 monster.description = "The Lily of Night"
-monster.experience = 19000 * 4
+monster.experience = 19000 * 2
 monster.outfit = {
 	lookType = 1068,
 	lookHead = 0,
