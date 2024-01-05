@@ -10,7 +10,6 @@ local hazard = Hazard.new({
 })
 Game.createMonster("Hazard Guide", Position(32879, 32633, 11))
 
-
 hazard:register()
 
 local hazardZone = Zone.getByName(hazard.name)
