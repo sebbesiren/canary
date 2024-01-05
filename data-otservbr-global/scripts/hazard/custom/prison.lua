@@ -9,7 +9,7 @@ local hazard = Hazard.new({
 	damageBoost = true,
 	defenseBoost = true
 })
-Game.createMonster("Hazard Guide", Position(33592, 32433, 8))
+Game.createNpc("Hazard Guide", Position(33592, 32433, 8))
 
 hazard:register()
 
