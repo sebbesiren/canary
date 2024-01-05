@@ -7,7 +7,7 @@ local hazard = Hazard.new({
 	crit = true,
 	dodge = true,
 	damageBoost = true,
-	defenseBoost = true
+	defenseBoost = true,
 })
 Game.createNpc("Hazard Guide", Position(32812, 32760, 9))
 
