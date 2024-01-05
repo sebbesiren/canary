@@ -47,6 +47,7 @@ local potions = {
 		vocations = {
 			VOCATION.BASE_ID.KNIGHT,
 		},
+		skipDelay = true,
 		condition = berserk,
 		effect = CONST_ME_MAGIC_RED,
 		description = "Only knights may drink this potion.",
@@ -57,6 +58,7 @@ local potions = {
 			VOCATION.BASE_ID.SORCERER,
 			VOCATION.BASE_ID.DRUID,
 		},
+		skipDelay = true,
 		condition = mastermind,
 		effect = CONST_ME_MAGIC_BLUE,
 		description = "Only sorcerers and druids may drink this potion.",
@@ -66,6 +68,7 @@ local potions = {
 		vocations = {
 			VOCATION.BASE_ID.PALADIN,
 		},
+		skipDelay = true,
 		condition = bullseye,
 		effect = CONST_ME_MAGIC_GREEN,
 		description = "Only paladins may drink this potion.",
@@ -76,6 +79,7 @@ local potions = {
 			VOCATION.BASE_ID.SORCERER,
 			VOCATION.BASE_ID.DRUID,
 		},
+		skipDelay = true,
 		level = 14,
 		func = magicshield,
 		effect = CONST_ME_ENERGYAREA,
@@ -229,16 +233,19 @@ function flaskPotion.onUse(player, item, fromPosition, target, toPosition, isHot
 		return false
 	end
 
-	-- Delay potion
-	if not _G.PlayerDelayPotion[player:getId()] then
-		_G.PlayerDelayPotion[player:getId()] = 0
-	end
-	if _G.PlayerDelayPotion[player:getId()] > systemTime() then
-		player:sendTextMessage(MESSAGE_FAILURE, Game.getReturnMessage(RETURNVALUE_YOUAREEXHAUSTED))
-		return true
+	local potion = potions[item:getId()]
+
+	if not potion.skipDelay then
+		-- Delay potion
+		if not _G.PlayerDelayPotion[player:getId()] then
+			_G.PlayerDelayPotion[player:getId()] = 0
+		end
+		if _G.PlayerDelayPotion[player:getId()] > systemTime() then
+			player:sendTextMessage(MESSAGE_FAILURE, Game.getReturnMessage(RETURNVALUE_YOUAREEXHAUSTED))
+			return true
+		end
 	end
 
-	local potion = potions[item:getId()]
 	if potion.level and player:getLevel() < potion.level or potion.vocations and not table.contains(potion.vocations, player:getVocation():getBaseId()) and not (player:getGroup():getId() >= GROUP_TYPE_GAMEMASTER) then
 		player:say(potion.description, MESSAGE_POTION)
 		return true
@@ -284,7 +291,9 @@ function flaskPotion.onUse(player, item, fromPosition, target, toPosition, isHot
 
 	player:getPosition():sendSingleSoundEffect(SOUND_EFFECT_TYPE_ITEM_USE_POTION, player:isInGhostMode() and nil or player)
 	-- Delay potion
-	_G.PlayerDelayPotion[player:getId()] = systemTime() + 500
+	if not potion.skipDelay then
+		_G.PlayerDelayPotion[player:getId()] = systemTime() + 500
+	end
 
 	if potion.func then
 		potion.func(player)

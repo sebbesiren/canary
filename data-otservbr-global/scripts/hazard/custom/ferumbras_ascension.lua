@@ -8,6 +8,7 @@ local hazard = Hazard.new({
 	dodge = true,
 	damageBoost = true,
 })
+Game.createMonster("Hazard Guide", Position(33293, 32326, 14))
 
 hazard:register()
 
