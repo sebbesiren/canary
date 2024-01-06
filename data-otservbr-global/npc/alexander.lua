@@ -71,6 +71,16 @@ local itemsTable = {
 		{ itemName = "durable exercise wand", clientId = 35284, buy = 945000, subType = 1800 },
 		{ itemName = "lasting exercise wand", clientId = 35290, buy = 7560000, count = 14400 },
 	},
+	["custom sell"] = {
+		{ itemName = "crystal ball", clientId = 3076, buy = 530, sell = 190 },
+		{ itemName = "life crystal", clientId = 3061, sell = 85 },
+		{ itemName = "mind stone", clientId = 3062, sell = 170 },
+		{ itemName = "spellbook of enlightenment", clientId = 8072, sell = 4000 },
+		{ itemName = "spellbook of lost souls", clientId = 8075, sell = 19000 },
+		{ itemName = "spellbook of mind control", clientId = 8074, sell = 13000 },
+		{ itemName = "spellbook of warding", clientId = 8073, sell = 8000 },
+		{ itemName = "spellwand", clientId = 651, sell = 299 },
+	}
 }
 
 npcConfig.shop = {}
@@ -173,6 +183,7 @@ npcType.onSellItem = function(npc, player, itemId, subtype, amount, ignore, name
 	player:sendTextMessage(MESSAGE_INFO_DESCR, string.format("Sold %ix %s for %i gold.", amount, name, totalCost))
 end
 -- On check npc shop message (look item)
-npcType.onCheckItem = function(npc, player, clientId, subType) end
+npcType.onCheckItem = function(npc, player, clientId, subType)
+end
 
 npcType:register(npcConfig)

@@ -9,7 +9,6 @@ local hazard = Hazard.new({
 	damageBoost = true,
 	defenseBoost = true,
 })
-Game.createNpc("Hazard Guide", Position(32879, 32633, 11))
 
 hazard:register()
 
@@ -57,7 +56,7 @@ function deathEvent.onDeath(creature)
 		end
 	end
 
-	chanceTo = math.random(0, 100)
+	chanceTo = math.random(0, 150)
 	if chanceTo <= 1 and points >= 4 then
 		createHazardPod(monster:getPosition(), monster:getName())
 	end

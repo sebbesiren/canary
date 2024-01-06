@@ -4,9 +4,10 @@ zone:addArea(Position(32117, 32684, 4), Position(32126, 32691, 4))
 local raid = Raid("ferumbras.ferumbras_mortal_shell", {
 	zone = zone,
 	allowedDays = { "Friday", "Saturday", "Sunday" },
-	minActivePlayers = 0,
-	targetChancePerDay = 10,
-	maxChancePerCheck = 10,
+	minActivePlayers = 1,
+	initialChance = 0.04,
+	targetChancePerDay = 0.02,
+	maxChancePerCheck = 0.4,
 	minGapBetween = "170h",
 })
 

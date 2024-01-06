@@ -3,6 +3,9 @@ local npcType = Game.createNpcType(internalNpcName)
 local npcConfig = {}
 
 local hazards = {
+	{ name = "Darashia Minos", hazard = Hazard.getByName("hazard.darashia-minotaurs") },
+	{ name = "Darashia Wyrms", hazard = Hazard.getByName("hazard.darashia-wyrms") },
+	{ name = "Ankh Mother Scarabs", hazard = Hazard.getByName("hazard.ankrahmun-mother-scarabs") },
 	{ name = "Prison", hazard = Hazard.getByName("hazard.prison") },
 	{ name = "Asura Mirror", hazard = Hazard.getByName("hazard.asura-mirror") },
 	{ name = "Edron Hero Cave", hazard = Hazard.getByName("hazard.edron-hero-cave") },

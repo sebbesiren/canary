@@ -1,7 +1,7 @@
 local hazard = Hazard.new({
-	name = "hazard.asura-mirror",
-	from = Position(32783, 32721, 9),
-	to = Position(32894, 32827, 11),
+	name = "hazard.darashia-wyrms",
+	from = Position(33033, 32344, 12),
+	to = Position(33130, 32436, 14),
 	maxLevel = 20,
 
 	crit = true,
@@ -15,7 +15,7 @@ hazard:register()
 
 local hazardZone = Zone.getByName(hazard.name)
 
-local deathEventName = "AsuraMirrorDeath"
+local deathEventName = "DarashiaWyrmDeath"
 local spawnEvent = ZoneEvent(hazardZone)
 function spawnEvent.onSpawn(monster, position)
 	monster:registerEvent(deathEventName)
@@ -47,20 +47,22 @@ function deathEvent.onDeath(creature)
 
 	chanceTo = math.random(1, 400)
 	if chanceTo <= 1 then
-		local miniBosses = { "The Blazing Rose", "The Diamond Blossom", "The Lily of Night" }
+		local miniBosses = { "Tyrn"}
 		local closestFreePosition = player:getClosestFreePosition(monster:getPosition(), 4, true)
 
 		local boss = miniBosses[math.random(#miniBosses)]
 		local boss_monster = Game.createMonster(boss, closestFreePosition.x == 0 and monster:getPosition() or closestFreePosition, false, true)
 		if boss_monster then
-			boss_monster:say(boss .. " has joined the fight.")
+			boss_monster:say(boss .. " is hunting you. Kill him and raise your hazard level at the Hazard Guide!")
 		end
 	end
+
 
 	chanceTo = math.random(0, 150)
 	if chanceTo <= 1 and points >= 4 then
 		createHazardPod(monster:getPosition(), monster:getName())
 	end
+
 	return true
 end
 deathEvent:register()

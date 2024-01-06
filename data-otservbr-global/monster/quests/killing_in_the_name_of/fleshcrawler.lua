@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Fleshcrawler")
 local monster = {}
 
 monster.description = "Fleshcrawler"
-monster.experience = 1000
+monster.experience = 1450 * 2
 monster.outfit = {
 	lookType = 79,
 	lookHead = 0,
