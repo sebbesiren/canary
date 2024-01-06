@@ -12,7 +12,6 @@ local hazard = Hazard.new({
 -- {x = 33312, y = 32579, z = 11}
 -- {x = 33396, y = 32693, z = 12}
 
-
 hazard:register()
 
 local hazardZone = Zone.getByName(hazard.name)
@@ -58,7 +57,6 @@ function deathEvent.onDeath(creature)
 			boss_monster:say(boss .. " is hunting you. Kill him and raise your hazard level at the Hazard Guide!")
 		end
 	end
-
 
 	chanceTo = math.random(0, 150)
 	if chanceTo <= 1 and points >= 4 then
