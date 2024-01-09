@@ -10,7 +10,6 @@ local hazard = Hazard.new({
 	defenseBoost = true,
 })
 
-
 hazard:register()
 
 local hazardZone = Zone.getByName(hazard.name)
@@ -47,7 +46,7 @@ function deathEvent.onDeath(creature)
 
 	chanceTo = math.random(1, 400)
 	if chanceTo <= 1 then
-		local miniBosses = { "Tyrn"}
+		local miniBosses = { "Tyrn" }
 		local closestFreePosition = player:getClosestFreePosition(monster:getPosition(), 4, true)
 
 		local boss = miniBosses[math.random(#miniBosses)]
@@ -56,7 +55,6 @@ function deathEvent.onDeath(creature)
 			boss_monster:say(boss .. " is hunting you. Kill him and raise your hazard level at the Hazard Guide!")
 		end
 	end
-
 
 	chanceTo = math.random(0, 150)
 	if chanceTo <= 1 and points >= 4 then
