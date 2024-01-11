@@ -13,6 +13,7 @@ local hazards = {
 	{ name = "Ferumbras Grimeleech", hazard = Hazard.getByName("hazard.ferumbras-ascension-grimeleech") },
 	{ name = "Court of Summer/Winter", hazard = Hazard.getByName("hazard.court-of-summer-winter") },
 	{ name = "Goroma Demons", hazard = Hazard.getByName("hazard.goroma-demons") },
+	{ name = "Flimsy", hazard = Hazard.getByName("hazard.flimsy") },
 }
 local hazardKeys = ""
 for index, value in ipairs(hazards) do
