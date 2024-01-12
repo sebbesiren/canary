@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Mean Lost Soul")
 local monster = {}
 
 monster.description = "a mean lost soul"
-monster.experience = 5580
+monster.experience = 7000
 monster.outfit = {
 	lookType = 1268,
 	lookHead = 0,
@@ -73,7 +73,7 @@ monster.voices = {
 }
 
 monster.loot = {
-	{ name = "platinum coin", chance = 56040 },
+	{ name = "platinum coin", chance = 56040, maxCount = 8 },
 	{ name = "lost soul", chance = 36220 },
 	{ name = "death toll", chance = 4890 },
 	{ name = "skull staff", chance = 4540 },
