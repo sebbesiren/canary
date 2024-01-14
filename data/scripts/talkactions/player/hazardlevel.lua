@@ -2,18 +2,18 @@
 local hazardlevel = TalkAction("!hazardlevel")
 
 local hazards = {
-	['gnomprona gardens'] = { name = "hazard.gnomprona-gardens" },
-	['darashia minos'] = { name = "hazard.darashia-minotaurs" },
-	['darashia wyrms'] = { name = "hazard.darashia-wyrms" },
-	['ankh mother scarabs'] = { name = "hazard.ankrahmun-mother-scarabs" },
-	['prison'] = { name = "hazard.prison" },
-	['asura mirror'] = { name = "hazard.asura-mirror" },
-	['edron hero cave'] = { name = "hazard.edron-hero-cave" },
-	['banuta'] = { name = "hazard.banuta" },
-	['grimeleech'] = { name = "hazard.ferumbras-ascension-grimeleech" },
-	['court of summer winter'] = { name = "hazard.court-of-summer-winter" },
-	['goroma demons'] = { name = "hazard.goroma-demons" },
-	['flimsy'] = { name = "hazard.flimsy" }
+	["gnomprona gardens"] = { name = "hazard.gnomprona-gardens" },
+	["darashia minos"] = { name = "hazard.darashia-minotaurs" },
+	["darashia wyrms"] = { name = "hazard.darashia-wyrms" },
+	["ankh mother scarabs"] = { name = "hazard.ankrahmun-mother-scarabs" },
+	["prison"] = { name = "hazard.prison" },
+	["asura mirror"] = { name = "hazard.asura-mirror" },
+	["edron hero cave"] = { name = "hazard.edron-hero-cave" },
+	["banuta"] = { name = "hazard.banuta" },
+	["grimeleech"] = { name = "hazard.ferumbras-ascension-grimeleech" },
+	["court of summer winter"] = { name = "hazard.court-of-summer-winter" },
+	["goroma demons"] = { name = "hazard.goroma-demons" },
+	["flimsy"] = { name = "hazard.flimsy" },
 }
 
 function hazardlevel.onSay(player, words, param)

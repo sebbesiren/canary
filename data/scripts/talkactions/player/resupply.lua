@@ -18,7 +18,7 @@ local items = {
 	["sudden death rune"] = { clientId = 3155 },
 	["great fireball rune"] = { clientId = 3191 },
 	["thunderstorm rune"] = { clientId = 3202 },
-	["avalanche rune"] = { clientId = 3161 }
+	["avalanche rune"] = { clientId = 3161 },
 }
 
 function resupply.onSay(player, words, param)
@@ -44,7 +44,6 @@ function resupply.onSay(player, words, param)
 	local item = items[itemName]
 
 	if not item then
-
 		for k, _ in pairs(items) do
 			player:sendTextMessage(MESSAGE_LOOK, k)
 		end
