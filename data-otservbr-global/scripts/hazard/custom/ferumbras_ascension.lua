@@ -47,13 +47,7 @@ function deathEvent.onDeath(creature)
 	chanceTo = math.random(1, 400)
 	if chanceTo <= 1 then
 		local miniBosses = { "The Lord of the Lice", "Bragrumol" }
-		local closestFreePosition = player:getClosestFreePosition(monster:getPosition(), 4, true)
-
-		local boss = miniBosses[math.random(#miniBosses)]
-		local boss_monster = Game.createMonster(boss, closestFreePosition.x == 0 and monster:getPosition() or closestFreePosition, false, true)
-		if boss_monster then
-			boss_monster:say(boss .. " has risen from the depths of hell.")
-		end
+		spawnCustomHazardBoss(player, monster, miniBosses)
 	end
 
 	chanceTo = math.random(0, 150)

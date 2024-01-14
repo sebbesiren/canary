@@ -98,6 +98,10 @@ npcConfig.shop = {
 	{ itemName = "ultimate mana potion", clientId = 23373, buy = 438 },
 	{ itemName = "ultimate spirit potion", clientId = 23374, buy = 438 },
 	{ itemName = "wild growth rune", clientId = 3156, buy = 160 },
+
+	-- Custom
+	{ itemName = "spectral bolt", clientId = 35902, buy = 70 },
+	{ itemName = "diamond arrow", clientId = 35901, buy = 100 },
 }
 -- On buy npc shop message
 npcType.onBuyItem = function(npc, player, itemId, subType, amount, ignore, inBackpacks, totalCost)
@@ -108,6 +112,7 @@ npcType.onSellItem = function(npc, player, itemId, subtype, amount, ignore, name
 	player:sendTextMessage(MESSAGE_INFO_DESCR, string.format("Sold %ix %s for %i gold.", amount, name, totalCost))
 end
 -- On check npc shop message (look item)
-npcType.onCheckItem = function(npc, player, clientId, subType) end
+npcType.onCheckItem = function(npc, player, clientId, subType)
+end
 
 npcType:register(npcConfig)
