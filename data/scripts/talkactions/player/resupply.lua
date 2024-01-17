@@ -54,10 +54,11 @@ function resupply.onSay(player, words, param)
 	local playerBalance = player:getMoney() + player:getBankBalance()
 	local totalCost = item.cost * count
 	if totalCost > playerBalance then
-		player:sendCancelMessage("Insufficient balance")
+		player:sendCancelMessage("You dont have enough money")
 		return true
 	end
 
+	-- TODO: just give the player the items
 	local npc = Npc("Runtel Blackspark")
 	npc:sellItem(player, item.clientId, count)
 
