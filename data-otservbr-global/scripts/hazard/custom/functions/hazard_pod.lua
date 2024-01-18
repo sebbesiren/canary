@@ -34,8 +34,9 @@ local function portalName(position)
 end
 
 local function otherPortalTooClose(position)
+	local portalMinDistance = 35
 	for _, portalPos in ipairs(hazardPortalPositions) do
-		if portalPos.z == position.z and math.abs(portalPos.x - position.x) < 40 and math.abs(portalPos.y - position.y) < 40 then
+		if portalPos.z == position.z and math.abs(portalPos.x - position.x) < portalMinDistance and math.abs(portalPos.y - position.y) < portalMinDistance then
 			return true
 		end
 	end
