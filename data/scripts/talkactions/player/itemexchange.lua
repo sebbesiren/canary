@@ -192,6 +192,7 @@ end
 
 function itemexchange.onSay(player, words, param)
 	logger.debug("!itemexchange executed")
+	param = param:lower()
 	local paramParts = param:split(",")
 	if paramParts[1] == "list" then
 		-- List all items per tier
