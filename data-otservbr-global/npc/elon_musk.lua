@@ -154,7 +154,7 @@ npcConfig.shop = {
 	{ itemName = "midnight sarong", clientId = 39167, sell = 750000 },
 	{ itemName = "enchanted turtle amulet", clientId = 39234, sell = 750000 },
 
-	-- Custom T4 - Gnomprona, Soul Wars
+	-- Custom T4 - Gnomprona,
 	{ itemName = "primal bag", clientId = 39546, sell = 1000000 },
 	{ itemName = "arboreal crown", clientId = 39153, sell = 1000000 },
 	{ itemName = "arboreal tome", clientId = 39154, sell = 1000000 },
@@ -173,6 +173,7 @@ npcConfig.shop = {
 	{ itemName = "charged spiritthorn ring", clientId = 39178, sell = 1000000 },
 	{ itemName = "spiritthorn ring", clientId = 39179, sell = 1000000 },
 
+	-- Custom T5 Soul Wars
 	{ itemName = "bag you desire", clientId = 34109, sell = 1000000 },
 	{ itemName = "soulbastion", clientId = 34099, sell = 1000000 },
 	{ itemName = "soulbleeder", clientId = 34088, sell = 1000000 },
