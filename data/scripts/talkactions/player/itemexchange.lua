@@ -14,7 +14,7 @@ local itemTiers = {
 			{ itemName = "umbral crossbow", clientId = 20086 },
 			{ itemName = "umbral spellbook", clientId = 20089 },
 		},
-		tributeCostPer10 = 100000
+		tributeCostPer10 = 100000,
 	},
 	["t1"] = {
 		items = {
@@ -38,7 +38,7 @@ local itemTiers = {
 			{ itemName = "tagralt blade", clientId = 31614 },
 			{ itemName = "enchanted theurgic amulet", clientId = 30403 },
 		},
-		tributeCostPer10 = 500000
+		tributeCostPer10 = 500000,
 	},
 	["t2"] = {
 		items = {
@@ -80,7 +80,7 @@ local itemTiers = {
 			{ itemName = "gilded eldritch rod", clientId = 36675 },
 			{ itemName = "gilded eldritch bow", clientId = 36665 },
 		},
-		tributeCostPer10 = 1000000
+		tributeCostPer10 = 1000000,
 	},
 	["t3"] = {
 		items = {
@@ -110,7 +110,7 @@ local itemTiers = {
 			{ itemName = "midnight sarong", clientId = 39167 },
 			{ itemName = "enchanted turtle amulet", clientId = 39234 },
 		},
-		tributeCostPer10 = 1500000
+		tributeCostPer10 = 1500000,
 	},
 	["t4"] = {
 		items = {
@@ -130,9 +130,8 @@ local itemTiers = {
 			{ itemName = "spiritthorn armor", clientId = 39147 },
 			{ itemName = "charged spiritthorn ring", clientId = 39178 },
 			{ itemName = "spiritthorn ring", clientId = 39179 },
-
 		},
-		tributeCostPer10 = 3000000
+		tributeCostPer10 = 3000000,
 	},
 	["t5"] = {
 		items = {
@@ -154,7 +153,7 @@ local itemTiers = {
 			{ itemName = "pair of soulwalkers", clientId = 34097 },
 			{ itemName = "pair of soulstalkers", clientId = 34098 },
 		},
-		tributeCostPer10 = 5000000
+		tributeCostPer10 = 5000000,
 	},
 }
 
