@@ -114,7 +114,8 @@ monster.loot = {
 	{ name = "spellbook of warding", chance = 2080 },
 	{ name = "gnome shield", chance = 5080 },
 	{ name = "gnome helmet", chance = 3390 },
-	{ name = "gnome sword", chance = 3390 },
+	{ name = "gnome sword", chance = 4170 },
+	{ name = "gnome armor", chance = 3390 },
 }
 
 monster.attacks = {
