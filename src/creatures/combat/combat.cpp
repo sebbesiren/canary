@@ -2051,7 +2051,7 @@ void Combat::applyExtensions(std::shared_ptr<Creature> caster, std::shared_ptr<C
 	auto player = caster->getPlayer();
 	auto monster = caster->getMonster();
 	if (player) {
-		chance = player->getSkillLevel(SKILL_CRITICAL_HIT_CHANCE) * 100;
+		chance = player->getSkillLevel(SKILL_CRITICAL_HIT_CHANCE);
 		bonus = player->getSkillLevel(SKILL_CRITICAL_HIT_DAMAGE);
 		if (target) {
 			uint16_t playerCharmRaceid = player->parseRacebyCharm(CHARM_LOW, false, 0);
