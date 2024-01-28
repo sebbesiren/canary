@@ -58,9 +58,8 @@ function resupply.onSay(player, words, param)
 		return true
 	end
 
-	-- TODO: just give the player the items
-	local npc = Npc("Runtel Blackspark")
-	npc:sellItem(player, item.clientId, count)
+	player:removeMoneyBank(totalCost)
+	player:addItem(item.clientId, count)
 
 	return true
 end
