@@ -96,8 +96,8 @@ monster.attacks = {
 	{ name = "emerald tortoise large ring", interval = 3500, chance = 20, minDamage = -500, maxDamage = -650 },
 	{ name = "emerald tortoise small ring", interval = 4500, chance = 20, minDamage = -500, maxDamage = -650 },
 	{ name = "emerald tortoise small explosion", interval = 3800, chance = 20, minDamage = -500, maxDamage = -650 },
-	--{ name = "energy chain", interval = 5000, chance = 37, minDamage = -400, maxDamage = -700, range = 3, target = true },
-	--{ name = "combat", interval = 2700, chance = 35, type = COMBAT_ENERGYDAMAGE, minDamage = -500, maxDamage = -600, range = 5, shootEffect = CONST_ANI_ENERGY, target = true },
+	{ name = "energy chain", interval = 5000, chance = 37, minDamage = -400, maxDamage = -700, range = 3, target = true },
+	--{ name = "combat", interval = 2700, chance = 35, type = COMBAT_ENERGYDAMAGE, minDamage = -300, maxDamage = -400, range = 5, shootEffect = CONST_ANI_ENERGY, target = true },
 	--{ name = "combat", interval = 4100, chance = 30, type = COMBAT_ENERGYDAMAGE, minDamage = -450, maxDamage = -750, radius = 3, effect = CONST_ME_BLUE_ENERGY_SPARK, target = false },
 }
 
