@@ -97,11 +97,11 @@ monster.loot = {
 }
 
 monster.attacks = {
-	{ name = "melee", interval = 2000, chance = 100, minDamage = -500, maxDamage = -900 },
-	{ name = "combat", interval = 3000, chance = 15, type = COMBAT_EARTHDAMAGE, minDamage = -750, maxDamage = -1000, range = 7, radius = 3, shootEffect = CONST_ANI_POISONARROW, effect = CONST_ME_GREEN_RINGS, target = true },
-	{ name = "combat", interval = 2000, chance = 10, type = COMBAT_EARTHDAMAGE, minDamage = -1000, maxDamage = -1200, length = 7, spread = 3, effect = CONST_ME_GREEN_RINGS, target = false },
+	{ name = "melee", interval = 2000, chance = 100, minDamage = -0, maxDamage = -1500 },
+	{ name = "combat", interval = 3000, chance = 15, type = COMBAT_EARTHDAMAGE, minDamage = -750, maxDamage = -1100, range = 7, radius = 3, shootEffect = CONST_ANI_POISONARROW, effect = CONST_ME_GREEN_RINGS, target = true },
+	{ name = "combat", interval = 2000, chance = 10, type = COMBAT_EARTHDAMAGE, minDamage = -1000, maxDamage = -1300, length = 7, spread = 3, effect = CONST_ME_GREEN_RINGS, target = false },
 	{ name = "ice chain", interval = 2000, chance = 15, minDamage = -400, maxDamage = -1300, range = 7 },
-	{ name = "poison chain", interval = 2000, chance = 15, minDamage = -300, maxDamage = -1000, range = 7 },
+	{ name = "poison chain", interval = 2000, chance = 15, minDamage = -300, maxDamage = -1100, range = 7 },
 	--{ name = "combat", interval = 3000, chance = 15, type = COMBAT_ICEDAMAGE, minDamage = -850, maxDamage = -900, radius = 3, effect = CONST_ME_ICETORNADO, target = false },
 	--{ name = "combat", interval = 3000, chance = 15, type = COMBAT_ICEDAMAGE, minDamage = -850, maxDamage = -1100, range = 7, radius = 4, effect = CONST_ME_ICEATTACK, target = true },
 }

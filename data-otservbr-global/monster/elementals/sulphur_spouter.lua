@@ -89,10 +89,10 @@ monster.loot = {
 }
 
 monster.attacks = {
-	{ name = "melee", interval = 2000, chance = 100, minDamage = -200, maxDamage = -600 },
-	{ name = "combat", interval = 3500, chance = 35, type = COMBAT_PHYSICALDAMAGE, minDamage = -400, maxDamage = -750, range = 4, shootEffect = CONST_ANI_HOLY, effect = CONST_ME_YELLOW_RINGS, target = true },
-	{ name = "combat", interval = 4000, chance = 20, type = COMBAT_FIREDAMAGE, minDamage = -400, maxDamage = -750, radius = 4, effect = CONST_ME_YELLOWSMOKE, target = true },
-	{ name = "sulphur spouter wave", interval = 4500, chance = 30, minDamage = -400, maxDamage = -750 },
+	{ name = "melee", interval = 2000, chance = 100, minDamage = -200, maxDamage = -1000 },
+	{ name = "combat", interval = 3500, chance = 35, type = COMBAT_PHYSICALDAMAGE, minDamage = -500, maxDamage = -800, range = 4, shootEffect = CONST_ANI_HOLY, effect = CONST_ME_YELLOW_RINGS, target = true },
+	{ name = "combat", interval = 4000, chance = 20, type = COMBAT_FIREDAMAGE, minDamage = -500, maxDamage = -800, radius = 4, effect = CONST_ME_YELLOWSMOKE, target = true },
+	{ name = "sulphur spouter wave", interval = 4500, chance = 30, minDamage = -500, maxDamage = -800 },
 }
 
 monster.defenses = {
