@@ -61,5 +61,11 @@
 		<colors colordark="#235c00" colorlight="#2d7400" />
 		<details displaypriority="1" isseasonal="0" specialevent="0"/>
 	</event>
+	<event name="Weekend Event" startdate="2/2/2024" enddate="2/4/2024" script="" >
+		<ingame exprate="150" lootrate="100" spawnrate="125" skillrate="125" />
+		<description description="Exp, Spawn and Skill weekend!" />
+		<colors colordark="#235c00" colorlight="#2d7400" />
+		<details displaypriority="1" isseasonal="0" specialevent="0"/>
+	</event>
 
 </events>
