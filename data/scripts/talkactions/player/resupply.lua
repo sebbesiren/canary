@@ -19,7 +19,16 @@ local items = {
 	["great fireball rune"] = { clientId = 3191, cost = 57 },
 	["thunderstorm rune"] = { clientId = 3202, cost = 47 },
 	["avalanche rune"] = { clientId = 3161, cost = 57 },
+	["stone shower rune"] = { clientId = 3175, cost = 57 },
+	["wild growth rune"] = { clientId = 3156, cost = 160 },
+	["energy bomb rune"] = { clientId = 3149, cost = 203 },
+	["fire bomb rune"] = { clientId = 3192, cost = 147 },
+	["poison bomb rune"] = { clientId = 3173, cost = 85 },
 }
+local availableItems = {}
+for key, _ in pairs(items) do
+	table.insert(availableItems, key)
+end
 
 function resupply.onSay(player, words, param)
 	logger.debug("!resupply executed")
@@ -27,10 +36,7 @@ function resupply.onSay(player, words, param)
 	local param_parts = param:split(",")
 
 	if param_parts[1] == "list" then
-		for k, _ in pairs(items) do
-			player:sendTextMessage(MESSAGE_LOOK, k)
-		end
-		player:sendTextMessage(MESSAGE_LOOK, "Check server log for items...")
+		player:sendTextMessage(MESSAGE_LOOK, table.concat(availableItems, ", "))
 		return true
 	end
 
@@ -47,7 +53,7 @@ function resupply.onSay(player, words, param)
 		for k, _ in pairs(items) do
 			player:sendTextMessage(MESSAGE_LOOK, k)
 		end
-		player:sendTextMessage(MESSAGE_LOOK, "Unknown item. Check server log for available items... ")
+		player:sendTextMessage(MESSAGE_LOOK, "Unknown item. Allowed items: " .. table.concat(availableItems, ", "))
 		return true
 	end
 

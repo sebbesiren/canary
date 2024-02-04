@@ -198,11 +198,11 @@ function itemexchange.onSay(player, words, param)
 		player:sendTextMessage(MESSAGE_LOOK, "Item exchange base success is 50%. Below is items per tier:")
 
 		for tier, v in pairs(itemTiers) do
-			local tiersItemString = ""
+			local keys = {}
 			for _, item in ipairs(v.items) do
-				tiersItemString = tiersItemString .. item.itemName .. ", "
+				table.insert(keys, item.itemName)
 			end
-			player:sendTextMessage(MESSAGE_LOOK, tier .. ": " .. tiersItemString)
+			player:sendTextMessage(MESSAGE_LOOK, tier .. ": " .. table.concat(keys, ', '))
 		end
 
 		return true

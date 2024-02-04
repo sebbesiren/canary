@@ -16,16 +16,18 @@ local hazards = {
 	["flimsy"] = { name = "hazard.flimsy" },
 }
 
+local availableHazards = {}
+for key, _ in pairs(hazards) do
+	table.insert(availableHazards, key)
+end
+
 function hazardlevel.onSay(player, words, param)
 	logger.debug("!hazardlevel executed")
 
 	local param_parts = param:split(",")
 
 	if param_parts[1] == "list" then
-		for k, _ in pairs(hazards) do
-			player:sendTextMessage(MESSAGE_LOOK, k)
-		end
-		player:sendTextMessage(MESSAGE_LOOK, "Check server log for available hazards...")
+		player:sendTextMessage(MESSAGE_LOOK, "Available hazards: " .. table.concat(availableHazards, ", "))
 		return true
 	end
 
@@ -38,10 +40,7 @@ function hazardlevel.onSay(player, words, param)
 	local selectedHazard = hazards[hazardName]
 
 	if not selectedHazard then
-		for k, _ in pairs(hazards) do
-			player:sendTextMessage(MESSAGE_LOOK, k)
-		end
-		player:sendTextMessage(MESSAGE_LOOK, "Unknown hazard. Check server log for available hazards...")
+		player:sendTextMessage(MESSAGE_LOOK, "Unknown hazard. Use one of: " .. table.concat(availableHazards, ", "))
 		return true
 	end
 
