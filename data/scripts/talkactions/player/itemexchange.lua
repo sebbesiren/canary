@@ -202,7 +202,7 @@ function itemexchange.onSay(player, words, param)
 			for _, item in ipairs(v.items) do
 				table.insert(keys, item.itemName)
 			end
-			player:sendTextMessage(MESSAGE_LOOK, tier .. ": " .. table.concat(keys, ', '))
+			player:sendTextMessage(MESSAGE_LOOK, tier .. ": " .. table.concat(keys, ", "))
 		end
 
 		return true
