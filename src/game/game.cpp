@@ -9722,6 +9722,7 @@ uint32_t Game::makeInfluencedMonster() {
 }
 
 uint32_t Game::makeFiendishMonster(uint32_t forgeableMonsterId /* = 0*/, bool createForgeableMonsters /* = false*/) {
+	auto fiendishLimit = g_configManager().getNumber(FORGE_FIENDISH_CREATURES_LIMIT, __FUNCTION__);
 	if (createForgeableMonsters) {
 		forgeableMonsters.clear();
 		// If the forgeable monsters haven't been created
@@ -9745,7 +9746,7 @@ uint32_t Game::makeFiendishMonster(uint32_t forgeableMonsterId /* = 0*/, bool cr
 			}
 
 			// If you're trying to create a new fiendish and it's already max size, let's remove one of them
-			if (getFiendishMonsters().size() >= 3) {
+			if (getFiendishMonsters().size() >= fiendishLimit) {
 				monster->clearFiendishStatus();
 				removeFiendishMonster(monsterId);
 				break;
@@ -9753,9 +9754,7 @@ uint32_t Game::makeFiendishMonster(uint32_t forgeableMonsterId /* = 0*/, bool cr
 		}
 	}
 
-	if (auto fiendishLimit = g_configManager().getNumber(FORGE_FIENDISH_CREATURES_LIMIT, __FUNCTION__);
-		// Condition
-		forgeableMonsters.empty() || fiendishMonsters.size() >= fiendishLimit) {
+	if (forgeableMonsters.empty() || fiendishMonsters.size() >= fiendishLimit) {
 		return 0;
 	}
 

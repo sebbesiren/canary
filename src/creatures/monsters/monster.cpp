@@ -2152,7 +2152,7 @@ void Monster::configureForgeSystem() {
 
 void Monster::clearFiendishStatus() {
 	timeToChangeFiendish = 0;
-	forgeStack = 0;
+	setForgeStack(0);
 	monsterForgeClassification = ForgeClassifications_t::FORGE_NORMAL_MONSTER;
 
 	health = mType->info.health * mType->getHealthMultiplier();
