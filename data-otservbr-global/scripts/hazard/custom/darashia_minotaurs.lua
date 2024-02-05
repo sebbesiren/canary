@@ -46,12 +46,12 @@ function deathEvent.onDeath(creature)
 
 	chanceTo = math.random(1, 50)
 	if chanceTo <= 1 then
-		local miniBosses = { "General Murius", "Bovinus" }
+		local miniBosses = { "Bovinus" }
 		spawnCustomHazardBoss(player, monster, miniBosses)
 	end
 
 	chanceTo = math.random(0, 50)
-	if chanceTo <= 1 and points >= 4 then
+	if chanceTo <= 1 then
 		createHazardPod(monster:getPosition(), monster:getName())
 	end
 
