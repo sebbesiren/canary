@@ -50,6 +50,13 @@ function deathEvent.onDeath(creature)
 		spawnCustomHazardBoss(player, monster, miniBosses)
 	end
 
+	chanceTo = math.random(1, 1000)
+	if chanceTo <= 1 then
+		local miniBosses = { "The Horned Fox" }
+		spawnCustomHazardBoss(player, monster, miniBosses)
+	end
+
+
 	chanceTo = math.random(0, 50)
 	if chanceTo <= 1 then
 		createHazardPod(monster:getPosition(), monster:getName())
