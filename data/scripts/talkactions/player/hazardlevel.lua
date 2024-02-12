@@ -14,6 +14,9 @@ local hazards = {
 	["court of summer winter"] = { name = "hazard.court-of-summer-winter" },
 	["goroma demons"] = { name = "hazard.goroma-demons" },
 	["flimsy"] = { name = "hazard.flimsy" },
+	["falcon"] = { name = "hazard.falcon" },
+	["cobra"] = { name = "hazard.cobra" },
+	["ingol"] = { name = "hazard.ingol" },
 }
 
 local availableHazards = {}

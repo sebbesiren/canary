@@ -76,28 +76,28 @@ monster.voices = {
 }
 
 monster.loot = {
-	{ name = "platinum coin", chance = 73130, maxCount = 25 },
+	{ name = "platinum coin", chance = 73130, maxCount = 30 },
 	{ name = "harpy feathers", chance = 6720 },
 	{ name = "violet crystal shard", chance = 4690 },
-	{ name = "blue crystal shard", chance = 4530 },
+	{ name = "blue crystal shard", chance = 9000 },
 	{ name = "great spirit potion", chance = 2970, maxCount = 3 },
 	{ name = "gold ring", chance = 1720 },
 	{ name = "wand of defiance", chance = 1720 },
 	{ name = "focus cape", chance = 1560 },
 	{ name = "violet gem", chance = 1200 },
-	{ name = "ornate crossbow", chance = 500 },
+	{ name = "ornate crossbow", chance = 1500 },
 	{ name = "shockwave amulet", chance = 470 },
 	{ name = "magic plate armor", chance = 440 },
 }
 
 monster.attacks = {
 	{ name = "melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -345 },
-	{ name = "combat", interval = 2000, chance = 30, type = COMBAT_PHYSICALDAMAGE, minDamage = -296, maxDamage = -350, range = 3, effect = CONST_ME_BIG_SCRATCH, target = true },
-	{ name = "energy ring", interval = 2000, chance = 20, minDamage = -280, maxDamage = -350 },
-	{ name = "energy chain", interval = 2000, chance = 20, minDamage = -155, maxDamage = -249, range = 3, target = true },
-	{ name = "combat", interval = 2000, chance = 25, type = COMBAT_ENERGYDAMAGE, minDamage = -310, maxDamage = -405, length = 5, spread = 3, effect = CONST_ME_SOUND_BLUE, target = false },
-	{ name = "combat", interval = 2000, chance = 30, type = COMBAT_ENERGYDAMAGE, minDamage = -320, maxDamage = -420, range = 7, radius = 4, effect = CONST_ME_ENERGYHIT, target = true },
-	{ name = "combat", interval = 2000, chance = 20, type = COMBAT_EARTHDAMAGE, minDamage = -425, maxDamage = -545, effect = CONST_ME_POISON, target = true },
+	{ name = "combat", interval = 2000, chance = 20, type = COMBAT_PHYSICALDAMAGE, minDamage = -296, maxDamage = -350, range = 3, effect = CONST_ME_BIG_SCRATCH, target = true },
+	{ name = "energy ring", interval = 2000, chance = 15, minDamage = -280, maxDamage = -350 },
+	{ name = "energy chain", interval = 2000, chance = 15, minDamage = -155, maxDamage = -249, range = 3, target = true },
+	{ name = "combat", interval = 2000, chance = 20, type = COMBAT_ENERGYDAMAGE, minDamage = -310, maxDamage = -405, length = 5, spread = 3, effect = CONST_ME_SOUND_BLUE, target = false },
+	{ name = "combat", interval = 2000, chance = 25, type = COMBAT_ENERGYDAMAGE, minDamage = -320, maxDamage = -420, range = 7, radius = 4, effect = CONST_ME_ENERGYHIT, target = true },
+	{ name = "combat", interval = 2000, chance = 15, type = COMBAT_EARTHDAMAGE, minDamage = -425, maxDamage = -545, effect = CONST_ME_POISON, target = true },
 }
 
 monster.defenses = {

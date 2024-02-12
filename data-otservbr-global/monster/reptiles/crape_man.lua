@@ -81,20 +81,21 @@ monster.loot = {
 	{ name = "green gem", chance = 3010 },
 	{ name = "great health potion", chance = 2000, maxCount = 5 },
 	{ id = 281, chance = 1700 }, -- giant shimmering pearl (green)
-	{ name = "guardian halberd", chance = 2400 },
-	{ name = "lightning legs", chance = 900 },
-	{ name = "warrior's shield", chance = 900 },
-	{ name = "glacier kilt", chance = 750 },
+	{ name = "guardian halberd", chance = 5000 },
+	{ name = "lightning legs", chance = 1700 },
+	{ name = "warrior's shield", chance = 1500 },
+	{ name = "glacier kilt", chance = 1500 },
 	{ name = "noble axe", chance = 700 },
-	{ name = "hammer of wrath", chance = 400 },
+	{ name = "hammer of wrath", chance = 1000 },
+	{ name = "magma coat", chance = 2100 },
 	{ name = "ring of the sky", chance = 300 },
 }
 
 monster.attacks = {
 	{ name = "melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -498 },
-	{ name = "combat", interval = 3500, chance = 40, type = COMBAT_PHYSICALDAMAGE, minDamage = -120, maxDamage = -320, range = 7, shootEffect = CONST_ANI_SUDDENDEATH, target = true },
-	{ name = "combat", interval = 2500, chance = 50, type = COMBAT_ENERGYDAMAGE, minDamage = -330, maxDamage = -380, range = 7, radius = 4, shootEffect = CONST_ANI_ENERGYBALL, effect = CONST_ME_PURPLEENERGY, target = true },
-	{ name = "combat", interval = 3000, chance = 65, type = COMBAT_ENERGYDAMAGE, minDamage = -311, maxDamage = -370, length = 3, spread = 3, effect = CONST_ME_ENERGYHIT, target = false },
+	{ name = "combat", interval = 2000, chance = 25, type = COMBAT_PHYSICALDAMAGE, minDamage = -120, maxDamage = -320, range = 7, shootEffect = CONST_ANI_SUDDENDEATH, target = true },
+	{ name = "combat", interval = 2000, chance = 20, type = COMBAT_ENERGYDAMAGE, minDamage = -330, maxDamage = -380, range = 7, radius = 4, shootEffect = CONST_ANI_ENERGYBALL, effect = CONST_ME_PURPLEENERGY, target = true },
+	{ name = "combat", interval = 2000, chance = 20, type = COMBAT_ENERGYDAMAGE, minDamage = -311, maxDamage = -370, length = 3, spread = 3, effect = CONST_ME_ENERGYHIT, target = false },
 }
 
 monster.defenses = {

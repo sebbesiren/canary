@@ -76,17 +76,17 @@ monster.voices = {
 }
 
 monster.loot = {
-	{ name = "platinum coin", chance = 72260, maxCount = 30 },
+	{ name = "platinum coin", chance = 72260, maxCount = 31 },
 	{ name = "brown crystal splinter", chance = 11550, maxCount = 4 },
 	{ name = "rhindeer antlers", chance = 6020 },
-	{ name = "rainbow quartz", chance = 4940, maxCount = 2 },
+	{ name = "rainbow quartz", chance = 6200, maxCount = 2 },
 	{ name = "great mana potion", chance = 2670, maxCount = 4 },
 	{ name = "titan axe", chance = 2470 },
 	{ name = "yellow gem", chance = 1880 },
 	{ name = "knight armor", chance = 1380 },
 	{ name = "violet gem", chance = 1200 },
 	{ id = 23543, chance = 890 }, -- collar of green plasma
-	{ name = "heavy mace", chance = 300 },
+	{ name = "heavy mace", chance = 600 },
 	{ name = "mastermind shield", chance = 400 },
 	{ id = 3053, chance = 690 }, -- time ring
 }
@@ -94,8 +94,8 @@ monster.loot = {
 monster.attacks = {
 	{ name = "melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -471 },
 	{ name = "combat", interval = 2000, chance = 20, minDamage = -265, maxDamage = -415, range = 3, radius = 4, effect = CONST_ME_EXPLOSIONHIT, target = true },
-	{ name = "combat", interval = 2000, chance = 30, type = COMBAT_EARTHDAMAGE, minDamage = -325, maxDamage = -400, range = 7, shootEffect = CONST_ANI_POISONARROW, target = true },
-	{ name = "combat", interval = 2000, chance = 30, type = COMBAT_PHYSICALDAMAGE, minDamage = -265, maxDamage = -411, range = 1, radius = 4, effect = CONST_ME_EXPLOSIONAREA, target = false },
+	{ name = "combat", interval = 2000, chance = 20, type = COMBAT_EARTHDAMAGE, minDamage = -325, maxDamage = -400, range = 7, shootEffect = CONST_ANI_POISONARROW, target = true },
+	{ name = "combat", interval = 2000, chance = 20, type = COMBAT_PHYSICALDAMAGE, minDamage = -265, maxDamage = -411, range = 1, radius = 4, effect = CONST_ME_EXPLOSIONAREA, target = false },
 	{ name = "combat", interval = 2000, chance = 20, type = COMBAT_PHYSICALDAMAGE, minDamage = -200, maxDamage = -300, range = 2, effect = CONST_ME_GROUNDSHAKER, target = true },
 }
 
