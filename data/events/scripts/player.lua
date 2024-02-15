@@ -553,6 +553,12 @@ function Player:onGainExperience(target, exp, rawExp)
 		end
 	end
 
+	-- Fiendish
+	local forgeStacks = target:getForgeStack()
+	if forgeStacks > 0 then
+		exp = math.ceil(exp * (1 + (0.25 * forgeStacks)))
+	end
+
 	if configManager.getBoolean(configKeys.VIP_SYSTEM_ENABLED) then
 		local vipBonusExp = configManager.getNumber(configKeys.VIP_BONUS_EXP)
 		if vipBonusExp > 0 and self:isVip() then
@@ -661,7 +667,8 @@ function Player:onChangeZone(zone)
 	return false
 end
 
-function Player:onInventoryUpdate(item, slot, equip) end
+function Player:onInventoryUpdate(item, slot, equip)
+end
 
 function Player:getURL()
 	local playerLink = string.gsub(self:getName(), "%s+", "+")
