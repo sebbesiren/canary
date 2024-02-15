@@ -667,8 +667,7 @@ function Player:onChangeZone(zone)
 	return false
 end
 
-function Player:onInventoryUpdate(item, slot, equip)
-end
+function Player:onInventoryUpdate(item, slot, equip) end
 
 function Player:getURL()
 	local playerLink = string.gsub(self:getName(), "%s+", "+")
