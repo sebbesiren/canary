@@ -2,7 +2,7 @@ local config = {
 	[VOCATION.ID.NONE] = {
 		container = {
 			{ 3003, 1 }, -- rope
-			{ 3457, 1 }, -- shovel
+			{ 5710, 1 }, -- shovel
 		},
 	},
 
@@ -10,14 +10,15 @@ local config = {
 		items = {
 			{ 3059, 1 }, -- spellbook
 			{ 3074, 1 }, -- wand of vortex
-			{ 7991, 1 }, -- magician's robe
+			{ 3567, 1 }, -- blue robe
 			{ 7992, 1 }, -- mage hat
-			{ 3362, 1 }, -- studded legs
-			{ 3552, 1 }, -- leather boots
+			{ 10387, 1 }, -- zaoan legs
+			{ 10386, 1 }, -- zaoan shoes
 			{ 3572, 1 }, -- scarf
 		},
 
 		container = {
+			{ 3043, 5 }, -- crystal coin
 			{ 3003, 1 }, -- rope
 			{ 5710, 1 }, -- light shovel
 			{ 268, 10 }, -- mana potion
@@ -28,14 +29,15 @@ local config = {
 		items = {
 			{ 3059, 1 }, -- spellbook
 			{ 3066, 1 }, -- snakebite rod
-			{ 7991, 1 }, -- magician's robe
+			{ 3567, 1 }, -- blue robe
 			{ 7992, 1 }, -- mage hat
-			{ 3362, 1 }, -- studded legs
-			{ 3552, 1 }, -- leather boots
+			{ 10387, 1 }, -- zaoan legs
+			{ 10386, 1 }, -- zaoan shoes
 			{ 3572, 1 }, -- scarf
 		},
 
 		container = {
+			{ 3043, 5 }, -- crystal coin
 			{ 3003, 1 }, -- rope
 			{ 5710, 1 }, -- light shovel
 			{ 268, 10 }, -- mana potion
@@ -44,38 +46,40 @@ local config = {
 
 	[VOCATION.ID.PALADIN] = {
 		items = {
-			{ 3425, 1 }, -- dwarven shield
+			{ 3416, 1 }, -- dragon shield
 			{ 3277, 1 }, -- spear
-			{ 3571, 1 }, -- ranger's cloak
-			{ 8095, 1 }, -- ranger legs
-			{ 3552, 1 }, -- leather boots
+			{ 3567, 1 }, -- blue robe
+			{ 10387, 1 }, -- zaoan legs
+			{ 10386, 1 }, -- zaoan shoes
 			{ 3572, 1 }, -- scarf
-			{ 3374, 1 }, -- legion helmet
+			{ 3351, 1 }, -- steel helmet
 		},
 
 		container = {
+			{ 3043, 5 }, -- crystal coin
 			{ 3003, 1 }, -- rope
 			{ 5710, 1 }, -- light shovel
 			{ 266, 10 }, -- health potion
 			{ 3350, 1 }, -- bow
-			{ 3447, 50 }, -- 50 arrows
+			{ 3447, 1 }, -- 1 arrows
 		},
 	},
 
 	[VOCATION.ID.KNIGHT] = {
 		items = {
-			{ 3425, 1 }, -- dwarven shield
-			{ 7773, 1 }, -- steel axe
-			{ 3359, 1 }, -- brass armor
-			{ 3354, 1 }, -- brass helmet
-			{ 3372, 1 }, -- brass legs
-			{ 3552, 1 }, -- leather boots
+			{ 3416, 1 }, -- dragon shield
+			{ 3316, 1 }, -- orcish axe
+			{ 3567, 1 }, -- blue robe
+			{ 3351, 1 }, -- steel helmet
+			{ 10387, 1 }, -- zaoan legs
+			{ 10386, 1 }, -- zaoan shoes
 			{ 3572, 1 }, -- scarf
 		},
 
 		container = {
-			{ 7774, 1 }, -- jagged sword
-			{ 3327, 1 }, -- daramanian mace
+			{ 3043, 5 }, -- crystal coin
+			{ 3297, 1 }, -- serpent sword
+			{ 3282, 1 }, -- morning star
 			{ 3003, 1 }, -- rope
 			{ 5710, 1 }, -- light shovel
 			{ 266, 10 }, -- health potion

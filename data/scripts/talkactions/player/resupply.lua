@@ -24,6 +24,7 @@ local items = {
 	["energy bomb rune"] = { clientId = 3149, cost = 203 },
 	["fire bomb rune"] = { clientId = 3192, cost = 147 },
 	["poison bomb rune"] = { clientId = 3173, cost = 85 },
+	["backpack"] = { clientId = 2854, cost = 100 },
 }
 local availableItems = {}
 for key, _ in pairs(items) do
