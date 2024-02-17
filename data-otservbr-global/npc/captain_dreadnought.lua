@@ -33,7 +33,7 @@ npcConfig.voices = {
 	{ text = "This island is too small. I need sea water around me." },
 }
 
-npcConfig.moneyToNeedDonation = 500 --value in gold coins (ex: 500 = 500gp, 10000 = 10k)
+npcConfig.moneyToNeedDonation = 100000 --value in gold coins (ex: 500 = 500gp, 10000 = 10k)
 
 local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
