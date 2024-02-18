@@ -17,7 +17,7 @@ local reward = {
 		-- Parchment
 		{ id = 2819, amount = 1, text = adventurersGuildText },
 		-- custom
-		{ id = 3043, amount = 5 }, -- crystal coin
+		{ id = 3043, amount = 1 }, -- crystal coin
 		{ id = 3567, amount = 1 }, -- blue robe
 		{ id = 10387, amount = 1 }, -- zaoan legs
 		{ id = 10386, amount = 1 }, -- zaoan shoes

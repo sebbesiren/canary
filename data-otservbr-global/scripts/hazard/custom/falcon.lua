@@ -44,7 +44,7 @@ function deathEvent.onDeath(creature)
 		return true
 	end
 
-	chanceTo = math.random(1, 400)
+	chanceTo = math.random(1, 300)
 	if chanceTo <= 1 then
 		local miniBosses = { "Grand Canon Dominus", "Grand Chaplain Gaunder", "Preceptor Lazare", "Grand Commander Soeren" }
 		spawnCustomHazardBoss(player, monster, miniBosses)

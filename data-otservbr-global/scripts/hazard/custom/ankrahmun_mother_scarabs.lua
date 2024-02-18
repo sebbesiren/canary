@@ -46,7 +46,7 @@ function deathEvent.onDeath(creature)
 		return true
 	end
 
-	chanceTo = math.random(1, 400)
+	chanceTo = math.random(1, 300)
 	if chanceTo <= 1 then
 		local miniBosses = { "Fleshcrawler" }
 		spawnCustomHazardBoss(player, monster, miniBosses)

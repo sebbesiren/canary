@@ -50,7 +50,7 @@ function deathEvent.onDeath(creature)
 		Game.startRaid(raids[math.random(#raids)])
 	end
 
-	chanceTo = math.random(1, 400)
+	chanceTo = math.random(1, 300)
 	if chanceTo <= 1 then
 		local miniBosses = { "Horadron", "Terofar", "Zavarash" }
 		spawnCustomHazardBoss(player, monster, miniBosses)

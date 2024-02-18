@@ -77,7 +77,7 @@ local config = {
 		},
 
 		container = {
-			{ 3043, 5 }, -- crystal coin
+			{ 3043, 1 }, -- crystal coin
 			{ 3297, 1 }, -- serpent sword
 			{ 3282, 1 }, -- morning star
 			{ 3003, 1 }, -- rope
