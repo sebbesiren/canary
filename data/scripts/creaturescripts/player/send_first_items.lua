@@ -18,7 +18,7 @@ local config = {
 		},
 
 		container = {
-			{ 3043, 5 }, -- crystal coin
+			{ 3043, 1 }, -- crystal coin
 			{ 3003, 1 }, -- rope
 			{ 5710, 1 }, -- light shovel
 			{ 268, 10 }, -- mana potion
@@ -37,7 +37,7 @@ local config = {
 		},
 
 		container = {
-			{ 3043, 5 }, -- crystal coin
+			{ 3043, 1 }, -- crystal coin
 			{ 3003, 1 }, -- rope
 			{ 5710, 1 }, -- light shovel
 			{ 268, 10 }, -- mana potion
@@ -56,7 +56,7 @@ local config = {
 		},
 
 		container = {
-			{ 3043, 5 }, -- crystal coin
+			{ 3043, 1 }, -- crystal coin
 			{ 3003, 1 }, -- rope
 			{ 5710, 1 }, -- light shovel
 			{ 266, 10 }, -- health potion

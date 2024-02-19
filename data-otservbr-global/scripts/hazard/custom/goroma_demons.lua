@@ -50,7 +50,7 @@ function deathEvent.onDeath(creature)
 		spawnCustomHazardBoss(player, monster, miniBosses)
 	end
 
-	chanceTo = math.random(0, 150)
+	chanceTo = math.random(1, 75)
 	if chanceTo <= 1 and points >= 4 then
 		createHazardPod(monster:getPosition(), monster:getName())
 	end

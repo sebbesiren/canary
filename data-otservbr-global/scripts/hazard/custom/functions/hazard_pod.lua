@@ -8,7 +8,17 @@ local function spawnMonster(position, monsterName)
 	end
 
 	position:sendMagicEffect(CONST_ME_TELEPORT)
-	Game.createMonster(monsterName, position, false, true)
+	local monster = Game.createMonster(monsterName, position, false, true)
+	if monster then
+		chanceTo = math.random(1, 100)
+		if chanceTo <= 4 then
+			Game.makeFiendishMonster(monster:getId(), true)
+		elseif chanceTo <= 15 then
+			local influencedLevel = math.random(1, 14)
+			monster:setForgeStack(influencedLevel)
+		end
+	end
+
 end
 
 ------ On Step in events
