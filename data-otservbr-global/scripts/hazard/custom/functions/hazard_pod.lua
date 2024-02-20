@@ -18,7 +18,6 @@ local function spawnMonster(position, monsterName)
 			monster:setForgeStack(influencedLevel)
 		end
 	end
-
 end
 
 ------ On Step in events
