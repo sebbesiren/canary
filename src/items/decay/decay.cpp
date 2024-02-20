@@ -45,8 +45,7 @@ void Decay::startDecay(std::shared_ptr<Item> item) {
 			stopDecay(item);
 		}
 
-		auto rateItemDecay = g_configManager().getFloat(RATE_ITEM_DECAY, __FUNCTION__);
-		int64_t timestamp = OTSYS_TIME() + std::ceil(duration / rateItemDecay);
+		int64_t timestamp = OTSYS_TIME() + duration;
 		if (decayMap.empty()) {
 			eventId = g_dispatcher().scheduleEvent(std::max<int32_t>(SCHEDULER_MINTICKS, duration), std::bind(&Decay::checkDecay, this), "Decay::checkDecay");
 		} else {

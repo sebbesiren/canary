@@ -194,7 +194,6 @@ bool ConfigManager::load() {
 	loadFloatConfig(L, RATE_SOUL_REGEN_SPEED, "rateSoulRegenSpeed", 1.0);
 	loadFloatConfig(L, RATE_SOUL_REGEN, "rateSoulRegen", 1.0);
 	loadFloatConfig(L, RATE_SPELL_COOLDOWN, "rateSpellCooldown", 1.0);
-	loadFloatConfig(L, RATE_ITEM_DECAY, "rateItemDecay", 1.0);
 	loadFloatConfig(L, RUSE_CHANCE_FORMULA_A, "ruseChanceFormulaA", 0.0307576);
 	loadFloatConfig(L, RUSE_CHANCE_FORMULA_B, "ruseChanceFormulaB", 0.440697);
 	loadFloatConfig(L, RUSE_CHANCE_FORMULA_C, "ruseChanceFormulaC", 0.026);
