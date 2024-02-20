@@ -2,7 +2,7 @@
 local hazardlevel = TalkAction("!hazardlevel")
 
 local hazards = {
-	["gnomprona gardens"] = { name = "hazard.gnomprona-gardens" },
+	["gnomprona"] = { name = "hazard.gnomprona-gardens" },
 	["darashia minos"] = { name = "hazard.darashia-minotaurs" },
 	["darashia wyrms"] = { name = "hazard.darashia-wyrms" },
 	["ankh mother scarabs"] = { name = "hazard.ankrahmun-mother-scarabs" },
