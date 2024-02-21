@@ -10,7 +10,7 @@ local function spawnMonster(position, monsterName)
 	position:sendMagicEffect(CONST_ME_TELEPORT)
 	local monster = Game.createMonster(monsterName, position, false, true)
 	if monster then
-		chanceTo = math.random(1, 100)
+		chanceTo = math.random(1, 1000)
 		if chanceTo <= 4 then
 			Game.makeFiendishMonster(monster:getId(), true)
 		elseif chanceTo <= 15 then
