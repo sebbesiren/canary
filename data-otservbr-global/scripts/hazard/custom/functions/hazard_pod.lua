@@ -14,7 +14,15 @@ local function spawnMonster(position, monsterName)
 		if chanceTo <= 4 then
 			Game.makeFiendishMonster(monster:getId(), true)
 		elseif chanceTo <= 15 then
+			local influencedMonster = Monster(ForgeMonster:pickInfluenced())
+			-- If it's reached the limit, we'll remove one to add the new one.
+			if ForgeMonster:exceededMaxInfluencedMonsters() then
+				if influencedMonster then
+					Game.removeInfluencedMonster(influencedMonster:getId())
+				end
+			end
 			local influencedLevel = math.random(1, 14)
+			Game.addInfluencedMonster(monster)
 			monster:setForgeStack(influencedLevel)
 		end
 	end
@@ -70,7 +78,7 @@ local function spawnPortal(position, monsterName)
 	local toPos = Position(position.x + 4, position.y + 4, position.z)
 	local spawnZone = SpawnZone(name, fromPos, toPos)
 	spawnZone:setPeriod("120s")
-	spawnZone:setMonstersPerCluster(2, 8)
+	spawnZone:setMonstersPerCluster(4, 8)
 	spawnZone:configureMonster(monsterName, 1)
 	spawnZone:register()
 	table.insert(hazardPortalPositions, position)
