@@ -17,5 +17,5 @@ function executeLevelUpEvent(points, maxRoll)
 	maxRoll = maxRoll or 300 - points
 
 	local chanceTo = math.random(1, maxRoll)
-	return chanceTo <= chanceTo
+	return chanceTo <= 1
 end
