@@ -1,7 +1,7 @@
 local hazard = Hazard.new({
-	name = "hazard.darashia-wyrms",
-	from = Position(33033, 32344, 12),
-	to = Position(33130, 32436, 14),
+	name = "hazard.carnivoras",
+	from = Position(32727, 32597, 8),
+	to = Position(32826, 32657, 10),
 	maxLevel = 20,
 
 	crit = true,
@@ -10,11 +10,12 @@ local hazard = Hazard.new({
 	defenseBoost = true,
 })
 
+
 hazard:register()
 
 local hazardZone = Zone.getByName(hazard.name)
 
-local deathEventName = "DarashiaWyrmDeath"
+local deathEventName = "CarnivorasDeath"
 local spawnEvent = ZoneEvent(hazardZone)
 function spawnEvent.onSpawn(monster, position)
 	monster:registerEvent(deathEventName)
@@ -43,7 +44,8 @@ function deathEvent.onDeath(creature)
 
 		return true
 	end
-	local miniBosses = { "Tyrn" }
+
+	local miniBosses = { "Yirkas Blue Scales" }
 
 	if executeLevelUpEvent(points) then
 		spawnCustomHazardBoss(player, monster, miniBosses)

@@ -44,14 +44,13 @@ function deathEvent.onDeath(creature)
 		return true
 	end
 
-	chanceTo = math.random(1, 300)
-	if chanceTo <= 1 then
-		local miniBosses = { "Irgix the Flimsy", "Vok the Freakish", "Unaz the Mean" }
+	local miniBosses = { "Irgix the Flimsy", "Vok the Freakish", "Unaz the Mean" }
+
+	if executeLevelUpEvent(points) then
 		spawnCustomHazardBoss(player, monster, miniBosses)
 	end
 
-	chanceTo = math.random(0, 100)
-	if chanceTo <= 1 and points >= 4 then
+	if executeCreateHazardPod(points) then
 		createHazardPod(monster:getPosition(), monster:getName())
 	end
 

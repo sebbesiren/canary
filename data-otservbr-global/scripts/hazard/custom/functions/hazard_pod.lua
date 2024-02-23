@@ -150,3 +150,19 @@ function createHazardPod(position, monsterName)
 		hazardPodEvent:register()
 	end
 end
+
+function executeCreateHazardPod(points, maxRoll)
+	if points < 4 then
+		return false
+	end
+
+	if not maxRoll then
+		maxRoll = 75 - points + 4
+		if points > 10 then
+			maxRoll = maxRoll - points + 10
+		end
+	end
+
+	local chanceTo = math.random(1, maxRoll)
+	return chanceTo <= 1
+end

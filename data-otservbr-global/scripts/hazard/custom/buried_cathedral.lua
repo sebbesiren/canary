@@ -1,7 +1,7 @@
 local hazard = Hazard.new({
-	name = "hazard.darashia-wyrms",
-	from = Position(33033, 32344, 12),
-	to = Position(33130, 32436, 14),
+	name = "hazard.buried-cathedral",
+	from = Position(33544, 32483, 13),
+	to = Position(33681, 32572, 15),
 	maxLevel = 20,
 
 	crit = true,
@@ -9,12 +9,17 @@ local hazard = Hazard.new({
 	damageBoost = true,
 	defenseBoost = true,
 })
+--
+--
+
 
 hazard:register()
 
 local hazardZone = Zone.getByName(hazard.name)
+hazardZone:subtractArea({x = 33606, y = 32553, z = 13}, {x = 33628, y = 32571, z = 13})
 
-local deathEventName = "DarashiaWyrmDeath"
+
+local deathEventName = "BuriedCathedralDeath"
 local spawnEvent = ZoneEvent(hazardZone)
 function spawnEvent.onSpawn(monster, position)
 	monster:registerEvent(deathEventName)
@@ -43,13 +48,14 @@ function deathEvent.onDeath(creature)
 
 		return true
 	end
-	local miniBosses = { "Tyrn" }
 
-	if executeLevelUpEvent(points) then
+	local miniBosses = { "Frenzy" }
+
+	if executeLevelUpEvent(points, 200) then
 		spawnCustomHazardBoss(player, monster, miniBosses)
 	end
 
-	if executeCreateHazardPod(points) then
+	if executeCreateHazardPod(points, 35) then
 		createHazardPod(monster:getPosition(), monster:getName())
 	end
 

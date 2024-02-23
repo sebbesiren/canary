@@ -16,6 +16,9 @@ local items = {
 	["spectral bolt"] = { clientId = 35902, cost = 70 },
 	["diamond arrow"] = { clientId = 35901, cost = 100 },
 	["sudden death rune"] = { clientId = 3155, cost = 135 },
+	["heavy magic missile rune"] = { clientId = 3198, cost = 135 },
+	["icicle rune"] = { clientId = 3158, cost = 135 },
+	["fireball rune"] = { clientId = 3189, cost = 135 },
 	["great fireball rune"] = { clientId = 3191, cost = 57 },
 	["thunderstorm rune"] = { clientId = 3202, cost = 47 },
 	["avalanche rune"] = { clientId = 3161, cost = 57 },
@@ -25,6 +28,7 @@ local items = {
 	["fire bomb rune"] = { clientId = 3192, cost = 147 },
 	["poison bomb rune"] = { clientId = 3173, cost = 85 },
 	["backpack"] = { clientId = 2854, cost = 100 },
+	["brown mushroom"] = { clientId = 3725, cost = 10 },
 }
 local availableItems = {}
 for key, _ in pairs(items) do
@@ -41,7 +45,7 @@ function resupply.onSay(player, words, param)
 		return true
 	end
 
-	local itemName = param_parts[1]
+	local itemName = param_parts[1].lower()
 	local count = getMoneyCount(param_parts[2])
 	if count == -1 then
 		player:sendTextMessage(MESSAGE_LOOK, "Invalid item count: " .. count)

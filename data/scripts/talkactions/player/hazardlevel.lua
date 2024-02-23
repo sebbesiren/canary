@@ -17,6 +17,11 @@ local hazards = {
 	["falcon"] = { name = "hazard.falcon" },
 	["cobra"] = { name = "hazard.cobra" },
 	["ingol"] = { name = "hazard.ingol" },
+	["carnivoras"] = { name = "hazard.carnivoras" },
+	["issavi surface"] = { name = "hazard.issavi-surface" },
+	["glooth bandits"] = { name = "hazard.glooth-bandits" },
+	["buried cathedral"] = { name = "hazard.buried-cathedral" },
+	["inquisition"] = { name = "hazard.inquisition" },
 }
 
 local availableHazards = {}

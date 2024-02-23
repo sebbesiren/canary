@@ -126,8 +126,8 @@ for _, area in ipairs(combatConfig.areas) do
 		if #creatureTable ~= nil and #creatureTable > 0 then
 			for r = 1, #creatureTable do
 				if creatureTable[r] ~= creature then
-					local min = 3500
-					local max = 3500
+					local min = 4500
+					local max = 4500
 					local player = Player(creatureTable[r])
 
 					if isPlayer(creatureTable[r]) == true and table.contains(vocation, player:getVocation():getBaseId()) then

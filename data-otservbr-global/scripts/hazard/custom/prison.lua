@@ -50,20 +50,18 @@ function deathEvent.onDeath(creature)
 		Game.startRaid(raids[math.random(#raids)])
 	end
 
-	chanceTo = math.random(1, 300)
-	if chanceTo <= 1 then
-		local miniBosses = { "Horadron", "Terofar", "Zavarash" }
-		spawnCustomHazardBoss(player, monster, miniBosses)
-	end
-
 	chanceTo = math.random(1, 20000)
 	if chanceTo <= 1 then
-		local miniBosses = { "Prince Drazzak" }
+		spawnCustomHazardBoss(player, monster, { "Prince Drazzak" })
+	end
+
+	local miniBosses = { "Horadron", "Terofar", "Zavarash" }
+
+	if executeLevelUpEvent(points) then
 		spawnCustomHazardBoss(player, monster, miniBosses)
 	end
 
-	chanceTo = math.random(1, 75)
-	if chanceTo <= 1 and points >= 4 then
+	if executeCreateHazardPod(points) then
 		createHazardPod(monster:getPosition(), monster:getName())
 	end
 

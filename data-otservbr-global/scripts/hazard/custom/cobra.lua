@@ -13,6 +13,8 @@ local hazard = Hazard.new({
 hazard:register()
 
 local hazardZone = Zone.getByName(hazard.name)
+hazardZone:addArea({ x = 33355, y = 32622, z = 0 }, { x = 33419, y = 32705, z = 7 })
+hazardZone:subtractArea({ x = 33386, y = 32639, z = 6 }, { x = 33406, y = 32660, z = 6 })
 
 local deathEventName = "CobraDeath"
 local spawnEvent = ZoneEvent(hazardZone)
@@ -44,14 +46,13 @@ function deathEvent.onDeath(creature)
 		return true
 	end
 
-	chanceTo = math.random(1, 300)
-	if chanceTo <= 1 then
-		local miniBosses = { "Custodian", "Guard Captain Quaid", "Gaffir" }
+	local miniBosses = { "Custodian", "Guard Captain Quaid", "Gaffir" }
+
+	if executeLevelUpEvent(points) then
 		spawnCustomHazardBoss(player, monster, miniBosses)
 	end
 
-	chanceTo = math.random(1, 75)
-	if chanceTo <= 1 and points >= 4 then
+	if executeCreateHazardPod(points) then
 		createHazardPod(monster:getPosition(), monster:getName())
 	end
 
