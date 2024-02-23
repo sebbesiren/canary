@@ -46,7 +46,7 @@ function deathEvent.onDeath(creature)
 		return true
 	end
 
-	local miniBosses = { "Esmeralda", "Sulphur Scuttler"}
+	local miniBosses = { "Esmeralda", "Sulphur Scuttler" }
 
 	if executeLevelUpEvent(points) then
 		spawnCustomHazardBoss(player, monster, miniBosses)
