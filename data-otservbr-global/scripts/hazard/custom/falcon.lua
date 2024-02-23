@@ -43,7 +43,7 @@ function deathEvent.onDeath(creature)
 
 		return true
 	end
- 	local miniBosses = { "Grand Canon Dominus", "Grand Chaplain Gaunder", "Preceptor Lazare", "Grand Commander Soeren" }
+	local miniBosses = { "Grand Canon Dominus", "Grand Chaplain Gaunder", "Preceptor Lazare", "Grand Commander Soeren" }
 
 	if executeLevelUpEvent(points) then
 		spawnCustomHazardBoss(player, monster, miniBosses)
