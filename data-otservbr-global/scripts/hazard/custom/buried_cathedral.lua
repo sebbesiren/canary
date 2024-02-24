@@ -47,9 +47,9 @@ function deathEvent.onDeath(creature)
 		return true
 	end
 
-	local miniBosses = { "Frenzy" }
+	local miniBosses = { "Arachir the Ancient One" }
 
-	if executeLevelUpEvent(points, 200) then
+	if executeLevelUpEvent(points, 150) then
 		spawnCustomHazardBoss(player, monster, miniBosses)
 	end
 

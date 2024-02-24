@@ -156,12 +156,7 @@ function executeCreateHazardPod(points, maxRoll)
 		return false
 	end
 
-	if not maxRoll then
-		maxRoll = 75 - points + 4
-		if points > 10 then
-			maxRoll = maxRoll - points + 10
-		end
-	end
+	maxRoll = maxRoll or 75 - (points - 4) * 2
 
 	local chanceTo = math.random(1, maxRoll)
 	return chanceTo <= 1

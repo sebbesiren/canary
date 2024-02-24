@@ -14,7 +14,7 @@ function spawnCustomHazardBoss(player, monster, bosses)
 end
 
 function executeLevelUpEvent(points, maxRoll)
-	maxRoll = maxRoll or 300 - points
+	maxRoll = maxRoll or 300 - (points - 1) * 5
 
 	local chanceTo = math.random(1, maxRoll)
 	return chanceTo <= 1

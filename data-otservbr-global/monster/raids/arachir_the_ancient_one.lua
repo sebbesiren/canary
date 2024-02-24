@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Arachir the Ancient One")
 local monster = {}
 
 monster.description = "Arachir the Ancient One"
-monster.experience = 1800
+monster.experience = 6000
 monster.outfit = {
 	lookType = 287,
 	lookHead = 0,
@@ -18,8 +18,8 @@ monster.bosstiary = {
 	bossRace = RARITY_NEMESIS,
 }
 
-monster.health = 1600
-monster.maxHealth = 1600
+monster.health = 6000
+monster.maxHealth = 6000
 monster.race = "undead"
 monster.corpse = 8109
 monster.speed = 143
@@ -65,7 +65,7 @@ monster.light = {
 monster.summon = {
 	maxSummons = 2,
 	summons = {
-		{ name = "Lich", chance = 100, interval = 9000, count = 2 },
+		{ name = "Lich", chance = 100, interval = 9000, count = 10 },
 	},
 }
 
@@ -91,8 +91,8 @@ monster.loot = {
 
 monster.attacks = {
 	{ name = "melee", interval = 2000, chance = 100, skill = 70, attack = 95 },
-	{ name = "combat", interval = 9000, chance = 100, type = COMBAT_DEATHDAMAGE, minDamage = -120, maxDamage = -300, radius = 3, effect = CONST_ME_MORTAREA, target = false },
-	{ name = "combat", interval = 1000, chance = 12, type = COMBAT_DEATHDAMAGE, minDamage = 0, maxDamage = -120, shootEffect = CONST_ANI_SUDDENDEATH, effect = CONST_ME_MORTAREA, target = true },
+	{ name = "combat", interval = 9000, chance = 100, type = COMBAT_DEATHDAMAGE, minDamage = -120, maxDamage = -1200, radius = 3, effect = CONST_ME_MORTAREA, target = false },
+	{ name = "combat", interval = 1000, chance = 12, type = COMBAT_DEATHDAMAGE, minDamage = 0, maxDamage = -2000, shootEffect = CONST_ANI_SUDDENDEATH, effect = CONST_ME_MORTAREA, target = true },
 }
 
 monster.defenses = {

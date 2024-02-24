@@ -22,9 +22,9 @@ local thePrimalMenaceConfig = {
 		CountBase = 4,
 		CountVarianceRate = 0.5,
 		CountGrowthPerHazard = 1.05,
-		CountMax = 6,
+		CountMax = 8,
 
-		HpRateOnSpawn = 0.5,
+		HpRateOnSpawn = 0.65,
 		MonsterPool = {
 			"Emerald Tortoise (Primal)",
 			"Gore Horn (Primal)",
