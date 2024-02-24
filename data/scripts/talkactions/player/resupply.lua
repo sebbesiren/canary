@@ -45,7 +45,7 @@ function resupply.onSay(player, words, param)
 		return true
 	end
 
-	local itemName = param_parts[1].lower()
+	local itemName = param_parts[1]:lower()
 	local count = getMoneyCount(param_parts[2])
 	if count == -1 then
 		player:sendTextMessage(MESSAGE_LOOK, "Invalid item count: " .. count)
