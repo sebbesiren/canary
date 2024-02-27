@@ -246,7 +246,7 @@ GameStore.Categories = {
 				itemtype = 9596,
 				description = "Squeezing gear of girlpower!",
 				type = GameStore.OfferTypes.OFFER_TYPE_STACKABLE,
-				movable = true
+				movable = true,
 			},
 			{
 				name = "Sneaky Stabber of Eliteness",
@@ -255,7 +255,7 @@ GameStore.Categories = {
 				itemtype = 9594,
 				description = "Sneaky Stabber of Eliteness!",
 				type = GameStore.OfferTypes.OFFER_TYPE_STACKABLE,
-				movable = true
+				movable = true,
 			},
 			{
 				name = "Whacking Driller of Fate",
@@ -264,7 +264,7 @@ GameStore.Categories = {
 				itemtype = 9598,
 				description = "Whacking Driller of Fate!",
 				type = GameStore.OfferTypes.OFFER_TYPE_STACKABLE,
-				movable = true
+				movable = true,
 			},
 			-------- Reistance
 			{
@@ -274,7 +274,7 @@ GameStore.Categories = {
 				itemtype = 25977,
 				description = "5% fire protection",
 				type = GameStore.OfferTypes.OFFER_TYPE_ITEM,
-				movable = true
+				movable = true,
 			},
 			{
 				name = "Moon Mirror",
@@ -283,7 +283,7 @@ GameStore.Categories = {
 				itemtype = 25975,
 				description = "5% death protection",
 				type = GameStore.OfferTypes.OFFER_TYPE_ITEM,
-				movable = true
+				movable = true,
 			},
 			{
 				name = "Bone Fiddle",
@@ -292,7 +292,7 @@ GameStore.Categories = {
 				itemtype = 28493,
 				description = "5% lifedrain protection",
 				type = GameStore.OfferTypes.OFFER_TYPE_ITEM,
-				movable = true
+				movable = true,
 			},
 			{
 				name = "Starlight Vial",
@@ -301,7 +301,7 @@ GameStore.Categories = {
 				itemtype = 25976,
 				description = "5% manadrain protection",
 				type = GameStore.OfferTypes.OFFER_TYPE_ITEM,
-				movable = true
+				movable = true,
 			},
 			{
 				name = "Lit Torch",
@@ -310,7 +310,7 @@ GameStore.Categories = {
 				itemtype = 34016,
 				description = "2% holy protection",
 				type = GameStore.OfferTypes.OFFER_TYPE_ITEM,
-				movable = true
+				movable = true,
 			},
 		},
 	},
