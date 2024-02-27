@@ -61,6 +61,8 @@ local config = {
 			{ 5710, 1 }, -- light shovel
 			{ 266, 10 }, -- health potion
 			{ 3350, 1 }, -- bow
+			{ 35562, 1 }, -- quiver
+			{ 15793, 50 }, -- crystalline arrow
 			{ 3447, 1 }, -- 1 arrows
 		},
 	},

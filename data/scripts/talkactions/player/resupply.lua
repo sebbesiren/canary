@@ -27,6 +27,8 @@ local items = {
 	["energy bomb rune"] = { clientId = 3149, cost = 203 },
 	["fire bomb rune"] = { clientId = 3192, cost = 147 },
 	["poison bomb rune"] = { clientId = 3173, cost = 85 },
+	["ultimate healing rune"] = { clientId = 3160, cost = 175 },
+	["magic wall rune"] = { clientId = 3180, cost = 116 },
 	["backpack"] = { clientId = 2854, cost = 100 },
 	["brown mushroom"] = { clientId = 3725, cost = 10 },
 }
