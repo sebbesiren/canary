@@ -5218,7 +5218,7 @@ local weapons = {
 		type = WEAPON_WAND,
 		wandType = "energy",
 		level = 6,
-		mana = 1,
+		mana = 80,
 		damage = { 8, 18 },
 		vocation = {
 			{ "Sorcerer", true },
@@ -5309,7 +5309,7 @@ local weapons = {
 		type = WEAPON_WAND,
 		wandType = "earth",
 		level = 6,
-		mana = 2,
+		mana = 80,
 		damage = { 8, 18 },
 		vocation = {
 			{ "Druid", true },

@@ -246,6 +246,7 @@ GameStore.Categories = {
 				itemtype = 9596,
 				description = "Squeezing gear of girlpower!",
 				type = GameStore.OfferTypes.OFFER_TYPE_STACKABLE,
+				movable = true
 			},
 			{
 				name = "Sneaky Stabber of Eliteness",
@@ -254,6 +255,7 @@ GameStore.Categories = {
 				itemtype = 9594,
 				description = "Sneaky Stabber of Eliteness!",
 				type = GameStore.OfferTypes.OFFER_TYPE_STACKABLE,
+				movable = true
 			},
 			{
 				name = "Whacking Driller of Fate",
@@ -262,6 +264,7 @@ GameStore.Categories = {
 				itemtype = 9598,
 				description = "Whacking Driller of Fate!",
 				type = GameStore.OfferTypes.OFFER_TYPE_STACKABLE,
+				movable = true
 			},
 			-------- Reistance
 			{
@@ -271,6 +274,7 @@ GameStore.Categories = {
 				itemtype = 25977,
 				description = "5% fire protection",
 				type = GameStore.OfferTypes.OFFER_TYPE_ITEM,
+				movable = true
 			},
 			{
 				name = "Moon Mirror",
@@ -279,6 +283,7 @@ GameStore.Categories = {
 				itemtype = 25975,
 				description = "5% death protection",
 				type = GameStore.OfferTypes.OFFER_TYPE_ITEM,
+				movable = true
 			},
 			{
 				name = "Bone Fiddle",
@@ -287,6 +292,7 @@ GameStore.Categories = {
 				itemtype = 28493,
 				description = "5% lifedrain protection",
 				type = GameStore.OfferTypes.OFFER_TYPE_ITEM,
+				movable = true
 			},
 			{
 				name = "Starlight Vial",
@@ -295,6 +301,7 @@ GameStore.Categories = {
 				itemtype = 25976,
 				description = "5% manadrain protection",
 				type = GameStore.OfferTypes.OFFER_TYPE_ITEM,
+				movable = true
 			},
 			{
 				name = "Lit Torch",
@@ -303,6 +310,7 @@ GameStore.Categories = {
 				itemtype = 34016,
 				description = "2% holy protection",
 				type = GameStore.OfferTypes.OFFER_TYPE_ITEM,
+				movable = true
 			},
 		},
 	},
@@ -6509,7 +6517,7 @@ GameStore.Categories = {
 			{
 				icons = { "XP_Boost.png" },
 				name = "XP Boost",
-				price = 50,
+				price = 30,
 				id = 65010,
 				description = "<i>Purchase a boost that increases the experience points your character gains from hunting by 50%!</i>\n\n{character}\n{info} lasts for 1 hour hunting time\n{info} paused if stamina falls under 14 hours\n{info} can be purchased up to 5 times between 2 server saves\n{info} price increases with every purchase\n{info} cannot be purchased if an XP boost is already active",
 				type = GameStore.OfferTypes.OFFER_TYPE_EXPBOOST,

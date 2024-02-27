@@ -1090,6 +1090,7 @@ npcConfig.shop = {
 	{ itemName = "opal", clientId = 22194, sell = 500 },
 	{ itemName = "rainbow quartz", clientId = 25737, sell = 500 },
 	{ itemName = "talon", clientId = 3034, 320 },
+	{ itemName = "royal almandine", clientId = 39038, sell = 460000 },
 }
 -- On buy npc shop message
 npcType.onBuyItem = function(npc, player, itemId, subType, amount, ignore, inBackpacks, totalCost)
@@ -1100,7 +1101,8 @@ npcType.onSellItem = function(npc, player, itemId, subtype, amount, ignore, name
 	player:sendTextMessage(MESSAGE_INFO_DESCR, string.format("Sold %ix %s for %i gold.", amount, name, totalCost))
 end
 -- On check npc shop message (look item)
-npcType.onCheckItem = function(npc, player, clientId, subType) end
+npcType.onCheckItem = function(npc, player, clientId, subType)
+end
 
 local function creatureSayCallback(npc, creature, type, message)
 	local player = Player(creature)
