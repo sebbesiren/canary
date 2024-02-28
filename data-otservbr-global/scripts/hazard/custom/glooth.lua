@@ -46,6 +46,12 @@ function deathEvent.onDeath(creature)
 		return true
 	end
 
+	local chanceTo = math.random(1, 1000)
+	if chanceTo <= 1 then
+		local miniBosses = { "The Horned Fox" }
+		spawnCustomHazardBoss(player, monster, miniBosses)
+	end
+
 	local miniBosses = { "Esmeralda", "Sulphur Scuttler" }
 
 	if executeLevelUpEvent(points) then
