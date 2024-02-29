@@ -6972,6 +6972,10 @@ for k, category in ipairs(GameStore.Categories) do
 			if not offer.coinType then
 				offer.coinType = GameStore.CoinType.Transferable
 			end
+
+			if table.contains({"Decorations", "Furniture", "Beds"}, category.name)then
+				offer.price = math.ceil(offer.price / 5)
+			end
 		end
 	end
 end
