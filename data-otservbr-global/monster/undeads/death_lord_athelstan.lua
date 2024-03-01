@@ -120,8 +120,8 @@ monster.attacks = {
 	{ name = "combat", interval = 2000, chance = 20, type = COMBAT_DEATHDAMAGE, minDamage = -860, maxDamage = -1500, range = 7, shootEffect = CONST_ANI_SUDDENDEATH, effect = CONST_ME_MORTAREA, target = false },
 	{ name = "Shotgun", interval = 2000, chance = 10, minDamage = -860, maxDamage = -1500, target = false },
 	{ name = "Holy Bomb Slash", interval = 2000, chance = 20, minDamage = -820, maxDamage = -1450, target = false },
-	{ name = "Rotating Wheel", interval = 40000, chance = 100, target = false },
-	{ name = "Athelstan Axe Throw", interval = 3000, chance = 35, minDamage = -800, maxDamage = -2500 },
+	{ name = "Rotating Wheel", interval = 35000, chance = 100, target = false },
+	{ name = "Athelstan Axe Throw", interval = 2000, chance = 35, minDamage = -1200, maxDamage = -2500 },
 }
 
 monster.defenses = {

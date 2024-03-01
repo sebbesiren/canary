@@ -1091,6 +1091,14 @@ npcConfig.shop = {
 	{ itemName = "rainbow quartz", clientId = 25737, sell = 500 },
 	{ itemName = "talon", clientId = 3034, 320 },
 	{ itemName = "royal almandine", clientId = 39038, sell = 460000 },
+	{ itemName = "sai", clientId = 10389, sell = 16500 },
+	{ itemName = "demonic essence", clientId = 6499, sell = 1000 },
+	{ itemName = "watermelon tourmaline piece", clientId = 33779, sell = 30000 },
+	{ itemName = "watermelon tourmaline", clientId = 33780, sell = 230000 },
+	{ itemName = "black skull", clientId = 9056, sell = 4000 },
+	{ itemName = "blood goblet", clientId = 8531, sell = 10000 },
+	{ itemName = "enigmatic voodoo skull", clientId = 5669, sell = 4000 },
+	{ itemName = "mysterious voodoo skull", clientId = 5668, sell = 4000 },
 }
 -- On buy npc shop message
 npcType.onBuyItem = function(npc, player, itemId, subType, amount, ignore, inBackpacks, totalCost)
