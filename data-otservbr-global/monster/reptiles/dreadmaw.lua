@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Dreadmaw")
 local monster = {}
 
 monster.description = "a dreadmaw"
-monster.experience = 1500
+monster.experience = 3500
 monster.outfit = {
 	lookType = 358,
 	lookHead = 0,
@@ -18,8 +18,8 @@ monster.bosstiary = {
 	bossRace = RARITY_NEMESIS,
 }
 
-monster.health = 2000
-monster.maxHealth = 2000
+monster.health = 3500
+monster.maxHealth = 3500
 monster.race = "blood"
 monster.corpse = 10221
 monster.speed = 95
@@ -72,7 +72,7 @@ monster.loot = {
 }
 
 monster.attacks = {
-	{ name = "melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -200 },
+	{ name = "melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -2000 },
 }
 
 monster.defenses = {

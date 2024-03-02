@@ -1099,6 +1099,7 @@ npcConfig.shop = {
 	{ itemName = "blood goblet", clientId = 8531, sell = 10000 },
 	{ itemName = "enigmatic voodoo skull", clientId = 5669, sell = 4000 },
 	{ itemName = "mysterious voodoo skull", clientId = 5668, sell = 4000 },
+	{ itemName = "giant amethyst", clientId = 30061, sell = 60000 },
 }
 -- On buy npc shop message
 npcType.onBuyItem = function(npc, player, itemId, subType, amount, ignore, inBackpacks, totalCost)
@@ -1109,7 +1110,8 @@ npcType.onSellItem = function(npc, player, itemId, subtype, amount, ignore, name
 	player:sendTextMessage(MESSAGE_INFO_DESCR, string.format("Sold %ix %s for %i gold.", amount, name, totalCost))
 end
 -- On check npc shop message (look item)
-npcType.onCheckItem = function(npc, player, clientId, subType) end
+npcType.onCheckItem = function(npc, player, clientId, subType)
+end
 
 local function creatureSayCallback(npc, creature, type, message)
 	local player = Player(creature)

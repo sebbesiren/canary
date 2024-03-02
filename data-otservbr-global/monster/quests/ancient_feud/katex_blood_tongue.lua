@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Katex Blood Tongue")
 local monster = {}
 
 monster.description = "Katex Blood Tongue"
-monster.experience = 5000
+monster.experience = 6300
 monster.outfit = {
 	lookType = 1300,
 	lookHead = 76,

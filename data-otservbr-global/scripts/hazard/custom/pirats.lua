@@ -1,7 +1,7 @@
 local hazard = Hazard.new({
-	name = "hazard.issavi-surface",
-	from = Position(33917, 31541, 7),
-	to = Position(33978, 31687, 7),
+	name = "hazard.pirats",
+	from = Position(33825, 31177, 4),
+	to = Position(33945, 31268, 7),
 	maxLevel = 20,
 
 	crit = true,
@@ -13,17 +13,17 @@ local hazard = Hazard.new({
 hazard:register()
 
 local hazardZone = Zone.getByName(hazard.name)
-hazardZone:addArea({ x = 33895, y = 31554, z = 7 }, { x = 33917, y = 31685, z = 7 })
-hazardZone:addArea({ x = 33874, y = 31564, z = 7 }, { x = 33895, y = 31684, z = 7 })
-hazardZone:addArea({ x = 33761, y = 31664, z = 7 }, { x = 33924, y = 31767, z = 7 })
-hazardZone:addArea({ x = 33847, y = 31605, z = 7 }, { x = 33912, y = 31672, z = 7 })
+--hazardZone:addArea({x = 33124, y = 32333, z = 11}, {x = 33220, y = 32548, z = 11})
+--hazardZone:subtractArea({x = 33200, y = 32482, z = 11}, {x = 33227, y = 32553, z = 11})
 
-local deathEventName = "IssaviSurfaceDeath"
+
+local deathEventName = "PiratsDeath"
 local spawnEvent = ZoneEvent(hazardZone)
 function spawnEvent.onSpawn(monster, position)
 	monster:registerEvent(deathEventName)
 end
 spawnEvent:register()
+
 
 local deathEvent = CreatureEvent(deathEventName)
 function deathEvent.onDeath(creature)
@@ -48,7 +48,7 @@ function deathEvent.onDeath(creature)
 		return true
 	end
 
-	local miniBosses = { "Yirkas Blue Scales" }
+	local miniBosses = { "Dreadmaw" }
 
 	if executeLevelUpEvent(points) then
 		spawnCustomHazardBoss(player, monster, miniBosses)

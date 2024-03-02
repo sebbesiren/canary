@@ -22,6 +22,10 @@ local hazards = {
 	["glooth bandits"] = { name = "hazard.glooth-bandits" },
 	["buried cathedral"] = { name = "hazard.buried-cathedral" },
 	["inquisition"] = { name = "hazard.inquisition" },
+	["lower roshamuul"] = { name = "hazard.lower-roshamuul" },
+	["werehyaena"] = { name = "hazard.werehyaena" },
+	["pirats"] = { name = "hazard.pirats" },
+	["secret library"] = { name = "hazard.secret-library" },
 }
 
 local availableHazards = {}
