@@ -1,0 +1,1080 @@
+<?xml version="1.0"?>
+<monsters>
+	<monster centerx="6299" centery="5902" centerz="5" radius="4">
+		<monster name="Death Lord Athelstan" x="0" y="-1" z="5" spawntime="3600" />
+	</monster>
+	<monster centerx="6298" centery="5915" centerz="5" radius="6">
+		<monster name="Death Knight" x="-6" y="0" z="5" spawntime="90" />
+		<monster name="Death Necromancer" x="0" y="0" z="5" spawntime="90" />
+		<monster name="Death Paladin" x="1" y="0" z="5" spawntime="90" />
+		<monster name="Death Knight" x="6" y="0" z="5" spawntime="90" />
+		<monster name="Death Paladin" x="-4" y="5" z="5" spawntime="90" />
+		<monster name="Death Paladin" x="5" y="5" z="5" spawntime="90" />
+	</monster>
+	<monster centerx="6278" centery="5916" centerz="5" radius="5">
+		<monster name="Death Necromancer" x="-2" y="-5" z="5" spawntime="90" />
+		<monster name="Death Necromancer" x="2" y="-5" z="5" spawntime="90" />
+		<monster name="Death Necromancer" x="-3" y="-1" z="5" spawntime="90" />
+		<monster name="Death Necromancer" x="-2" y="2" z="5" spawntime="90" />
+		<monster name="Death Necromancer" x="1" y="2" z="5" spawntime="90" />
+	</monster>
+	<monster centerx="6317" centery="5916" centerz="5" radius="6">
+		<monster name="Death Necromancer" x="-3" y="-5" z="5" spawntime="90" />
+		<monster name="Death Necromancer" x="4" y="-5" z="5" spawntime="90" />
+		<monster name="Death Necromancer" x="0" y="1" z="5" spawntime="90" />
+		<monster name="Death Necromancer" x="4" y="5" z="5" spawntime="90" />
+		<monster name="Death Necromancer" x="-3" y="6" z="5" spawntime="90" />
+	</monster>
+	<monster centerx="6285" centery="5927" centerz="5" radius="1">
+		<monster name="Death Paladin" x="0" y="0" z="5" spawntime="90" />
+	</monster>
+	<monster centerx="6315" centery="5928" centerz="5" radius="6">
+		<monster name="Death Knight" x="-5" y="0" z="5" spawntime="90" />
+		<monster name="Death Paladin" x="-2" y="0" z="5" spawntime="90" />
+		<monster name="Death Paladin" x="2" y="0" z="5" spawntime="90" />
+		<monster name="Death Knight" x="4" y="0" z="5" spawntime="90" />
+	</monster>
+	<monster centerx="6285" centery="5929" centerz="5" radius="1">
+		<monster name="Death Knight" x="0" y="0" z="5" spawntime="90" />
+	</monster>
+	<monster centerx="6286" centery="5931" centerz="5" radius="1">
+		<monster name="Death Knight" x="0" y="0" z="5" spawntime="90" />
+	</monster>
+	<monster centerx="6293" centery="5932" centerz="5" radius="1">
+		<monster name="Death Knight" x="0" y="0" z="5" spawntime="90" />
+	</monster>
+	<monster centerx="6301" centery="5932" centerz="5" radius="1">
+		<monster name="Death Knight" x="0" y="0" z="5" spawntime="90" />
+	</monster>
+	<monster centerx="6304" centery="5932" centerz="5" radius="1">
+		<monster name="Death Knight" x="0" y="0" z="5" spawntime="90" />
+	</monster>
+	<monster centerx="6297" centery="5933" centerz="5" radius="1">
+		<monster name="Death Knight" x="0" y="-1" z="5" spawntime="90" />
+	</monster>
+	<monster centerx="6312" centery="5935" centerz="5" radius="1">
+		<monster name="Grand Commander Soeren" x="1" y="0" z="5" spawntime="900" />
+	</monster>
+	<monster centerx="6317" centery="5935" centerz="5" radius="1">
+		<monster name="Grand Chaplain Gaunder" x="-1" y="0" z="5" spawntime="900" />
+	</monster>
+	<monster centerx="6279" centery="5937" centerz="5" radius="1">
+		<monster name="Preceptor Lazare" x="0" y="-1" z="5" spawntime="900" />
+	</monster>
+	<monster centerx="6281" centery="5937" centerz="5" radius="1">
+		<monster name="Grand Canon Dominus" x="0" y="-1" z="5" spawntime="900" />
+	</monster>
+	<monster centerx="6293" centery="5937" centerz="5" radius="1">
+		<monster name="Death Knight" x="0" y="0" z="5" spawntime="90" />
+	</monster>
+	<monster centerx="6303" centery="5938" centerz="5" radius="4">
+		<monster name="Death Knight" x="0" y="-1" z="5" spawntime="90" />
+		<monster name="Death Knight" x="0" y="2" z="5" spawntime="90" />
+	</monster>
+	<monster centerx="6293" centery="5939" centerz="5" radius="1">
+		<monster name="Death Knight" x="0" y="0" z="5" spawntime="90" />
+	</monster>
+	<monster centerx="6291" centery="5943" centerz="5" radius="1">
+		<monster name="Death Knight" x="0" y="0" z="5" spawntime="90" />
+	</monster>
+	<monster centerx="6295" centery="5943" centerz="5" radius="1">
+		<monster name="Death Paladin" x="0" y="0" z="5" spawntime="90" />
+	</monster>
+	<monster centerx="6301" centery="5943" centerz="5" radius="1">
+		<monster name="Death Paladin" x="0" y="0" z="5" spawntime="90" />
+	</monster>
+	<monster centerx="6305" centery="5943" centerz="5" radius="1">
+		<monster name="Death Knight" x="0" y="0" z="5" spawntime="90" />
+	</monster>
+	<monster centerx="6315" centery="5943" centerz="5" radius="1">
+		<monster name="Death Knight" x="0" y="0" z="5" spawntime="90" />
+	</monster>
+	<monster centerx="6319" centery="5943" centerz="5" radius="1">
+		<monster name="Death Knight" x="0" y="0" z="5" spawntime="90" />
+	</monster>
+	<monster centerx="6278" centery="5945" centerz="5" radius="6">
+		<monster name="Death Paladin" x="0" y="-3" z="5" spawntime="90" />
+		<monster name="Death Paladin" x="5" y="-2" z="5" spawntime="90" />
+		<monster name="Death Knight" x="0" y="0" z="5" spawntime="90" />
+		<monster name="Death Knight" x="3" y="0" z="5" spawntime="90" />
+		<monster name="Death Paladin" x="0" y="6" z="5" spawntime="90" />
+		<monster name="Death Paladin" x="3" y="6" z="5" spawntime="90" />
+		<monster name="Death Paladin" x="5" y="6" z="5" spawntime="90" />
+	</monster>
+	<monster centerx="6314" centery="5951" centerz="5" radius="5">
+		<monster name="Death Knight" x="-1" y="-5" z="5" spawntime="90" />
+		<monster name="Death Knight" x="5" y="-5" z="5" spawntime="90" />
+		<monster name="Death Paladin" x="0" y="0" z="5" spawntime="90" />
+		<monster name="Death Paladin" x="5" y="0" z="5" spawntime="90" />
+	</monster>
+	<monster centerx="6303" centery="5899" centerz="6" radius="5">
+		<monster name="Death Knight" x="3" y="-2" z="6" spawntime="90" />
+		<monster name="Death Necromancer" x="-3" y="0" z="6" spawntime="90" />
+		<monster name="Death Necromancer" x="0" y="0" z="6" spawntime="90" />
+		<monster name="Death Knight" x="4" y="0" z="6" spawntime="90" />
+		<monster name="Death Paladin" x="-2" y="5" z="6" spawntime="90" />
+	</monster>
+	<monster centerx="6288" centery="5902" centerz="6" radius="5">
+		<monster name="Death Knight" x="3" y="-2" z="6" spawntime="90" />
+		<monster name="Death Paladin" x="0" y="0" z="6" spawntime="90" />
+		<monster name="Death Knight" x="-2" y="2" z="6" spawntime="90" />
+	</monster>
+	<monster centerx="6269" centery="5910" centerz="6" radius="1">
+		<monster name="Death Paladin" x="0" y="0" z="6" spawntime="90" />
+	</monster>
+	<monster centerx="6293" centery="5912" centerz="6" radius="5">
+		<monster name="Death Knight" x="-3" y="-2" z="6" spawntime="90" />
+		<monster name="Death Necromancer" x="3" y="1" z="6" spawntime="90" />
+	</monster>
+	<monster centerx="6303" centery="5912" centerz="6" radius="5">
+		<monster name="Death Knight" x="0" y="-4" z="6" spawntime="90" />
+		<monster name="Death Knight" x="3" y="-2" z="6" spawntime="90" />
+		<monster name="Death Necromancer" x="-2" y="1" z="6" spawntime="90" />
+	</monster>
+	<monster centerx="6315" centery="5912" centerz="6" radius="1">
+		<monster name="Death Knight" x="0" y="0" z="6" spawntime="90" />
+	</monster>
+	<monster centerx="6321" centery="5912" centerz="6" radius="1">
+		<monster name="Death Knight" x="0" y="0" z="6" spawntime="90" />
+	</monster>
+	<monster centerx="6269" centery="5913" centerz="6" radius="1">
+		<monster name="Death Paladin" x="0" y="0" z="6" spawntime="90" />
+	</monster>
+	<monster centerx="6277" centery="5914" centerz="6" radius="5">
+		<monster name="Death Knight" x="-1" y="-3" z="6" spawntime="90" />
+		<monster name="Death Knight" x="0" y="0" z="6" spawntime="90" />
+		<monster name="Death Knight" x="-1" y="3" z="6" spawntime="90" />
+		<monster name="Death Knight" x="0" y="5" z="6" spawntime="90" />
+	</monster>
+	<monster centerx="6269" centery="5915" centerz="6" radius="1">
+		<monster name="Death Paladin" x="0" y="0" z="6" spawntime="90" />
+	</monster>
+	<monster centerx="6285" centery="5916" centerz="6" radius="1">
+		<monster name="Death Knight" x="0" y="0" z="6" spawntime="90" />
+	</monster>
+	<monster centerx="6315" centery="5916" centerz="6" radius="1">
+		<monster name="Death Knight" x="0" y="0" z="6" spawntime="90" />
+	</monster>
+	<monster centerx="6321" centery="5916" centerz="6" radius="1">
+		<monster name="Death Knight" x="0" y="0" z="6" spawntime="90" />
+	</monster>
+	<monster centerx="6269" centery="5918" centerz="6" radius="1">
+		<monster name="Death Paladin" x="0" y="0" z="6" spawntime="90" />
+	</monster>
+	<monster centerx="6315" centery="5918" centerz="6" radius="1">
+		<monster name="Death Paladin" x="0" y="0" z="6" spawntime="90" />
+	</monster>
+	<monster centerx="6321" centery="5918" centerz="6" radius="1">
+		<monster name="Death Paladin" x="0" y="0" z="6" spawntime="90" />
+	</monster>
+	<monster centerx="6285" centery="5919" centerz="6" radius="1">
+		<monster name="Death Knight" x="0" y="0" z="6" spawntime="90" />
+	</monster>
+	<monster centerx="6297" centery="5919" centerz="6" radius="1">
+		<monster name="Death Paladin" x="0" y="0" z="6" spawntime="90" />
+		<monster name="Death Paladin" x="1" y="0" z="6" spawntime="90" />
+	</monster>
+	<monster centerx="6315" centery="5921" centerz="6" radius="1">
+		<monster name="Death Paladin" x="0" y="0" z="6" spawntime="90" />
+	</monster>
+	<monster centerx="6321" centery="5921" centerz="6" radius="1">
+		<monster name="Death Paladin" x="0" y="0" z="6" spawntime="90" />
+	</monster>
+	<monster centerx="6292" centery="5923" centerz="6" radius="1">
+		<monster name="Death Necromancer" x="0" y="0" z="6" spawntime="90" />
+	</monster>
+	<monster centerx="6295" centery="5924" centerz="6" radius="1">
+		<monster name="Death Knight" x="0" y="0" z="6" spawntime="90" />
+	</monster>
+	<monster centerx="6306" centery="5926" centerz="6" radius="5">
+		<monster name="Death Necromancer" x="-2" y="-3" z="6" spawntime="90" />
+		<monster name="Death Knight" x="-5" y="-2" z="6" spawntime="90" />
+		<monster name="Death Knight" x="0" y="0" z="6" spawntime="90" />
+		<monster name="Death Paladin" x="5" y="0" z="6" spawntime="90" />
+		<monster name="Death Necromancer" x="4" y="2" z="6" spawntime="90" />
+		<monster name="Death Knight" x="0" y="4" z="6" spawntime="90" />
+		<monster name="Death Paladin" x="5" y="4" z="6" spawntime="90" />
+	</monster>
+	<monster centerx="6319" centery="5926" centerz="6" radius="1">
+		<monster name="Death Knight" x="0" y="0" z="6" spawntime="90" />
+	</monster>
+	<monster centerx="6322" centery="5926" centerz="6" radius="1">
+		<monster name="Death Knight" x="0" y="0" z="6" spawntime="90" />
+	</monster>
+	<monster centerx="6298" centery="5927" centerz="6" radius="1">
+		<monster name="Death Knight" x="0" y="0" z="6" spawntime="90" />
+	</monster>
+	<monster centerx="6268" centery="5928" centerz="6" radius="5">
+		<monster name="Death Paladin" x="0" y="0" z="6" spawntime="90" />
+		<monster name="Death Paladin" x="0" y="2" z="6" spawntime="90" />
+		<monster name="Death Paladin" x="2" y="2" z="6" spawntime="90" />
+		<monster name="Death Knight" x="3" y="2" z="6" spawntime="90" />
+	</monster>
+	<monster centerx="6297" centery="5931" centerz="6" radius="1">
+		<monster name="Death Knight" x="0" y="0" z="6" spawntime="90" />
+	</monster>
+	<monster centerx="6317" centery="5934" centerz="6" radius="1">
+		<monster name="Death Necromancer" x="0" y="0" z="6" spawntime="90" />
+	</monster>
+	<monster centerx="6323" centery="5934" centerz="6" radius="1">
+		<monster name="Death Necromancer" x="0" y="0" z="6" spawntime="90" />
+	</monster>
+	<monster centerx="6273" centery="5939" centerz="6" radius="5">
+		<monster name="Death Paladin" x="-4" y="-2" z="6" spawntime="90" />
+		<monster name="Death Necromancer" x="-4" y="0" z="6" spawntime="90" />
+		<monster name="Death Paladin" x="-4" y="2" z="6" spawntime="90" />
+		<monster name="Death Knight" x="-4" y="4" z="6" spawntime="90" />
+	</monster>
+	<monster centerx="6316" centery="5941" centerz="6" radius="4">
+		<monster name="Death Knight" x="0" y="0" z="6" spawntime="90" />
+		<monster name="Death Paladin" x="3" y="0" z="6" spawntime="90" />
+	</monster>
+	<monster centerx="6322" centery="5941" centerz="6" radius="4">
+		<monster name="Death Knight" x="0" y="0" z="6" spawntime="90" />
+		<monster name="Death Paladin" x="3" y="0" z="6" spawntime="90" />
+	</monster>
+	<monster centerx="6287" centery="5942" centerz="6" radius="5">
+		<monster name="Death Paladin" x="1" y="-4" z="6" spawntime="90" />
+		<monster name="Death Necromancer" x="-2" y="1" z="6" spawntime="90" />
+	</monster>
+	<monster centerx="6308" centery="5943" centerz="6" radius="4">
+		<monster name="Death Knight" x="0" y="0" z="6" spawntime="90" />
+		<monster name="Death Knight" x="3" y="0" z="6" spawntime="90" />
+	</monster>
+	<monster centerx="6299" centery="5944" centerz="6" radius="6">
+		<monster name="Death Knight" x="-2" y="-5" z="6" spawntime="90" />
+		<monster name="Death Knight" x="1" y="-5" z="6" spawntime="90" />
+		<monster name="Death Paladin" x="-1" y="-1" z="6" spawntime="90" />
+		<monster name="Death Paladin" x="0" y="-1" z="6" spawntime="90" />
+		<monster name="Death Paladin" x="-1" y="1" z="6" spawntime="90" />
+		<monster name="Death Paladin" x="0" y="1" z="6" spawntime="90" />
+		<monster name="Death Knight" x="-2" y="5" z="6" spawntime="90" />
+		<monster name="Death Knight" x="1" y="5" z="6" spawntime="90" />
+	</monster>
+	<monster centerx="6279" centery="5945" centerz="6" radius="5">
+		<monster name="Death Knight" x="1" y="-5" z="6" spawntime="90" />
+		<monster name="Death Knight" x="2" y="-5" z="6" spawntime="90" />
+		<monster name="Death Knight" x="0" y="0" z="6" spawntime="90" />
+		<monster name="Death Knight" x="2" y="0" z="6" spawntime="90" />
+		<monster name="Death Knight" x="0" y="3" z="6" spawntime="90" />
+		<monster name="Death Knight" x="2" y="3" z="6" spawntime="90" />
+	</monster>
+	<monster centerx="6314" centery="5950" centerz="6" radius="1">
+		<monster name="Death Knight" x="0" y="0" z="6" spawntime="90" />
+	</monster>
+	<monster centerx="6317" centery="5950" centerz="6" radius="1">
+		<monster name="Death Paladin" x="-1" y="-1" z="6" spawntime="90" />
+		<monster name="Death Knight" x="0" y="0" z="6" spawntime="90" />
+	</monster>
+	<monster centerx="4963" centery="4955" centerz="7" radius="3">
+		<monster name="Grim Reaper" x="-1" y="-1" z="7" spawntime="20" />
+		<monster name="Grim Reaper" x="3" y="-1" z="7" spawntime="20" />
+		<monster name="Undead Elite Gladiator" x="-2" y="1" z="7" spawntime="20" />
+		<monster name="Skeleton Elite Warrior" x="2" y="1" z="7" spawntime="20" />
+	</monster>
+	<monster centerx="4970" centery="4955" centerz="7" radius="3">
+		<monster name="Undead Elite Gladiator" x="-1" y="2" z="7" spawntime="20" />
+	</monster>
+	<monster centerx="4978" centery="4955" centerz="7" radius="3">
+		<monster name="Skeleton Elite Warrior" x="-1" y="-2" z="7" spawntime="60" />
+		<monster name="Skeleton Elite Warrior" x="3" y="-2" z="7" spawntime="60" />
+		<monster name="Undead Elite Gladiator" x="-2" y="0" z="7" spawntime="60" />
+		<monster name="Grim Reaper" x="2" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="4984" centery="4955" centerz="7" radius="3">
+		<monster name="Undead Elite Gladiator" x="1" y="-2" z="7" spawntime="60" />
+		<monster name="Grim Reaper" x="1" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="4992" centery="4955" centerz="7" radius="3">
+		<monster name="Grim Reaper" x="2" y="-2" z="7" spawntime="60" />
+		<monster name="Grim Reaper" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="Undead Elite Gladiator" x="2" y="0" z="7" spawntime="60" />
+		<monster name="Grim Reaper" x="-1" y="1" z="7" spawntime="60" />
+		<monster name="Skeleton Elite Warrior" x="1" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="5008" centery="4955" centerz="7" radius="3">
+		<monster name="Skeleton Elite Warrior" x="-1" y="-2" z="7" spawntime="60" />
+		<monster name="Grim Reaper" x="-2" y="-1" z="7" spawntime="60" />
+		<monster name="Undead Elite Gladiator" x="2" y="-1" z="7" spawntime="60" />
+		<monster name="Undead Elite Gladiator" x="-2" y="1" z="7" spawntime="60" />
+		<monster name="Skeleton Elite Warrior" x="2" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="5017" centery="4955" centerz="7" radius="3">
+		<monster name="Skeleton Elite Warrior" x="1" y="-2" z="7" spawntime="60" />
+		<monster name="Grim Reaper" x="2" y="0" z="7" spawntime="60" />
+		<monster name="Undead Elite Gladiator" x="0" y="1" z="7" spawntime="60" />
+		<monster name="Skeleton Elite Warrior" x="1" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="5028" centery="4955" centerz="7" radius="3">
+		<monster name="Skeleton Elite Warrior" x="-1" y="-2" z="7" spawntime="60" />
+		<monster name="Grim Reaper" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="Grim Reaper" x="-1" y="0" z="7" spawntime="60" />
+		<monster name="Grim Reaper" x="-3" y="2" z="7" spawntime="60" />
+		<monster name="Undead Elite Gladiator" x="0" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="5037" centery="4955" centerz="7" radius="3">
+		<monster name="Skeleton Elite Warrior" x="-1" y="-3" z="7" spawntime="60" />
+		<monster name="Grim Reaper" x="2" y="-1" z="7" spawntime="60" />
+		<monster name="Skeleton Elite Warrior" x="-2" y="0" z="7" spawntime="60" />
+		<monster name="Skeleton Elite Warrior" x="2" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="5043" centery="4955" centerz="7" radius="3">
+		<monster name="Grim Reaper" x="1" y="-1" z="7" spawntime="60" />
+		<monster name="Undead Elite Gladiator" x="-1" y="1" z="7" spawntime="60" />
+		<monster name="Grim Reaper" x="1" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="4963" centery="4963" centerz="7" radius="3">
+		<monster name="Undead Elite Gladiator" x="1" y="-2" z="7" spawntime="60" />
+		<monster name="Skeleton Elite Warrior" x="-2" y="-1" z="7" spawntime="60" />
+		<monster name="Undead Elite Gladiator" x="-1" y="2" z="7" spawntime="60" />
+		<monster name="Grim Reaper" x="2" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="5037" centery="4964" centerz="7" radius="3">
+		<monster name="Skeleton Elite Warrior" x="-2" y="-2" z="7" spawntime="60" />
+		<monster name="Undead Elite Gladiator" x="2" y="1" z="7" spawntime="60" />
+		<monster name="Grim Reaper" x="1" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="4972" centery="4965" centerz="7" radius="4">
+		<monster name="Skeleton Elite Warrior" x="2" y="-3" z="7" spawntime="60" />
+		<monster name="Flimsy Lost Soul" x="4" y="0" z="7" spawntime="60" />
+		<monster name="Skeleton Elite Warrior" x="-2" y="2" z="7" spawntime="60" />
+		<monster name="Grim Reaper" x="0" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="4996" centery="4965" centerz="7" radius="5">
+		<monster name="Skeleton Elite Warrior" x="-1" y="-4" z="7" spawntime="60" />
+		<monster name="Skeleton Elite Warrior" x="-2" y="0" z="7" spawntime="60" />
+		<monster name="Skeleton Elite Warrior" x="2" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="5006" centery="4965" centerz="7" radius="4">
+		<monster name="Flimsy Lost Soul" x="-3" y="-1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="5019" centery="4965" centerz="7" radius="4">
+		<monster name="Skeleton Elite Warrior" x="-1" y="-3" z="7" spawntime="60" />
+		<monster name="Skeleton Elite Warrior" x="3" y="-2" z="7" spawntime="60" />
+		<monster name="Grim Reaper" x="4" y="0" z="7" spawntime="60" />
+		<monster name="Grim Reaper" x="1" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="4981" centery="4967" centerz="7" radius="4">
+		<monster name="Skeleton Elite Warrior" x="0" y="-3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="5044" centery="4969" centerz="7" radius="3">
+		<monster name="Skeleton Elite Warrior" x="0" y="-2" z="7" spawntime="60" />
+		<monster name="Grim Reaper" x="-2" y="-1" z="7" spawntime="60" />
+		<monster name="Undead Elite Gladiator" x="0" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="5037" centery="4973" centerz="7" radius="3">
+		<monster name="Skeleton Elite Warrior" x="1" y="-2" z="7" spawntime="60" />
+		<monster name="Skeleton Elite Warrior" x="2" y="-2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="5028" centery="4974" centerz="7" radius="4">
+		<monster name="Flimsy Lost Soul" x="2" y="-3" z="7" spawntime="60" />
+		<monster name="Skeleton Elite Warrior" x="2" y="0" z="7" spawntime="60" />
+		<monster name="Skeleton Elite Warrior" x="2" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="5006" centery="4975" centerz="7" radius="4">
+		<monster name="Grim Reaper" x="2" y="-1" z="7" spawntime="60" />
+		<monster name="Skeleton Elite Warrior" x="0" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="4973" centery="4976" centerz="7" radius="4">
+		<monster name="Flimsy Lost Soul" x="-2" y="-3" z="7" spawntime="60" />
+		<monster name="Skeleton Elite Warrior" x="-1" y="-2" z="7" spawntime="60" />
+		<monster name="Grim Reaper" x="-1" y="0" z="7" spawntime="60" />
+		<monster name="Skeleton Elite Warrior" x="2" y="1" z="7" spawntime="60" />
+		<monster name="Skeleton Elite Warrior" x="-2" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="4995" centery="4976" centerz="7" radius="4">
+		<monster name="Skeleton Elite Warrior" x="1" y="-3" z="7" spawntime="60" />
+		<monster name="Flimsy Lost Soul" x="-1" y="-2" z="7" spawntime="60" />
+		<monster name="Skeleton Elite Warrior" x="-1" y="0" z="7" spawntime="60" />
+		<monster name="Skeleton Elite Warrior" x="-4" y="1" z="7" spawntime="60" />
+		<monster name="Grim Reaper" x="2" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="5020" centery="4976" centerz="7" radius="4">
+		<monster name="Skeleton Elite Warrior" x="0" y="-2" z="7" spawntime="60" />
+		<monster name="Grim Reaper" x="1" y="-2" z="7" spawntime="60" />
+		<monster name="Skeleton Elite Warrior" x="-2" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="4963" centery="4977" centerz="7" radius="3">
+		<monster name="Skeleton Elite Warrior" x="-2" y="-2" z="7" spawntime="60" />
+		<monster name="Grim Reaper" x="0" y="-2" z="7" spawntime="60" />
+		<monster name="Skeleton Elite Warrior" x="2" y="-2" z="7" spawntime="60" />
+		<monster name="Skeleton Elite Warrior" x="2" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="5043" centery="4977" centerz="7" radius="3">
+		<monster name="Grim Reaper" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="Skeleton Elite Warrior" x="1" y="-1" z="7" spawntime="60" />
+		<monster name="Skeleton Elite Warrior" x="-1" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="4961" centery="4985" centerz="7" radius="3">
+		<monster name="Skeleton Elite Warrior" x="0" y="-2" z="7" spawntime="60" />
+		<monster name="Grim Reaper" x="-2" y="-1" z="7" spawntime="60" />
+		<monster name="Skeleton Elite Warrior" x="-2" y="1" z="7" spawntime="60" />
+		<monster name="Skeleton Elite Warrior" x="-1" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="4970" centery="4985" centerz="7" radius="3">
+		<monster name="Skeleton Elite Warrior" x="0" y="-2" z="7" spawntime="60" />
+		<monster name="Grim Reaper" x="1" y="-1" z="7" spawntime="60" />
+		<monster name="Grim Reaper" x="-2" y="0" z="7" spawntime="60" />
+		<monster name="Undead Elite Gladiator" x="-1" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="4984" centery="4985" centerz="7" radius="3">
+		<monster name="Skeleton Elite Warrior" x="-1" y="-2" z="7" spawntime="60" />
+		<monster name="Skeleton Elite Warrior" x="1" y="-1" z="7" spawntime="60" />
+		<monster name="Grim Reaper" x="-2" y="0" z="7" spawntime="60" />
+		<monster name="Grim Reaper" x="-1" y="0" z="7" spawntime="60" />
+		<monster name="Skeleton Elite Warrior" x="-2" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="5013" centery="4985" centerz="7" radius="3">
+		<monster name="Skeleton Elite Warrior" x="-1" y="-3" z="7" spawntime="60" />
+		<monster name="Grim Reaper" x="2" y="-1" z="7" spawntime="60" />
+		<monster name="Grim Reaper" x="-2" y="0" z="7" spawntime="60" />
+		<monster name="Skeleton Elite Warrior" x="0" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="5026" centery="4985" centerz="7" radius="3">
+		<monster name="Grim Reaper" x="-1" y="-2" z="7" spawntime="60" />
+		<monster name="Skeleton Elite Warrior" x="2" y="-1" z="7" spawntime="60" />
+		<monster name="Skeleton Elite Warrior" x="-1" y="2" z="7" spawntime="60" />
+		<monster name="Undead Elite Gladiator" x="2" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="5040" centery="4985" centerz="7" radius="3">
+		<monster name="Skeleton Elite Warrior" x="-2" y="-2" z="7" spawntime="60" />
+		<monster name="Grim Reaper" x="0" y="-2" z="7" spawntime="60" />
+		<monster name="Skeleton Elite Warrior" x="2" y="-1" z="7" spawntime="60" />
+		<monster name="Skeleton Elite Warrior" x="-1" y="2" z="7" spawntime="60" />
+		<monster name="Undead Elite Gladiator" x="1" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="4964" centery="4995" centerz="7" radius="3">
+		<monster name="Boar Man" x="-1" y="-2" z="7" spawntime="60" />
+		<monster name="Boar Man" x="2" y="-2" z="7" spawntime="60" />
+		<monster name="Rhindeer" x="2" y="0" z="7" spawntime="60" />
+		<monster name="Boar Man" x="-1" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="4971" centery="4995" centerz="7" radius="3">
+		<monster name="Liodile" x="-3" y="-2" z="7" spawntime="60" />
+		<monster name="Boar Man" x="1" y="-2" z="7" spawntime="60" />
+		<monster name="Rhindeer" x="-2" y="2" z="7" spawntime="60" />
+		<monster name="Boar Man" x="1" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="4997" centery="4995" centerz="7" radius="3">
+		<monster name="Crape Man" x="-2" y="-2" z="7" spawntime="60" />
+		<monster name="Boar Man" x="1" y="-2" z="7" spawntime="60" />
+		<monster name="Crape Man" x="-1" y="2" z="7" spawntime="60" />
+		<monster name="Rhindeer" x="2" y="2" z="7" spawntime="60" />
+		<monster name="Liodile" x="0" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="5011" centery="4995" centerz="7" radius="3">
+		<monster name="Rhindeer" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="Boar Man" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Boar Man" x="-2" y="2" z="7" spawntime="60" />
+		<monster name="Crape Man" x="2" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="5025" centery="4995" centerz="7" radius="3">
+		<monster name="Boar Man" x="1" y="-2" z="7" spawntime="60" />
+		<monster name="Boar Man" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Boar Man" x="2" y="0" z="7" spawntime="60" />
+		<monster name="Crape Man" x="0" y="1" z="7" spawntime="60" />
+		<monster name="Rhindeer" x="0" y="2" z="7" spawntime="60" />
+		<monster name="Liodile" x="2" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="5039" centery="4995" centerz="7" radius="3">
+		<monster name="Boar Man" x="1" y="-3" z="7" spawntime="60" />
+		<monster name="Boar Man" x="1" y="-1" z="7" spawntime="60" />
+		<monster name="Boar Man" x="-2" y="0" z="7" spawntime="60" />
+		<monster name="Liodile" x="-1" y="2" z="7" spawntime="60" />
+		<monster name="Boar Man" x="1" y="2" z="7" spawntime="60" />
+		<monster name="Rhindeer" x="3" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="4982" centery="4996" centerz="7" radius="3">
+		<monster name="Crape Man" x="0" y="-2" z="7" spawntime="60" />
+		<monster name="Boar Man" x="3" y="-1" z="7" spawntime="60" />
+		<monster name="Crape Man" x="-1" y="1" z="7" spawntime="60" />
+		<monster name="Boar Man" x="1" y="1" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="5011" centery="5004" centerz="7" radius="3">
+		<monster name="Boar Man" x="1" y="-1" z="7" spawntime="60" />
+		<monster name="Boar Man" x="-3" y="0" z="7" spawntime="60" />
+		<monster name="Rhindeer" x="-1" y="2" z="7" spawntime="60" />
+		<monster name="Crape Man" x="2" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="4968" centery="5005" centerz="7" radius="3">
+		<monster name="Boar Man" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="Liodile" x="-3" y="0" z="7" spawntime="60" />
+		<monster name="Rhindeer" x="3" y="0" z="7" spawntime="60" />
+		<monster name="Crape Man" x="-1" y="1" z="7" spawntime="60" />
+		<monster name="Boar Man" x="1" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="4982" centery="5005" centerz="7" radius="3">
+		<monster name="Boar Man" x="2" y="-2" z="7" spawntime="60" />
+		<monster name="Crape Man" x="-2" y="-1" z="7" spawntime="60" />
+		<monster name="Liodile" x="2" y="1" z="7" spawntime="60" />
+		<monster name="Rhindeer" x="1" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="4997" centery="5005" centerz="7" radius="3">
+		<monster name="Crape Man" x="3" y="-2" z="7" spawntime="60" />
+		<monster name="Liodile" x="-2" y="-1" z="7" spawntime="60" />
+		<monster name="Rhindeer" x="-1" y="1" z="7" spawntime="60" />
+		<monster name="Crape Man" x="1" y="2" z="7" spawntime="60" />
+		<monster name="Boar Man" x="-2" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="5026" centery="5005" centerz="7" radius="3">
+		<monster name="Boar Man" x="1" y="-2" z="7" spawntime="60" />
+		<monster name="Liodile" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="Rhindeer" x="-2" y="1" z="7" spawntime="60" />
+		<monster name="Crape Man" x="-1" y="2" z="7" spawntime="60" />
+		<monster name="Boar Man" x="1" y="2" z="7" spawntime="60" />
+		<monster name="Boar Man" x="1" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="5039" centery="5005" centerz="7" radius="3">
+		<monster name="Boar Man" x="-1" y="-2" z="7" spawntime="60" />
+		<monster name="Boar Man" x="2" y="-1" z="7" spawntime="60" />
+		<monster name="Boar Man" x="-3" y="0" z="7" spawntime="60" />
+		<monster name="Boar Man" x="-2" y="2" z="7" spawntime="60" />
+		<monster name="Rhindeer" x="0" y="2" z="7" spawntime="60" />
+		<monster name="Boar Man" x="2" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="5012" centery="5014" centerz="7" radius="3">
+		<monster name="Rhindeer" x="0" y="-3" z="7" spawntime="60" />
+		<monster name="Boar Man" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="Crape Man" x="2" y="1" z="7" spawntime="60" />
+		<monster name="Boar Man" x="1" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="4964" centery="5015" centerz="7" radius="3">
+		<monster name="Boar Man" x="1" y="-2" z="7" spawntime="60" />
+		<monster name="Boar Man" x="-2" y="0" z="7" spawntime="60" />
+		<monster name="Boar Man" x="-1" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="4972" centery="5015" centerz="7" radius="3">
+		<monster name="Crape Man" x="0" y="-2" z="7" spawntime="60" />
+		<monster name="Crape Man" x="-3" y="-1" z="7" spawntime="60" />
+		<monster name="Boar Man" x="-3" y="2" z="7" spawntime="60" />
+		<monster name="Boar Man" x="1" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="4982" centery="5015" centerz="7" radius="3">
+		<monster name="Crape Man" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="Liodile" x="3" y="-1" z="7" spawntime="60" />
+		<monster name="Boar Man" x="2" y="0" z="7" spawntime="60" />
+		<monster name="Boar Man" x="2" y="1" z="7" spawntime="60" />
+		<monster name="Boar Man" x="0" y="3" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="4997" centery="5015" centerz="7" radius="3">
+		<monster name="Crape Man" x="0" y="-2" z="7" spawntime="60" />
+		<monster name="Crape Man" x="3" y="-1" z="7" spawntime="60" />
+		<monster name="Boar Man" x="-1" y="0" z="7" spawntime="60" />
+		<monster name="Liodile" x="1" y="0" z="7" spawntime="60" />
+		<monster name="Boar Man" x="1" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="5025" centery="5016" centerz="7" radius="3">
+		<monster name="Liodile" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="Crape Man" x="2" y="-1" z="7" spawntime="60" />
+		<monster name="Boar Man" x="-1" y="2" z="7" spawntime="60" />
+		<monster name="Crape Man" x="2" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="5039" centery="5016" centerz="7" radius="3">
+		<monster name="Boar Man" x="2" y="-3" z="7" spawntime="60" />
+		<monster name="Boar Man" x="-2" y="-2" z="7" spawntime="60" />
+		<monster name="Liodile" x="1" y="-1" z="7" spawntime="60" />
+		<monster name="Rhindeer" x="-1" y="1" z="7" spawntime="60" />
+		<monster name="Crape Man" x="3" y="1" z="7" spawntime="60" />
+		<monster name="Boar Man" x="-2" y="2" z="7" spawntime="60" />
+	</monster>
+	<monster centerx="6251" centery="5926" centerz="7" radius="1">
+		<monster name="Death Necromancer" x="0" y="0" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6255" centery="5928" centerz="7" radius="1">
+		<monster name="Death Necromancer" x="0" y="0" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6244" centery="5929" centerz="7" radius="1">
+		<monster name="Death Necromancer" x="0" y="0" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6259" centery="5929" centerz="7" radius="1">
+		<monster name="Death Necromancer" x="0" y="0" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6230" centery="5940" centerz="7" radius="5">
+		<monster name="Deer" x="3" y="-4" z="7" spawntime="90" />
+		<monster name="Death Paladin" x="1" y="-2" z="7" spawntime="90" />
+		<monster name="Death Knight" x="0" y="-1" z="7" spawntime="90" />
+		<monster name="Death Knight" x="0" y="0" z="7" spawntime="90" />
+		<monster name="Death Paladin" x="-1" y="1" z="7" spawntime="90" />
+		<monster name="Death Knight" x="-2" y="2" z="7" spawntime="90" />
+		<monster name="Death Knight" x="1" y="2" z="7" spawntime="90" />
+		<monster name="Deer" x="-2" y="4" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6018" centery="5943" centerz="7" radius="5">
+		<monster name="Ancient Dragon" x="3" y="-3" z="7" spawntime="90" />
+		<monster name="Ancient Dragon" x="-3" y="-1" z="7" spawntime="90" />
+		<monster name="Orc Pyromancer" x="-2" y="-1" z="7" spawntime="90" />
+		<monster name="Orc Pyromancer" x="3" y="-1" z="7" spawntime="90" />
+		<monster name="Orc Pyromancer" x="0" y="0" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="3" y="0" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="-2" y="1" z="7" spawntime="90" />
+		<monster name="Orc Pyromancer" x="2" y="1" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6007" centery="5950" centerz="7" radius="5">
+		<monster name="Orc Blademaster" x="2" y="-2" z="7" spawntime="90" />
+		<monster name="Ancient Dragon" x="4" y="-2" z="7" spawntime="90" />
+		<monster name="Ancient Dragon" x="0" y="0" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="-2" y="1" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6307" centery="5954" centerz="7" radius="1">
+		<monster name="Death Paladin" x="0" y="0" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6235" centery="5955" centerz="7" radius="5">
+		<monster name="Deer" x="-3" y="-4" z="7" spawntime="90" />
+		<monster name="Death Paladin" x="2" y="-1" z="7" spawntime="90" />
+		<monster name="Death Knight" x="-2" y="0" z="7" spawntime="90" />
+		<monster name="Death Paladin" x="0" y="0" z="7" spawntime="90" />
+		<monster name="Death Knight" x="1" y="2" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6015" centery="5956" centerz="7" radius="5">
+		<monster name="Orc Bonecrusher" x="-1" y="-2" z="7" spawntime="90" />
+		<monster name="Orc Bonecrusher" x="1" y="-2" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="-2" y="-1" z="7" spawntime="90" />
+		<monster name="Orc Bonecrusher" x="-1" y="-1" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="1" y="-1" z="7" spawntime="90" />
+		<monster name="Orc Bonecrusher" x="-3" y="1" z="7" spawntime="90" />
+		<monster name="Orc Bonecrusher" x="-1" y="1" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="2" y="1" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6296" centery="5957" centerz="7" radius="5">
+		<monster name="Death Paladin" x="5" y="-3" z="7" spawntime="90" />
+		<monster name="Death Paladin" x="-3" y="-2" z="7" spawntime="90" />
+		<monster name="Death Knight" x="0" y="1" z="7" spawntime="90" />
+		<monster name="Death Knight" x="-5" y="4" z="7" spawntime="90" />
+		<monster name="Death Knight" x="3" y="4" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6311" centery="5957" centerz="7" radius="1">
+		<monster name="Death Paladin" x="0" y="0" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6031" centery="5958" centerz="7" radius="5">
+		<monster name="Orc Blademaster" x="1" y="-3" z="7" spawntime="90" />
+		<monster name="Orc Bonecrusher" x="-3" y="0" z="7" spawntime="90" />
+		<monster name="Orc Bonecrusher" x="0" y="0" z="7" spawntime="90" />
+		<monster name="Orc Bonecrusher" x="2" y="1" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="-3" y="4" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="0" y="5" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="4" y="5" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6286" centery="5958" centerz="7" radius="1">
+		<monster name="Death Paladin" x="0" y="0" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6000" centery="5959" centerz="7" radius="5">
+		<monster name="Orc Pyromancer" x="-1" y="-3" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="-5" y="-1" z="7" spawntime="90" />
+		<monster name="Orc Pyromancer" x="-1" y="1" z="7" spawntime="90" />
+		<monster name="Orc Bonecrusher" x="-4" y="4" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6309" centery="5960" centerz="7" radius="1">
+		<monster name="Death Paladin" x="0" y="0" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6312" centery="5960" centerz="7" radius="1">
+		<monster name="Death Paladin" x="0" y="0" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6229" centery="5962" centerz="7" radius="1">
+		<monster name="Deer" x="0" y="0" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6231" centery="5966" centerz="7" radius="1">
+		<monster name="Deer" x="0" y="0" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6223" centery="5969" centerz="7" radius="5">
+		<monster name="Death Paladin" x="2" y="-1" z="7" spawntime="90" />
+		<monster name="Death Knight" x="0" y="0" z="7" spawntime="90" />
+		<monster name="Death Knight" x="-1" y="2" z="7" spawntime="90" />
+		<monster name="Death Knight" x="3" y="2" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6019" centery="5972" centerz="7" radius="5">
+		<monster name="Orc Pyromancer" x="-4" y="-4" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="-5" y="-1" z="7" spawntime="90" />
+		<monster name="Orc Pyromancer" x="0" y="0" z="7" spawntime="90" />
+		<monster name="Orc Pyromancer" x="1" y="1" z="7" spawntime="90" />
+		<monster name="Ancient Dragon" x="-4" y="2" z="7" spawntime="90" />
+		<monster name="Orc Pyromancer" x="-2" y="2" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="5991" centery="5973" centerz="7" radius="5">
+		<monster name="Orc Bonecrusher" x="-1" y="-2" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="0" y="0" z="7" spawntime="90" />
+		<monster name="Orc Bonecrusher" x="2" y="1" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="1" y="3" z="7" spawntime="90" />
+		<monster name="Orc Bonecrusher" x="-2" y="4" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="3" y="4" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6039" centery="5973" centerz="7" radius="5">
+		<monster name="Orc Blademaster" x="0" y="-3" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="2" y="-3" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="-2" y="-2" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="0" y="-1" z="7" spawntime="90" />
+		<monster name="Orc Bonecrusher" x="-3" y="1" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="0" y="1" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6026" centery="5974" centerz="7" radius="1">
+		<monster name="Orc Pyromancer" x="0" y="0" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6007" centery="5975" centerz="7" radius="1">
+		<monster name="Orc Bonecrusher" x="0" y="0" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6057" centery="5975" centerz="7" radius="5">
+		<monster name="Orc Blademaster" x="0" y="-2" z="7" spawntime="90" />
+		<monster name="Orc Bonecrusher" x="1" y="-2" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="4" y="-1" z="7" spawntime="90" />
+		<monster name="Orc Bonecrusher" x="-3" y="0" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="0" y="0" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6225" centery="5976" centerz="7" radius="1">
+		<monster name="Deer" x="0" y="0" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6219" centery="5977" centerz="7" radius="1">
+		<monster name="Deer" x="0" y="0" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6006" centery="5980" centerz="7" radius="1">
+		<monster name="Orc Bonecrusher" x="0" y="0" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6013" centery="5980" centerz="7" radius="1">
+		<monster name="Orc Bonecrusher" x="0" y="0" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6019" centery="5980" centerz="7" radius="1">
+		<monster name="Orc Pyromancer" x="0" y="0" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6025" centery="5980" centerz="7" radius="4">
+		<monster name="Gnarlhound" x="0" y="-2" z="7" spawntime="90" />
+		<monster name="Gnarlhound" x="1" y="-2" z="7" spawntime="90" />
+		<monster name="Gnarlhound" x="-2" y="0" z="7" spawntime="90" />
+		<monster name="Gnarlhound" x="0" y="0" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6036" centery="5985" centerz="7" radius="5">
+		<monster name="Orc Bonecrusher" x="-3" y="-2" z="7" spawntime="90" />
+		<monster name="Orc Bonecrusher" x="-1" y="-1" z="7" spawntime="90" />
+		<monster name="Orc Bonecrusher" x="0" y="-1" z="7" spawntime="90" />
+		<monster name="Orc Bonecrusher" x="0" y="0" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6053" centery="5986" centerz="7" radius="5">
+		<monster name="Orc Bonecrusher" x="0" y="-1" z="7" spawntime="90" />
+		<monster name="Orc Bonecrusher" x="0" y="0" z="7" spawntime="90" />
+		<monster name="Orc Bonecrusher" x="2" y="1" z="7" spawntime="90" />
+		<monster name="Orc Bonecrusher" x="1" y="3" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="5991" centery="5987" centerz="7" radius="1">
+		<monster name="Orc Bonecrusher" x="0" y="0" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6061" centery="5988" centerz="7" radius="5">
+		<monster name="Orc Blademaster" x="0" y="-1" z="7" spawntime="90" />
+		<monster name="Orc Bonecrusher" x="1" y="-1" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="2" y="1" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="2" y="3" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6008" centery="5989" centerz="7" radius="5">
+		<monster name="Orc Bonecrusher" x="1" y="-1" z="7" spawntime="90" />
+		<monster name="Orc Bonecrusher" x="-2" y="0" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="0" y="0" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="2" y="1" z="7" spawntime="90" />
+		<monster name="Orc Bonecrusher" x="-1" y="2" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6023" centery="5991" centerz="7" radius="5">
+		<monster name="Orc Blademaster" x="-3" y="-1" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="0" y="0" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="-3" y="1" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="1" y="1" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="2" y="1" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="-1" y="3" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="3" y="4" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="5997" centery="5995" centerz="7" radius="1">
+		<monster name="Orc Blademaster" x="0" y="0" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6045" centery="5998" centerz="7" radius="5">
+		<monster name="Orc Blademaster" x="-4" y="-3" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="-1" y="-3" z="7" spawntime="90" />
+		<monster name="Orc Pyromancer" x="-4" y="-2" z="7" spawntime="90" />
+		<monster name="Ancient Dragon" x="-1" y="-1" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="-3" y="0" z="7" spawntime="90" />
+		<monster name="Orc Bonecrusher" x="0" y="0" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6208" centery="5999" centerz="7" radius="1">
+		<monster name="Deer" x="0" y="0" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6010" centery="6001" centerz="7" radius="5">
+		<monster name="Orc Bonecrusher" x="-2" y="-2" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="-4" y="-1" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="-2" y="1" z="7" spawntime="90" />
+		<monster name="Orc Bonecrusher" x="1" y="1" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="3" y="2" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="1" y="4" z="7" spawntime="90" />
+		<monster name="Orc Bonecrusher" x="4" y="4" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6205" centery="6001" centerz="7" radius="1">
+		<monster name="Deer" x="0" y="0" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6067" centery="6003" centerz="7" radius="5">
+		<monster name="Orc Pyromancer" x="-2" y="-4" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="0" y="-4" z="7" spawntime="90" />
+		<monster name="Orc Bonecrusher" x="-4" y="-3" z="7" spawntime="90" />
+		<monster name="Ancient Dragon" x="-2" y="-2" z="7" spawntime="90" />
+		<monster name="Orc Pyromancer" x="-2" y="0" z="7" spawntime="90" />
+		<monster name="Orc Pyromancer" x="2" y="0" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6026" centery="6004" centerz="7" radius="1">
+		<monster name="Orc Blademaster" x="0" y="0" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6194" centery="6004" centerz="7" radius="1">
+		<monster name="Deer" x="0" y="0" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6203" centery="6006" centerz="7" radius="1">
+		<monster name="Deer" x="0" y="0" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6078" centery="6010" centerz="7" radius="1">
+		<monster name="Orc Blademaster" x="0" y="0" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6038" centery="6011" centerz="7" radius="5">
+		<monster name="Orc Bonecrusher" x="-2" y="-3" z="7" spawntime="90" />
+		<monster name="Orc Bonecrusher" x="-2" y="-1" z="7" spawntime="90" />
+		<monster name="Orc Bonecrusher" x="0" y="0" z="7" spawntime="90" />
+		<monster name="Orc Bonecrusher" x="1" y="3" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6052" centery="6012" centerz="7" radius="5">
+		<monster name="Orc Blademaster" x="-1" y="-2" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="-2" y="3" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6063" centery="6015" centerz="7" radius="5">
+		<monster name="Orc Bonecrusher" x="-3" y="-3" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="2" y="-2" z="7" spawntime="90" />
+		<monster name="Orc Bonecrusher" x="0" y="0" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="3" y="2" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6079" centery="6018" centerz="7" radius="5">
+		<monster name="Orc Bonecrusher" x="-2" y="-4" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="-3" y="-2" z="7" spawntime="90" />
+		<monster name="Orc Pyromancer" x="-4" y="0" z="7" spawntime="90" />
+		<monster name="Orc Bonecrusher" x="-2" y="1" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="2" y="2" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6048" centery="6022" centerz="7" radius="1">
+		<monster name="Orc Blademaster" x="0" y="0" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6051" centery="6024" centerz="7" radius="1">
+		<monster name="Orc Blademaster" x="0" y="0" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6061" centery="6025" centerz="7" radius="5">
+		<monster name="Orc Blademaster" x="1" y="-2" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="2" y="-1" z="7" spawntime="90" />
+		<monster name="Orc Bonecrusher" x="-1" y="0" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6048" centery="6026" centerz="7" radius="1">
+		<monster name="Orc Blademaster" x="0" y="0" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6073" centery="6033" centerz="7" radius="5">
+		<monster name="Orc Bonecrusher" x="-4" y="1" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="1" y="1" z="7" spawntime="90" />
+		<monster name="Orc Pyromancer" x="-3" y="2" z="7" spawntime="90" />
+		<monster name="Orc Bonecrusher" x="-4" y="3" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="-1" y="3" z="7" spawntime="90" />
+		<monster name="Ancient Dragon" x="1" y="3" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="6054" centery="6036" centerz="7" radius="5">
+		<monster name="Orc Pyromancer" x="0" y="-3" z="7" spawntime="90" />
+		<monster name="Orc Blademaster" x="-3" y="-1" z="7" spawntime="90" />
+		<monster name="Orc Pyromancer" x="0" y="0" z="7" spawntime="90" />
+		<monster name="Ancient Dragon" x="-2" y="1" z="7" spawntime="90" />
+		<monster name="Orc Bonecrusher" x="3" y="2" z="7" spawntime="90" />
+	</monster>
+	<monster centerx="5007" centery="4957" centerz="8" radius="5">
+		<monster name="Lizard Chosen" x="3" y="-5" z="8" spawntime="20" />
+		<monster name="Lizard Zaogun" x="-2" y="-4" z="8" spawntime="20" />
+		<monster name="Lizard Zaogun" x="4" y="-3" z="8" spawntime="20" />
+		<monster name="Lizard Chosen" x="-2" y="-2" z="8" spawntime="20" />
+		<monster name="Lizard Zaogun" x="-4" y="-1" z="8" spawntime="20" />
+	</monster>
+	<monster centerx="4988" centery="4959" centerz="8" radius="7">
+		<monster name="Lizard Zaogun" x="-5" y="-2" z="8" spawntime="20" />
+		<monster name="Lizard High Guard" x="0" y="0" z="8" spawntime="20" />
+		<monster name="Lizard Chosen" x="3" y="0" z="8" spawntime="20" />
+		<monster name="Lizard Chosen" x="-1" y="2" z="8" spawntime="20" />
+	</monster>
+	<monster centerx="5005" centery="4969" centerz="8" radius="1">
+		<monster name="Lizard Chosen" x="0" y="0" z="8" spawntime="20" />
+	</monster>
+	<monster centerx="4993" centery="4974" centerz="8" radius="6">
+		<monster name="Lizard Zaogun" x="-3" y="-3" z="8" spawntime="20" />
+		<monster name="Lizard Zaogun" x="-2" y="-3" z="8" spawntime="942533120" />
+		<monster name="Lizard Chosen" x="-2" y="1" z="8" spawntime="20" />
+		<monster name="Lizard Chosen" x="4" y="2" z="8" spawntime="20" />
+	</monster>
+	<monster centerx="5016" centery="4974" centerz="8" radius="5">
+		<monster name="Lizard Chosen" x="-1" y="-5" z="8" spawntime="20" />
+		<monster name="Lizard Zaogun" x="5" y="-2" z="8" spawntime="20" />
+		<monster name="Lizard Chosen" x="3" y="0" z="8" spawntime="20" />
+		<monster name="Lizard Chosen" x="-2" y="1" z="8" spawntime="20" />
+		<monster name="Lizard Zaogun" x="0" y="2" z="8" spawntime="20" />
+		<monster name="Lizard Chosen" x="2" y="3" z="8" spawntime="20" />
+	</monster>
+	<monster centerx="5019" centery="4991" centerz="8" radius="5">
+		<monster name="Serpent Spawn" x="-1" y="-1" z="8" spawntime="30" />
+		<monster name="Hydra" x="2" y="0" z="8" spawntime="30" />
+		<monster name="Hydra" x="-4" y="2" z="8" spawntime="30" />
+	</monster>
+	<monster centerx="4975" centery="4993" centerz="8" radius="4">
+		<monster name="Hydra" x="-1" y="-2" z="8" spawntime="30" />
+		<monster name="Serpent Spawn" x="0" y="-1" z="8" spawntime="30" />
+		<monster name="Serpent Spawn" x="-1" y="3" z="8" spawntime="30" />
+	</monster>
+	<monster centerx="5002" centery="4993" centerz="8" radius="5">
+		<monster name="Hydra" x="4" y="-3" z="8" spawntime="30" />
+		<monster name="Serpent Spawn" x="1" y="-2" z="8" spawntime="30" />
+		<monster name="Hydra" x="-3" y="-1" z="8" spawntime="30" />
+		<monster name="Hydra" x="-5" y="1" z="8" spawntime="30" />
+	</monster>
+	<monster centerx="4982" centery="4996" centerz="8" radius="1">
+		<monster name="Hydra" x="0" y="0" z="8" spawntime="30" />
+	</monster>
+	<monster centerx="4986" centery="4999" centerz="8" radius="1">
+		<monster name="Hydra" x="0" y="0" z="8" spawntime="30" />
+	</monster>
+	<monster centerx="4979" centery="5000" centerz="8" radius="1">
+		<monster name="Hydra" x="0" y="0" z="8" spawntime="30" />
+	</monster>
+	<monster centerx="5016" centery="5000" centerz="8" radius="5">
+		<monster name="Hydra" x="0" y="-2" z="8" spawntime="30" />
+		<monster name="Serpent Spawn" x="4" y="-2" z="8" spawntime="30" />
+		<monster name="Serpent Spawn" x="0" y="0" z="8" spawntime="30" />
+		<monster name="Hydra" x="2" y="0" z="8" spawntime="30" />
+	</monster>
+	<monster centerx="5008" centery="5004" centerz="8" radius="5">
+		<monster name="Serpent Spawn" x="0" y="0" z="8" spawntime="30" />
+		<monster name="Hydra" x="-3" y="1" z="8" spawntime="30" />
+		<monster name="Hydra" x="-2" y="4" z="8" spawntime="30" />
+	</monster>
+	<monster centerx="4994" centery="5005" centerz="8" radius="5">
+		<monster name="Hydra" x="0" y="0" z="8" spawntime="30" />
+		<monster name="Hydra" x="5" y="3" z="8" spawntime="30" />
+	</monster>
+	<monster centerx="4976" centery="5007" centerz="8" radius="4">
+		<monster name="Serpent Spawn" x="2" y="-3" z="8" spawntime="30" />
+		<monster name="Hydra" x="-2" y="-2" z="8" spawntime="30" />
+		<monster name="Serpent Spawn" x="0" y="0" z="8" spawntime="30" />
+		<monster name="Hydra" x="3" y="2" z="8" spawntime="30" />
+	</monster>
+	<monster centerx="5018" centery="5007" centerz="8" radius="5">
+		<monster name="Hydra" x="-3" y="0" z="8" spawntime="30" />
+		<monster name="Hydra" x="3" y="0" z="8" spawntime="30" />
+	</monster>
+	<monster centerx="5001" centery="5017" centerz="8" radius="5">
+		<monster name="Serpent Spawn" x="1" y="-3" z="8" spawntime="30" />
+		<monster name="Serpent Spawn" x="-1" y="0" z="8" spawntime="30" />
+		<monster name="Serpent Spawn" x="1" y="3" z="8" spawntime="30" />
+	</monster>
+	<monster centerx="6222" centery="5979" centerz="8" radius="1">
+		<monster name="Ghoul" x="0" y="0" z="8" spawntime="90" />
+	</monster>
+	<monster centerx="6218" centery="5981" centerz="8" radius="1">
+		<monster name="Ghoul" x="0" y="0" z="8" spawntime="90" />
+	</monster>
+	<monster centerx="6215" centery="5988" centerz="8" radius="1">
+		<monster name="Ghoul" x="0" y="0" z="8" spawntime="90" />
+	</monster>
+	<monster centerx="6209" centery="5993" centerz="8" radius="1">
+		<monster name="Ghoul" x="0" y="0" z="8" spawntime="90" />
+	</monster>
+	<monster centerx="4994" centery="4968" centerz="9" radius="5">
+		<monster name="Vile Grandmaster" x="-2" y="-2" z="9" spawntime="20" />
+		<monster name="Vile Grandmaster" x="-1" y="-2" z="9" spawntime="942553856" />
+		<monster name="Vicious Squire" x="0" y="0" z="9" spawntime="20" />
+		<monster name="Vicious Squire" x="-3" y="4" z="9" spawntime="20" />
+	</monster>
+	<monster centerx="5006" centery="4968" centerz="9" radius="5">
+		<monster name="Hero" x="2" y="-2" z="9" spawntime="942529536" />
+		<monster name="Hero" x="0" y="-1" z="9" spawntime="20" />
+		<monster name="Hero" x="-2" y="2" z="9" spawntime="20" />
+		<monster name="Hero" x="4" y="2" z="9" spawntime="20" />
+		<monster name="Vicious Squire" x="2" y="3" z="9" spawntime="20" />
+	</monster>
+	<monster centerx="4994" centery="4980" centerz="9" radius="5">
+		<monster name="Hero" x="-3" y="-3" z="9" spawntime="20" />
+		<monster name="Hero" x="0" y="-1" z="9" spawntime="20" />
+		<monster name="Hero" x="3" y="1" z="9" spawntime="20" />
+		<monster name="Hero" x="-2" y="2" z="9" spawntime="20" />
+	</monster>
+	<monster centerx="5007" centery="4980" centerz="9" radius="5">
+		<monster name="Vicious Squire" x="-2" y="-2" z="9" spawntime="20" />
+		<monster name="Vile Grandmaster" x="2" y="-2" z="9" spawntime="20" />
+		<monster name="Vicious Squire" x="0" y="0" z="9" spawntime="20" />
+	</monster>
+	<monster centerx="4992" centery="4990" centerz="9" radius="1">
+		<monster name="Dragon" x="0" y="0" z="9" spawntime="30" />
+		<monster name="Bonelord" x="-1" y="1" z="9" spawntime="30" />
+	</monster>
+	<monster centerx="5010" centery="4990" centerz="9" radius="1">
+		<monster name="Dragon" x="0" y="0" z="9" spawntime="30" />
+		<monster name="Bonelord" x="1" y="1" z="9" spawntime="30" />
+	</monster>
+	<monster centerx="5001" centery="4999" centerz="9" radius="6">
+		<monster name="Vicious Squire" x="-2" y="-6" z="9" spawntime="30" />
+		<monster name="Vile Grandmaster" x="-5" y="-5" z="9" spawntime="30" />
+		<monster name="Vicious Squire" x="1" y="-5" z="9" spawntime="30" />
+		<monster name="Vile Grandmaster" x="5" y="-5" z="9" spawntime="30" />
+		<monster name="Vile Grandmaster" x="-6" y="-4" z="9" spawntime="30" />
+		<monster name="Hero" x="-5" y="-4" z="9" spawntime="30" />
+		<monster name="Vicious Squire" x="0" y="-4" z="9" spawntime="30" />
+		<monster name="Vicious Squire" x="3" y="-4" z="9" spawntime="30" />
+		<monster name="Hero" x="4" y="-4" z="9" spawntime="30" />
+		<monster name="Hero" x="-5" y="-3" z="9" spawntime="30" />
+		<monster name="Hero" x="5" y="-3" z="9" spawntime="30" />
+		<monster name="Black Knight" x="-1" y="-2" z="9" spawntime="30" />
+		<monster name="Vicious Squire" x="-5" y="3" z="9" spawntime="30" />
+		<monster name="Vicious Squire" x="-2" y="3" z="9" spawntime="30" />
+		<monster name="Vicious Squire" x="0" y="3" z="9" spawntime="30" />
+		<monster name="Hero" x="3" y="3" z="9" spawntime="30" />
+		<monster name="Vicious Squire" x="5" y="3" z="9" spawntime="30" />
+		<monster name="Hero" x="-6" y="4" z="9" spawntime="30" />
+		<monster name="Hero" x="-6" y="5" z="9" spawntime="30" />
+		<monster name="Vile Grandmaster" x="-5" y="5" z="9" spawntime="30" />
+		<monster name="Vicious Squire" x="-1" y="5" z="9" spawntime="30" />
+		<monster name="Vicious Squire" x="1" y="5" z="9" spawntime="30" />
+		<monster name="Vile Grandmaster" x="4" y="5" z="9" spawntime="30" />
+		<monster name="Hero" x="5" y="5" z="9" spawntime="30" />
+	</monster>
+	<monster centerx="4992" centery="5008" centerz="9" radius="1">
+		<monster name="Dragon" x="0" y="0" z="9" spawntime="30" />
+		<monster name="Bonelord" x="-1" y="1" z="9" spawntime="30" />
+	</monster>
+	<monster centerx="5010" centery="5008" centerz="9" radius="1">
+		<monster name="Dragon" x="0" y="0" z="9" spawntime="30" />
+		<monster name="Bonelord" x="0" y="1" z="9" spawntime="30" />
+	</monster>
+	<monster centerx="5001" centery="5017" centerz="9" radius="4">
+		<monster name="Dragon" x="1" y="-3" z="9" spawntime="30" />
+		<monster name="Dragon" x="-1" y="-2" z="9" spawntime="30" />
+		<monster name="Dragon" x="2" y="-1" z="9" spawntime="30" />
+		<monster name="Dragon" x="-1" y="1" z="9" spawntime="30" />
+		<monster name="Dragon" x="2" y="3" z="9" spawntime="30" />
+		<monster name="Dragon Lord" x="0" y="4" z="9" spawntime="30" />
+	</monster>
+	<monster centerx="5001" centery="5021" centerz="9" radius="1">
+		<monster name="Dragon Lord Hatchling" x="-1" y="1" z="9" spawntime="30" />
+		<monster name="Dragon Lord Hatchling" x="1" y="1" z="9" spawntime="30" />
+	</monster>
+	<monster centerx="5008" centery="4992" centerz="10" radius="5">
+		<monster name="Rotworm" x="1" y="-2" z="10" spawntime="20" />
+		<monster name="Minotaur" x="-1" y="0" z="10" spawntime="20" />
+		<monster name="Minotaur" x="2" y="2" z="10" spawntime="20" />
+	</monster>
+	<monster centerx="4997" centery="4993" centerz="10" radius="4">
+		<monster name="Rotworm" x="0" y="-2" z="10" spawntime="20" />
+		<monster name="Minotaur" x="0" y="0" z="10" spawntime="20" />
+		<monster name="Rotworm" x="-2" y="1" z="10" spawntime="20" />
+		<monster name="Minotaur" x="-4" y="2" z="10" spawntime="20" />
+	</monster>
+	<monster centerx="5009" centery="5003" centerz="10" radius="5">
+		<monster name="Minotaur Guard" x="0" y="0" z="10" spawntime="20" />
+		<monster name="Troll Champion" x="2" y="3" z="10" spawntime="20" />
+	</monster>
+	<monster centerx="4999" centery="5004" centerz="10" radius="5">
+		<monster name="Minotaur Occultist" x="-5" y="-2" z="10" spawntime="20" />
+		<monster name="Troll Champion" x="4" y="0" z="10" spawntime="20" />
+		<monster name="Minotaur Guard" x="-4" y="5" z="10" spawntime="20" />
+		<monster name="Troll Champion" x="0" y="5" z="10" spawntime="20" />
+		<monster name="Minotaur Guard" x="5" y="5" z="10" spawntime="20" />
+	</monster>
+	<monster centerx="5001" centery="5016" centerz="10" radius="5">
+		<monster name="Rotworm" x="-1" y="-4" z="10" spawntime="20" />
+		<monster name="Rotworm" x="2" y="-2" z="10" spawntime="20" />
+		<monster name="Minotaur Guard" x="0" y="-1" z="10" spawntime="20" />
+		<monster name="Rotworm" x="-1" y="2" z="10" spawntime="20" />
+	</monster>
+</monsters>

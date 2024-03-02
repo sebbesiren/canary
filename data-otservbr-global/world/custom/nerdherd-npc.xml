@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<npcs>
+	<npc centerx="5008" centery="4991" centerz="11" radius="1">
+		<npc name="Imbuement Assistant" x="0" y="0" z="11" spawntime="60" />
+	</npc>
+	<npc centerx="4998" centery="4996" centerz="11" radius="1">
+		<npc name="Hazard Guide" x="0" y="1" z="11" spawntime="60" />
+	</npc>
+	<npc centerx="5005" centery="4996" centerz="11" radius="1">
+		<npc name="Elon Musk" x="0" y="0" z="11" spawntime="60" />
+	</npc>
+	<npc centerx="5008" centery="4996" centerz="11" radius="1">
+		<npc name="Pohusaxi" x="0" y="0" z="11" spawntime="60" />
+	</npc>
+	<npc centerx="5005" centery="5000" centerz="11" radius="1">
+		<npc name="Runtel Blackspark" x="0" y="0" z="11" spawntime="60" />
+	</npc>
+	<npc centerx="5008" centery="5000" centerz="11" radius="1">
+		<npc name="Grizzly Adams" x="0" y="0" z="11" spawntime="60" />
+	</npc>
+	<npc centerx="5005" centery="5002" centerz="11" radius="1">
+		<npc name="Zuma Magehide" x="0" y="1" z="11" spawntime="60" />
+	</npc>
+</npcs>
