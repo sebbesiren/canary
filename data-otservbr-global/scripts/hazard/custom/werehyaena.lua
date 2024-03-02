@@ -13,9 +13,8 @@ local hazard = Hazard.new({
 hazard:register()
 
 local hazardZone = Zone.getByName(hazard.name)
-hazardZone:addArea({x = 33124, y = 32333, z = 11}, {x = 33220, y = 32548, z = 11})
-hazardZone:subtractArea({x = 33200, y = 32482, z = 11}, {x = 33227, y = 32553, z = 11})
-
+hazardZone:addArea({ x = 33124, y = 32333, z = 11 }, { x = 33220, y = 32548, z = 11 })
+hazardZone:subtractArea({ x = 33200, y = 32482, z = 11 }, { x = 33227, y = 32553, z = 11 })
 
 local deathEventName = "WerehyaenaDeath"
 local spawnEvent = ZoneEvent(hazardZone)

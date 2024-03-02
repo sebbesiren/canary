@@ -15,7 +15,6 @@ hazard:register()
 local hazardZone = Zone.getByName(hazard.name)
 --hazardZone:addArea({ x = 33895, y = 31554, z = 7 }, { x = 33917, y = 31685, z = 7 })
 
-
 local deathEventName = "LowerRoshamuulDeath"
 local spawnEvent = ZoneEvent(hazardZone)
 function spawnEvent.onSpawn(monster, position)
