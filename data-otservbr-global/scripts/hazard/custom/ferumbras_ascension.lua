@@ -34,7 +34,6 @@ hazardZone:addArea({ x = 33374, y = 32323, z = 11 }, { x = 33439, y = 32412, z =
 hazardZone:addArea({ x = 33356, y = 32318, z = 13 }, { x = 33438, y = 32386, z = 13 })
 hazardZone:addArea({ x = 33376, y = 32320, z = 14 }, { x = 33438, y = 32348, z = 14 })
 
-
 -- south west
 hazardZone:addArea({ x = 33413, y = 32773, z = 8 }, { x = 33498, y = 32830, z = 12 })
 
