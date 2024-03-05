@@ -376,6 +376,7 @@ local questTable = {
 	-- Sea Serpent Quest
 	{ storage = Storage.Quest.U8_2.FishForASerpent.QuestLine, storageValue = 5 },
 	{ storage = Storage.Quest.U8_2.TheHuntForTheSeaSerpent.QuestLine, storageValue = 2 },
+	{ storage = Storage.CustomDoors, storageValue = 1  }
 }
 
 -- from Position: (33201, 31762, 1)
