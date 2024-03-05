@@ -15,6 +15,9 @@ hazard:register()
 local hazardZone = Zone.getByName(hazard.name)
 hazardZone:addArea({ x = 33277, y = 32314, z = 14 }, { x = 33362, y = 32406, z = 14 })
 
+-- Entrance
+hazardZone:addArea({ x = 33263, y = 32325, z = 13 }, { x = 33344, y = 32444, z = 13 })
+
 -- north
 hazardZone:addArea({ x = 33612, y = 32617, z = 10 }, { x = 33686, y = 32725, z = 11 })
 hazardZone:addArea({ x = 33606, y = 32612, z = 11 }, { x = 33686, y = 32725, z = 11 })
