@@ -908,7 +908,7 @@ tasks = {
 			creatures = {
 				"bony sea devil",
 				"capricious phantom",
-				"turbulent elemental"
+				"turbulent elemental",
 			},
 			creatureStorage = {
 				Storage.CustomKillingInTheNameOf.BonySeaDevilCount,
@@ -921,7 +921,7 @@ tasks = {
 				{ type = "points", value = { 10 } },
 			},
 		},
-	}
+	},
 }
 
 tasksByPlayer = 3
