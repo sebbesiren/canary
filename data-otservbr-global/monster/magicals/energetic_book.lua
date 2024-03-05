@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Energetic Book")
 local monster = {}
 
 monster.description = "an energetic book"
-monster.experience = 18500
+monster.experience = 21500
 monster.outfit = {
 	lookType = 1061,
 	lookHead = 15,

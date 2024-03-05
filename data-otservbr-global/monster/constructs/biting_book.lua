@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Biting Book")
 local monster = {}
 
 monster.description = "a biting book"
-monster.experience = 9350
+monster.experience = 10350
 monster.outfit = {
 	lookType = 1066,
 	lookHead = 0,

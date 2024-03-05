@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Animated Feather")
 local monster = {}
 
 monster.description = "an animated feather"
-monster.experience = 13000
+monster.experience = 15500
 monster.outfit = {
 	lookType = 1058,
 	lookHead = 0,

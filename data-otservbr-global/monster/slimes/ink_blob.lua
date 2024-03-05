@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Ink Blob")
 local monster = {}
 
 monster.description = "an ink blob"
-monster.experience = 14450
+monster.experience = 16450
 monster.outfit = {
 	lookType = 1064,
 	lookHead = 0,
