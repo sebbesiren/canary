@@ -898,7 +898,30 @@ tasks = {
 				{ type = "storage", value = { 41300, 1 } },
 			},
 		},
-	},
+		[43] = {
+			killsRequired = 5000,
+			raceName = "Ebb and Flow",
+			custom = true,
+			level = { 130, 9999 },
+			repeatable = true,
+			premium = true,
+			creatures = {
+				"bony sea devil",
+				"capricious phantom",
+				"turbulent elemental"
+			},
+			creatureStorage = {
+				Storage.CustomKillingInTheNameOf.BonySeaDevilCount,
+				Storage.CustomKillingInTheNameOf.CapriciousPhantomCount,
+				Storage.CustomKillingInTheNameOf.TurbulentElementalCount,
+			},
+			rewards = {
+				{ type = "exp", value = { 12000000 } },
+				{ type = "item", value = { 3043, 500 } },
+				{ type = "points", value = { 10 } },
+			},
+		},
+	}
 }
 
 tasksByPlayer = 3

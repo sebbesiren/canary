@@ -185,6 +185,11 @@ GameStore.ExpBoostValues = {
 	[3] = 90,
 	[4] = 180,
 	[5] = 360,
+	[6] = 420,
+	[7] = 420,
+	[8] = 420,
+	[9] = 420,
+	[10] = 420,
 }
 
 GameStore.DefaultValues = {

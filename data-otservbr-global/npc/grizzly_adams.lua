@@ -99,7 +99,8 @@ npcType.onSellItem = function(npc, player, itemId, subtype, amount, ignore, name
 	player:sendTextMessage(MESSAGE_INFO_DESCR, string.format("Sold %ix %s for %i gold.", amount, name, totalCost))
 end
 -- On check npc shop message (look item)
-npcType.onCheckItem = function(npc, player, clientId, subType) end
+npcType.onCheckItem = function(npc, player, clientId, subType)
+end
 
 local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
@@ -135,12 +136,13 @@ local function greetCallback(npc, creature)
 	if player:getStorageValue(Storage.KillingInTheNameOf.QuestLogEntry) ~= 0 then
 		npcHandler:setMessage(MESSAGE_GREET, "Hi there, do you want to to {join} the 'Paw and Fur - Hunting Elite'?")
 	elseif
-		player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) < 0 and player:getStorageValue(POINTSSTORAGE) >= 10 and player:getLevel() >= 6 -- to Huntsman Rank
+	player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) < 0 and player:getStorageValue(POINTSSTORAGE) >= 10 and player:getLevel() >= 6 -- to Huntsman Rank
 		or player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) == 0 and player:getStorageValue(POINTSSTORAGE) >= 20 and player:getLevel() >= 6 -- to Ranger Rank
 		or player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) == 2 and player:getStorageValue(POINTSSTORAGE) >= 40 and player:getLevel() >= 50 -- to Big Game Hunter Rank
 		or player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) == 4 and player:getStorageValue(POINTSSTORAGE) >= 70 and player:getLevel() >= 80 -- to Trophy Hunter Rank
 		or player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) == 6 and player:getStorageValue(POINTSSTORAGE) >= 100 and player:getLevel() >= 130
-	then -- to Elite Hunter Rank
+	then
+		-- to Elite Hunter Rank
 		npcHandler:setMessage(MESSAGE_GREET, "Good to see you again |PLAYERNAME|. You gained " .. player:getStorageValue(POINTSSTORAGE) .. " points for our society. Ask me for {promotion} to advance your rank!")
 	else
 		npcHandler:setMessage(MESSAGE_GREET, "Welcome to the 'Paw and Fur - Hunting Elite' |PLAYERNAME|. Feel free to do {tasks} for us.")
@@ -253,8 +255,8 @@ local tier = {
 		withsName = { "underwater quara", "giant spiders", "werewolves", "nightmares", "hellspawns", "high class lizards", "stampors", "brimstone bugs", "mutated bats" },
 	},
 	{
-		allName = { "hydras", "serpent spawns", "medusae", "behemoths", "sea serpents", "hellhounds", "ghastly dragons", "undead dragons", "drakens", "destroyers", "hydra", "serpent spawn", "medusa", "behemoth", "sea serpent", "hellhound", "ghastly dragon", "undead dragon", "draken", "destroyer" },
-		withsName = { "hydras", "serpent spawns", "medusae", "behemoths", "sea serpents", "hellhounds", "ghastly dragons", "undead dragons", "drakens", "destroyers" },
+		allName = { "hydras", "serpent spawns", "medusae", "behemoths", "sea serpents", "hellhounds", "ghastly dragons", "undead dragons", "drakens", "destroyers", "hydra", "serpent spawn", "medusa", "behemoth", "sea serpent", "hellhound", "ghastly dragon", "undead dragon", "draken", "destroyer", "ebb and flow" },
+		withsName = { "hydras", "serpent spawns", "medusae", "behemoths", "sea serpents", "hellhounds", "ghastly dragons", "undead dragons", "drakens", "destroyers", "ebb and flow" },
 	},
 }
 local messageStartTask = {
@@ -301,6 +303,9 @@ local messageStartTask = {
 	["undead dragons"] = "You are a thrill seeker? Undead dragons belong to one of the most powerful races that can be found in Tibia. Kill 400 of them. Are you in?",
 	["drakens"] = "Go to the Zaoan landmass and reduce their number! Kill 900 drakens, I'll accept: draken abomination, draken elite, draken spellweaver and draken warmaster. Are you in?",
 	["destroyers"] = "You can find those dark creatures on several places all over Tibia. For this task I want you to kill 650 destroyers. Are you in?",
+
+	-- Custom
+	["ebb and flow"] = "Go to Soul Wars and slay enemies in the Ebb and Flow. Are you in?"
 }
 local messageStartTaskAlt = {
 	["crocodile"] = messageStartTask["crocodiles"],
@@ -342,6 +347,9 @@ local messageStartTaskAlt = {
 	["undead dragon"] = messageStartTask["undead dragons"],
 	["draken"] = messageStartTask["drakens"],
 	["destroyer"] = messageStartTask["destroyers"],
+
+	-- Custom
+	["ebb and flow"] = messageStartTask["ebb and flow"],
 }
 local function checkX(npc, player, d, message)
 	for m = 1, #tasks.GrizzlyAdams do
@@ -429,12 +437,13 @@ local function creatureSayCallback(npc, creature, type, message)
 			return true
 		end
 		if
-			player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) < 0 and player:getStorageValue(POINTSSTORAGE) >= 10 and player:getLevel() >= 6 -- to Huntsman Rank
+		player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) < 0 and player:getStorageValue(POINTSSTORAGE) >= 10 and player:getLevel() >= 6 -- to Huntsman Rank
 			or player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) == 0 and player:getStorageValue(POINTSSTORAGE) >= 20 and player:getLevel() >= 6 -- to Ranger Rank
 			or player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) == 2 and player:getStorageValue(POINTSSTORAGE) >= 40 and player:getLevel() >= 50 -- to Big Game Hunter Rank
 			or player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) == 4 and player:getStorageValue(POINTSSTORAGE) >= 70 and player:getLevel() >= 80 -- to Trophy Hunter Rank
 			or player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) == 6 and player:getStorageValue(POINTSSTORAGE) >= 100 and player:getLevel() >= 130
-		then -- to Elite Hunter Rank
+		then
+			-- to Elite Hunter Rank
 			npcHandler:say("You are ready to advance one rank in our society |PLAYERNAME|. Ask me for a {promotion} first.", npc, creature)
 			return true
 		end
@@ -601,13 +610,15 @@ local function creatureSayCallback(npc, creature, type, message)
 		elseif player:getLevel() >= 130 and player:getStorageValue(POINTSSTORAGE) < 100 then
 			npcHandler:say({
 				"Alright, what would you like to hunt? You can try {hydras}, {serpent spawns}, {medusae}, {behemoths}, {sea serpents}, ...",
-				"as well as {hellhounds}, {ghastly dragons}, {undead dragons}, {draken} and {destroyers}.",
+				"as well as {hellhounds}, {ghastly dragons}, {undead dragons}, {draken},  and {destroyers}. ...",
+				"You can also try one of our custom tasks: {ebb and flow}",
 			}, npc, creature)
 		else
 			npcHandler:say({
 				"Alright, what would you like to hunt? Be aware you won't gain any paw and fur points as you already achieved the highest rank, but you'll get an experience reward and can face bosses. ...",
 				"You can try {hydras}, {serpent spawns}, {medusae}, {behemoths}, {sea serpents}, ...",
-				"as well as {hellhounds}, {ghastly dragons}, {undead dragons}, {draken} and {destroyers} or maybe {demons}.",
+				"as well as {hellhounds}, {ghastly dragons}, {undead dragons}, {draken} and {destroyers} or maybe {demons}. ...",
+				"You can also try one of our custom tasks: {ebb and flow}",
 			}, npc, creature)
 		end
 		npcHandler:setTopic(playerId, 0)
@@ -709,8 +720,15 @@ local function creatureSayCallback(npc, creature, type, message)
 				player:setStorageValue(Storage.Quest.U8_5.KillingInTheNameOf.AltKillCount.DrakenEliteCount, 0)
 				player:setStorageValue(Storage.Quest.U8_5.KillingInTheNameOf.AltKillCount.DrakenSpellweaverCount, 0)
 				player:setStorageValue(Storage.Quest.U8_5.KillingInTheNameOf.AltKillCount.DrakenWarmasterCount, 0)
+			elseif tasks.GrizzlyAdams[choose[playerId]].custom == true then
+				local creatureStorageIds = tasks.GrizzlyAdams[choose[playerId]].creatureStorage
+				for _, storageId in ipairs(creatureStorageIds) do
+					player:setStorageValue(storageId, 0)
+				end
 			end
+
 		end
+
 		if player:getStorageValue(KILLSSTORAGE_BASE + choose[playerId]) == 1 then
 			player:setStorageValue(KILLSSTORAGE_BASE + choose[playerId], player:getStorageValue(KILLSSTORAGE_BASE + choose[playerId]) - 1)
 		else
@@ -739,31 +757,36 @@ local function creatureSayCallback(npc, creature, type, message)
 			npcHandler:say("You haven't started any task yet.", npc, creature)
 		end
 	elseif table.contains({ "promotion", "promotions" }, message:lower()) then
-		if player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) < 0 and player:getStorageValue(POINTSSTORAGE) >= 10 and player:getLevel() >= 6 then -- to Huntsman Rank
+		if player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) < 0 and player:getStorageValue(POINTSSTORAGE) >= 10 and player:getLevel() >= 6 then
+			-- to Huntsman Rank
 			npcHandler:say({
 				"You gained 10 points! Let me promote you to the first rank: 'Huntsman'. Congratulations! ...",
 				"If you find any trophies - either monster heads or other parts of monsters that you don't need - feel free to ask me for a trade.",
 			}, npc, creature)
 			player:setStorageValue(Storage.KillingInTheNameOf.PawAndFurRank, 0)
-		elseif player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) == 0 and player:getStorageValue(POINTSSTORAGE) >= 20 and player:getLevel() >= 6 then -- to Ranger Rank
+		elseif player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) == 0 and player:getStorageValue(POINTSSTORAGE) >= 20 and player:getLevel() >= 6 then
+			-- to Ranger Rank
 			npcHandler:say({
 				"You gained 20 points. It's time for a promotion. You advance to the rank of a 'Ranger'. Congratulations! ...",
 				"Oh, I made a deal with Lorek. He ships Rangers from our society - and higher ranks of course - to Banuta, Chor or near the mountain pass to Darama. Just ask him for a passage.",
 			}, npc, creature)
 			player:setStorageValue(Storage.KillingInTheNameOf.PawAndFurRank, 2)
-		elseif player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) == 2 and player:getStorageValue(POINTSSTORAGE) >= 40 and player:getLevel() >= 50 then -- to Big Game Hunter Rank
+		elseif player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) == 2 and player:getStorageValue(POINTSSTORAGE) >= 40 and player:getLevel() >= 50 then
+			-- to Big Game Hunter Rank
 			npcHandler:say({
 				"Good show! You gained 40 points for the 'Paw and Fur - Hunting Elite'. You have earned the right to join the ranks of those known as 'Big game hunter'. Congratulations! ...",
 				"From now on I'll buy more trophies from you!",
 			}, npc, creature)
 			player:setStorageValue(Storage.KillingInTheNameOf.PawAndFurRank, 4)
-		elseif player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) == 4 and player:getStorageValue(POINTSSTORAGE) >= 70 and player:getLevel() >= 80 then -- to Trophy Hunter Rank
+		elseif player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) == 4 and player:getStorageValue(POINTSSTORAGE) >= 70 and player:getLevel() >= 80 then
+			-- to Trophy Hunter Rank
 			npcHandler:say({
 				"Spiffing! You gained 70 hunting points! From now on you can call yourself a 'Trophy hunter'. As a reward I have this special backpack for you and in addition, you can sell some more rare trophies to me. ...",
 				"Ask me for {special} tasks from time to time.",
 			}, npc, creature)
 			player:setStorageValue(Storage.KillingInTheNameOf.PawAndFurRank, 6)
-		elseif player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) == 6 and player:getStorageValue(POINTSSTORAGE) >= 100 and player:getLevel() >= 130 then -- to Elite Hunter Rank
+		elseif player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) == 6 and player:getStorageValue(POINTSSTORAGE) >= 100 and player:getLevel() >= 130 then
+			-- to Elite Hunter Rank
 			npcHandler:say("Congratulations, |PLAYERNAME|! You have gained the highest rank: 'Elite hunter'. If you haven't done yet, ask me for the {special} task.", npc, creature)
 			player:setStorageValue(Storage.KillingInTheNameOf.PawAndFurRank, 7)
 		else

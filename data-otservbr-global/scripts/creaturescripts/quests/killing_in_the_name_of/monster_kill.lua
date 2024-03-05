@@ -47,6 +47,10 @@ function deathEvent.onDeath(creature, _corpse, _lastHitKiller, mostDamageKiller)
 							elseif tasks.GrizzlyAdams[taskId].raceName == "Drakens" then
 								local drakens = Storage.Quest.U8_5.KillingInTheNameOf.AltKillCount.DrakenAbominationCount + a - 1
 								player:setStorageValue(drakens, player:getStorageValue(drakens) + 1)
+							-- custom
+							elseif tasks.GrizzlyAdams[taskId].custom  then
+								local monsterStorageId = tasks.GrizzlyAdams[taskId].creatureStorage[a]
+								player:setStorageValue(monsterStorageId, player:getStorageValue(monsterStorageId) + 1)
 							end
 						end
 					end

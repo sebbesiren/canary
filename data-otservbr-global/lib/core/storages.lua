@@ -2920,6 +2920,13 @@ Storage = {
 
 	-- Custom
 	CustomDoors = 300000,
+	CustomKillingInTheNameOf = {
+		-- Ebb and flow
+		EbbAndFlowMissionId = 30001,
+		BonySeaDevilCount = 300002,
+		CapriciousPhantomCount = 300003,
+		TurbulentElementalCount = 300004,
+	}
 }
 
 GlobalStorage = {

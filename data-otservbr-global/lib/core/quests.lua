@@ -2116,6 +2116,24 @@ if not Quests then
 						[1] = "You succesfully killed 500 cyclops. As long as you are level 60 or lower, you may repeat this task by talking to Daniel Steelsoul about it.",
 					},
 				},
+				[88] = {
+					name = "Custom Task: Ebb and Flow",
+					storageId = 65000 + 43, -- KILLSSTORAGE_BASE + id
+					missionId = Storage.CustomKillingInTheNameOf.EbbAndFlowMissionId, -- For mission tracking
+					startValue = 0,
+					endValue = 2,
+					states = {
+						[0] = function(player)
+							local sum = 0
+							for _, storageId in ipairs(tasks.GrizzlyAdams[43].creatureStorage) do
+								sum = sum + player:getStorageValue(storageId)
+							end
+
+							return string.format("Ebb and Flow: You have killed %d of 5000 enemies so far.", sum)
+						end,
+						[1] = "You succesfully killed all enemies. Return to Grizzly Adams for a reward.",
+					},
+				},
 			},
 		},
 		[12] = {
