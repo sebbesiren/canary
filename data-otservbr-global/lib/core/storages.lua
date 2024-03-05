@@ -2926,7 +2926,7 @@ Storage = {
 		BonySeaDevilCount = 300002,
 		CapriciousPhantomCount = 300003,
 		TurbulentElementalCount = 300004,
-	}
+	},
 }
 
 GlobalStorage = {
