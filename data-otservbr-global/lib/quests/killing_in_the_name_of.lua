@@ -916,8 +916,158 @@ tasks = {
 				Storage.CustomKillingInTheNameOf.TurbulentElementalCount,
 			},
 			rewards = {
-				{ type = "exp", value = { 12000000 } },
+				{ type = "exp", value = { 15000000 } },
 				{ type = "item", value = { 3043, 500 } },
+				{ type = "points", value = { 10 } },
+			},
+		},
+		[44] = {
+			killsRequired = 5000,
+			raceName = "Claustrophobic Inferno",
+			custom = true,
+			level = { 130, 9999 },
+			repeatable = true,
+			premium = true,
+			creatures = {
+				"brachiodemon",
+				"infernal demon",
+				"infernal phantom",
+			},
+			creatureStorage = {
+				Storage.CustomKillingInTheNameOf.BrachiodemonCount,
+				Storage.CustomKillingInTheNameOf.InfernalDemonCount,
+				Storage.CustomKillingInTheNameOf.InfernalPhantomCount,
+			},
+			rewards = {
+				{ type = "exp", value = { 15000000 } },
+				{ type = "item", value = { 3043, 500 } },
+				{ type = "points", value = { 10 } },
+			},
+		},
+		[45] = {
+			killsRequired = 5000,
+			raceName = "Rotten Wasteland",
+			custom = true,
+			level = { 130, 9999 },
+			repeatable = true,
+			premium = true,
+			creatures = {
+				"branchy crawler",
+				"mould phantom",
+				"rotten golem",
+			},
+			creatureStorage = {
+				Storage.CustomKillingInTheNameOf.BranchyCrawlerCount,
+				Storage.CustomKillingInTheNameOf.MouldPhantomCount,
+				Storage.CustomKillingInTheNameOf.RottenGolemCount,
+			},
+			rewards = {
+				{ type = "exp", value = { 15000000 } },
+				{ type = "item", value = { 3043, 500 } },
+				{ type = "points", value = { 10 } },
+			},
+		},
+		[46] = {
+			killsRequired = 5000,
+			raceName = "Furious Crater",
+			custom = true,
+			level = { 130, 9999 },
+			repeatable = true,
+			premium = true,
+			creatures = {
+				"cloak of terror",
+				"vibrant phantom",
+				"courage leech",
+			},
+			creatureStorage = {
+				Storage.CustomKillingInTheNameOf.CloakOfTerrorCount,
+				Storage.CustomKillingInTheNameOf.VibrantPhantomCount,
+				Storage.CustomKillingInTheNameOf.CourageLeechCount,
+			},
+			rewards = {
+				{ type = "exp", value = { 15000000 } },
+				{ type = "item", value = { 3043, 500 } },
+				{ type = "points", value = { 10 } },
+			},
+		},
+		[47] = {
+			killsRequired = 3000,
+			raceName = "Sparkling Pools",
+			custom = true,
+			level = { 130, 9999 },
+			repeatable = true,
+			premium = true,
+			creatures = {
+				"emerald tortoise",
+				"gore horn",
+				"gorerilla",
+				"hulking prehemoth",
+				"sabretooth"
+			},
+			creatureStorage = {
+				Storage.CustomKillingInTheNameOf.EmeraldTortoiseCount,
+				Storage.CustomKillingInTheNameOf.GoreHornCount,
+				Storage.CustomKillingInTheNameOf.GoreriillaCount,
+				Storage.CustomKillingInTheNameOf.HulkingPrehemothCount,
+				Storage.CustomKillingInTheNameOf.SabretoothCount,
+			},
+			rewards = {
+				{ type = "exp", value = { 8000000 } },
+				{ type = "item", value = { 39546, 1 } }, -- primal bag
+				{ type = "points", value = { 10 } },
+			},
+		},
+		[48] = {
+			killsRequired = 3000,
+			raceName = "Monster Graveyard",
+			custom = true,
+			level = { 130, 9999 },
+			repeatable = true,
+			premium = true,
+			creatures = {
+				"sulphider",
+				"sulphur spouter",
+				"nighthunter",
+				"stalking stalk",
+				"undertaker"
+			},
+			creatureStorage = {
+				Storage.CustomKillingInTheNameOf.SulphiderCount,
+				Storage.CustomKillingInTheNameOf.SulphurSpouterCount,
+				Storage.CustomKillingInTheNameOf.NighthunterCount,
+				Storage.CustomKillingInTheNameOf.StalkingStalkCount,
+				Storage.CustomKillingInTheNameOf.UndertakerCount,
+			},
+			rewards = {
+				{ type = "exp", value = { 8000000 } },
+				{ type = "item", value = { 39546, 1 } }, -- primal bag
+				{ type = "points", value = { 10 } },
+			},
+		},
+		[49] = {
+			killsRequired = 3000,
+			raceName = "Crystal Enigma",
+			custom = true,
+			level = { 130, 9999 },
+			repeatable = true,
+			premium = true,
+			creatures = {
+				"headpecker",
+				"mantosaurus",
+				"mercurial menace",
+				"noxious ripptor",
+				"shrieking cry-stal"
+			},
+			creatureStorage = {
+				Storage.CustomKillingInTheNameOf.HeadpeckerCount,
+				Storage.CustomKillingInTheNameOf.MantosaurusCount,
+				Storage.CustomKillingInTheNameOf.MecurialMenaceCount,
+				Storage.CustomKillingInTheNameOf.NoxiousRipptorCount,
+				Storage.CustomKillingInTheNameOf.ShriekingCryStalCount,
+			},
+			rewards = {
+				{ type = "exp", value = { 8000000 } },
+				{ type = "item", value = { 39546, 1 } }, -- primal bag
 				{ type = "points", value = { 10 } },
 			},
 		},

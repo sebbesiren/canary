@@ -2926,6 +2926,38 @@ Storage = {
 		BonySeaDevilCount = 300002,
 		CapriciousPhantomCount = 300003,
 		TurbulentElementalCount = 300004,
+		-- claustrophobic inferno
+		BrachiodemonCount = 300006,
+		InfernalDemonCount = 300007,
+		InfernalPhantomCount = 300008,
+		-- rotten wasteland
+		BranchyCrawlerCount = 300010,
+		MouldPhantomCount = 300011,
+		RottenGolemCount = 300012,
+		-- furious crater
+		FuriousCraterMissionId = 300013,
+		CloakOfTerrorCount = 300014,
+		VibrantPhantomCount = 300015,
+		CourageLeechCount = 300016,
+
+		-- sparkling pools
+		EmeraldTortoiseCount = 300018,
+		GoreHornCount = 300019,
+		GoreriillaCount = 300020,
+		HulkingPrehemothCount = 300021,
+		SabretoothCount = 300022,
+		-- monster graveyard
+		SulphiderCount = 300023,
+		SulphurSpouterCount = 300024,
+		NighthunterCount = 300025,
+		StalkingStalkCount = 300026,
+		UndertakerCount = 300027,
+		-- crystal enigma
+		HeadpeckerCount = 300029,
+		MantosaurusCount = 300030,
+		MecurialMenaceCount = 300031,
+		NoxiousRipptorCount = 300032,
+		ShriekingCryStalCount = 300033,
 	},
 }
 
