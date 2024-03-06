@@ -1002,7 +1002,7 @@ tasks = {
 				"gore horn",
 				"gorerilla",
 				"hulking prehemoth",
-				"sabretooth"
+				"sabretooth",
 			},
 			creatureStorage = {
 				Storage.CustomKillingInTheNameOf.EmeraldTortoiseCount,
@@ -1029,7 +1029,7 @@ tasks = {
 				"sulphur spouter",
 				"nighthunter",
 				"stalking stalk",
-				"undertaker"
+				"undertaker",
 			},
 			creatureStorage = {
 				Storage.CustomKillingInTheNameOf.SulphiderCount,
@@ -1056,7 +1056,7 @@ tasks = {
 				"mantosaurus",
 				"mercurial menace",
 				"noxious ripptor",
-				"shrieking cry-stal"
+				"shrieking cry-stal",
 			},
 			creatureStorage = {
 				Storage.CustomKillingInTheNameOf.HeadpeckerCount,
