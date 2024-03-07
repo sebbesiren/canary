@@ -2983,7 +2983,6 @@ Storage = {
 		RageSquidCount = 300050,
 		SquidWardenCount = 300050,
 		InkBlobCount = 300050,
-
 	},
 }
 

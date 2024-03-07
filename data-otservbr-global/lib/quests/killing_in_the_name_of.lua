@@ -1137,7 +1137,7 @@ tasks = {
 				"icecold book",
 				"rage squid",
 				"squid warden",
-				"ink blob"
+				"ink blob",
 			},
 			creatureStorage = {
 				Storage.CustomKillingInTheNameOf.BitingBookCount,
