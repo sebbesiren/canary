@@ -85,6 +85,36 @@
 		<colors colordark="#235c00" colorlight="#2d7400"/>
 		<details displaypriority="1" isseasonal="0" specialevent="0"/>
 	</event>
+	<event name="Loot and Skill event" startdate="3/8/2024" enddate="3/10/2024" script="">
+		<ingame exprate="100" lootrate="150" bosslootrate="200" spawnrate="100" skillrate="150"/>
+		<description description="50% boost to loot and skill rate!"/>
+		<colors colordark="#235c00" colorlight="#2d7400"/>
+		<details displaypriority="1" isseasonal="0" specialevent="0"/>
+	</event>
+	<event name="Loot and Skill event" startdate="3/15/2024" enddate="3/17/2024" script="">
+		<ingame exprate="100" lootrate="150" bosslootrate="200" spawnrate="100" skillrate="150"/>
+		<description description="50% boost to loot and skill rate!"/>
+		<colors colordark="#235c00" colorlight="#2d7400"/>
+		<details displaypriority="1" isseasonal="0" specialevent="0"/>
+	</event>
+	<event name="Exp and Skill event"  startdate="3/15/2024" enddate="3/17/2024" script="">
+		<ingame exprate="125" lootrate="100" spawnrate="125" skillrate="100"/>
+		<description description="Experience and skill rate increased by 25%!"/>
+		<colors colordark="#235c00" colorlight="#2d7400"/>
+		<details displaypriority="1" isseasonal="0" specialevent="0"/>
+	</event>
+	<event name="Loot and Skill event" startdate="3/22/2024" enddate="3/24/2024" script="">
+		<ingame exprate="100" lootrate="150" bosslootrate="200" spawnrate="100" skillrate="150"/>
+		<description description="50% boost to loot and skill rate!"/>
+		<colors colordark="#235c00" colorlight="#2d7400"/>
+		<details displaypriority="1" isseasonal="0" specialevent="0"/>
+	</event>
+	<event name="Loot and Skill event" startdate="3/29/2024" enddate="3/31/2024" script="">
+		<ingame exprate="100" lootrate="150" bosslootrate="200" spawnrate="100" skillrate="150"/>
+		<description description="50% boost to loot and skill rate!"/>
+		<colors colordark="#235c00" colorlight="#2d7400"/>
+		<details displaypriority="1" isseasonal="0" specialevent="0"/>
+	</event>
 
 
 </events>

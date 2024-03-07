@@ -1155,7 +1155,7 @@ tasks = {
 				Storage.CustomKillingInTheNameOf.InkBlobCount,
 			},
 			rewards = {
-				{ type = "exp", value = { 4500000 } },
+				{ type = "exp", value = { 6000000 } },
 				{ type = "item", value = { 3043, 300 } },
 				{ type = "points", value = { 10 } },
 			},

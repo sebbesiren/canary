@@ -2981,8 +2981,8 @@ Storage = {
 		GuardianOfTalesCount = 300048,
 		IcecoldBookCount = 300049,
 		RageSquidCount = 300050,
-		SquidWardenCount = 300050,
-		InkBlobCount = 300050,
+		SquidWardenCount = 300051,
+		InkBlobCount = 300052,
 
 	},
 }
