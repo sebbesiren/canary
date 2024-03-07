@@ -2248,6 +2248,63 @@ if not Quests then
 						[1] = "You succesfully killed all enemies. Return to Grizzly Adams for a reward.",
 					},
 				},
+				[95] = {
+					name = "Custom Task: Asuras",
+					storageId = 65000 + 50, -- KILLSSTORAGE_BASE + id
+					missionId = 10606, -- For mission tracking
+					startValue = 0,
+					endValue = 2,
+					states = {
+						[0] = function(player)
+							local sum = 0
+							local task = tasks.GrizzlyAdams[50]
+							for _, storageId in ipairs(task.creatureStorage) do
+								sum = sum + player:getStorageValue(storageId)
+							end
+
+							return string.format("%s: You have killed %d of %d enemies so far.", task.raceName, sum, task.killsRequired)
+						end,
+						[1] = "You succesfully killed all enemies. Return to Grizzly Adams for a reward.",
+					},
+				},
+				[96] = {
+					name = "Custom Task: True Asuras",
+					storageId = 65000 + 51, -- KILLSSTORAGE_BASE + id
+					missionId = 10607, -- For mission tracking
+					startValue = 0,
+					endValue = 2,
+					states = {
+						[0] = function(player)
+							local sum = 0
+							local task = tasks.GrizzlyAdams[51]
+							for _, storageId in ipairs(task.creatureStorage) do
+								sum = sum + player:getStorageValue(storageId)
+							end
+
+							return string.format("%s: You have killed %d of %d enemies so far.", task.raceName, sum, task.killsRequired)
+						end,
+						[1] = "You succesfully killed all enemies. Return to Grizzly Adams for a reward.",
+					},
+				},
+				[97] = {
+					name = "Custom Task: Secret Library",
+					storageId = 65000 + 52, -- KILLSSTORAGE_BASE + id
+					missionId = 10608, -- For mission tracking
+					startValue = 0,
+					endValue = 2,
+					states = {
+						[0] = function(player)
+							local sum = 0
+							local task = tasks.GrizzlyAdams[52]
+							for _, storageId in ipairs(task.creatureStorage) do
+								sum = sum + player:getStorageValue(storageId)
+							end
+
+							return string.format("%s: You have killed %d of %d enemies so far.", task.raceName, sum, task.killsRequired)
+						end,
+						[1] = "You succesfully killed all enemies. Return to Grizzly Adams for a reward.",
+					},
+				},
 			},
 		},
 		[12] = {

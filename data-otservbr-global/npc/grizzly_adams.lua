@@ -255,8 +255,8 @@ local tier = {
 		withsName = { "underwater quara", "giant spiders", "werewolves", "nightmares", "hellspawns", "high class lizards", "stampors", "brimstone bugs", "mutated bats" },
 	},
 	{
-		allName = { "hydras", "serpent spawns", "medusae", "behemoths", "sea serpents", "hellhounds", "ghastly dragons", "undead dragons", "drakens", "destroyers", "hydra", "serpent spawn", "medusa", "behemoth", "sea serpent", "hellhound", "ghastly dragon", "undead dragon", "draken", "destroyer", "ebb and flow", "claustrophobic inferno", "rotten wasteland", "furious crater", "sparkling pools", "monster graveyard", "crystal enigma" },
-		withsName = { "hydras", "serpent spawns", "medusae", "behemoths", "sea serpents", "hellhounds", "ghastly dragons", "undead dragons", "drakens", "destroyers", "ebb and flow", "claustrophobic inferno", "rotten wasteland", "furious crater", "sparkling pools", "monster graveyard", "crystal enigma" },
+		allName = { "hydras", "serpent spawns", "medusae", "behemoths", "sea serpents", "hellhounds", "ghastly dragons", "undead dragons", "drakens", "destroyers", "hydra", "serpent spawn", "medusa", "behemoth", "sea serpent", "hellhound", "ghastly dragon", "undead dragon", "draken", "destroyer", "ebb and flow", "claustrophobic inferno", "rotten wasteland", "furious crater", "sparkling pools", "monster graveyard", "crystal enigma", "asuras", "true asuras", "secret library" },
+		withsName = { "hydras", "serpent spawns", "medusae", "behemoths", "sea serpents", "hellhounds", "ghastly dragons", "undead dragons", "drakens", "destroyers", "ebb and flow", "claustrophobic inferno", "rotten wasteland", "furious crater", "sparkling pools", "monster graveyard", "crystal enigma", "asuras", "true asuras", "secret library" },
 	},
 }
 local messageStartTask = {
@@ -312,6 +312,9 @@ local messageStartTask = {
 	["sparkling pools"] = "Go to Gnomprona and slay enemies in the Sparkling Pools. Are you in?",
 	["monster graveyard"] = "Go to Gnomprona and slay enemies in the Monster Graveyard. Are you in?",
 	["crystal enigma"] = "Go to Gnomprona and slay enemies in the Crystal Enigma. Are you in?",
+	["asuras"] = "Go to Gnomprona and slay enemies in the Crystal Enigma. Are you in?",
+	["true asuras"] = "Go to Gnomprona and slay enemies in the Crystal Enigma. Are you in?",
+	["secret library"] = "Go to Gnomprona and slay enemies in the Crystal Enigma. Are you in?",
 }
 local messageStartTaskAlt = {
 	["crocodile"] = messageStartTask["crocodiles"],
@@ -362,6 +365,9 @@ local messageStartTaskAlt = {
 	["sparkling pools"] = messageStartTask["sparkling pools"],
 	["monster graveyard"] = messageStartTask["monster graveyard"],
 	["crystal enigma"] = messageStartTask["crystal enigma"],
+	["asuras"] = messageStartTask["asuras"],
+	["true asuras"] = messageStartTask["true asuras"],
+	["secret library"] = messageStartTask["secret library"],
 }
 local function checkX(npc, player, d, message)
 	for m = 1, #tasks.GrizzlyAdams do
@@ -623,14 +629,16 @@ local function creatureSayCallback(npc, creature, type, message)
 			npcHandler:say({
 				"Alright, what would you like to hunt? You can try {hydras}, {serpent spawns}, {medusae}, {behemoths}, {sea serpents}, ...",
 				"as well as {hellhounds}, {ghastly dragons}, {undead dragons}, {draken},  and {destroyers}. ...",
-				"You can also try one of our custom tasks: {ebb and flow}, {claustrophobic inferno}, {rotten wasteland}, {furious crater}, {sparkling pools}, {monster graveyard}, {crystal enigma}",
+				"You can also try one of our custom tasks: {ebb and flow}, {claustrophobic inferno}, {rotten wasteland}, {furious crater}, {sparkling pools}, {monster graveyard}, {crystal enigma} ...",
+				"{asuras}, {true asuras}, {secret library}",
 			}, npc, creature)
 		else
 			npcHandler:say({
 				"Alright, what would you like to hunt? Be aware you won't gain any paw and fur points as you already achieved the highest rank, but you'll get an experience reward and can face bosses. ...",
 				"You can try {hydras}, {serpent spawns}, {medusae}, {behemoths}, {sea serpents}, ...",
 				"as well as {hellhounds}, {ghastly dragons}, {undead dragons}, {draken} and {destroyers} or maybe {demons}. ...",
-				"You can also try one of our custom tasks: {ebb and flow}, {claustrophobic inferno}, {rotten wasteland}, {furious crater}, {sparkling pools}, {monster graveyard}, {crystal enigma}",
+				"You can also try one of our custom tasks: {ebb and flow}, {claustrophobic inferno}, {rotten wasteland}, {furious crater}, {sparkling pools}, {monster graveyard}, {crystal enigma} ...",
+				"{asuras}, {true asuras}, {secret library}",
 			}, npc, creature)
 		end
 		npcHandler:setTopic(playerId, 0)

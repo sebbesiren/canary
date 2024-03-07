@@ -2958,6 +2958,32 @@ Storage = {
 		MecurialMenaceCount = 300031,
 		NoxiousRipptorCount = 300032,
 		ShriekingCryStalCount = 300033,
+
+		-- asuras
+		DawnfireAsuraCount = 300034,
+		MidnightAsuraCount = 300035,
+		FrostFlowerAsuraCount = 300036,
+
+		-- true asuras
+		TrueDawnfireAsuraCount = 300037,
+		TrueMidnightAsuraCount = 300038,
+		TrueFrostFlowerAsuraCount = 300039,
+
+		-- secret library
+		BitingBookCount = 300040,
+		KnowledgeElementalCount = 300041,
+		AnimatedFeatherCount = 300042,
+		BrainSquidCount = 300043,
+		BurningBookCount = 300044,
+		CursedBookCount = 300045,
+		EnergeticBookCount = 300046,
+		EnerguardianOfTalesCount = 300047,
+		GuardianOfTalesCount = 300048,
+		IcecoldBookCount = 300049,
+		RageSquidCount = 300050,
+		SquidWardenCount = 300050,
+		InkBlobCount = 300050,
+
 	},
 }
 
