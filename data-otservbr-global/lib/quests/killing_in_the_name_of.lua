@@ -916,7 +916,7 @@ tasks = {
 				Storage.CustomKillingInTheNameOf.TurbulentElementalCount,
 			},
 			rewards = {
-				{ type = "exp", value = { 15000000 } },
+				{ type = "exp", value = { 15000000 * 10 } },
 				{ type = "item", value = { 3043, 500 } },
 				{ type = "points", value = { 10 } },
 			},
@@ -939,7 +939,7 @@ tasks = {
 				Storage.CustomKillingInTheNameOf.InfernalPhantomCount,
 			},
 			rewards = {
-				{ type = "exp", value = { 15000000 } },
+				{ type = "exp", value = { 15000000 * 10} },
 				{ type = "item", value = { 3043, 500 } },
 				{ type = "points", value = { 10 } },
 			},
@@ -962,7 +962,7 @@ tasks = {
 				Storage.CustomKillingInTheNameOf.RottenGolemCount,
 			},
 			rewards = {
-				{ type = "exp", value = { 15000000 } },
+				{ type = "exp", value = { 15000000 * 10 } },
 				{ type = "item", value = { 3043, 500 } },
 				{ type = "points", value = { 10 } },
 			},
@@ -985,7 +985,7 @@ tasks = {
 				Storage.CustomKillingInTheNameOf.CourageLeechCount,
 			},
 			rewards = {
-				{ type = "exp", value = { 15000000 } },
+				{ type = "exp", value = { 15000000  * 10} },
 				{ type = "item", value = { 3043, 500 } },
 				{ type = "points", value = { 10 } },
 			},
@@ -1012,7 +1012,7 @@ tasks = {
 				Storage.CustomKillingInTheNameOf.SabretoothCount,
 			},
 			rewards = {
-				{ type = "exp", value = { 8000000 } },
+				{ type = "exp", value = { 8000000 * 10 } },
 				{ type = "item", value = { 39546, 1 } }, -- primal bag
 				{ type = "points", value = { 10 } },
 			},
@@ -1039,7 +1039,7 @@ tasks = {
 				Storage.CustomKillingInTheNameOf.UndertakerCount,
 			},
 			rewards = {
-				{ type = "exp", value = { 8000000 } },
+				{ type = "exp", value = { 8000000 * 10 } },
 				{ type = "item", value = { 39546, 1 } }, -- primal bag
 				{ type = "points", value = { 10 } },
 			},
@@ -1066,7 +1066,7 @@ tasks = {
 				Storage.CustomKillingInTheNameOf.ShriekingCryStalCount,
 			},
 			rewards = {
-				{ type = "exp", value = { 8000000 } },
+				{ type = "exp", value = { 8000000 * 10 } },
 				{ type = "item", value = { 39546, 1 } }, -- primal bag
 				{ type = "points", value = { 10 } },
 			},
@@ -1089,7 +1089,7 @@ tasks = {
 				Storage.CustomKillingInTheNameOf.FrostFlowerAsuraCount,
 			},
 			rewards = {
-				{ type = "exp", value = { 1500000 } },
+				{ type = "exp", value = { 1500000 * 10 } },
 				{ type = "item", value = { 3043, 100 } },
 				{ type = "points", value = { 10 } },
 			},
@@ -1112,7 +1112,7 @@ tasks = {
 				Storage.CustomKillingInTheNameOf.TrueFrostFlowerAsuraCount,
 			},
 			rewards = {
-				{ type = "exp", value = { 4500000 } },
+				{ type = "exp", value = { 4500000 * 10 } },
 				{ type = "item", value = { 3043, 300 } },
 				{ type = "points", value = { 10 } },
 			},
@@ -1155,7 +1155,7 @@ tasks = {
 				Storage.CustomKillingInTheNameOf.InkBlobCount,
 			},
 			rewards = {
-				{ type = "exp", value = { 6000000 } },
+				{ type = "exp", value = { 6000000 * 10 } },
 				{ type = "item", value = { 3043, 300 } },
 				{ type = "points", value = { 10 } },
 			},

@@ -6,7 +6,7 @@ monster.health = 8000
 monster.maxHealth = monster.health
 
 monster.description = "an Orc Bonecrusher"
-monster.experience = monster.health * 1.8
+monster.experience = monster.health * 1.7
 monster.outfit = {
 	lookType = 8,
 	lookHead = 0,
@@ -19,7 +19,7 @@ monster.outfit = {
 
 monster.race = "blood"
 monster.corpse = 5980
-monster.speed = 125
+monster.speed = 180
 monster.manaCost = 0
 monster.raceId = 4006
 monster.Bestiary = {

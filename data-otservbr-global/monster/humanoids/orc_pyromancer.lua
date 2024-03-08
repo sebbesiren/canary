@@ -6,7 +6,7 @@ monster.health = 8000
 monster.maxHealth = monster.health
 
 monster.description = "an Orc Pyromancer"
-monster.experience = monster.health * 1.8
+monster.experience = monster.health * 1.7
 monster.outfit = {
 	lookType = 6,
 	lookHead = 0,
@@ -31,7 +31,7 @@ monster.Bestiary = {
 
 monster.race = "blood"
 monster.corpse = 5978
-monster.speed = 90
+monster.speed = 180
 monster.manaCost = 0
 
 monster.changeTarget = {

@@ -7,7 +7,7 @@ monster.health = 10000
 monster.maxHealth = monster.health
 
 monster.description = "an Ancient Dragon"
-monster.experience = monster.health * 1.8
+monster.experience = monster.health * 1.7
 monster.outfit = {
 	lookType = 927,
 	lookHead = 0,
@@ -20,7 +20,7 @@ monster.outfit = {
 
 monster.race = "blood"
 monster.corpse = 5984
-monster.speed = 100
+monster.speed = 180
 monster.manaCost = 0
 
 monster.changeTarget = {
