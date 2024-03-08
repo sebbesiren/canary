@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Guardian of Tales")
 local monster = {}
 
 monster.description = "a guardian of tales"
-monster.experience = 17500
+monster.experience = 19500
 monster.outfit = {
 	lookType = 1063,
 	lookHead = 92,
