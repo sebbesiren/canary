@@ -939,7 +939,7 @@ tasks = {
 				Storage.CustomKillingInTheNameOf.InfernalPhantomCount,
 			},
 			rewards = {
-				{ type = "exp", value = { 15000000 * 10} },
+				{ type = "exp", value = { 15000000 * 10 } },
 				{ type = "item", value = { 3043, 500 } },
 				{ type = "points", value = { 10 } },
 			},
@@ -985,7 +985,7 @@ tasks = {
 				Storage.CustomKillingInTheNameOf.CourageLeechCount,
 			},
 			rewards = {
-				{ type = "exp", value = { 15000000  * 10} },
+				{ type = "exp", value = { 15000000 * 10 } },
 				{ type = "item", value = { 3043, 500 } },
 				{ type = "points", value = { 10 } },
 			},
