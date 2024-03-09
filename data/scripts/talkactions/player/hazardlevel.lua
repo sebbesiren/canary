@@ -24,6 +24,7 @@ local hazards = {
 	["lower roshamuul"] = { name = "hazard.lower-roshamuul" },
 	["pirats"] = { name = "hazard.pirats" },
 	["prison"] = { name = "hazard.prison" },
+	["rookgard"] = { name = "hazard.rookgard" },
 	["secret library"] = { name = "hazard.secret-library" },
 	["werehyaena"] = { name = "hazard.werehyaena" },
 }
