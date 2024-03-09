@@ -99,8 +99,7 @@ npcType.onSellItem = function(npc, player, itemId, subtype, amount, ignore, name
 	player:sendTextMessage(MESSAGE_INFO_DESCR, string.format("Sold %ix %s for %i gold.", amount, name, totalCost))
 end
 -- On check npc shop message (look item)
-npcType.onCheckItem = function(npc, player, clientId, subType)
-end
+npcType.onCheckItem = function(npc, player, clientId, subType) end
 
 local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
@@ -136,7 +135,7 @@ local function greetCallback(npc, creature)
 	if player:getStorageValue(Storage.KillingInTheNameOf.QuestLogEntry) ~= 0 then
 		npcHandler:setMessage(MESSAGE_GREET, "Hi there, do you want to to {join} the 'Paw and Fur - Hunting Elite'?")
 	elseif
-	player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) < 0 and player:getStorageValue(POINTSSTORAGE) >= 10 and player:getLevel() >= 6 -- to Huntsman Rank
+		player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) < 0 and player:getStorageValue(POINTSSTORAGE) >= 10 and player:getLevel() >= 6 -- to Huntsman Rank
 		or player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) == 0 and player:getStorageValue(POINTSSTORAGE) >= 20 and player:getLevel() >= 6 -- to Ranger Rank
 		or player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) == 2 and player:getStorageValue(POINTSSTORAGE) >= 40 and player:getLevel() >= 50 -- to Big Game Hunter Rank
 		or player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) == 4 and player:getStorageValue(POINTSSTORAGE) >= 70 and player:getLevel() >= 80 -- to Trophy Hunter Rank
@@ -288,7 +287,7 @@ local tier = {
 			"secret library",
 			"court of winter",
 			"court of summer",
-			"flimsy"
+			"flimsy",
 		},
 		withsName = { "hydras", "serpent spawns", "medusae", "behemoths", "sea serpents", "hellhounds", "ghastly dragons", "undead dragons", "drakens", "destroyers", "ebb and flow", "claustrophobic inferno", "rotten wasteland", "furious crater", "sparkling pools", "monster graveyard", "crystal enigma", "court of winter", "court of summer", "flimsy" },
 	},
@@ -351,7 +350,7 @@ local messageStartTask = {
 	["secret library"] = "Slay enemies in the secret library. Are you in?",
 	["court of winter"] = "Slay elves in Court of Winter. Are you in?",
 	["court of summer"] = "Slay elves in Court of Summer. Are you in?",
-	["flimsy"] = "Slay Flimsys. Are you in?"
+	["flimsy"] = "Slay Flimsys. Are you in?",
 }
 local messageStartTaskAlt = {
 	["crocodile"] = messageStartTask["crocodiles"],
@@ -407,7 +406,7 @@ local messageStartTaskAlt = {
 	["secret library"] = messageStartTask["secret library"],
 	["court of winter"] = messageStartTask["court of winter"],
 	["court of summer"] = messageStartTask["court of summer"],
-	["flimsy"] = messageStartTask["flimsy"]
+	["flimsy"] = messageStartTask["flimsy"],
 }
 local function checkX(npc, player, d, message)
 	for m = 1, #tasks.GrizzlyAdams do
@@ -511,7 +510,7 @@ local function creatureSayCallback(npc, creature, type, message)
 			return true
 		end
 		if
-		player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) < 0 and player:getStorageValue(POINTSSTORAGE) >= 10 and player:getLevel() >= 6 -- to Huntsman Rank
+			player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) < 0 and player:getStorageValue(POINTSSTORAGE) >= 10 and player:getLevel() >= 6 -- to Huntsman Rank
 			or player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) == 0 and player:getStorageValue(POINTSSTORAGE) >= 20 and player:getLevel() >= 6 -- to Ranger Rank
 			or player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) == 2 and player:getStorageValue(POINTSSTORAGE) >= 40 and player:getLevel() >= 50 -- to Big Game Hunter Rank
 			or player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) == 4 and player:getStorageValue(POINTSSTORAGE) >= 70 and player:getLevel() >= 80 -- to Trophy Hunter Rank
