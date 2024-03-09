@@ -2119,17 +2119,13 @@ if not Quests then
 				[88] = {
 					name = "Custom Task: Ebb and Flow",
 					storageId = 65000 + 43, -- KILLSSTORAGE_BASE + id
-					missionId = Storage.CustomKillingInTheNameOf.EbbAndFlowMissionId, -- For mission tracking
+					missionId = 10599, -- For mission tracking
 					startValue = 0,
 					endValue = 2,
 					states = {
 						[0] = function(player)
-							local sum = 0
-							for _, storageId in ipairs(tasks.GrizzlyAdams[43].creatureStorage) do
-								sum = sum + player:getStorageValue(storageId)
-							end
-
-							return string.format("Ebb and Flow: You have killed %d of 5000 enemies so far.", sum)
+							local killCount = player:kv():scoped("killing-in-the-name-of"):get(43 .. "-count") or 0
+							return string.format("Ebb and Flow: You have killed %d of 5000 enemies so far.", killCount)
 						end,
 						[1] = "You succesfully killed all enemies. Return to Grizzly Adams for a reward.",
 					},
@@ -2142,13 +2138,10 @@ if not Quests then
 					endValue = 2,
 					states = {
 						[0] = function(player)
-							local sum = 0
-							local task = tasks.GrizzlyAdams[44]
-							for _, storageId in ipairs(task.creatureStorage) do
-								sum = sum + player:getStorageValue(storageId)
-							end
-
-							return string.format("%s: You have killed %d of %d enemies so far.", task.raceName, sum, task.killsRequired)
+							local taskId = 44
+							local task = tasks.GrizzlyAdams[taskId]
+							local killCount = player:kv():scoped("killing-in-the-name-of"):get(taskId .. "-count") or 0
+							return string.format("%s: You have killed %d of %d enemies so far.", task.raceName, killCount, task.killsRequired)
 						end,
 						[1] = "You succesfully killed all enemies. Return to Grizzly Adams for a reward.",
 					},
@@ -2161,13 +2154,10 @@ if not Quests then
 					endValue = 2,
 					states = {
 						[0] = function(player)
-							local sum = 0
-							local task = tasks.GrizzlyAdams[45]
-							for _, storageId in ipairs(task.creatureStorage) do
-								sum = sum + player:getStorageValue(storageId)
-							end
-
-							return string.format("%s: You have killed %d of %d enemies so far.", task.raceName, sum, task.killsRequired)
+							local taskId = 45
+							local task = tasks.GrizzlyAdams[taskId]
+							local killCount = player:kv():scoped("killing-in-the-name-of"):get(taskId .. "-count") or 0
+							return string.format("%s: You have killed %d of %d enemies so far.", task.raceName, killCount, task.killsRequired)
 						end,
 						[1] = "You succesfully killed all enemies. Return to Grizzly Adams for a reward.",
 					},
@@ -2180,13 +2170,10 @@ if not Quests then
 					endValue = 2,
 					states = {
 						[0] = function(player)
-							local sum = 0
-							local task = tasks.GrizzlyAdams[46]
-							for _, storageId in ipairs(task.creatureStorage) do
-								sum = sum + player:getStorageValue(storageId)
-							end
-
-							return string.format("%s: You have killed %d of %d enemies so far.", task.raceName, sum, task.killsRequired)
+							local taskId = 46
+							local task = tasks.GrizzlyAdams[taskId]
+							local killCount = player:kv():scoped("killing-in-the-name-of"):get(taskId .. "-count") or 0
+							return string.format("%s: You have killed %d of %d enemies so far.", task.raceName, killCount, task.killsRequired)
 						end,
 						[1] = "You succesfully killed all enemies. Return to Grizzly Adams for a reward.",
 					},
@@ -2199,13 +2186,10 @@ if not Quests then
 					endValue = 2,
 					states = {
 						[0] = function(player)
-							local sum = 0
-							local task = tasks.GrizzlyAdams[47]
-							for _, storageId in ipairs(task.creatureStorage) do
-								sum = sum + player:getStorageValue(storageId)
-							end
-
-							return string.format("%s: You have killed %d of %d enemies so far.", task.raceName, sum, task.killsRequired)
+							local taskId = 47
+							local task = tasks.GrizzlyAdams[taskId]
+							local killCount = player:kv():scoped("killing-in-the-name-of"):get(taskId .. "-count") or 0
+							return string.format("%s: You have killed %d of %d enemies so far.", task.raceName, killCount, task.killsRequired)
 						end,
 						[1] = "You succesfully killed all enemies. Return to Grizzly Adams for a reward.",
 					},
@@ -2218,13 +2202,10 @@ if not Quests then
 					endValue = 2,
 					states = {
 						[0] = function(player)
-							local sum = 0
-							local task = tasks.GrizzlyAdams[48]
-							for _, storageId in ipairs(task.creatureStorage) do
-								sum = sum + player:getStorageValue(storageId)
-							end
-
-							return string.format("%s: You have killed %d of %d enemies so far.", task.raceName, sum, task.killsRequired)
+							local taskId = 48
+							local task = tasks.GrizzlyAdams[taskId]
+							local killCount = player:kv():scoped("killing-in-the-name-of"):get(taskId .. "-count") or 0
+							return string.format("%s: You have killed %d of %d enemies so far.", task.raceName, killCount, task.killsRequired)
 						end,
 						[1] = "You succesfully killed all enemies. Return to Grizzly Adams for a reward.",
 					},
@@ -2237,13 +2218,10 @@ if not Quests then
 					endValue = 2,
 					states = {
 						[0] = function(player)
-							local sum = 0
-							local task = tasks.GrizzlyAdams[49]
-							for _, storageId in ipairs(task.creatureStorage) do
-								sum = sum + player:getStorageValue(storageId)
-							end
-
-							return string.format("%s: You have killed %d of %d enemies so far.", task.raceName, sum, task.killsRequired)
+							local taskId = 49
+							local task = tasks.GrizzlyAdams[taskId]
+							local killCount = player:kv():scoped("killing-in-the-name-of"):get(taskId .. "-count") or 0
+							return string.format("%s: You have killed %d of %d enemies so far.", task.raceName, killCount, task.killsRequired)
 						end,
 						[1] = "You succesfully killed all enemies. Return to Grizzly Adams for a reward.",
 					},
@@ -2256,13 +2234,10 @@ if not Quests then
 					endValue = 2,
 					states = {
 						[0] = function(player)
-							local sum = 0
-							local task = tasks.GrizzlyAdams[50]
-							for _, storageId in ipairs(task.creatureStorage) do
-								sum = sum + player:getStorageValue(storageId)
-							end
-
-							return string.format("%s: You have killed %d of %d enemies so far.", task.raceName, sum, task.killsRequired)
+							local taskId = 50
+							local task = tasks.GrizzlyAdams[taskId]
+							local killCount = player:kv():scoped("killing-in-the-name-of"):get(taskId .. "-count") or 0
+							return string.format("%s: You have killed %d of %d enemies so far.", task.raceName, killCount, task.killsRequired)
 						end,
 						[1] = "You succesfully killed all enemies. Return to Grizzly Adams for a reward.",
 					},
@@ -2275,13 +2250,10 @@ if not Quests then
 					endValue = 2,
 					states = {
 						[0] = function(player)
-							local sum = 0
-							local task = tasks.GrizzlyAdams[51]
-							for _, storageId in ipairs(task.creatureStorage) do
-								sum = sum + player:getStorageValue(storageId)
-							end
-
-							return string.format("%s: You have killed %d of %d enemies so far.", task.raceName, sum, task.killsRequired)
+							local taskId = 51
+							local task = tasks.GrizzlyAdams[taskId]
+							local killCount = player:kv():scoped("killing-in-the-name-of"):get(taskId .. "-count") or 0
+							return string.format("%s: You have killed %d of %d enemies so far.", task.raceName, killCount, task.killsRequired)
 						end,
 						[1] = "You succesfully killed all enemies. Return to Grizzly Adams for a reward.",
 					},
@@ -2294,13 +2266,58 @@ if not Quests then
 					endValue = 2,
 					states = {
 						[0] = function(player)
-							local sum = 0
-							local task = tasks.GrizzlyAdams[52]
-							for _, storageId in ipairs(task.creatureStorage) do
-								sum = sum + player:getStorageValue(storageId)
-							end
-
-							return string.format("%s: You have killed %d of %d enemies so far.", task.raceName, sum, task.killsRequired)
+							local taskId = 52
+							local task = tasks.GrizzlyAdams[taskId]
+							local killCount = player:kv():scoped("killing-in-the-name-of"):get(taskId .. "-count") or 0
+							return string.format("%s: You have killed %d of %d enemies so far.", task.raceName, killCount, task.killsRequired)
+						end,
+						[1] = "You succesfully killed all enemies. Return to Grizzly Adams for a reward.",
+					},
+				},
+				[98] = {
+					name = "Custom Task: Winter Court",
+					storageId = 65000 + 53, -- KILLSSTORAGE_BASE + id
+					missionId = 10609, -- For mission tracking
+					startValue = 0,
+					endValue = 2,
+					states = {
+						[0] = function(player)
+							local taskId = 53
+							local task = tasks.GrizzlyAdams[taskId]
+							local killCount = player:kv():scoped("killing-in-the-name-of"):get(taskId .. "-count") or 0
+							return string.format("%s: You have killed %d of %d enemies so far.", task.raceName, killCount, task.killsRequired)
+						end,
+						[1] = "You succesfully killed all enemies. Return to Grizzly Adams for a reward.",
+					},
+				},
+				[99] = {
+					name = "Custom Task: Summer Court",
+					storageId = 65000 + 54, -- KILLSSTORAGE_BASE + id
+					missionId = 10610, -- For mission tracking
+					startValue = 0,
+					endValue = 2,
+					states = {
+						[0] = function(player)
+							local taskId = 54
+							local task = tasks.GrizzlyAdams[taskId]
+							local killCount = player:kv():scoped("killing-in-the-name-of"):get(taskId .. "-count") or 0
+							return string.format("%s: You have killed %d of %d enemies so far.", task.raceName, killCount, task.killsRequired)
+						end,
+						[1] = "You succesfully killed all enemies. Return to Grizzly Adams for a reward.",
+					},
+				},
+				[100] = {
+					name = "Custom Task: Flimsy",
+					storageId = 65000 + 55, -- KILLSSTORAGE_BASE + id
+					missionId = 10611, -- For mission tracking
+					startValue = 0,
+					endValue = 2,
+					states = {
+						[0] = function(player)
+							local taskId = 55
+							local task = tasks.GrizzlyAdams[taskId]
+							local killCount = player:kv():scoped("killing-in-the-name-of"):get(taskId .. "-count") or 0
+							return string.format("%s: You have killed %d of %d enemies so far.", task.raceName, killCount, task.killsRequired)
 						end,
 						[1] = "You succesfully killed all enemies. Return to Grizzly Adams for a reward.",
 					},

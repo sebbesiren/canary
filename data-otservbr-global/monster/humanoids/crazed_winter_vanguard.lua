@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Crazed Winter Vanguard")
 local monster = {}
 
 monster.description = "a crazed winter vanguard"
-monster.experience = 5200
+monster.experience = 5800
 monster.outfit = {
 	lookType = 1137,
 	lookHead = 8,
@@ -26,7 +26,7 @@ monster.Bestiary = {
 	Locations = "Court of Winter, Dream Labyrinth.",
 }
 
-monster.health = 5200
+monster.health = 5800
 monster.maxHealth = 5800
 monster.race = "blood"
 monster.corpse = 30122

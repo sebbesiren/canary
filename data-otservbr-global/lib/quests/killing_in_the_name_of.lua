@@ -910,11 +910,6 @@ tasks = {
 				"capricious phantom",
 				"turbulent elemental",
 			},
-			creatureStorage = {
-				Storage.CustomKillingInTheNameOf.BonySeaDevilCount,
-				Storage.CustomKillingInTheNameOf.CapriciousPhantomCount,
-				Storage.CustomKillingInTheNameOf.TurbulentElementalCount,
-			},
 			rewards = {
 				{ type = "exp", value = { 15000000 * 10 } },
 				{ type = "item", value = { 3043, 500 } },
@@ -933,13 +928,8 @@ tasks = {
 				"infernal demon",
 				"infernal phantom",
 			},
-			creatureStorage = {
-				Storage.CustomKillingInTheNameOf.BrachiodemonCount,
-				Storage.CustomKillingInTheNameOf.InfernalDemonCount,
-				Storage.CustomKillingInTheNameOf.InfernalPhantomCount,
-			},
 			rewards = {
-				{ type = "exp", value = { 15000000 * 10} },
+				{ type = "exp", value = { 15000000 * 10 } },
 				{ type = "item", value = { 3043, 500 } },
 				{ type = "points", value = { 10 } },
 			},
@@ -955,11 +945,6 @@ tasks = {
 				"branchy crawler",
 				"mould phantom",
 				"rotten golem",
-			},
-			creatureStorage = {
-				Storage.CustomKillingInTheNameOf.BranchyCrawlerCount,
-				Storage.CustomKillingInTheNameOf.MouldPhantomCount,
-				Storage.CustomKillingInTheNameOf.RottenGolemCount,
 			},
 			rewards = {
 				{ type = "exp", value = { 15000000 * 10 } },
@@ -979,13 +964,8 @@ tasks = {
 				"vibrant phantom",
 				"courage leech",
 			},
-			creatureStorage = {
-				Storage.CustomKillingInTheNameOf.CloakOfTerrorCount,
-				Storage.CustomKillingInTheNameOf.VibrantPhantomCount,
-				Storage.CustomKillingInTheNameOf.CourageLeechCount,
-			},
 			rewards = {
-				{ type = "exp", value = { 15000000  * 10} },
+				{ type = "exp", value = { 15000000 * 10 } },
 				{ type = "item", value = { 3043, 500 } },
 				{ type = "points", value = { 10 } },
 			},
@@ -1003,13 +983,6 @@ tasks = {
 				"gorerilla",
 				"hulking prehemoth",
 				"sabretooth",
-			},
-			creatureStorage = {
-				Storage.CustomKillingInTheNameOf.EmeraldTortoiseCount,
-				Storage.CustomKillingInTheNameOf.GoreHornCount,
-				Storage.CustomKillingInTheNameOf.GoreriillaCount,
-				Storage.CustomKillingInTheNameOf.HulkingPrehemothCount,
-				Storage.CustomKillingInTheNameOf.SabretoothCount,
 			},
 			rewards = {
 				{ type = "exp", value = { 8000000 * 10 } },
@@ -1031,13 +1004,6 @@ tasks = {
 				"stalking stalk",
 				"undertaker",
 			},
-			creatureStorage = {
-				Storage.CustomKillingInTheNameOf.SulphiderCount,
-				Storage.CustomKillingInTheNameOf.SulphurSpouterCount,
-				Storage.CustomKillingInTheNameOf.NighthunterCount,
-				Storage.CustomKillingInTheNameOf.StalkingStalkCount,
-				Storage.CustomKillingInTheNameOf.UndertakerCount,
-			},
 			rewards = {
 				{ type = "exp", value = { 8000000 * 10 } },
 				{ type = "item", value = { 39546, 1 } }, -- primal bag
@@ -1058,13 +1024,6 @@ tasks = {
 				"noxious ripptor",
 				"shrieking cry-stal",
 			},
-			creatureStorage = {
-				Storage.CustomKillingInTheNameOf.HeadpeckerCount,
-				Storage.CustomKillingInTheNameOf.MantosaurusCount,
-				Storage.CustomKillingInTheNameOf.MecurialMenaceCount,
-				Storage.CustomKillingInTheNameOf.NoxiousRipptorCount,
-				Storage.CustomKillingInTheNameOf.ShriekingCryStalCount,
-			},
 			rewards = {
 				{ type = "exp", value = { 8000000 * 10 } },
 				{ type = "item", value = { 39546, 1 } }, -- primal bag
@@ -1083,11 +1042,6 @@ tasks = {
 				"midnight asura",
 				"frost flower asura",
 			},
-			creatureStorage = {
-				Storage.CustomKillingInTheNameOf.DawnfireAsuraCount,
-				Storage.CustomKillingInTheNameOf.MidnightAsuraCount,
-				Storage.CustomKillingInTheNameOf.FrostFlowerAsuraCount,
-			},
 			rewards = {
 				{ type = "exp", value = { 1500000 * 10 } },
 				{ type = "item", value = { 3043, 100 } },
@@ -1105,11 +1059,6 @@ tasks = {
 				"true dawnfire asura",
 				"true midnight asura",
 				"true frost flower asura",
-			},
-			creatureStorage = {
-				Storage.CustomKillingInTheNameOf.TrueDawnfireAsuraCount,
-				Storage.CustomKillingInTheNameOf.TrueMidnightAsuraCount,
-				Storage.CustomKillingInTheNameOf.TrueFrostFlowerAsuraCount,
 			},
 			rewards = {
 				{ type = "exp", value = { 4500000 * 10 } },
@@ -1139,24 +1088,63 @@ tasks = {
 				"squid warden",
 				"ink blob",
 			},
-			creatureStorage = {
-				Storage.CustomKillingInTheNameOf.BitingBookCount,
-				Storage.CustomKillingInTheNameOf.KnowledgeElementalCount,
-				Storage.CustomKillingInTheNameOf.AnimatedFeatherCount,
-				Storage.CustomKillingInTheNameOf.BrainSquidCount,
-				Storage.CustomKillingInTheNameOf.BurningBookCount,
-				Storage.CustomKillingInTheNameOf.CursedBookCount,
-				Storage.CustomKillingInTheNameOf.EnergeticBookCount,
-				Storage.CustomKillingInTheNameOf.EnerguardianOfTalesCount,
-				Storage.CustomKillingInTheNameOf.GuardianOfTalesCount,
-				Storage.CustomKillingInTheNameOf.IcecoldBookCount,
-				Storage.CustomKillingInTheNameOf.RageSquidCount,
-				Storage.CustomKillingInTheNameOf.SquidWardenCount,
-				Storage.CustomKillingInTheNameOf.InkBlobCount,
-			},
 			rewards = {
 				{ type = "exp", value = { 6000000 * 10 } },
 				{ type = "item", value = { 3043, 300 } },
+				{ type = "points", value = { 10 } },
+			},
+		},
+		[53] = {
+			killsRequired = 2000,
+			raceName = "Court of Winter",
+			custom = true,
+			level = { 130, 9999 },
+			repeatable = true,
+			premium = true,
+			creatures = {
+				"crazed winter rearguard",
+				"crazed winter vanguard",
+				"soul-broken harbinger",
+			},
+			rewards = {
+				{ type = "exp", value = { 15000000 } },
+				{ type = "item", value = { 3043, 100 } },
+				{ type = "points", value = { 10 } },
+			},
+		},
+		[54] = {
+			killsRequired = 2000,
+			raceName = "Court of Summer",
+			custom = true,
+			level = { 130, 9999 },
+			repeatable = true,
+			premium = true,
+			creatures = {
+				"crazed summer rearguard",
+				"crazed summer vanguard",
+				"insane siren",
+			},
+			rewards = {
+				{ type = "exp", value = { 15000000 } },
+				{ type = "item", value = { 3043, 100 } },
+				{ type = "points", value = { 10 } },
+			},
+		},
+		[55] = {
+			killsRequired = 3000,
+			raceName = "Flimsy",
+			custom = true,
+			level = { 130, 9999 },
+			repeatable = true,
+			premium = true,
+			creatures = {
+				"flimsy lost soul",
+				"freakish lost soul",
+				"mean lost soul",
+			},
+			rewards = {
+				{ type = "exp", value = { 40000000 } },
+				{ type = "item", value = { 3043, 500 } },
 				{ type = "points", value = { 10 } },
 			},
 		},

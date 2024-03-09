@@ -23,7 +23,7 @@ function deathEvent.onDeath(creature, _corpse, _lastHitKiller, mostDamageKiller)
 		for i = 1, #startedTasks do
 			taskId = startedTasks[i]
 			if table.contains(tasks.GrizzlyAdams[taskId].creatures, targetName) then
-				if #tasks.GrizzlyAdams[taskId].creatures > 1 then
+				if #tasks.GrizzlyAdams[taskId].creatures > 1 and not tasks.GrizzlyAdams[taskId].custom then
 					for a = 1, #tasks.GrizzlyAdams[taskId].creatures do
 						if targetName == tasks.GrizzlyAdams[taskId].creatures[a] then
 							if tasks.GrizzlyAdams[taskId].raceName == "Apes" then
@@ -47,16 +47,19 @@ function deathEvent.onDeath(creature, _corpse, _lastHitKiller, mostDamageKiller)
 							elseif tasks.GrizzlyAdams[taskId].raceName == "Drakens" then
 								local drakens = Storage.Quest.U8_5.KillingInTheNameOf.AltKillCount.DrakenAbominationCount + a - 1
 								player:setStorageValue(drakens, player:getStorageValue(drakens) + 1)
-							-- custom
-							elseif tasks.GrizzlyAdams[taskId].custom then
-								local monsterStorageId = tasks.GrizzlyAdams[taskId].creatureStorage[a]
-								player:setStorageValue(monsterStorageId, player:getStorageValue(monsterStorageId) + 1)
 							end
 						end
 					end
 				end
-				local killAmount = player:getStorageValue(killCounter + taskId)
-				player:setStorageValue(killCounter + taskId, killAmount + 1)
+
+				if tasks.GrizzlyAdams[taskId].custom then
+					local killCount = player:kv():scoped("killing-in-the-name-of"):get(taskId .. "-count") or 0
+					player:kv():scoped("killing-in-the-name-of"):set(taskId .. "-count", killCount + 1)
+				else
+					local killAmount = player:getStorageValue(killCounter + taskId)
+					player:setStorageValue(killCounter + taskId, killAmount + 1)
+				end
+
 				player:setStorageValue(KILLSSTORAGE_BASE + taskId, player:getStorageValue(KILLSSTORAGE_BASE + taskId)) -- fake update quest tracker
 			end
 		end

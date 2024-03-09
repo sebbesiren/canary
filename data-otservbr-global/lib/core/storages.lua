@@ -2920,70 +2920,8 @@ Storage = {
 
 	-- Custom
 	CustomDoors = 300000,
-	CustomKillingInTheNameOf = {
-		-- Ebb and flow
-		EbbAndFlowMissionId = 30001,
-		BonySeaDevilCount = 300002,
-		CapriciousPhantomCount = 300003,
-		TurbulentElementalCount = 300004,
-		-- claustrophobic inferno
-		BrachiodemonCount = 300006,
-		InfernalDemonCount = 300007,
-		InfernalPhantomCount = 300008,
-		-- rotten wasteland
-		BranchyCrawlerCount = 300010,
-		MouldPhantomCount = 300011,
-		RottenGolemCount = 300012,
-		-- furious crater
-		FuriousCraterMissionId = 300013,
-		CloakOfTerrorCount = 300014,
-		VibrantPhantomCount = 300015,
-		CourageLeechCount = 300016,
 
-		-- sparkling pools
-		EmeraldTortoiseCount = 300018,
-		GoreHornCount = 300019,
-		GoreriillaCount = 300020,
-		HulkingPrehemothCount = 300021,
-		SabretoothCount = 300022,
-		-- monster graveyard
-		SulphiderCount = 300023,
-		SulphurSpouterCount = 300024,
-		NighthunterCount = 300025,
-		StalkingStalkCount = 300026,
-		UndertakerCount = 300027,
-		-- crystal enigma
-		HeadpeckerCount = 300029,
-		MantosaurusCount = 300030,
-		MecurialMenaceCount = 300031,
-		NoxiousRipptorCount = 300032,
-		ShriekingCryStalCount = 300033,
-
-		-- asuras
-		DawnfireAsuraCount = 300034,
-		MidnightAsuraCount = 300035,
-		FrostFlowerAsuraCount = 300036,
-
-		-- true asuras
-		TrueDawnfireAsuraCount = 300037,
-		TrueMidnightAsuraCount = 300038,
-		TrueFrostFlowerAsuraCount = 300039,
-
-		-- secret library
-		BitingBookCount = 300040,
-		KnowledgeElementalCount = 300041,
-		AnimatedFeatherCount = 300042,
-		BrainSquidCount = 300043,
-		BurningBookCount = 300044,
-		CursedBookCount = 300045,
-		EnergeticBookCount = 300046,
-		EnerguardianOfTalesCount = 300047,
-		GuardianOfTalesCount = 300048,
-		IcecoldBookCount = 300049,
-		RageSquidCount = 300050,
-		SquidWardenCount = 300051,
-		InkBlobCount = 300052,
-	},
+	-- flimsy task
 }
 
 GlobalStorage = {

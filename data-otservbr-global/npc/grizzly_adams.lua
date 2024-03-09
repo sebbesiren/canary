@@ -99,7 +99,8 @@ npcType.onSellItem = function(npc, player, itemId, subtype, amount, ignore, name
 	player:sendTextMessage(MESSAGE_INFO_DESCR, string.format("Sold %ix %s for %i gold.", amount, name, totalCost))
 end
 -- On check npc shop message (look item)
-npcType.onCheckItem = function(npc, player, clientId, subType) end
+npcType.onCheckItem = function(npc, player, clientId, subType)
+end
 
 local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
@@ -135,7 +136,7 @@ local function greetCallback(npc, creature)
 	if player:getStorageValue(Storage.KillingInTheNameOf.QuestLogEntry) ~= 0 then
 		npcHandler:setMessage(MESSAGE_GREET, "Hi there, do you want to to {join} the 'Paw and Fur - Hunting Elite'?")
 	elseif
-		player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) < 0 and player:getStorageValue(POINTSSTORAGE) >= 10 and player:getLevel() >= 6 -- to Huntsman Rank
+	player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) < 0 and player:getStorageValue(POINTSSTORAGE) >= 10 and player:getLevel() >= 6 -- to Huntsman Rank
 		or player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) == 0 and player:getStorageValue(POINTSSTORAGE) >= 20 and player:getLevel() >= 6 -- to Ranger Rank
 		or player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) == 2 and player:getStorageValue(POINTSSTORAGE) >= 40 and player:getLevel() >= 50 -- to Big Game Hunter Rank
 		or player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) == 4 and player:getStorageValue(POINTSSTORAGE) >= 70 and player:getLevel() >= 80 -- to Trophy Hunter Rank
@@ -285,8 +286,11 @@ local tier = {
 			"asuras",
 			"true asuras",
 			"secret library",
+			"court of winter",
+			"court of summer",
+			"flimsy"
 		},
-		withsName = { "hydras", "serpent spawns", "medusae", "behemoths", "sea serpents", "hellhounds", "ghastly dragons", "undead dragons", "drakens", "destroyers", "ebb and flow", "claustrophobic inferno", "rotten wasteland", "furious crater", "sparkling pools", "monster graveyard", "crystal enigma" },
+		withsName = { "hydras", "serpent spawns", "medusae", "behemoths", "sea serpents", "hellhounds", "ghastly dragons", "undead dragons", "drakens", "destroyers", "ebb and flow", "claustrophobic inferno", "rotten wasteland", "furious crater", "sparkling pools", "monster graveyard", "crystal enigma", "court of winter", "court of summer", "flimsy" },
 	},
 }
 local messageStartTask = {
@@ -342,9 +346,12 @@ local messageStartTask = {
 	["sparkling pools"] = "Go to Gnomprona and slay enemies in the Sparkling Pools. Are you in?",
 	["monster graveyard"] = "Go to Gnomprona and slay enemies in the Monster Graveyard. Are you in?",
 	["crystal enigma"] = "Go to Gnomprona and slay enemies in the Crystal Enigma. Are you in?",
-	["asuras"] = "Go to Gnomprona and slay enemies in the Crystal Enigma. Are you in?",
-	["true asuras"] = "Go to Gnomprona and slay enemies in the Crystal Enigma. Are you in?",
-	["secret library"] = "Go to Gnomprona and slay enemies in the Crystal Enigma. Are you in?",
+	["asuras"] = "Slay Asuras. Are you in?",
+	["true asuras"] = "Slay True Asuras. Are you in?",
+	["secret library"] = "Slay enemies in the secret library. Are you in?",
+	["court of winter"] = "Slay elves in Court of Winter. Are you in?",
+	["court of summer"] = "Slay elves in Court of Summer. Are you in?",
+	["flimsy"] = "Slay Flimsys. Are you in?"
 }
 local messageStartTaskAlt = {
 	["crocodile"] = messageStartTask["crocodiles"],
@@ -398,6 +405,9 @@ local messageStartTaskAlt = {
 	["asuras"] = messageStartTask["asuras"],
 	["true asuras"] = messageStartTask["true asuras"],
 	["secret library"] = messageStartTask["secret library"],
+	["court of winter"] = messageStartTask["court of winter"],
+	["court of summer"] = messageStartTask["court of summer"],
+	["flimsy"] = messageStartTask["flimsy"]
 }
 local function checkX(npc, player, d, message)
 	for m = 1, #tasks.GrizzlyAdams do
@@ -453,6 +463,22 @@ local function checkZ(npc, player, message)
 		end
 	end
 end
+
+local function getKillCount(player, taskId)
+	if tasks.GrizzlyAdams[taskId].custom then
+		return player:kv():scoped("killing-in-the-name-of"):get(taskId .. "-count") or 0
+	end
+
+	return player:getStorageValue(KillCounter + taskId)
+end
+
+local function resetKillCount(player, taskId)
+	if tasks.GrizzlyAdams[taskId].custom then
+		return player:kv():scoped("killing-in-the-name-of"):set(taskId .. "-count", 0)
+	end
+	return player:setStorageValue(KillCounter + taskId, 0)
+end
+
 local function creatureSayCallback(npc, creature, type, message)
 	local player = Player(creature)
 	local playerId = player:getId()
@@ -485,7 +511,7 @@ local function creatureSayCallback(npc, creature, type, message)
 			return true
 		end
 		if
-			player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) < 0 and player:getStorageValue(POINTSSTORAGE) >= 10 and player:getLevel() >= 6 -- to Huntsman Rank
+		player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) < 0 and player:getStorageValue(POINTSSTORAGE) >= 10 and player:getLevel() >= 6 -- to Huntsman Rank
 			or player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) == 0 and player:getStorageValue(POINTSSTORAGE) >= 20 and player:getLevel() >= 6 -- to Ranger Rank
 			or player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) == 2 and player:getStorageValue(POINTSSTORAGE) >= 40 and player:getLevel() >= 50 -- to Big Game Hunter Rank
 			or player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) == 4 and player:getStorageValue(POINTSSTORAGE) >= 70 and player:getLevel() >= 80 -- to Trophy Hunter Rank
@@ -504,7 +530,8 @@ local function creatureSayCallback(npc, creature, type, message)
 			local id, reward
 			for i = 1, #started do
 				id = started[i]
-				if player:getStorageValue(KillCounter + id) >= tasks.GrizzlyAdams[id].killsRequired then
+
+				if getKillCount(player, id) >= tasks.GrizzlyAdams[id].killsRequired then
 					finished = finished + 1
 					for j = 1, #tasks.GrizzlyAdams[id].rewards do
 						reward = tasks.GrizzlyAdams[id].rewards[j]
@@ -581,7 +608,8 @@ local function creatureSayCallback(npc, creature, type, message)
 					else
 						player:setStorageValue(KILLSSTORAGE_BASE + id, player:getStorageValue(KILLSSTORAGE_BASE + id) + 1)
 					end
-					player:setStorageValue(KillCounter, 0)
+
+					resetKillCount(player, id)
 				end
 			end
 		end
@@ -660,7 +688,7 @@ local function creatureSayCallback(npc, creature, type, message)
 				"Alright, what would you like to hunt? You can try {hydras}, {serpent spawns}, {medusae}, {behemoths}, {sea serpents}, ...",
 				"as well as {hellhounds}, {ghastly dragons}, {undead dragons}, {draken},  and {destroyers}. ...",
 				"You can also try one of our custom tasks: {ebb and flow}, {claustrophobic inferno}, {rotten wasteland}, {furious crater}, {sparkling pools}, {monster graveyard}, {crystal enigma} ...",
-				"{asuras}, {true asuras}, {secret library}",
+				"{asuras}, {true asuras}, {secret library}, {court of winter}, {court of summer}, {flimsy}",
 			}, npc, creature)
 		else
 			npcHandler:say({
@@ -668,7 +696,7 @@ local function creatureSayCallback(npc, creature, type, message)
 				"You can try {hydras}, {serpent spawns}, {medusae}, {behemoths}, {sea serpents}, ...",
 				"as well as {hellhounds}, {ghastly dragons}, {undead dragons}, {draken} and {destroyers} or maybe {demons}. ...",
 				"You can also try one of our custom tasks: {ebb and flow}, {claustrophobic inferno}, {rotten wasteland}, {furious crater}, {sparkling pools}, {monster graveyard}, {crystal enigma} ...",
-				"{asuras}, {true asuras}, {secret library}",
+				"{asuras}, {true asuras}, {secret library}, {court of winter}, {court of summer}, {flimsy}",
 			}, npc, creature)
 		end
 		npcHandler:setTopic(playerId, 0)
@@ -735,7 +763,7 @@ local function creatureSayCallback(npc, creature, type, message)
 		checkY(npc, player, message)
 	elseif message:lower() == "yes" and npcHandler:getTopic(playerId) == 1 then
 		player:setStorageValue(QUESTSTORAGE_BASE + choose[playerId], 1)
-		player:setStorageValue(KillCounter + choose[playerId], 0)
+		resetKillCount(player, choose[playerId])
 		if #tasks.GrizzlyAdams[choose[playerId]].creatures > 1 then
 			if tasks.GrizzlyAdams[choose[playerId]].raceName == "Apes" then
 				player:setStorageValue(Storage.Quest.U8_5.KillingInTheNameOf.AltKillCount.KongraCount, 0)
@@ -770,11 +798,6 @@ local function creatureSayCallback(npc, creature, type, message)
 				player:setStorageValue(Storage.Quest.U8_5.KillingInTheNameOf.AltKillCount.DrakenEliteCount, 0)
 				player:setStorageValue(Storage.Quest.U8_5.KillingInTheNameOf.AltKillCount.DrakenSpellweaverCount, 0)
 				player:setStorageValue(Storage.Quest.U8_5.KillingInTheNameOf.AltKillCount.DrakenWarmasterCount, 0)
-			elseif tasks.GrizzlyAdams[choose[playerId]].custom == true then
-				local creatureStorageIds = tasks.GrizzlyAdams[choose[playerId]].creatureStorage
-				for _, storageId in ipairs(creatureStorageIds) do
-					player:setStorageValue(storageId, 0)
-				end
 			end
 		end
 
@@ -799,7 +822,7 @@ local function creatureSayCallback(npc, creature, type, message)
 			for i = 1, #started do
 				id = started[i]
 				t = t + 1
-				text = text .. "Task name: " .. tasks.GrizzlyAdams[id].raceName .. ". " .. "Current kills: " .. player:getStorageValue(KillCounter + id) .. ".\n"
+				text = text .. "Task name: " .. tasks.GrizzlyAdams[id].raceName .. ". " .. "Current kills: " .. getKillCount(player, id) .. ".\n"
 			end
 			npcHandler:say({ "The status of your current tasks is:\n" .. text }, npc, creature)
 		else
@@ -949,8 +972,8 @@ local function creatureSayCallback(npc, creature, type, message)
 		end
 	elseif (getTaskByName(message)) and (npcHandler:getTopic(playerId) == 2) and (table.contains(getPlayerStartedTasks(creature), getTaskByName(message))) then
 		local task = getTaskByName(message)
-		if player:getStorageValue(KillCounter + task) > 0 then
-			npcHandler:say("You currently killed " .. player:getStorageValue(KillCounter + task) .. "/" .. tasks.GrizzlyAdams[task].killsRequired .. " " .. tasks.GrizzlyAdams[task].raceName .. "." .. " " .. "Canceling this task will restart the count." .. " " .. "Are you sure you want to cancel this task?", npc, creature)
+		if getKillCount(player, task) > 0 then
+			npcHandler:say("You currently killed " .. getKillCount(player, task) .. "/" .. tasks.GrizzlyAdams[task].killsRequired .. " " .. tasks.GrizzlyAdams[task].raceName .. "." .. " " .. "Canceling this task will restart the count." .. " " .. "Are you sure you want to cancel this task?", npc, creature)
 		else
 			npcHandler:say("Are you sure you want to cancel this task?", npc, creature)
 		end
@@ -958,8 +981,8 @@ local function creatureSayCallback(npc, creature, type, message)
 		cancel[playerId] = task
 	elseif (getTaskByName(message)) and (npcHandler:getTopic(playerId) == 1) and (table.contains(getPlayerStartedTasks(creature), getTaskByName(message))) then
 		local task = getTaskByName(message)
-		if player:getStorageValue(KillCounter + task) > 0 then
-			npcHandler:say("You currently killed " .. player:getStorageValue(KillCounter + task) .. "/" .. tasks.GrizzlyAdams[task].killsRequired .. " " .. tasks.GrizzlyAdams[task].raceName .. ".", npc, creature)
+		if getKillCount(player, task) > 0 then
+			npcHandler:say("You currently killed " .. getKillCount(player, task) .. "/" .. tasks.GrizzlyAdams[task].killsRequired .. " " .. tasks.GrizzlyAdams[task].raceName .. ".", npc, creature)
 		else
 			npcHandler:say("You currently killed 0/" .. tasks.GrizzlyAdams[task].killsRequired .. " " .. tasks.GrizzlyAdams[task].raceName .. ".", npc, creature)
 		end
@@ -967,7 +990,7 @@ local function creatureSayCallback(npc, creature, type, message)
 	elseif message:lower() == "yes" and npcHandler:getTopic(playerId) == 3 then
 		player:setStorageValue(QUESTSTORAGE_BASE + cancel[playerId], -1)
 		player:setStorageValue(KILLSSTORAGE_BASE + cancel[playerId], player:getStorageValue(KILLSSTORAGE_BASE + cancel[playerId]) - 1)
-		player:setStorageValue(KillCounter + cancel[playerId], 0)
+		resetKillCount(player, cancel[playerId])
 		npcHandler:say("You have canceled the task " .. (tasks.GrizzlyAdams[cancel[playerId]].name or tasks.GrizzlyAdams[cancel[playerId]].raceName) .. ".", npc, creature)
 		npcHandler:setTopic(playerId, 0)
 	elseif table.contains({ "points", "rank" }, message:lower()) then
