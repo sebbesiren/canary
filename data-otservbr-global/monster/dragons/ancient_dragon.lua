@@ -7,7 +7,7 @@ monster.health = 10000
 monster.maxHealth = monster.health
 
 monster.description = "an Ancient Dragon"
-monster.experience = monster.health * 1.55
+monster.experience = monster.health * 1.4
 monster.outfit = {
 	lookType = 927,
 	lookHead = 0,

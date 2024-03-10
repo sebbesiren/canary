@@ -6,7 +6,7 @@ monster.health = 8000
 monster.maxHealth = monster.health
 
 monster.description = "an Orc Pyromancer"
-monster.experience = monster.health * 1.55
+monster.experience = monster.health * 1.4
 monster.outfit = {
 	lookType = 6,
 	lookHead = 0,
