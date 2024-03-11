@@ -7051,7 +7051,7 @@
 		<attribute key="weight" value="1900"/>
 		<attribute key="script" value="moveevent;weapon">
 			<attribute key="level" value="6"/>
-			<attribute key="mana" value="2"/>
+			<attribute key="mana" value="50"/>
 			<attribute key="fromDamage" value="8"/>
 			<attribute key="toDamage" value="18"/>
 			<attribute key="weaponType" value="wand"/>
@@ -7177,7 +7177,7 @@
 		<attribute key="weight" value="1900"/>
 		<attribute key="script" value="moveevent;weapon">
 			<attribute key="level" value="6"/>
-			<attribute key="mana" value="1"/>
+			<attribute key="mana" value="50"/>
 			<attribute key="fromDamage" value="8"/>
 			<attribute key="toDamage" value="18"/>
 			<attribute key="weaponType" value="wand"/>
