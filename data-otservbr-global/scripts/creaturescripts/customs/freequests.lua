@@ -199,6 +199,7 @@ local questTable = {
 	{ storage = Storage.Quest.U8_54.TheNewFrontier.Mission10[1], storageValue = 2 },
 	{ storage = Storage.Quest.U8_54.TheNewFrontier.Mission10.MagicCarpetDoor, storageValue = 1 },
 	{ storage = Storage.Quest.U8_54.TheNewFrontier.TomeofKnowledge, storageValue = 12 },
+	{ storage = Storage.Quest.U8_54.TheNewFrontier.ZaoPalaceDoors, storageValue = 1 },
 	{ storage = Storage.Quest.U8_54.TheNewFrontier.Mission02.Beaver1, storageValue = 1 },
 	{ storage = Storage.Quest.U8_54.TheNewFrontier.Mission02.Beaver2, storageValue = 1 },
 	{ storage = Storage.Quest.U8_54.TheNewFrontier.Mission02.Beaver3, storageValue = 1 },
