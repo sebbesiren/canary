@@ -45,6 +45,7 @@ function onlineCoinsEvent.onThink(interval)
 				local coinsMath = math.floor(coins)
 				player:addTransferableCoinsBalance(coinsMath, true)
 				player:sendTextMessage(MESSAGE_STATUS_SMALL, string.format("Congratulations %s!\z You have received %d %s for being online.", player:getName(), coinsMath, "tibia coins"))
+
 				player:setStorageValue(config.storage, (coins - coinsMath) * 10000000)
 			end
 		end
