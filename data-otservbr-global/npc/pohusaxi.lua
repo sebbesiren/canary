@@ -1107,6 +1107,8 @@ npcConfig.shop = {
 	{ itemName = "orichalcum pearl", clientId = 5021, sell = 40 },
 	{ itemName = "slime heart", clientId = 21194, sell = 160 },
 	{ itemName = "head", clientId = 33937, sell = 3500 },
+	{ itemName = "dragon slayer", clientId = 7402, sell = 15000 },
+	{ itemName = "butterfly ring", clientId = 25698, sell = 2000 },
 }
 -- On buy npc shop message
 npcType.onBuyItem = function(npc, player, itemId, subType, amount, ignore, inBackpacks, totalCost)
