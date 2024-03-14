@@ -78,7 +78,7 @@ for _, area in ipairs(combatConfig.areas) do
 		if n ~= 0 then
 			local v = getThingfromPos({ x = pos.x, y = pos.y, z = pos.z, stackpos = i }).uid
 			while v ~= 0 do
-				if isCreature(v) == true then
+				if Creature(v) == true then
 					table.insert(creatureTable, v)
 					if n == #creatureTable then
 						break
@@ -113,7 +113,7 @@ for _, area in ipairs(combatConfig.areas) do
 		if n ~= 0 then
 			local v = getThingfromPos({ x = pos.x, y = pos.y, z = pos.z, stackpos = i }).uid
 			while v ~= 0 do
-				if isCreature(v) == true then
+				if Creature(v) == true then
 					table.insert(creatureTable, v)
 					if n == #creatureTable then
 						break
