@@ -2,7 +2,11 @@ local mType = Game.createMonsterType("Hellflayer")
 local monster = {}
 
 monster.description = "a hellflayer"
+<<<<<<< HEAD
 monster.experience = 17500
+=======
+monster.experience = 11720
+>>>>>>> fix-twohanders
 monster.outfit = {
 	lookType = 856,
 	lookHead = 0,

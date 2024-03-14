@@ -2,7 +2,11 @@ local mType = Game.createMonsterType("Fury")
 local monster = {}
 
 monster.description = "a fury"
+<<<<<<< HEAD
 monster.experience = 4800
+=======
+monster.experience = 4000
+>>>>>>> fix-twohanders
 monster.outfit = {
 	lookType = 149,
 	lookHead = 94,

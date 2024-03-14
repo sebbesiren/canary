@@ -2,7 +2,11 @@ local mType = Game.createMonsterType("Ferumbras Mortal Shell")
 local monster = {}
 
 monster.description = "Ferumbras Mortal Shell"
+<<<<<<< HEAD
 monster.experience = 300000 * 4
+=======
+monster.experience = 500000
+>>>>>>> fix-twohanders
 monster.outfit = {
 	lookType = 229,
 	lookHead = 0,

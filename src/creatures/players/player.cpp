@@ -3247,7 +3247,7 @@ ReturnValue Player::queryAdd(int32_t index, const std::shared_ptr<Thing> &thing,
 					}
 				}
 			} else if (slotPosition & SLOTP_TWO_HAND) {
-				ret = RETURNVALUE_PUTTHISOBJECTINYOURHAND;
+				ret = RETURNVALUE_CANNOTBEDRESSED;
 			} else if (inventory[CONST_SLOT_LEFT]) {
 				std::shared_ptr<Item> leftItem = inventory[CONST_SLOT_LEFT];
 				WeaponType_t type = item->getWeaponType(), leftType = leftItem->getWeaponType();
