@@ -3577,8 +3577,6 @@ std::shared_ptr<Cylinder> Player::queryDestination(int32_t &index, const std::sh
 
 		return getPlayer();
 	}
-	g_logger().info("escaped slot loop");
-
 
 	std::shared_ptr<Thing> destThing = getThing(index);
 	if (destThing) {
