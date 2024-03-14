@@ -3247,9 +3247,7 @@ ReturnValue Player::queryAdd(int32_t index, const std::shared_ptr<Thing> &thing,
 					}
 				}
 			} else if (slotPosition & SLOTP_TWO_HAND) {
-				if (inventory[CONST_SLOT_LEFT] && inventory[CONST_SLOT_LEFT] != item) {
-					ret = RETURNVALUE_BOTHHANDSNEEDTOBEFREE;
-				}
+				ret = RETURNVALUE_PUTTHISOBJECTINYOURHAND;
 			} else if (inventory[CONST_SLOT_LEFT]) {
 				std::shared_ptr<Item> leftItem = inventory[CONST_SLOT_LEFT];
 				WeaponType_t type = item->getWeaponType(), leftType = leftItem->getWeaponType();
@@ -3286,7 +3284,7 @@ ReturnValue Player::queryAdd(int32_t index, const std::shared_ptr<Thing> &thing,
 					ret = RETURNVALUE_NOERROR;
 				}
 			} else if (slotPosition & SLOTP_TWO_HAND) {
-				if (inventory[CONST_SLOT_RIGHT] && inventory[CONST_SLOT_RIGHT] != item) {
+				if (inventory[CONST_SLOT_RIGHT]) {
 					ret = RETURNVALUE_BOTHHANDSNEEDTOBEFREE;
 				} else {
 					ret = RETURNVALUE_NOERROR;
