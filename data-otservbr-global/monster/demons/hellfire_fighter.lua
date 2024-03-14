@@ -2,11 +2,7 @@ local mType = Game.createMonsterType("Hellfire Fighter")
 local monster = {}
 
 monster.description = "a hellfire fighter"
-<<<<<<< HEAD
 monster.experience = 3500
-=======
-monster.experience = 3400
->>>>>>> fix-twohanders
 monster.outfit = {
 	lookType = 243,
 	lookHead = 0,
