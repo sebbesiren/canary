@@ -261,7 +261,7 @@ function spell.onCastSpell(creature, var)
 	end
 
 	if combatConfig.message then
-		creature:say(combatConfig.message, TALKTYPE_ORANGE_2)
+		creature:say(combatConfig.message, TALKTYPE_MONSTER_SAY)
 	end
 
 	local currentDelay = 0
