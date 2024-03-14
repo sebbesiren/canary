@@ -3227,6 +3227,7 @@ ReturnValue Player::queryAdd(int32_t index, const std::shared_ptr<Thing> &thing,
 
 		case CONST_SLOT_RIGHT: {
 			if (slotPosition & SLOTP_RIGHT) {
+
 				if (item->getWeaponType() != WEAPON_SHIELD && !item->isQuiver()) {
 					ret = RETURNVALUE_CANNOTBEDRESSED;
 				} else {
@@ -3248,8 +3249,6 @@ ReturnValue Player::queryAdd(int32_t index, const std::shared_ptr<Thing> &thing,
 			} else if (slotPosition & SLOTP_TWO_HAND) {
 				if (inventory[CONST_SLOT_LEFT] && inventory[CONST_SLOT_LEFT] != item) {
 					ret = RETURNVALUE_BOTHHANDSNEEDTOBEFREE;
-				} else {
-					ret = RETURNVALUE_NOERROR;
 				}
 			} else if (inventory[CONST_SLOT_LEFT]) {
 				std::shared_ptr<Item> leftItem = inventory[CONST_SLOT_LEFT];
@@ -3486,8 +3485,10 @@ std::shared_ptr<Cylinder> Player::queryDestination(int32_t &index, const std::sh
 		std::vector<std::shared_ptr<Container>> containers;
 
 		for (uint32_t slotIndex = CONST_SLOT_FIRST; slotIndex <= CONST_SLOT_AMMO; ++slotIndex) {
+
 			std::shared_ptr<Item> inventoryItem = inventory[slotIndex];
 			if (inventoryItem) {
+
 				if (inventoryItem == tradeItem) {
 					continue;
 				}
@@ -3512,7 +3513,7 @@ std::shared_ptr<Cylinder> Player::queryDestination(int32_t &index, const std::sh
 				} else if (std::shared_ptr<Container> subContainer = inventoryItem->getContainer()) {
 					containers.push_back(subContainer);
 				}
-			} else if (queryAdd(slotIndex, item, item->getItemCount(), flags) == RETURNVALUE_NOERROR) { // empty slot
+			} else if (queryAdd(slotIndex, item, item->getItemCount(), flags) == RETURNVALUE_NOERROR) { // empty slot THIS wrongly moves to right hand
 				index = slotIndex;
 				*destItem = nullptr;
 				return getPlayer();
@@ -3578,6 +3579,8 @@ std::shared_ptr<Cylinder> Player::queryDestination(int32_t &index, const std::sh
 
 		return getPlayer();
 	}
+	g_logger().info("escaped slot loop");
+
 
 	std::shared_ptr<Thing> destThing = getThing(index);
 	if (destThing) {
