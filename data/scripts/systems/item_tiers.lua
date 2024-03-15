@@ -126,7 +126,7 @@ for classificationId, classificationTable in ipairs(itemTierClassifications) do
 			TierId = tierId,
 			Core = tierTable.core,
 			RegularPrice = tierTable.regular,
-			ConvergenceFustionPrice = tierTable.convergence and tierTable.convergence.fusion.price or 0,
+			ConvergenceFusionPrice = tierTable.convergence and tierTable.convergence.fusion.price or 0,
 			ConvergenceTransferPrice = tierTable.convergence and tierTable.convergence.transfer.price or 0,
 		})
 	end

@@ -7118,6 +7118,8 @@ void Player::forgeFuseItems(ForgeAction_t actionType, uint16_t firstItemId, uint
 		return;
 	}
 
+	g_logger().debug("Fusion with convergence: {} ", convergence);
+
 	auto configKey = convergence ? FORGE_CONVERGENCE_FUSION_DUST_COST : FORGE_FUSION_DUST_COST;
 	auto dustCost = static_cast<uint64_t>(g_configManager().getNumber(configKey, __FUNCTION__));
 	if (convergence) {
@@ -7126,19 +7128,36 @@ void Player::forgeFuseItems(ForgeAction_t actionType, uint16_t firstItemId, uint
 		setForgeDusts(getForgeDusts() - dustCost);
 
 		uint64_t cost = 0;
-		for (const auto* itemClassification : g_game().getItemsClassifications()) {
+		for (const auto &itemClassification : g_game().getItemsClassifications()) {
 			if (itemClassification->id != firstForgingItem->getClassification()) {
 				continue;
 			}
-
-			for (const auto &[mapTier, mapPrice] : itemClassification->tiers) {
-				if (mapTier == firstForgingItem->getTier()) {
-					cost = mapPrice.convergenceFusionPrice;
-					break;
-				}
+			if (!itemClassification->tiers.contains(firstForgingItem->getTier() + 1)) {
+				g_logger().error("[{}] Failed to find tier {} for item {} in classification {}", __FUNCTION__, firstForgingItem->getTier(), firstForgingItem->getClassification(), itemClassification->id);
+				sendForgeError(RETURNVALUE_CONTACTADMINISTRATOR);
+				break;
 			}
+			auto tierPriecs = itemClassification->tiers.at(firstForgingItem->getTier() + 1);
+			cost = tierPriecs.convergenceFusionPrice;
+			g_logger().debug("Convergence fusion price {} ", cost);
+
 			break;
 		}
+//		for (const auto* itemClassification : g_game().getItemsClassifications()) {
+//			if (itemClassification->id != firstForgingItem->getClassification()) {
+//				continue;
+//			}
+//
+//			for (const auto &[mapTier, mapPrice] : itemClassification->tiers) {
+//				if (mapTier == firstForgingItem->getTier()) {
+//					g_logger().debug("Convergence fusion price {} ", mapPrice.convergenceFusionPrice);
+//
+//					cost = mapPrice.convergenceFusionPrice;
+//					break;
+//				}
+//			}
+//			break;
+//		}
 		if (!g_game().removeMoney(static_self_cast<Player>(), cost, 0, true)) {
 			g_logger().error("[{}] Failed to remove {} gold from player with name {}", __FUNCTION__, cost, getName());
 			sendForgeError(RETURNVALUE_CONTACTADMINISTRATOR);
