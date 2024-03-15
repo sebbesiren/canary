@@ -7143,21 +7143,21 @@ void Player::forgeFuseItems(ForgeAction_t actionType, uint16_t firstItemId, uint
 
 			break;
 		}
-//		for (const auto* itemClassification : g_game().getItemsClassifications()) {
-//			if (itemClassification->id != firstForgingItem->getClassification()) {
-//				continue;
-//			}
-//
-//			for (const auto &[mapTier, mapPrice] : itemClassification->tiers) {
-//				if (mapTier == firstForgingItem->getTier()) {
-//					g_logger().debug("Convergence fusion price {} ", mapPrice.convergenceFusionPrice);
-//
-//					cost = mapPrice.convergenceFusionPrice;
-//					break;
-//				}
-//			}
-//			break;
-//		}
+		//		for (const auto* itemClassification : g_game().getItemsClassifications()) {
+		//			if (itemClassification->id != firstForgingItem->getClassification()) {
+		//				continue;
+		//			}
+		//
+		//			for (const auto &[mapTier, mapPrice] : itemClassification->tiers) {
+		//				if (mapTier == firstForgingItem->getTier()) {
+		//					g_logger().debug("Convergence fusion price {} ", mapPrice.convergenceFusionPrice);
+		//
+		//					cost = mapPrice.convergenceFusionPrice;
+		//					break;
+		//				}
+		//			}
+		//			break;
+		//		}
 		if (!g_game().removeMoney(static_self_cast<Player>(), cost, 0, true)) {
 			g_logger().error("[{}] Failed to remove {} gold from player with name {}", __FUNCTION__, cost, getName());
 			sendForgeError(RETURNVALUE_CONTACTADMINISTRATOR);
