@@ -7,7 +7,7 @@ local hazard = Hazard.new({
 	crit = true,
 	dodge = true,
 	damageBoost = true,
-	defenseBoost = true,
+	defenseBoost = false,
 })
 
 hazard:register()
