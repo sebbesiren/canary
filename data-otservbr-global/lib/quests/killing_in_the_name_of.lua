@@ -1163,7 +1163,7 @@ tasks = {
 				{ type = "item", value = { 3043, 300 } },
 				{ type = "points", value = { 10 } },
 			},
-		}
+		},
 	},
 }
 
