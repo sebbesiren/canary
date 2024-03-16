@@ -2322,6 +2322,22 @@ if not Quests then
 						[1] = "You succesfully killed all enemies. Return to Grizzly Adams for a reward.",
 					},
 				},
+				[101] = {
+					name = "Custom Task: Grimeleech",
+					storageId = 65000 + 56, -- KILLSSTORAGE_BASE + id
+					missionId = 10612, -- For mission tracking
+					startValue = 0,
+					endValue = 2,
+					states = {
+						[0] = function(player)
+							local taskId = 56
+							local task = tasks.GrizzlyAdams[taskId]
+							local killCount = player:kv():scoped("killing-in-the-name-of"):get(taskId .. "-count") or 0
+							return string.format("%s: You have killed %d of %d enemies so far.", task.raceName, killCount, task.killsRequired)
+						end,
+						[1] = "You succesfully killed all enemies. Return to Grizzly Adams for a reward.",
+					},
+				},
 			},
 		},
 		[12] = {

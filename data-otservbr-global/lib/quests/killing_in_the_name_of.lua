@@ -1148,6 +1148,22 @@ tasks = {
 				{ type = "points", value = { 10 } },
 			},
 		},
+		[56] = {
+			killsRequired = 3000,
+			raceName = "Grimeleech",
+			custom = true,
+			level = { 130, 9999 },
+			repeatable = true,
+			premium = true,
+			creatures = {
+				"grimeleech",
+			},
+			rewards = {
+				{ type = "exp", value = { 36000000 } },
+				{ type = "item", value = { 3043, 300 } },
+				{ type = "points", value = { 10 } },
+			},
+		}
 	},
 }
 

@@ -99,7 +99,8 @@ npcType.onSellItem = function(npc, player, itemId, subtype, amount, ignore, name
 	player:sendTextMessage(MESSAGE_TRADE, string.format("Sold %ix %s for %i gold.", amount, name, totalCost))
 end
 -- On check npc shop message (look item)
-npcType.onCheckItem = function(npc, player, clientId, subType) end
+npcType.onCheckItem = function(npc, player, clientId, subType)
+end
 
 local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
@@ -135,7 +136,7 @@ local function greetCallback(npc, creature)
 	if player:getStorageValue(Storage.KillingInTheNameOf.QuestLogEntry) ~= 0 then
 		npcHandler:setMessage(MESSAGE_GREET, "Hi there, do you want to to {join} the 'Paw and Fur - Hunting Elite'?")
 	elseif
-		player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) < 0 and player:getStorageValue(POINTSSTORAGE) >= 10 and player:getLevel() >= 6 -- to Huntsman Rank
+	player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) < 0 and player:getStorageValue(POINTSSTORAGE) >= 10 and player:getLevel() >= 6 -- to Huntsman Rank
 		or player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) == 0 and player:getStorageValue(POINTSSTORAGE) >= 20 and player:getLevel() >= 6 -- to Ranger Rank
 		or player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) == 2 and player:getStorageValue(POINTSSTORAGE) >= 40 and player:getLevel() >= 50 -- to Big Game Hunter Rank
 		or player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) == 4 and player:getStorageValue(POINTSSTORAGE) >= 70 and player:getLevel() >= 80 -- to Trophy Hunter Rank
@@ -408,6 +409,8 @@ local messageStartTaskAlt = {
 	["court of summer"] = messageStartTask["court of summer"],
 	["flimsy"] = messageStartTask["flimsy"],
 }
+local customTasksSay = "You can also try one of our custom tasks: {ebb and flow}, {claustrophobic inferno}, {rotten wasteland}, {furious crater}, {sparkling pools}, {monster graveyard}, {crystal enigma}, {asuras}, {true asuras}, {secret library}, {court of winter}, {court of summer}, {flimsy}, {grimeleech}"
+
 local function checkX(npc, player, d, message)
 	for m = 1, #tasks.GrizzlyAdams do
 		if tasks.GrizzlyAdams[m].bossName then
@@ -510,7 +513,7 @@ local function creatureSayCallback(npc, creature, type, message)
 			return true
 		end
 		if
-			player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) < 0 and player:getStorageValue(POINTSSTORAGE) >= 10 and player:getLevel() >= 6 -- to Huntsman Rank
+		player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) < 0 and player:getStorageValue(POINTSSTORAGE) >= 10 and player:getLevel() >= 6 -- to Huntsman Rank
 			or player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) == 0 and player:getStorageValue(POINTSSTORAGE) >= 20 and player:getLevel() >= 6 -- to Ranger Rank
 			or player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) == 2 and player:getStorageValue(POINTSSTORAGE) >= 40 and player:getLevel() >= 50 -- to Big Game Hunter Rank
 			or player:getStorageValue(Storage.KillingInTheNameOf.PawAndFurRank) == 4 and player:getStorageValue(POINTSSTORAGE) >= 70 and player:getLevel() >= 80 -- to Trophy Hunter Rank
@@ -686,16 +689,14 @@ local function creatureSayCallback(npc, creature, type, message)
 			npcHandler:say({
 				"Alright, what would you like to hunt? You can try {hydras}, {serpent spawns}, {medusae}, {behemoths}, {sea serpents}, ...",
 				"as well as {hellhounds}, {ghastly dragons}, {undead dragons}, {draken},  and {destroyers}. ...",
-				"You can also try one of our custom tasks: {ebb and flow}, {claustrophobic inferno}, {rotten wasteland}, {furious crater}, {sparkling pools}, {monster graveyard}, {crystal enigma} ...",
-				"{asuras}, {true asuras}, {secret library}, {court of winter}, {court of summer}, {flimsy}",
+				customTasksSay
 			}, npc, creature)
 		else
 			npcHandler:say({
 				"Alright, what would you like to hunt? Be aware you won't gain any paw and fur points as you already achieved the highest rank, but you'll get an experience reward and can face bosses. ...",
 				"You can try {hydras}, {serpent spawns}, {medusae}, {behemoths}, {sea serpents}, ...",
 				"as well as {hellhounds}, {ghastly dragons}, {undead dragons}, {draken} and {destroyers} or maybe {demons}. ...",
-				"You can also try one of our custom tasks: {ebb and flow}, {claustrophobic inferno}, {rotten wasteland}, {furious crater}, {sparkling pools}, {monster graveyard}, {crystal enigma} ...",
-				"{asuras}, {true asuras}, {secret library}, {court of winter}, {court of summer}, {flimsy}",
+				customTasksSay
 			}, npc, creature)
 		end
 		npcHandler:setTopic(playerId, 0)
