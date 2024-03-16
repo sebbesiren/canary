@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Flimsy Lost Soul")
 local monster = {}
 
 monster.description = "a flimsy lost soul"
-monster.experience = 7500
+monster.experience = 6000
 monster.outfit = {
 	lookType = 1268,
 	lookHead = 0,
