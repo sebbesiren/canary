@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Knight's Apparition")
 local monster = {}
 
 monster.description = "a knight's apparition"
-monster.experience = 28600 * 1.5
+monster.experience = 28600 * 2
 monster.outfit = {
 	lookType = 131,
 	lookHead = 19,
@@ -88,7 +88,7 @@ monster.loot = {
 	{ name = "giant sword", chance = 1720 },
 	{ name = "stone skin amulet", chance = 1500 },
 	{ name = "crown shield", chance = 640 },
-	{ id = 34109, chance = 20 }, -- bag you desire
+	{ id = 34109, chance = 22 }, -- bag you desire
 }
 
 monster.attacks = {

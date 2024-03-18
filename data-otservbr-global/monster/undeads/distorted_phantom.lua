@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Distorted Phantom")
 local monster = {}
 
 monster.description = "a distorted phantom"
-monster.experience = 26000 * 1.5
+monster.experience = 26000 * 2
 monster.outfit = {
 	lookType = 1298,
 	lookHead = 113,
@@ -92,7 +92,7 @@ monster.loot = {
 	{ name = "spellbook of warding", chance = 2890 },
 	{ id = 23531, chance = 1930 }, -- ring of green plasma
 	{ name = "glacial rod", chance = 1290 },
-	{ id = 34109, chance = 20 }, -- bag you desire
+	{ id = 34109, chance = 22 }, -- bag you desire
 }
 
 monster.attacks = {

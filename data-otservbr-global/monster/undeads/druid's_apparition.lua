@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Druid's Apparition")
 local monster = {}
 
 monster.description = "a druid's apparition"
-monster.experience = 28600 * 1.5
+monster.experience = 28600 * 2
 monster.outfit = {
 	lookType = 148,
 	lookHead = 114,
@@ -90,7 +90,7 @@ monster.loot = {
 	{ name = "platinum amulet", chance = 1750 },
 	{ name = "glacier robe", chance = 880 },
 	{ id = 23544, chance = 440 }, -- collar of red plasma
-	{ id = 34109, chance = 20 }, -- bag you desire
+	{ id = 34109, chance = 22 }, -- bag you desire
 }
 
 monster.attacks = {

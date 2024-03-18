@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Rotten Golem")
 local monster = {}
 
 monster.description = "a rotten golem"
-monster.experience = 28000 * 1.5
+monster.experience = 28000 * 2
 monster.outfit = {
 	lookType = 1312,
 	lookHead = 0,
@@ -91,7 +91,7 @@ monster.loot = {
 	{ name = "stone skin amulet", chance = 740 },
 	{ name = "terra mantle", chance = 510 },
 	{ name = "rubber cap", chance = 430 },
-	{ id = 34109, chance = 20 }, -- bag you desire
+	{ id = 34109, chance = 22 }, -- bag you desire
 }
 
 monster.attacks = {

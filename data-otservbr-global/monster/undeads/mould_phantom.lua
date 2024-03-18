@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Mould Phantom")
 local monster = {}
 
 monster.description = "a mould phantom"
-monster.experience = 28000 * 1.5
+monster.experience = 28000 * 2
 monster.outfit = {
 	lookType = 1298,
 	lookHead = 106,
@@ -93,7 +93,7 @@ monster.loot = {
 	{ id = 23529, chance = 1040 }, -- ring of blue plasma
 	{ name = "ornate crossbow", chance = 840 },
 	{ name = "crystal crossbow", chance = 620 },
-	{ id = 34109, chance = 20 }, -- bag you desire
+	{ id = 34109, chance = 22 }, -- bag you desire
 }
 
 monster.attacks = {

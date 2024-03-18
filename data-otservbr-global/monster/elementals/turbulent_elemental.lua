@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Turbulent Elemental")
 local monster = {}
 
 monster.description = "a turbulent elemental"
-monster.experience = 28000 * 1.5
+monster.experience = 28000 * 1.8
 monster.outfit = {
 	lookType = 1314,
 	lookHead = 0,
@@ -91,7 +91,7 @@ monster.loot = {
 	{ name = "crystalline armor", chance = 710 },
 	{ name = "rubber cap", chance = 710 },
 	{ name = "stone skin amulet", chance = 470 },
-	{ id = 34109, chance = 20 }, -- bag you desire
+	{ id = 34109, chance = 22 }, -- bag you desire
 }
 
 monster.attacks = {

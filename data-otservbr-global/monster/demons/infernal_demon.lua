@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Infernal Demon")
 local monster = {}
 
 monster.description = "an infernal demon"
-monster.experience = 32000 * 1.5
+monster.experience = 32000 * 2
 monster.outfit = {
 	lookType = 1313,
 	lookHead = 0,
@@ -94,7 +94,7 @@ monster.loot = {
 	{ name = "giant sword", chance = 2860 },
 	{ name = "magma boots", chance = 2290 },
 	{ name = "stone skin amulet", chance = 570 },
-	{ id = 34109, chance = 20 }, -- bag you desire
+	{ id = 34109, chance = 22 }, -- bag you desire
 }
 
 monster.attacks = {

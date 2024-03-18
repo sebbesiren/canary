@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Courage Leech")
 local monster = {}
 
 monster.description = "a courage leech"
-monster.experience = 27000 * 1.5
+monster.experience = 27000 * 1.8
 monster.outfit = {
 	lookType = 1315,
 	lookHead = 0,
@@ -92,7 +92,7 @@ monster.loot = {
 	{ name = "stone skin amulet", chance = 910 },
 	{ name = "nightmare blade", chance = 1190 },
 	{ name = "demonrage sword", chance = 600 },
-	{ id = 34109, chance = 20 }, -- bag you desire
+	{ id = 34109, chance = 22 }, -- bag you desire
 }
 
 monster.attacks = {

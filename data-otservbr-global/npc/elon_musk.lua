@@ -174,7 +174,6 @@ npcConfig.shop = {
 	{ itemName = "spiritthorn ring", clientId = 39179, sell = 1000000 },
 
 	-- Custom T5 Soul Wars
-	{ itemName = "bag you desire", clientId = 34109, sell = 5000000 },
 	{ itemName = "soulbastion", clientId = 34099, sell = 5000000 },
 	{ itemName = "soulbleeder", clientId = 34088, sell = 5000000 },
 	{ itemName = "soulcrusher", clientId = 34086, sell = 5000000 },

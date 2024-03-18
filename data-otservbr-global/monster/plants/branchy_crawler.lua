@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Branchy Crawler")
 local monster = {}
 
 monster.description = "a branchy crawler"
-monster.experience = 27000 * 1.5
+monster.experience = 27000 * 2
 monster.outfit = {
 	lookType = 1297,
 	lookHead = 0,
@@ -94,7 +94,7 @@ monster.loot = {
 	{ name = "twiceslicer", chance = 420 },
 	{ name = "crystalline sword", chance = 390 },
 	{ name = "ruthless axe", chance = 330 },
-	{ id = 34109, chance = 20 }, -- bag you desire
+	{ id = 34109, chance = 22 }, -- bag you desire
 }
 
 monster.attacks = {

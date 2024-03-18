@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Paladin's Apparition")
 local monster = {}
 
 monster.description = "a paladin's apparition"
-monster.experience = 28600 * 1.5
+monster.experience = 28600 * 2
 monster.outfit = {
 	lookType = 129,
 	lookHead = 57,
@@ -91,7 +91,7 @@ monster.loot = {
 	{ name = "stone skin amulet", chance = 1560 },
 	{ id = 23542, chance = 1250 }, -- collar of blue plasma
 	{ id = 23529, chance = 1250 }, -- ring of blue plasma
-	{ id = 34109, chance = 20 }, -- bag you desire
+	{ id = 34109, chance = 22 }, -- bag you desire
 }
 
 monster.attacks = {

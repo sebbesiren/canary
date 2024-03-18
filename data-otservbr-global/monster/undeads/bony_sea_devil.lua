@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Bony Sea Devil")
 local monster = {}
 
 monster.description = "a bony sea devil"
-monster.experience = 24000 * 1.5
+monster.experience = 24000 * 1.8
 monster.outfit = {
 	lookType = 1294,
 	lookHead = 0,
@@ -96,7 +96,7 @@ monster.loot = {
 	{ name = "goblet of gloom", chance = 880 },
 	{ name = "glacier kilt", chance = 880 },
 	{ name = "glacial rod", chance = 1210 },
-	{ id = 34109, chance = 20 }, -- bag you desire
+	{ id = 34109, chance = 22 }, -- bag you desire
 }
 
 monster.attacks = {
