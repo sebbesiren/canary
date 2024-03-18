@@ -1158,7 +1158,7 @@ tasks = {
 			creatures = {
 				"grimeleech",
 				"plaguesmith",
-				"hellflayer"
+				"hellflayer",
 			},
 			rewards = {
 				{ type = "exp", value = { 36000000 } },
