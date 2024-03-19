@@ -186,10 +186,10 @@ GameStore.ExpBoostValues = {
 	[4] = 180,
 	[5] = 360,
 	[6] = 420,
-	[7] = 420,
-	[8] = 420,
-	[9] = 420,
-	[10] = 420,
+	[7] = 440,
+	[8] = 460,
+	[9] = 480,
+	[10] = 500,
 }
 
 GameStore.DefaultValues = {
@@ -729,7 +729,7 @@ function Player.canBuyOffer(self, offer)
 			end
 		elseif offer.type == GameStore.OfferTypes.OFFER_TYPE_EXPBOOST then
 			local remainingBoost = self:getExpBoostStamina()
-			if self:getStorageValue(GameStore.Storages.expBoostCount) == 6 then
+			if self:getStorageValue(GameStore.Storages.expBoostCount) == 10 then
 				disabled = 1
 				disabledReason = "You can't buy XP Boost for today."
 			end
@@ -1744,7 +1744,7 @@ function GameStore.processExpBoostPuchase(player)
 	player:setStoreXpBoost(50)
 	player:setExpBoostStamina(currentExpBoostTime + 3600)
 
-	if player:getStorageValue(GameStore.Storages.expBoostCount) == -1 or expBoostCount == 6 then
+	if player:getStorageValue(GameStore.Storages.expBoostCount) == -1 or expBoostCount == 10 then
 		player:setStorageValue(GameStore.Storages.expBoostCount, 1)
 	end
 
