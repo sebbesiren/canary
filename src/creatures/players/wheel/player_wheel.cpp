@@ -2552,17 +2552,15 @@ std::shared_ptr<Spell> PlayerWheel::getCombatDataSpell(CombatDamage &damage) {
 			setOnThinkTimer(WheelOnThink_t::FOCUS_MASTERY, (OTSYS_TIME() + 12000));
 		}
 
-		if (spell->getWheelOfDestinyUpgraded()) {
-			damage.criticalDamage += spell->getWheelOfDestinyBoost(WheelSpellBoost_t::CRITICAL_DAMAGE, spellGrade) + getSpellBonus(spell->getName(), WheelSpellBoost_t::CRITICAL_DAMAGE);
-			damage.criticalChance += spell->getWheelOfDestinyBoost(WheelSpellBoost_t::CRITICAL_CHANCE, spellGrade) + getSpellBonus(spell->getName(), WheelSpellBoost_t::CRITICAL_CHANCE);
-			damage.damageMultiplier += spell->getWheelOfDestinyBoost(WheelSpellBoost_t::DAMAGE, spellGrade) + getSpellBonus(spell->getName(), WheelSpellBoost_t::DAMAGE);
-			damage.damageReductionMultiplier += spell->getWheelOfDestinyBoost(WheelSpellBoost_t::DAMAGE_REDUCTION, spellGrade) + getSpellBonus(spell->getName(), WheelSpellBoost_t::DAMAGE_REDUCTION);
-			damage.healingMultiplier += spell->getWheelOfDestinyBoost(WheelSpellBoost_t::HEAL, spellGrade) + getSpellBonus(spell->getName(), WheelSpellBoost_t::HEAL);
-			damage.manaLeech += spell->getWheelOfDestinyBoost(WheelSpellBoost_t::MANA_LEECH, spellGrade) + getSpellBonus(spell->getName(), WheelSpellBoost_t::MANA_LEECH);
-			damage.manaLeechChance += spell->getWheelOfDestinyBoost(WheelSpellBoost_t::LIFE_LEECH_CHANCE, spellGrade) + getSpellBonus(spell->getName(), WheelSpellBoost_t::LIFE_LEECH_CHANCE);
-			damage.lifeLeech += spell->getWheelOfDestinyBoost(WheelSpellBoost_t::LIFE_LEECH, spellGrade) + getSpellBonus(spell->getName(), WheelSpellBoost_t::LIFE_LEECH);
-			damage.lifeLeechChance += spell->getWheelOfDestinyBoost(WheelSpellBoost_t::LIFE_LEECH_CHANCE, spellGrade) + getSpellBonus(spell->getName(), WheelSpellBoost_t::LIFE_LEECH_CHANCE);
-		}
+		damage.criticalDamage += spell->getWheelOfDestinyBoost(WheelSpellBoost_t::CRITICAL_DAMAGE, spellGrade) + getSpellBonus(spell->getName(), WheelSpellBoost_t::CRITICAL_DAMAGE);
+		damage.criticalChance += spell->getWheelOfDestinyBoost(WheelSpellBoost_t::CRITICAL_CHANCE, spellGrade) + getSpellBonus(spell->getName(), WheelSpellBoost_t::CRITICAL_CHANCE);
+		damage.damageMultiplier += spell->getWheelOfDestinyBoost(WheelSpellBoost_t::DAMAGE, spellGrade) + getSpellBonus(spell->getName(), WheelSpellBoost_t::DAMAGE);
+		damage.damageReductionMultiplier += spell->getWheelOfDestinyBoost(WheelSpellBoost_t::DAMAGE_REDUCTION, spellGrade) + getSpellBonus(spell->getName(), WheelSpellBoost_t::DAMAGE_REDUCTION);
+		damage.healingMultiplier += spell->getWheelOfDestinyBoost(WheelSpellBoost_t::HEAL, spellGrade) + getSpellBonus(spell->getName(), WheelSpellBoost_t::HEAL);
+		damage.manaLeech += spell->getWheelOfDestinyBoost(WheelSpellBoost_t::MANA_LEECH, spellGrade) + getSpellBonus(spell->getName(), WheelSpellBoost_t::MANA_LEECH);
+		damage.manaLeechChance += spell->getWheelOfDestinyBoost(WheelSpellBoost_t::LIFE_LEECH_CHANCE, spellGrade) + getSpellBonus(spell->getName(), WheelSpellBoost_t::LIFE_LEECH_CHANCE);
+		damage.lifeLeech += spell->getWheelOfDestinyBoost(WheelSpellBoost_t::LIFE_LEECH, spellGrade) + getSpellBonus(spell->getName(), WheelSpellBoost_t::LIFE_LEECH);
+		damage.lifeLeechChance += spell->getWheelOfDestinyBoost(WheelSpellBoost_t::LIFE_LEECH_CHANCE, spellGrade) + getSpellBonus(spell->getName(), WheelSpellBoost_t::LIFE_LEECH_CHANCE);
 	}
 
 	return spell;
