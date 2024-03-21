@@ -14,27 +14,75 @@
 		<colors colordark="#735D10" colorlight="#8B6D05"/>
 		<details displaypriority="6" isseasonal="0" specialevent="0"/>
 	</event>
-	<event name="Boss Loot Event" startdate="3/8/2024" enddate="3/10/2024" script="">
-		<ingame exprate="100" lootrate="100" bosslootrate="200" spawnrate="100" skillrate="100"/>
-		<description description="100% boost to Boss Loot!"/>
+	<event name="Skill Event" startdate="3/22/2024" enddate="3/24/2024" script="">
+		<ingame exprate="100" lootrate="100" bosslootrate="150" spawnrate="100" skillrate="130"/>
+		<description description="50% boost to Boss Loot! 30% boost to skill rate!"/>
 		<colors colordark="#235c00" colorlight="#2d7400"/>
 		<details displaypriority="1" isseasonal="0" specialevent="0"/>
 	</event>
-	<event name="Exp, Spawn, Boss Loot Event" startdate="3/15/2024" enddate="3/17/2024" script="">
-		<ingame exprate="125" lootrate="100" bosslootrate="200" spawnrate="125" skillrate="100"/>
-		<description description="100% boost to Boss Loot rate! 25% boost to Exp and Spawn rate!"/>
+	<event name="Loot event" startdate="3/29/2024" enddate="3/31/2024" script="">
+		<ingame exprate="100" lootrate="130" bosslootrate="150" spawnrate="100" skillrate="100"/>
+		<description description="50% boost to Boss Loot! 30% boost to Loot rate!"/>
 		<colors colordark="#235c00" colorlight="#2d7400"/>
 		<details displaypriority="1" isseasonal="0" specialevent="0"/>
 	</event>
-	<event name="Boss Loot Event" startdate="3/22/2024" enddate="3/24/2024" script="">
-		<ingame exprate="100" lootrate="100" bosslootrate="200" spawnrate="100" skillrate="100"/>
-		<description description="100% boost to Boss Loot!"/>
+	<event name="Exp event" startdate="4/5/2024" enddate="4/7/2024" script="">
+		<ingame exprate="130" lootrate="100" bosslootrate="150" spawnrate="100" skillrate="100"/>
+		<description description="50% boost to Boss Loot! 30% exp rate!"/>
 		<colors colordark="#235c00" colorlight="#2d7400"/>
 		<details displaypriority="1" isseasonal="0" specialevent="0"/>
 	</event>
-	<event name="Loot, Skill and Boss Loot event" startdate="3/29/2024" enddate="3/31/2024" script="">
-		<ingame exprate="100" lootrate="125" bosslootrate="200" spawnrate="100" skillrate="125"/>
-		<description description="100% boost to Boss Loot! 25% boost to Loot and Skill rate!"/>
+	<event name="Spawn event" startdate="4/12/2024" enddate="4/14/2024" script="">
+		<ingame exprate="100" lootrate="100" bosslootrate="150" spawnrate="130" skillrate="100"/>
+		<description description="50% boost to Boss Loot! 30% spawn rate!"/>
+		<colors colordark="#235c00" colorlight="#2d7400"/>
+		<details displaypriority="1" isseasonal="0" specialevent="0"/>
+	</event>
+	<event name="Skill Event" startdate="4/19/2024" enddate="4/21/2024" script="">
+		<ingame exprate="100" lootrate="100" bosslootrate="150" spawnrate="100" skillrate="130"/>
+		<description description="50% boost to Boss Loot! 30% boost to skill rate!"/>
+		<colors colordark="#235c00" colorlight="#2d7400"/>
+		<details displaypriority="1" isseasonal="0" specialevent="0"/>
+	</event>
+	<event name="Loot event" startdate="4/26/2024" enddate="4/28/2024" script="">
+		<ingame exprate="100" lootrate="130" bosslootrate="150" spawnrate="100" skillrate="100"/>
+		<description description="50% boost to Boss Loot! 30% boost to Loot rate!"/>
+		<colors colordark="#235c00" colorlight="#2d7400"/>
+		<details displaypriority="1" isseasonal="0" specialevent="0"/>
+	</event>
+	<event name="Exp event" startdate="5/3/2024" enddate="5/5/2024" script="">
+		<ingame exprate="130" lootrate="100" bosslootrate="150" spawnrate="100" skillrate="100"/>
+		<description description="50% boost to Boss Loot! 30% exp rate!"/>
+		<colors colordark="#235c00" colorlight="#2d7400"/>
+		<details displaypriority="1" isseasonal="0" specialevent="0"/>
+	</event>
+	<event name="Spawn event" startdate="5/10/2024" enddate="5/12/2024" script="">
+		<ingame exprate="100" lootrate="100" bosslootrate="150" spawnrate="130" skillrate="100"/>
+		<description description="50% boost to Boss Loot! 30% spawn rate!"/>
+		<colors colordark="#235c00" colorlight="#2d7400"/>
+		<details displaypriority="1" isseasonal="0" specialevent="0"/>
+	</event>
+	<event name="Skill Event" startdate="5/17/2024" enddate="5/19/2024" script="">
+		<ingame exprate="100" lootrate="100" bosslootrate="150" spawnrate="100" skillrate="130"/>
+		<description description="50% boost to Boss Loot! 30% boost to skill rate!"/>
+		<colors colordark="#235c00" colorlight="#2d7400"/>
+		<details displaypriority="1" isseasonal="0" specialevent="0"/>
+	</event>
+	<event name="Loot event" startdate="5/24/2024" enddate="5/26/2024" script="">
+		<ingame exprate="100" lootrate="130" bosslootrate="150" spawnrate="100" skillrate="100"/>
+		<description description="50% boost to Boss Loot! 30% boost to Loot rate!"/>
+		<colors colordark="#235c00" colorlight="#2d7400"/>
+		<details displaypriority="1" isseasonal="0" specialevent="0"/>
+	</event>
+	<event name="Exp event" startdate="5/31/2024" enddate="6/2/2024" script="">
+		<ingame exprate="130" lootrate="100" bosslootrate="150" spawnrate="100" skillrate="100"/>
+		<description description="50% boost to Boss Loot! 30% exp rate!"/>
+		<colors colordark="#235c00" colorlight="#2d7400"/>
+		<details displaypriority="1" isseasonal="0" specialevent="0"/>
+	</event>
+	<event name="Spawn event" startdate="6/7/2024" enddate="6/9/2024" script="">
+		<ingame exprate="100" lootrate="100" bosslootrate="150" spawnrate="130" skillrate="100"/>
+		<description description="50% boost to Boss Loot! 30% spawn rate!"/>
 		<colors colordark="#235c00" colorlight="#2d7400"/>
 		<details displaypriority="1" isseasonal="0" specialevent="0"/>
 	</event>
