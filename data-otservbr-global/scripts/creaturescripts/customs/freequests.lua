@@ -281,6 +281,7 @@ local questTable = {
 	{ storage = Storage.Quest.U10_55.Dawnport.Questline, storageValue = 1 },
 	{ storage = Storage.Quest.U10_55.Dawnport.GoMain, storageValue = 1 },
 	{ storage = Storage.ForgottenKnowledge.AccessDeath, storageValue = 1 },
+	{ storage = Storage.ForgottenKnowledge.Chalice, storageValue = 1 },
 	{ storage = Storage.ForgottenKnowledge.AccessViolet, storageValue = 1 },
 	{ storage = Storage.ForgottenKnowledge.AccessEarth, storageValue = 1 },
 	{ storage = Storage.ForgottenKnowledge.AccessFire, storageValue = 1 },
