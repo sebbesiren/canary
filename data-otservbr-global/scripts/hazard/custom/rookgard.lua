@@ -36,19 +36,16 @@ function deathEvent.onDeath(creature)
 	-- Level up if monster is a boss
 	if executeLevelUpEvent(points, 100) then
 		onDeathForDamagingPlayers(creature, function(creature, damagingPlayer)
-			local teamHazardLevel = hazard:getPlayerMaxLevel(damagingPlayer)
-			if teamHazardLevel == points then
-				hazard:levelUp(damagingPlayer)
-
-				if hazard:setPlayerCurrentLevel(player, teamHazardLevel + 1) then
-					damagingPlayer:sendTextMessage(MESSAGE_LOOK, "Hazard level set to " .. teamHazardLevel + 1)
-				end
-			end
+			attemptLevelUpPlayer(hazard, damagingPlayer, points)
 		end)
 	end
 
-	chanceTo = math.random(0, 20)
-	if chanceTo <= 1 then
+	if monster:getName():lower() == Game.getBoostedCreature():lower() then
+		chanceTo = math.random(0, 20)
+		if chanceTo <= 1 then
+			createHazardPod(monster:getPosition(), Game.getBoostedCreature())
+		end
+	else
 		createHazardPod(monster:getPosition(), Game.getBoostedCreature())
 	end
 

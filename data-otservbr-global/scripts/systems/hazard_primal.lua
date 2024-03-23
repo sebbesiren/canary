@@ -54,8 +54,9 @@ function primalPod.onStepIn(creature, item, position, fromPosition)
 	return true
 end
 
-primalPod:id(ITEM_PRIMAL_POD)
-primalPod:register()
+-- Custom overridden
+--primalPod:id(ITEM_PRIMAL_POD)
+--primalPod:register()
 
 local spawnFungosaurus = function(position)
 	local tile = Tile(position)
@@ -111,7 +112,13 @@ function deathEvent.onDeath(creature)
 	local chanceTo = math.random(1, 10000)
 	if chanceTo <= (points * configManager.getNumber(configKeys.HAZARD_PODS_DROP_MULTIPLIER)) then
 		local closestFreePosition = player:getClosestFreePosition(monster:getPosition(), 4, true)
-		createPrimalPod(closestFreePosition)
+
+		local monsterName = creature:getMonster():getName()
+		chanceTo = math.random(1, 50)
+		if chanceTo <= 1 then
+			monsterName = "fungosaurus"
+		end
+		createHazardPod(closestFreePosition, monsterName)
 		return true
 	end
 

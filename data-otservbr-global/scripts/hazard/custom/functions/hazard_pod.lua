@@ -1,4 +1,8 @@
-local hazardPortalPositions = {}
+local hazardPortals = {}
+local hazardPortalArtefacts = { 24228,  19135 }
+
+local hazardTeleports = {}
+local hazardTeleportArtefacts = {32979}
 
 local function spawnMonster(position, monsterName)
 	tile = Tile(position)
@@ -30,9 +34,9 @@ end
 
 ------ On Step in events
 local function dealDamageToPlayer(player)
-	player:getPosition():sendMagicEffect(CONST_ME_FIREATTACK)
+	player:getPosition():sendMagicEffect(CONST_ANI_SUDDENDEATH)
 	local damage = math.ceil(player:getMaxHealth() * 0.3)
-	doTargetCombatHealth(0, player, COMBAT_FIREDAMAGE, -damage, -damage, CONST_ME_FIREATTACK)
+	doTargetCombatHealth(0, player, COMBAT_DEATHDAMAGE, -damage, -damage, COMBAT_DEATHDAMAGE)
 end
 
 ------ Expire events
@@ -52,12 +56,26 @@ end
 
 local function otherPortalTooClose(position)
 	local portalMinDistance = 25
-	for _, portalPos in ipairs(hazardPortalPositions) do
+	for _, portal in ipairs(hazardPortals) do
+		local portalPos = portal.position
 		if portalPos.z == position.z and math.abs(portalPos.x - position.x) < portalMinDistance and math.abs(portalPos.y - position.y) < portalMinDistance then
 			return true
 		end
 	end
 	return false
+end
+
+local function removePortal()
+	local hazardPortal = hazardPortals[1]
+	hazardPortal.spawnZone:unregister()
+	local position = hazardPortal.position
+	local tile = Tile(position)
+	for _, artefactId in ipairs(hazardPortalArtefacts) do
+		local gameArtefact = tile:getItemById(artefactId)
+		gameArtefact:remove()
+	end
+
+	table.remove(hazardPortals, 1)
 end
 
 local function spawnPortal(position, monsterName)
@@ -66,22 +84,20 @@ local function spawnPortal(position, monsterName)
 		return
 	end
 
-	local portalId = 25051
-	local existingPortal = tile:getItemById(portalId)
-	if existingPortal then
-		return
+	for _, artefactId in ipairs(hazardPortalArtefacts) do
+		Game.createItem(artefactId, 1, position)
 	end
 
-	Game.createItem(portalId, 1, position)
 	local name = portalName(position)
 	local fromPos = Position(position.x - 4, position.y - 4, position.z)
 	local toPos = Position(position.x + 4, position.y + 4, position.z)
 	local spawnZone = SpawnZone(name, fromPos, toPos)
-	spawnZone:setPeriod("120s")
+	spawnZone:setPeriod("60s")
 	spawnZone:setMonstersPerCluster(4, 8)
 	spawnZone:configureMonster(monsterName, 1)
 	spawnZone:register()
-	table.insert(hazardPortalPositions, position)
+	table.insert(hazardPortals, { ["position"] = position, ["spawnZone"] = spawnZone })
+	addEvent(removePortal, 1000 * 60 * 60) -- 1h
 end
 
 local function spawnFewEnemies(position, monsterName)
@@ -98,25 +114,84 @@ local function spawnManyEnemies(position, monsterName)
 	end
 end
 
+local eventScalingFactors = {
+	dealDamageToAll = 50,
+	spawnFewEnemies = 100,
+	spawnManyEnemies = 200
+}
+local events = {
+	dealDamageToAll = dealDamageToAll,
+	spawnFewEnemies = spawnFewEnemies,
+	spawnManyEnemies = spawnManyEnemies,
+	spawnPortal = spawnPortal
+}
+
+local previousEvent = nil
+
+-- SELECT EVENT FUNCTIONS
+local function getTotalScale()
+	local totalScale = 0
+	for _, scale in pairs(eventScalingFactors) do
+		totalScale = totalScale + scale
+	end
+	return totalScale
+end
+
+local function selectEvent()
+	local totalScale = getTotalScale()
+	local randomValue = math.random() * totalScale -- Scale random value by total scale
+	local cumulativeScale = 0
+
+	-- Iterate over event scaling factors
+	for eventName, scale in pairs(eventScalingFactors) do
+		cumulativeScale = cumulativeScale + scale
+		if randomValue <= cumulativeScale then
+			if eventName == previousEvent then
+				previousEvent = nil
+				math.randomseed(os.time() + 10)
+				return selectEvent()
+			else
+				previousEvent = eventName
+			end
+
+			logger.debug("Event: " .. eventName)
+			return events[eventName] -- Return the event name when the scaled random value falls within its range
+		end
+	end
+end
+
+local function insertEvent(eventName, scalingFactor)
+	eventScalingFactors[eventName] = scalingFactor
+end
+
+local function removeEvent(eventName)
+	if eventScalingFactors[eventName] ~= nil then
+		eventScalingFactors[eventName] = nil
+	end
+end
+
 local function hazardPodExpire(position, monsterName)
 	local tile = Tile(position)
 	if tile then
 		local podItem = tile:getItemById(ITEM_PRIMAL_POD)
 		if podItem then
-			local expireEvents = { dealDamageToAll, dealDamageToAll, spawnFewEnemies, spawnFewEnemies, spawnManyEnemies, spawnManyEnemies }
-
-			if not otherPortalTooClose(position) then
-				table.insert(expireEvents, spawnPortal)
+			if otherPortalTooClose(position) then
+				removeEvent("spawnPortal")
+			else
+				insertEvent("spawnPortal", 80)
 			end
 
-			local event = expireEvents[math.random(#expireEvents)]
+			math.randomseed(os.time())
+			local event = selectEvent()
 			event(position, monsterName)
 			podItem:remove()
 		end
 	end
 end
 
-local function hazardPodOnStepIn(creature, item, position, fromPosition)
+local primalPod = MoveEvent()
+
+function primalPod.onStepIn(creature, item, position, fromPosition)
 	local player = creature:getPlayer()
 	if not player then
 		return
@@ -138,16 +213,14 @@ local function hazardPodOnStepIn(creature, item, position, fromPosition)
 	event(player)
 	return true
 end
+primalPod:id(ITEM_PRIMAL_POD)
+primalPod:register()
 
 function createHazardPod(position, monsterName)
 	local hazardPod = Game.createItem(ITEM_PRIMAL_POD, 1, position)
 	if hazardPod then
 		local podPosition = hazardPod:getPosition()
 		addEvent(hazardPodExpire, 4000, podPosition, monsterName)
-		local hazardPodEvent = MoveEvent()
-		hazardPodEvent.onStepIn = hazardPodOnStepIn
-		hazardPodEvent:position(position)
-		hazardPodEvent:register()
 	end
 end
 
@@ -155,9 +228,11 @@ function executeCreateHazardPod(points, maxRoll)
 	if points < 4 then
 		return false
 	end
-
-	maxRoll = maxRoll or 75 - (points - 4) * 2
+	maxRoll = maxRoll or 75
+	maxRoll = maxRoll - (points - 4) * 2
 
 	local chanceTo = math.random(1, maxRoll)
 	return chanceTo <= 1
 end
+
+
