@@ -1,8 +1,8 @@
 local hazardPortals = {}
-local hazardPortalArtefacts = { 24228,  19135 }
+local hazardPortalArtefacts = { 24228, 19135 }
 
 local hazardTeleports = {}
-local hazardTeleportArtefacts = {32979}
+local hazardTeleportArtefacts = { 32979 }
 
 local function spawnMonster(position, monsterName)
 	tile = Tile(position)
@@ -117,13 +117,13 @@ end
 local eventScalingFactors = {
 	dealDamageToAll = 50,
 	spawnFewEnemies = 100,
-	spawnManyEnemies = 200
+	spawnManyEnemies = 200,
 }
 local events = {
 	dealDamageToAll = dealDamageToAll,
 	spawnFewEnemies = spawnFewEnemies,
 	spawnManyEnemies = spawnManyEnemies,
-	spawnPortal = spawnPortal
+	spawnPortal = spawnPortal,
 }
 
 local previousEvent = nil
@@ -234,5 +234,3 @@ function executeCreateHazardPod(points, maxRoll)
 	local chanceTo = math.random(1, maxRoll)
 	return chanceTo <= 1
 end
-
-
