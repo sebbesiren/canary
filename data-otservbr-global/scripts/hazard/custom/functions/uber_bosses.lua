@@ -9,12 +9,12 @@ local entryLocations = {
 	Position(5083, 4919, 11),
 	Position(32345, 32224, 7),
 	Position(32369, 32244, 7),
-	Position(5004, 4989, 11)
+	Position(5004, 4989, 11),
 }
 local exitLocations = {
-	Position(5078, 4809, 11)
+	Position(5078, 4809, 11),
 }
-local uberBossesKvStore = kv.scoped('uber-bosses')
+local uberBossesKvStore = kv.scoped("uber-bosses")
 
 local function sendUberMessage(message)
 	Game.broadcastMessage(message, MESSAGE_EVENT_ADVANCE)
@@ -22,7 +22,7 @@ local function sendUberMessage(message)
 end
 
 function uberBossAvailable()
-	local previousStart = uberBossesKvStore:get('start') or 0
+	local previousStart = uberBossesKvStore:get("start") or 0
 	return os.time() > previousStart + lobbyDuration + fightDuration + lockOut
 end
 
@@ -85,7 +85,7 @@ end
 
 function attemptStartUberBoss(bossName)
 	if uberBossAvailable() then
-		uberBossesKvStore:set('start', os.time())
+		uberBossesKvStore:set("start", os.time())
 		sendUberMessage("Lobby has opened for boss " .. bossName .. ". The fight will start in " .. lobbyDuration / 60 .. " minutes.")
 
 		for _, entryLocation in ipairs(entryLocations) do
@@ -133,10 +133,10 @@ exitEvent:register()
 
 function claimMajorSpellExecute(blockTime)
 	blockTime = blockTime or 1
-	local nextMajorSpell = uberBossesKvStore:get('next-major-spell') or 0
+	local nextMajorSpell = uberBossesKvStore:get("next-major-spell") or 0
 	local currentTime = os.time()
 	if currentTime > nextMajorSpell then
-		uberBossesKvStore:set('next-major-spell', currentTime + blockTime)
+		uberBossesKvStore:set("next-major-spell", currentTime + blockTime)
 		return true -- able to cast spell
 	end
 	return false -- block cast

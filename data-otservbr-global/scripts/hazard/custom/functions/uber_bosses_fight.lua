@@ -61,4 +61,3 @@ function onDeathEvent.onDeath(creature)
 	return true
 end
 onDeathEvent:register()
-

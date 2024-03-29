@@ -41,7 +41,7 @@ local areas = {
 		{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
 		{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
 		{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
-		{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }
+		{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
 	},
 	{
 		{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
@@ -135,12 +135,10 @@ for _, area in ipairs(areas) do
 	combat:setCallback(CALLBACK_PARAM_TARGETTILE, "onTargetTile")
 	notify:setCallback(CALLBACK_PARAM_TARGETTILE, "notifyOnTargetTile")
 
-	table.insert(combats,
-		{
-			notify = notify,
-			combat = combat
-		}
-	)
+	table.insert(combats, {
+		notify = notify,
+		combat = combat,
+	})
 end
 
 local function delayedCastSpell(combat, cid, var, speedChange)

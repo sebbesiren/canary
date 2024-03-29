@@ -32,7 +32,7 @@ local area = {
 }
 local combat = {
 	notify = Combat(),
-	combat = Combat()
+	combat = Combat(),
 }
 function notifyOnTargetTile(creature, position)
 	position:sendMagicEffect(CONST_ME_HITAREA)
@@ -48,16 +48,16 @@ function onTargetTile(creature, position)
 			if player then
 				local multiplier = 1
 				local voc = player:getVocation():getBaseId()
-					if voc == VOCATION.BASE_ID.SORCERER or voc == VOCATION.BASE_ID.DRUID then
-						multiplier = 2
-					elseif voc == VOCATION.BASE_ID.PALADIN then
-						multiplier = 1.5
-					elseif voc == VOCATION.BASE_ID.KNIGHT then
-						multiplier = 1
-					end
+				if voc == VOCATION.BASE_ID.SORCERER or voc == VOCATION.BASE_ID.DRUID then
+					multiplier = 2
+				elseif voc == VOCATION.BASE_ID.PALADIN then
+					multiplier = 1.5
+				elseif voc == VOCATION.BASE_ID.KNIGHT then
+					multiplier = 1
+				end
 
-					local min = player:getMaxHealth() * 0.35 * multiplier
-					local max = player:getMaxHealth() * 0.45 * multiplier
+				local min = player:getMaxHealth() * 0.35 * multiplier
+				local max = player:getMaxHealth() * 0.45 * multiplier
 				doTargetCombatHealth(creature, player, COMBAT_DEATHDAMAGE, -min, -max, CONST_ME_NONE)
 			end
 		end
