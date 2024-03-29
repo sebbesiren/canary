@@ -150,84 +150,63 @@ local combatConfig = {
 	boomType = COMBAT_DEATHDAMAGE,
 }
 
-local vocation = {
-	VOCATION.BASE_ID.SORCERER,
-	VOCATION.BASE_ID.DRUID,
-	VOCATION.BASE_ID.PALADIN,
-	VOCATION.BASE_ID.KNIGHT,
-}
-
 for _, area in ipairs(combatConfig.areas) do
 	noticeCombat = Combat()
 	boomCombat = Combat()
 
 	function onNoticeTargetTile(creature, pos)
-		local creatureTable = {}
-		local n, i = Tile({ x = pos.x, y = pos.y, z = pos.z }).creatures, 1
-		if n ~= 0 then
-			local v = getThingfromPos({ x = pos.x, y = pos.y, z = pos.z, stackpos = i }).uid
-			while v ~= 0 do
-				if Creature(v) == true then
-					table.insert(creatureTable, v)
-					if n == #creatureTable then
-						break
+		local tile = Tile(position)
+		local creatures = tile:getCreatures()
+		if creatures and #creatures > 0 then
+			for _, c in pairs(creatures) do
+				local player = Player(c)
+				if player then
+					local multiplier = 1
+					local voc = player:getVocation():getBaseId()
+					if voc == VOCATION.BASE_ID.SORCERER or voc == VOCATION.BASE_ID.DRUID then
+						multiplier = 3
+					elseif voc == VOCATION.BASE_ID.PALADIN then
+						multiplier = 2
+					elseif voc == VOCATION.BASE_ID.KNIGHT then
+						multiplier = 1
 					end
-				end
-				i = i + 1
-				v = getThingfromPos({ x = pos.x, y = pos.y, z = pos.z, stackpos = i }).uid
-			end
-		end
-		if #creatureTable ~= nil and #creatureTable > 0 then
-			for r = 1, #creatureTable do
-				if creatureTable[r] ~= creature then
-					local min = 1000
-					local max = 1000
-					local player = Player(creatureTable[r])
 
-					if isPlayer(creatureTable[r]) == true and table.contains(vocation, player:getVocation():getBaseId()) then
-						doTargetCombatHealth(creature, creatureTable[r], combatConfig.noticeType, -min, -max, CONST_ME_NONE)
-					elseif isMonster(creatureTable[r]) == true then
-						doTargetCombatHealth(creature, creatureTable[r], combatConfig.noticeType, -min, -max, CONST_ME_NONE)
-					end
+					local min = player:getMaxHealth() * 0.02 * multiplier
+					local max = player:getMaxHealth() * 0.06 * multiplier
+					doTargetCombatHealth(creature, player, combatConfig.noticeType, -min, -max, CONST_ME_NONE)
 				end
 			end
 		end
-		pos:sendMagicEffect(combatConfig.noticeEffect)
+
+		position:sendMagicEffect(combatConfig.noticeEffect)
 		return true
 	end
 
 	function onBoomTargetTile(creature, pos)
-		local creatureTable = {}
-		local n, i = Tile({ x = pos.x, y = pos.y, z = pos.z }).creatures, 1
-		if n ~= 0 then
-			local v = getThingfromPos({ x = pos.x, y = pos.y, z = pos.z, stackpos = i }).uid
-			while v ~= 0 do
-				if Creature(v) == true then
-					table.insert(creatureTable, v)
-					if n == #creatureTable then
-						break
+		local tile = Tile(position)
+		local creatures = tile:getCreatures()
+		if creatures and #creatures > 0 then
+			for _, c in pairs(creatures) do
+				local player = Player(c)
+				if player then
+					local multiplier = 1
+					local voc = player:getVocation():getBaseId()
+					if voc == VOCATION.BASE_ID.SORCERER or voc == VOCATION.BASE_ID.DRUID then
+						multiplier = 2
+					elseif voc == VOCATION.BASE_ID.PALADIN then
+						multiplier = 1.5
+					elseif voc == VOCATION.BASE_ID.KNIGHT then
+						multiplier = 1
 					end
-				end
-				i = i + 1
-				v = getThingfromPos({ x = pos.x, y = pos.y, z = pos.z, stackpos = i }).uid
-			end
-		end
-		if #creatureTable ~= nil and #creatureTable > 0 then
-			for r = 1, #creatureTable do
-				if creatureTable[r] ~= creature then
-					local min = 3200
-					local max = 3200
-					local player = Player(creatureTable[r])
 
-					if isPlayer(creatureTable[r]) == true and table.contains(vocation, player:getVocation():getBaseId()) then
-						doTargetCombatHealth(creature, creatureTable[r], combatConfig.boomType, -min, -max, CONST_ME_NONE)
-					elseif isMonster(creatureTable[r]) == true then
-						doTargetCombatHealth(creature, creatureTable[r], combatConfig.boomType, -min, -max, CONST_ME_NONE)
-					end
+					local min = player:getMaxHealth() * 0.35 * multiplier
+					local max = player:getMaxHealth() * 0.45 * multiplier
+					doTargetCombatHealth(creature, player, combatConfig.boomType, -min, -max, CONST_ME_NONE)
 				end
 			end
 		end
-		pos:sendMagicEffect(combatConfig.boomEffect)
+
+		position:sendMagicEffect(combatConfig.boomEffect)
 		return true
 	end
 

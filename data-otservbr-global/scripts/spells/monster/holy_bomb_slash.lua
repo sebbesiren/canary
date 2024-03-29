@@ -58,7 +58,7 @@ local function delayedCastSpell(combat, cid, var)
 end
 
 function spell.onCastSpell(creature, var)
-	cid = creature:getId()
+	local cid = creature:getId()
 
 	local castIndex = 0
 

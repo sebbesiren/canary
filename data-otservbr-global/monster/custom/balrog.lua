@@ -6,10 +6,10 @@ monster.description = "a Balrog"
 monster.health = 325000
 monster.maxHealth = monster.health
 
---monster.bosstiary = {
---	bossRaceId = 5000,
---	bossRace = RARITY_ARCHFOE
---}
+monster.bosstiary = {
+	bossRaceId = 5000,
+	bossRace = RARITY_ARCHFOE
+}
 
 monster.experience = monster.health * 12
 monster.outfit = {
@@ -110,14 +110,18 @@ monster.attacks = {
 	{ name = "gaz'haragoth iceball", interval = 10000, chance = 100, minDamage = -1000, maxDamage = -1500, target = false },
 	{ name = "gaz'haragoth death", interval = 60000, chance = 100, target = false },
 	{ name = "gaz'haragoth paralyze", interval = 8000, chance = 100, target = false },
-	{ name = "Balrog Dark Mortar", interval = 40000, chance = 100, target = false },
+	{ name = "large mortar", interval = 3000, chance = 20 },
+	{ name = "large mortar", interval = 3000, chance = 20 },
+	{ name = "small mortar", interval = 3000, chance = 20 },
+	{ name = "small mortar", interval = 3000, chance = 20 },
+	{ name = "small mortar", interval = 3000, chance = 20 },
+	{ name = "small mortar", interval = 3000, chance = 20 },
 }
 
 monster.defenses = {
 	defense = 55,
 	armor = 55,
 	{ name = "combat", interval = 2000, chance = 15, type = COMBAT_HEALING, minDamage = 180, maxDamage = 250, effect = CONST_ME_MAGIC_BLUE, target = false },
-	{ name = "speed", interval = 2000, chance = 15, speedChange = 320, effect = CONST_ME_MAGIC_RED, target = false, duration = 5000 },
 }
 
 monster.elements = {

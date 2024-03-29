@@ -1,8 +1,5 @@
 local hazardPortals = {}
-local hazardPortalArtefacts = { 24228,  19135 }
-
-local hazardTeleports = {}
-local hazardTeleportArtefacts = {32979}
+local hazardPortalArtefacts = { 24228, 19135 }
 
 local function spawnMonster(position, monsterName)
 	tile = Tile(position)
@@ -35,7 +32,7 @@ end
 ------ On Step in events
 local function dealDamageToPlayer(player)
 	player:getPosition():sendMagicEffect(CONST_ANI_SUDDENDEATH)
-	local damage = math.ceil(player:getMaxHealth() * 0.3)
+	local damage = math.ceil(player:getMaxHealth() * 0.2)
 	doTargetCombatHealth(0, player, COMBAT_DEATHDAMAGE, -damage, -damage, COMBAT_DEATHDAMAGE)
 end
 
@@ -114,6 +111,10 @@ local function spawnManyEnemies(position, monsterName)
 	end
 end
 
+local function originHazard(position, monsterName)
+	createOriginHazardTeleport(position, monsterName)
+end
+
 local eventScalingFactors = {
 	dealDamageToAll = 50,
 	spawnFewEnemies = 100,
@@ -123,12 +124,12 @@ local events = {
 	dealDamageToAll = dealDamageToAll,
 	spawnFewEnemies = spawnFewEnemies,
 	spawnManyEnemies = spawnManyEnemies,
-	spawnPortal = spawnPortal
+	spawnPortal = spawnPortal,
+	originHazard = originHazard
 }
 
-local previousEvent = nil
-
 -- SELECT EVENT FUNCTIONS
+local previousEvent = nil
 local function getTotalScale()
 	local totalScale = 0
 	for _, scale in pairs(eventScalingFactors) do
@@ -148,7 +149,7 @@ local function selectEvent()
 		if randomValue <= cumulativeScale then
 			if eventName == previousEvent then
 				previousEvent = nil
-				math.randomseed(os.time() + 10)
+				math.randomseed(os.clock())
 				return selectEvent()
 			else
 				previousEvent = eventName
@@ -178,10 +179,16 @@ local function hazardPodExpire(position, monsterName)
 			if otherPortalTooClose(position) then
 				removeEvent("spawnPortal")
 			else
-				insertEvent("spawnPortal", 80)
+				insertEvent("spawnPortal", 100)
 			end
 
-			math.randomseed(os.time())
+			if originHazardAvailable() then
+				insertEvent("originHazard", 50)
+			else
+				removeEvent("originHazard")
+			end
+
+			math.randomseed(os.clock())
 			local event = selectEvent()
 			event(position, monsterName)
 			podItem:remove()
@@ -208,9 +215,7 @@ function primalPod.onStepIn(creature, item, position, fromPosition)
 	end
 
 	podItem:remove()
-	local events = { dealDamageToPlayer }
-	local event = events[math.random(#events)]
-	event(player)
+	dealDamageToPlayer(player)
 	return true
 end
 primalPod:id(ITEM_PRIMAL_POD)

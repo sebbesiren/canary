@@ -29,7 +29,7 @@ monster.maxHealth = monster.health
 monster.experience = monster.health * 12 * athelstanConfig.AmountLife
 monster.race = "blood"
 monster.corpse = 28625
-monster.speed = 115
+monster.speed = 200
 monster.manaCost = 0
 
 monster.changeTarget = {
@@ -37,10 +37,10 @@ monster.changeTarget = {
 	chance = 10,
 }
 
---monster.bosstiary = {
---	bossRaceId = 5001,
---	bossRace = RARITY_ARCHFOE
---}
+monster.bosstiary = {
+	bossRaceId = 5001,
+	bossRace = RARITY_ARCHFOE
+}
 
 monster.strategiesTarget = {
 	nearest = 100,
@@ -121,7 +121,9 @@ monster.attacks = {
 	{ name = "Shotgun", interval = 2000, chance = 10, minDamage = -860, maxDamage = -1500, target = false },
 	{ name = "Holy Bomb Slash", interval = 2000, chance = 20, minDamage = -820, maxDamage = -1450, target = false },
 	{ name = "Rotating Wheel", interval = 35000, chance = 100, target = false },
-	{ name = "Athelstan Axe Throw", interval = 2000, chance = 35, minDamage = -1200, maxDamage = -2500 },
+	{ name = "Athelstan Axe Throw", interval = 2000, chance = 50, minDamage = -1200, maxDamage = -2500 },
+	{ name = "small mortar", interval = 2000, chance = 50 },
+	{ name = "small mortar", interval = 2000, chance = 50 },
 }
 
 monster.defenses = {
@@ -185,10 +187,13 @@ mType.onAppear = function(monster, creature)
 	end
 end
 
-mType.onDisappear = function(monster, creature) end
+mType.onDisappear = function(monster, creature)
+end
 
-mType.onMove = function(monster, creature, fromPosition, toPosition) end
+mType.onMove = function(monster, creature, fromPosition, toPosition)
+end
 
-mType.onSay = function(monster, creature, type, message) end
+mType.onSay = function(monster, creature, type, message)
+end
 
 mType:register(monster)
