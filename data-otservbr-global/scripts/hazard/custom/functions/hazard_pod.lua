@@ -118,7 +118,7 @@ end
 local eventScalingFactors = {
 	dealDamageToAll = 50,
 	spawnFewEnemies = 100,
-	spawnManyEnemies = 200
+	spawnManyEnemies = 200,
 }
 local events = {
 	dealDamageToAll = dealDamageToAll,
@@ -239,5 +239,3 @@ function executeCreateHazardPod(points, maxRoll)
 	local chanceTo = math.random(1, maxRoll)
 	return chanceTo <= 1
 end
-
-
