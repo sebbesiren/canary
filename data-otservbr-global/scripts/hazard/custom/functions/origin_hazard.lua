@@ -93,7 +93,7 @@ local function handleMonsterSpawn(monsterName)
 		end
 	end
 
-	local maxMonsters = 12 + math.floor(elapsedTime / 30) -- add another monster every 30th second
+	local maxMonsters = 12 + math.floor(elapsedTime / 60) -- add another monster every 30th second
 
 	local monstersToSpawn = maxMonsters - #monsters
 	if monstersToSpawn < 0 then
