@@ -61,6 +61,7 @@ local function reset()
 	sendUberMessage("The uber boss fight has ended! Next fight available in " .. lockOut / 60 .. " minutes.")
 	zone:refresh()
 	zone:removePlayers()
+	zone:removeMonsters()
 end
 
 local function createBoss(bossName, position)
