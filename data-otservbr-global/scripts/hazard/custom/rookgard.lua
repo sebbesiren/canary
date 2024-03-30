@@ -40,12 +40,8 @@ function deathEvent.onDeath(creature)
 		end)
 	end
 
-	if monster:getName():lower() == Game.getBoostedCreature():lower() then
-		chanceTo = math.random(0, 20)
-		if chanceTo <= 1 then
-			createHazardPod(monster:getPosition(), Game.getBoostedCreature())
-		end
-	else
+	chanceTo = math.random(0, 15)
+	if chanceTo <= 1 then
 		createHazardPod(monster:getPosition(), Game.getBoostedCreature())
 	end
 
