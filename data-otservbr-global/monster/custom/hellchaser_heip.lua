@@ -65,7 +65,7 @@ monster.voices = {
 }
 
 monster.loot = {
-	{ name = "bag you covet", chance = 200, maxCount = 1 },
+	{ name = "bag you covet", chance = 400, maxCount = 1 },
 	{ name = "bag you desire", chance = 1000, maxCount = 1 },
 	{ name = "primal bag", chance = 3000, maxCount = 1 },
 }
