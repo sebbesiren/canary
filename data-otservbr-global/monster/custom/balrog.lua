@@ -8,7 +8,7 @@ monster.maxHealth = monster.health
 
 monster.bosstiary = {
 	bossRaceId = 5000,
-	bossRace = RARITY_ARCHFOE
+	bossRace = RARITY_ARCHFOE,
 }
 
 monster.experience = monster.health * 12

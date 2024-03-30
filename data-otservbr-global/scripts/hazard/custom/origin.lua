@@ -83,7 +83,7 @@ function deathEvent.onDeath(creature)
 	if chanceTo <= 1 then
 		local totems = {
 			"hazard death totem",
-			"hazard fire totem"
+			"hazard fire totem",
 		}
 		local totem = Game.createMonster(totems[math.random(#totems)], position, false, true)
 		if totem and totem:getMaxHealth() > monsterMaxHealth then

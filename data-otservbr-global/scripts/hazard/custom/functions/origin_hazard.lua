@@ -2,33 +2,33 @@ local lockOut = 0 --60 * 60  --1h
 local duration = 60 * 12 -- 12 min
 local teleportItemId = 32979
 local spawnLocations = {
-	Position({x = 5075, y = 4913, z = 11}),
-	Position({x = 5081, y = 4913, z = 11}),
-	Position({x = 5088, y = 4913, z = 11}),
-	Position({x = 5088, y = 4922, z = 11}),
-	Position({x = 5081, y = 4922, z = 11}),
-	Position({x = 5075, y = 4922, z = 11}),
-	Position({x = 5075, y = 4917, z = 11}),
-	Position({x = 5088, y = 4917, z = 11}),
+	Position({ x = 5075, y = 4913, z = 11 }),
+	Position({ x = 5081, y = 4913, z = 11 }),
+	Position({ x = 5088, y = 4913, z = 11 }),
+	Position({ x = 5088, y = 4922, z = 11 }),
+	Position({ x = 5081, y = 4922, z = 11 }),
+	Position({ x = 5075, y = 4922, z = 11 }),
+	Position({ x = 5075, y = 4917, z = 11 }),
+	Position({ x = 5088, y = 4917, z = 11 }),
 }
 local entryTeleport = {
 	event = MoveEvent(),
-	uid = 65534
+	uid = 65534,
 }
-local hazardKvStore = kv.scoped('hazard')
+local hazardKvStore = kv.scoped("hazard")
 
 function originHazardEnded()
-	local previousStart = hazardKvStore:scoped('origin-hazard'):get('start') or 0
+	local previousStart = hazardKvStore:scoped("origin-hazard"):get("start") or 0
 	return os.time() > previousStart + duration
 end
 
 function originHazardAvailable()
-	local previousStart = hazardKvStore:scoped('origin-hazard'):get('start') or 0
+	local previousStart = hazardKvStore:scoped("origin-hazard"):get("start") or 0
 	return os.time() > previousStart + duration + lockOut
 end
 
 local function exitOriginHazard(player)
-	local positionBeforeEntry = player:kv():scoped('origin-hazard'):get('position-before-entry')
+	local positionBeforeEntry = player:kv():scoped("origin-hazard"):get("position-before-entry")
 	player:teleportTo(positionBeforeEntry)
 	player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 end
@@ -80,7 +80,7 @@ end
 local function handleMonsterSpawn(monsterName)
 	local hazard = Hazard.getByName("hazard.origin")
 
-	local startTime = hazardKvStore:scoped('origin-hazard'):get('start')
+	local startTime = hazardKvStore:scoped("origin-hazard"):get("start")
 	local elapsedTime = os.time() - startTime
 
 	local monsters = hazard.zone:getMonsters()
@@ -117,7 +117,7 @@ end
 
 local function startOriginHazard(monsterName)
 	local startTime = os.time()
-	hazardKvStore:scoped('origin-hazard'):set('start', startTime)
+	hazardKvStore:scoped("origin-hazard"):set("start", startTime)
 	originHazardLoop(monsterName)
 	local message = "A player has entered the Hazard Origins. Next possible event in " .. math.floor((duration + lockOut) / 60) .. " minutes."
 	Game.broadcastMessage(message, MESSAGE_EVENT_ADVANCE)
@@ -144,7 +144,7 @@ function entryTeleport.event.onStepIn(creature, item, position, fromPosition)
 		return
 	end
 
-	player:kv():scoped('origin-hazard'):set('position-before-entry', fromPosition)
+	player:kv():scoped("origin-hazard"):set("position-before-entry", fromPosition)
 	local teleportToPosition = Position({ x = 5081, y = 4910, z = 11 })
 	player:teleportTo(teleportToPosition)
 	player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)

@@ -125,7 +125,7 @@ local events = {
 	spawnFewEnemies = spawnFewEnemies,
 	spawnManyEnemies = spawnManyEnemies,
 	spawnPortal = spawnPortal,
-	originHazard = originHazard
+	originHazard = originHazard,
 }
 
 -- SELECT EVENT FUNCTIONS

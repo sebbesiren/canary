@@ -28,11 +28,11 @@ local area = {
 	{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
 	{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
 	{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-	{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
+	{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
 }
 local combat = {
 	notify = Combat(),
-	combat = Combat()
+	combat = Combat(),
 }
 function notifyOnTargetTile(creature, position)
 	position:sendMagicEffect(CONST_ME_HITAREA)
