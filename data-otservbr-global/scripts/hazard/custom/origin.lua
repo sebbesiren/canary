@@ -97,7 +97,7 @@ function deathEvent.onDeath(creature)
 		local bosses = {
 			"Balrog",
 			"Death Lord Athelstan",
-			"Hellchaser Heip"
+			"Hellchaser Heip",
 		}
 		if monsterMaxHealth > 3000 then
 			table.insert(bosses, "Death Lord Athelstan")
