@@ -48,8 +48,8 @@ function onTargetTile(creature, position)
 					multiplier = 1
 				end
 
-				local min = player:getMaxHealth() * 0.2 * multiplier
-				local max = player:getMaxHealth() * 0.4 * multiplier
+				local min = player:getMaxHealth() * 0.25 * multiplier
+				local max = player:getMaxHealth() * 0.3 * multiplier
 				doTargetCombatHealth(creature, player, COMBAT_ENERGYDAMAGE, -min, -max, CONST_ME_NONE)
 			end
 		end

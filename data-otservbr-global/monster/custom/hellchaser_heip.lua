@@ -77,11 +77,11 @@ monster.attacks = {
 
 	-- Melee atks
 	{ name = "heip melee", interval = 2000, chance = 100, range = 1 },
-	{ name = "two way blast", interval = 2000, chance = 20 },
-	{ name = "cross blast", interval = 2000, chance = 20 },
+	{ name = "two way blast", interval = 2100, chance = 10 },
+	{ name = "cross blast", interval = 2000, chance = 10 },
 
 	-- range atks
-	{ name = "heip energy ball", interval = 2000, chance = 50 },
+	{ name = "heip energy ball", interval = 4000, chance = 50 },
 	{ name = "heip inferno strike", interval = 5000, chance = 50 },
 
 	-- stage atks (boss has to stand still)
@@ -115,7 +115,8 @@ monster.immunities = {
 	{ type = "bleed", condition = false },
 }
 
-mType.onThink = function(monster, interval) end
+mType.onThink = function(monster, interval)
+end
 
 mType.onAppear = function(monster, creature)
 	if monster:getType():isRewardBoss() then
@@ -123,10 +124,13 @@ mType.onAppear = function(monster, creature)
 	end
 end
 
-mType.onDisappear = function(monster, creature) end
+mType.onDisappear = function(monster, creature)
+end
 
-mType.onMove = function(monster, creature, fromPosition, toPosition) end
+mType.onMove = function(monster, creature, fromPosition, toPosition)
+end
 
-mType.onSay = function(monster, creature, type, message) end
+mType.onSay = function(monster, creature, type, message)
+end
 
 mType:register(monster)

@@ -28,7 +28,7 @@ function originHazardAvailable()
 end
 
 local function exitOriginHazard(player)
-	local positionBeforeEntry = player:kv():scoped("origin-hazard"):get("position-before-entry")
+	local positionBeforeEntry = player:kv():scoped("origin-hazard"):get("position-before-entry") or Position(32369, 32241, 7)
 	player:teleportTo(positionBeforeEntry)
 	player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 end

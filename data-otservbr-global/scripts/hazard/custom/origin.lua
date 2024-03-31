@@ -5,7 +5,7 @@ local hazard = Hazard.new({
 	maxLevel = 100,
 
 	crit = true,
-	dodge = false,
+	dodge = true,
 	damageBoost = true,
 	defenseBoost = false,
 })
@@ -19,14 +19,14 @@ local spawnEvent = ZoneEvent(hazardZone)
 function spawnEvent.onSpawn(monster, position)
 	monster:registerEvent(deathEventName)
 end
-function spawnEvent.afterEnter(zone, creature)
-	local player = creature:getPlayer()
-	if not player then
-		return
-	end
-
-	hazard:setPlayerCurrentLevel(player, 1)
-end
+--function spawnEvent.afterEnter(zone, creature)
+--	local player = creature:getPlayer()
+--	if not player then
+--		return
+--	end
+--
+--	hazard:setPlayerCurrentLevel(player, 1)
+--end
 spawnEvent:register()
 
 local deathEvent = CreatureEvent(deathEventName)
@@ -92,13 +92,18 @@ function deathEvent.onDeath(creature)
 		end
 	end
 
-	chanceTo = math.random(1, 2000)
-	if chanceTo <= points then
-		local bosses = { "Balrog" }
+	chanceTo = math.random(1, 500)
+	if chanceTo <= 1 then
+		local bosses = {
+			"Balrog",
+			"Death Lord Athelstan",
+			"Hellchaser Heip"
+		}
 		if monsterMaxHealth > 3000 then
 			table.insert(bosses, "Death Lord Athelstan")
 		end
 		if monsterMaxHealth > 6000 then
+			table.insert(bosses, "Hellchaser Heip")
 			table.insert(bosses, "Hellchaser Heip")
 		end
 
