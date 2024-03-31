@@ -168,15 +168,15 @@ monster.defenses = {
 
 monster.elements = {
 	{ type = COMBAT_PHYSICALDAMAGE, percent = 0 },
-	{ type = COMBAT_ENERGYDAMAGE, percent = 65 },
-	{ type = COMBAT_EARTHDAMAGE, percent = 65 },
-	{ type = COMBAT_FIREDAMAGE, percent = 65 },
-	{ type = COMBAT_LIFEDRAIN, percent = 65 },
-	{ type = COMBAT_MANADRAIN, percent = 65 },
+	{ type = COMBAT_ENERGYDAMAGE, percent = 35 },
+	{ type = COMBAT_EARTHDAMAGE, percent = 35 },
+	{ type = COMBAT_FIREDAMAGE, percent = 35 },
+	{ type = COMBAT_LIFEDRAIN, percent = 35 },
+	{ type = COMBAT_MANADRAIN, percent = 35 },
 	{ type = COMBAT_DROWNDAMAGE, percent = 0 },
-	{ type = COMBAT_ICEDAMAGE, percent = 65 },
-	{ type = COMBAT_HOLYDAMAGE, percent = 65 },
-	{ type = COMBAT_DEATHDAMAGE, percent = 65 },
+	{ type = COMBAT_ICEDAMAGE, percent = 35 },
+	{ type = COMBAT_HOLYDAMAGE, percent = 35 },
+	{ type = COMBAT_DEATHDAMAGE, percent = 35 },
 }
 
 monster.immunities = {
