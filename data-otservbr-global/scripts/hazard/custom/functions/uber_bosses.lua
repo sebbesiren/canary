@@ -1,4 +1,4 @@
-local lockOut = 60 * 30  -- 30 min
+local lockOut = 60 * 30 -- 30 min
 local lobbyDuration = 60 * 5 -- 5 min
 local fightDuration = 60 * 20 -- 20min
 local teleportItemId = 25055
