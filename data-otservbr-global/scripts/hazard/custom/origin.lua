@@ -7,7 +7,7 @@ local hazard = Hazard.new({
 	crit = true,
 	dodge = true,
 	damageBoost = true,
-	defenseBoost = false,
+	defenseBoost = true,
 })
 
 hazard:register()
@@ -46,12 +46,7 @@ function deathEvent.onDeath(creature)
 	local chanceTo = math.random(1, 40)
 	if chanceTo <= 1 then
 		onDeathForDamagingPlayers(creature, function(creature, damagingPlayer)
-			if hazard:getPlayerMaxLevel(damagingPlayer) == points then
-				hazard:levelUp(damagingPlayer)
-			end
-			if hazard:setPlayerCurrentLevel(damagingPlayer, points + 1) then
-				damagingPlayer:sendTextMessage(MESSAGE_LOOK, "Hazard level set to " .. points + 1)
-			end
+			attemptLevelUpPlayer(hazard, damagingPlayer, points)
 		end)
 	end
 

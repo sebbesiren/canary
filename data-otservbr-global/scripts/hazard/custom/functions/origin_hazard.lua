@@ -1,5 +1,5 @@
 local lockOut = 0 --60 * 60  --1h
-local duration = 60 * 12 -- 12 min
+local duration = 60 * 10 -- 10 min
 local teleportItemId = 32979
 local spawnLocations = {
 	Position({ x = 5075, y = 4913, z = 11 }),
