@@ -95,10 +95,12 @@ function deathEvent.onDeath(creature)
 			"Hellchaser Heip",
 		}
 		if monsterMaxHealth > 3000 then
-			table.insert(bosses, "Death Lord Athelstan")
 			table.insert(bosses, "Hellchaser Heip")
 		end
 		if monsterMaxHealth > 6000 then
+			table.insert(bosses, "Hellchaser Heip")
+		end
+		if monsterMaxHealth > 9000 then
 			table.insert(bosses, "Hellchaser Heip")
 		end
 

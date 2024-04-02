@@ -65,9 +65,22 @@ monster.voices = {
 }
 
 monster.loot = {
-	{ name = "bag you covet", chance = 400, maxCount = 1 },
-	{ name = "bag you desire", chance = 1000, maxCount = 1 },
-	{ name = "primal bag", chance = 3000, maxCount = 1 },
+	{ name = "silver token", chance = 100000, maxCount = 10 },
+	{ id = 43895, chance = 3300 },
+	--{ name = "sanguine blade", chance = 200 },
+	--{ name = "sanguine cudgel", chance = 200 },
+	--{ name = "sanguine hatchet", chance = 200 },
+	--{ name = "sanguine razor", chance = 200 },
+	--{ name = "sanguine bludgeon", chance = 200 },
+	--{ name = "sanguine battleaxe", chance = 200 },
+	--{ name = "sanguine legs", chance = 200 },
+	--{ name = "sanguine bow", chance = 200 },
+	--{ name = "sanguine crossbow", chance = 200 },
+	--{ name = "sanguine greaves", chance = 200 },
+	--{ name = "sanguine coil", chance = 200 },
+	--{ name = "sanguine boots", chance = 200 },
+	--{ name = "sanguine rod", chance = 200 },
+	--{ name = "sanguine galoshes", chance = 200 },
 }
 
 monster.attacks = {
@@ -115,7 +128,8 @@ monster.immunities = {
 	{ type = "bleed", condition = false },
 }
 
-mType.onThink = function(monster, interval) end
+mType.onThink = function(monster, interval)
+end
 
 mType.onAppear = function(monster, creature)
 	if monster:getType():isRewardBoss() then
@@ -123,10 +137,13 @@ mType.onAppear = function(monster, creature)
 	end
 end
 
-mType.onDisappear = function(monster, creature) end
+mType.onDisappear = function(monster, creature)
+end
 
-mType.onMove = function(monster, creature, fromPosition, toPosition) end
+mType.onMove = function(monster, creature, fromPosition, toPosition)
+end
 
-mType.onSay = function(monster, creature, type, message) end
+mType.onSay = function(monster, creature, type, message)
+end
 
 mType:register(monster)

@@ -73,11 +73,11 @@ function deathEvent.onDeath(creature)
 
 	local miniBosses = { "The Lord of the Lice", "Bragrumol" }
 
-	if executeLevelUpEvent(points) then
+	if executeLevelUpEvent(points, 200) then
 		spawnCustomHazardBoss(player, monster, miniBosses)
 	end
 
-	if executeCreateHazardPod(points) then
+	if executeCreateHazardPod(points, 50) then
 		createHazardPod(monster:getPosition(), monster:getName())
 	end
 

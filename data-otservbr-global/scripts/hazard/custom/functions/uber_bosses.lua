@@ -1,6 +1,6 @@
-local lockOut = 60 * 30 -- 30 min
+local lockOut = 60 * 0 -- 0 min
 local lobbyDuration = 60 * 5 -- 5 min
-local fightDuration = 60 * 20 -- 20min
+local fightDuration = 60 * 15 -- 15min
 local teleportItemId = 25055
 local entryLocations = {
 	Position(5080, 4916, 11),

@@ -179,7 +179,7 @@ local function hazardPodExpire(position, monsterName)
 			if otherPortalTooClose(position) then
 				removeEvent("spawnPortal")
 			else
-				insertEvent("spawnPortal", 100)
+				insertEvent("spawnPortal", 125)
 			end
 
 			if originHazardAvailable() then
@@ -234,7 +234,11 @@ function executeCreateHazardPod(points, maxRoll)
 		return false
 	end
 	maxRoll = maxRoll or 75
-	maxRoll = maxRoll - (points - 4) * 2
+	maxRoll = maxRoll - points * 4
+
+	if maxRoll < 20 then
+		maxRoll = 20
+	end
 
 	local chanceTo = math.random(1, maxRoll)
 	return chanceTo <= 1
