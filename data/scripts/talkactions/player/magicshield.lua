@@ -16,7 +16,7 @@ function magicshield.onSay(player, words, param)
 		return true
 	end
 
-	local timeNextUse = player:kv():get('magic-shield-talkaction') or 0
+	local timeNextUse = player:kv():get("magic-shield-talkaction") or 0
 	if os.time() < timeNextUse then
 		return true -- on cooldown
 	end
@@ -25,7 +25,7 @@ function magicshield.onSay(player, words, param)
 		return true
 	end
 
-	player:kv():set('magic-shield-talkaction', os.time() + 2)
+	player:kv():set("magic-shield-talkaction", os.time() + 2)
 	player:removeItem(silverTokenID, 1)
 	local condition = Condition(CONDITION_MANASHIELD)
 	condition:setParameter(CONDITION_PARAM_TICKS, 60000)
