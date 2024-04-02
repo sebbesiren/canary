@@ -16,7 +16,7 @@ function votingOramond.onStepIn(creature, item, position, fromPosition)
 		return true
 	end
 
-	local teleport = Position(33459, 31715, 9)-- catacombs -- setting[os.date("%A")]
+	local teleport = Position(33459, 31715, 9) -- catacombs -- setting[os.date("%A")]
 	if teleport then
 		player:teleportTo(teleport)
 		fromPosition:sendMagicEffect(CONST_ME_TELEPORT)

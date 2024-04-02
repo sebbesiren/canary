@@ -28,7 +28,7 @@ local hazards = {
 	["secret library"] = { name = "hazard.secret-library" },
 	["werehyaena"] = { name = "hazard.werehyaena" },
 	["origin"] = { name = "hazard.origin" },
-	["oramond catacombs"] = { name = "hazard.oramond-catacombs" }
+	["oramond catacombs"] = { name = "hazard.oramond-catacombs" },
 }
 
 local availableHazards = {}
