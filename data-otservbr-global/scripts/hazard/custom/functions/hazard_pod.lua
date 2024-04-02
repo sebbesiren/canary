@@ -230,11 +230,11 @@ function createHazardPod(position, monsterName)
 end
 
 function executeCreateHazardPod(points, maxRoll)
-	if points < 4 then
-		return false
-	end
+	--if points < 2 then
+	--	return false
+	--end
 	maxRoll = maxRoll or 75
-	maxRoll = maxRoll - points * 3
+	maxRoll = maxRoll - (points - 1) * 3
 
 	if maxRoll < 20 then
 		maxRoll = 20
