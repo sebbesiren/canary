@@ -158,18 +158,11 @@ local function delayedCastSpell(combat, cid, var)
 		return true
 	end
 
-	return combat:execute(creature, positionToVariant(creature:getPosition()))
+	return combat:execute(creature, var)
 end
 
 function spell.onCastSpell(creature, var)
-	cid = creature:getId()
-
-	if combatConfig.standStill then
-		creatureSpeed = creature:getBaseSpeed()
-		doChangeSpeed(cid, -creatureSpeed)
-	else
-		creatureSpeed = 0
-	end
+	local cid = creature:getId()
 
 	if combatConfig.message then
 		creature:say(combatConfig.message, TALKTYPE_MONSTER_SAY)
@@ -189,10 +182,6 @@ function spell.onCastSpell(creature, var)
 			addEvent(delayedCastSpell, currentDelay, combat, cid, var)
 			currentDelay = currentDelay + delay
 		end
-	end
-
-	if creatureSpeed > 0 then
-		addEvent(doChangeSpeed, currentDelay, cid, creatureSpeed)
 	end
 
 	return true

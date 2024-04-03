@@ -147,22 +147,20 @@ local function delayedCastSpell(combat, cid, var, speedChange)
 	if not creature then
 		return true
 	end
-	if speedChange then
-		creature:changeSpeed(speedChange)
-	end
 
-	return combat:execute(creature, positionToVariant(creature:getPosition()))
+	creature:changeSpeed(speedChange)
+	return combat:execute(creature, var)
 end
 
 function spell.onCastSpell(creature, var)
 	local cid = creature:getId()
 
 	creature:say("Blast incoming!!!", TALKTYPE_MONSTER_YELL)
-
-	local baseSpeed = creature:getBaseSpeed()
+	local speedChange = 100
+	creature:changeSpeed(-speedChange)
 	local combat = combats[math.random(#combats)]
-	addEvent(delayedCastSpell, 1000, combat.notify, cid, var, -baseSpeed)
-	addEvent(delayedCastSpell, 4000, combat.combat, cid, var, baseSpeed)
+	addEvent(delayedCastSpell, 1000, combat.notify, cid, var, 0)
+	addEvent(delayedCastSpell, 4000, combat.combat, cid, var, speedChange)
 	return true
 end
 

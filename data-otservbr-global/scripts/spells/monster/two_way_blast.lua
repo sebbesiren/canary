@@ -109,7 +109,7 @@ local function delayedCastSpell(combat, cid, var)
 end
 
 function spell.onCastSpell(creature, var)
-	cid = creature:getId()
+	local cid = creature:getId()
 
 	local combat = combats[math.random(#combats)]
 	combat.notify:execute(creature, var)
