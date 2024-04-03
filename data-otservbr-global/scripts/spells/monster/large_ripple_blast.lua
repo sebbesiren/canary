@@ -156,7 +156,7 @@ function spell.onCastSpell(creature, var)
 	local cid = creature:getId()
 
 	creature:say("Blast incoming!!!", TALKTYPE_MONSTER_YELL)
-	local speedChange = 100
+	local speedChange = 120
 	creature:changeSpeed(-speedChange)
 	local combat = combats[math.random(#combats)]
 	addEvent(delayedCastSpell, 1000, combat.notify, cid, var, 0)
