@@ -899,7 +899,7 @@ tasks = {
 			},
 		},
 		[43] = {
-			killsRequired = 5000,
+			killsRequired = 2500,
 			raceName = "Ebb and Flow",
 			custom = true,
 			level = { 130, 9999 },
@@ -911,13 +911,13 @@ tasks = {
 				"turbulent elemental",
 			},
 			rewards = {
-				{ type = "exp", value = { 15000000 * 10 } },
-				{ type = "item", value = { 3043, 500 } },
+				{ type = "exp", value = { 15000000 * 10 / 2 } },
+				{ type = "item", value = { 3043, 300 } },
 				{ type = "points", value = { 10 } },
 			},
 		},
 		[44] = {
-			killsRequired = 5000,
+			killsRequired = 2500,
 			raceName = "Claustrophobic Inferno",
 			custom = true,
 			level = { 130, 9999 },
@@ -929,13 +929,13 @@ tasks = {
 				"infernal phantom",
 			},
 			rewards = {
-				{ type = "exp", value = { 15000000 * 10 } },
-				{ type = "item", value = { 3043, 500 } },
+				{ type = "exp", value = { 15000000 * 10 / 2} },
+				{ type = "item", value = { 3043, 300 } },
 				{ type = "points", value = { 10 } },
 			},
 		},
 		[45] = {
-			killsRequired = 5000,
+			killsRequired = 2500,
 			raceName = "Rotten Wasteland",
 			custom = true,
 			level = { 130, 9999 },
@@ -947,13 +947,13 @@ tasks = {
 				"rotten golem",
 			},
 			rewards = {
-				{ type = "exp", value = { 15000000 * 10 } },
-				{ type = "item", value = { 3043, 500 } },
+				{ type = "exp", value = { 15000000 * 10 / 2 } },
+				{ type = "item", value = { 3043, 300 } },
 				{ type = "points", value = { 10 } },
 			},
 		},
 		[46] = {
-			killsRequired = 5000,
+			killsRequired = 2500,
 			raceName = "Furious Crater",
 			custom = true,
 			level = { 130, 9999 },
@@ -965,13 +965,13 @@ tasks = {
 				"courage leech",
 			},
 			rewards = {
-				{ type = "exp", value = { 15000000 * 10 } },
-				{ type = "item", value = { 3043, 500 } },
+				{ type = "exp", value = { 15000000 * 10 /2 } },
+				{ type = "item", value = { 3043, 300 } },
 				{ type = "points", value = { 10 } },
 			},
 		},
 		[47] = {
-			killsRequired = 3000,
+			killsRequired = 2000,
 			raceName = "Sparkling Pools",
 			custom = true,
 			level = { 130, 9999 },
@@ -985,13 +985,13 @@ tasks = {
 				"sabretooth",
 			},
 			rewards = {
-				{ type = "exp", value = { 8000000 * 10 } },
+				{ type = "exp", value = { 6000000 * 10 } },
 				{ type = "item", value = { 39546, 1 } }, -- primal bag
 				{ type = "points", value = { 10 } },
 			},
 		},
 		[48] = {
-			killsRequired = 3000,
+			killsRequired = 2000,
 			raceName = "Monster Graveyard",
 			custom = true,
 			level = { 130, 9999 },
@@ -1005,13 +1005,13 @@ tasks = {
 				"undertaker",
 			},
 			rewards = {
-				{ type = "exp", value = { 8000000 * 10 } },
+				{ type = "exp", value = { 6000000 * 10 } },
 				{ type = "item", value = { 39546, 1 } }, -- primal bag
 				{ type = "points", value = { 10 } },
 			},
 		},
 		[49] = {
-			killsRequired = 3000,
+			killsRequired = 2000,
 			raceName = "Crystal Enigma",
 			custom = true,
 			level = { 130, 9999 },
@@ -1025,13 +1025,13 @@ tasks = {
 				"shrieking cry-stal",
 			},
 			rewards = {
-				{ type = "exp", value = { 8000000 * 10 } },
+				{ type = "exp", value = { 6000000 * 10 } },
 				{ type = "item", value = { 39546, 1 } }, -- primal bag
 				{ type = "points", value = { 10 } },
 			},
 		},
 		[50] = {
-			killsRequired = 3000,
+			killsRequired = 1000,
 			raceName = "Asuras",
 			custom = true,
 			level = { 130, 9999 },
@@ -1043,13 +1043,13 @@ tasks = {
 				"frost flower asura",
 			},
 			rewards = {
-				{ type = "exp", value = { 1500000 * 10 } },
+				{ type = "exp", value = { 1500000 * 10 / 3 } },
 				{ type = "item", value = { 3043, 100 } },
 				{ type = "points", value = { 10 } },
 			},
 		},
 		[51] = {
-			killsRequired = 3000,
+			killsRequired = 1000,
 			raceName = "True Asuras",
 			custom = true,
 			level = { 130, 9999 },
@@ -1061,13 +1061,13 @@ tasks = {
 				"true frost flower asura",
 			},
 			rewards = {
-				{ type = "exp", value = { 4500000 * 10 } },
+				{ type = "exp", value = { 4500000 * 10 / 3 } },
 				{ type = "item", value = { 3043, 300 } },
 				{ type = "points", value = { 10 } },
 			},
 		},
 		[52] = {
-			killsRequired = 3000,
+			killsRequired = 1000,
 			raceName = "Secret Library",
 			custom = true,
 			level = { 130, 9999 },
@@ -1089,13 +1089,13 @@ tasks = {
 				"ink blob",
 			},
 			rewards = {
-				{ type = "exp", value = { 6000000 * 10 } },
+				{ type = "exp", value = { 6000000 * 10 / 3 } },
 				{ type = "item", value = { 3043, 300 } },
 				{ type = "points", value = { 10 } },
 			},
 		},
 		[53] = {
-			killsRequired = 2000,
+			killsRequired = 1000,
 			raceName = "Court of Winter",
 			custom = true,
 			level = { 130, 9999 },
@@ -1107,13 +1107,13 @@ tasks = {
 				"soul-broken harbinger",
 			},
 			rewards = {
-				{ type = "exp", value = { 15000000 } },
+				{ type = "exp", value = { 15000000 / 2 } },
 				{ type = "item", value = { 3043, 100 } },
 				{ type = "points", value = { 10 } },
 			},
 		},
 		[54] = {
-			killsRequired = 2000,
+			killsRequired = 1000,
 			raceName = "Court of Summer",
 			custom = true,
 			level = { 130, 9999 },
@@ -1125,13 +1125,13 @@ tasks = {
 				"insane siren",
 			},
 			rewards = {
-				{ type = "exp", value = { 15000000 } },
+				{ type = "exp", value = { 15000000 / 2 } },
 				{ type = "item", value = { 3043, 100 } },
 				{ type = "points", value = { 10 } },
 			},
 		},
 		[55] = {
-			killsRequired = 3000,
+			killsRequired = 1000,
 			raceName = "Flimsy",
 			custom = true,
 			level = { 130, 9999 },
@@ -1143,13 +1143,13 @@ tasks = {
 				"mean lost soul",
 			},
 			rewards = {
-				{ type = "exp", value = { 40000000 } },
-				{ type = "item", value = { 3043, 500 } },
+				{ type = "exp", value = { 40000000 / 3 } },
+				{ type = "item", value = { 3043, 300 } },
 				{ type = "points", value = { 10 } },
 			},
 		},
 		[56] = {
-			killsRequired = 3000,
+			killsRequired = 1000,
 			raceName = "Grimeleech",
 			custom = true,
 			level = { 130, 9999 },
@@ -1161,8 +1161,8 @@ tasks = {
 				"hellflayer",
 			},
 			rewards = {
-				{ type = "exp", value = { 36000000 } },
-				{ type = "item", value = { 3043, 300 } },
+				{ type = "exp", value = { 36000000 / 3 } },
+				{ type = "item", value = { 3043, 150 } },
 				{ type = "points", value = { 10 } },
 			},
 		},
