@@ -929,7 +929,7 @@ tasks = {
 				"infernal phantom",
 			},
 			rewards = {
-				{ type = "exp", value = { 15000000 * 10 / 2} },
+				{ type = "exp", value = { 15000000 * 10 / 2 } },
 				{ type = "item", value = { 3043, 300 } },
 				{ type = "points", value = { 10 } },
 			},
@@ -965,7 +965,7 @@ tasks = {
 				"courage leech",
 			},
 			rewards = {
-				{ type = "exp", value = { 15000000 * 10 /2 } },
+				{ type = "exp", value = { 15000000 * 10 / 2 } },
 				{ type = "item", value = { 3043, 300 } },
 				{ type = "points", value = { 10 } },
 			},
