@@ -911,7 +911,7 @@ tasks = {
 				"turbulent elemental",
 			},
 			rewards = {
-				{ type = "exp", value = { 15000000 * 10 / 2 } },
+				{ type = "exp", value = { 150000000 } },
 				{ type = "item", value = { 3043, 300 } },
 				{ type = "points", value = { 10 } },
 			},
@@ -929,7 +929,7 @@ tasks = {
 				"infernal phantom",
 			},
 			rewards = {
-				{ type = "exp", value = { 15000000 * 10 / 2} },
+				{ type = "exp", value = { 150000000 } },
 				{ type = "item", value = { 3043, 300 } },
 				{ type = "points", value = { 10 } },
 			},
@@ -947,7 +947,7 @@ tasks = {
 				"rotten golem",
 			},
 			rewards = {
-				{ type = "exp", value = { 15000000 * 10 / 2 } },
+				{ type = "exp", value = { 150000000 } },
 				{ type = "item", value = { 3043, 300 } },
 				{ type = "points", value = { 10 } },
 			},
@@ -965,7 +965,7 @@ tasks = {
 				"courage leech",
 			},
 			rewards = {
-				{ type = "exp", value = { 15000000 * 10 /2 } },
+				{ type = "exp", value = { 150000000 } },
 				{ type = "item", value = { 3043, 300 } },
 				{ type = "points", value = { 10 } },
 			},
@@ -985,7 +985,7 @@ tasks = {
 				"sabretooth",
 			},
 			rewards = {
-				{ type = "exp", value = { 6000000 * 10 } },
+				{ type = "exp", value = { 100000000 } },
 				{ type = "item", value = { 39546, 1 } }, -- primal bag
 				{ type = "points", value = { 10 } },
 			},
@@ -1005,7 +1005,7 @@ tasks = {
 				"undertaker",
 			},
 			rewards = {
-				{ type = "exp", value = { 6000000 * 10 } },
+				{ type = "exp", value = { 100000000 } },
 				{ type = "item", value = { 39546, 1 } }, -- primal bag
 				{ type = "points", value = { 10 } },
 			},
@@ -1025,7 +1025,7 @@ tasks = {
 				"shrieking cry-stal",
 			},
 			rewards = {
-				{ type = "exp", value = { 6000000 * 10 } },
+				{ type = "exp", value = { 100000000 } },
 				{ type = "item", value = { 39546, 1 } }, -- primal bag
 				{ type = "points", value = { 10 } },
 			},
@@ -1043,7 +1043,7 @@ tasks = {
 				"frost flower asura",
 			},
 			rewards = {
-				{ type = "exp", value = { 1500000 * 10 / 3 } },
+				{ type = "exp", value = { 10000000 } },
 				{ type = "item", value = { 3043, 100 } },
 				{ type = "points", value = { 10 } },
 			},
@@ -1061,7 +1061,7 @@ tasks = {
 				"true frost flower asura",
 			},
 			rewards = {
-				{ type = "exp", value = { 4500000 * 10 / 3 } },
+				{ type = "exp", value = { 45000000 } },
 				{ type = "item", value = { 3043, 300 } },
 				{ type = "points", value = { 10 } },
 			},
@@ -1089,7 +1089,7 @@ tasks = {
 				"ink blob",
 			},
 			rewards = {
-				{ type = "exp", value = { 6000000 * 10 / 3 } },
+				{ type = "exp", value = { 60000000 } },
 				{ type = "item", value = { 3043, 300 } },
 				{ type = "points", value = { 10 } },
 			},
@@ -1107,7 +1107,7 @@ tasks = {
 				"soul-broken harbinger",
 			},
 			rewards = {
-				{ type = "exp", value = { 15000000 / 2 } },
+				{ type = "exp", value = { 15000000 } },
 				{ type = "item", value = { 3043, 100 } },
 				{ type = "points", value = { 10 } },
 			},
@@ -1125,7 +1125,7 @@ tasks = {
 				"insane siren",
 			},
 			rewards = {
-				{ type = "exp", value = { 15000000 / 2 } },
+				{ type = "exp", value = { 15000000 } },
 				{ type = "item", value = { 3043, 100 } },
 				{ type = "points", value = { 10 } },
 			},
@@ -1143,7 +1143,7 @@ tasks = {
 				"mean lost soul",
 			},
 			rewards = {
-				{ type = "exp", value = { 40000000 / 3 } },
+				{ type = "exp", value = { 40000000 } },
 				{ type = "item", value = { 3043, 300 } },
 				{ type = "points", value = { 10 } },
 			},
@@ -1161,8 +1161,25 @@ tasks = {
 				"hellflayer",
 			},
 			rewards = {
-				{ type = "exp", value = { 36000000 / 3 } },
+				{ type = "exp", value = { 36000000 } },
 				{ type = "item", value = { 3043, 150 } },
+				{ type = "points", value = { 10 } },
+			},
+		},
+		[57] = {
+			killsRequired = 1000,
+			raceName = "Glooth",
+			custom = true,
+			level = { 130, 9999 },
+			repeatable = true,
+			premium = true,
+			creatures = {
+				"glooth bandit",
+				"glooth brigand"
+			},
+			rewards = {
+				{ type = "exp", value = { 10000000 } },
+				{ type = "item", value = { 3043, 100 } },
 				{ type = "points", value = { 10 } },
 			},
 		},

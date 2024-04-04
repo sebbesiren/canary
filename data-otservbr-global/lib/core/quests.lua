@@ -2338,6 +2338,22 @@ if not Quests then
 						[1] = "You succesfully killed all enemies. Return to Grizzly Adams for a reward.",
 					},
 				},
+				[102] = {
+					name = "Custom Task: Glooth Bandits",
+					storageId = 65000 + 57, -- KILLSSTORAGE_BASE + id
+					missionId = 10613, -- For mission tracking
+					startValue = 0,
+					endValue = 2,
+					states = {
+						[0] = function(player)
+							local taskId = 57
+							local task = tasks.GrizzlyAdams[taskId]
+							local killCount = player:kv():scoped("killing-in-the-name-of"):get(taskId .. "-count") or 0
+							return string.format("%s: You have killed %d of %d enemies so far.", task.raceName, killCount, task.killsRequired)
+						end,
+						[1] = "You succesfully killed all enemies. Return to Grizzly Adams for a reward.",
+					},
+				},
 			},
 		},
 		[12] = {

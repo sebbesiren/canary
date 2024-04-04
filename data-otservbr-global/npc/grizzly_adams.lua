@@ -408,7 +408,7 @@ local messageStartTaskAlt = {
 	["court of summer"] = messageStartTask["court of summer"],
 	["flimsy"] = messageStartTask["flimsy"],
 }
-local customTasksSay = "You can also try one of our custom tasks: {ebb and flow}, {claustrophobic inferno}, {rotten wasteland}, {furious crater}, {sparkling pools}, {monster graveyard}, {crystal enigma}, {asuras}, {true asuras}, {secret library}, {court of winter}, {court of summer}, {flimsy}, {grimeleech}"
+local customTasksSay = "You can also try one of our custom tasks: {ebb and flow}, {claustrophobic inferno}, {rotten wasteland}, {furious crater}, {sparkling pools}, {monster graveyard}, {crystal enigma}, {asuras}, {true asuras}, {secret library}, {court of winter}, {court of summer}, {flimsy}, {grimeleech}, {glooth}"
 
 local function checkX(npc, player, d, message)
 	for m = 1, #tasks.GrizzlyAdams do
