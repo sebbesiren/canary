@@ -1175,7 +1175,7 @@ tasks = {
 			premium = true,
 			creatures = {
 				"glooth bandit",
-				"glooth brigand"
+				"glooth brigand",
 			},
 			rewards = {
 				{ type = "exp", value = { 10000000 } },
