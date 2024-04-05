@@ -1,4 +1,3 @@
-local lockOut = 0 --60 * 60  --1h
 local duration = 60 * 10 -- 10 min
 local teleportItemId = 32979
 local spawnLocations = {
@@ -19,12 +18,24 @@ local hazardKvStore = kv.scoped("hazard")
 
 function originHazardEnded()
 	local previousStart = hazardKvStore:scoped("origin-hazard"):get("start") or 0
-	return os.time() > previousStart + duration
+
+	local hasEnded = os.time() > previousStart + duration
+	if hasEnded then
+		return true
+	end
+
+	local hazard = Hazard.getByName("hazard.origin")
+	local players = hazard.zone:getPlayers()
+	if #players == 0 and os.time() > previousStart + 30 then
+		return true
+	end
+
+	return false
 end
 
 function originHazardAvailable()
 	local previousStart = hazardKvStore:scoped("origin-hazard"):get("start") or 0
-	return os.time() > previousStart + duration + lockOut
+	return os.time() > previousStart + duration
 end
 
 local function exitOriginHazard(player)
@@ -56,6 +67,11 @@ local function resetOriginHazard()
 		monster:remove()
 	end
 	removeOriginHazardTeleport()
+	hazardKvStore:scoped("origin-hazard"):set("start", 0)
+
+	local message = "Origin hazard has ended and is now available again."
+	Game.broadcastMessage(message, MESSAGE_EVENT_ADVANCE)
+	Webhook.sendMessage(":space_invader: " .. message, announcementChannels["raids"])
 end
 
 local function spawnMonster(monsterName)
@@ -119,7 +135,7 @@ local function startOriginHazard(monsterName)
 	local startTime = os.time()
 	hazardKvStore:scoped("origin-hazard"):set("start", startTime)
 	originHazardLoop(monsterName)
-	local message = "A player has entered the Hazard Origins. Next possible event in " .. math.floor((duration + lockOut) / 60) .. " minutes."
+	local message = "A player has entered the Hazard Origins. Next possible event in " .. math.floor((duration) / 60) .. " minutes."
 	Game.broadcastMessage(message, MESSAGE_EVENT_ADVANCE)
 	Webhook.sendMessage(":space_invader: " .. message, announcementChannels["raids"])
 end
