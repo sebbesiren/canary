@@ -188,7 +188,7 @@ end
 function SpawnZone:unregister()
 	logger.debug("Unregistering spawn zone {}", self.zoneName)
 	stopEvent(self.event)
-	self:getZone():removeMonsters()
+	--self:getZone():removeMonsters()
 end
 
 -- private
