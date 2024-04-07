@@ -4,13 +4,13 @@ combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_SMALLPLANTS)
 combat:setArea(createCombatArea(AREA_SQUAREWAVE5, AREADIAGONAL_SQUAREWAVE5))
 
 local strongImpactItemIds = {
-	43885
+	43885,
 }
 local fierceImpactItemIds = {
-	43886
+	43886,
 }
 local critDamageItemIds = {
-	43887
+	43887,
 }
 
 function onGetFormulaValues(player, level, maglevel)

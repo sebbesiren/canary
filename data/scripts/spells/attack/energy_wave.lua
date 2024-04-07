@@ -1,11 +1,11 @@
 local strongImpactItemIds = {
-	43882
+	43882,
 }
 local fierceImpactItemIds = {
-	43883
+	43883,
 }
 local critDamageItemIds = {
-	43884
+	43884,
 }
 
 local function formulaFunction(player, level, maglevel)

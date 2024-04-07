@@ -4,13 +4,15 @@ combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_HOLYAREA)
 combat:setArea(createCombatArea(AREA_CIRCLE3X3))
 
 local strongImpactItemIds = {
-	43877, 43879
+	43877,
+	43879,
 }
 local fierceImpactItemIds = {
-	43878, 43880
+	43878,
+	43880,
 }
 local critDamageItemIds = {
-	43881
+	43881,
 }
 
 function onGetFormulaValues(player, level, maglevel)
