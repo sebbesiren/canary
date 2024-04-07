@@ -18,16 +18,16 @@ function onGetFormulaValues(player, level, maglevel)
 	local max = (level / 5) + (maglevel * 7)
 
 	local multiplier = 1
-	local weapon = creature:getSlotItem(CONST_SLOT_LEFT)
+	local weapon = player:getSlotItem(CONST_SLOT_LEFT)
 	if weapon then
-		if table.includes(strongImpactItemIds, weapon:getId()) then
+		if table.contains(strongImpactItemIds, weapon:getId()) then
 			multiplier = multiplier + 0.1
-		elseif table.includes(fierceImpactItemIds, weapon:getId()) then
+		elseif table.contains(fierceImpactItemIds, weapon:getId()) then
 			multiplier = multiplier + 0.2
 		end
 	end
-	local feet = creature:getSlotItem(CONST_SLOT_FEET)
-	if feet and table.includes(critDamageItemIds, feet:getId()) then
+	local feet = player:getSlotItem(CONST_SLOT_FEET)
+	if feet and table.contains(critDamageItemIds, feet:getId()) then
 		multiplier = multiplier + 0.05
 	end
 	logger.debug("Total multiplier: {}", multiplier)

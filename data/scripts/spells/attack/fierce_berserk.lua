@@ -32,16 +32,16 @@ function onGetFormulaValues(player, skill, attack, factor)
 	local max = (level / 5) + (skill + 2 * attack) * 3
 
 	local multiplier = 1
-	local weapon = creature:getSlotItem(CONST_SLOT_LEFT)
+	local weapon = player:getSlotItem(CONST_SLOT_LEFT)
 	if weapon then
-		if table.includes(strongImpactItemIds, weapon:getId()) then
+		if table.contains(strongImpactItemIds, weapon:getId()) then
 			multiplier = multiplier + 0.1
-		elseif table.includes(fierceImpactItemIds, weapon:getId()) then
+		elseif table.contains(fierceImpactItemIds, weapon:getId()) then
 			multiplier = multiplier + 0.2
 		end
 	end
-	local legs = creature:getSlotItem(CONST_SLOT_LEGS)
-	if legs and table.includes(critDamageItemIds, legs:getId()) then
+	local legs = player:getSlotItem(CONST_SLOT_LEGS)
+	if legs and table.contains(critDamageItemIds, legs:getId()) then
 		multiplier = multiplier + 0.05
 	end
 	logger.debug("Total multiplier: {}", multiplier)

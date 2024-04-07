@@ -30,7 +30,7 @@ function spell.onCastSpell(creature, variant)
 
 	local feet = creature:getSlotItem(CONST_SLOT_FEET)
 	local cooldownReduction = 0
-	if feet and table.includes(cooldownItemIds, feet:getId()) then
+	if feet and table.contains(cooldownItemIds, feet:getId()) then
 		cooldownReduction = 15
 	end
 	logger.debug("Total cooldownReduction: {}", cooldownReduction)

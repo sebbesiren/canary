@@ -107,38 +107,23 @@ for _, area in ipairs(combatConfig.areas) do
 		return true
 	end
 
-	function onBoomTargetTile(creature, pos)
-		local creatureTable = {}
-		local n, i = Tile({ x = pos.x, y = pos.y, z = pos.z }).creatures, 1
-		if n ~= 0 then
-			local v = getThingfromPos({ x = pos.x, y = pos.y, z = pos.z, stackpos = i }).uid
-			while v ~= 0 do
-				if Creature(v) == true then
-					table.insert(creatureTable, v)
-					if n == #creatureTable then
-						break
-					end
-				end
-				i = i + 1
-				v = getThingfromPos({ x = pos.x, y = pos.y, z = pos.z, stackpos = i }).uid
-			end
-		end
-		if #creatureTable ~= nil and #creatureTable > 0 then
-			for r = 1, #creatureTable do
-				if creatureTable[r] ~= creature then
-					local min = 6000
-					local max = 6000
-					local player = Player(creatureTable[r])
+	function onBoomTargetTile(creature, position)
+		local tile = Tile(position)
+		local creatures = tile:getCreatures()
+		if creatures and #creatures > 0 then
+			for _, c in pairs(creatures) do
+				local player = Player(c)
+				if player then
+					local multiplier = 1
 
-					if isPlayer(creatureTable[r]) == true and table.contains(vocation, player:getVocation():getBaseId()) then
-						doTargetCombatHealth(creature, creatureTable[r], combatConfig.boomType, -min, -max, CONST_ME_NONE)
-					elseif isMonster(creatureTable[r]) == true then
-						doTargetCombatHealth(creature, creatureTable[r], combatConfig.boomType, -min, -max, CONST_ME_NONE)
-					end
+					local min = player:getMaxHealth() * 0.4 * multiplier
+					local max = player:getMaxHealth() * 0.8 * multiplier
+					doTargetCombatHealth(creature, player, combatConfig.boomType, -min, -max, CONST_ME_NONE)
 				end
 			end
 		end
-		pos:sendMagicEffect(combatConfig.boomEffect)
+
+		position:sendMagicEffect(combatConfig.boomEffect)
 		return true
 	end
 
