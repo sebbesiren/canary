@@ -4,7 +4,7 @@ condition:setOutfit({ lookType = 1595 }) -- Avatar of Storm lookType
 local spell = Spell("instant")
 
 local cooldownItemIds = {
-	43884
+	43884,
 }
 
 function spell.onCastSpell(creature, variant)

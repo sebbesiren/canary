@@ -135,7 +135,7 @@ local function startOriginHazard(monsterName)
 	local startTime = os.time()
 	hazardKvStore:scoped("origin-hazard"):set("start", startTime)
 	originHazardLoop(monsterName)
-	local message = "A player has entered the Hazard Origins. Next possible event in " .. math.floor((duration) / 60) .. " minutes."
+	local message = "A player has entered the Hazard Origins. Next possible event in " .. math.floor(duration / 60) .. " minutes."
 	Game.broadcastMessage(message, MESSAGE_EVENT_ADVANCE)
 	Webhook.sendMessage(":space_invader: " .. message, announcementChannels["raids"])
 end

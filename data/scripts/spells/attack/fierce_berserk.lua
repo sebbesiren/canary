@@ -6,13 +6,23 @@ combat:setParameter(COMBAT_PARAM_USECHARGES, 1)
 combat:setArea(createCombatArea(AREA_SQUARE1X1))
 
 local strongImpactItemIds = {
-	43864, 43866, 43868, 43870, 43872, 43874
+	43864,
+	43866,
+	43868,
+	43870,
+	43872,
+	43874,
 }
 local fierceImpactItemIds = {
-	43865, 43867, 43869, 43871, 43873, 43875
+	43865,
+	43867,
+	43869,
+	43871,
+	43873,
+	43875,
 }
 local critDamageItemIds = {
-	43876
+	43876,
 }
 
 function onGetFormulaValues(player, skill, attack, factor)

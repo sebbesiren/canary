@@ -4,7 +4,7 @@ condition:setOutfit({ lookType = 1596 }) -- Avatar of Nature lookType
 local spell = Spell("instant")
 
 local cooldownItemIds = {
-	43887
+	43887,
 }
 
 function spell.onCastSpell(creature, variant)

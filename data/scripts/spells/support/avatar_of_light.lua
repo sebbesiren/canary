@@ -3,7 +3,7 @@ condition:setOutfit({ lookType = 1594 }) -- Avatar of Light lookType
 
 local spell = Spell("instant")
 local cooldownItemIds = {
-	43881
+	43881,
 }
 
 function spell.onCastSpell(creature, variant)

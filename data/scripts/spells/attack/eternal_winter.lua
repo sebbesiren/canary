@@ -4,13 +4,13 @@ combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_ICETORNADO)
 combat:setArea(createCombatArea(AREA_CIRCLE5X5))
 
 local strongImpactItemIds = {
-	43885
+	43885,
 }
 local fierceImpactItemIds = {
-	43886
+	43886,
 }
 local critDamageItemIds = {
-	43887
+	43887,
 }
 
 function onGetFormulaValues(player, level, maglevel)
