@@ -21,7 +21,7 @@ enum class ItemAugment_t : uint8_t {
 	Sorcerer_HellsCore_StrongImpact,
 	Sorcerer_HellsCore_CriticalExtraDamage,
 	Sorcerer_EnergyWave_PowerfulImpact
-	Sorcerer_EnergyWave_StrongImpact,
+		Sorcerer_EnergyWave_StrongImpact,
 	Sorcerer_EnergyWave_CriticalExtraDamage,
 	Sorcerer_AvatarOfStorm_Cooldown,
 }

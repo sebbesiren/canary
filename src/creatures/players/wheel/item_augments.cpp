@@ -1,7 +1,7 @@
-void ItemAugmentContext::addStrategies(ItemAugment_t modifier){
+void ItemAugmentContext::addStrategies(ItemAugment_t modifier) {
 	WheelSpells::Bonus bonus;
 
-	switch(modifier){
+	switch (modifier) {
 		case ItemAugment_t::Knight_FierceBerserk_PowerfulImpact:
 			bonus.increase.damage = 25;
 			m_strategies.push_back(std::make_unique<GemModifierSpellBonusStrategy>(m_wheel, "Fierce Berserk", bonus));
