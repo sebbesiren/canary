@@ -3,6 +3,10 @@ condition:setOutfit({ lookType = 1595 }) -- Avatar of Storm lookType
 
 local spell = Spell("instant")
 
+local cooldownItemIds = {
+	43884
+}
+
 function spell.onCastSpell(creature, variant)
 	if not creature or not creature:isPlayer() then
 		return false
@@ -23,6 +27,15 @@ function spell.onCastSpell(creature, variant)
 	elseif grade >= 1 then
 		cooldown = 120
 	end
+
+	local feet = creature:getSlotItem(CONST_SLOT_FEET)
+	local cooldownReduction = 0
+	if feet and table.includes(cooldownItemIds, feet:getId()) then
+		cooldownReduction = 15
+	end
+	logger.debug("Total cooldownReduction: {}", cooldownReduction)
+	cooldown = cooldown - cooldownReduction
+
 	local duration = 15000
 	condition:setTicks(duration)
 	local conditionCooldown = Condition(CONDITION_SPELLCOOLDOWN, CONDITIONID_DEFAULT, 266)

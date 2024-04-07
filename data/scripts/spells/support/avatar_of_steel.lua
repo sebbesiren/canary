@@ -2,6 +2,9 @@ local condition = Condition(CONDITION_OUTFIT)
 condition:setOutfit({ lookType = 1593 }) -- Avatar of Steel lookType
 
 local spell = Spell("instant")
+local cooldownItemIds = {
+	43876
+}
 
 function spell.onCastSpell(creature, variant)
 	if not creature or not creature:isPlayer() then
@@ -23,6 +26,15 @@ function spell.onCastSpell(creature, variant)
 	elseif grade >= 1 then
 		cooldown = 120
 	end
+
+	local legs = creature:getSlotItem(CONST_SLOT_LEGS)
+	local cooldownReduction = 0
+	if legs and table.includes(cooldownItemIds, legs:getId()) then
+		cooldownReduction = 15
+	end
+	logger.debug("Total cooldownReduction: {}", cooldownReduction)
+	cooldown = cooldown - cooldownReduction
+
 	local duration = 15000
 	condition:setTicks(duration)
 	local conditionCooldown = Condition(CONDITION_SPELLCOOLDOWN, CONDITIONID_DEFAULT, 264)

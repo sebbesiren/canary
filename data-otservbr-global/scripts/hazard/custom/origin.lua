@@ -87,7 +87,7 @@ function deathEvent.onDeath(creature)
 		end
 	end
 
-	chanceTo = math.random(1, 500)
+	chanceTo = math.random(1, 500 - points * 10)
 	if chanceTo <= 1 then
 		local bosses = {
 			"Balrog",
