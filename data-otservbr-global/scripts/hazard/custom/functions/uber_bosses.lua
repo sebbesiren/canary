@@ -1,5 +1,4 @@
-local lockOut = 60 * 0 -- 0 min
-local lobbyDuration = 60 * 5 -- 5 min
+local lobbyDuration = 60 * 3 -- 5 min
 local fightDuration = 60 * 15 -- 15min
 local teleportItemId = 25055
 local entryLocations = {
@@ -23,7 +22,7 @@ end
 
 function uberBossAvailable()
 	local previousStart = uberBossesKvStore:get("start") or 0
-	return os.time() > previousStart + lobbyDuration + fightDuration + lockOut
+	return os.time() > previousStart + lobbyDuration + fightDuration + 5 -- safety margin
 end
 
 local function createEntryLocation(position)
@@ -56,12 +55,15 @@ local function endLobby()
 	end
 end
 
-local function reset()
+function resetUberBosses()
 	local zone = Zone.getByName("uber-bosses")
-	sendUberMessage("The uber boss fight has ended! Next fight available in " .. lockOut / 60 .. " minutes.")
+	if not uberBossAvailable() then
+		sendUberMessage("The uber boss fight has ended! You are now able to get the next boss.")
+	end
 	zone:refresh()
 	zone:removePlayers()
 	zone:removeMonsters()
+	uberBossesKvStore:set("start", 0)
 end
 
 local function createBoss(bossName, position)
@@ -81,7 +83,7 @@ local function startFight(bossName)
 
 	endLobby()
 	createBoss(bossName, Position(5078, 4809, 11))
-	addEvent(reset, fightDuration * 1000)
+	addEvent(resetUberBosses, fightDuration * 1000)
 end
 
 function attemptStartUberBoss(bossName)
