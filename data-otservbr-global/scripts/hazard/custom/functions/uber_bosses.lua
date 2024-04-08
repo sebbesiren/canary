@@ -1,5 +1,5 @@
-local lobbyDuration = 60 * 3  -- 3 min
-local fightDuration = 60 * 15  -- 15min
+local lobbyDuration = 60 * 3 -- 3 min
+local fightDuration = 60 * 15 -- 15min
 local teleportItemId = 25055
 local entryLocations = {
 	Position(5080, 4916, 11),
@@ -22,7 +22,7 @@ end
 
 function uberBossAvailable()
 	local previousStart = uberBossesKvStore:get("start") or 0
-	return os.time() >= previousStart + lobbyDuration + fightDuration - 1  -- safety margin
+	return os.time() >= previousStart + lobbyDuration + fightDuration - 1 -- safety margin
 end
 
 local function createEntryLocation(position)
