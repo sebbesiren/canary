@@ -57,7 +57,7 @@ function onDeathEvent.onDeath(creature)
 		player:sendTextMessage(MESSAGE_LOOK, "Congratulations on beating the Boss!! You will be removed from the zone within 30 seconds.")
 	end
 
-	addEvent(resetUberBosses, 30 * 1000)
+	addEvent(resetUberBosses, 10 * 1000, true)
 	return true
 end
 onDeathEvent:register()
