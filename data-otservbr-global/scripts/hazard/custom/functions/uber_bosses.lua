@@ -65,7 +65,7 @@ function resetUberBosses(bossKilled)
 	local players = zone:getPlayers()
 	if bossKilled then
 		sendUberMessage("The uber boss was killed! You are now able to get the next boss.")
-	elseif #monsters or #players then
+	elseif #monsters >= 1 or #players >= 1 then
 		sendUberMessage("The uber boss fight has ended! You are now able to get the next boss.")
 	end
 

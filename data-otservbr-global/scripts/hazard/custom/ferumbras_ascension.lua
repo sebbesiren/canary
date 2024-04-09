@@ -77,7 +77,7 @@ function deathEvent.onDeath(creature)
 		spawnCustomHazardBoss(player, monster, miniBosses)
 	end
 
-	if executeCreateHazardPod(points, 50) then
+	if executeCreateHazardPod(points) then
 		createHazardPod(monster:getPosition(), monster:getName())
 	end
 
