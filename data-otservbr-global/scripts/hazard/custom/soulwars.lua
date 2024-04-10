@@ -1,6 +1,6 @@
 local hazard = Hazard.new({
 	name = "hazard.soulwars",
-	from = Position({ x = 33873, y = 30994, z = 9 }),
+	from = Position({ x = 33873, y = 30994, z = 8 }),
 	to = Position(34084, 31253, 13),
 	maxLevel = 20,
 
