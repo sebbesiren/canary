@@ -1,6 +1,13 @@
 local combat = Combat()
 combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_MAGIC_BLUE)
-combat:setArea(createCombatArea(AREA_SQUARE1X1))
+local area = {
+	{ 1, 1, 1, 1, 1 },
+	{ 1, 1, 1, 1, 1 },
+	{ 1, 1, 3, 1, 1 },
+	{ 1, 1, 1, 1, 1 },
+	{ 1, 1, 1, 1, 1 },
+}
+combat:setArea(createCombatArea(area))
 
 function onTargetCreature(creature, target)
 	return doChallengeCreature(creature, target)
