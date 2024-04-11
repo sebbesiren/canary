@@ -914,6 +914,7 @@ tasks = {
 				{ type = "exp", value = { 150000000 } },
 				{ type = "item", value = { 3043, 300 } },
 				{ type = "points", value = { 10 } },
+				{ type = "bosspoints", value = { 1 } },
 			},
 		},
 		[44] = {
@@ -932,6 +933,7 @@ tasks = {
 				{ type = "exp", value = { 150000000 } },
 				{ type = "item", value = { 3043, 300 } },
 				{ type = "points", value = { 10 } },
+				{ type = "bosspoints", value = { 1 } },
 			},
 		},
 		[45] = {
@@ -950,6 +952,7 @@ tasks = {
 				{ type = "exp", value = { 150000000 } },
 				{ type = "item", value = { 3043, 300 } },
 				{ type = "points", value = { 10 } },
+				{ type = "bosspoints", value = { 1 } },
 			},
 		},
 		[46] = {
@@ -968,6 +971,7 @@ tasks = {
 				{ type = "exp", value = { 150000000 } },
 				{ type = "item", value = { 3043, 300 } },
 				{ type = "points", value = { 10 } },
+				{ type = "bosspoints", value = { 1 } },
 			},
 		},
 		[47] = {
@@ -988,6 +992,7 @@ tasks = {
 				{ type = "exp", value = { 100000000 } },
 				{ type = "item", value = { 39546, 1 } }, -- primal bag
 				{ type = "points", value = { 10 } },
+				{ type = "bosspoints", value = { 1 } },
 			},
 		},
 		[48] = {
@@ -1008,6 +1013,7 @@ tasks = {
 				{ type = "exp", value = { 100000000 } },
 				{ type = "item", value = { 39546, 1 } }, -- primal bag
 				{ type = "points", value = { 10 } },
+				{ type = "bosspoints", value = { 1 } },
 			},
 		},
 		[49] = {
@@ -1028,6 +1034,7 @@ tasks = {
 				{ type = "exp", value = { 100000000 } },
 				{ type = "item", value = { 39546, 1 } }, -- primal bag
 				{ type = "points", value = { 10 } },
+				{ type = "bosspoints", value = { 1 } },
 			},
 		},
 		[50] = {
@@ -1046,6 +1053,7 @@ tasks = {
 				{ type = "exp", value = { 10000000 } },
 				{ type = "item", value = { 3043, 100 } },
 				{ type = "points", value = { 10 } },
+				{ type = "bosspoints", value = { 1 } },
 			},
 		},
 		[51] = {
@@ -1064,6 +1072,7 @@ tasks = {
 				{ type = "exp", value = { 45000000 } },
 				{ type = "item", value = { 3043, 300 } },
 				{ type = "points", value = { 10 } },
+				{ type = "bosspoints", value = { 1 } },
 			},
 		},
 		[52] = {
@@ -1092,6 +1101,7 @@ tasks = {
 				{ type = "exp", value = { 60000000 } },
 				{ type = "item", value = { 3043, 300 } },
 				{ type = "points", value = { 10 } },
+				{ type = "bosspoints", value = { 1 } },
 			},
 		},
 		[53] = {
@@ -1110,6 +1120,7 @@ tasks = {
 				{ type = "exp", value = { 15000000 } },
 				{ type = "item", value = { 3043, 100 } },
 				{ type = "points", value = { 10 } },
+				{ type = "bosspoints", value = { 1 } },
 			},
 		},
 		[54] = {
@@ -1128,6 +1139,7 @@ tasks = {
 				{ type = "exp", value = { 15000000 } },
 				{ type = "item", value = { 3043, 100 } },
 				{ type = "points", value = { 10 } },
+				{ type = "bosspoints", value = { 1 } },
 			},
 		},
 		[55] = {
@@ -1146,6 +1158,7 @@ tasks = {
 				{ type = "exp", value = { 40000000 } },
 				{ type = "item", value = { 3043, 300 } },
 				{ type = "points", value = { 10 } },
+				{ type = "bosspoints", value = { 1 } },
 			},
 		},
 		[56] = {
@@ -1164,6 +1177,7 @@ tasks = {
 				{ type = "exp", value = { 36000000 } },
 				{ type = "item", value = { 3043, 150 } },
 				{ type = "points", value = { 10 } },
+				{ type = "bosspoints", value = { 1 } },
 			},
 		},
 		[57] = {
@@ -1181,6 +1195,7 @@ tasks = {
 				{ type = "exp", value = { 10000000 } },
 				{ type = "item", value = { 3043, 100 } },
 				{ type = "points", value = { 10 } },
+				{ type = "bosspoints", value = { 1 } },
 			},
 		},
 	},
