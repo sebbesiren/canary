@@ -118,7 +118,7 @@ for _, area in ipairs(areas) do
 				if player then
 					local multiplier = 1
 
-					local min = player:getMaxHealth() * 0.6 * multiplier
+					local min = player:getMaxHealth() * 0.9 * multiplier
 					local max = player:getMaxHealth() * 1.2 * multiplier
 					doTargetCombatHealth(creature, player, COMBAT_DEATHDAMAGE, -min, -max, CONST_ME_NONE)
 				end

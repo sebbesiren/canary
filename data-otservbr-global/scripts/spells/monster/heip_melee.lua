@@ -35,15 +35,15 @@ for _, area in ipairs(areas) do
 					local multiplier = 1
 					local voc = player:getVocation():getBaseId()
 					if voc == VOCATION.BASE_ID.SORCERER or voc == VOCATION.BASE_ID.DRUID then
-						multiplier = 2.5
+						multiplier = 2
 					elseif voc == VOCATION.BASE_ID.PALADIN then
 						multiplier = 2
 					elseif voc == VOCATION.BASE_ID.KNIGHT then
 						multiplier = 1
 					end
 
-					local min = player:getMaxHealth() * 0.2 * multiplier
-					local max = player:getMaxHealth() * 0.4 * multiplier
+					local min = player:getMaxHealth() * 0.1 * multiplier
+					local max = player:getMaxHealth() * 0.6 * multiplier
 
 					doTargetCombatHealth(creature, player, COMBAT_PHYSICALDAMAGE, -min, -max, CONST_ME_NONE)
 				end
