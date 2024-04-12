@@ -7,7 +7,6 @@ local condition = Condition(CONDITION_REGENERATION)
 condition:setParameter(CONDITION_PARAM_SUBID, 1)
 condition:setParameter(CONDITION_PARAM_BUFF_SPELL, 1)
 condition:setParameter(CONDITION_PARAM_TICKS, 30 * 60 * 1000)
-condition:setParameter(CONDITION_PARAM_HEALTHGAIN, 20)
 condition:setParameter(CONDITION_PARAM_HEALTHTICKS, 2000)
 
 local baseMana = 120
@@ -61,6 +60,13 @@ function spell.onCastSpell(creature, var)
 
 	creature:addMana(-(mana - baseMana), false)
 	creature:addManaSpent((mana - baseMana))
+
+	local player = Player(creature)
+	if player then
+		condition:setParameter(CONDITION_PARAM_HEALTHGAIN, player:getMagicLevel() * 2)
+	else
+		condition:setParameter(CONDITION_PARAM_HEALTHGAIN, 50)
+	end
 
 	for _, targetPlayer in ipairs(affectedList) do
 		targetPlayer:addCondition(condition)
