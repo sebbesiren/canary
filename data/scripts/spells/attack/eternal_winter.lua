@@ -14,8 +14,8 @@ local critDamageItemIds = {
 }
 
 function onGetFormulaValues(player, level, maglevel)
-	local min = level * 0.2 + maglevel * 9
-	local max = level * 0.2 + maglevel * 18
+	local min = level * 0.2 + maglevel * 8
+	local max = level * 0.2 + maglevel * 16
 
 	local multiplier = 1
 	local weapon = player:getSlotItem(CONST_SLOT_LEFT)
