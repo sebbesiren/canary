@@ -62,7 +62,7 @@ function hazardlevel.onSay(player, words, param)
 
 	local hazard = Hazard.getByName(selectedHazard.name)
 
-	if desiredLevel == 'max' then
+	if desiredLevel == "max" then
 		desiredLevel = hazard:getPlayerMaxLevel(player) or 1
 	end
 
