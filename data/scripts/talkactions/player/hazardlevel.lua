@@ -61,6 +61,11 @@ function hazardlevel.onSay(player, words, param)
 	end
 
 	local hazard = Hazard.getByName(selectedHazard.name)
+
+	if desiredLevel == 'max' then
+		desiredLevel = hazard:getPlayerMaxLevel(player) or 1
+	end
+
 	if hazard:setPlayerCurrentLevel(player, desiredLevel) then
 		player:sendTextMessage(MESSAGE_LOOK, "Hazard level for area '" .. hazardName .. "' set to " .. desiredLevel)
 	else

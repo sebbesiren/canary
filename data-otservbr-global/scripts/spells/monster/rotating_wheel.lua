@@ -116,8 +116,8 @@ for _, area in ipairs(combatConfig.areas) do
 				if player then
 					local multiplier = 1
 
-					local min = player:getMaxHealth() * 0.4 * multiplier
-					local max = player:getMaxHealth() * 0.8 * multiplier
+					local min = player:getMaxHealth() * 0.7 * multiplier
+					local max = player:getMaxHealth() * 1.2 * multiplier
 					doTargetCombatHealth(creature, player, combatConfig.boomType, -min, -max, CONST_ME_NONE)
 				end
 			end

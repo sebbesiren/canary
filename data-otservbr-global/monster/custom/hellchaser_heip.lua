@@ -94,8 +94,8 @@ monster.attacks = {
 	{ name = "cross blast", interval = 2000, chance = 10 },
 
 	-- range atks
-	{ name = "heip energy ball", interval = 4000, chance = 50 },
-	{ name = "heip inferno strike", interval = 5000, chance = 50 },
+	{ name = "heip energy ball", interval = 5000, chance = 50 },
+	{ name = "heip inferno strike", interval = 6000, chance = 50 },
 
 	-- stage atks (boss has to stand still)
 	{ name = "small mortar", interval = 2000, chance = 20 },
