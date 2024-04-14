@@ -96,7 +96,6 @@ function deathEvent.onDeath(creature)
 			"Urmahlullu the Immaculate",
 			"Grand Master Oberon",
 			"King Zelos",
-			"Apocalypse"
 		}
 
 		if monsterMaxHealth > 3000 then
@@ -116,6 +115,7 @@ function deathEvent.onDeath(creature)
 			for _ = 1, 9 do
 				table.insert(bosses, "Hellchaser Heip")
 			end
+			table.insert(bosses, "Apocalypse")
 		end
 		if monsterMaxHealth > 12000 then
 			for _ = 1, 9 do
