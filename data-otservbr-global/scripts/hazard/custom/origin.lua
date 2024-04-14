@@ -96,7 +96,7 @@ function deathEvent.onDeath(creature)
 			"Urmahlullu the Immaculate",
 			"Grand Master Oberon",
 			"King Zelos",
-			"Apocalypse"
+			"Apocalypse",
 		}
 
 		if monsterMaxHealth > 3000 then

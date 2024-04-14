@@ -1,7 +1,7 @@
 local hazard = Hazard.new({
 	name = "hazard.tower",
-	from = Position({x = 4954, y = 4947, z = 7}),
-	to = Position({x = 5053, y = 5020, z = 10}),
+	from = Position({ x = 4954, y = 4947, z = 7 }),
+	to = Position({ x = 5053, y = 5020, z = 10 }),
 	maxLevel = 20,
 
 	crit = true,
