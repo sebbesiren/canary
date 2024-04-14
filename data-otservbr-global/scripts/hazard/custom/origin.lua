@@ -95,7 +95,7 @@ function deathEvent.onDeath(creature)
 		local bosses = {
 			"Urmahlullu the Immaculate",
 			"Grand Master Oberon",
-			"King Zelos"
+			"King Zelos",
 		}
 
 		if monsterMaxHealth > 3000 then
