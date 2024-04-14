@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Grand Master Oberon")
 local monster = {}
 
 monster.description = "Grand Master Oberon"
-monster.experience = 20000
+monster.experience = 60000 * 4
 monster.outfit = {
 	lookType = 1072,
 	lookHead = 21,
@@ -136,9 +136,11 @@ mType.onAppear = function(monster, creature)
 	end
 end
 
-mType.onDisappear = function(monster, creature) end
+mType.onDisappear = function(monster, creature)
+end
 
-mType.onMove = function(monster, creature, fromPosition, toPosition) end
+mType.onMove = function(monster, creature, fromPosition, toPosition)
+end
 
 mType.onSay = function(monster, creature, type, message)
 	if type ~= TALKTYPE_SAY then
