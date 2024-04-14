@@ -48,7 +48,15 @@ function hazardlevel.onSay(player, words, param)
 	end
 
 	local hazardName = param_parts[1]
-	local desiredLevel = getMoneyCount(param_parts[2])
+	local hazard = Hazard.getByName(selectedHazard.name)
+
+	local desiredLevel = -1
+	if param_parts[2] == "max" then
+		desiredLevel = hazard:getPlayerMaxLevel(player) or 1
+	else
+		desiredLevel = getMoneyCount(param_parts[2])
+	end
+
 	if desiredLevel == -1 then
 		desiredLevel = 0
 	end
@@ -58,12 +66,6 @@ function hazardlevel.onSay(player, words, param)
 	if not selectedHazard then
 		player:sendTextMessage(MESSAGE_LOOK, "Unknown hazard. Use one of: " .. table.concat(availableHazards, ", "))
 		return true
-	end
-
-	local hazard = Hazard.getByName(selectedHazard.name)
-
-	if desiredLevel == "max" then
-		desiredLevel = hazard:getPlayerMaxLevel(player) or 1
 	end
 
 	if hazard:setPlayerCurrentLevel(player, desiredLevel) then
