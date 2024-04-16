@@ -87,8 +87,8 @@ function deathEvent.onDeath(creature)
 		end
 	end
 
-	local multiplier = math.min(1, 12000 / monsterMaxHealth)
-	local baseChance = math.max(200, 500 - points * 25)
+	local multiplier = math.min(1, 16000 / monsterMaxHealth)
+	local baseChance = math.max(250, 500 - points * 15)
 
 	chanceTo = math.random(1, math.ceil(baseChance * multiplier))
 	if chanceTo <= 1 then

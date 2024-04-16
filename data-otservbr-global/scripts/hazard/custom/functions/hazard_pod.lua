@@ -176,13 +176,13 @@ local function hazardPodExpire(position, monsterName)
 	if tile then
 		local podItem = tile:getItemById(ITEM_PRIMAL_POD)
 		if podItem then
-			if otherPortalTooClose(position) then
+			if otherPortalTooClose(position) or monsterName:lower() == 'fungosaurus' then
 				removeEvent("spawnPortal")
 			else
 				insertEvent("spawnPortal", 125)
 			end
 
-			if originHazardAvailable() then
+			if originHazardAvailable() and monsterName:lower() ~= 'fungosaurus' then
 				insertEvent("originHazard", 50)
 			else
 				removeEvent("originHazard")

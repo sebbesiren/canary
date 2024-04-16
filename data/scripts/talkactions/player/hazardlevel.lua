@@ -37,31 +37,38 @@ for key, _ in pairs(hazards) do
 	table.insert(availableHazards, key)
 end
 
+local function lstrip(s)
+	return s:match("^%s*(.*)")
+end
+
+local function rstrip(s)
+	return s:match("(.-)%s*$")
+end
+
 function hazardlevel.onSay(player, words, param)
 	logger.debug("!hazardlevel executed")
 
-	local param_parts = param:split(",")
+	local paramParts = param:split(",")
 
-	if param_parts[1] == "list" then
+	if paramParts[1] == "list" then
 		player:sendTextMessage(MESSAGE_LOOK, "Available hazards: " .. table.concat(availableHazards, ", "))
 		return true
 	end
 
-	local hazardName = param_parts[1]
+	local hazardName = paramParts[1]
+	local selectedHazard = hazards[hazardName]
 	local hazard = Hazard.getByName(selectedHazard.name)
 
-	local desiredLevel = -1
-	if param_parts[2] == "max" then
+	local desiredLevel = lstrip(rstrip(paramParts[2]))
+	if desiredLevel == "max" then
 		desiredLevel = hazard:getPlayerMaxLevel(player) or 1
 	else
-		desiredLevel = getMoneyCount(param_parts[2])
+		desiredLevel = getMoneyCount(desiredLevel)
 	end
 
 	if desiredLevel == -1 then
 		desiredLevel = 0
 	end
-
-	local selectedHazard = hazards[hazardName]
 
 	if not selectedHazard then
 		player:sendTextMessage(MESSAGE_LOOK, "Unknown hazard. Use one of: " .. table.concat(availableHazards, ", "))
