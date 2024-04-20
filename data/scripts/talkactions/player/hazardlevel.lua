@@ -30,6 +30,7 @@ local hazards = {
 	["origin"] = { name = "hazard.origin" },
 	["oramond catacombs"] = { name = "hazard.oramond-catacombs" },
 	["soulwars"] = { name = "hazard.soulwars" },
+	["tower"] = { name = "hazard.tower" }
 }
 
 local availableHazards = {}
