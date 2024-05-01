@@ -58,6 +58,10 @@ function hazardlevel.onSay(player, words, param)
 
 	local hazardName = paramParts[1]
 	local selectedHazard = hazards[hazardName]
+	if not selectedHazard then
+		player:sendTextMessage(MESSAGE_LOOK, "Unknown hazard. Use one of: " .. table.concat(availableHazards, ", "))
+		return true
+	end
 	local hazard = Hazard.getByName(selectedHazard.name)
 
 	local desiredLevel = lstrip(rstrip(paramParts[2]))
@@ -69,11 +73,6 @@ function hazardlevel.onSay(player, words, param)
 
 	if desiredLevel == -1 then
 		desiredLevel = 0
-	end
-
-	if not selectedHazard then
-		player:sendTextMessage(MESSAGE_LOOK, "Unknown hazard. Use one of: " .. table.concat(availableHazards, ", "))
-		return true
 	end
 
 	if hazard:setPlayerCurrentLevel(player, desiredLevel) then

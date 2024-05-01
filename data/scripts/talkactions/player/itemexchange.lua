@@ -215,8 +215,9 @@ function itemexchange.onSay(player, words, param)
 		return true
 	end
 
-	local offerItem = lstrip(rstrip(paramParts[1]))
-	local desiredItem = lstrip(rstrip(paramParts[2]))
+
+	local offerItem = lstrip(rstrip(paramParts[1]) or "")
+	local desiredItem = lstrip(rstrip(paramParts[2]) or "")
 	local tributes = getMoneyCount(paramParts[3] or "0")
 
 	if tributes < 0 or tributes == nil then
