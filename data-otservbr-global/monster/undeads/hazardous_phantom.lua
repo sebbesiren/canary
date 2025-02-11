@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Hazardous Phantom")
 local monster = {}
 
 monster.description = "a hazardous phantom"
-monster.experience = 70000 * 2
+monster.experience = 66000
 monster.outfit = {
 	lookType = 1298,
 	lookHead = 114,
@@ -19,6 +19,10 @@ monster.race = "undead"
 monster.corpse = 34125
 monster.speed = 100
 monster.manaCost = 0
+
+monster.events = {
+	"HazardousPhantomDeath",
+}
 
 monster.changeTarget = {
 	interval = 4000,
@@ -78,24 +82,23 @@ monster.loot = {
 	{ id = 282, chance = 1570 }, -- giant shimmering pearl
 	{ name = "wand of everblazing", chance = 790 },
 	{ id = 23542, chance = 790 }, -- collar of blue plasma
-	{ id = 34109, chance = 22 }, -- bag you desire
+	{ name = "bag you desire", chance = 15 },
 }
 
 monster.attacks = {
-	{ name = "melee", interval = 2000, chance = 100, minDamage = -1000, maxDamage = -1400 },
-	{ name = "combat", interval = 3000, chance = 15, type = COMBAT_EARTHDAMAGE, minDamage = -1050, maxDamage = -1400, range = 7, radius = 5, shootEffect = CONST_ANI_POISONARROW, effect = CONST_ME_GREEN_RINGS, target = true },
-	{ name = "ice chain", interval = 2000, chance = 15, minDamage = -1200, maxDamage = -1500, range = 7 },
+	{ name = "melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -1100 },
+	{ name = "combat", interval = 3000, chance = 20, type = COMBAT_EARTHDAMAGE, minDamage = -1050, maxDamage = -1400, range = 7, radius = 3, shootEffect = CONST_ANI_POISONARROW, effect = CONST_ME_GREEN_RINGS, target = true },
+	{ name = "combat", interval = 2000, chance = 10, type = COMBAT_EARTHDAMAGE, minDamage = -900, maxDamage = -1250, length = 6, spread = 4, effect = CONST_ME_GREEN_RINGS, target = false },
+	{ name = "combat", interval = 3000, chance = 20, type = COMBAT_ICEDAMAGE, minDamage = -1050, maxDamage = -1100, radius = 3, effect = CONST_ME_ICETORNADO, target = false },
+	{ name = "combat", interval = 3000, chance = 20, type = COMBAT_ICEDAMAGE, minDamage = -1050, maxDamage = -1300, range = 7, radius = 4, effect = CONST_ME_ICEATTACK, target = true },
+	{ name = "ice chain", interval = 2000, chance = 15, minDamage = -1300, maxDamage = -1500, range = 7 },
 	{ name = "soulwars fear", interval = 2000, chance = 2, target = true },
-	--{ name = "combat", interval = 2000, chance = 10, type = COMBAT_EARTHDAMAGE, minDamage = -900, maxDamage = -1250, length = 6, spread = 4, effect = CONST_ME_GREEN_RINGS, target = false },
-	--{ name = "combat", interval = 3000, chance = 15, type = COMBAT_ICEDAMAGE, minDamage = -1050, maxDamage = -1100, radius = 3, effect = CONST_ME_ICETORNADO, target = false },
-	--{ name = "combat", interval = 3000, chance = 15, type = COMBAT_ICEDAMAGE, minDamage = -1050, maxDamage = -1300, range = 7, radius = 4, effect = CONST_ME_ICEATTACK, target = true },
 }
 
 monster.defenses = {
 	defense = 100,
 	armor = 100,
 	mitigation = 4.45,
-	{ name = "combat", interval = 2000, chance = 5, type = COMBAT_HEALING, minDamage = 5000, maxDamage = 5200, effect = CONST_ME_MAGIC_BLUE, target = false },
 }
 
 monster.elements = {

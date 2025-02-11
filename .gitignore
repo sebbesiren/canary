@@ -401,5 +401,8 @@ canary_old
 # VCPKG
 vcpkg_installed
 
+# DB Backups
+database_backup
+
 # CLION
 cmake-build-*

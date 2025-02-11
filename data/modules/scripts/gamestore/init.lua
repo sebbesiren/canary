@@ -47,8 +47,8 @@ GameStore.SubActions = {
 	BLESSING_SUNS = 6,
 	BLESSING_SPIRITUAL = 7,
 	BLESSING_EMBRACE = 8,
-	BLESSING_HEART = 9,
-	BLESSING_BLOOD = 10,
+	BLESSING_BLOOD = 9,
+	BLESSING_HEART = 10,
 	BLESSING_ALL_PVE = 11,
 	BLESSING_ALL_PVP = 12,
 	CHARM_EXPANSION = 13,
@@ -252,6 +252,11 @@ function onRecvbyte(player, msg, byte)
 		return player:sendCancelMessage("Store don't have offers for rookgaard citizen.")
 	end
 
+	if player:isUIExhausted(250) then
+		player:sendCancelMessage("You are exhausted.")
+		return
+	end
+
 	if byte == GameStore.RecivedPackets.C_StoreEvent then
 	elseif byte == GameStore.RecivedPackets.C_TransferCoins then
 		parseTransferableCoins(player:getId(), msg)
@@ -267,12 +272,6 @@ function onRecvbyte(player, msg, byte)
 		parseRequestTransactionHistory(player:getId(), msg)
 	end
 
-	if player:isUIExhausted(250) then
-		player:sendCancelMessage("You are exhausted.")
-		return false
-	end
-
-	player:updateUIExhausted()
 	return true
 end
 
@@ -311,6 +310,7 @@ function parseTransferableCoins(playerId, msg)
 	GameStore.insertHistory(accountId, GameStore.HistoryTypes.HISTORY_TYPE_NONE, player:getName() .. " transferred you this amount.", amount, GameStore.CoinType.Transferable)
 	GameStore.insertHistory(player:getAccountId(), GameStore.HistoryTypes.HISTORY_TYPE_NONE, "You transferred this amount to " .. reciver, -1 * amount, GameStore.CoinType.Transferable)
 	openStore(playerId)
+	player:updateUIExhausted()
 end
 
 function parseOpenStore(playerId, msg)
@@ -401,6 +401,18 @@ function parseRequestStoreOffers(playerId, msg)
 
 		addPlayerEvent(sendShowStoreOffers, 250, playerId, searchResultsCategory)
 	end
+	player:updateUIExhausted()
+end
+
+-- Used on cyclopedia store summary
+local function insertPlayerTransactionSummary(player, offer)
+	local id = offer.id
+	if offer.type == GameStore.OfferTypes.OFFER_TYPE_HOUSE then
+		id = offer.itemtype
+	elseif offer.type == GameStore.OfferTypes.OFFER_TYPE_BLESSINGS then
+		id = offer.blessid
+	end
+	player:createTransactionSummary(offer.type, math.max(1, offer.count or 1), id)
 end
 
 function parseBuyStoreOffer(playerId, msg)
@@ -454,9 +466,7 @@ function parseBuyStoreOffer(playerId, msg)
 	-- Handled errors are thrown to indicate that the purchase has failed;
 	-- Handled errors have a code index and unhandled errors do not
 	local pcallOk, pcallError = pcall(function()
-		if offer.type == GameStore.OfferTypes.OFFER_TYPE_ITEM then
-			GameStore.processItemPurchase(player, offer.itemtype, offer.count or 1, offer.movable, offer.setOwner)
-		elseif offer.type == GameStore.OfferTypes.OFFER_TYPE_ITEM_UNIQUE then
+		if offer.type == GameStore.OfferTypes.OFFER_TYPE_ITEM or offer.type == GameStore.OfferTypes.OFFER_TYPE_ITEM_UNIQUE then
 			GameStore.processItemPurchase(player, offer.itemtype, offer.count or 1, offer.movable, offer.setOwner)
 		elseif offer.type == GameStore.OfferTypes.OFFER_TYPE_INSTANT_REWARD_ACCESS then
 			GameStore.processInstantRewardAccess(player, offer.count)
@@ -470,11 +480,9 @@ function parseBuyStoreOffer(playerId, msg)
 			GameStore.processPremiumPurchase(player, offer.id)
 		elseif offer.type == GameStore.OfferTypes.OFFER_TYPE_STACKABLE then
 			GameStore.processStackablePurchase(player, offer.itemtype, offer.count, offer.name, offer.movable, offer.setOwner)
-		elseif offer.type == GameStore.OfferTypes.OFFER_TYPE_HOUSE then
+		elseif offer.type == GameStore.OfferTypes.OFFER_TYPE_HOUSE or offer.type == GameStore.OfferTypes.OFFER_TYPE_ITEM_BED then
 			GameStore.processHouseRelatedPurchase(player, offer)
-		elseif offer.type == GameStore.OfferTypes.OFFER_TYPE_OUTFIT then
-			GameStore.processOutfitPurchase(player, offer.sexId, offer.addon)
-		elseif offer.type == GameStore.OfferTypes.OFFER_TYPE_OUTFIT_ADDON then
+		elseif offer.type == GameStore.OfferTypes.OFFER_TYPE_OUTFIT or offer.type == GameStore.OfferTypes.OFFER_TYPE_OUTFIT_ADDON then
 			GameStore.processOutfitPurchase(player, offer.sexId, offer.addon)
 		elseif offer.type == GameStore.OfferTypes.OFFER_TYPE_MOUNT then
 			GameStore.processMountPurchase(player, offer.id)
@@ -508,8 +516,6 @@ function parseBuyStoreOffer(playerId, msg)
 			GameStore.processHirelingSkillPurchase(player, offer)
 		elseif offer.type == GameStore.OfferTypes.OFFER_TYPE_HIRELING_OUTFIT then
 			GameStore.processHirelingOutfitPurchase(player, offer)
-		elseif offer.type == GameStore.OfferTypes.OFFER_TYPE_ITEM_BED then
-			GameStore.processHouseRelatedPurchase(player, offer)
 		else
 			-- This should never happen by our convention, but just in case the guarding condition is messed up...
 			error({ code = 0, message = "This offer is unavailable [2]" })
@@ -527,6 +533,9 @@ function parseBuyStoreOffer(playerId, msg)
 		return queueSendStoreAlertToUser(alertMessage, 500, playerId)
 	end
 
+	if table.contains({ GameStore.OfferTypes.OFFER_TYPE_HOUSE, GameStore.OfferTypes.OFFER_TYPE_EXPBOOST, GameStore.OfferTypes.OFFER_TYPE_PREYBONUS, GameStore.OfferTypes.OFFER_TYPE_BLESSINGS, GameStore.OfferTypes.OFFER_TYPE_ALLBLESSINGS, GameStore.OfferTypes.OFFER_TYPE_INSTANT_REWARD_ACCESS }, offer.type) then
+		insertPlayerTransactionSummary(player, offer)
+	end
 	local configure = useOfferConfigure(offer.type)
 	if configure ~= GameStore.ConfigureOffers.SHOW_CONFIGURE then
 		if not player:makeCoinTransaction(offer) then
@@ -537,19 +546,33 @@ function parseBuyStoreOffer(playerId, msg)
 		sendUpdatedStoreBalances(playerId)
 		return addPlayerEvent(sendStorePurchaseSuccessful, 650, playerId, message)
 	end
+
+	player:updateUIExhausted()
 	return true
 end
 
 -- Both functions use same formula!
 function parseOpenTransactionHistory(playerId, msg)
+	local player = Player(playerId)
+	if not player then
+		return
+	end
+
 	local page = 1
 	GameStore.DefaultValues.DEFAULT_VALUE_ENTRIES_PER_PAGE = msg:getByte()
 	sendStoreTransactionHistory(playerId, page, GameStore.DefaultValues.DEFAULT_VALUE_ENTRIES_PER_PAGE)
+	player:updateUIExhausted()
 end
 
 function parseRequestTransactionHistory(playerId, msg)
+	local player = Player(playerId)
+	if not player then
+		return
+	end
+
 	local page = msg:getU32()
 	sendStoreTransactionHistory(playerId, page + 1, GameStore.DefaultValues.DEFAULT_VALUE_ENTRIES_PER_PAGE)
+	player:updateUIExhausted()
 end
 
 local function getCategoriesRook()
@@ -1469,67 +1492,74 @@ GameStore.canChangeToName = function(name)
 	local result = {
 		ability = false,
 	}
-	if name:len() < 3 or name:len() > 18 then
-		result.reason = "The length of your new name must be between 3 and 18 characters."
+
+	if name:len() < 3 or name:len() > 29 then
+		result.reason = "The length of your new name must be between 3 and 29 characters."
 		return result
 	end
 
 	local match = name:gmatch("%s+")
 	local count = 0
-	for v in match do
+	for _ in match do
 		count = count + 1
 	end
 
 	local matchtwo = name:match("^%s+")
 	if matchtwo then
-		result.reason = "Your new name can't have whitespace at begin."
+		result.reason = "Your new name can't have whitespace at the beginning."
 		return result
 	end
 
-	if count > 1 then
-		result.reason = "Your new name have more than 1 whitespace."
+	if count > 2 then
+		result.reason = "Your new name can't have more than 2 spaces."
+		return result
+	end
+
+	if name:match("%s%s") then
+		result.reason = "Your new name can't have consecutive spaces."
 		return result
 	end
 
 	-- just copied from znote aac.
 	local words = { "owner", "gamemaster", "hoster", "admin", "staff", "tibia", "account", "god", "anal", "ass", "fuck", "sex", "hitler", "pussy", "dick", "rape", "adm", "cm", "gm", "tutor", "counsellor" }
 	local split = name:split(" ")
-	for k, word in ipairs(words) do
-		for k, nameWord in ipairs(split) do
+	for _, word in ipairs(words) do
+		for _, nameWord in ipairs(split) do
 			if nameWord:lower() == word then
-				result.reason = "You can't use word \"" .. word .. '" in your new name.'
+				result.reason = "You can't use the word '" .. word .. "' in your new name."
 				return result
 			end
 		end
 	end
 
 	local tmpName = name:gsub("%s+", "")
-	for i = 1, #words do
-		if tmpName:lower():find(words[i]) then
-			result.reason = "You can't use word \"" .. words[i] .. '" with whitespace in your new name.'
+	for _, word in ipairs(words) do
+		if tmpName:lower():find(word) then
+			result.reason = "You can't use the word '" .. word .. "' even with spaces in your new name."
 			return result
 		end
 	end
 
 	if MonsterType(name) then
-		result.reason = 'Your new name "' .. name .. "\" can't be a monster's name."
+		result.reason = "Your new name '" .. name .. "' can't be a monster's name."
 		return result
 	elseif Npc(name) then
-		result.reason = 'Your new name "' .. name .. "\" can't be a npc's name."
+		result.reason = "Your new name '" .. name .. "' can't be an NPC's name."
 		return result
 	end
 
 	local letters = "{}|_*+-=<>0123456789@#%^&()/*'\\.,:;~!\"$"
 	for i = 1, letters:len() do
 		local c = letters:sub(i, i)
-		for i = 1, name:len() do
-			local m = name:sub(i, i)
+		for j = 1, name:len() do
+			local m = name:sub(j, j)
 			if m == c then
-				result.reason = "You can't use this letter \"" .. c .. '" in your new name.'
+				result.reason = "You can't use this character '" .. c .. "' in your new name."
 				return result
 			end
 		end
 	end
+
 	result.ability = true
 	return result
 end
@@ -1818,6 +1848,7 @@ function GameStore.processHirelingPurchase(player, offer, productType, hirelingN
 
 		player:makeCoinTransaction(offer, hirelingName)
 		local message = "You have successfully bought " .. hirelingName
+		player:createTransactionSummary(offer.type, 1)
 		return addPlayerEvent(sendStorePurchaseSuccessful, 650, player:getId(), message)
 		-- If not, we ask him to do!
 	else
