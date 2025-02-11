@@ -1,36 +1,10 @@
--- Usage talkaction: "!hazardlevel darashia minos, 0"
+-- Usage talkaction: "!hazardlevel world, 0"
 local hazardlevel = TalkAction("!hazardlevel")
 
 local hazards = {
-	["ankh mother scarabs"] = { name = "hazard.ankrahmun-mother-scarabs" },
-	["asura mirror"] = { name = "hazard.asura-mirror" },
-	["banuta"] = { name = "hazard.banuta" },
-	["buried cathedral"] = { name = "hazard.buried-cathedral" },
-	["carnivoras"] = { name = "hazard.carnivoras" },
-	["cobra"] = { name = "hazard.cobra" },
-	["court of summer winter"] = { name = "hazard.court-of-summer-winter" },
-	["darashia minos"] = { name = "hazard.darashia-minotaurs" },
-	["darashia wyrms"] = { name = "hazard.darashia-wyrms" },
-	["edron hero cave"] = { name = "hazard.edron-hero-cave" },
-	["ferumbras ascension"] = { name = "hazard.ferumbras-ascension-grimeleech" },
-	["flimsy"] = { name = "hazard.flimsy" },
-	["falcon"] = { name = "hazard.falcon" },
 	["gnomprona"] = { name = "hazard.gnomprona-gardens" },
-	["goroma demons"] = { name = "hazard.goroma-demons" },
-	["glooth bandits"] = { name = "hazard.glooth-bandits" },
-	["ingol"] = { name = "hazard.ingol" },
-	["inquisition"] = { name = "hazard.inquisition" },
-	["issavi surface"] = { name = "hazard.issavi-surface" },
-	["lower roshamuul"] = { name = "hazard.lower-roshamuul" },
-	["pirats"] = { name = "hazard.pirats" },
-	["prison"] = { name = "hazard.prison" },
-	["rookgard"] = { name = "hazard.rookgard" },
-	["secret library"] = { name = "hazard.secret-library" },
-	["werehyaena"] = { name = "hazard.werehyaena" },
 	["origin"] = { name = "hazard.origin" },
-	["oramond catacombs"] = { name = "hazard.oramond-catacombs" },
-	["soulwars"] = { name = "hazard.soulwars" },
-	["tower"] = { name = "hazard.tower" },
+	["world"] = { name = "hazard.world" },
 }
 
 local availableHazards = {}

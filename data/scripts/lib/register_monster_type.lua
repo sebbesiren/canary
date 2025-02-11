@@ -35,7 +35,11 @@ registerMonsterType.variant = function(mtype, mask)
 end
 registerMonsterType.experience = function(mtype, mask)
 	if mask.experience then
-		mtype:experience(mask.experience)
+
+		local bonusPercentage = mask.maxHealth / 1000
+		local multiplier = 1 + bonusPercentage / 100
+
+		mtype:experience(math.floor(mask.maxHealth * multiplier))
 	end
 end
 registerMonsterType.raceId = function(mtype, mask)

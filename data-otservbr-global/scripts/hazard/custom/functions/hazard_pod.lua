@@ -121,7 +121,7 @@ local eventScalingFactors = {
 	spawnManyEnemies = 200,
 }
 local events = {
-	dealDamageToAll = dealDamageToAll,
+	-- dealDamageToAll = dealDamageToAll,
 	spawnFewEnemies = spawnFewEnemies,
 	spawnManyEnemies = spawnManyEnemies,
 	spawnPortal = spawnPortal,
