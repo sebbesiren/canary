@@ -234,7 +234,7 @@ function executeCreateHazardPod(points, maxRoll)
 	--	return false
 	--end
 	maxRoll = maxRoll or 75
-	maxRoll = maxRoll - points * 3
+	maxRoll = maxRoll - points
 
 	if maxRoll < 20 then
 		maxRoll = 20
