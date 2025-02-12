@@ -40,11 +40,11 @@ local function autoPotLoop(player)
 
 		local usePot = true
 		if checkMana and checkHealth then
-			usePot = player:getMana() / player:getMaxMana() < 0.95 or player:getHealth() / player:getMaxHealth() < 0.95
+			usePot = player:getMana() / player:getMaxMana() < 0.8 or player:getHealth() / player:getMaxHealth() < 0.8
 		elseif checkHealth then
-			usePot = player:getHealth() / player:getMaxHealth() < 0.95
+			usePot = player:getHealth() / player:getMaxHealth() < 0.8
 		elseif checkMana then
-			usePot = player:getMana() / player:getMaxMana() < 0.95
+			usePot = player:getMana() / player:getMaxMana() < 0.8
 		end
 
 		if usePot == true then
