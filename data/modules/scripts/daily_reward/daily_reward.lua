@@ -109,8 +109,8 @@ DailyReward = {
 			systemType = DAILY_REWARD_SYSTEM_TYPE_ONE,
 			items = { 28540, 28541, 28542, 28543, 28544, 28545 },
 			freeAccount = 1,
-			premiumAccount = 2,
-			itemCharges = 250,
+			premiumAccount = 1,
+			itemCharges = 500,
 		},
 		[2] = {
 			type = DAILY_REWARD_TYPE_XP_BOOST,
