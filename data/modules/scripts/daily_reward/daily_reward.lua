@@ -109,22 +109,20 @@ DailyReward = {
 			systemType = DAILY_REWARD_SYSTEM_TYPE_ONE,
 			items = { 28540, 28541, 28542, 28543, 28544, 28545 },
 			freeAccount = 1,
-			premiumAccount = 1,
-			itemCharges = 500,
+			premiumAccount = 2,
+			itemCharges = 250,
 		},
 		[2] = {
-			-- WealthDuplex
-			type = DAILY_REWARD_TYPE_ITEM,
-			systemType = DAILY_REWARD_SYSTEM_TYPE_ONE,
-			items = { Concoction.Ids.WealthDuplex },
-			freeAccount = 1,
-			premiumAccount = 1,
+			type = DAILY_REWARD_TYPE_XP_BOOST,
+			systemType = DAILY_REWARD_SYSTEM_TYPE_TWO,
+			freeAccount = 30,
+			premiumAccount = 60,
 		},
 		[3] = {
 			type = DAILY_REWARD_TYPE_PREY_REROLL,
 			systemType = DAILY_REWARD_SYSTEM_TYPE_TWO,
-			freeAccount = 1,
-			premiumAccount = 5,
+			freeAccount = 5,
+			premiumAccount = 10,
 		},
 		[4] = {
 			-- Concoction
@@ -140,10 +138,12 @@ DailyReward = {
 			premiumAccount = 1,
 		},
 		[5] = {
-			type = DAILY_REWARD_TYPE_PREY_REROLL,
-			systemType = DAILY_REWARD_SYSTEM_TYPE_TWO,
+			-- WealthDuplex
+			type = DAILY_REWARD_TYPE_ITEM,
+			systemType = DAILY_REWARD_SYSTEM_TYPE_ONE,
+			items = { Concoction.Ids.WealthDuplex },
 			freeAccount = 1,
-			premiumAccount = 5,
+			premiumAccount = 1,
 		},
 		[6] = {
 			-- Elemental damage

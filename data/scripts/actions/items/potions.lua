@@ -55,6 +55,84 @@ local potions = {
 
 local flaskPotion = Action()
 
+function onUsePotion(player, item, fromPosition, target, toPosition, isHotkey)
+	if not target or type(target) == "userdata" and not target:isPlayer() then
+		return false
+	end
+
+	local potion = potions[item:getId()]
+	if not player:getGroup():getAccess() and (potion.level and player:getLevel() < potion.level or potion.vocations and not table.contains(potion.vocations, player:getVocation():getBaseId())) then
+		player:say(potion.description, MESSAGE_POTION)
+		return true
+	end
+
+	if potion.health or potion.mana or potion.combat then
+		if potion.health then
+			doTargetCombatHealth(player, target, COMBAT_HEALING, potion.health[1], potion.health[2], CONST_ME_MAGIC_BLUE)
+		end
+
+		if potion.mana then
+			doTargetCombatMana(0, target, potion.mana[1], potion.mana[2], CONST_ME_MAGIC_BLUE)
+		end
+
+		if potion.combat then
+			potion.combat:execute(target, Variant(target:getId()))
+		end
+
+		if not potion.effect and target:getPosition() ~= nil then
+			target:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
+		end
+
+		player:addAchievementProgress("Potion Addict", 100000)
+		target:say("Aaaah...", MESSAGE_POTION)
+
+		local deactivatedFlasks = player:kv():get("talkaction.potions.flask") or false
+		if not deactivatedFlasks then
+			if fromPosition.x == CONTAINER_POSITION then
+				player:addItem(potion.flask, 1)
+			else
+				Game.createItem(potion.flask, 1, fromPosition)
+			end
+		end
+	end
+
+	player:getPosition():sendSingleSoundEffect(SOUND_EFFECT_TYPE_ITEM_USE_POTION, player:isInGhostMode() and nil or player)
+
+	if potion.func then
+		potion.func(player)
+		player:say("Aaaah...", MESSAGE_POTION)
+		player:getPosition():sendMagicEffect(potion.effect)
+
+		if potion.achievement then
+			player:addAchievementProgress(potion.achievement, 100)
+		end
+	end
+
+	if potion.condition then
+		player:addCondition(potion.condition)
+		player:say(potion.text, MESSAGE_POTION)
+		player:getPosition():sendMagicEffect(potion.effect)
+	end
+
+	if potion.transform then
+		if item:getCount() >= 1 then
+			item:remove(1)
+			player:addItem(potion.transform.id[math.random(#potion.transform.id)], 1)
+			item:getPosition():sendMagicEffect(potion.effect)
+			player:addAchievementProgress("Demonic Barkeeper", 250)
+			return true
+		end
+	end
+
+	if not configManager.getBoolean(configKeys.REMOVE_POTION_CHARGES) then
+		return true
+	end
+
+	player:updateSupplyTracker(item)
+	item:remove(1)
+	return true
+end
+
 function flaskPotion.onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if not target or type(target) == "userdata" and not target:isPlayer() then
 		return false

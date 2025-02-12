@@ -1,4 +1,4 @@
--- Usage talkaction: "!hazardlevel world, 0"
+-- Usage talkaction: "!hazardlevel darashia minos, 0"
 local hazardlevel = TalkAction("!hazardlevel")
 
 local hazards = {

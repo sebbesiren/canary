@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Hazard Death Totem")
 local monster = {}
 
 monster.description = "Hazard Death Totem"
-monster.experience = 0
+monster.experience = 1000
 monster.outfit = {
 	lookTypeEx = 11427,
 }

@@ -37,15 +37,15 @@ local function dealDamageToPlayer(player)
 end
 
 ------ Expire events
-local function dealDamageToAll(position, monsterName)
-	local spectators = Game.getSpectators(position, false, false, 10, 10, 10, 10)
-	for _, spectator in ipairs(spectators) do
-		if spectator and spectator:isPlayer() then
-			position:sendDistanceEffect(spectator:getPosition(), CONST_ME_FIREATTACK)
-			dealDamageToPlayer(spectator)
-		end
-	end
-end
+--local function dealDamageToAll(position, monsterName)
+--	local spectators = Game.getSpectators(position, false, false, 10, 10, 10, 10)
+--	for _, spectator in ipairs(spectators) do
+--		if spectator and spectator:isPlayer() then
+--			position:sendDistanceEffect(spectator:getPosition(), CONST_ME_FIREATTACK)
+--			dealDamageToPlayer(spectator)
+--		end
+--	end
+--end
 
 local function portalName(position)
 	return "spawn_zone.x-" .. position.x .. ",y-" .. position.y .. ",z-" .. position.z
@@ -116,12 +116,12 @@ local function originHazard(position, monsterName)
 end
 
 local eventScalingFactors = {
-	dealDamageToAll = 50,
+	--dealDamageToAll = 50,
 	spawnFewEnemies = 100,
 	spawnManyEnemies = 200,
 }
 local events = {
-	-- dealDamageToAll = dealDamageToAll,
+	--dealDamageToAll = dealDamageToAll,
 	spawnFewEnemies = spawnFewEnemies,
 	spawnManyEnemies = spawnManyEnemies,
 	spawnPortal = spawnPortal,
@@ -196,30 +196,30 @@ local function hazardPodExpire(position, monsterName)
 	end
 end
 
-local primalPod = MoveEvent()
-
-function primalPod.onStepIn(creature, item, position, fromPosition)
-	local player = creature:getPlayer()
-	if not player then
-		return
-	end
-
-	local tile = Tile(position)
-	if not tile then
-		return
-	end
-
-	local podItem = tile:getItemById(ITEM_PRIMAL_POD)
-	if not podItem then
-		return
-	end
-
-	podItem:remove()
-	dealDamageToPlayer(player)
-	return true
-end
-primalPod:id(ITEM_PRIMAL_POD)
-primalPod:register()
+--local primalPod = MoveEvent()
+--
+--function primalPod.onStepIn(creature, item, position, fromPosition)
+--	local player = creature:getPlayer()
+--	if not player then
+--		return
+--	end
+--
+--	local tile = Tile(position)
+--	if not tile then
+--		return
+--	end
+--
+--	local podItem = tile:getItemById(ITEM_PRIMAL_POD)
+--	if not podItem then
+--		return
+--	end
+--
+--	podItem:remove()
+--	dealDamageToPlayer(player)
+--	return true
+--end
+--primalPod:id(ITEM_PRIMAL_POD)
+--primalPod:register()
 
 function createHazardPod(position, monsterName)
 	local hazardPod = Game.createItem(ITEM_PRIMAL_POD, 1, position)
@@ -234,7 +234,7 @@ function executeCreateHazardPod(points, maxRoll)
 	--	return false
 	--end
 	maxRoll = maxRoll or 75
-	maxRoll = maxRoll - (points - 1) * 3
+	maxRoll = maxRoll - points * 3
 
 	if maxRoll < 20 then
 		maxRoll = 20

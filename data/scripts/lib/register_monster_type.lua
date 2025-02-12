@@ -11,18 +11,20 @@ setmetatable(registerMonsterType, {
 })
 
 MonsterType.register = function(self, mask)
+	-- Try register hazard monsters
+	self.onSpawn = function(monster, spawnPosition)
+		HazardMonster.onSpawn(monster, spawnPosition)
+	end
+
 	return registerMonsterType(self, mask)
 end
 
 registerMonsterType.name = function(mtype, mask)
 	if mask.name then
 		mtype:name(mask.name)
-		-- Try register hazard monsters
-		mtype.onSpawn = function(monster, spawnPosition)
-			HazardMonster.onSpawn(monster, spawnPosition)
-		end
 	end
 end
+
 registerMonsterType.description = function(mtype, mask)
 	if mask.description then
 		mtype:nameDescription(mask.description)
@@ -35,11 +37,17 @@ registerMonsterType.variant = function(mtype, mask)
 end
 registerMonsterType.experience = function(mtype, mask)
 	if mask.experience then
+		if mask.maxHealth then
+			local bonusPercentage = mask.maxHealth / 1000
+			local multiplier = 1 + bonusPercentage / 100
+			if mask.flags.rewardBoss then
+				multiplier = multiplier * 6
+			end
 
-		local bonusPercentage = mask.maxHealth / 1000
-		local multiplier = 1 + bonusPercentage / 100
-
-		mtype:experience(math.floor(mask.maxHealth * multiplier))
+			mtype:experience(math.floor(mask.maxHealth * multiplier))
+		else
+			mtype:experience(mask.experience)
+		end
 	end
 end
 registerMonsterType.raceId = function(mtype, mask)
@@ -578,7 +586,7 @@ end
 local function loadcastSound(effect, incomingLua, mtype)
 	-- Throw shoottype
 	if
-		effect == CONST_ANI_SPEAR
+	effect == CONST_ANI_SPEAR
 		or effect == CONST_ANI_THROWINGSTAR
 		or effect == CONST_ANI_THROWINGKNIFE
 		or effect == CONST_ANI_SMALLSTONE
@@ -605,7 +613,7 @@ local function loadcastSound(effect, incomingLua, mtype)
 
 		-- Bow shoottype
 	elseif
-		effect == CONST_ANI_POISONARROW
+	effect == CONST_ANI_POISONARROW
 		or effect == CONST_ANI_BURSTARROW
 		or effect == CONST_ANI_SNIPERARROW
 		or effect == CONST_ANI_ONYXARROW
@@ -623,7 +631,7 @@ local function loadcastSound(effect, incomingLua, mtype)
 
 		-- Magical shoottype
 	elseif
-		effect == CONST_ANI_FIRE
+	effect == CONST_ANI_FIRE
 		or effect == CONST_ANI_ENERGY
 		or effect == CONST_ANI_DEATH
 		or effect == CONST_ANI_POISON

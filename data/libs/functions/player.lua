@@ -113,13 +113,17 @@ function Player.withdrawMoney(self, amount)
 	return Bank.withdraw(self, amount)
 end
 
-function Player.removeMoneyBank(self, amount)
+function Player.removeMoneyBank(self, amount, silent)
+	if silent == nil then
+		silent = false
+	end
+
 	local inventoryMoney = self:getMoney()
 	local bankBalance = self:getBankBalance()
 
 	if amount <= inventoryMoney then
 		self:removeMoney(amount)
-		if amount > 0 then
+		if amount > 0 and not silent then
 			self:sendTextMessage(MESSAGE_TRADE, ("Paid %d gold from inventory."):format(amount))
 		end
 		return true
@@ -136,7 +140,10 @@ function Player.removeMoneyBank(self, amount)
 		Bank.debit(self, remainingAmount)
 
 		self:setBankBalance(bankBalance - remainingAmount)
-		self:sendTextMessage(MESSAGE_TRADE, ("Paid %s from inventory and %s gold from bank account. Your account balance is now %s gold."):format(FormatNumber(amount - remainingAmount), FormatNumber(remainingAmount), FormatNumber(self:getBankBalance())))
+
+		if not silent then
+			self:sendTextMessage(MESSAGE_TRADE, ("Paid %s from inventory and %s gold from bank account. Your account balance is now %s gold."):format(FormatNumber(amount - remainingAmount), FormatNumber(remainingAmount), FormatNumber(self:getBankBalance())))
+		end
 		return true
 	end
 	return false
@@ -292,13 +299,13 @@ function Player:createFamiliar(familiarName, timeLeft)
 		self:setStorageValue(
 			FAMILIAR_TIMER[sendMessage].storage,
 			addEvent(
-				-- Calling function
+			-- Calling function
 				SendMessageFunction,
-				-- Time for execute event
+			-- Time for execute event
 				(timeLeft - FAMILIAR_TIMER[sendMessage].countdown) * 1000,
-				-- Param "playerId"
+			-- Param "playerId"
 				self:getId(),
-				-- Param "message"
+			-- Param "message"
 				FAMILIAR_TIMER[sendMessage].message
 			)
 		)
@@ -528,7 +535,8 @@ function Player:showInfoModal(title, message, buttonText)
 		message = message,
 	})
 	buttonText = buttonText or "Close"
-	modal:addButton(buttonText, function() end)
+	modal:addButton(buttonText, function()
+	end)
 	modal:setDefaultEscapeButton(buttonText)
 
 	modal:sendToPlayer(self)
@@ -540,9 +548,11 @@ function Player:showConfirmationModal(title, message, yesCallback, noCallback, y
 		message = message,
 	})
 	yesText = yesText or "Yes"
-	modal:addButton(yesText, yesCallback or function() end)
+	modal:addButton(yesText, yesCallback or function()
+	end)
 	noText = noText or "No"
-	modal:addButton(noText, noCallback or function() end)
+	modal:addButton(noText, noCallback or function()
+	end)
 	modal:setDefaultEscapeButton(noText)
 
 	modal:sendToPlayer(self)

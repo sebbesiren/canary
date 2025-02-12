@@ -194,10 +194,11 @@ function HazardMonster.onSpawn(monster, position)
 		return true
 	end
 
-	logger.debug("Monster {} spawned in hazard zone, position {}", monster:getName(), position:toString())
 	for _, zone in ipairs(zones) do
 		local hazard = Hazard.getByName(zone:getName())
 		if hazard then
+			logger.debug("Monster {} spawned in hazard zone {}, position {}", monster:getName(), hazard.name, position:toString())
+
 			monster:hazard(true)
 			monster:hazardCrit(hazard.crit)
 			monster:hazardDodge(hazard.dodge)

@@ -1,7 +1,7 @@
 local hazard = Hazard.new({
 	name = "hazard.world",
-	from = Position({ x = 1, y = 1, z = 1 }),
-	to = Position(34500, 33500, 15),
+	from = Position(31900, 31000, 0),
+	to = Position(34000, 33100, 15),
 	maxLevel = 20,
 
 	crit = true,
@@ -13,6 +13,19 @@ local hazard = Hazard.new({
 hazard:register()
 
 local hazardZone = Zone.getByName(hazard.name)
+
+-- Gnomprona
+hazardZone:subtractArea({ x = 33502, y = 32740, z = 13 }, { x = 33796, y = 32996, z = 15 })
+
+-- Nerdherd
+hazardZone:addArea(
+	{ x = 4000, y = 4000, z = 0},
+	{x = 6500, y = 6500, z = 15}
+)
+
+-- Hazard Origin
+hazardZone:subtractArea({ x = 5067, y = 4907, z = 11 }, { x = 5096, y = 4928, z = 11 })
+
 
 local deathEventName = "WorldHazardDeath"
 local spawnEvent = ZoneEvent(hazardZone)
@@ -33,12 +46,6 @@ function deathEvent.onDeath(creature)
 		return true
 	end
 
-	if executeLevelUpEvent(points) then
-		onDeathForDamagingPlayers(creature, function(creature, damagingPlayer)
-			attemptLevelUpPlayer(hazard, damagingPlayer, points)
-		end)
-	end
-
 	if executeCreateHazardPod(points) then
 		createHazardPod(monster:getPosition(), monster:getName())
 	end
@@ -47,16 +54,13 @@ function deathEvent.onDeath(creature)
 end
 deathEvent:register()
 
---
---local zoneEvent = ZoneEvent(hazardZone)
---function zoneEvent.afterEnter(zn, creature)
---	local player = creature:getPlayer()
---	if not player then
---		return
---	end
---
---	local worldLevel = math.min(math.floor( player:getLevel() / 50), hazard.maxLevel)
---	hazard:setPlayerMaxLevel(player, worldLevel)
---	player:sendTextMessage(MESSAGE_LOOK, "Maximum hazard level in world set to " .. worldLevel)
---end
---zoneEvent:register()
+local zoneEvent = ZoneEvent(hazardZone)
+function zoneEvent.afterEnter(zn, creature)
+	local player = creature:getPlayer()
+	if not player then
+		return
+	end
+
+	hazard:setPlayerMaxLevel(player, hazard.maxLevel)
+end
+zoneEvent:register()

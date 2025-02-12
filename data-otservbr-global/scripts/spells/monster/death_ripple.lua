@@ -105,8 +105,8 @@ for _, area in ipairs(areas) do
 				local player = Player(c)
 				if player then
 					logger.debug("Death ripple hit player")
-					local min = player:getMaxHealth() * 0.20
-					local max = player:getMaxHealth() * 0.20
+					local min = player:getMaxHealth() * 0.0
+					local max = player:getMaxHealth() * 0.1
 					doTargetCombatHealth(creature, player, COMBAT_DEATHDAMAGE, -min, -max, CONST_ME_NONE)
 				end
 			end

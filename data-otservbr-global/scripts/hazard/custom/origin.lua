@@ -95,14 +95,18 @@ function deathEvent.onDeath(creature)
 		local bosses = {
 			"Urmahlullu the Immaculate",
 			"Grand Master Oberon",
-			"King Zelos",
+			--"King Zelos",
+			"Guard Captain Quaid",
+			"Count Vlarkorth",
+			"Duke Krule",
+			"Earl Osam",
+			"Sir Baeloc"
 		}
 
 		if monsterMaxHealth > 3000 then
 			for _ = 1, 3 do
 				table.insert(bosses, "Balrog")
 				table.insert(bosses, "Death Lord Athelstan")
-				table.insert(bosses, "Hellchaser Heip")
 			end
 		end
 		if monsterMaxHealth > 6000 then
