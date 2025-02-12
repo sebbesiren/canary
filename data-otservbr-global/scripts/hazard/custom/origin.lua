@@ -100,7 +100,7 @@ function deathEvent.onDeath(creature)
 			"Count Vlarkorth",
 			"Duke Krule",
 			"Earl Osam",
-			"Sir Baeloc"
+			"Sir Baeloc",
 		}
 
 		if monsterMaxHealth > 3000 then

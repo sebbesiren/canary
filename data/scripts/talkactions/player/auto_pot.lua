@@ -20,7 +20,7 @@ for key, _ in pairs(pots) do
 end
 
 local function autoPotLoop(player)
-	local potName = player:kv():scoped("auto-pot"):get('pot')
+	local potName = player:kv():scoped("auto-pot"):get("pot")
 
 	local pot = pots[potName]
 
@@ -35,7 +35,6 @@ local function autoPotLoop(player)
 	end
 
 	if player:canDoPotionAction() then
-
 		local checkMana = string.find(potName, "mana") or string.find(potName, "spirit")
 		local checkHealth = string.find(potName, "health") or string.find(potName, "spirit")
 
@@ -80,7 +79,7 @@ function autopot.onSay(player, words, param)
 	local param_parts = param:split(",")
 
 	if param_parts[1]:lower() == "off" then
-		player:kv():scoped("auto-pot"):set('pot', 'off')
+		player:kv():scoped("auto-pot"):set("pot", "off")
 	else
 		local potName = param_parts[1]:lower()
 
@@ -92,7 +91,7 @@ function autopot.onSay(player, words, param)
 			return true
 		end
 
-		player:kv():scoped("auto-pot"):set('pot', potName)
+		player:kv():scoped("auto-pot"):set("pot", potName)
 		player:sendTextMessage(MESSAGE_LOOK, "Activated auto pot: " .. potName)
 		autoPotLoop(player)
 	end

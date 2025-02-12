@@ -586,7 +586,7 @@ end
 local function loadcastSound(effect, incomingLua, mtype)
 	-- Throw shoottype
 	if
-	effect == CONST_ANI_SPEAR
+		effect == CONST_ANI_SPEAR
 		or effect == CONST_ANI_THROWINGSTAR
 		or effect == CONST_ANI_THROWINGKNIFE
 		or effect == CONST_ANI_SMALLSTONE
@@ -613,7 +613,7 @@ local function loadcastSound(effect, incomingLua, mtype)
 
 		-- Bow shoottype
 	elseif
-	effect == CONST_ANI_POISONARROW
+		effect == CONST_ANI_POISONARROW
 		or effect == CONST_ANI_BURSTARROW
 		or effect == CONST_ANI_SNIPERARROW
 		or effect == CONST_ANI_ONYXARROW
@@ -631,7 +631,7 @@ local function loadcastSound(effect, incomingLua, mtype)
 
 		-- Magical shoottype
 	elseif
-	effect == CONST_ANI_FIRE
+		effect == CONST_ANI_FIRE
 		or effect == CONST_ANI_ENERGY
 		or effect == CONST_ANI_DEATH
 		or effect == CONST_ANI_POISON
