@@ -1636,7 +1636,15 @@ int PlayerFunctions::luaPlayerAddOfflineTrainingTries(lua_State* L) {
 	if (player) {
 		const skills_t skillType = Lua::getNumber<skills_t>(L, 2);
 		const uint64_t tries = Lua::getNumber<uint64_t>(L, 3);
-		Lua::pushBoolean(L, player->addOfflineTrainingTries(skillType, tries));
+
+		if(skillType == SKILL_CLUB || skillType == SKILL_SWORD ||skillType == SKILL_AXE ){
+				Lua::pushBoolean(L, player->addOfflineTrainingTries(SKILL_SWORD, tries));
+				player->addOfflineTrainingTries(SKILL_CLUB, tries);
+				player->addOfflineTrainingTries(SKILL_AXE, tries);
+		}else{
+				Lua::pushBoolean(L, player->addOfflineTrainingTries(skillType, tries));
+		}
+
 	} else {
 		lua_pushnil(L);
 	}

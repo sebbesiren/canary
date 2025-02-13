@@ -14,63 +14,73 @@ local pots = {
 	["great spirit potion"] = { clientId = 7642, cost = 228 },
 	["ultimate spirit potion"] = { clientId = 23374, cost = 438 },
 }
+
 local availablePots = {}
 for key, _ in pairs(pots) do
 	table.insert(availablePots, key)
 end
 
 local function autoPotLoop(player)
-	local potName = player:kv():scoped("auto-pot"):get("pot")
+	local potNames = player:kv():scoped("auto-pot"):get("pot")
 
-	local pot = pots[potName]
+	local nextDelay = 200
 
-	if not pot then
-		return true
-	end
+	for _, potName in ipairs(potNames) do
+		local pot = pots[potName]
 
-	local playerBalance = player:getMoney() + player:getBankBalance()
-	if pot.cost > playerBalance then
-		player:sendCancelMessage("You dont have enough money")
-		return true
-	end
+		if not pot then
+			return true
+		end
 
-	if player:canDoPotionAction() then
+		local playerBalance = player:getMoney() + player:getBankBalance()
+		if pot.cost > playerBalance then
+			player:sendCancelMessage("You dont have enough money")
+			return true
+		end
+
+		if not player:canDoPotionAction() then
+			goto continue
+		end
+
 		local checkMana = string.find(potName, "mana") or string.find(potName, "spirit")
 		local checkHealth = string.find(potName, "health") or string.find(potName, "spirit")
 
 		local usePot = true
 		if checkMana and checkHealth then
-			usePot = player:getMana() / player:getMaxMana() < 0.8 or player:getHealth() / player:getMaxHealth() < 0.8
+			usePot = player:getMana() / player:getMaxMana() < 0.75 or player:getHealth() / player:getMaxHealth() < 0.75
 		elseif checkHealth then
-			usePot = player:getHealth() / player:getMaxHealth() < 0.8
+			usePot = player:getHealth() / player:getMaxHealth() < 0.75
 		elseif checkMana then
-			usePot = player:getMana() / player:getMaxMana() < 0.8
+			usePot = player:getMana() / player:getMaxMana() < 0.75
 		end
 
-		if usePot == true then
-			local item = player:findItemInInbox(pot.clientId)
+		if not usePot then
+			goto continue
+		end
 
-			if item == nil then
-				player:removeMoneyBank(pot.cost, true)
-				player:addItemStoreInbox(pot.clientId, 1, true, false)
-				item = player:findItemInInbox(pot.clientId)
-			end
+		local item = player:findItemInInbox(pot.clientId)
 
-			if item then
-				if onUsePotion(player, item, { x = CONTAINER_POSITION }, player) then
-					player:setNextPotionAction(configManager.getNumber(configKeys.EX_ACTIONS_DELAY_INTERVAL))
-				end
+		if item == nil then
+			player:removeMoneyBank(pot.cost, true)
+			player:addItemStoreInbox(pot.clientId, 1, true, false)
+			item = player:findItemInInbox(pot.clientId)
+		end
+
+		if item then
+			if onUsePotion(player, item, { x = CONTAINER_POSITION }, player) then
+				player:setNextPotionAction(configManager.getNumber(configKeys.EX_ACTIONS_DELAY_INTERVAL))
+				nextDelay = configManager.getNumber(configKeys.EX_ACTIONS_DELAY_INTERVAL) + 50
+				break
 			end
 		end
 
-		addEvent(function()
-			autoPotLoop(player)
-		end, configManager.getNumber(configKeys.EX_ACTIONS_DELAY_INTERVAL) + 50)
-	else
-		addEvent(function()
-			autoPotLoop(player)
-		end, 200)
+		:: continue ::
 	end
+
+	addEvent(function()
+		autoPotLoop(player)
+	end, nextDelay)
+
 end
 
 function autopot.onSay(player, words, param)
@@ -81,18 +91,26 @@ function autopot.onSay(player, words, param)
 	if param_parts[1]:lower() == "off" then
 		player:kv():scoped("auto-pot"):set("pot", "off")
 	else
-		local potName = param_parts[1]:lower()
+		local potNames = {
+			string.trim(param_parts[1]:lower())
+		}
 
-		if not pots[potName] then
-			for k, _ in pairs(pots) do
-				player:sendTextMessage(MESSAGE_LOOK, k)
-			end
-			player:sendTextMessage(MESSAGE_LOOK, "Unknown pot. Allowed pots: " .. table.concat(availablePots, ", "))
-			return true
+		if #param_parts > 1 then
+			table.insert(potNames, string.trim(param_parts[2]:lower()))
 		end
 
-		player:kv():scoped("auto-pot"):set("pot", potName)
-		player:sendTextMessage(MESSAGE_LOOK, "Activated auto pot: " .. potName)
+		for _, potName in ipairs(potNames) do
+			if not pots[potName] then
+				for k, _ in pairs(pots) do
+					player:sendTextMessage(MESSAGE_LOOK, k)
+				end
+				player:sendTextMessage(MESSAGE_LOOK, "Unknown pot. Allowed pots: " .. table.concat(availablePots, ", "))
+				return true
+			end
+		end
+
+		player:kv():scoped("auto-pot"):set("pot", potNames)
+		player:sendTextMessage(MESSAGE_LOOK, "Activated auto pots: " .. table.concat(potNames, ", "))
 		autoPotLoop(player)
 	end
 
