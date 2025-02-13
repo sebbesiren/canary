@@ -87,7 +87,7 @@
 		<details displaypriority="1" isseasonal="0" specialevent="0"/>
 	</event>
 	<event name="Skill and Exp event" startdate="2/15/2025" enddate="2/16/2025" script="">
-		<ingame exprate="150" lootrate="100" bosslootrate="150" spawnrate="100" skillrate="150"/>
+		<ingame exprate="150" lootrate="100" bosslootrate="100" spawnrate="100" skillrate="150"/>
 		<description description="50% boost to Exp Rate! 50% boost to Skill Rate!"/>
 		<colors colordark="#235c00" colorlight="#2d7400"/>
 		<details displaypriority="1" isseasonal="0" specialevent="0"/>
