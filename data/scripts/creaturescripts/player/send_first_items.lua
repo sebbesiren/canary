@@ -10,18 +10,17 @@ local config = {
 		items = {
 			{ 3059, 1 }, -- spellbook
 			{ 3074, 1 }, -- wand of vortex
-			{ 3567, 1 }, -- blue robe
+			{ 17846, 1 }, -- leather harness
 			{ 7992, 1 }, -- mage hat
-			{ 10387, 1 }, -- zaoan legs
-			{ 10386, 1 }, -- zaoan shoes
+			{ 22087, 1 }, -- wereboar loincloth
+			{ 3552, 1 }, -- leather boots
 			{ 3572, 1 }, -- scarf
 		},
 
 		container = {
-			{ 3043, 1 }, -- crystal coin
 			{ 3003, 1 }, -- rope
 			{ 5710, 1 }, -- light shovel
-			{ 268, 10 }, -- mana potion
+			{ 268, 20 }, -- mana potion
 		},
 	},
 
@@ -29,34 +28,32 @@ local config = {
 		items = {
 			{ 3059, 1 }, -- spellbook
 			{ 3066, 1 }, -- snakebite rod
-			{ 3567, 1 }, -- blue robe
+			{ 17846, 1 }, -- leather harness
 			{ 7992, 1 }, -- mage hat
-			{ 10387, 1 }, -- zaoan legs
-			{ 10386, 1 }, -- zaoan shoes
+			{ 22087, 1 }, -- wereboar loincloth
+			{ 3552, 1 }, -- leather boots
 			{ 3572, 1 }, -- scarf
 		},
 
 		container = {
-			{ 3043, 1 }, -- crystal coin
 			{ 3003, 1 }, -- rope
 			{ 5710, 1 }, -- light shovel
-			{ 268, 10 }, -- mana potion
+			{ 268, 20 }, -- mana potion
 		},
 	},
 
 	[VOCATION.ID.PALADIN] = {
 		items = {
-			{ 3416, 1 }, -- dragon shield
+			{ 17810, 1 }, -- spike shield
 			{ 3277, 1 }, -- spear
-			{ 3567, 1 }, -- blue robe
-			{ 10387, 1 }, -- zaoan legs
-			{ 10386, 1 }, -- zaoan shoes
+			{ 17846, 1 }, -- leather harness
+			{ 22087, 1 }, -- wereboar loincloth
+			{ 3552, 1 }, -- leather boots
 			{ 3572, 1 }, -- scarf
 			{ 3351, 1 }, -- steel helmet
 		},
 
 		container = {
-			{ 3043, 1 }, -- crystal coin
 			{ 3003, 1 }, -- rope
 			{ 5710, 1 }, -- light shovel
 			{ 266, 10 }, -- health potion
@@ -69,22 +66,21 @@ local config = {
 
 	[VOCATION.ID.KNIGHT] = {
 		items = {
-			{ 3416, 1 }, -- dragon shield
+			{ 17810, 1 }, -- spike shield
 			{ 3316, 1 }, -- orcish axe
-			{ 3567, 1 }, -- blue robe
+			{ 17846, 1 }, -- leather harness
 			{ 3351, 1 }, -- steel helmet
-			{ 10387, 1 }, -- zaoan legs
-			{ 10386, 1 }, -- zaoan shoes
+			{ 22087, 1 }, -- wereboar loincloth
+			{ 3552, 1 }, -- leather boots
 			{ 3572, 1 }, -- scarf
 		},
 
 		container = {
-			{ 3043, 1 }, -- crystal coin
 			{ 3297, 1 }, -- serpent sword
 			{ 3282, 1 }, -- morning star
 			{ 3003, 1 }, -- rope
 			{ 5710, 1 }, -- light shovel
-			{ 266, 10 }, -- health potion
+			{ 266, 20 }, -- health potion
 		},
 	},
 }
