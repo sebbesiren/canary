@@ -3,35 +3,9 @@ combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ICEDAMAGE)
 combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_ICETORNADO)
 combat:setArea(createCombatArea(AREA_CIRCLE5X5))
 
-local strongImpactItemIds = {
-	43885,
-}
-local fierceImpactItemIds = {
-	43886,
-}
-local critDamageItemIds = {
-	43887,
-}
-
 function onGetFormulaValues(player, level, maglevel)
 	local min = level * 0.2 + maglevel * 8
-	local max = level * 0.2 + maglevel * 16
-
-	local multiplier = 1
-	local weapon = player:getSlotItem(CONST_SLOT_LEFT)
-	if weapon then
-		if table.contains(strongImpactItemIds, weapon:getId()) then
-			multiplier = multiplier + 0.1
-		elseif table.contains(fierceImpactItemIds, weapon:getId()) then
-			multiplier = multiplier + 0.2
-		end
-	end
-	local feet = player:getSlotItem(CONST_SLOT_FEET)
-	if feet and table.contains(critDamageItemIds, feet:getId()) then
-		multiplier = multiplier + 0.05
-	end
-	logger.debug("Total multiplier: {}", multiplier)
-
+	local max = level * 0.2 + maglevel * 12
 	return -min * multiplier, -max * multiplier
 end
 

@@ -1,33 +1,7 @@
-local strongImpactItemIds = {
-	43882,
-}
-local fierceImpactItemIds = {
-	43883,
-}
-local critDamageItemIds = {
-	43884,
-}
-
 local function formulaFunction(player, level, maglevel)
 	local min = (level / 5) + (maglevel * 4.5)
 	local max = (level / 5) + (maglevel * 9)
-
-	local multiplier = 1
-	local weapon = player:getSlotItem(CONST_SLOT_LEFT)
-	if weapon then
-		if table.contains(strongImpactItemIds, weapon:getId()) then
-			multiplier = multiplier + 0.1
-		elseif table.contains(fierceImpactItemIds, weapon:getId()) then
-			multiplier = multiplier + 0.2
-		end
-	end
-	local feet = player:getSlotItem(CONST_SLOT_FEET)
-	if feet and table.contains(critDamageItemIds, feet:getId()) then
-		multiplier = multiplier + 0.05
-	end
-	logger.debug("Total multiplier: {}", multiplier)
-
-	return -min * multiplier, -max * multiplier
+	return -min, -max
 end
 
 function onGetFormulaValues(player, level, maglevel)
