@@ -74,13 +74,12 @@ local function autoPotLoop(player)
 			end
 		end
 
-		:: continue ::
+		::continue::
 	end
 
 	addEvent(function()
 		autoPotLoop(player)
 	end, nextDelay)
-
 end
 
 function autopot.onSay(player, words, param)
@@ -92,7 +91,7 @@ function autopot.onSay(player, words, param)
 		player:kv():scoped("auto-pot"):set("pot", "off")
 	else
 		local potNames = {
-			string.trim(param_parts[1]:lower())
+			string.trim(param_parts[1]:lower()),
 		}
 
 		if #param_parts > 1 then
