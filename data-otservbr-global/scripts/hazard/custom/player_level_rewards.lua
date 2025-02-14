@@ -27,7 +27,7 @@ local rewardsByLevel = {
 	},
 	[100] = {
 		{ 3043, 2 }, -- crystal coin
-	}
+	},
 }
 
 function playerLevelReward.onAdvance(player, skill, oldLevel, newLevel)
@@ -53,11 +53,8 @@ function playerLevelReward.onAdvance(player, skill, oldLevel, newLevel)
 			goto continue
 		end
 
-		player:sendTextMessage(
-			MESSAGE_EVENT_ADVANCE,
-			"Congratulations! \z
-			You have reached level " .. level .. " and received a reward!"
-		)
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Congratulations! \z
+			You have reached level " .. level .. " and received a reward!")
 
 		local container = player:getSlotItem(CONST_SLOT_BACKPACK)
 
@@ -71,10 +68,9 @@ function playerLevelReward.onAdvance(player, skill, oldLevel, newLevel)
 
 		table.insert(playerLevelRewardsReceived, level)
 
-		:: continue ::
+		::continue::
 	end
 	player:kv():set("player-level-rewards-received", playerLevelRewardsReceived)
-
 end
 
 playerLevelReward:register()
