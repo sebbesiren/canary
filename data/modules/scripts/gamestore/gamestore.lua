@@ -21,8 +21,7 @@ if configManager.getBoolean(configKeys.VIP_SYSTEM_ENABLED) then
 	premiumOfferName = "VIP"
 end
 
-local premiumDescription =
-	"<i>Enhance your gaming experience by gaining additional abilities and advantages:</i>\n\n&#8226; access to Premium areas\n&#8226; use Tibia's transport system (ships, carpet)\n&#8226; more spells\n&#8226; rent houses\n&#8226; found guilds\n&#8226; offline training\n&#8226; larger depots\n&#8226; and many more\n\n{usablebyallicon} valid for all characters on this account\n{activated}"
+local premiumDescription = "<i>Enhance your gaming experience by gaining additional abilities and advantages:</i>\n\n&#8226; access to Premium areas\n&#8226; use Tibia's transport system (ships, carpet)\n&#8226; more spells\n&#8226; rent houses\n&#8226; found guilds\n&#8226; offline training\n&#8226; larger depots\n&#8226; and many more\n\n{usablebyallicon} valid for all characters on this account\n{activated}"
 if configManager.getBoolean(configKeys.VIP_SYSTEM_ENABLED) then
 	local vipBonusExp = configManager.getNumber(configKeys.VIP_BONUS_EXP)
 	local vipBonusLoot = configManager.getNumber(configKeys.VIP_BONUS_LOOT)
@@ -735,6 +734,60 @@ GameStore.Categories = {
 				itemtype = 44067,
 				charges = 14400,
 				description = "<i>Use it to train your shielding skill on an exercise dummy!</i>\n\n{character}\n{storeinbox}\n{info} use it on an exercise dummy to train your shielding skill\n{info} usable 14400 times a piece",
+				type = GameStore.OfferTypes.OFFER_TYPE_CHARGES,
+			},
+			{
+				icons = { "Lasting_Exercise_Axe.png" },
+				name = "Mega Lasting Exercise Axe",
+				price = 1720,
+				itemtype = 35286,
+				charges = 34400,
+				description = "<i>Use it to train your axe fighting skill on an exercise dummy!</i>\n\n{character}\n{storeinbox}\n{info} use it on an exercise dummy to train your axe fighting skill\n{info} usable 14400 times a piece",
+				type = GameStore.OfferTypes.OFFER_TYPE_CHARGES,
+			},
+			{
+				icons = { "Lasting_Exercise_Bow.png" },
+				name = "Mega Lasting Exercise Bow",
+				price = 1720,
+				itemtype = 35288,
+				charges = 34400,
+				description = "<i>Use it to train your distance fighting skill on an exercise dummy!</i>\n\n{character}\n{storeinbox}\n{info} use it on an exercise dummy to train your distance fighting skill\n{info} usable 14400 times a piece",
+				type = GameStore.OfferTypes.OFFER_TYPE_CHARGES,
+			},
+			{
+				icons = { "Lasting_Exercise_Club.png" },
+				name = "Mega Lasting Exercise Club",
+				price = 1720,
+				itemtype = 35287,
+				charges = 34400,
+				description = "<i>Use it to train your club fighting skill on an exercise dummy!</i>\n\n{character}\n{storeinbox}\n{info} use it on an exercise dummy to train your club fighting skill\n{info} usable 14400 times a piece",
+				type = GameStore.OfferTypes.OFFER_TYPE_CHARGES,
+			},
+			{
+				icons = { "Lasting_Exercise_Rod.png" },
+				name = "Mega Lasting Exercise Rod",
+				price = 1720,
+				itemtype = 35289,
+				charges = 34400,
+				description = "<i>Use it to train your magic level on an exercise dummy!</i>\n\n{character}\n{storeinbox}\n{info} use it on an exercise dummy to train your magic level\n{info} usable 14400 times a piece",
+				type = GameStore.OfferTypes.OFFER_TYPE_CHARGES,
+			},
+			{
+				icons = { "Lasting_Exercise_Sword.png" },
+				name = "Mega Lasting Exercise Sword",
+				price = 1720,
+				itemtype = 35285,
+				charges = 34400,
+				description = "<i>Use it to train your sword fighting skill on an exercise dummy!</i>\n\n{character}\n{storeinbox}\n{info} use it on an exercise dummy to train your sword fighting skill\n{info} usable 14400 times a piece",
+				type = GameStore.OfferTypes.OFFER_TYPE_CHARGES,
+			},
+			{
+				icons = { "Lasting_Exercise_Wand.png" },
+				name = "Mega Lasting Exercise Wand",
+				price = 1720,
+				itemtype = 35290,
+				charges = 34400,
+				description = "<i>Use it to train your magic level on an exercise dummy!</i>\n\n{character}\n{storeinbox}\n{info} use it on an exercise dummy to train your magic level\n{info} usable 14400 times a piece",
 				type = GameStore.OfferTypes.OFFER_TYPE_CHARGES,
 			},
 		},
@@ -6576,6 +6629,14 @@ GameStore.Categories = {
 				type = GameStore.OfferTypes.OFFER_TYPE_PREYBONUS,
 			},
 			{
+				icons = { "Prey_Bonus_Reroll.png" },
+				name = "Prey Wildcard",
+				price = 75,
+				count = 15,
+				description = "<i>Use Prey Wildcards to reroll the bonus of an active prey, to lock your active prey or to select a prey of your choice.</i>\n\n{character}\n{info} added directly to Prey dialog\n{info} maximum amount that can be owned by character: 50",
+				type = GameStore.OfferTypes.OFFER_TYPE_PREYBONUS,
+			},
+			{
 				icons = { "Instant_Reward_Access.png" },
 				name = "Instant Reward Access",
 				price = 100,
@@ -6635,14 +6696,7 @@ GameStore.Categories = {
 				description = "<i>Changes automatically either a stack of 100 gold pieces into 1 platinum coin, or a stack of 100 platinum coins into 1 crystal coin!</i>\n\n{character}\n{storeinbox}\n{useicon} use it to activate or deactivate the automatic conversion\n{info} converts all stacks of 100 gold or platinum in the inventory whenever it is activated\n{info} deactivated upon purchase\n{info} usable for 500 conversions a piece",
 				type = GameStore.OfferTypes.OFFER_TYPE_CHARGES,
 			},
-			{
-				icons = { "Prey_Bonus_Reroll.png" },
-				name = "Prey Wildcard",
-				price = 75,
-				count = 15,
-				description = "<i>Use Prey Wildcards to reroll the bonus of an active prey, to lock your active prey or to select a prey of your choice.</i>\n\n{character}\n{info} added directly to Prey dialog\n{info} maximum amount that can be owned by character: 50",
-				type = GameStore.OfferTypes.OFFER_TYPE_PREYBONUS,
-			},
+
 			{
 				icons = { "Temple_Teleport.png" },
 				name = "Temple Teleport",

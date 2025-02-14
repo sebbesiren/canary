@@ -87,16 +87,16 @@ function deathEvent.onDeath(creature)
 		end
 	end
 
-	local multiplier = math.min(1, 16000 / monsterMaxHealth)
-	local baseChance = math.max(250, 500 - points * 15)
-
-	chanceTo = math.random(1, math.ceil(baseChance * multiplier))
+	--local multiplier = math.min(1, 16000 / monsterMaxHealth)
+	--local baseChance = math.max(250, 500 - points * 15)
+	--
+	--chanceTo = math.random(1, math.ceil(baseChance * multiplier))
+	chanceTo = math.random(1, 3000)
 	if chanceTo <= 1 then
 		local bosses = {
-			"Urmahlullu the Immaculate",
-			"Grand Master Oberon",
+			--"Urmahlullu the Immaculate",
+			--"Grand Master Oberon",
 			--"King Zelos",
-			"Guard Captain Quaid",
 			"Count Vlarkorth",
 			"Duke Krule",
 			"Earl Osam",

@@ -19,6 +19,8 @@ function annihilator.onUse(player, item, fromPosition, target, toPosition, isHot
 		for _, position in ipairs(playerPosition) do
 			local topPlayer = Tile(position):getTopCreature()
 			if topPlayer and topPlayer:getLevel() < 100 then
+				logger.info("1")
+
 				player:sendCancelMessage(RETURNVALUE_NOTPOSSIBLE)
 				return false
 			end
@@ -32,6 +34,7 @@ function annihilator.onUse(player, item, fromPosition, target, toPosition, isHot
 		end
 		item:transform(2773)
 	elseif item.itemid == 2773 then
+		logger.info("2")
 		player:sendCancelMessage(RETURNVALUE_NOTPOSSIBLE)
 	end
 	return true
