@@ -91,7 +91,7 @@ function deathEvent.onDeath(creature)
 	--local baseChance = math.max(250, 500 - points * 15)
 	--
 	--chanceTo = math.random(1, math.ceil(baseChance * multiplier))
-	chanceTo = math.random(1, 3000)
+	chanceTo = math.random(1, 2000)
 	if chanceTo <= 1 then
 		local bosses = {
 			--"Urmahlullu the Immaculate",
@@ -111,20 +111,12 @@ function deathEvent.onDeath(creature)
 		end
 		if monsterMaxHealth > 6000 then
 			for _ = 1, 3 do
+				table.insert(bosses, "Balrog")
 				table.insert(bosses, "Death Lord Athelstan")
-				table.insert(bosses, "Hellchaser Heip")
 			end
 		end
 		if monsterMaxHealth > 9000 then
-			for _ = 1, 9 do
-				table.insert(bosses, "Hellchaser Heip")
-			end
 			table.insert(bosses, "Apocalypse")
-		end
-		if monsterMaxHealth > 12000 then
-			for _ = 1, 9 do
-				table.insert(bosses, "Hellchaser Heip")
-			end
 		end
 		if monsterMaxHealth > 15000 then
 			for _ = 1, 9 do
