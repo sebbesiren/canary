@@ -11,7 +11,7 @@ local config = {
 	-- put 0 in tokensPerHour.free to disable free from receiving tokens
 	tokensPerHour = {
 		free = 1,
-		vip = 3,
+		vip = 1,
 	},
 
 	awardOn = 1,
