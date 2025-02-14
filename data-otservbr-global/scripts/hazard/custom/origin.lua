@@ -118,11 +118,6 @@ function deathEvent.onDeath(creature)
 		if monsterMaxHealth > 9000 then
 			table.insert(bosses, "Apocalypse")
 		end
-		if monsterMaxHealth > 15000 then
-			for _ = 1, 9 do
-				table.insert(bosses, "Hellchaser Heip")
-			end
-		end
 		if monsterMaxHealth > 20000 then
 			for _ = 1, 9 do
 				table.insert(bosses, "Hellchaser Heip")
