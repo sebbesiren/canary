@@ -44,7 +44,6 @@ function deathEvent.onDeath(creature)
 	math.randomseed(os.clock())
 	-- Level up if monster is a boss
 
-
 	local position = monster:getPosition()
 	local chanceTo = math.random(1, 40)
 	if chanceTo <= 1 then
