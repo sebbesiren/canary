@@ -2510,7 +2510,7 @@ float Monster::getAttackMultiplier() const {
 	if (auto stacks = getForgeStack(); stacks > 0) {
 		multiplier *= (1.35 + (stacks - 1) * 0.01);
 
-//		multiplier *= (1.35 + (stacks - 1) * 0.1);
+		//		multiplier *= (1.35 + (stacks - 1) * 0.1);
 	}
 	return multiplier;
 }

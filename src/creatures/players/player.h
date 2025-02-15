@@ -1848,7 +1848,7 @@ public:
 	bool isImmuneCleanse(ConditionType_t conditiontype) {
 		uint64_t timenow = OTSYS_TIME();
 		if ((cleanseCondition.first == conditiontype)
-			&& (timenow <= cleanseCondition.second)) {
+		    && (timenow <= cleanseCondition.second)) {
 			return true;
 		}
 		return false;
@@ -2045,7 +2045,7 @@ public:
 		if (auto it = std::find_if(preys.begin(), preys.end(), [slotid](const PreySlot* preyIt) {
 				return preyIt->id == slotid;
 			});
-			it != preys.end()) {
+		    it != preys.end()) {
 			return *it;
 		}
 
@@ -2112,7 +2112,7 @@ public:
 		if (auto it = std::find_if(preys.begin(), preys.end(), [raceId](const PreySlot* it) {
 				return it->selectedRaceId == raceId;
 			});
-			it != preys.end()) {
+		    it != preys.end()) {
 			return *it;
 		}
 
@@ -2143,7 +2143,7 @@ public:
 		if (auto it = std::find_if(taskHunting.begin(), taskHunting.end(), [slotid](const TaskHuntingSlot* itTask) {
 				return itTask->id == slotid;
 			});
-			it != taskHunting.end()) {
+		    it != taskHunting.end()) {
 			return *it;
 		}
 
@@ -2212,7 +2212,7 @@ public:
 		if (auto it = std::find_if(taskHunting.begin(), taskHunting.end(), [raceId](const TaskHuntingSlot* itTask) {
 				return itTask->selectedRaceId == raceId;
 			});
-			it != taskHunting.end()) {
+		    it != taskHunting.end()) {
 			return *it;
 		}
 
