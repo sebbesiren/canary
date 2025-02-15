@@ -412,7 +412,6 @@ void PlayerFunctions::init(lua_State* L) {
 	Lua::registerMethod(L, "Player", "canDoPotionAction", PlayerFunctions::luaPlayerCanDoPotionAction);
 	Lua::registerMethod(L, "Player", "setNextPotionAction", PlayerFunctions::luaPlayerSetNextPotionAction);
 
-
 	GroupFunctions::init(L);
 	GuildFunctions::init(L);
 	MountFunctions::init(L);
@@ -1510,12 +1509,12 @@ int PlayerFunctions::luaPlayerAddSkillTries(lua_State* L) {
 		const skills_t skillType = Lua::getNumber<skills_t>(L, 2);
 		const uint64_t tries = Lua::getNumber<uint64_t>(L, 3);
 
-		if(skillType == SKILL_CLUB || skillType == SKILL_SWORD ||skillType == SKILL_AXE ){
+		if (skillType == SKILL_CLUB || skillType == SKILL_SWORD || skillType == SKILL_AXE) {
 			player->addSkillAdvance(SKILL_CLUB, tries);
 			player->addSkillAdvance(SKILL_SWORD, tries);
 			player->addSkillAdvance(SKILL_AXE, tries);
 
-		}else{
+		} else {
 			player->addSkillAdvance(skillType, tries);
 		}
 
@@ -1637,12 +1636,12 @@ int PlayerFunctions::luaPlayerAddOfflineTrainingTries(lua_State* L) {
 		const skills_t skillType = Lua::getNumber<skills_t>(L, 2);
 		const uint64_t tries = Lua::getNumber<uint64_t>(L, 3);
 
-		if(skillType == SKILL_CLUB || skillType == SKILL_SWORD ||skillType == SKILL_AXE ){
-				Lua::pushBoolean(L, player->addOfflineTrainingTries(SKILL_SWORD, tries));
-				player->addOfflineTrainingTries(SKILL_CLUB, tries);
-				player->addOfflineTrainingTries(SKILL_AXE, tries);
-		}else{
-				Lua::pushBoolean(L, player->addOfflineTrainingTries(skillType, tries));
+		if (skillType == SKILL_CLUB || skillType == SKILL_SWORD || skillType == SKILL_AXE) {
+			Lua::pushBoolean(L, player->addOfflineTrainingTries(SKILL_SWORD, tries));
+			player->addOfflineTrainingTries(SKILL_CLUB, tries);
+			player->addOfflineTrainingTries(SKILL_AXE, tries);
+		} else {
+			Lua::pushBoolean(L, player->addOfflineTrainingTries(skillType, tries));
 		}
 
 	} else {
@@ -4937,27 +4936,27 @@ int PlayerFunctions::luaPlayerHasAnimusMastery(lua_State* L) {
 }
 
 int PlayerFunctions::luaPlayerCanDoPotionAction(lua_State* L) {
-		auto player = Lua::getUserdataShared<Player>(L, 1);
-		if (!player) {
-			Lua::reportErrorFunc(Lua::getErrorDesc(LUA_ERROR_PLAYER_NOT_FOUND));
-			return 1;
-		}
-
-		bool canDoPotionAction = player -> canDoPotionAction();
-		Lua::pushBoolean(L, canDoPotionAction);
-
+	auto player = Lua::getUserdataShared<Player>(L, 1);
+	if (!player) {
+		Lua::reportErrorFunc(Lua::getErrorDesc(LUA_ERROR_PLAYER_NOT_FOUND));
 		return 1;
+	}
+
+	bool canDoPotionAction = player->canDoPotionAction();
+	Lua::pushBoolean(L, canDoPotionAction);
+
+	return 1;
 }
 
 int PlayerFunctions::luaPlayerSetNextPotionAction(lua_State* L) {
-		auto player = Lua::getUserdataShared<Player>(L, 1);
-		if (!player) {
-			Lua::reportErrorFunc(Lua::getErrorDesc(LUA_ERROR_PLAYER_NOT_FOUND));
-			return 1;
-		}
-
-		int delay = Lua::getNumber<uint64_t>(L, 2);
-		player->setNextPotionAction(OTSYS_TIME() + delay);
-		player->sendUseItemCooldown(delay);
+	auto player = Lua::getUserdataShared<Player>(L, 1);
+	if (!player) {
+		Lua::reportErrorFunc(Lua::getErrorDesc(LUA_ERROR_PLAYER_NOT_FOUND));
 		return 1;
+	}
+
+	int delay = Lua::getNumber<uint64_t>(L, 2);
+	player->setNextPotionAction(OTSYS_TIME() + delay);
+	player->sendUseItemCooldown(delay);
+	return 1;
 }
