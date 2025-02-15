@@ -49,14 +49,14 @@ function hazardlevel.onSay(player, words, param)
 		desiredLevel = 0
 	end
 
-	player:sendTextMessage(MESSAGE_LOOK, "Hazardlevel will be set in 10 seconds.")
+	player:sendTextMessage(MESSAGE_LOOK, "Hazardlevel will be set in 5 seconds.")
 	addEvent(function()
 		if hazard:setPlayerCurrentLevel(player, desiredLevel) then
 			player:sendTextMessage(MESSAGE_LOOK, "Hazard level for area '" .. hazardName .. "' set to " .. desiredLevel)
 		else
 			player:sendTextMessage(MESSAGE_LOOK, "You can't set your hazard level higher than your maximum unlocked level.")
 		end
-	end, 10000)
+	end, 5000)
 
 	return true
 end

@@ -43,15 +43,10 @@ function deathEvent.onDeath(creature)
 
 	math.randomseed(os.clock())
 	-- Level up if monster is a boss
-	local chanceTo = math.random(1, 40)
-	if chanceTo <= 1 then
-		onDeathForDamagingPlayers(creature, function(creature, damagingPlayer)
-			attemptLevelUpPlayer(hazard, damagingPlayer, points)
-		end)
-	end
+
 
 	local position = monster:getPosition()
-	chanceTo = math.random(1, 40)
+	local chanceTo = math.random(1, 40)
 	if chanceTo <= 1 then
 		position:sendMagicEffect(CONST_ME_TELEPORT)
 		local newMonster = Game.createMonster(monster:getName(), position, false, true)
@@ -129,3 +124,14 @@ function deathEvent.onDeath(creature)
 	return true
 end
 deathEvent:register()
+
+local zoneEvent = ZoneEvent(hazardZone)
+function zoneEvent.afterEnter(zn, creature)
+	local player = creature:getPlayer()
+	if not player then
+		return
+	end
+
+	hazard:setPlayerMaxLevel(player, hazard.maxLevel)
+end
+zoneEvent:register()
