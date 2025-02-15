@@ -98,7 +98,6 @@ function deathEvent.onDeath(creature)
 			--"King Zelos",
 			"Count Vlarkorth",
 			"Duke Krule",
-			"Earl Osam",
 			"Sir Baeloc",
 		}
 
