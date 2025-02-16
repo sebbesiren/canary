@@ -21,6 +21,7 @@ function demonOakChest.onUse(player, item, fromPosition, target, toPosition, isH
 		end
 
 		player:addItem(chest.itemid, chest.count)
+		player:addItem(3390, 1) -- horned helmet
 		player:setStorageValue(Storage.Quest.U8_2.TheDemonOak.Done, 3)
 	end
 	return true
