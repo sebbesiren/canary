@@ -13,8 +13,20 @@ local items = {
 	["supreme health potion"] = { clientId = 23375, cost = 625 },
 	["great spirit potion"] = { clientId = 7642, cost = 228 },
 	["ultimate spirit potion"] = { clientId = 23374, cost = 438 },
-	["spectral bolt"] = { clientId = 35902, cost = 70 },
+
+	["sniper arrow"] = { clientId = 7364, cost = 5 },
+	["tarsal arrow"] = { clientId = 14251, cost = 6 },
+	["onyx arrow"] = { clientId = 7365, cost = 7 },
+	["crystalline arrow"] = { clientId = 15793, cost = 20 },
 	["diamond arrow"] = { clientId = 35901, cost = 100 },
+
+	["piercing bolt"] = { clientId = 7363, cost = 5 },
+	["vortex bolt"] = { clientId = 14252, cost = 6 },
+	["power bolt"] = { clientId = 3450, cost = 7 },
+	["drill bolt"] = { clientId = 16142, cost = 12 },
+	["prismatic bolt"] = { clientId = 16141, cost = 20 },
+	["spectral bolt"] = { clientId = 35902, cost = 70 },
+
 	["sudden death rune"] = { clientId = 3155, cost = 135 },
 	["heavy magic missile rune"] = { clientId = 3198, cost = 135 },
 	["icicle rune"] = { clientId = 3158, cost = 135 },

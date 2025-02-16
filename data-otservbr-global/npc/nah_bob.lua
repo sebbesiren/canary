@@ -55,11 +55,11 @@ local function greetCallback(npc, creature, message)
 	local player = Player(creature)
 	local playerId = player:getId()
 
-	if not MsgContains(message, "djanni'hah") then
-		npcHandler:say("Whoa! A human! This is no place for you, |PLAYERNAME|. Go and play somewhere else.", npc, creature)
-		endConversationWithDelay(npcHandler, npc, creature)
-		return false
-	end
+	--if not MsgContains(message, "djanni'hah") then
+	--	npcHandler:say("Whoa! A human! This is no place for you, |PLAYERNAME|. Go and play somewhere else.", npc, creature)
+	--	endConversationWithDelay(npcHandler, npc, creature)
+	--	return false
+	--end
 
 	--if player:getStorageValue(Storage.Quest.U7_4.DjinnWar.EfreetFaction.Start) == 1 then
 	--	npcHandler:say({
