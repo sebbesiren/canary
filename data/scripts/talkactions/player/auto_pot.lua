@@ -23,6 +23,10 @@ end
 local function autoPotLoop(player)
 	local potNames = player:kv():scoped("auto-pot"):get("pot")
 
+	if potNames == "off" then
+		return true
+	end
+
 	local nextDelay = 200
 
 	for _, potName in ipairs(potNames) do
