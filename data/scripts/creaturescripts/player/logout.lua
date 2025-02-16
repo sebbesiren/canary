@@ -1,6 +1,7 @@
 local playerLogout = CreatureEvent("PlayerLogout")
 
 function playerLogout.onLogout(player)
+	player:kv():scoped("auto-pot"):set("pot", "off")
 	local playerId = player:getId()
 
 	if _G.NextUseStaminaTime[playerId] then

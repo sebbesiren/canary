@@ -22,12 +22,11 @@ end
 
 local function autoPotLoop(player)
 	local potNames = player:kv():scoped("auto-pot"):get("pot")
-
 	if potNames == "off" then
 		return true
 	end
 
-	local nextDelay = 200
+	local nextDelay = 1000
 
 	for _, potName in ipairs(potNames) do
 		local pot = pots[potName]
@@ -124,8 +123,10 @@ autopot:separator(" ")
 autopot:groupType("normal")
 autopot:register()
 
-local playerLogout = CreatureEvent("PlayerAutopotLogout")
-function playerLogout.onLogout(player)
-	player:kv():scoped("auto-pot"):set("pot", "off")
-end
-playerLogout:register()
+--local playerAutopotLogout = CreatureEvent("PlayerAutopotLogout")
+--function playerAutopotLogout.onLogout(player)
+--	if player then
+--		player:kv():scoped("auto-pot"):set("pot", "off")
+--	end
+--end
+--playerAutopotLogout:register()
