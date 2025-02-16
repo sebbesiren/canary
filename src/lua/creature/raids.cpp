@@ -388,7 +388,7 @@ bool SingleSpawnEvent::executeEvent() {
 	}
 
 	monster->setForgeMonster(false);
- 	monster->onSpawn(position);
+	monster->onSpawn(position);
 	return true;
 }
 
