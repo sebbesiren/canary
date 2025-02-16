@@ -101,7 +101,6 @@ monster.loot = {
 	{ name = "final judgement", chance = 460 },
 	{ name = "gold token", chance = 20000 },
 	{ name = "silver token", chance = 20000 },
-
 }
 
 monster.attacks = {

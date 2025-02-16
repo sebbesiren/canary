@@ -120,7 +120,6 @@ autopot:separator(" ")
 autopot:groupType("normal")
 autopot:register()
 
-
 local playerLogout = CreatureEvent("PlayerAutopotLogout")
 function playerLogout.onLogout(player)
 	player:kv():scoped("auto-pot"):set("pot", "off")
