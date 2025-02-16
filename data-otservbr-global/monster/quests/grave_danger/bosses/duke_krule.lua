@@ -99,6 +99,9 @@ monster.loot = {
 	{ name = "rotten heart", chance = 1700 },
 	{ name = "terra helmet", chance = 700 },
 	{ name = "final judgement", chance = 460 },
+	{ name = "gold token", chance = 20000 },
+	{ name = "silver token", chance = 20000 },
+
 }
 
 monster.attacks = {

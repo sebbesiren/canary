@@ -4,7 +4,7 @@ combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_ICETORNADO)
 combat:setArea(createCombatArea(AREA_CIRCLE5X5))
 
 function onGetFormulaValues(player, level, maglevel)
-	local min = level * 0.2 + maglevel * 8
+	local min = level * 0.2 + maglevel * 6
 	local max = level * 0.2 + maglevel * 12
 	return -min, -max
 end
