@@ -11,7 +11,7 @@ local bosses = {
 		name = "Timira The Many-Headed",
 		position = Position(33803, 32700, 7),
 		storage = 61305000 + 2250,
-	}
+	},
 }
 
 local count = 12
@@ -27,34 +27,31 @@ local function sendBossTpModal(player)
 
 	for _, bossConfig in pairs(bosses) do
 		local choiceText = bossConfig.name
-		window:addChoice(
-			choiceText,
-			function(player, button, choice)
-				if button.name ~= "Select" then
-					return true
-				end
-
-				local inPz = player:getTile():hasFlag(TILESTATE_PROTECTIONZONE)
-				local inFight = player:isPzLocked() or player:getCondition(CONDITION_INFIGHT, CONDITIONID_DEFAULT)
-				if not inPz and inFight then
-					player:sendCancelMessage("Unable to tp while in combat")
-					return true
-				end
-
-				if player:getStorageValue(bossConfig.storage) < count then
-					player:sendCancelMessage("You dont have enough boss points")
-					return true
-				end
-
-				if cost > playerBalance then
-					player:sendCancelMessage("You dont have enough money")
-					return true
-				end
-
-				player:removeMoneyBank(cost)
-				player:teleportTo(bossConfig.position)
+		window:addChoice(choiceText, function(player, button, choice)
+			if button.name ~= "Select" then
+				return true
 			end
-		)
+
+			local inPz = player:getTile():hasFlag(TILESTATE_PROTECTIONZONE)
+			local inFight = player:isPzLocked() or player:getCondition(CONDITION_INFIGHT, CONDITIONID_DEFAULT)
+			if not inPz and inFight then
+				player:sendCancelMessage("Unable to tp while in combat")
+				return true
+			end
+
+			if player:getStorageValue(bossConfig.storage) < count then
+				player:sendCancelMessage("You dont have enough boss points")
+				return true
+			end
+
+			if cost > playerBalance then
+				player:sendCancelMessage("You dont have enough money")
+				return true
+			end
+
+			player:removeMoneyBank(cost)
+			player:teleportTo(bossConfig.position)
+		end)
 	end
 
 	window:addButton("Select")
