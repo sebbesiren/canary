@@ -21,8 +21,7 @@ if configManager.getBoolean(configKeys.VIP_SYSTEM_ENABLED) then
 	premiumOfferName = "VIP"
 end
 
-local premiumDescription =
-	"<i>Enhance your gaming experience by gaining additional abilities and advantages:</i>\n\n&#8226; access to Premium areas\n&#8226; use Tibia's transport system (ships, carpet)\n&#8226; more spells\n&#8226; rent houses\n&#8226; found guilds\n&#8226; offline training\n&#8226; larger depots\n&#8226; and many more\n\n{usablebyallicon} valid for all characters on this account\n{activated}"
+local premiumDescription = "<i>Enhance your gaming experience by gaining additional abilities and advantages:</i>\n\n&#8226; access to Premium areas\n&#8226; use Tibia's transport system (ships, carpet)\n&#8226; more spells\n&#8226; rent houses\n&#8226; found guilds\n&#8226; offline training\n&#8226; larger depots\n&#8226; and many more\n\n{usablebyallicon} valid for all characters on this account\n{activated}"
 if configManager.getBoolean(configKeys.VIP_SYSTEM_ENABLED) then
 	local vipBonusExp = configManager.getNumber(configKeys.VIP_BONUS_EXP)
 	local vipBonusLoot = configManager.getNumber(configKeys.VIP_BONUS_LOOT)
@@ -431,6 +430,128 @@ GameStore.Categories = {
 			},
 		},
 	},
+	{
+		icons = { "Concoctions.png" },
+		name = "Concoctions",
+		parent = "Consumables",
+		rookgaard = true,
+		state = GameStore.States.STATE_NONE,
+		offers = {
+			{
+				name = "Fire Resilience",
+				price = 30,
+				count = 1,
+				itemtype = Concoction.Ids.FireResilience,
+				description= "Concoction",
+				type = GameStore.OfferTypes.OFFER_TYPE_STACKABLE,
+			},
+			{
+				name = "Ice Resilience",
+				price = 30,
+				count = 1,
+				itemtype = Concoction.Ids.IceResilience,
+				description= "Concoction",
+				type = GameStore.OfferTypes.OFFER_TYPE_STACKABLE,
+			},
+			{
+				name = "Earth Resilience",
+				price = 30,
+				count = 1,
+				itemtype = Concoction.Ids.EarthResilience,
+				description= "Concoction",
+				type = GameStore.OfferTypes.OFFER_TYPE_STACKABLE,
+			},
+			{
+				name = "Energy Resilience",
+				price = 30,
+				count = 1,
+				itemtype = Concoction.Ids.EnergyResilience,
+				description= "Concoction",
+				type = GameStore.OfferTypes.OFFER_TYPE_STACKABLE,
+			},
+			{
+				name = "Holy Resilience",
+				price = 30,
+				count = 1,
+				itemtype = Concoction.Ids.HolyResilience,
+				description= "Concoction",
+				type = GameStore.OfferTypes.OFFER_TYPE_STACKABLE,
+			},
+			{
+				name = "Death Resilience",
+				price = 30,
+				count = 1,
+				itemtype = Concoction.Ids.DeathResilience,
+				description= "Concoction",
+				type = GameStore.OfferTypes.OFFER_TYPE_STACKABLE,
+			},
+			{
+				name = "Physical Resilience",
+				price = 30,
+				count = 1,
+				itemtype = Concoction.Ids.PhysicalResilience,
+				description= "Concoction",
+				type = GameStore.OfferTypes.OFFER_TYPE_STACKABLE,
+			},
+			{
+				name = "Fire Amplification",
+				price = 30,
+				count = 1,
+				itemtype = Concoction.Ids.FireAmplification,
+				description= "Concoction",
+				type = GameStore.OfferTypes.OFFER_TYPE_STACKABLE,
+			},
+			{
+				name = "Ice Amplification",
+				price = 30,
+				count = 1,
+				itemtype = Concoction.Ids.IceAmplification,
+				description= "Concoction",
+				type = GameStore.OfferTypes.OFFER_TYPE_STACKABLE,
+			},
+			{
+				name = "Earth Amplification",
+				price = 30,
+				count = 1,
+				itemtype = Concoction.Ids.EarthAmplification,
+				description= "Concoction",
+				type = GameStore.OfferTypes.OFFER_TYPE_STACKABLE,
+			},
+			{
+				name = "Energy Amplification",
+				price = 30,
+				count = 1,
+				itemtype = Concoction.Ids.EnergyAmplification,
+				description= "Concoction",
+				type = GameStore.OfferTypes.OFFER_TYPE_STACKABLE,
+			},
+			{
+				name = "Holy Amplification",
+				price = 30,
+				count = 1,
+				itemtype = Concoction.Ids.HolyAmplification,
+				description= "Concoction",
+				type = GameStore.OfferTypes.OFFER_TYPE_STACKABLE,
+			},
+			{
+				name = "Death Amplification",
+				price = 30,
+				count = 1,
+				itemtype = Concoction.Ids.DeathAmplification,
+				description= "Concoction",
+				type = GameStore.OfferTypes.OFFER_TYPE_STACKABLE,
+			},
+			{
+				name = "Physical Amplification",
+				price = 30,
+				count = 1,
+				itemtype = Concoction.Ids.PhysicalAmplification,
+				description= "Concoction",
+				type = GameStore.OfferTypes.OFFER_TYPE_STACKABLE,
+			},
+		},
+
+	},
 	-- Consumables ~ Casks
 	{
 		icons = { "Category_Casks.png" },
@@ -538,6 +659,7 @@ GameStore.Categories = {
 				description = "<i>Place it in your house and fill up potions to restore your hit points and mana!</i>\n\n{house}\n{box}\n{storeinbox}\n{usablebyallicon} can be used to fill up potions by all characters that have access to the house\n{storeinboxicon} potions created from this cask will be sent to your Store inbox and can only be stored there and in depot box\n{backtoinbox}\n{info} usable 1000 times a piece\n{transferableprice}",
 				type = GameStore.OfferTypes.OFFER_TYPE_HOUSE,
 			},
+
 		},
 	},
 	-- Consumables ~ Exercise Weapons
