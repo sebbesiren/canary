@@ -683,5 +683,4 @@ function Player:onChangeZone(zone)
 	return false
 end
 
-function Player:onInventoryUpdate(item, slot, equip)
-end
+function Player:onInventoryUpdate(item, slot, equip) end
