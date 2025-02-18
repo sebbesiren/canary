@@ -2785,7 +2785,7 @@ uint16_t Player::getGrindingXpBoost() const {
 }
 
 uint16_t Player::getDisplayGrindingXpBoost() const {
-	return std::clamp<uint16_t>(grindingXpBoost * (baseXpGain / 100), 0, std::numeric_limits<uint16_t>::max());
+	return std::clamp<uint16_t>(grindingXpBoost * (baseXpGain / 100.0), 0, std::numeric_limits<uint16_t>::max());
 }
 
 void Player::setGrindingXpBoost(uint16_t value) {
@@ -2797,7 +2797,7 @@ uint16_t Player::getXpBoostPercent() const {
 }
 
 uint16_t Player::getDisplayXpBoostPercent() const {
-	return std::clamp<uint16_t>(xpBoostPercent * (baseXpGain / 100), 0, std::numeric_limits<uint16_t>::max());
+	return std::clamp<uint16_t>(xpBoostPercent * (baseXpGain / 100.0), 0, std::numeric_limits<uint16_t>::max());
 }
 
 void Player::setXpBoostPercent(uint16_t percent) {
