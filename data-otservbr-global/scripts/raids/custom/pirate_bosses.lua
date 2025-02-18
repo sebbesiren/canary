@@ -1,5 +1,5 @@
 local zone = Zone("liberty_bay.pirate-bosses")
-zone:addArea(Position(32274, 32796, 7), Position(32316, 32873, 7))
+zone:addArea(Position (32303, 32826, 7), Position(32341, 32852, 7))
 
 local raid = Raid("liberty_bay.pirate-bosses", {
 	zone = zone,
@@ -19,23 +19,23 @@ raid
 	:addSpawnMonsters({
 		{
 			name = "Pirate Corsair",
-			amount = 60,
+			amount = 15,
 		},
 		{
 			name = "Pirate Buccaneer",
-			amount = 60,
+			amount = 15,
 		},
 		{
 			name = "Pirate Cutthroat",
-			amount = 60,
+			amount = 15,
 		},
 		{
 			name = "Pirate Marauder",
-			amount = 60,
+			amount = 15,
 		},
 		{
 			name = "Smuggler",
-			amount = 60,
+			amount = 15,
 		},
 		{
 			name = bosses[math.random(#bosses)],

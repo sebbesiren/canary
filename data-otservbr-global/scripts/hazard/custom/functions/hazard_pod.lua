@@ -69,7 +69,9 @@ local function removePortal()
 	local tile = Tile(position)
 	for _, artefactId in ipairs(hazardPortalArtefacts) do
 		local gameArtefact = tile:getItemById(artefactId)
-		gameArtefact:remove()
+		if gameArtefact then
+			gameArtefact:remove()
+		end
 	end
 
 	table.remove(hazardPortals, 1)
@@ -90,11 +92,11 @@ local function spawnPortal(position, monsterName)
 	local toPos = Position(position.x + 4, position.y + 4, position.z)
 	local spawnZone = SpawnZone(name, fromPos, toPos)
 	spawnZone:setPeriod("60s")
-	spawnZone:setMonstersPerCluster(4, 8)
+	spawnZone:setMonstersPerCluster(6, 8)
 	spawnZone:configureMonster(monsterName, 1)
 	spawnZone:register()
 	table.insert(hazardPortals, { ["position"] = position, ["spawnZone"] = spawnZone })
-	addEvent(removePortal, 1000 * 60 * 60) -- 1h
+	addEvent(removePortal, 1000 * 60 * 30) -- 30min
 end
 
 local function spawnFewEnemies(position, monsterName)
@@ -129,7 +131,6 @@ local events = {
 }
 
 -- SELECT EVENT FUNCTIONS
-local previousEvent = nil
 local function getTotalScale()
 	local totalScale = 0
 	for _, scale in pairs(eventScalingFactors) do
@@ -147,14 +148,6 @@ local function selectEvent()
 	for eventName, scale in pairs(eventScalingFactors) do
 		cumulativeScale = cumulativeScale + scale
 		if randomValue <= cumulativeScale then
-			if eventName == previousEvent then
-				previousEvent = nil
-				math.randomseed(os.clock())
-				return selectEvent()
-			else
-				previousEvent = eventName
-			end
-
 			logger.debug("Event: " .. eventName)
 			return events[eventName] -- Return the event name when the scaled random value falls within its range
 		end
