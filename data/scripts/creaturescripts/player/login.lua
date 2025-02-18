@@ -98,6 +98,14 @@ function playerLoginGlobal.onLogin(player)
 		player:setBaseXpGain(baseRate)
 	end
 
+	local xpBoostTimeLeft = player:getXpBoostTime()
+	local hasXpBoost = xpBoostTimeLeft > 0
+	if not hasXpBoost then
+		player:setXpBoostPercent(0)
+	else
+		player:setXpBoostPercent(player:getXpBoostPercent())
+	end
+
 	player:setStaminaXpBoost(player:getFinalBonusStamina() * 100)
 	player:getFinalLowLevelBonus()
 

@@ -280,9 +280,11 @@ function Player:onMoveItem(item, count, fromPosition, toPosition, fromCylinder, 
 		local topDownItem = toTile:getTopDownItem()
 		if topDownItem then
 			local topDownItemItemId = topDownItem:getId()
-			if table.contains({ BATHTUB_EMPTY, BATHTUB_FILLED }, topDownItemItemId) then -- Bath tube
+			if table.contains({ BATHTUB_EMPTY, BATHTUB_FILLED }, topDownItemItemId) then
+				-- Bath tube
 				return false
-			elseif ItemType(topDownItemItemId):isPodium() then -- Podium
+			elseif ItemType(topDownItemItemId):isPodium() then
+				-- Podium
 				self:sendCancelMessage(RETURNVALUE_NOTPOSSIBLE)
 				self:getPosition():sendMagicEffect(CONST_ME_POFF)
 				return false
@@ -548,7 +550,10 @@ function Player:onGainExperience(target, exp, rawExp)
 
 	local xpBoostTimeLeft = self:getXpBoostTime()
 	local hasXpBoost = xpBoostTimeLeft > 0
-	local xpBoostPercent = hasXpBoost and self:getXpBoostPercent() or 0
+	if not hasXpBoost then
+		self:setXpBoostPercent(0)
+	end
+	local xpBoostPercent = self:getXpBoostPercent() or 0
 
 	-- Stamina Bonus
 	local staminaBonusXp = 1
@@ -587,6 +592,7 @@ function Player:onGainExperience(target, exp, rawExp)
 	local baseRateExp = self:getFinalBaseRateExperience()
 
 	-- Return final experience value
+	--logger.info("Exp %: " .. (1 + xpBoostPercent / 100 + lowLevelBonusExp / 100) * staminaBonusXp * baseRateExp * (1 + math.min(configManager.getNumber(configKeys.VIP_BONUS_EXP), 100) / 100))
 	return (exp * (1 + xpBoostPercent / 100 + lowLevelBonusExp / 100)) * staminaBonusXp * baseRateExp
 end
 
@@ -677,4 +683,5 @@ function Player:onChangeZone(zone)
 	return false
 end
 
-function Player:onInventoryUpdate(item, slot, equip) end
+function Player:onInventoryUpdate(item, slot, equip)
+end

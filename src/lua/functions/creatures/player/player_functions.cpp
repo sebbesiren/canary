@@ -3678,6 +3678,7 @@ int PlayerFunctions::luaPlayerSetXpBoostPercent(lua_State* L) {
 	if (player) {
 		const uint16_t percent = Lua::getNumber<uint16_t>(L, 2);
 		player->setXpBoostPercent(percent);
+		player->sendStats();
 		Lua::pushBoolean(L, true);
 	} else {
 		lua_pushnil(L);
