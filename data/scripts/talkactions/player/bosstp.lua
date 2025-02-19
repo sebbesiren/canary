@@ -7,45 +7,44 @@ local bosses = {
 		position = Position(33395, 32670, 6),
 		storage = 61305000 + 1804,
 		count = 12,
-		cost = 200000
+		cost = 200000,
 	},
 	{
 		name = "Timira The Many-Headed",
 		position = Position(33803, 32700, 7),
 		storage = 61305000 + 2250,
 		count = 12,
-		cost = 200000
+		cost = 200000,
 	},
 	{
 		name = "Grand Master Oberon",
-		position =  Position(33364, 31344, 9),
+		position = Position(33364, 31344, 9),
 		storage = 61305000 + 1576,
 		count = 12,
-		cost = 200000
+		cost = 200000,
 	},
 	{
 		name = "Faceless Bane",
-		position =  Position(33638, 32562, 13),
+		position = Position(33638, 32562, 13),
 		storage = 61305000 + 1727,
 		count = 12,
-		cost = 200000
+		cost = 200000,
 	},
 	{
 		name = "Drume",
-		position =  Position(32457, 32508, 6),
+		position = Position(32457, 32508, 6),
 		storage = 61305000 + 1957,
 		count = 12,
-		cost = 200000
+		cost = 200000,
 	},
 	{
 		name = "Urmahlullu",
-		position =  Position(33918, 31626, 8),
+		position = Position(33918, 31626, 8),
 		storage = 61305000 + 1811,
 		count = 12,
-		cost = 200000
+		cost = 200000,
 	},
 }
-
 
 local function sendBossTpModal(player)
 	local window = ModalWindow({
