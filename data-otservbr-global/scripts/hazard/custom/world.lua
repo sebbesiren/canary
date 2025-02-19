@@ -1,8 +1,8 @@
 local hazard = Hazard.new({
 	name = "hazard.world",
-	from = Position(31900, 31000, 0),
+	from = Position(31900, 31000, 1),
 	to = Position(34000, 33100, 15),
-	--to = Position(34000, 33100, 0),
+	--to = Position(34000, 33100, 1),
 	minLevel = 0,
 	maxLevel = 15,
 
@@ -15,6 +15,7 @@ local hazard = Hazard.new({
 hazard:register()
 
 local hazardZone = Zone.getByName(hazard.name)
+
 
 -- Gnomprona
 hazardZone:subtractArea({ x = 33502, y = 32740, z = 13 }, { x = 33796, y = 32996, z = 15 })

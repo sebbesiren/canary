@@ -911,8 +911,8 @@ tasks = {
 				"turbulent elemental",
 			},
 			rewards = {
-				{ type = "exp", value = { 150000000 } },
-				{ type = "item", value = { 3043, 300 } },
+				{ type = "exp", value = { 30000000 } },
+				{ type = "item", value = { 3043, 150 } },
 				{ type = "points", value = { 10 } },
 				{ type = "bosspoints", value = { 1 } },
 			},
@@ -930,8 +930,8 @@ tasks = {
 				"infernal phantom",
 			},
 			rewards = {
-				{ type = "exp", value = { 150000000 } },
-				{ type = "item", value = { 3043, 300 } },
+				{ type = "exp", value = { 30000000 } },
+				{ type = "item", value = { 3043, 150 } },
 				{ type = "points", value = { 10 } },
 				{ type = "bosspoints", value = { 1 } },
 			},
@@ -949,8 +949,8 @@ tasks = {
 				"rotten golem",
 			},
 			rewards = {
-				{ type = "exp", value = { 150000000 } },
-				{ type = "item", value = { 3043, 300 } },
+				{ type = "exp", value = { 30000000 } },
+				{ type = "item", value = { 3043, 150 } },
 				{ type = "points", value = { 10 } },
 				{ type = "bosspoints", value = { 1 } },
 			},
@@ -968,8 +968,8 @@ tasks = {
 				"courage leech",
 			},
 			rewards = {
-				{ type = "exp", value = { 150000000 } },
-				{ type = "item", value = { 3043, 300 } },
+				{ type = "exp", value = { 30000000 } },
+				{ type = "item", value = { 3043, 150 } },
 				{ type = "points", value = { 10 } },
 				{ type = "bosspoints", value = { 1 } },
 			},
@@ -989,8 +989,9 @@ tasks = {
 				"sabretooth",
 			},
 			rewards = {
-				{ type = "exp", value = { 100000000 } },
-				{ type = "item", value = { 39546, 1 } }, -- primal bag
+				{ type = "exp", value = { 20000000 } },
+				{ type = "item", value = { 3043, 50 } },
+				--{ type = "item", value = { 39546, 1 } }, -- primal bag
 				{ type = "points", value = { 10 } },
 				{ type = "bosspoints", value = { 1 } },
 			},
@@ -1010,8 +1011,9 @@ tasks = {
 				"undertaker",
 			},
 			rewards = {
-				{ type = "exp", value = { 100000000 } },
-				{ type = "item", value = { 39546, 1 } }, -- primal bag
+				{ type = "exp", value = { 20000000 } },
+				{ type = "item", value = { 3043, 50 } },
+				--{ type = "item", value = { 39546, 1 } }, -- primal bag
 				{ type = "points", value = { 10 } },
 				{ type = "bosspoints", value = { 1 } },
 			},
@@ -1031,8 +1033,9 @@ tasks = {
 				"shrieking cry-stal",
 			},
 			rewards = {
-				{ type = "exp", value = { 100000000 } },
-				{ type = "item", value = { 39546, 1 } }, -- primal bag
+				{ type = "exp", value = { 20000000 } },
+				{ type = "item", value = { 3043, 50 } },
+				--{ type = "item", value = { 39546, 1 } }, -- primal bag
 				{ type = "points", value = { 10 } },
 				{ type = "bosspoints", value = { 1 } },
 			},
@@ -1050,8 +1053,8 @@ tasks = {
 				"frost flower asura",
 			},
 			rewards = {
-				{ type = "exp", value = { 10000000 } },
-				{ type = "item", value = { 3043, 100 } },
+				{ type = "exp", value = { 1200000 } },
+				{ type = "item", value = { 3043, 10 } },
 				{ type = "points", value = { 10 } },
 				{ type = "bosspoints", value = { 1 } },
 			},
@@ -1069,8 +1072,8 @@ tasks = {
 				"true frost flower asura",
 			},
 			rewards = {
-				{ type = "exp", value = { 45000000 } },
-				{ type = "item", value = { 3043, 300 } },
+				{ type = "exp", value = { 3400000 } },
+				{ type = "item", value = { 3043, 25 } },
 				{ type = "points", value = { 10 } },
 				{ type = "bosspoints", value = { 1 } },
 			},
@@ -1098,8 +1101,8 @@ tasks = {
 				"ink blob",
 			},
 			rewards = {
-				{ type = "exp", value = { 60000000 } },
-				{ type = "item", value = { 3043, 300 } },
+				{ type = "exp", value = { 7200000 } },
+				{ type = "item", value = { 3043, 50 } },
 				{ type = "points", value = { 10 } },
 				{ type = "bosspoints", value = { 1 } },
 			},
@@ -1117,8 +1120,8 @@ tasks = {
 				"soul-broken harbinger",
 			},
 			rewards = {
-				{ type = "exp", value = { 15000000 } },
-				{ type = "item", value = { 3043, 100 } },
+				{ type = "exp", value = { 2200000 } },
+				{ type = "item", value = { 3043, 25 } },
 				{ type = "points", value = { 10 } },
 				{ type = "bosspoints", value = { 1 } },
 			},
@@ -1136,8 +1139,8 @@ tasks = {
 				"insane siren",
 			},
 			rewards = {
-				{ type = "exp", value = { 15000000 } },
-				{ type = "item", value = { 3043, 100 } },
+				{ type = "exp", value = { 2200000 } },
+				{ type = "item", value = { 3043, 25 } },
 				{ type = "points", value = { 10 } },
 				{ type = "bosspoints", value = { 1 } },
 			},
@@ -1155,8 +1158,8 @@ tasks = {
 				"mean lost soul",
 			},
 			rewards = {
-				{ type = "exp", value = { 40000000 } },
-				{ type = "item", value = { 3043, 300 } },
+				{ type = "exp", value = { 1600000 } },
+				{ type = "item", value = { 3043, 25 } },
 				{ type = "points", value = { 10 } },
 				{ type = "bosspoints", value = { 1 } },
 			},
@@ -1174,8 +1177,8 @@ tasks = {
 				"hellflayer",
 			},
 			rewards = {
-				{ type = "exp", value = { 36000000 } },
-				{ type = "item", value = { 3043, 150 } },
+				{ type = "exp", value = { 3800000 } },
+				{ type = "item", value = { 3043, 25 } },
 				{ type = "points", value = { 10 } },
 				{ type = "bosspoints", value = { 1 } },
 			},
@@ -1192,8 +1195,8 @@ tasks = {
 				"glooth brigand",
 			},
 			rewards = {
-				{ type = "exp", value = { 10000000 } },
-				{ type = "item", value = { 3043, 100 } },
+				{ type = "exp", value = { 1040000 } },
+				{ type = "item", value = { 3043, 10 } },
 				{ type = "points", value = { 10 } },
 				{ type = "bosspoints", value = { 1 } },
 			},

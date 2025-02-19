@@ -359,14 +359,18 @@ local questTable = {
 	{ storageName = "TheSevenKeys.Questline", storage = Storage.Quest.U12_00.TheDreamCourts.TheSevenKeys.Questline, storageValue = 2 },
 	{ storageName = "TheDreamCourts.Main.Questline", storage = Storage.Quest.U12_00.TheDreamCourts.Main.Questline, storageValue = 1 },
 
-	{ storageName = "TheDreamCourts.UnsafeRelease.Questline", storage = Storage.Quest.U12_00.TheDreamCourts.UnsafeRelease.Questline, storageValue = 3},
-	{ storageName = "TheDreamCourts.HauntedHouse.Questline", storage = Storage.Quest.U12_00.TheDreamCourts.HauntedHouse.Questline, storageValue = 6},
-	{ storageName = "TheDreamCourts.HauntedHouse.Cellar", storage = Storage.Quest.U12_00.TheDreamCourts.HauntedHouse.Cellar, storageValue = 1},
-	{ storageName = "TheDreamCourts.HauntedHouse.Temple", storage = Storage.Quest.U12_00.TheDreamCourts.HauntedHouse.Temple, storageValue = 1},
-	{ storageName = "TheDreamCourts.BurriedCatedral.WordCount", storage = Storage.Quest.U12_00.TheDreamCourts.BurriedCatedral.WordCount, storageValue = 4},
-	{ storageName = "TheDreamCourts.TheSevenKeys.DoorMedusa", storage = Storage.Quest.U12_00.TheDreamCourts.TheSevenKeys.DoorMedusa, storageValue = 1},
-	{ storageName = "TheDreamCourts.TheSevenKeys.MushRoom", storage = Storage.Quest.U12_00.TheDreamCourts.TheSevenKeys.MushRoom, storageValue = 2},
-	{ storageName = "TheDreamCourts.TheSevenKeys.SequenceSkulls", storage = Storage.Quest.U12_00.TheDreamCourts.TheSevenKeys.SequenceSkulls, storageValue = 3},
+	{ storageName = "TheDreamCourts.UnsafeRelease.Questline", storage = Storage.Quest.U12_00.TheDreamCourts.UnsafeRelease.Questline, storageValue = 3 },
+	{ storageName = "TheDreamCourts.HauntedHouse.Questline", storage = Storage.Quest.U12_00.TheDreamCourts.HauntedHouse.Questline, storageValue = 6 },
+	{ storageName = "TheDreamCourts.HauntedHouse.Cellar", storage = Storage.Quest.U12_00.TheDreamCourts.HauntedHouse.Cellar, storageValue = 1 },
+	{ storageName = "TheDreamCourts.HauntedHouse.Temple", storage = Storage.Quest.U12_00.TheDreamCourts.HauntedHouse.Temple, storageValue = 1 },
+	{ storageName = "TheDreamCourts.BurriedCatedral.WordCount", storage = Storage.Quest.U12_00.TheDreamCourts.BurriedCatedral.WordCount, storageValue = 4 },
+	{ storageName = "TheDreamCourts.TheSevenKeys.DoorMedusa", storage = Storage.Quest.U12_00.TheDreamCourts.TheSevenKeys.DoorMedusa, storageValue = 1 },
+	{ storageName = "TheDreamCourts.TheSevenKeys.MushRoom", storage = Storage.Quest.U12_00.TheDreamCourts.TheSevenKeys.MushRoom, storageValue = 2 },
+	{ storageName = "TheDreamCourts.TheSevenKeys.SequenceSkulls", storage = Storage.Quest.U12_00.TheDreamCourts.TheSevenKeys.SequenceSkulls, storageValue = 3 },
+
+	{ storageName = "TheSecretLibrary.Asuras.FlammingOrchid", storage = Storage.Quest.U11_80.TheSecretLibrary.Asuras.FlammingOrchid, storageValue = 1 },
+	{ storageName = "TheSecretLibrary.Asuras.Questline", storage = Storage.Quest.U11_80.TheSecretLibrary.Asuras.Questline, storageValue = 7 },
+	{ storageName = "TheSecretLibrary.FalconBastion.KillingBosses", storage = Storage.Quest.U11_80.TheSecretLibrary.FalconBastion.KillingBosses, storageValue = 5 },
 }
 
 -- from Position: (33201, 31762, 1)
