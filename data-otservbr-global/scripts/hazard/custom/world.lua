@@ -16,7 +16,6 @@ hazard:register()
 
 local hazardZone = Zone.getByName(hazard.name)
 
-
 -- Gnomprona
 hazardZone:subtractArea({ x = 33502, y = 32740, z = 13 }, { x = 33796, y = 32996, z = 15 })
 
