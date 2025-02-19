@@ -1,5 +1,5 @@
 local zone = Zone("liberty_bay.pirate-bosses")
-zone:addArea(Position (32303, 32826, 7), Position(32341, 32852, 7))
+zone:addArea(Position(32303, 32826, 7), Position(32341, 32852, 7))
 
 local raid = Raid("liberty_bay.pirate-bosses", {
 	zone = zone,
