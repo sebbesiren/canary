@@ -3157,17 +3157,17 @@ void Player::addExperience(const std::shared_ptr<Creature> &target, uint64_t exp
 	const bool handleHazardExperience = monster && monster->getHazard() && points > 0;
 
 	const auto bonusExp = 0;
-	if(handleHazardExperience){
-			float defenseExpMultiplier = 1.0;
-			if (monster->getHazardSystemDefenseBoost()) {
-				float defenseMultiplier = points * static_cast<uint16_t>(g_configManager().getNumber(HAZARD_DEFENSE_MULTIPLIER));
+	if (handleHazardExperience) {
+		float defenseExpMultiplier = 1.0;
+		if (monster->getHazardSystemDefenseBoost()) {
+			float defenseMultiplier = points * static_cast<uint16_t>(g_configManager().getNumber(HAZARD_DEFENSE_MULTIPLIER));
 
-				defenseExpMultiplier = 1.0 / (1.0 - defenseMultiplier /  10000.0);
-			}
+			defenseExpMultiplier = 1.0 / (1.0 - defenseMultiplier / 10000.0);
+		}
 
-			float expMultiplier = points * g_configManager().getFloat(HAZARD_EXP_BONUS_MULTIPLIER) / 100.0;
+		float expMultiplier = points * g_configManager().getFloat(HAZARD_EXP_BONUS_MULTIPLIER) / 100.0;
 
-			exp = defenseExpMultiplier * exp * (1 + expMultiplier);
+		exp = defenseExpMultiplier * exp * (1 + expMultiplier);
 	}
 
 	const bool handleAnimusMastery = monster && animusMastery().has(monster->getMonsterType()->name);
