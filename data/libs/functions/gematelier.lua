@@ -85,7 +85,7 @@ function Monster:generateGemAtelierLoot()
 				end
 			end
 		end
-		::continue::
+		:: continue ::
 	end
 	return loot
 end

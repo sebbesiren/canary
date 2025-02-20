@@ -706,7 +706,7 @@ bool Monster::isOpponent(const std::shared_ptr<Creature> &creature) const {
 }
 
 uint64_t Monster::getLostExperience() const {
-	float extraExperience = forgeStack <= 15 ? (forgeStack + 10) / 10 : 28;
+	float extraExperience = forgeStack <= 15 ? (forgeStack*1.5 + 10) / 10. : 28;
 	return skillLoss ? static_cast<uint64_t>(std::round(mType->info.experience * extraExperience)) : 0;
 }
 
