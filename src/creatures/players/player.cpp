@@ -4947,7 +4947,7 @@ void Player::parseAttackRecvHazardSystem(CombatDamage &damage, const std::shared
 	if (monster->getHazardSystemDamageBoost() /* && !damage.critical*/) {
 		//		stage = points * static_cast<uint16_t>(g_configManager().getNumber(HAZARD_DAMAGE_MULTIPLIER));
 
-		stage = points * static_cast<uint16_t>(g_configManager().getNumber(HAZARD_DAMAGE_MULTIPLIER) * std::pow(1.09, points));
+		stage = points * static_cast<uint16_t>(g_configManager().getNumber(HAZARD_DAMAGE_MULTIPLIER) * std::pow(1.075, points));
 
 		if (stage != 0) {
 			damage.extension = true;
