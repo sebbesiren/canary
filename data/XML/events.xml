@@ -92,4 +92,10 @@
 		<colors colordark="#235c00" colorlight="#2d7400"/>
 		<details displaypriority="1" isseasonal="0" specialevent="0"/>
 	</event>
+	<event name="Skill and Loot event" startdate="2/21/2025" enddate="2/23/2025" script="">
+		<ingame exprate="100" lootrate="130" bosslootrate="100" spawnrate="100" skillrate="150"/>
+		<description description="50% boost to Loot Rate! 50% boost to Skill Rate!"/>
+		<colors colordark="#235c00" colorlight="#2d7400"/>
+		<details displaypriority="1" isseasonal="0" specialevent="0"/>
+	</event>
 </events>
