@@ -46,7 +46,8 @@ bool AnimusMastery::has(const std::string &searchMonsterType) const {
 float AnimusMastery::getExperienceMultiplier() const {
 	uint16_t monsterAmountMultiplier = animusMasteries.size() / monstersAmountToMultiply;
 
-	return std::min(maxMonsterXpMultiplier, 1 + (monsterXpMultiplier + (monsterAmountMultiplier * monstersXpMultiplier)) / 100);
+	float multiplier = std::min(maxMonsterXpMultiplier, monsterXpMultiplier + monsterAmountMultiplier * monstersXpMultiplier);
+	return 1.0 + multiplier / 100.;
 }
 
 uint16_t AnimusMastery::getPoints() const {
