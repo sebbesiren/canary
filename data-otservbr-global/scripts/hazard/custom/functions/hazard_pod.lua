@@ -176,7 +176,7 @@ local function hazardPodExpire(position, monsterName)
 			end
 
 			if originHazardAvailable() and monsterName:lower() ~= "fungosaurus" then
-				insertEvent("originHazard", 8)
+				insertEvent("originHazard", 9)
 			else
 				removeEvent("originHazard")
 			end
