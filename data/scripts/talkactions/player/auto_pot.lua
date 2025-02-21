@@ -48,8 +48,8 @@ local function autoPotLoop(player)
 		local checkMana = string.find(potName, "mana") or string.find(potName, "spirit")
 		local checkHealth = string.find(potName, "health") or string.find(potName, "spirit")
 
-		local manaThreshold = (player:kv():scoped("auto-pot"):get('mana-threshold') or 75) / 100
-		local healthThreshold = (player:kv():scoped("auto-pot"):get('health-threshold') or 75) / 100
+		local manaThreshold = (player:kv():scoped("auto-pot"):get("mana-threshold") or 75) / 100
+		local healthThreshold = (player:kv():scoped("auto-pot"):get("health-threshold") or 75) / 100
 
 		local usePot = true
 		if checkMana and checkHealth then
@@ -80,7 +80,7 @@ local function autoPotLoop(player)
 			end
 		end
 
-		:: continue ::
+		::continue::
 	end
 
 	addEvent(function()
@@ -106,12 +106,12 @@ function autopot.onSay(player, words, param)
 	if param_parts[1]:lower() == "off" then
 		player:kv():scoped("auto-pot"):set("pot", "off")
 	elseif param_parts[1]:lower() == "mana" then
-		setThreshold(player, 'mana-threshold', param_parts[2])
+		setThreshold(player, "mana-threshold", param_parts[2])
 	elseif param_parts[1]:lower() == "health" then
-		setThreshold(player, 'health-threshold', param_parts[2])
+		setThreshold(player, "health-threshold", param_parts[2])
 	elseif param_parts[1]:lower() == "info" then
-		local healthThreshold = player:kv():scoped("auto-pot"):get('health-threshold') or 75
-		local manaThreshold = player:kv():scoped("auto-pot"):get('mana-threshold') or 75
+		local healthThreshold = player:kv():scoped("auto-pot"):get("health-threshold") or 75
+		local manaThreshold = player:kv():scoped("auto-pot"):get("mana-threshold") or 75
 		player:sendTextMessage(MESSAGE_LOOK, "Health threshold: " .. healthThreshold .. "%. Mana threshold: " .. manaThreshold .. "%.")
 	else
 		local potNames = {
