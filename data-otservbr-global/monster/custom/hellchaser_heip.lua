@@ -66,7 +66,7 @@ monster.voices = {
 
 monster.loot = {
 	{ name = "silver token", chance = 100000, maxCount = 10 },
-	{ id = 43895, chance = 1400 },
+	{ id = 43895, chance = 800 },
 	--{ name = "sanguine blade", chance = 200 },
 	--{ name = "sanguine cudgel", chance = 200 },
 	--{ name = "sanguine hatchet", chance = 200 },

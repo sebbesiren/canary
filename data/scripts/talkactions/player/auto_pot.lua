@@ -48,13 +48,16 @@ local function autoPotLoop(player)
 		local checkMana = string.find(potName, "mana") or string.find(potName, "spirit")
 		local checkHealth = string.find(potName, "health") or string.find(potName, "spirit")
 
+		local manaThreshold = (player:kv():scoped("auto-pot"):get('mana-threshold') or 75) / 100
+		local healthThreshold = (player:kv():scoped("auto-pot"):get('health-threshold') or 75) / 100
+
 		local usePot = true
 		if checkMana and checkHealth then
-			usePot = player:getMana() / player:getMaxMana() < 0.75 or player:getHealth() / player:getMaxHealth() < 0.75
+			usePot = player:getMana() / player:getMaxMana() < manaThreshold or player:getHealth() / player:getMaxHealth() < healthThreshold
 		elseif checkHealth then
-			usePot = player:getHealth() / player:getMaxHealth() < 0.75
+			usePot = player:getHealth() / player:getMaxHealth() < healthThreshold
 		elseif checkMana then
-			usePot = player:getMana() / player:getMaxMana() < 0.75
+			usePot = player:getMana() / player:getMaxMana() < manaThreshold
 		end
 
 		if not usePot then
@@ -77,12 +80,22 @@ local function autoPotLoop(player)
 			end
 		end
 
-		::continue::
+		:: continue ::
 	end
 
 	addEvent(function()
 		autoPotLoop(player)
 	end, nextDelay)
+end
+
+local function setThreshold(player, key, value)
+	local threshold = getMoneyCount(value or "")
+	if threshold == -1 then
+		player:sendTextMessage(MESSAGE_LOOK, "Invalid threshold: " .. threshold)
+		return true
+	end
+	player:kv():scoped("auto-pot"):set(key, value)
+	player:sendTextMessage(MESSAGE_LOOK, key .. " set to " .. value .. "%")
 end
 
 function autopot.onSay(player, words, param)
@@ -92,6 +105,14 @@ function autopot.onSay(player, words, param)
 
 	if param_parts[1]:lower() == "off" then
 		player:kv():scoped("auto-pot"):set("pot", "off")
+	elseif param_parts[1]:lower() == "mana" then
+		setThreshold(player, 'mana-threshold', param_parts[2])
+	elseif param_parts[1]:lower() == "health" then
+		setThreshold(player, 'health-threshold', param_parts[2])
+	elseif param_parts[1]:lower() == "info" then
+		local healthThreshold = player:kv():scoped("auto-pot"):get('health-threshold') or 75
+		local manaThreshold = player:kv():scoped("auto-pot"):get('mana-threshold') or 75
+		player:sendTextMessage(MESSAGE_LOOK, "Health threshold: " .. healthThreshold .. "%. Mana threshold: " .. manaThreshold .. "%.")
 	else
 		local potNames = {
 			string.trim(param_parts[1]:lower()),

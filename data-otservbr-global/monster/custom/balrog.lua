@@ -79,23 +79,23 @@ monster.loot = {
 	{ id = 3039, chance = 2220, maxCount = 20 }, -- red gem
 	{ name = "crystal coin", chance = 100000, minCount = 10, maxCount = 30 },
 	{ name = "golden legs", chance = 2000 },
-	{ name = "magic plate armor", chance = 130 },
-	{ name = "mastermind shield", chance = 480 },
+	{ name = "magic plate armor", chance = 1000 },
+	{ name = "mastermind shield", chance = 1000 },
 	{ name = "demon shield", chance = 2000 },
 	{ name = "fire mushroom", chance = 100000, maxCount = 100 },
 	{ name = "demon horn", chance = 40920, maxCount = 10 },
 	{ name = "demonrage sword", chance = 2500 },
-	{ id = 32616, chance = 2500 }, -- phantasmal axe
-	{ name = "ghost chestplate", chance = 2500 },
-	{ name = "fabulous legs", chance = 2500 },
-	{ name = "soulful legs", chance = 2500 },
-	{ name = "galea mortis", chance = 2500 },
-	{ name = "toga mortis", chance = 2500 },
-	{ name = "gnome shield", chance = 2500 },
-	{ name = "gnome armor", chance = 2500 },
-	{ name = "gnome helmet", chance = 2500 },
-	{ name = "gnome sword", chance = 2500 },
-	{ id = 27649, chance = 2500 }, -- gnome legs
+	{ id = 32616, chance = 300 }, -- phantasmal axe
+	{ name = "ghost chestplate", chance = 300 },
+	{ name = "fabulous legs", chance = 300 },
+	{ name = "soulful legs", chance = 300 },
+	{ name = "galea mortis", chance = 300 },
+	{ name = "toga mortis", chance = 300 },
+	{ name = "gnome shield", chance = 300 },
+	{ name = "gnome armor", chance = 300 },
+	{ name = "gnome helmet", chance = 300 },
+	{ name = "gnome sword", chance = 300 },
+	{ id = 27649, chance = 300 }, -- gnome legs
 	{ id = 16114, chance = 10000 }, -- prismatic ring
 	{ id = 20062, chance = 2000, maxCount = 14 }, -- cluster of solace
 	{ id = 18339, chance = 5000 }, -- zaoan chess box
