@@ -26,7 +26,7 @@ local function autoPotLoop(player)
 		return true
 	end
 
-	local nextDelay = 1000
+	local nextDelay = 250
 
 	for _, potName in ipairs(potNames) do
 		local pot = pots[potName]
