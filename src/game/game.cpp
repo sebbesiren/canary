@@ -10265,11 +10265,11 @@ uint32_t Game::makeInfluencedMonster() {
 		return 0;
 	}
 
-	auto maxTries = forgeableMonsters.size();
+	auto maxTries = 100;
 	uint16_t tries = 0;
 	std::shared_ptr<Monster> monster = nullptr;
 	while (true) {
-		if (tries == maxTries) {
+		if (tries >= maxTries) {
 			return 0;
 		}
 
@@ -10344,11 +10344,11 @@ uint32_t Game::makeFiendishMonster(uint32_t forgeableMonsterId /* = 0*/, bool cr
 		return 0;
 	}
 
-	auto maxTries = forgeableMonsters.size();
+	auto maxTries = 100;
 	uint16_t tries = 0;
 	std::shared_ptr<Monster> monster = nullptr;
 	while (true) {
-		if (tries == maxTries) {
+		if (tries >= maxTries) {
 			return 0;
 		}
 
