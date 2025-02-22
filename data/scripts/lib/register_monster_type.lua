@@ -212,6 +212,7 @@ registerMonsterType.flags = function(mtype, mask)
 			mtype:isRewardBoss(mask.flags.rewardBoss)
 			mtype.onSpawn = function(monster, spawnPosition)
 				monster:setReward(true)
+				HazardMonster.onSpawn(monster, spawnPosition)
 			end
 		end
 		if mask.flags.familiar then
