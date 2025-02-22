@@ -90,7 +90,7 @@ end
 
 local function setThreshold(player, key, value)
 	local threshold = tonumber(value)
-	if threshold == nil or not(threshold > 0 and threshold <= 100) then
+	if threshold == nil or not (threshold > 0 and threshold <= 100) then
 		player:sendTextMessage(MESSAGE_LOOK, "Invalid threshold: " .. tostring(threshold) .. ". Use a value between 1 and 100.")
 		return true
 	end
