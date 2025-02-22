@@ -35,10 +35,13 @@ function onHealthEvent.onHealthChange(creature, attacker, primaryDamage, primary
 	local multiplier = 1
 	local monster = creature:getMonster()
 	if monster then
-		local scaleForPlayers = 3
 		local countPlayersInZone = #zone:getPlayers()
-		multiplier = scaleForPlayers / countPlayersInZone
-		logger.debug("The multiplier is {} due to {} players being in zone and scaling around {} players.", multiplier, countPlayersInZone, scaleForPlayers)
+
+		if countPlayersInZone <= 2 then
+			multiplier = 1.5
+		end
+
+		logger.debug("The multiplier is {} due to {} players being in zone and scaling around {} players.", multiplier, countPlayersInZone)
 	end
 
 	return primaryDamage * multiplier, primaryType, secondaryDamage * multiplier, secondaryType
