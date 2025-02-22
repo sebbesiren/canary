@@ -1102,6 +1102,8 @@ npcConfig.shop = {
 	{ itemName = "giant amethyst", clientId = 30061, sell = 60000 },
 	{ itemName = "fire mushroom", clientId = 3731, sell = 200 },
 	{ itemName = "amulet of loss", clientId = 3057, buy = 50000, sell = 45000 },
+	{ itemName = "obsidian knife", clientId = 5908, buy = 5000 },
+	{ itemName = "blessed wooden stake", clientId = 5942, buy = 5000 },
 	{ itemName = "nighthunter wing", clientId = 39381, sell = 2000 },
 	{ itemName = "twiceslicer", clientId = 11657, sell = 28000 },
 	{ itemName = "orichalcum pearl", clientId = 5021, sell = 40 },
@@ -1109,6 +1111,9 @@ npcConfig.shop = {
 	{ itemName = "head", clientId = 33937, sell = 3500 },
 	{ itemName = "dragon slayer", clientId = 7402, sell = 15000 },
 	{ itemName = "butterfly ring", clientId = 25698, sell = 2000 },
+	{ itemName = "crab man claws", clientId = 40582, sell = 500 },
+	{ itemName = "rhindeer antlers", clientId = 40587, sell = 680 },
+	{ itemName = "harpy feathers", clientId = 40585, sell = 730 },
 }
 -- On buy npc shop message
 npcType.onBuyItem = function(npc, player, itemId, subType, amount, ignore, inBackpacks, totalCost)
