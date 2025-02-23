@@ -1018,10 +1018,6 @@ npcConfig.shop = {
 	{ itemName = "spellbook of lost souls", clientId = 8075, sell = 19000 },
 	{ itemName = "wooden spellbook", clientId = 25699, sell = 12000 },
 	{ itemName = "focus cape", clientId = 8043, sell = 6000 },
-	{ itemName = "demon trophy", clientId = 2669, sell = 40000 },
-	{ itemName = "wolf trophy", clientId = 2674, sell = 3000 },
-	{ itemName = "behemoth trophy", clientId = 2676, sell = 20000 },
-	{ itemName = "deer trophy", clientId = 7397, sell = 3000 },
 	{ itemName = "Zaoan chess box", clientId = 18339, buy = 500000 },
 	{ itemName = "blood herb", clientId = 3734, buy = 50000 },
 	{ itemName = "calopteryx cape", clientId = 14086, sell = 15000 },
@@ -1117,7 +1113,55 @@ npcConfig.shop = {
 	{ itemName = "badger boots", clientId = 22086, sell = 7500 },
 	{ itemName = "wereboar loincloth", clientId = 22087, sell = 1500 },
 	{ itemName = "werewolf amulet", clientId = 22060, sell = 3000 },
-
+	{ itemName = "zaoan armor", clientId = 10384, sell = 14000 },
+	{ itemName = "zaoan halberd", clientId = 10406, sell = 500 },
+	{ itemName = "zaoan helmet", clientId = 10385, sell = 45000 },
+	{ itemName = "zaoan legs", clientId = 10387, sell = 14000 },
+	{ itemName = "zaoan robe", clientId = 10439, sell = 12000 },
+	{ itemName = "zaoan shoes", clientId = 10386, sell = 5000 },
+	{ itemName = "zaoan sword", clientId = 10390, sell = 30000 },
+	{ itemName = "dark mushroom", clientId = 3728, sell = 100 },
+	{ itemName = "ectoplasmic sushi", clientId = 11681, sell = 300 },
+	{ itemName = "fire mushroom", clientId = 3731, sell = 200 },
+	{ itemName = "green mushroom", clientId = 3732, sell = 100 },
+	{ itemName = "orange mushroom", clientId = 3726, sell = 150 },
+	{ itemName = "wood mushroom", clientId = 3727, sell = 15 },
+	{ itemName = "baby seal doll", clientId = 7183, sell = 20000 },
+	{ itemName = "behemoth trophy", clientId = 7396, sell = 20000 },
+	{ itemName = "blue rose", clientId = 3659, sell = 250 },
+	{ itemName = "bonebeast trophy", clientId = 10244, sell = 6000 },
+	{ itemName = "cyclops trophy", clientId = 7398, sell = 500 },
+	{ itemName = "deer trophy", clientId = 7397, sell = 3000 },
+	{ itemName = "demon trophy", clientId = 7393, sell = 40000 },
+	{ itemName = "disgusting trophy", clientId = 10421, sell = 3000 },
+	{ itemName = "dragon lord trophy", clientId = 7399, sell = 10000 },
+	{ itemName = "draken trophy", clientId = 10398, sell = 15000 },
+	{ itemName = "lion trophy", clientId = 7400, sell = 3000 },
+	{ itemName = "lizard trophy", clientId = 10419, sell = 8000 },
+	{ itemName = "marlin trophy", clientId = 902, sell = 5000 },
+	{ itemName = "minotaur trophy", clientId = 7401, sell = 500 },
+	{ itemName = "panda teddy", clientId = 5080, sell = 30000 },
+	{ itemName = "pet pig", clientId = 16165, sell = 1500 },
+	{ itemName = "sea serpent trophy", clientId = 9613, sell = 10000 },
+	{ itemName = "silver fafnar trophy", clientId = 9627, sell = 1000 },
+	{ itemName = "souleater trophy", clientId = 11679, sell = 7500 },
+	{ itemName = "statue of abyssador", clientId = 16232, sell = 4000 },
+	{ itemName = "statue of deathstrike", clientId = 16236, sell = 3000 },
+	{ itemName = "statue of devovorga", clientId = 4065, sell = 1500 },
+	{ itemName = "statue of gnomevil", clientId = 16240, sell = 2000 },
+	{ itemName = "stuffed dragon", clientId = 5791, sell = 6000 },
+	{ itemName = "trophy of jaul", clientId = 14006, sell = 4000 },
+	{ itemName = "trophy of obujos", clientId = 14002, sell = 3000 },
+	{ itemName = "trophy of tanjis", clientId = 14004, sell = 2000 },
+	{ itemName = "werebadger trophy", clientId = 22101, sell = 9000 },
+	{ itemName = "werebear trophy", clientId = 22103, sell = 11000 },
+	{ itemName = "wereboar trophy", clientId = 22102, sell = 10000 },
+	{ itemName = "werecrocodile trophy", clientId = 43916, sell = 15000 },
+	{ itemName = "werefox trophy", clientId = 27706, sell = 9000 },
+	{ itemName = "werehyaena trophy", clientId = 34219, sell = 12000 },
+	{ itemName = "werepanther trophy", clientId = 43917, sell = 14000 },
+	{ itemName = "weretiger trophy", clientId = 43915, sell = 14000 },
+	{ itemName = "wolf trophy", clientId = 7394, sell = 3000 },
 }
 -- On buy npc shop message
 npcType.onBuyItem = function(npc, player, itemId, subType, amount, ignore, inBackpacks, totalCost)
@@ -1128,7 +1172,8 @@ npcType.onSellItem = function(npc, player, itemId, subtype, amount, ignore, name
 	player:sendTextMessage(MESSAGE_TRADE, string.format("Sold %ix %s for %i gold.", amount, name, totalCost))
 end
 -- On check npc shop message (look item)
-npcType.onCheckItem = function(npc, player, clientId, subType) end
+npcType.onCheckItem = function(npc, player, clientId, subType)
+end
 
 local function creatureSayCallback(npc, creature, type, message)
 	local player = Player(creature)
