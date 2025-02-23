@@ -72,7 +72,6 @@ function hazardlevel.onSay(player, words, param)
 		updateHazardLevel(player, hazard, desiredLevel, hazardName)
 	end, 5000)
 
-
 	return true
 end
 
