@@ -20,6 +20,25 @@ local function rstrip(s)
 	return s:match("(.-)%s*$")
 end
 
+local function updateHazardLevel(player, hazard, desiredLevel, hazardName)
+
+	local currentLevel = hazard:getPlayerCurrentLevel(player)
+
+	if hazard:setPlayerCurrentLevel(player, desiredLevel) then
+		player:sendTextMessage(MESSAGE_LOOK, "Hazard level for area '" .. hazardName .. "' set to " .. desiredLevel)
+		if desiredLevel > currentLevel then
+			local spectators = Game.getSpectators(player:getPosition(), false, false, 12, 12, 12, 12)
+			for _, spectator in ipairs(spectators) do
+				if spectator:isMonster() then
+					spectator:setHealth(spectator:getMaxHealth())
+				end
+			end
+		end
+	else
+		player:sendTextMessage(MESSAGE_LOOK, "You can't set your hazard level higher than your maximum unlocked level.")
+	end
+end
+
 function hazardlevel.onSay(player, words, param)
 	logger.debug("!hazardlevel executed")
 
@@ -49,15 +68,7 @@ function hazardlevel.onSay(player, words, param)
 		desiredLevel = 0
 	end
 
-	player:sendTextMessage(MESSAGE_LOOK, "Hazardlevel will be set in 5 seconds.")
-	addEvent(function()
-		if hazard:setPlayerCurrentLevel(player, desiredLevel) then
-			player:sendTextMessage(MESSAGE_LOOK, "Hazard level for area '" .. hazardName .. "' set to " .. desiredLevel)
-		else
-			player:sendTextMessage(MESSAGE_LOOK, "You can't set your hazard level higher than your maximum unlocked level.")
-		end
-	end, 5000)
-
+	updateHazardLevel(player, hazard, desiredLevel, hazardName)
 	return true
 end
 

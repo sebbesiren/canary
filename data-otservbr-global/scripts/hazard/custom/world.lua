@@ -39,6 +39,11 @@ function deathEvent.onDeath(creature)
 		return true
 	end
 
+	-- don't spawn pods if the monster is a reward boss
+	if monster:getType():isRewardBoss() then
+		return true
+	end
+
 	local player, points = hazard:getHazardPlayerAndPoints(monster:getDamageMap())
 	if points < 1 then
 		return true

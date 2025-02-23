@@ -86,9 +86,9 @@ monster.loot = {
 }
 
 monster.attacks = {
-	{ name = "melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -750 },
-	{ name = "sabretooth wave", interval = 5000, chance = 35, minDamage = -400, maxDamage = -750 },
-	{ name = "combat", interval = 3500, chance = 30, type = COMBAT_PHYSICALDAMAGE, minDamage = -400, maxDamage = -800, range = 1, effect = CONST_ME_BIG_SCRATCH, target = true },
+	{ name = "melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -1100 },
+	{ name = "sabretooth wave", interval = 5000, chance = 25, minDamage = -600, maxDamage = -1000 },
+	{ name = "combat", interval = 3500, chance = 20, type = COMBAT_PHYSICALDAMAGE, minDamage = -800, maxDamage = -1500, range = 1, effect = CONST_ME_BIG_SCRATCH, target = true },
 	{ name = "combat", interval = 2000, chance = 40, type = COMBAT_FIREDAMAGE, minDamage = -500, maxDamage = -700, range = 3, spread = 14, target = false, effect = false },
 }
 
