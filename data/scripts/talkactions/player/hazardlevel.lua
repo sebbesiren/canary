@@ -21,7 +21,6 @@ local function rstrip(s)
 end
 
 local function updateHazardLevel(player, hazard, desiredLevel, hazardName)
-
 	local currentLevel = hazard:getPlayerCurrentLevel(player)
 
 	if hazard:setPlayerCurrentLevel(player, desiredLevel) then
