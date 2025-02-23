@@ -91,7 +91,7 @@ monster.loot = {
 }
 
 monster.attacks = {
-		{ name = "melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -345 },
+	{ name = "melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -345 },
 	{ name = "combat", interval = 2000, chance = 30, type = COMBAT_PHYSICALDAMAGE, minDamage = -296, maxDamage = -350, range = 3, effect = CONST_ME_BIG_SCRATCH, target = true },
 	{ name = "energy ring", interval = 2000, chance = 20, minDamage = -280, maxDamage = -350 },
 	{ name = "energy chain", interval = 2000, chance = 20, minDamage = -155, maxDamage = -249, range = 3, target = true },
