@@ -91,7 +91,7 @@ monster.attacks = {
 	{ name = "melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -400, effect = CONST_ME_CARNIPHILA },
 	{ name = "combat", interval = 4000, chance = 40, type = COMBAT_FIREDAMAGE, minDamage = -1000, maxDamage = -1050, range = 7, shootEffect = CONST_ANI_FIRE, effect = CONST_ME_HITBYFIRE, target = true },
 	{ name = "combat", interval = 2900, chance = 25, type = COMBAT_FIREDAMAGE, minDamage = -650, maxDamage = -1000, radius = 4, effect = CONST_ME_FIREAREA, target = false },
-	{ name = "poison chain", interval = 2000, chance = 15, minDamage = -500, maxDamage = -700, range = 7 },
+	{ name = "poison chain", interval = 2000, chance = 15, minDamage = -500, maxDamage = -900, range = 7 },
 }
 
 monster.defenses = {

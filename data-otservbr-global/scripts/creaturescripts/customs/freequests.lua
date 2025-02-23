@@ -371,6 +371,8 @@ local questTable = {
 	{ storageName = "TheSecretLibrary.Asuras.FlammingOrchid", storage = Storage.Quest.U11_80.TheSecretLibrary.Asuras.FlammingOrchid, storageValue = 1 },
 	{ storageName = "TheSecretLibrary.Asuras.Questline", storage = Storage.Quest.U11_80.TheSecretLibrary.Asuras.Questline, storageValue = 7 },
 	{ storageName = "TheSecretLibrary.FalconBastion.KillingBosses", storage = Storage.Quest.U11_80.TheSecretLibrary.FalconBastion.KillingBosses, storageValue = 5 },
+	{ storageName = "TheHuntForTheSeaSerpent.FishForASerpent", storage = Storage.Quest.U8_2.TheHuntForTheSeaSerpent.FishForASerpent, storageValue = 5 },
+	{ storageName = "TheHuntForTheSeaSerpent.FishForASerpent", storage = Storage.Quest.U8_2.TheHuntForTheSeaSerpent.FishForASerpent, storageValue = 5 },
 }
 
 -- from Position: (33201, 31762, 1)

@@ -27,7 +27,7 @@ local function updateHazardLevel(player, hazard, desiredLevel, hazardName)
 	if hazard:setPlayerCurrentLevel(player, desiredLevel) then
 		player:sendTextMessage(MESSAGE_LOOK, "Hazard level for area '" .. hazardName .. "' set to " .. desiredLevel)
 		if desiredLevel > currentLevel then
-			local spectators = Game.getSpectators(player:getPosition(), false, false, 12, 12, 12, 12)
+			local spectators = Game.getSpectators(player:getPosition(), false, false, 15, 15, 15, 15)
 			for _, spectator in ipairs(spectators) do
 				if spectator:isMonster() then
 					spectator:setHealth(spectator:getMaxHealth())
@@ -68,7 +68,12 @@ function hazardlevel.onSay(player, words, param)
 		desiredLevel = 0
 	end
 
-	updateHazardLevel(player, hazard, desiredLevel, hazardName)
+	player:sendTextMessage(MESSAGE_LOOK, "Hazardlevel will be set in 5 seconds.")
+	addEvent(function()
+		updateHazardLevel(player, hazard, desiredLevel, hazardName)
+	end, 5000)
+
+
 	return true
 end
 
