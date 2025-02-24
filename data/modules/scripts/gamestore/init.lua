@@ -180,16 +180,16 @@ GameStore.RecivedPackets = {
 }
 
 GameStore.ExpBoostValues = {
-	[1] = 30,
+	[1] = 35,
 	[2] = 40,
-	[3] = 50,
-	[4] = 60,
-	[5] = 70,
-	[6] = 80,
-	[7] = 90,
-	[8] = 100,
-	[9] = 110,
-	[10] = 120,
+	[3] = 45,
+	[4] = 50,
+	[5] = 60,
+	[6] = 70,
+	[7] = 80,
+	[8] = 90,
+	[9] = 100,
+	[10] = 110,
 }
 
 GameStore.DefaultValues = {
@@ -453,7 +453,6 @@ function parseBuyStoreOffer(playerId, msg)
 
 	-- At this point the purchase is assumed to be formatted correctly
 	local offerPrice = offer.type == GameStore.OfferTypes.OFFER_TYPE_EXPBOOST and GameStore.ExpBoostValues[player:getStorageValue(GameStore.Storages.expBoostCount)] or offer.price
-	offer.price = offerPrice
 
 	local offerCoinType = offer.coinType
 	if offer.type == GameStore.OfferTypes.OFFER_TYPE_NAMECHANGE and player:kv():get("namelock") then
@@ -2072,15 +2071,16 @@ function Player.makeCoinTransaction(self, offer, desc)
 		desc = offer.name
 	end
 
-	if offer.coinType == GameStore.CoinType.Coin and self:canRemoveCoins(offer.price) then
-		op = self:removeCoinsBalance(offer.price)
-	elseif offer.coinType == GameStore.CoinType.Transferable and self:canRemoveTransferableCoins(offer.price) then
-		op = self:removeTransferableCoinsBalance(offer.price)
+	local offerPrice = offer.type == GameStore.OfferTypes.OFFER_TYPE_EXPBOOST and GameStore.ExpBoostValues[self:getStorageValue(GameStore.Storages.expBoostCount) - 1] or offer.price
+	if offer.coinType == GameStore.CoinType.Coin and self:canRemoveCoins(offerPrice) then
+		op = self:removeCoinsBalance(offerPrice)
+	elseif offer.coinType == GameStore.CoinType.Transferable and self:canRemoveTransferableCoins(offerPrice) then
+		op = self:removeTransferableCoinsBalance(offerPrice)
 	end
 
 	-- When the transaction is successful add to the history
 	if op then
-		GameStore.insertHistory(self:getAccountId(), GameStore.HistoryTypes.HISTORY_TYPE_NONE, desc, offer.price * -1, offer.coinType)
+		GameStore.insertHistory(self:getAccountId(), GameStore.HistoryTypes.HISTORY_TYPE_NONE, desc, offerPrice * -1, offer.coinType)
 	end
 
 	return op

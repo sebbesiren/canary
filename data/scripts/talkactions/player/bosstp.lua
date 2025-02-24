@@ -2,60 +2,51 @@
 local bosstp = TalkAction("!bosstp")
 
 local bosses = {
-	{
-		name = "Scarlett Etzel",
-		position = Position(33395, 32670, 6),
-		storage = 61305000 + 1804,
-		count = 12,
-		cost = 200000,
-	},
-	{
-		name = "Timira The Many-Headed",
-		position = Position(33803, 32700, 7),
-		storage = 61305000 + 2250,
-		count = 12,
-		cost = 200000,
-	},
-	{
-		name = "Grand Master Oberon",
-		position = Position(33364, 31344, 9),
-		storage = 61305000 + 1576,
-		count = 12,
-		cost = 200000,
-	},
-	{
-		name = "Faceless Bane",
-		position = Position(33638, 32562, 13),
-		storage = 61305000 + 1727,
-		count = 12,
-		cost = 200000,
-	},
-	{
-		name = "Drume",
-		position = Position(32457, 32508, 6),
-		storage = 61305000 + 1957,
-		count = 12,
-		cost = 200000,
-	},
-	{
-		name = "Urmahlullu",
-		position = Position(33918, 31626, 8),
-		storage = 61305000 + 1811,
-		count = 12,
-		cost = 200000,
-	},
+	{ name = "Count Vlarkorth", position = Position(33456, 31408, 13), bossRaceId = 1753 },
+	{ name = "Lord Azaram", position = Position(33423, 31497, 13), bossRaceId = 1756 },
+	{ name = "Earl Osam", position = Position(33517, 31440, 13), bossRaceId = 1757 },
+	{ name = "Sir Baeloc", position = Position(33426, 31408, 13), bossRaceId = 1755 },
+	{ name = "Duke Krule", position = Position(33456, 31497, 13), bossRaceId = 1758 },
+	{ name = "King Zelos", position = Position(33489, 31546, 13), bossRaceId = 1784 },
+	{ name = "Scarlett Etzel", position = Position(33395, 32662, 6), bossRaceId = 1804 },
+	{ name = "Lady Tenebris", position = Position(32902, 31628, 14), bossRaceId = 1315 },
+	{ name = "Lloyd", position = Position(32759, 32873, 14), bossRaceId = 1329 },
+	{ name = "Mounted Thorn Knight", position = Position(32657, 32882, 14), bossRaceId = 1297 },
+	{ name = "Dragonking Zyrtarch", position = Position(33391, 31183, 10), bossRaceId = 1286 },
+	{ name = "Brain Head", position = Position(31973, 32325, 10), bossRaceId = 1862 },
+	{ name = "Irgix the Flimsy", position = Position(33492, 31400, 8), bossRaceId = 1890 },
+	{ name = "Black Vixen", position = Position(33442, 32052, 9), bossRaceId = 1559 },
+	{ name = "Darkfang", position = Position(33055, 31911, 9), bossRaceId = 1558 },
+	{ name = "Bloodback", position = Position(33167, 31978, 8), bossRaceId = 1560 },
+	{ name = "Timira The Many-Headed", position = Position(33804, 32702, 8), bossRaceId = 2250 },
+	{ name = "Urmahlullu", position = Position(33920, 31623, 8), bossRaceId = 1811 },
+	{ name = "Faceless Bane", position = Position(33643, 32561, 13), bossRaceId = 1727 },
+	{ name = "Grand Master Oberon", position = Position(33364, 31342, 9), bossRaceId = 1576 },
+	{ name = "Drume", position = Position(32462, 32508, 6), bossRaceId = 1957 },
+	{ name = "The Fear Feaster", position = Position(33739, 31471, 14), bossRaceId = 1873 },
+	{ name = "Kroazur", position = Position(33619, 32305, 9), bossRaceId = 1515 },
+	{ name = "Ratmiral Blackwhiskers", position = Position(33894, 31386, 15), bossRaceId = 2006 },
+	{ name = "Magma Bubble", position = Position(33669, 32933, 15), bossRaceId = 2242 },
 }
 
 local function sendBossTpModal(player)
+	local count = 12
+	local cost = 100000
+
 	local window = ModalWindow({
 		title = "Boss Teleporter",
-		message = "Costs " .. cost .. "g and requires  " .. count .. " boss points.",
+		message = "Pay " .. cost / 1000 .. "k gold to teleport to bosses you have at least " .. count .. " points in.",
 	})
 
 	local playerBalance = player:getMoney() + player:getBankBalance()
 
 	for _, bossConfig in pairs(bosses) do
 		local choiceText = bossConfig.name
+
+		if player:getStorageValue(61305000 + bossConfig.bossRaceId) >= count then
+			choiceText = choiceText .. " - OK"
+		end
+
 		window:addChoice(choiceText, function(player, button, choice)
 			if button.name ~= "Select" then
 				return true
@@ -68,12 +59,12 @@ local function sendBossTpModal(player)
 				return true
 			end
 
-			if player:getStorageValue(bossConfig.storage) < bossConfig.count then
+			if player:getStorageValue(61305000 + bossConfig.bossRaceId) < count then
 				player:sendCancelMessage("You dont have enough boss points")
 				return true
 			end
 
-			if bossConfig.cost > playerBalance then
+			if cost > playerBalance then
 				player:sendCancelMessage("You dont have enough money")
 				return true
 			end

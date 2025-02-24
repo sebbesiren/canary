@@ -90,10 +90,10 @@ monster.loot = {
 
 monster.attacks = {
 	{ name = "melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -450 },
-	{ name = "combat", interval = 2500, chance = 20, type = COMBAT_DEATHDAMAGE, minDamage = -250, maxDamage = -400, radius = 4, effect = CONST_ME_MORTAREA, target = true },
-	{ name = "combat", interval = 3000, chance = 25, type = COMBAT_FIREDAMAGE, minDamage = -300, maxDamage = -400, length = 8, spread = 4, effect = CONST_ME_EXPLOSIONHIT, target = false },
-	{ name = "combat", interval = 3000, chance = 20, type = COMBAT_PHYSICALDAMAGE, minDamage = -275, maxDamage = -400, radius = 4, effect = CONST_ME_POFF, target = true },
-	{ name = "combat", interval = 3000, chance = 15, type = COMBAT_PHYSICALDAMAGE, minDamage = -250, maxDamage = -300, range = 2, effect = CONST_ME_BIG_SCRATCH, target = true },
+	{ name = "combat", interval = 2500, chance = 20, type = COMBAT_DEATHDAMAGE, minDamage = -250, maxDamage = -500, radius = 4, effect = CONST_ME_MORTAREA, target = true },
+	{ name = "combat", interval = 3000, chance = 25, type = COMBAT_FIREDAMAGE, minDamage = -300, maxDamage = -500, length = 8, spread = 4, effect = CONST_ME_EXPLOSIONHIT, target = false },
+	{ name = "combat", interval = 3000, chance = 20, type = COMBAT_PHYSICALDAMAGE, minDamage = -275, maxDamage = -500, radius = 4, effect = CONST_ME_POFF, target = true },
+	{ name = "combat", interval = 3000, chance = 15, type = COMBAT_PHYSICALDAMAGE, minDamage = -250, maxDamage = -400, range = 2, effect = CONST_ME_BIG_SCRATCH, target = true },
 }
 
 monster.defenses = {

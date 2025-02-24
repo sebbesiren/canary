@@ -87,10 +87,10 @@ monster.loot = {
 }
 
 monster.attacks = {
-	{ name = "melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -200 },
-	{ name = "combat", interval = 3000, chance = 27, type = COMBAT_PHYSICALDAMAGE, minDamage = -220, maxDamage = -250, length = 7, spread = 0, effect = CONST_ME_EXPLOSIONAREA, target = false },
-	{ name = "combat", interval = 2500, chance = 25, type = COMBAT_PHYSICALDAMAGE, minDamage = -200, maxDamage = -250, radius = 4, effect = CONST_ME_POFF, target = true },
-	{ name = "death chain", interval = 2500, chance = 20, minDamage = -250, maxDamage = -300, range = 7 },
+	{ name = "melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -300 },
+	{ name = "combat", interval = 3000, chance = 27, type = COMBAT_PHYSICALDAMAGE, minDamage = -220, maxDamage = -350, length = 7, spread = 0, effect = CONST_ME_EXPLOSIONAREA, target = false },
+	{ name = "combat", interval = 2500, chance = 25, type = COMBAT_PHYSICALDAMAGE, minDamage = -200, maxDamage = -350, radius = 4, effect = CONST_ME_POFF, target = true },
+	{ name = "death chain", interval = 2500, chance = 20, minDamage = -250, maxDamage = -400, range = 7 },
 }
 
 monster.defenses = {
