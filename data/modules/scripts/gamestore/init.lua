@@ -181,15 +181,15 @@ GameStore.RecivedPackets = {
 
 GameStore.ExpBoostValues = {
 	[1] = 30,
-	[2] = 45,
-	[3] = 90,
-	[4] = 180,
-	[5] = 360,
-	[6] = 420,
-	[7] = 440,
-	[8] = 460,
-	[9] = 480,
-	[10] = 500,
+	[2] = 40,
+	[3] = 50,
+	[4] = 60,
+	[5] = 70,
+	[6] = 80,
+	[7] = 90,
+	[8] = 100,
+	[9] = 110,
+	[10] = 120,
 }
 
 GameStore.DefaultValues = {
@@ -212,7 +212,7 @@ GameStore.DefaultDescriptions = {
 }
 
 GameStore.ItemLimit = {
-	PREY_WILDCARD = 50,
+	PREY_WILDCARD = 75,
 	INSTANT_REWARD_ACCESS = 90,
 	EXPBOOST = 10,
 	HIRELING = 10,
@@ -453,6 +453,8 @@ function parseBuyStoreOffer(playerId, msg)
 
 	-- At this point the purchase is assumed to be formatted correctly
 	local offerPrice = offer.type == GameStore.OfferTypes.OFFER_TYPE_EXPBOOST and GameStore.ExpBoostValues[player:getStorageValue(GameStore.Storages.expBoostCount)] or offer.price
+	offer.price = offerPrice
+
 	local offerCoinType = offer.coinType
 	if offer.type == GameStore.OfferTypes.OFFER_TYPE_NAMECHANGE and player:kv():get("namelock") then
 		offerPrice = 0
