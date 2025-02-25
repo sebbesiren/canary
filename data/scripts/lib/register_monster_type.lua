@@ -348,6 +348,7 @@ registerMonsterType.events = function(mtype, mask)
 			mtype:registerEvent(v)
 		end
 	end
+	mtype:registerEvent("AutoSkin")
 end
 
 function SortLootByChance(loot)
