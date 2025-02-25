@@ -346,7 +346,7 @@ local config = {
 	},
 }
 
-local function customSkinMonster(player, item,  target, toPosition)
+local function customSkinMonster(player, item, target, toPosition)
 	local skin = config[item.itemid][target.itemid]
 	if not skin then
 		return true
@@ -409,7 +409,6 @@ local function customSkinMonster(player, item,  target, toPosition)
 	return true
 end
 
-
 local function onDeathAutoSkin(player, corpse, creature)
 	local party = player:getParty()
 
@@ -417,12 +416,10 @@ local function onDeathAutoSkin(player, corpse, creature)
 		player = party:getLeader()
 	end
 
-
 	local autolootSetting = player:getFeature(Features.AutoLoot)
 	if autolootSetting >= 1 then
 		local obsidianKnifeItem = player:getItemById(5908, true)
 		local blessedWoodenStakeItem = player:getItemById(5942, true)
-
 
 		if obsidianKnifeItem then
 			customSkinMonster(player, obsidianKnifeItem, corpse, { x = CONTAINER_POSITION })
