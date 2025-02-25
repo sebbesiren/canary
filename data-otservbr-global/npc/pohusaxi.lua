@@ -1162,6 +1162,13 @@ npcConfig.shop = {
 	{ itemName = "werepanther trophy", clientId = 43917, sell = 14000 },
 	{ itemName = "weretiger trophy", clientId = 43915, sell = 14000 },
 	{ itemName = "wolf trophy", clientId = 7394, sell = 3000 },
+	{ itemName = "mega dragon heart", clientId = 44745, sell = 1100 },
+	{ itemName = "dragolisk eye", clientId = 44746, sell = 690 },
+	{ itemName = "nimmersatt's seal", clientId = 44743, sell = 520 },
+	{ itemName = "molten dragon essence", clientId = 44744, sell = 840 },
+	{ itemName = "wardragon tooth", clientId = 44749, sell = 730 },
+	{ itemName = "dragolisk poison gland", clientId = 44747, sell = 475 },
+	{ itemName = "wardragon claw", clientId = 44748, sell = 550 },
 }
 -- On buy npc shop message
 npcType.onBuyItem = function(npc, player, itemId, subType, amount, ignore, inBackpacks, totalCost)
