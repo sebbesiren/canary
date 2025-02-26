@@ -420,7 +420,7 @@ local function getCustomTasksText()
 			table.insert(raceNames, "{" .. task.raceName .. "}")
 		end
 	end
-	return table.concat(raceNames,  ", ")
+	return table.concat(raceNames, ", ")
 end
 
 local function creatureSayCallback(npc, creature, type, message)
