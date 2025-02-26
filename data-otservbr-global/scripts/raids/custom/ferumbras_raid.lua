@@ -3,7 +3,7 @@ zone:addArea(Position(32117, 32684, 4), Position(32126, 32691, 4))
 
 local raid = Raid("ferumbras.ferumbras_raid", {
 	zone = zone,
-	allowedDays = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" },
+	allowedDays = { "Saturday", "Sunday" },
 	minActivePlayers = 1,
 	initialChance = 0.04,
 	targetChancePerDay = 0.1,
