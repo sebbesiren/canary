@@ -417,7 +417,7 @@ local function onDeathAutoSkin(player, corpse, creature)
 	end
 
 	local autolootSetting = player:getFeature(Features.AutoLoot)
-	if autolootSetting >= 1 then
+	if autolootSetting and autolootSetting >= 1 then
 		local obsidianKnifeItem = player:getItemById(5908, true)
 		local blessedWoodenStakeItem = player:getItemById(5942, true)
 

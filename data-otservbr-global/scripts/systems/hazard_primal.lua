@@ -23,6 +23,17 @@ hazardZone:subtractArea({ x = 33630, y = 32887, z = 15 }, { x = 33672, y = 32921
 local primalPod = MoveEvent()
 
 function primalPod.onStepIn(creature, item, position, fromPosition)
+	-- Custom: if in zone disable on walk in
+	local zones = position:getZones()
+	if zones then
+		for _, zone in ipairs(zones) do
+			local zoneName = zone:getName()
+			if zoneName == "hazard.world" then
+				return
+			end
+		end
+	end
+
 	if not configManager.getBoolean(configKeys.TOGGLE_HAZARDSYSTEM) then
 		item:remove()
 		return
@@ -55,8 +66,8 @@ function primalPod.onStepIn(creature, item, position, fromPosition)
 end
 
 -- Custom overridden
---primalPod:id(ITEM_PRIMAL_POD)
---primalPod:register()
+primalPod:id(ITEM_PRIMAL_POD)
+primalPod:register()
 
 local spawnFungosaurus = function(position)
 	local tile = Tile(position)
