@@ -23,8 +23,8 @@ monster.bosstiary = {
 	bossRace = RARITY_ARCHFOE,
 }
 
-monster.health = 450000
-monster.maxHealth = 450000
+monster.health = 300000
+monster.maxHealth = 300000
 monster.race = "undead"
 monster.corpse = 36847
 monster.speed = 0
@@ -82,20 +82,20 @@ monster.loot = {
 	{ name = "giant sapphire", chance = 2041 },
 	{ name = "giant topaz", chance = 2041 },
 	{ name = "fiery tear", chance = 1000 },
-	{ name = "arboreal tome", chance = 1000 },
-	{ name = "arboreal crown", chance = 1000 },
-	{ name = "spiritthorn armor", id = 39147, chance = 1000 },
-	{ name = "spiritthorn helmet", id = 39148, chance = 1000 },
-	{ name = "alicorn headguard", chance = 1000 },
-	{ name = "alicorn quiver", chance = 1000 },
-	{ name = "arcanomancer regalia", chance = 1000 },
-	{ name = "arcanomancer folio", chance = 1000 },
-	{ id = 39183, chance = 1000 }, -- name = "charged arcanomancer sigil"
-	{ id = 39186, chance = 1000 }, -- name = "charged arboreal ring"
-	{ id = 39180, chance = 1000 }, -- name = "charged alicorn ring"
-	{ id = 39177, chance = 1000 }, -- name = "charged spiritthorn ring"
-	{ name = "portable flame", chance = 1000 },
-	{ name = "firefighting axe", chance = 1000 },
+	{ name = "arboreal tome", chance = 500 },
+	{ name = "arboreal crown", chance = 500 },
+	{ name = "spiritthorn armor", id = 39147, chance = 500 },
+	{ name = "spiritthorn helmet", id = 39148, chance = 500 },
+	{ name = "alicorn headguard", chance = 500 },
+	{ name = "alicorn quiver", chance = 500 },
+	{ name = "arcanomancer regalia", chance = 500 },
+	{ name = "arcanomancer folio", chance = 500 },
+	{ id = 39183, chance = 500 }, -- name = "charged arcanomancer sigil"
+	{ id = 39186, chance = 500 }, -- name = "charged arboreal ring"
+	{ id = 39180, chance = 500 }, -- name = "charged alicorn ring"
+	{ id = 39177, chance = 500 }, -- name = "charged spiritthorn ring"
+	{ name = "portable flame", chance = 500 },
+	{ name = "firefighting axe", chance = 500 },
 }
 
 monster.attacks = {
