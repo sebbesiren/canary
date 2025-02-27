@@ -89,7 +89,7 @@ monster.loot = {
 }
 
 monster.attacks = {
-	{ name = "melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -1000 },
+	{ name = "melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -1200 },
 	{ name = "combat", interval = 4500, chance = 35, type = COMBAT_DEATHDAMAGE, minDamage = -100, maxDamage = -800, radius = 4, shootEffect = CONST_ANI_SUDDENDEATH, effect = CONST_ME_MORTAREA, target = true },
 	{ name = "undertaker square explosion", interval = 3000, chance = 25, minDamage = -1000, maxDamage = -1200, range = 4, target = true },
 	{ name = "root wave", interval = 2000, chance = 1, target = false },
