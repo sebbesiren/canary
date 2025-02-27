@@ -121,8 +121,8 @@ DailyReward = {
 		[3] = {
 			type = DAILY_REWARD_TYPE_PREY_REROLL,
 			systemType = DAILY_REWARD_SYSTEM_TYPE_TWO,
-			freeAccount = 5,
-			premiumAccount = 10,
+			freeAccount = 25,
+			premiumAccount = 25,
 		},
 		[4] = {
 			-- Concoction
