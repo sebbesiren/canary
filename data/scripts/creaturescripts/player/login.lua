@@ -60,6 +60,10 @@ function playerLoginGlobal.onLogin(player)
 		sendBoostMessage(player, "Boss Loot Rate", SCHEDULE_BOSS_LOOT_RATE > 100)
 	end
 
+	if SCHEDULE_DUOTIARY_RATE ~= 100 then
+		sendBoostMessage(player, "Bosstiary & Bestiary Rate", SCHEDULE_DUOTIARY_RATE > 100)
+	end
+
 	if SCHEDULE_SKILL_RATE ~= 100 then
 		sendBoostMessage(player, "Skill Rate", SCHEDULE_SKILL_RATE > 100)
 	end

@@ -65,6 +65,7 @@
 #include "lua/creature/movement.hpp"
 #include "map/spectators.hpp"
 #include "creatures/players/vocations/vocation.hpp"
+#include "game/scheduling/events_scheduler.hpp"
 
 MuteCountMap Player::muteCountMap;
 
@@ -5876,7 +5877,7 @@ void Player::addBestiaryKill(const std::shared_ptr<MonsterType> &mType) {
 	if (mType->isBoss()) {
 		return;
 	}
-	uint32_t kills = g_configManager().getNumber(BESTIARY_KILL_MULTIPLIER);
+	uint32_t kills = g_configManager().getNumber(BESTIARY_KILL_MULTIPLIER) *  (g_eventsScheduler().getDuotiaryLootSchedule() / 100);
 	if (isConcoctionActive(Concoction_t::BestiaryBetterment)) {
 		kills *= 2;
 	}
@@ -5887,7 +5888,7 @@ void Player::addBosstiaryKill(const std::shared_ptr<MonsterType> &mType) {
 	if (!mType->isBoss()) {
 		return;
 	}
-	uint32_t kills = g_configManager().getNumber(BOSSTIARY_KILL_MULTIPLIER);
+	uint32_t kills = g_configManager().getNumber(BOSSTIARY_KILL_MULTIPLIER) * (g_eventsScheduler().getDuotiaryLootSchedule() / 100);
 	if (g_ioBosstiary().getBoostedBossId() == mType->info.raceid) {
 		kills *= g_configManager().getNumber(BOOSTED_BOSS_KILL_BONUS);
 	}

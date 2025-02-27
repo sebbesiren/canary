@@ -78,6 +78,12 @@ bool EventsScheduler::loadScheduleEventFromXml() {
 				g_eventsScheduler().setBossLootSchedule(bosslootrate);
 			}
 
+			if (ingameNode.attribute("duotiaryrate")) {
+				uint16_t duotiaryrate = static_cast<uint16_t>(ingameNode.attribute("duotiaryrate").as_uint());
+				currentEventRates.duotiaryrate = duotiaryrate;
+				g_eventsScheduler().setDuotiarySchedule(duotiaryrate);
+			}
+
 			if (ingameNode.attribute("spawnrate")) {
 				uint16_t spawnrate = static_cast<uint16_t>(ingameNode.attribute("spawnrate").as_uint());
 				currentEventRates.spawnrate = spawnrate;
@@ -89,6 +95,7 @@ bool EventsScheduler::loadScheduleEventFromXml() {
 				currentEventRates.skillrate = skillrate;
 				g_eventsScheduler().setSkillSchedule(skillrate);
 			}
+
 		}
 
 		for (const auto &[eventName, rates] : eventsOnSameDay) {
@@ -102,6 +109,9 @@ bool EventsScheduler::loadScheduleEventFromXml() {
 			}
 			if (rates.bosslootrate != 100 && currentEventRates.bosslootrate != 100 && rates.bosslootrate == currentEventRates.bosslootrate) {
 				modifiedRates.emplace_back("bosslootrate");
+			}
+			if (rates.duotiaryrate != 100 && currentEventRates.duotiaryrate != 100 && rates.duotiaryrate == currentEventRates.duotiaryrate) {
+				modifiedRates.emplace_back("duotiaryrate");
 			}
 			if (rates.spawnrate != 100 && currentEventRates.spawnrate != 100 && rates.spawnrate == currentEventRates.spawnrate) {
 				modifiedRates.emplace_back("spawnrate");

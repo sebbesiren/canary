@@ -22,6 +22,7 @@ struct EventRates {
 	uint16_t exprate = 100;
 	uint32_t lootrate = 100;
 	uint32_t bosslootrate = 100;
+	uint32_t duotiaryrate = 100;
 	uint32_t spawnrate = 100;
 	uint16_t skillrate = 100;
 };
@@ -63,6 +64,13 @@ public:
 		bossLootSchedule = (bossLootSchedule * bosslootrate) / 100;
 	}
 
+	uint32_t getDuotiaryLootSchedule() const {
+		return duotiarySchedule;
+	}
+	void setDuotiarySchedule(uint32_t duotiaryrate) {
+		duotiarySchedule = (duotiarySchedule * duotiaryrate) / 100;
+	}
+
 	uint32_t getSpawnMonsterSchedule() const {
 		return spawnMonsterSchedule;
 	}
@@ -82,6 +90,7 @@ private:
 	uint16_t expSchedule = 100;
 	uint32_t lootSchedule = 100;
 	uint32_t bossLootSchedule = 100;
+	uint32_t duotiarySchedule = 100;
 	uint16_t skillSchedule = 100;
 	uint32_t spawnMonsterSchedule = 100;
 

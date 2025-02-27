@@ -98,4 +98,11 @@
 		<colors colordark="#235c00" colorlight="#2d7400"/>
 		<details displaypriority="1" isseasonal="0" specialevent="0"/>
 	</event>
+
+	<event name="Weekend event" startdate="3/1/2025" enddate="3/2/2025" script="">
+		<ingame exprate="130" lootrate="100" bosslootrate="100" spawnrate="100" skillrate="100" duotiaryrate="200"/>
+		<description description="Enjoy the weekend event on Mehra!"/>
+		<colors colordark="#235c00" colorlight="#2d7400"/>
+		<details displaypriority="1" isseasonal="0" specialevent="0"/>
+	</event>
 </events>
