@@ -5,9 +5,9 @@ local raid = Raid("thais.demon", {
 	zone = zone,
 	allowedDays = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" },
 	minActivePlayers = 1,
-	targetChancePerDay = 25,
-	maxChancePerCheck = 100,
-	minGapBetween = "24h",
+	targetChancePerDay = 5,
+	maxChancePerCheck = 10,
+	minGapBetween = "48h",
 })
 
 raid:addBroadcast("Demons are launching an attack on Thais from the south..."):autoAdvance("5m")

@@ -5,9 +5,9 @@ local raid = Raid("thais.dragon_raidn", {
 	zone = zone,
 	allowedDays = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" },
 	minActivePlayers = 1,
-	targetChancePerDay = 25,
-	maxChancePerCheck = 100,
-	minGapBetween = "24h",
+	targetChancePerDay = 5,
+	maxChancePerCheck = 5,
+	minGapBetween = "48h",
 })
 
 raid:addBroadcast("Dragon have been sighted east of Thais..."):autoAdvance("5m")

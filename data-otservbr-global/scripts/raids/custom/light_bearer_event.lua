@@ -5,9 +5,9 @@ local raid = Raid("thais.lightbearer_event", {
 	zone = zone,
 	allowedDays = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" },
 	minActivePlayers = 1,
-	targetChancePerDay = 3,
-	maxChancePerCheck = 100,
-	minGapBetween = "24h",
+	targetChancePerDay = 1,
+	maxChancePerCheck = 5,
+	minGapBetween = "72h",
 })
 
 raid:addBroadcast("Creatures of the light are plotting an invasion of thais!"):autoAdvance("10m")
