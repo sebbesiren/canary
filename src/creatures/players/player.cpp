@@ -5877,7 +5877,7 @@ void Player::addBestiaryKill(const std::shared_ptr<MonsterType> &mType) {
 	if (mType->isBoss()) {
 		return;
 	}
-	uint32_t kills = g_configManager().getNumber(BESTIARY_KILL_MULTIPLIER) *  (g_eventsScheduler().getDuotiaryLootSchedule() / 100);
+	uint32_t kills = g_configManager().getNumber(BESTIARY_KILL_MULTIPLIER) * (g_eventsScheduler().getDuotiaryLootSchedule() / 100);
 	if (isConcoctionActive(Concoction_t::BestiaryBetterment)) {
 		kills *= 2;
 	}

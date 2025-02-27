@@ -95,7 +95,6 @@ bool EventsScheduler::loadScheduleEventFromXml() {
 				currentEventRates.skillrate = skillrate;
 				g_eventsScheduler().setSkillSchedule(skillrate);
 			}
-
 		}
 
 		for (const auto &[eventName, rates] : eventsOnSameDay) {
