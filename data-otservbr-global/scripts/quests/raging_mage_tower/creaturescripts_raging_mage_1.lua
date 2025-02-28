@@ -9,10 +9,10 @@ function ragingMage1.onDeath(creature, corpse, killer, mostDamageKiller, unjusti
 		Game.createMonster("energized raging mage", Position(33142, 31529, 2))
 		mostDamageKiller:setStorageValue(playerDoubleMageKill, mostDamageKiller:getStorageValue(playerDoubleMageKill) + 1)
 		mostDamageKiller:addAchievement("Mageslayer")
-	elseif Game.getStorageValue(yielothaxKillStorage) < 2000 then
+	elseif Game.getStorageValue(yielothaxKillStorage) <= 399 then
 		creature:say("MWAAAHAHAAA!! NO ONE!! NO ONE CAN DEFEAT MEEE!!!", TALKTYPE_MONSTER_YELL, false, nil, Position(33143, 31527, 2))
 		Game.createMonster("Energized Raging Mage", Position(33142, 31529, 2))
-	elseif Game.getStorageValue(yielothaxKillStorage) > 1999 then
+	elseif Game.getStorageValue(yielothaxKillStorage) >= 400 then
 		Game.createMonster("raging mage", Position(33142, 31529, 2))
 		creature:say("GNAAAAAHRRRG!! WHAT? WHAT DID YOU DO TO ME!! I... I feel the energies crawling away... from me... DIE!!!", TALKTYPE_MONSTER_YELL, false, nil, Position(33143, 31527, 2))
 		Game.setStorageValue(yielothaxKillStorage, 0)
