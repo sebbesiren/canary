@@ -156,11 +156,19 @@ function Hazard:register()
 
 	function event.afterEnter(zone, creature)
 		local player = creature:getPlayer()
-		if not player then
-			return
+		if player then
+			logger.debug("Player {} entered hazard zone {}", player:getName(), zone:getName())
+			player:setHazardSystemPoints(self:getPlayerCurrentLevel(player))
 		end
-		logger.debug("Player {} entered hazard zone {}", player:getName(), zone:getName())
-		player:setHazardSystemPoints(self:getPlayerCurrentLevel(player))
+
+		local monster = creature:getMonster()
+		if monster then
+			monster:hazard(true)
+			monster:hazardCrit(self.crit)
+			monster:hazardDodge(self.dodge)
+			monster:hazardDamageBoost(self.damageBoost)
+			monster:hazardDefenseBoost(self.defenseBoost)
+		end
 	end
 
 	function event.afterLeave(zone, creature)
@@ -179,32 +187,32 @@ function Hazard.getByName(name)
 	return Hazard.areas[name]
 end
 
-if not HazardMonster then
-	HazardMonster = { eventName = "HazardMonster" }
-end
-
-function HazardMonster.onSpawn(monster, position)
-	local monsterType = monster:getType()
-	if not monsterType then
-		return false
-	end
-
-	local zones = position:getZones()
-	if not zones then
-		return true
-	end
-
-	for _, zone in ipairs(zones) do
-		local hazard = Hazard.getByName(zone:getName())
-		if hazard then
-			logger.debug("Monster {} spawned in hazard zone {}, position {}", monster:getName(), hazard.name, position:toString())
-
-			monster:hazard(true)
-			monster:hazardCrit(hazard.crit)
-			monster:hazardDodge(hazard.dodge)
-			monster:hazardDamageBoost(hazard.damageBoost)
-			monster:hazardDefenseBoost(hazard.defenseBoost)
-		end
-	end
-	return true
-end
+--if not HazardMonster then
+--	HazardMonster = { eventName = "HazardMonster" }
+--end
+--
+--function HazardMonster.onSpawn(monster, position)
+--	local monsterType = monster:getType()
+--	if not monsterType then
+--		return false
+--	end
+--
+--	local zones = position:getZones()
+--	if not zones then
+--		return true
+--	end
+--
+--	for _, zone in ipairs(zones) do
+--		local hazard = Hazard.getByName(zone:getName())
+--		if hazard then
+--			logger.debug("Monster {} spawned in hazard zone {}, position {}", monster:getName(), hazard.name, position:toString())
+--
+--			monster:hazard(true)
+--			monster:hazardCrit(hazard.crit)
+--			monster:hazardDodge(hazard.dodge)
+--			monster:hazardDamageBoost(hazard.damageBoost)
+--			monster:hazardDefenseBoost(hazard.defenseBoost)
+--		end
+--	end
+--	return true
+--end
