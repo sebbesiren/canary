@@ -432,8 +432,8 @@ end
 
 local autoSkinDeath = CreatureEvent("AutoSkin")
 function autoSkinDeath.onDeath(creature, corpse, killer, mostDamageKiller, lastHitUnjustified, mostDamageUnjustified)
-	if mostDamageKiller and mostDamageKiller:isPlayer() then
-		onDeathAutoSkin(mostDamageKiller, corpse, creature)
+	if killer and killer:isPlayer() then
+		onDeathAutoSkin(killer, corpse, creature)
 	end
 end
 autoSkinDeath:register()
