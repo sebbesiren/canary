@@ -3,17 +3,7 @@ local npcType = Game.createNpcType(internalNpcName)
 local npcConfig = {}
 
 local hazards = {
-	{ name = "Darashia Minos", hazard = Hazard.getByName("hazard.darashia-minotaurs") },
-	{ name = "Darashia Wyrms", hazard = Hazard.getByName("hazard.darashia-wyrms") },
-	{ name = "Ankh Mother Scarabs", hazard = Hazard.getByName("hazard.ankrahmun-mother-scarabs") },
-	{ name = "Prison", hazard = Hazard.getByName("hazard.prison") },
-	{ name = "Asura Mirror", hazard = Hazard.getByName("hazard.asura-mirror") },
-	{ name = "Edron Hero Cave", hazard = Hazard.getByName("hazard.edron-hero-cave") },
-	{ name = "Banuta", hazard = Hazard.getByName("hazard.banuta") },
-	{ name = "Ferumbras Grimeleech", hazard = Hazard.getByName("hazard.ferumbras-ascension-grimeleech") },
-	{ name = "Court of Summer/Winter", hazard = Hazard.getByName("hazard.court-of-summer-winter") },
-	{ name = "Goroma Demons", hazard = Hazard.getByName("hazard.goroma-demons") },
-	{ name = "Flimsy", hazard = Hazard.getByName("hazard.flimsy") },
+	{ name = "World", hazard = Hazard.getByName("hazard.world") },
 }
 local hazardKeys = ""
 for index, value in ipairs(hazards) do

@@ -57367,7 +57367,7 @@ hands of its owner. Granted by TibiaRoyal.com"/>
 		<attribute key="shootType" value="smallearth"/>
 		<attribute key="magiclevelpoints" value="2"/>
 		<attribute key="lifeleechamount" value="1800"/>
-		<attribute key="lifeleechchance" value="100"/>
+		<attribute key="lifeleechchance" value="10000"/>
 		<attribute key="range" value="5"/>
 		<attribute key="weight" value="2500"/>
 		<attribute key="imbuementslot" value="2">
@@ -64564,7 +64564,7 @@ hands of its owner. Granted by TibiaRoyal.com"/>
 		<attribute key="shootType" value="smallice"/>
 		<attribute key="magiclevelpoints" value="2"/>
 		<attribute key="lifeleechamount" value="1800"/>
-		<attribute key="lifeleechchance" value="100"/>
+		<attribute key="lifeleechchance" value="10000"/>
 		<attribute key="range" value="5"/>
 		<attribute key="weight" value="2100"/>
 		<attribute key="imbuementslot" value="2">
@@ -77155,7 +77155,7 @@ Granted by TibiaGoals.com"/>
 		<attribute key="loottype" value="creature products" />
 		<attribute key="primarytype" value="creature products" />
 		<attribute key="weight" value="30" />
-	</item>	
+	</item>
 	<item id="45657" article="a" name="preserved yellow seed">
 		<attribute key="loottype" value="creature products" />
 		<attribute key="primarytype" value="creature products" />

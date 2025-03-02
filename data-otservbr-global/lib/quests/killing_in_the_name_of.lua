@@ -1201,6 +1201,25 @@ tasks = {
 				{ type = "bosspoints", value = { 1 } },
 			},
 		},
+		[58] = {
+			killsRequired = 1000,
+			raceName = "Roshamuul surface",
+			custom = true,
+			level = { 130, 9999 },
+			repeatable = true,
+			premium = true,
+			creatures = {
+				"Silencer",
+				"Guzzlemaw",
+				"Frazzlemaw"
+			},
+			rewards = {
+				{ type = "exp", value = { 2400000 * 1.5 } },
+				{ type = "item", value = { 3043, 15 } },
+				{ type = "points", value = { 10 } },
+				{ type = "bosspoints", value = { 1 } },
+			},
+		},
 	},
 }
 
