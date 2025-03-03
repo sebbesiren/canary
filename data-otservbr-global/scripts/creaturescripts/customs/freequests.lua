@@ -372,6 +372,11 @@ local questTable = {
 	{ storageName = "TheSecretLibrary.Asuras.Questline", storage = Storage.Quest.U11_80.TheSecretLibrary.Asuras.Questline, storageValue = 7 },
 	{ storageName = "TheSecretLibrary.FalconBastion.KillingBosses", storage = Storage.Quest.U11_80.TheSecretLibrary.FalconBastion.KillingBosses, storageValue = 5 },
 	{ storageName = "TheHuntForTheSeaSerpent.FishForASerpent", storage = Storage.Quest.U8_2.TheHuntForTheSeaSerpent.FishForASerpent, storageValue = 5 },
+
+	{ storageName = "DarkTrails.DoorQuandon", storage = Storage.Quest.U10_50.DarkTrails.DoorQuandon, storageValue = 1 },
+	{ storageName = "DarkTrails.DoorHideout", storage = Storage.Quest.U10_50.DarkTrails.DoorHideout, storageValue = 1 },
+	{ storageName = "OramondQuest.ToTakeRoots.Door", storage = Storage.Quest.U10_50.OramondQuest.ToTakeRoots.Door, storageValue = 1 },
+	{ storageName = "OramondQuest.TheAncientSewers.Door", storage = Storage.Quest.U10_50.OramondQuest.TheAncientSewers.Door, storageValue = 1 },
 }
 
 -- from Position: (33201, 31762, 1)
