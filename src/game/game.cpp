@@ -7307,6 +7307,7 @@ bool Game::combatChangeHealth(const std::shared_ptr<Creature> &attacker, const s
 
 		if (targetPlayer && attackerMonster) {
 			handleHazardSystemAttack(damage, targetPlayer, attackerMonster, false);
+			healthChange = damage.primary.value + damage.secondary.value; // health change must be re-evaluated
 		} else if (attackerPlayer && targetMonster) {
 			handleHazardSystemAttack(damage, attackerPlayer, targetMonster, true);
 
