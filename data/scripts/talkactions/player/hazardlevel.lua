@@ -56,6 +56,11 @@ function hazardlevel.onSay(player, words, param)
 	end
 	local hazard = Hazard.getByName(selectedHazard.name)
 
+	if not paramParts[2] then
+		player:sendTextMessage(MESSAGE_LOOK, "Invalid level")
+		return true
+	end
+
 	local desiredLevel = lstrip(rstrip(paramParts[2]))
 	if desiredLevel == "max" then
 		desiredLevel = hazard:getPlayerMaxLevel(player) or 1
