@@ -51,7 +51,7 @@ npcType.onCloseChannel = function(npc, creature)
 end
 
 npcConfig.shop = {
-	{ itemName = "all loot in pouch", clientId = 23721, sell = 1},
+	{ itemName = "all loot in pouch", clientId = 23721, sell = 1 },
 	{ itemName = "acorn", clientId = 10296, sell = 10 },
 	{ itemName = "alptramun's toothbrush", clientId = 29943, sell = 270000 },
 	{ itemName = "ancient belt buckle", clientId = 24384, sell = 260 },
