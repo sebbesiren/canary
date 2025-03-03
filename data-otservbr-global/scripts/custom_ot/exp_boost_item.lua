@@ -23,10 +23,8 @@ local function applyXpBoost(player)
 	return true
 end
 
-
 -- Main function for using XP scroll
 function expscroll.onUse(player, item, fromPosition, itemEx, toPosition)
-
 	-- Apply the XP boost if no other boost is active
 	if applyXpBoost(player) then
 		item:remove(1) -- Remove the scroll after use
@@ -38,5 +36,3 @@ end
 -- Register action for XP scroll
 expscroll:id(22772)
 expscroll:register()
-
-
