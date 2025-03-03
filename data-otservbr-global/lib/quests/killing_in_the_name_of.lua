@@ -1220,6 +1220,25 @@ tasks = {
 				{ type = "bosspoints", value = { 1 } },
 			},
 		},
+		[59] = {
+			killsRequired = 1000,
+			raceName = "Cobra Bastion",
+			custom = true,
+			level = { 130, 9999 },
+			repeatable = true,
+			premium = true,
+			creatures = {
+				"Cobra Assassin",
+				"Cobra Scout",
+				"Cobra Vizier",
+			},
+			rewards = {
+				{ type = "exp", value = { 3400000 * 1.5 } },
+				{ type = "item", value = { 3043, 25 } },
+				{ type = "points", value = { 10 } },
+				{ type = "bosspoints", value = { 1 } },
+			},
+		},
 	},
 }
 
