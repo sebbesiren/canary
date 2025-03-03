@@ -1211,7 +1211,7 @@ tasks = {
 			creatures = {
 				"Silencer",
 				"Guzzlemaw",
-				"Frazzlemaw"
+				"Frazzlemaw",
 			},
 			rewards = {
 				{ type = "exp", value = { 2400000 * 1.5 } },
