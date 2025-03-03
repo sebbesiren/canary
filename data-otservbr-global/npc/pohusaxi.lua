@@ -51,6 +51,7 @@ npcType.onCloseChannel = function(npc, creature)
 end
 
 npcConfig.shop = {
+	{ itemName = "all loot in pouch", clientId = 23721, sell = 1},
 	{ itemName = "acorn", clientId = 10296, sell = 10 },
 	{ itemName = "alptramun's toothbrush", clientId = 29943, sell = 270000 },
 	{ itemName = "ancient belt buckle", clientId = 24384, sell = 260 },
@@ -1169,6 +1170,7 @@ npcConfig.shop = {
 	{ itemName = "wardragon tooth", clientId = 44749, sell = 730 },
 	{ itemName = "dragolisk poison gland", clientId = 44747, sell = 475 },
 	{ itemName = "wardragon claw", clientId = 44748, sell = 550 },
+	{ itemName = "supreme cube", clientId = 31633, buy = 10000 },
 }
 -- On buy npc shop message
 npcType.onBuyItem = function(npc, player, itemId, subType, amount, ignore, inBackpacks, totalCost)
@@ -1176,6 +1178,7 @@ npcType.onBuyItem = function(npc, player, itemId, subType, amount, ignore, inBac
 end
 -- On sell npc shop message
 npcType.onSellItem = function(npc, player, itemId, subtype, amount, ignore, name, totalCost)
+	logger.info("Npc on sell")
 	player:sendTextMessage(MESSAGE_TRADE, string.format("Sold %ix %s for %i gold.", amount, name, totalCost))
 end
 -- On check npc shop message (look item)
