@@ -94,7 +94,7 @@ monster.loot = {
 	{ name = "mastermind shield", chance = 310 },
 	{ name = "cluster of solace", chance = 400 },
 	{ name = "gold token", chance = 2500 },
-	{ name = "silver token", chance = 1000 },
+	{ name = "silver token", chance = 4000 },
 }
 
 monster.attacks = {
