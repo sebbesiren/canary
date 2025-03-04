@@ -1239,6 +1239,25 @@ tasks = {
 				{ type = "bosspoints", value = { 1 } },
 			},
 		},
+		[60] = {
+			killsRequired = 1000,
+			raceName = "Nimmersatt Dragons",
+			custom = true,
+			level = { 130, 9999 },
+			repeatable = true,
+			premium = true,
+			creatures = {
+				"Mega Dragon",
+				"Dragolisk",
+				"Wardragon",
+			},
+			rewards = {
+				{ type = "exp", value = { 3000000 * 1.5 } },
+				{ type = "item", value = { 3043, 25 } },
+				{ type = "points", value = { 10 } },
+				{ type = "bosspoints", value = { 1 } },
+			},
+		},
 	},
 }
 
