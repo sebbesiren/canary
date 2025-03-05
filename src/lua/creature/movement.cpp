@@ -517,7 +517,8 @@ uint32_t MoveEvent::EquipItem(const std::shared_ptr<MoveEvent> &moveEvent, const
 	}
 
 	if (!player->hasFlag(PlayerFlags_t::IgnoreWeaponCheck) && moveEvent->getWieldInfo() != 0) {
-		if (player->getLevel() < moveEvent->getReqLevel() || player->getMagicLevel() < moveEvent->getReqMagLv()) {
+		// Remove level check for heroic/legendary vocations
+		if ((player->getLevel() < moveEvent->getReqLevel() && player->getVocationId() < 20) || player->getMagicLevel() < moveEvent->getReqMagLv()) {
 			return 0;
 		}
 
@@ -883,4 +884,22 @@ bool MoveEvent::executeAddRemItem(const std::shared_ptr<Item> &item, const Posit
 void MoveEvent::addVocEquipMap(const std::string &vocName) {
 	const uint16_t vocationId = g_vocations().getVocationId(vocName);
 	vocEquipMap[vocationId] = true;
+
+	//	elite/legendary vocations
+	if(vocationId == 8) {
+		vocEquipMap[20] = true;
+		vocEquipMap[21] = true;
+	}
+	if(vocationId == 7){
+		vocEquipMap[22] = true;
+		vocEquipMap[23] = true;
+	}
+	if(vocationId == 6){
+		vocEquipMap[24] = true;
+		vocEquipMap[25] = true;
+	}
+	if(vocationId == 5){
+		vocEquipMap[26] = true;
+		vocEquipMap[27] = true;
+	}
 }

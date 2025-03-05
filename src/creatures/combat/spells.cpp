@@ -472,7 +472,8 @@ bool Spell::playerSpellCheck(const std::shared_ptr<Player> &player) const {
 		return false;
 	}
 
-	if (player->getLevel() < level) {
+	// Remove level check for heroic/legendary vocations
+	if (player->getLevel() < level && player->getVocationId() < 20) {
 		player->sendCancelMessage(RETURNVALUE_NOTENOUGHLEVEL);
 		g_game().addMagicEffect(player->getPosition(), CONST_ME_POFF);
 		return false;
@@ -921,6 +922,24 @@ void Spell::addVocMap(uint16_t vocationId, bool b) {
 
 	g_logger().trace("Adding spell: {} to voc id: {}", getName(), vocationId);
 	vocSpellMap[vocationId] = b;
+
+	//	elite/legendary vocations
+	if(vocationId == 8) {
+		vocSpellMap[20] = b;
+		vocSpellMap[21] = b;
+	}
+	if(vocationId == 7){
+		vocSpellMap[22] = b;
+		vocSpellMap[23] = b;
+	}
+	if(vocationId == 6){
+		vocSpellMap[24] = b;
+		vocSpellMap[25] = b;
+	}
+	if(vocationId == 5){
+		vocSpellMap[26] = b;
+		vocSpellMap[27] = b;
+	}
 }
 
 SpellGroup_t Spell::getGroup() const {

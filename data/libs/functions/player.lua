@@ -169,23 +169,23 @@ function Player:vocationAbbrev()
 end
 
 function Player.isSorcerer(self)
-	return table.contains({ VOCATION.ID.SORCERER, VOCATION.ID.MASTER_SORCERER }, self:getVocation():getId())
+	return table.contains({ VOCATION.ID.SORCERER, VOCATION.ID.MASTER_SORCERER, VOCATION.ID.HEROIC_SORCERER, VOCATION.ID.LEGENDARY_SORCERER }, self:getVocation():getId())
 end
 
 function Player.isDruid(self)
-	return table.contains({ VOCATION.ID.DRUID, VOCATION.ID.ELDER_DRUID }, self:getVocation():getId())
+	return table.contains({ VOCATION.ID.DRUID, VOCATION.ID.ELDER_DRUID, VOCATION.ID.HEROIC_DRUID, VOCATION.ID.LEGENDARY_DRUID }, self:getVocation():getId())
 end
 
 function Player.isKnight(self)
-	return table.contains({ VOCATION.ID.KNIGHT, VOCATION.ID.ELITE_KNIGHT }, self:getVocation():getId())
+	return table.contains({ VOCATION.ID.KNIGHT, VOCATION.ID.ELITE_KNIGHT, VOCATION.ID.HEROIC_KNIGHT, VOCATION.ID.LEGENDARY_KNIGHT }, self:getVocation():getId())
 end
 
 function Player.isPaladin(self)
-	return table.contains({ VOCATION.ID.PALADIN, VOCATION.ID.ROYAL_PALADIN }, self:getVocation():getId())
+	return table.contains({ VOCATION.ID.PALADIN, VOCATION.ID.ROYAL_PALADIN, VOCATION.ID.HEROIC_PALADIN, VOCATION.ID.LEGENDARY_PALADIN }, self:getVocation():getId())
 end
 
 function Player.isMage(self)
-	return table.contains({ VOCATION.ID.SORCERER, VOCATION.ID.MASTER_SORCERER, VOCATION.ID.DRUID, VOCATION.ID.ELDER_DRUID }, self:getVocation():getId())
+	return table.contains({ VOCATION.ID.SORCERER, VOCATION.ID.MASTER_SORCERER, VOCATION.ID.HEROIC_SORCERER, VOCATION.ID.LEGENDARY_SORCERER, VOCATION.ID.DRUID, VOCATION.ID.ELDER_DRUID, VOCATION.ID.HEROIC_DRUID, VOCATION.ID.LEGENDARY_DRUID }, self:getVocation():getId())
 end
 
 local ACCOUNT_STORAGES = {}
@@ -299,13 +299,13 @@ function Player:createFamiliar(familiarName, timeLeft)
 		self:setStorageValue(
 			FAMILIAR_TIMER[sendMessage].storage,
 			addEvent(
-				-- Calling function
+			-- Calling function
 				SendMessageFunction,
-				-- Time for execute event
+			-- Time for execute event
 				(timeLeft - FAMILIAR_TIMER[sendMessage].countdown) * 1000,
-				-- Param "playerId"
+			-- Param "playerId"
 				self:getId(),
-				-- Param "message"
+			-- Param "message"
 				FAMILIAR_TIMER[sendMessage].message
 			)
 		)
@@ -357,7 +357,9 @@ end
 
 function Player.getFinalLowLevelBonus(self)
 	local level = self:getLevel()
-	if level > 0 and level <= 150 then
+
+	local bonusUntil = self:kv():scoped("custom-promotion"):get("low-level-bonus-exp") or 150
+	if level > 0 and level <= bonusUntil then
 		self:setGrindingXpBoost(configManager.getNumber(configKeys.LOW_LEVEL_BONUS_EXP))
 	else
 		self:setGrindingXpBoost(0)
@@ -535,7 +537,8 @@ function Player:showInfoModal(title, message, buttonText)
 		message = message,
 	})
 	buttonText = buttonText or "Close"
-	modal:addButton(buttonText, function() end)
+	modal:addButton(buttonText, function()
+	end)
 	modal:setDefaultEscapeButton(buttonText)
 
 	modal:sendToPlayer(self)
@@ -547,9 +550,11 @@ function Player:showConfirmationModal(title, message, yesCallback, noCallback, y
 		message = message,
 	})
 	yesText = yesText or "Yes"
-	modal:addButton(yesText, yesCallback or function() end)
+	modal:addButton(yesText, yesCallback or function()
+	end)
 	noText = noText or "No"
-	modal:addButton(noText, noCallback or function() end)
+	modal:addButton(noText, noCallback or function()
+	end)
 	modal:setDefaultEscapeButton(noText)
 
 	modal:sendToPlayer(self)

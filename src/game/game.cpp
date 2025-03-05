@@ -7303,8 +7303,17 @@ bool Game::combatChangeHealth(const std::shared_ptr<Creature> &attacker, const s
 			return true;
 		}
 
-		auto spectators = Spectators().find<Player>(targetPos, true);
+		if(attackerPlayer){
+			auto customPromotionBonusDmg = attackerPlayer->kv()->scoped("custom-promotion")->get("bonus-damage");
+			if(customPromotionBonusDmg){
+//				g_logger().info("Bonus dmg: {}, before: {}", customPromotionBonusDmg->getNumber(), damage.primary.value);
 
+				damage.primary.value += static_cast<int32_t>(std::ceil((static_cast<double>(damage.primary.value) * customPromotionBonusDmg->getNumber()) / 100.));
+				damage.secondary.value += static_cast<int32_t>(std::ceil((static_cast<double>(damage.secondary.value) * customPromotionBonusDmg->getNumber()) / 100.));
+			}
+		}
+
+		auto spectators = Spectators().find<Player>(targetPos, true);
 		if (targetPlayer && attackerMonster) {
 			handleHazardSystemAttack(damage, targetPlayer, attackerMonster, false);
 		} else if (attackerPlayer && targetMonster) {

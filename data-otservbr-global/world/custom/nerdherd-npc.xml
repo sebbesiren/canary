@@ -3,6 +3,9 @@
 	<npc centerx="5010" centery="4990" centerz="11" radius="1">
 		<npc name="Pohusaxi" x="0" y="0" z="11" spawntime="60" />
 	</npc>
+	<npc centerx="5003" centery="4996" centerz="11" radius="1">
+		<npc name="Tharion the Soulforger" x="0" y="0" z="11" spawntime="60" />
+	</npc>
 	<npc centerx="5010" centery="4996" centerz="11" radius="1">
 		<npc name="Elon Musk" x="0" y="0" z="11" spawntime="60" />
 	</npc>
