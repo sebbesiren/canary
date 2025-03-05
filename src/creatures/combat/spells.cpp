@@ -924,19 +924,19 @@ void Spell::addVocMap(uint16_t vocationId, bool b) {
 	vocSpellMap[vocationId] = b;
 
 	//	elite/legendary vocations
-	if(vocationId == 8) {
+	if (vocationId == 8) {
 		vocSpellMap[20] = b;
 		vocSpellMap[21] = b;
 	}
-	if(vocationId == 7){
+	if (vocationId == 7) {
 		vocSpellMap[22] = b;
 		vocSpellMap[23] = b;
 	}
-	if(vocationId == 6){
+	if (vocationId == 6) {
 		vocSpellMap[24] = b;
 		vocSpellMap[25] = b;
 	}
-	if(vocationId == 5){
+	if (vocationId == 5) {
 		vocSpellMap[26] = b;
 		vocSpellMap[27] = b;
 	}

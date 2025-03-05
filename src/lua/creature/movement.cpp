@@ -886,19 +886,19 @@ void MoveEvent::addVocEquipMap(const std::string &vocName) {
 	vocEquipMap[vocationId] = true;
 
 	//	elite/legendary vocations
-	if(vocationId == 8) {
+	if (vocationId == 8) {
 		vocEquipMap[20] = true;
 		vocEquipMap[21] = true;
 	}
-	if(vocationId == 7){
+	if (vocationId == 7) {
 		vocEquipMap[22] = true;
 		vocEquipMap[23] = true;
 	}
-	if(vocationId == 6){
+	if (vocationId == 6) {
 		vocEquipMap[24] = true;
 		vocEquipMap[25] = true;
 	}
-	if(vocationId == 5){
+	if (vocationId == 5) {
 		vocEquipMap[26] = true;
 		vocEquipMap[27] = true;
 	}

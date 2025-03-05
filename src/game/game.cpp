@@ -7303,10 +7303,10 @@ bool Game::combatChangeHealth(const std::shared_ptr<Creature> &attacker, const s
 			return true;
 		}
 
-		if(attackerPlayer){
+		if (attackerPlayer) {
 			auto customPromotionBonusDmg = attackerPlayer->kv()->scoped("custom-promotion")->get("bonus-damage");
-			if(customPromotionBonusDmg){
-//				g_logger().info("Bonus dmg: {}, before: {}", customPromotionBonusDmg->getNumber(), damage.primary.value);
+			if (customPromotionBonusDmg) {
+				//				g_logger().info("Bonus dmg: {}, before: {}", customPromotionBonusDmg->getNumber(), damage.primary.value);
 
 				damage.primary.value += static_cast<int32_t>(std::ceil((static_cast<double>(damage.primary.value) * customPromotionBonusDmg->getNumber()) / 100.));
 				damage.secondary.value += static_cast<int32_t>(std::ceil((static_cast<double>(damage.secondary.value) * customPromotionBonusDmg->getNumber()) / 100.));
