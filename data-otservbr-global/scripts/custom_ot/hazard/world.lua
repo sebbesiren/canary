@@ -4,7 +4,7 @@ local hazard = Hazard.new({
 	to = Position(34000, 33100, 15),
 	--to = Position(34000, 33100, 1),
 	minLevel = 0,
-	maxLevel = 15,
+	maxLevel = 20,
 
 	crit = true,
 	dodge = true,
