@@ -3,65 +3,65 @@ local config = {
 		toVoc = 20,
 		level = 500,
 		bonusPercentage = 10,
-		base = "knight"
+		base = "knight",
 	},
 	[20] = { -- Heroic knight
 		toVoc = 21,
 		level = 1000,
 		bonusPercentage = 25,
-		base = "knight"
+		base = "knight",
 	},
 	[7] = { -- Royal paladin
 		toVoc = 22,
 		level = 500,
 		bonusPercentage = 10,
-		base = "paladin"
+		base = "paladin",
 	},
 	[22] = { -- heroic paladin
 		toVoc = 23,
 		level = 1000,
 		bonusPercentage = 25,
-		base = "paladin"
+		base = "paladin",
 	},
 	[6] = { -- elder druid
 		toVoc = 24,
 		level = 500,
 		bonusPercentage = 10,
-		base = "mage"
+		base = "mage",
 	},
 	[24] = { -- heroic druid
 		toVoc = 25,
 		level = 1000,
 		bonusPercentage = 25,
-		base = "mage"
+		base = "mage",
 	},
 	[5] = { -- Master Sorcerer
 		toVoc = 26,
 		level = 500,
 		bonusPercentage = 10,
-		base = "mage"
+		base = "mage",
 	},
 	[26] = { -- Heroic sorcerer
 		toVoc = 27,
 		level = 1000,
 		bonusPercentage = 25,
-		base = "mage"
-	}
+		base = "mage",
+	},
 }
 
 local bases = {
 	["knight"] = {
 		health = 185,
-		mana = 50
+		mana = 50,
 	},
 	["paladin"] = {
 		health = 185,
-		mana = 90
+		mana = 90,
 	},
 	["mage"] = {
 		health = 185,
 		mana = 90,
-	}
+	},
 }
 
 CustomPromotion = {}
@@ -71,7 +71,7 @@ __Functions = {
 		if not data then
 			return {
 				available = false,
-				message = "No promotions available."
+				message = "No promotions available.",
 			}
 		end
 
@@ -79,13 +79,13 @@ __Functions = {
 		if playerLevel < data.level then
 			return {
 				available = false,
-				message = "Your level is too low. Come back once you are level " .. data.level .. "."
+				message = "Your level is too low. Come back once you are level " .. data.level .. ".",
 			}
 		end
 
 		return {
 			available = true,
-			message = "Promotion will give you a " .. data.bonusPercentage .. "% bonus to offensive and defensive abilities. You will be reset to level 8 in the process. Any level above " .. data.level .. " will be added after the reset. Do you want me to promote you?"
+			message = "Promotion will give you a " .. data.bonusPercentage .. "% bonus to offensive and defensive abilities. You will be reset to level 8 in the process. Any level above " .. data.level .. " will be added after the reset. Do you want me to promote you?",
 		}
 	end,
 	promotePlayer = function(self, player)
@@ -150,14 +150,13 @@ __Functions = {
 
 		player:addExperience(expToAdd, false)
 		return true
-	end
+	end,
 }
 CustomPromotion = setmetatable(CustomPromotion, { __index = __Functions })
 
-
 local customPromotionLogin = CreatureEvent("CustomPromotionLogin")
 function customPromotionLogin.onLogin(player)
-    CustomPromotion:ensure_bonuses(player)
+	CustomPromotion:ensure_bonuses(player)
 	return true
 end
 
