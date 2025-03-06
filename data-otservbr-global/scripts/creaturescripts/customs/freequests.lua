@@ -377,6 +377,8 @@ local questTable = {
 	{ storageName = "DarkTrails.DoorHideout", storage = Storage.Quest.U10_50.DarkTrails.DoorHideout, storageValue = 1 },
 	{ storageName = "OramondQuest.ToTakeRoots.Door", storage = Storage.Quest.U10_50.OramondQuest.ToTakeRoots.Door, storageValue = 1 },
 	{ storageName = "OramondQuest.TheAncientSewers.Door", storage = Storage.Quest.U10_50.OramondQuest.TheAncientSewers.Door, storageValue = 1 },
+
+	{ storageName = "TheSecretLibrary.LibraryPermission", storage = Storage.Quest.U11_80.TheSecretLibrary.LibraryPermission, storageValue = 7 },
 }
 
 -- from Position: (33201, 31762, 1)
