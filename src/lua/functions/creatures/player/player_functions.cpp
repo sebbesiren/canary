@@ -3206,7 +3206,7 @@ int PlayerFunctions::luaPlayerCanLearnSpell(lua_State* L) {
 	const auto vocMap = spell->getVocMap();
 	if (!vocMap.contains(player->getVocationId())) {
 		Lua::pushBoolean(L, false);
-	} else if (player->getLevel() < spell->getLevel() && player->getVocationId() < 20) { 	// Remove level check for heroic/legendary vocations
+	} else if (player->getLevel() < spell->getLevel() && player->getVocationId() < 20) { // Remove level check for heroic/legendary vocations
 		Lua::pushBoolean(L, false);
 	} else if (player->getMagicLevel() < spell->getMagicLevel()) {
 		Lua::pushBoolean(L, false);

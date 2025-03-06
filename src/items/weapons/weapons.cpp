@@ -155,7 +155,7 @@ int32_t Weapon::playerWeaponCheck(const std::shared_ptr<Player> &player, const s
 
 		int32_t damageModifier = 100;
 		// Remove level check for heroic/legendary vocations
-		if (player->getLevel() < getReqLevel()  && player->getVocationId() < 20) {
+		if (player->getLevel() < getReqLevel() && player->getVocationId() < 20) {
 			damageModifier = (isWieldedUnproperly() ? damageModifier / 2 : 0);
 		}
 
