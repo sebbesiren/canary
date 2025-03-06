@@ -273,7 +273,7 @@ void EventCallback::creatureOnCombat(std::shared_ptr<Creature> attacker, std::sh
 		*/
 		if (damage.origin == ORIGIN_SPELL && attacker) {
 			const auto &player = attacker->getPlayer();
-			if (player && player->getVocationId() != 4 && player->getVocationId() != 8) {
+			if (player && player->getVocationId() != 4 && player->getVocationId() != 8 && player->getVocationId() != 20 && player->getVocationId() != 21) {
 				damage.primary.value = damage.primary.value + damage.secondary.value;
 				damage.secondary.type = COMBAT_NONE;
 				damage.secondary.value = 0;
