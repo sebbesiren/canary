@@ -1209,9 +1209,9 @@ tasks = {
 			repeatable = true,
 			premium = true,
 			creatures = {
-				"Silencer",
-				"Guzzlemaw",
-				"Frazzlemaw",
+				"silencer",
+				"guzzlemaw",
+				"frazzlemaw",
 			},
 			rewards = {
 				{ type = "exp", value = { 2400000 * 1.5 } },
@@ -1228,9 +1228,9 @@ tasks = {
 			repeatable = true,
 			premium = true,
 			creatures = {
-				"Cobra Assassin",
-				"Cobra Scout",
-				"Cobra Vizier",
+				"cobra assassin",
+				"cobra scout",
+				"cobra vizier",
 			},
 			rewards = {
 				{ type = "exp", value = { 3400000 * 1.5 } },
@@ -1247,9 +1247,9 @@ tasks = {
 			repeatable = true,
 			premium = true,
 			creatures = {
-				"Mega Dragon",
-				"Dragolisk",
-				"Wardragon",
+				"mega dragon",
+				"dragolisk",
+				"wardragon",
 			},
 			rewards = {
 				{ type = "exp", value = { 3000000 * 1.5 } },
