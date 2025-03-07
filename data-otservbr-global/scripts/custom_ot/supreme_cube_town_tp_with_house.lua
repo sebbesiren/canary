@@ -1,7 +1,7 @@
 local supremeCube = Action()
 
 local config = {
-	price = 50000,
+	price = 1000,
 	storage = 9007,
 	cooldown = 5,
 	towns = {
@@ -29,6 +29,21 @@ local config = {
 local function supremeCubeMessage(player, effect, message)
 	player:sendTextMessage(MESSAGE_EVENT_ADVANCE, message)
 	player:getPosition():sendMagicEffect(effect)
+end
+
+local function houseTp(player, button, choice)
+	if button.name == "Select" then
+		local house = player:getHouse()
+		if house then
+			player:teleportTo(house:getExitPosition(), true)
+			player:removeMoneyBank(config.price)
+			supremeCubeMessage(player, CONST_ME_TELEPORT, "Welcome to your house.")
+			player:setStorageValue(config.storage, os.time() + config.cooldown)
+		else
+			supremeCubeMessage(player, CONST_ME_POFF, "You don't have a house.")
+		end
+	end
+	return true
 end
 
 function supremeCube.onUse(player, item, fromPosition, target, toPosition, isHotkey)
@@ -71,19 +86,21 @@ function supremeCube.onUse(player, item, fromPosition, target, toPosition, isHot
 	end
 
 	window:addChoice("House", function(player, button, choice)
-		if button.name == "Select" then
-			local house = player:getHouse()
-			if house then
-				player:teleportTo(house:getExitPosition(), true)
-				player:removeMoneyBank(config.price)
-				supremeCubeMessage(player, CONST_ME_TELEPORT, "Welcome to your house.")
-				player:setStorageValue(config.storage, os.time() + config.cooldown)
-			else
-				supremeCubeMessage(player, CONST_ME_POFF, "You don't have a house.")
+		return houseTp(player, button, choice)
+	end)
+
+	local guild = player:getGuild()
+	if guild then
+		local membersOnline = guild:getMembersOnline()
+		for _, member in ipairs(membersOnline) do
+			if player:getGuid() ~= member:getGuid() then
+				window:addChoice("House - " .. member:getName(), function(member, button, choice)
+					return houseTp(member, button, choice)
+				end)
 			end
 		end
-		return true
-	end)
+
+	end
 
 	window:addButton("Select")
 	window:addButton("Close")
