@@ -15,23 +15,23 @@ raid:addBroadcast("Death Lord Athelstan has returned."):autoAdvance("5s")
 
 raid
 	:addSpawnMonsters({
-	{
-		name = "Death Knight",
-		amount = 3,
-	},
-	{
-		name = "Death Paladin",
-		amount = 3,
-	},
-	{
-		name = "Death Necromancer",
-		amount = 1,
-	},
-	{
-		name = "Death Lord Athelstan",
-		amount = 1,
-	},
-})
+		{
+			name = "Death Knight",
+			amount = 3,
+		},
+		{
+			name = "Death Paladin",
+			amount = 3,
+		},
+		{
+			name = "Death Necromancer",
+			amount = 1,
+		},
+		{
+			name = "Death Lord Athelstan",
+			amount = 1,
+		},
+	})
 	:autoAdvance("12h")
 
 raid:register()
