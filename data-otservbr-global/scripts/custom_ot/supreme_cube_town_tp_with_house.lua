@@ -33,7 +33,18 @@ end
 
 local function houseTp(player, button, choice)
 	if button.name == "Select" then
-		local house = player:getHouse()
+
+		local playerName =  string.match(choice.text, "House %- (.+)")
+		local house = nil
+		if playerName then
+			local otherPlayer = Player(playerName)
+			if otherPlayer then
+				house = otherPlayer:getHouse()
+			end
+		else
+			house = player:getHouse()
+		end
+
 		if house then
 			player:teleportTo(house:getExitPosition(), true)
 			player:removeMoneyBank(config.price)
@@ -85,18 +96,22 @@ function supremeCube.onUse(player, item, fromPosition, target, toPosition, isHot
 		end
 	end
 
-	window:addChoice("House", function(player, button, choice)
-		return houseTp(player, button, choice)
-	end)
+	if player:getHouse() then
+		window:addChoice("House", function(player, button, choice)
+			return houseTp(player, button, choice)
+		end)
+	end
 
 	local guild = player:getGuild()
 	if guild then
 		local membersOnline = guild:getMembersOnline()
 		for _, member in ipairs(membersOnline) do
 			if player:getGuid() ~= member:getGuid() then
-				window:addChoice("House - " .. member:getName(), function(member, button, choice)
-					return houseTp(member, button, choice)
-				end)
+				if member:getHouse() then
+					window:addChoice("House - " .. member:getName(), function(member, button, choice)
+						return houseTp(member, button, choice)
+					end)
+				end
 			end
 		end
 	end
