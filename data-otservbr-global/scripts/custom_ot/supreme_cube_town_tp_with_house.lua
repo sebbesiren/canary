@@ -99,7 +99,6 @@ function supremeCube.onUse(player, item, fromPosition, target, toPosition, isHot
 				end)
 			end
 		end
-
 	end
 
 	window:addButton("Select")
