@@ -33,8 +33,7 @@ end
 
 local function houseTp(player, button, choice)
 	if button.name == "Select" then
-
-		local playerName =  string.match(choice.text, "House %- (.+)")
+		local playerName = string.match(choice.text, "House %- (.+)")
 		local house = nil
 		if playerName then
 			local otherPlayer = Player(playerName)
