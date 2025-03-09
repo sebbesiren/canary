@@ -126,7 +126,7 @@ end
 local loadEmptyMap = GlobalEvent("SoulWarQuest.ebbAndFlow")
 
 function loadEmptyMap.onStartup()
-	Game.loadMap(SoulWarQuest.ebbAndFlow.mapsPath.inundate)
+	Game.loadMap(SoulWarQuest.ebbAndFlow.mapsPath.ebbFlow)
 	--loadMapInundate()
 	--loadMapEmpty()
 	SoulWarQuest.ebbAndFlow.updateZonePlayers()
