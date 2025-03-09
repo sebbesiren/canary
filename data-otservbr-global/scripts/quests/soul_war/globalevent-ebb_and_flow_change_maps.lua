@@ -126,26 +126,27 @@ end
 local loadEmptyMap = GlobalEvent("SoulWarQuest.ebbAndFlow")
 
 function loadEmptyMap.onStartup()
-	Game.loadMap(SoulWarQuest.ebbAndFlow.mapsPath.ebbFlow)
-	loadMapEmpty()
+	Game.loadMap(SoulWarQuest.ebbAndFlow.mapsPath.inundate)
+	--loadMapInundate()
+	--loadMapEmpty()
 	SoulWarQuest.ebbAndFlow.updateZonePlayers()
 end
 
 loadEmptyMap:register()
 
-local eddAndFlowInundate = GlobalEvent("eddAndFlowInundate")
-
-function eddAndFlowInundate.onThink(interval, lastExecution)
-	if SoulWarQuest.ebbAndFlow.isLoadedEmptyMap() then
-		logger.trace("Map change to empty in {} minutes.", SoulWarQuest.ebbAndFlow.intervalChangeMap)
-		loadMapInundate()
-	elseif SoulWarQuest.ebbAndFlow.isActive() then
-		logger.trace("Map change to inundate in {} minutes.", SoulWarQuest.ebbAndFlow.intervalChangeMap)
-		loadMapEmpty()
-	end
-
-	return true
-end
-
-eddAndFlowInundate:interval(SoulWarQuest.ebbAndFlow.intervalChangeMap * 60 * 1000)
-eddAndFlowInundate:register()
+--local eddAndFlowInundate = GlobalEvent("eddAndFlowInundate")
+--
+--function eddAndFlowInundate.onThink(interval, lastExecution)
+--	if SoulWarQuest.ebbAndFlow.isLoadedEmptyMap() then
+--		logger.trace("Map change to empty in {} minutes.", SoulWarQuest.ebbAndFlow.intervalChangeMap)
+--		loadMapInundate()
+--	elseif SoulWarQuest.ebbAndFlow.isActive() then
+--		logger.trace("Map change to inundate in {} minutes.", SoulWarQuest.ebbAndFlow.intervalChangeMap)
+--		loadMapEmpty()
+--	end
+--
+--	return true
+--end
+--
+--eddAndFlowInundate:interval(SoulWarQuest.ebbAndFlow.intervalChangeMap * 60 * 1000)
+--eddAndFlowInundate:register()
