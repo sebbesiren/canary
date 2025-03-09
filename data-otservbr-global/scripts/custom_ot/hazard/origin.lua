@@ -81,7 +81,7 @@ function deathEvent.onDeath(creature)
 		end
 	end
 
-	local multiplier = math.min(1, 20000 / monsterMaxHealth)
+	local multiplier = math.min(1, 15000 / monsterMaxHealth)
 	local baseChance = math.max(300, 500 - points * 10)
 
 	chanceTo = math.random(1, math.ceil(baseChance * multiplier))
@@ -94,26 +94,26 @@ function deathEvent.onDeath(creature)
 			"Mitmah Vanguard",
 		}
 
-		if monsterMaxHealth > 3000 then
-			for _ = 1, 4 do
+		if monsterMaxHealth > 2500 then
+			for _ = 1, 6 do
 				table.insert(bosses, "Balrog")
 				table.insert(bosses, "Mitmah Vanguard")
 				table.insert(bosses, "The Rootkraken")
 				table.insert(bosses, "Death Lord Athelstan")
 			end
 		end
-		if monsterMaxHealth > 6000 then
+		if monsterMaxHealth > 5000 then
 			for _ = 1, 4 do
 				table.insert(bosses, "Balrog")
 				table.insert(bosses, "The Rootkraken")
 				table.insert(bosses, "Death Lord Athelstan")
 			end
 		end
-		if monsterMaxHealth > 9000 then
+		if monsterMaxHealth > 7500 then
 			table.insert(bosses, "Apocalypse")
 		end
-		if monsterMaxHealth > 20000 then
-			for _ = 1, 9 do
+		if monsterMaxHealth > 15000 then
+			for _ = 1, 15 do
 				table.insert(bosses, "Hellchaser Heip")
 			end
 		end
