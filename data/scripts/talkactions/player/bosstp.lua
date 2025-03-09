@@ -31,7 +31,7 @@ local bosses = {
 
 local function sendBossTpModal(player)
 	local count = 12
-	local cost = 100000
+	local cost = 50000
 
 	local window = ModalWindow({
 		title = "Boss Teleporter",
