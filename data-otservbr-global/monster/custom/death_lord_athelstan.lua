@@ -108,6 +108,11 @@ monster.loot = {
 	{ name = "frostflower boots", chance = 300 },
 	{ id = 5903, chance = 50, unique = true }, -- ferumbras' hat
 
+	{ name = "unerring dragon scale armor", chance = 300 },
+	{ name = "dauntless dragon scale armor", chance = 300 },
+	{ name = "arcane dragon robe", chance = 300 },
+	{ name = "mystical dragon robe", chance = 300 },
+
 	{ id = 20062, chance = 2000, maxCount = 14 }, -- cluster of solace
 	{ name = "gold token", chance = 10000, maxCount = 25 },
 	{ name = "silver token", chance = 10000, maxCount = 25 },

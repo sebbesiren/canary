@@ -65,8 +65,9 @@ monster.voices = {
 }
 
 monster.loot = {
-	{ name = "silver token", chance = 100000, maxCount = 10 },
-	{ id = 43895, chance = 800 },
+	{ name = "silver token", chance = 100000, maxCount = 50 },
+	{ name = "bag you desire", chance = 1000 },
+	{ id = 43895, chance = 300 },
 	--{ name = "sanguine blade", chance = 200 },
 	--{ name = "sanguine cudgel", chance = 200 },
 	--{ name = "sanguine hatchet", chance = 200 },
@@ -128,7 +129,8 @@ monster.immunities = {
 	{ type = "bleed", condition = false },
 }
 
-mType.onThink = function(monster, interval) end
+mType.onThink = function(monster, interval)
+end
 
 mType.onAppear = function(monster, creature)
 	if monster:getType():isRewardBoss() then
@@ -136,10 +138,13 @@ mType.onAppear = function(monster, creature)
 	end
 end
 
-mType.onDisappear = function(monster, creature) end
+mType.onDisappear = function(monster, creature)
+end
 
-mType.onMove = function(monster, creature, fromPosition, toPosition) end
+mType.onMove = function(monster, creature, fromPosition, toPosition)
+end
 
-mType.onSay = function(monster, creature, type, message) end
+mType.onSay = function(monster, creature, type, message)
+end
 
 mType:register(monster)

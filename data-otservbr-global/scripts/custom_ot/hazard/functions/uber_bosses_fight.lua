@@ -37,7 +37,9 @@ function onHealthEvent.onHealthChange(creature, attacker, primaryDamage, primary
 	if monster then
 		local countPlayersInZone = #zone:getPlayers()
 
-		if countPlayersInZone <= 2 then
+		if countPlayersInZone <= 1 then
+			multiplier = 2.0
+		elseif countPlayersInZone <= 2 then
 			multiplier = 1.5
 		end
 

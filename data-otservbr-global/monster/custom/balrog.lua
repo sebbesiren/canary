@@ -95,6 +95,12 @@ monster.loot = {
 	{ name = "gnome armor", chance = 300 },
 	{ name = "gnome helmet", chance = 300 },
 	{ name = "gnome sword", chance = 300 },
+
+	{ name = "unerring dragon scale armor", chance = 300 },
+	{ name = "dauntless dragon scale armor", chance = 300 },
+	{ name = "arcane dragon robe", chance = 300 },
+	{ name = "mystical dragon robe", chance = 300 },
+
 	{ id = 27649, chance = 300 }, -- gnome legs
 	{ id = 16114, chance = 10000 }, -- prismatic ring
 	{ id = 20062, chance = 2000, maxCount = 14 }, -- cluster of solace
