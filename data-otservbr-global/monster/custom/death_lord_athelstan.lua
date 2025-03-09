@@ -119,16 +119,16 @@ monster.loot = {
 }
 
 monster.attacks = {
-	{ name = "melee", interval = 2000, chance = 100, minDamage = -400, maxDamage = -2000 },
-	{ name = "combat", interval = 6000, chance = 80, type = COMBAT_HOLYDAMAGE, minDamage = -1000, maxDamage = -2250, length = 8, spread = 3, effect = CONST_ME_HOLYAREA, target = false },
+	{ name = "melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -2000 },
+	{ name = "combat", interval = 6000, chance = 80, type = COMBAT_HOLYDAMAGE, minDamage = -400, maxDamage = -1500, length = 8, spread = 3, effect = CONST_ME_HOLYAREA, target = false },
 	{ name = "combat", interval = 2000, chance = 20, type = COMBAT_EARTHDAMAGE, minDamage = -820, maxDamage = -1450, radius = 5, effect = CONST_ME_HITAREA, target = false },
 	{ name = "combat", interval = 2000, chance = 20, type = COMBAT_DEATHDAMAGE, minDamage = -860, maxDamage = -1500, range = 7, shootEffect = CONST_ANI_SUDDENDEATH, effect = CONST_ME_MORTAREA, target = false },
 	{ name = "Shotgun", interval = 2000, chance = 10, minDamage = -860, maxDamage = -1500, target = false },
 	{ name = "Holy Bomb Slash", interval = 2000, chance = 20, minDamage = -820, maxDamage = -1450, target = false },
 	{ name = "Rotating Wheel", interval = 35000, chance = 100, target = false },
-	{ name = "Athelstan Axe Throw", interval = 2000, chance = 50, minDamage = -1200, maxDamage = -2500 },
-	{ name = "small mortar", interval = 2000, chance = 50 },
-	{ name = "small mortar", interval = 2000, chance = 50 },
+	{ name = "Athelstan Axe Throw", interval = 2000, chance = 50, minDamage = -100, maxDamage = -1500 },
+	{ name = "small mortar", interval = 2000, chance = 25 },
+	{ name = "small mortar", interval = 2000, chance = 25 },
 }
 
 monster.defenses = {
