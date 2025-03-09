@@ -2068,7 +2068,7 @@ ChestUnique = {
 	},
 	[6226] = {
 		itemId = 2480,
-		itemPos = { x = 32231, y = 31068, z = 7 },
+		itemPos = { x = 32231, y = 31061, z = 7 },
 		container = 7342,
 		reward = { { 7365, 100 }, { 3450, 200 }, { 11605, 1 }, { 11615, 1 } },
 		weight = 270.40,
@@ -2144,8 +2144,8 @@ ChestUnique = {
 	},
 	-- Koshei The Deathless Quest
 	[6236] = {
-		itemId = 2908,
-		itemPos = { x = 33193, y = 32459, z = 7 },
+		itemId = 408,
+		itemPos = { x = 33194, y = 32458, z = 7 },
 		reward = { { 7530, 1 } },
 		weight = 1.00,
 		storage = Storage.Quest.U8_1.KosheiTheDeathless.KosheiAmuletPart1,
