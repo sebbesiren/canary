@@ -126,7 +126,7 @@ monster.attacks = {
 	{ name = "Shotgun", interval = 2000, chance = 10, minDamage = -860, maxDamage = -1500, target = false },
 	{ name = "Holy Bomb Slash", interval = 2000, chance = 20, minDamage = -820, maxDamage = -1450, target = false },
 	{ name = "Rotating Wheel", interval = 35000, chance = 100, target = false },
-	{ name = "Athelstan Axe Throw", interval = 2000, chance = 50, minDamage = 0, maxDamage = -2500 },
+	{ name = "Athelstan Axe Throw", interval = 2000, chance = 50, minDamage = 0, maxDamage = -2250 },
 	{ name = "small mortar", interval = 2000, chance = 25 },
 	{ name = "small mortar", interval = 2000, chance = 25 },
 }
