@@ -196,8 +196,7 @@ __Functions = {
 				end
 			end
 		end
-
-	end
+	end,
 }
 CustomPromotion = setmetatable(CustomPromotion, { __index = __Functions })
 
