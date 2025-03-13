@@ -672,7 +672,8 @@ function onUsePick(player, item, fromPosition, target, toPosition, isHotkey)
 				Getting liquid silver out of the mountain needs concentration and a steady hand."
 			)
 		end
-	elseif target:getActionId() == 60000 then
+	--elseif target and target.actionid and target:getActionId() == 60000 then
+	elseif target and target.actionid == 60000 then
 		--The Ice Islands Quest, Nibelor 1: Breaking the Ice
 		local missionProgress = player:getStorageValue(Storage.Quest.U8_0.TheIceIslands.Mission02)
 		local pickAmount = player:getStorageValue(Storage.Quest.U8_0.TheIceIslands.PickAmount)

@@ -43,7 +43,7 @@ function onHealthEvent.onHealthChange(creature, attacker, primaryDamage, primary
 			multiplier = 1.5
 		end
 
-		logger.debug("The multiplier is {} due to {} players being in zone and scaling around {} players.", multiplier, countPlayersInZone)
+		--logger.debug("The multiplier is {} due to {} players being in zone and scaling around players.", multiplier, countPlayersInZone)
 	end
 
 	return primaryDamage * multiplier, primaryType, secondaryDamage * multiplier, secondaryType
