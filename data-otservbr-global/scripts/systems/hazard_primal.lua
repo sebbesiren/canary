@@ -24,15 +24,15 @@ local primalPod = MoveEvent()
 
 function primalPod.onStepIn(creature, item, position, fromPosition)
 	-- Custom: if in zone disable on walk in
-	local zones = position:getZones()
-	if zones then
-		for _, zone in ipairs(zones) do
-			local zoneName = zone:getName()
-			if zoneName == "hazard.world" then
-				return
-			end
-		end
-	end
+	--local zones = position:getZones()
+	--if zones then
+	--	for _, zone in ipairs(zones) do
+	--		local zoneName = zone:getName()
+	--		if zoneName == "hazard.world" then
+	--			return
+	--		end
+	--	end
+	--end
 
 	if not configManager.getBoolean(configKeys.TOGGLE_HAZARDSYSTEM) then
 		item:remove()
