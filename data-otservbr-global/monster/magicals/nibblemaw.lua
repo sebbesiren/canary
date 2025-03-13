@@ -83,7 +83,7 @@ monster.voices = {
 
 monster.loot = {
 	{ name = "gold coin", chance = 100000, maxCount = 100 },
-	{ name = "platinum coin", chance = 75000, maxCount = 6 },
+	{ name = "platinum coin", chance = 75000, maxCount = 12 },
 	{ id = 3037, chance = 6000 }, -- yellow gem
 	{ id = 48255, chance = 1090 }, -- lime tart
 	{ id = 48250, chance = 940, maxCount = 64 }, -- dark chocolate coin
@@ -93,6 +93,7 @@ monster.loot = {
 	{ name = "assassin dagger", chance = 400 },
 	{ name = "red crystal fragment", chance = 3400 },
 	{ name = "frazzle tongue", chance = 10430 },
+	{ name = "onyx chip", chance = 10430, maxCount = 3 },
 	{ name = "frazzle skin", chance = 7700 },
 }
 

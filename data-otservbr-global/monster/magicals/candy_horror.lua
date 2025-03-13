@@ -82,12 +82,13 @@ monster.voices = {
 
 monster.loot = {
 	{ name = "gold coin", chance = 100000, maxCount = 30 },
-	{ name = "platinum coin", chance = 82000, maxCount = 6 },
+	{ name = "platinum coin", chance = 82000, maxCount = 12 },
 	{ id = 281, chance = 6510 }, -- giant shimmering pearl (green)
 	{ id = 3591, chance = 1400, maxCount = 2 }, -- stawberries
 	{ id = 48250, chance = 440, maxCount = 11 }, -- dark chocolate coin
 	{ id = 48116, chance = 2490, maxCount = 2 }, -- gummy rotworm
 	{ id = 3036, chance = 1550 }, -- violet gem
+	{ id = 3039, chance = 5000 }, -- red gem
 	{ id = 48252, chance = 1250 }, -- brigadeiro
 	{ id = 23535, chance = 5550 }, -- energy bar
 	{ id = 8012, chance = 1240, maxCount = 2 }, -- raspberry
