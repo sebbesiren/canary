@@ -12,7 +12,7 @@ local function spawnMonster(position, monsterName)
 	local monster = Game.createMonster(monsterName, position, false, true)
 	if monster then
 		chanceTo = math.random(1, 1000)
-		if chanceTo <= 10 then
+		if chanceTo <= 8 then
 			Game.makeFiendishMonster(monster:getId(), true)
 		elseif chanceTo <= 50 then
 			local influencedMonster = Monster(ForgeMonster:pickInfluenced())
