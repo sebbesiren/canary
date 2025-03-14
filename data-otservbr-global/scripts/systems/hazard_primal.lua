@@ -44,7 +44,7 @@ function primalPod.onStepIn(creature, item, position, fromPosition)
 		return
 	end
 
-	local hazardPodStepOnActive = player:kv():get("hazard-pod-step-on-active") or true
+	local hazardPodStepOnActive = player:kv():get("hazard-pod-step-on-active")
 	if hazardPodStepOnActive == false then
 		return
 	end

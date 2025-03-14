@@ -223,7 +223,7 @@ function createHazardPod(position, monsterName)
 end
 
 function executeCreateHazardPod(player, points, maxRoll)
-	local hazardPodActive = player:kv():get("hazard-pod-active") or true
+	local hazardPodActive = player:kv():get("hazard-pod-active")
 	if hazardPodActive == false then
 		return false
 	end
