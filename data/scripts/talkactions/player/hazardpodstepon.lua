@@ -1,5 +1,5 @@
 -- Usage talkaction: "!hazardboss on" or "!hazardboss off"
-local hazardpodstepon = TalkAction("!hazardboss")
+local hazardpodstepon = TalkAction("!hazardpodstepon")
 
 function hazardpodstepon.onSay(player, words, param)
 	logger.debug("!hazardpodstepon executed")
