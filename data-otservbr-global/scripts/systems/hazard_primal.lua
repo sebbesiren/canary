@@ -44,6 +44,11 @@ function primalPod.onStepIn(creature, item, position, fromPosition)
 		return
 	end
 
+	local hazardPodStepOnActive = player:kv():get("hazard-pod-step-on-active") or true
+	if hazardPodStepOnActive == false then
+		return
+	end
+
 	local timer = item:getCustomAttribute("HazardSystem_PodTimer")
 	if timer then
 		local timeMs = os.time() * 1000

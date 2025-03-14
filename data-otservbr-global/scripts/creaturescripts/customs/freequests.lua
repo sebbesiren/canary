@@ -391,6 +391,8 @@ local questTable = {
 	{ storageName = "ThePostmanMissions.Mission08", storage = Storage.Quest.U7_24.ThePostmanMissions.Mission08, storageValue = 3 },
 	{ storageName = "ThePostmanMissions.Mission09", storage = Storage.Quest.U7_24.ThePostmanMissions.Mission09, storageValue = 4 },
 	{ storageName = "ThePostmanMissions.Door", storage = Storage.Quest.U7_24.ThePostmanMissions.Door, storageValue = 1 },
+
+	{ storageName = "TheIceIslands.FormorgarMinesDoor", storage = Storage.Quest.U8_0.TheIceIslands.FormorgarMinesDoor, storageValue = 1 },
 }
 
 -- from Position: (33201, 31762, 1)

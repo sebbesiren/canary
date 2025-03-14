@@ -49,7 +49,7 @@ function deathEvent.onDeath(creature)
 		return true
 	end
 
-	if executeCreateHazardPod(points) then
+	if executeCreateHazardPod(player, points) then
 		createHazardPod(monster:getPosition(), monster:getName())
 	end
 
