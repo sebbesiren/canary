@@ -176,7 +176,7 @@ local function hazardPodExpire(position, monsterName)
 			end
 
 			if originHazardAvailable() and monsterName:lower() ~= "fungosaurus" then
-				insertEvent("originHazard", 13)
+				insertEvent("originHazard", 15)
 			else
 				removeEvent("originHazard")
 			end
@@ -232,10 +232,10 @@ function executeCreateHazardPod(player, points, maxRoll)
 	--	return false
 	--end
 	maxRoll = maxRoll or 75
-	maxRoll = maxRoll - points
+	maxRoll = maxRoll - points * 2
 
-	if maxRoll < 20 then
-		maxRoll = 20
+	if maxRoll < 45 then
+		maxRoll = 45
 	end
 
 	local chanceTo = math.random(1, maxRoll)
