@@ -23,16 +23,19 @@ local itemTierClassifications = {
 	-- Upgrade classification 3
 	[3] = {
 		[1] = {
-			regular = 4000000,
+			regular = 6000000,
 			core = 1,
+			convergence = { fusion = { price = 55000000 }, transfer = { price = 65000000 } },
 		},
 		[2] = {
-			regular = 10000000,
+			regular = 15000000,
 			core = 2,
+			convergence = { fusion = { price = 55000000 }, transfer = { price = 65000000 } },
 		},
 		[3] = {
-			regular = 20000000,
+			regular = 30000000,
 			core = 3,
+			convergence = { fusion = { price = 55000000 }, transfer = { price = 65000000 } },
 		},
 	},
 	-- Upgrade classification 4
