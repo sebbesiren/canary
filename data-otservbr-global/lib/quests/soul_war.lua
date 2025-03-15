@@ -111,9 +111,9 @@ SoulWarQuest = {
 	goshnarsHatredAccessPosition = { from = { x = 33914, y = 31032, z = 12 }, to = { x = 33774, y = 31604, z = 14 } },
 	-- Teleports from 1st/2nd/3rd floors
 	goshnarsCrueltyTeleportRoomPositions = {
-		{ from = Position(33889, 31873, 3), to = Position(33830, 31881, 4), access = "first-floor-access", count = 40 },
-		{ from = Position(33829, 31880, 4), to = Position(33856, 31889, 5), access = "second-floor-access", count = 55 },
-		{ from = Position(33856, 31884, 5), to = Position(33857, 31865, 6), access = "third-floor-access", count = 70 },
+		{ from = Position(33889, 31873, 3), to = Position(33830, 31881, 4), access = "first-floor-access", count = 15 },
+		{ from = Position(33829, 31880, 4), to = Position(33856, 31889, 5), access = "second-floor-access", count = 30 },
+		{ from = Position(33856, 31884, 5), to = Position(33857, 31865, 6), access = "third-floor-access", count = 45 },
 	},
 
 	claustrophobicInfernoRaids = {
@@ -214,7 +214,7 @@ SoulWarQuest = {
 			end,
 		},
 		spawnTime = 10, -- seconds
-		suriviveTime = 2 * 60, -- 2 minutes
+		suriviveTime = 60, -- 2 minutes
 		timeToKick = 5, -- seconds
 	},
 
@@ -443,7 +443,7 @@ SoulWarQuest = {
 		"Blaze of Burning Hatred",
 	},
 
-	requiredCountPerApparition = 25,
+	requiredCountPerApparition = 10,
 
 	-- Ebb and flow
 	ebbAndFlow = {
@@ -1233,7 +1233,7 @@ function Monster:tryTeleportToPlayer(sayMessage)
 	for i, spectator in ipairs(spectators) do
 		if spectator:isPlayer() then
 			local player = spectator:getPlayer()
-			if player:getTaintNameByNumber(1, true) and player:getSoulWarZoneMonster() ~= nil then
+			if player:getTaintNameByNumber(1) ~= nil and player:getSoulWarZoneMonster() ~= nil then
 				local distance = self:getPosition():getDistance(player:getPosition())
 				if distance > maxDistance then
 					maxDistance = distance
@@ -1381,7 +1381,7 @@ function Monster:onThinkGoshnarTormentCounter(interval, maxLimit, intervalBetwee
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "The dread's torment is now lethal!")
 		end
 
-		::continue::
+		:: continue ::
 	end
 end
 

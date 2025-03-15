@@ -70,7 +70,7 @@ function fourthTaintBossesDeath.onPrepareDeath(creature, killer, realDamage)
 	end
 
 	if creature:getHealth() - realDamage < 1 then
-		if killer:getTaintNameByNumber(4) then
+		if killer:getTaintNameByNumber(4) ~= nil then
 			local isInZone = killer:getSoulWarZoneMonster()
 			if isInZone ~= nil then
 				-- 10% of chance to heal
@@ -721,19 +721,19 @@ function pulsatingEnergy.onStepIn(creature, item, position, fromPosition)
 		return true
 	end
 
-	if energyCount >= 40 and not firstFloorAccess then
+	if energyCount >= 15 and not firstFloorAccess then
 		kv:set("access-counter", 0)
 		kv:set("first-floor-access", true)
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You've gained access to the first floor. Continue collecting Pulsating Energies to gain further access.")
 	end
 
-	if energyCount >= 55 and not secondFloorAccess then
+	if energyCount >= 30 and not secondFloorAccess then
 		kv:set("access-counter", 0)
 		kv:set("second-floor-access", true)
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You've gained access to the second floor. Continue collecting Pulsating Energies to gain further access.")
 	end
 
-	if energyCount >= 70 and not thirdFloorAccess then
+	if energyCount >= 45 and not thirdFloorAccess then
 		kv:set("access-counter", 0)
 		kv:set("third-floor-access", true)
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You've gained access to the third floor. You can now fight with the Goshnar's Cruelty.")

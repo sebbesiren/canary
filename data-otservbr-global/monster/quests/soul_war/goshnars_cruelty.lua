@@ -18,8 +18,8 @@ monster.events = {
 	"GoshnarsCrueltyBuff",
 }
 
-monster.health = 300000
-monster.maxHealth = 300000
+monster.health = 300000 / 3
+monster.maxHealth = 300000 / 3
 monster.race = "undead"
 monster.corpse = 33859
 monster.speed = 200

@@ -17,8 +17,8 @@ monster.events = {
 	"SoulWarBossesDeath",
 }
 
-monster.health = 300000
-monster.maxHealth = 300000
+monster.health = 300000 / 3
+monster.maxHealth = 300000 / 3
 monster.race = "undead"
 monster.corpse = 33863
 monster.speed = 200
@@ -138,6 +138,7 @@ local immuneTimeCount = 0
 local isImmune = nil
 local createdSoulSphere = nil
 mType.onThink = function(monsterCallback, interval)
+	logger.info(" Greed kills: " .. GreedbeastKills)
 	if GreedbeastKills >= 5 and isImmune == nil then
 		isImmune = monsterCallback:immune(false)
 		monsterCallback:teleportTo(Position(33741, 31659, 14))
