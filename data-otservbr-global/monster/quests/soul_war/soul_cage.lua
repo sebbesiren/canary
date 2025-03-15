@@ -13,8 +13,8 @@ monster.outfit = {
 	lookMount = 0,
 }
 
-monster.health = 100000 / 4
-monster.maxHealth = 100000 / 4
+monster.health = 100000 / 5
+monster.maxHealth = 100000 / 5
 monster.race = "undead"
 monster.corpse = 0
 monster.speed = 0
@@ -48,7 +48,7 @@ monster.light = {
 monster.defenses = {
 	defense = 80,
 	armor = 100,
-	{ name = "Heal Malice", interval = 2000, chance = 90, target = false },
+	{ name = "Heal Malice", interval = 2000, chance = 50, target = false },
 }
 
 monster.elements = {

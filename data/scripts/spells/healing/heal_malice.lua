@@ -1,8 +1,8 @@
 function onTargetCreature(creature, target)
 	if target:getName() == "Goshnar's Malice" then
 		logger.debug("Monster {} Healing {}", creature:getName(), target:getName())
-		local min = 15000
-		local max = 30000
+		local min = 5000
+		local max = 10000
 		doTargetCombatHealth(target, target, COMBAT_HEALING, min, max)
 	end
 	return true

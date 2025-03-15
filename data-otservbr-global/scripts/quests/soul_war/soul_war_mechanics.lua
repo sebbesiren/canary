@@ -482,9 +482,9 @@ ebbAndFlowBoatTeleports:register()
 local ebbAndFlowDoor = Action()
 
 function ebbAndFlowDoor.onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if SoulWarQuest.ebbAndFlow.isActive() then
-		return false
-	end
+	--if SoulWarQuest.ebbAndFlow.isActive() then
+	--	return false
+	--end
 
 	-- Determines whether the player is north or south of the door
 	local playerPosition = player:getPosition()

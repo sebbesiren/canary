@@ -213,7 +213,7 @@ SoulWarQuest = {
 				return SoulWarQuest.claustrophobicInfernoRaids[3].zone
 			end,
 		},
-		spawnTime = 10, -- seconds
+		spawnTime = 20, -- seconds
 		suriviveTime = 60, -- 2 minutes
 		timeToKick = 5, -- seconds
 	},
