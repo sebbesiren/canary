@@ -101,8 +101,8 @@ mType.onThink = function(monster, interval)
 				boss:addReflectElement(elementType, reflectPercent)
 			end
 			boss:addDefense(10)
-			boss:setMaxHealth(boss:getMaxHealth() + 10000)
-			boss:addHealth(10000)
+			boss:setMaxHealth(boss:getMaxHealth() + 500)
+			boss:addHealth(500)
 		end
 		transformTimeCount = 0
 	end
