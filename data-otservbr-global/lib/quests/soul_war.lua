@@ -1381,7 +1381,7 @@ function Monster:onThinkGoshnarTormentCounter(interval, maxLimit, intervalBetwee
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "The dread's torment is now lethal!")
 		end
 
-		:: continue ::
+		::continue::
 	end
 end
 
