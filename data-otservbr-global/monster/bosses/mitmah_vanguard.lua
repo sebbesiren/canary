@@ -22,7 +22,7 @@ monster.health = 250000
 monster.maxHealth = 250000
 monster.race = "blood"
 monster.corpse = 44687
-monster.speed = 450
+monster.speed = 250
 monster.manaCost = 0
 
 monster.changeTarget = {
@@ -110,7 +110,7 @@ monster.attacks = {
 	{ name = "melee", interval = 1700, chance = 100, minDamage = -400, maxDamage = -856 },
 	{ name = "melee", interval = 2500, chance = 100, minDamage = -500, maxDamage = -1256 },
 	{ name = "hugeblackring", interval = 3500, chance = 20, minDamage = -700, maxDamage = -1500, target = false },
-	{ name = "combat", interval = 3000, chance = 20, type = COMBAT_ENERGYDAMAGE, minDamage = -4500, maxDamage = -6000, radius = 9, effect = CONST_ME_SLASH, target = false },
+	{ name = "combat", interval = 3000, chance = 20, type = COMBAT_ENERGYDAMAGE, minDamage = -2000, maxDamage = -4000, radius = 9, effect = CONST_ME_SLASH, target = false },
 	{ name = "combat", interval = 2500, chance = 33, type = COMBAT_ENERGYDAMAGE, minDamage = -500, maxDamage = -1500, length = 8, spread = 0, effect = CONST_ME_PURPLEENERGY, target = false },
 	{ name = "combat", interval = 2000, chance = 50, type = COMBAT_FIREDAMAGE, minDamage = -600, maxDamage = -1000, length = 8, spread = 2, effect = CONST_ME_HITBYFIRE, target = false },
 	{ name = "combat", interval = 1000, chance = 30, type = COMBAT_ENERGYDAMAGE, minDamage = -400, maxDamage = -600, range = 7, radius = 2, shootEffect = CONST_ANI_BOLT, effect = CONST_ME_ENERGYHIT, target = true },
