@@ -73,7 +73,7 @@ monster.light = {
 monster.summon = {
 	maxSummons = 2,
 	summons = {
-		{ name = "energy elemental", chance = 10, interval = 2000, count = 2 },
+		{ name = "energy elemental", chance = 5, interval = 10000, count = 1 },
 	},
 }
 
