@@ -1185,6 +1185,13 @@ npcConfig.shop = {
 	{ itemName = "berserk potion", clientId = 7439, sell = 500 },
 	{ itemName = "bullseye potion", clientId = 7443, sell = 500 },
 	{ itemName = "mastermind potion", clientId = 7440, sell = 500 },
+	{ itemName = "beijinho", clientId = 48253, sell = 2780 },
+	{ itemName = "brigadeiro", clientId = 48252, sell = 2640 },
+	{ itemName = "churro heart", clientId = 48254, sell = 2680 },
+	{ itemName = "lime tart", clientId = 48255, sell = 1870 },
+	{ itemName = "pastry dragon", clientId = 48256, sell = 95000 },
+	{ itemName = "demon root", clientId = 48510, sell = 950 },
+	{ itemName = "demon dust", clientId = 5906, sell = 300 },
 }
 -- On buy npc shop message
 npcType.onBuyItem = function(npc, player, itemId, subType, amount, ignore, inBackpacks, totalCost)
