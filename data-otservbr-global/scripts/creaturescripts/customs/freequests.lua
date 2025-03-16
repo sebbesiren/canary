@@ -393,6 +393,7 @@ local questTable = {
 	{ storageName = "ThePostmanMissions.Door", storage = Storage.Quest.U7_24.ThePostmanMissions.Door, storageValue = 1 },
 
 	{ storageName = "TheIceIslands.FormorgarMinesDoor", storage = Storage.Quest.U8_0.TheIceIslands.FormorgarMinesDoor, storageValue = 1 },
+	{ storageName = "ThePitsOfInferno.ShortcutHubDoor", storage = Storage.Quest.U7_9.ThePitsOfInferno.ShortcutHubDoor, storageValue = 1 },
 }
 
 -- from Position: (33201, 31762, 1)
