@@ -138,7 +138,6 @@ local immuneTimeCount = 0
 local isImmune = nil
 local createdSoulSphere = nil
 mType.onThink = function(monsterCallback, interval)
-	logger.info(" Greed kills: " .. GreedbeastKills)
 	if GreedbeastKills >= 5 and isImmune == nil then
 		isImmune = monsterCallback:immune(false)
 		monsterCallback:teleportTo(Position(33741, 31659, 14))
