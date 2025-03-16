@@ -2562,7 +2562,7 @@ void Monster::getPathSearchParams(const std::shared_ptr<Creature> &creature, Fin
 
 void Monster::applyStacks() {
 	// Change health based in stacks
-	const auto percentToIncrement = 1 + (15 * forgeStack + 35) / 100.f;
+	const auto percentToIncrement = 1 + (8 * forgeStack) / 100.f;
 	auto newHealth = static_cast<int32_t>(std::ceil(static_cast<float>(healthMax) * percentToIncrement));
 
 	healthMax = newHealth;

@@ -1182,6 +1182,9 @@ npcConfig.shop = {
 	{ itemName = "ultimate health potion", clientId = 7643, sell = 250 },
 	{ itemName = "ultimate mana potion", clientId = 23373, sell = 250 },
 	{ itemName = "ultimate spirit potion", clientId = 23374, sell = 250 },
+	{ itemName = "berserk potion", clientId = 7439, sell = 500 },
+	{ itemName = "bullseye potion", clientId = 7443, sell = 500 },
+	{ itemName = "mastermind potion", clientId = 7440, sell = 500 },
 }
 -- On buy npc shop message
 npcType.onBuyItem = function(npc, player, itemId, subType, amount, ignore, inBackpacks, totalCost)
