@@ -32,7 +32,7 @@ local itemTierClassifications = {
 		},
 		[3] = {
 			regular = 20000000,
-			core = 3
+			core = 3,
 		},
 	},
 	-- Upgrade classification 4
