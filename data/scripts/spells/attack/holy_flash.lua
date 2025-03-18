@@ -4,7 +4,7 @@ combat:setParameter(COMBAT_PARAM_DISTANCEEFFECT, CONST_ANI_SMALLHOLY)
 
 local condition = Condition(CONDITION_DAZZLED)
 condition:setParameter(CONDITION_PARAM_DELAYED, 1)
-condition:addDamage(math.random(7, 15), 3000, -45)
+condition:addDamage(math.random(7, 15), 3000, -90)
 combat:addCondition(condition)
 
 local spell = Spell("instant")
