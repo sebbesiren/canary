@@ -90,15 +90,18 @@ monster.loot = {
 	{ name = "relic sword", chance = 6964, maxCount = 1 },
 	{ name = "skullcracker armor", chance = 7270, maxCount = 1 },
 	{ id = 23531, chance = 3073, maxCount = 1 }, -- ring of green plasma
+	{ name = "bag you covet", chance = 40 },
+	{ id = 43855, chance = 100 }, -- tainted heart
+	{ id = 43854, chance = 100 }, -- darklight heart
 }
 
 monster.attacks = {
-	{ name = "melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -1600 },
-	{ name = "combat", interval = 2000, chance = 15, type = COMBAT_PHYSICALDAMAGE, minDamage = -1300, maxDamage = -1600, length = 8, spread = 3, effect = CONST_ME_GROUNDSHAKER, target = false },
-	{ name = "combat", interval = 2000, chance = 20, type = COMBAT_PHYSICALDAMAGE, minDamage = -1200, maxDamage = -1500, effect = CONST_ME_BIG_SCRATCH, target = true },
-	{ name = "combat", interval = 2000, chance = 15, type = COMBAT_PHYSICALDAMAGE, minDamage = -1400, maxDamage = -1600, radius = 5, effect = CONST_ME_GROUNDSHAKER, target = true },
-	{ name = "combat", interval = 2000, chance = 20, type = COMBAT_EARTHDAMAGE, minDamage = -1200, maxDamage = -1500, length = 8, spread = 3, effect = CONST_ME_GREEN_RINGS, target = false },
-	{ name = "largepoisonring", interval = 2000, chance = 10, minDamage = -1000, maxDamage = -1200, target = false },
+	{ name = "melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -1600 * 1.25 },
+	{ name = "combat", interval = 2000, chance = 15, type = COMBAT_PHYSICALDAMAGE, minDamage = -1300 * 1.25, maxDamage = -1600 * 1.25, length = 8, spread = 3, effect = CONST_ME_GROUNDSHAKER, target = false },
+	{ name = "combat", interval = 2000, chance = 20, type = COMBAT_PHYSICALDAMAGE, minDamage = -1200 * 1.25, maxDamage = -1500 * 1.25, effect = CONST_ME_BIG_SCRATCH, target = true },
+	{ name = "combat", interval = 2000, chance = 15, type = COMBAT_PHYSICALDAMAGE, minDamage = -1400 * 1.25, maxDamage = -1600 * 1.25, radius = 5, effect = CONST_ME_GROUNDSHAKER, target = true },
+	{ name = "combat", interval = 2000, chance = 20, type = COMBAT_EARTHDAMAGE, minDamage = -1200 * 1.25, maxDamage = -1500 * 1.25, length = 8, spread = 3, effect = CONST_ME_GREEN_RINGS, target = false },
+	{ name = "largepoisonring", interval = 2000, chance = 10, minDamage = -1000 * 1.25, maxDamage = -1200 * 1.25, target = false },
 }
 
 monster.defenses = {

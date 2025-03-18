@@ -82,6 +82,9 @@ monster.loot = {
 	{ name = "yellow gem", chance = 13520, maxCount = 1 },
 	{ name = "brown mushroom", chance = 6422, maxCount = 3 },
 	{ name = "terra amulet", chance = 13122, maxCount = 1 },
+	{ name = "bag you covet", chance = 40 },
+	{ id = 43855, chance = 100 }, -- tainted heart
+	{ id = 43854, chance = 100 }, -- darklight heart
 }
 
 monster.attacks = {

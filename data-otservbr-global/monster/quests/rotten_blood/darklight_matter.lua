@@ -88,6 +88,9 @@ monster.loot = {
 	{ id = 23544, chance = 3500, maxCount = 1 }, -- collar of red plasma
 	{ name = "green gem", chance = 3500, maxCount = 1 },
 	{ name = "shadow sceptre", chance = 3500, maxCount = 1 },
+	{ name = "bag you covet", chance = 40 },
+	{ id = 43855, chance = 100 }, -- tainted heart
+	{ id = 43854, chance = 100 }, -- darklight heart
 }
 
 monster.attacks = {

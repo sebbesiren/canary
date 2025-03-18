@@ -80,6 +80,9 @@ monster.loot = {
 	{ name = "blue gem", chance = 7355, maxCount = 1 },
 	{ name = "crystal mace", chance = 8812, maxCount = 1 },
 	{ name = "zaoan helmet", chance = 5572, maxCount = 1 },
+	{ name = "bag you covet", chance = 40 },
+	{ id = 43855, chance = 100 }, -- tainted heart
+	{ id = 43854, chance = 100 }, -- darklight heart
 }
 
 monster.attacks = {

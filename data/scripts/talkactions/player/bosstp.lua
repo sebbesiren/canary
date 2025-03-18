@@ -27,6 +27,15 @@ local bosses = {
 	{ name = "Kroazur", position = Position(33619, 32305, 9), bossRaceId = 1515 },
 	{ name = "Ratmiral Blackwhiskers", position = Position(33894, 31386, 15), bossRaceId = 2006 },
 	{ name = "Magma Bubble", position = Position(33669, 32933, 15), bossRaceId = 2242 },
+	{ name = "Goshnar's Malice", Position(33679, 31599, 14), bossRaceId = 1901 },
+	{ name = "Goshnar's Greed", Position(33776, 31665, 14), bossRaceId = 1905 },
+	{ name = "Goshnar's Spite",  Position(33774, 31634, 14), bossRaceId = 1903 },
+	{ name = "Goshnar's Cruelty",  Position(33854, 31854, 6), bossRaceId = 1902 },
+	{ name = "Goshnar's Hatred",  Position(33773, 31601, 14), bossRaceId = 1904 },
+	{ name = "Murcion", Position(32978, 32365, 15), bossRaceId = 2362 },
+	{ name = "Vemiath", Position(33078, 32333, 15), bossRaceId = 2365 },
+	{ name = "Chagorz", Position(33078, 32367, 15), bossRaceId = 2366 },
+	{ name = "Ichgahal", Position(32978, 32333, 15), bossRaceId = 2364 },
 }
 
 local function sendBossTpModal(player)

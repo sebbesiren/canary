@@ -7,7 +7,7 @@ combat:setParameter(COMBATPARAM_USECHARGES, 1)
 
 local condition = Condition(CONDITION_BLEEDING)
 condition:setParameter(CONDITION_PARAM_DELAYED, 10)
-condition:addDamage(15, 2000, -50)
+condition:addDamage(20, 2000, -100)
 combat:addCondition(condition)
 
 local spell = Spell("instant")

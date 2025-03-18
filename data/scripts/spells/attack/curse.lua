@@ -6,23 +6,13 @@ combat:setParameter(COMBAT_PARAM_DISTANCEEFFECT, CONST_ANI_DEATH)
 local condition = Condition(CONDITION_CURSED)
 condition:setParameter(CONDITION_PARAM_DELAYED, 1)
 
-condition:addDamage(1, 3000, -45)
-condition:addDamage(1, 3000, -40)
-condition:addDamage(1, 3000, -35)
-condition:addDamage(1, 3000, -34)
-condition:addDamage(2, 3000, -33)
-condition:addDamage(2, 3000, -32)
-condition:addDamage(2, 3000, -31)
-condition:addDamage(2, 3000, -30)
-condition:addDamage(3, 3000, -29)
-condition:addDamage(3, 3000, -25)
-condition:addDamage(3, 3000, -24)
-condition:addDamage(4, 3000, -23)
-condition:addDamage(4, 3000, -20)
-condition:addDamage(5, 3000, -19)
-condition:addDamage(5, 3000, -15)
-condition:addDamage(6, 3000, -10)
-condition:addDamage(10, 3000, -5)
+local damage = 45
+condition:addDamage(1, 6000, -damage)
+for j = 1, 18 do
+	damage = damage * 1.2
+	condition:addDamage(1, 6000, -damage)
+end
+condition:addDamage(1, 6000, -damage*2.2)
 combat:addCondition(condition)
 
 local spell = Spell("instant")

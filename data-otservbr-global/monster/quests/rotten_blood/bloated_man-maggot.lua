@@ -83,6 +83,9 @@ monster.loot = {
 	{ name = "butcher's axe", chance = 7967, maxCount = 1 },
 	{ name = "blue gem", chance = 7808, maxCount = 1 },
 	{ name = "violet gem", chance = 7084, maxCount = 1 },
+	{ name = "bag you covet", chance = 40 },
+	{ id = 43855, chance = 100 }, -- tainted heart
+	{ id = 43854, chance = 100 }, -- darklight heart
 }
 
 monster.attacks = {
