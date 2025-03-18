@@ -12,7 +12,7 @@ for j = 1, 18 do
 	damage = damage * 1.2
 	condition:addDamage(1, 6000, -damage)
 end
-condition:addDamage(1, 6000, -damage*2.2)
+condition:addDamage(1, 6000, -damage * 2.2)
 combat:addCondition(condition)
 
 local spell = Spell("instant")
