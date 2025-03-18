@@ -83,7 +83,7 @@ monster.loot = {
 	{ name = "ultimate health potion", chance = 10285, maxCount = 2 },
 	{ name = "bloody edge", chance = 12270, maxCount = 1 },
 	{ name = "spellbook of warding", chance = 5084, maxCount = 1 },
-	{ name = "bag you covet", chance = 40 },
+	{ id = 43895, chance = 40 }, -- Bag you covet
 	{ id = 43855, chance = 100 }, -- tainted heart
 	{ id = 43854, chance = 100 }, -- darklight heart
 }

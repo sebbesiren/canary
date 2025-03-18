@@ -81,7 +81,7 @@ monster.loot = {
 	{ name = "worm sponge", chance = 7270, maxCount = 1 },
 	{ name = "violet gem", chance = 5084, maxCount = 1 },
 	{ name = "jade hammer", chance = 3073, maxCount = 1 },
-	{ name = "bag you covet", chance = 40 },
+	{ id = 43895, chance = 40 }, -- Bag you covet
 	{ id = 43855, chance = 100 }, -- tainted heart
 	{ id = 43854, chance = 100 }, -- darklight heart
 }

@@ -85,7 +85,7 @@ monster.loot = {
 	{ id = 3039, chance = 5155, maxCount = 1 }, -- red gem
 	{ name = "yellow gem", chance = 9564, maxCount = 1 },
 	{ name = "blooded worm", chance = 5096, maxCount = 1 },
-	{ name = "bag you covet", chance = 40 },
+	{ id = 43895, chance = 40 }, -- Bag you covet
 	{ id = 43855, chance = 100 }, -- tainted heart
 	{ id = 43854, chance = 100 }, -- darklight heart
 }

@@ -90,7 +90,7 @@ monster.loot = {
 	{ name = "relic sword", chance = 6964, maxCount = 1 },
 	{ name = "skullcracker armor", chance = 7270, maxCount = 1 },
 	{ id = 23531, chance = 3073, maxCount = 1 }, -- ring of green plasma
-	{ name = "bag you covet", chance = 40 },
+	{ id = 43895, chance = 40 }, -- Bag you covet
 	{ id = 43855, chance = 100 }, -- tainted heart
 	{ id = 43854, chance = 100 }, -- darklight heart
 }

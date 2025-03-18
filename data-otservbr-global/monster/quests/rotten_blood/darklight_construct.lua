@@ -80,7 +80,7 @@ monster.loot = {
 	{ name = "darklight obsidian axe", chance = 11129, maxCount = 1 },
 	{ name = "magma amulet", chance = 13240, maxCount = 1 },
 	{ name = "small ruby", chance = 12458, maxCount = 3 },
-	{ name = "bag you covet", chance = 40 },
+	{ id = 43895, chance = 40 }, -- Bag you covet
 	{ id = 43855, chance = 100 }, -- tainted heart
 	{ id = 43854, chance = 100 }, -- darklight heart
 }
