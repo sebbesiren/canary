@@ -3,9 +3,9 @@ local monster = {}
 
 local LootGoblinConfig = {
 	Storage = {
-		SpawnTime = 1
+		SpawnTime = 1,
 	},
-	SecondsToDefeat = 180
+	SecondsToDefeat = 180,
 }
 
 monster.description = "a loot goblin"
