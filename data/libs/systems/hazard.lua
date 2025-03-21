@@ -167,7 +167,10 @@ function Hazard:register()
 			monster:hazardCrit(self.crit)
 			monster:hazardDodge(self.dodge)
 			monster:hazardDamageBoost(self.damageBoost)
-			monster:hazardDefenseBoost(self.defenseBoost)
+
+			if not monster:getType():isRewardBoss() then
+				monster:hazardDefenseBoost(self.defenseBoost)
+			end
 		end
 	end
 
