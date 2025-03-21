@@ -53,6 +53,10 @@ function deathEvent.onDeath(creature)
 		createHazardPod(monster:getPosition(), monster:getName())
 	end
 
+	if executeSpawnLootGoblin(points, monster) then
+		spawnLootGoblin(player, monster)
+	end
+
 	return true
 end
 deathEvent:register()

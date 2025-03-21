@@ -81,6 +81,10 @@ function deathEvent.onDeath(creature)
 		end
 	end
 
+	if executeSpawnLootGoblin(points, monster) then
+		spawnLootGoblin(player, monster)
+	end
+
 	local multiplier = math.min(1, 15000 / monsterMaxHealth)
 	local baseChance = math.max(300, 500 - points * 10)
 

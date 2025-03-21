@@ -45410,8 +45410,8 @@ Awarded by TibiaMisterios.com.br"/>
 		<attribute key="description" value="It is inscribed with faintly glowing ink and sealed with the letter F"/>
 		<attribute key="weight" value="800"/>
 	</item>
-	<item id="22772" article="a" name="scroll of ascension">
-		<attribute key="description" value="It is inscribed with faintly glowing ink and sealed with the letter F"/>
+	<item id="22772" article="a" name="Experience boost scroll">
+		<attribute key="description" value="Increases your experience for 1 hour"/>
 		<attribute key="weight" value="800"/>
 	</item>
 	<item id="22773" article="a" name="boots of homecoming">
