@@ -1,7 +1,6 @@
 local callback = EventCallback("MonsterOnDropLootHazard")
 
 function hazardExtraRolls(player)
-
 	local chance = player:getHazardSystemPoints() * configManager.getNumber(configKeys.HAZARD_LOOT_BONUS_MULTIPLIER)
 	local rolls = chance / 100
 	if math.random(0, 100) < (rolls % 1) * 100 then
@@ -11,7 +10,6 @@ function hazardExtraRolls(player)
 	end
 
 	return rolls
-
 end
 
 function callback.monsterOnDropLoot(monster, corpse)
