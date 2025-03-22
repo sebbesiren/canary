@@ -67,19 +67,19 @@ function bakragoreEntrance.onUse(player, item, fromPosition, target, toPosition,
 		return false
 	end
 
-	--local now, text = os.time(), ""
-	--for _, bossName in pairs({ "murcion", "chagorz", "ichgahal", "vemiath" }) do
-	--	local cooldown = player:kv():scoped("rotten-blood-quest"):scoped(bossName):get("cooldown") or 0
-	--	if cooldown <= now then
-	--		text = text .. "\n" .. bossName:titleCase()
-	--	end
-	--end
-	--
-	--if text ~= "" then
-	--	player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You still need to defeat: " .. text)
-	--	player:teleportTo(fromPosition, true)
-	--	return false
-	--end
+	local now, text = os.time(), ""
+	for _, bossName in pairs({ "murcion", "chagorz", "ichgahal", "vemiath" }) do
+		local cooldown = player:kv():scoped("rotten-blood-quest"):scoped(bossName):get("cooldown") or 0
+		if cooldown <= now then
+			text = text .. "\n" .. bossName:titleCase()
+		end
+	end
+
+	if text ~= "" then
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You still need to defeat: " .. text)
+		player:teleportTo(fromPosition, true)
+		return false
+	end
 
 	local taints = player:kv():scoped("rotten-blood-quest"):get("taints") or 0
 	if taints < 4 then
@@ -88,7 +88,7 @@ function bakragoreEntrance.onUse(player, item, fromPosition, target, toPosition,
 		return false
 	end
 
-	if entrance.position == position then
+	if entrance.position == fromPosition then
 		player:teleportTo(entrance.destination)
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 	end

@@ -7,8 +7,8 @@ local config = {
 			"lesser mystic gem",
 		},
 		chance = {
-			influenced = 9000,
-			fiendish = 3000,
+			influenced = 9000 * 2,
+			fiendish = 3000 * 4,
 			archfoe = 0,
 		},
 		maxCount = 2,
@@ -21,9 +21,9 @@ local config = {
 			"mystic gem",
 		},
 		chance = {
-			influenced = 0,
-			fiendish = 3000,
-			archfoe = 9000,
+			influenced = 3000 * 2,
+			fiendish = 3000 * 5,
+			archfoe = 9000 * 2,
 		},
 		maxCount = 2,
 	},
@@ -37,7 +37,7 @@ local config = {
 		chance = {
 			influenced = 0,
 			fiendish = 9000 * 2,
-			archfoe = 3000 * 2,
+			archfoe = 3000 * 3,
 		},
 		maxCount = 1,
 	},
@@ -85,7 +85,7 @@ function Monster:generateGemAtelierLoot()
 				end
 			end
 		end
-		::continue::
+		:: continue ::
 	end
 	return loot
 end
