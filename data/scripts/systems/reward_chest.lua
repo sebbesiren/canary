@@ -102,6 +102,12 @@ function bossDeath.onDeath(creature, corpse, killer, mostDamageKiller, lastHitUn
 					rolls = math.floor(rolls)
 				end
 
+				local hazardRolls = 0
+				if creature:hazard() then
+					hazardRolls = hazardExtraRolls(player)
+					rolls = rolls + hazardRolls
+				end
+
 				local playerLoot = creature:generateGemAtelierLoot()
 				playerLoot = monsterType:getBossReward(lootFactor, _ == 1, false, playerLoot, player)
 				for _ = 2, rolls do
@@ -114,9 +120,13 @@ function bossDeath.onDeath(creature, corpse, killer, mostDamageKiller, lastHitUn
 				if con.player then
 					local collorMessage = player:getClient().version > 1200
 					local lootMessage = ("The following items dropped by %s are available in your reward chest: %s"):format(creature:getName(), reward:getContentDescription(collorMessage))
-					if rolls > 1 then
+					if rolls - hazardRolls > 1 then
 						lootMessage = lootMessage .. " (boss bonus)"
 					end
+					if hazardRolls > 0 then
+						lootMessage = lootMessage .. " (hazard system, " .. hazardRolls .. " extra rolls)"
+					end
+
 					if stamina > 840 then
 						reward:getContentDescription(lootMessage)
 					end

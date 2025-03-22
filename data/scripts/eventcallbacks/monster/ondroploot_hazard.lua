@@ -1,5 +1,19 @@
 local callback = EventCallback("MonsterOnDropLootHazard")
 
+function hazardExtraRolls(player)
+
+	local chance = player:getHazardSystemPoints() * configManager.getNumber(configKeys.HAZARD_LOOT_BONUS_MULTIPLIER)
+	local rolls = chance / 100
+	if math.random(0, 100) < (rolls % 1) * 100 then
+		rolls = math.ceil(rolls)
+	else
+		rolls = math.floor(rolls)
+	end
+
+	return rolls
+
+end
+
 function callback.monsterOnDropLoot(monster, corpse)
 	if not monster:hazard() then
 		return
@@ -14,19 +28,10 @@ function callback.monsterOnDropLoot(monster, corpse)
 	end
 
 	local factor = 1.0
-	local msgSuffix = ""
-	local chance = (2 * player:getHazardSystemPoints() * configManager.getNumber(configKeys.HAZARD_LOOT_BONUS_MULTIPLIER))
-	local rolls = chance / 100
-	if math.random(0, 100) < (rolls % 1) * 100 then
-		rolls = math.ceil(rolls)
-	else
-		rolls = math.floor(rolls)
-	end
+	local rolls = hazardExtraRolls(player)
 
-	if configManager.getBoolean(configKeys.PARTY_SHARE_LOOT_BOOSTS) and rolls > 1 then
-		msgSuffix = msgSuffix .. " (hazard system, " .. rolls .. " extra rolls)"
-	elseif rolls == 1 then
-		msgSuffix = msgSuffix .. " (hazard system)"
+	if rolls <= 0 then
+		return
 	end
 
 	local lootTable = {}
@@ -35,6 +40,7 @@ function callback.monsterOnDropLoot(monster, corpse)
 	end
 	corpse:addLoot(lootTable)
 
+	local msgSuffix = " (hazard system, " .. rolls .. " extra rolls)"
 	local existingSuffix = corpse:getAttribute(ITEM_ATTRIBUTE_LOOTMESSAGE_SUFFIX) or ""
 	corpse:setAttribute(ITEM_ATTRIBUTE_LOOTMESSAGE_SUFFIX, existingSuffix .. msgSuffix)
 end
