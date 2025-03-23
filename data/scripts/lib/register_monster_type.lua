@@ -36,7 +36,7 @@ registerMonsterType.experience = function(mtype, mask)
 			local bonusPercentage = mask.maxHealth / 750
 			local multiplier = 1 + bonusPercentage / 100
 			if mask.flags.rewardBoss then
-				multiplier = multiplier + 3
+				multiplier = multiplier + 5
 			end
 
 			mtype:experience(math.floor(mask.maxHealth * multiplier))
