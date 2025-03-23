@@ -30,7 +30,7 @@ SoulWarQuest = {
 
 	timeToReturnImmuneMegalomania = 70, -- In seconds
 
-	bagYouDesireChancePerTaint = 15, -- Increases % per taint
+	bagYouDesireChancePerTaint = 10, -- Increases % per taint
 	bagYouDesireMonsters = {
 		"Bony Sea Devil",
 		"Brachiodemon",
