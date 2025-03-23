@@ -76,94 +76,94 @@ monster.voices = {
 }
 
 monster.loot = {
-	{ name = "crystal coin", chance = 50000, maxCount = 60 },
-	{ name = "silver token", chance = 20000, maxCount = 20 },
+	{ name = "crystal coin", chance = 50000, maxCount = 40 },
+	{ name = "silver token", chance = 20000, maxCount = 10 },
 	{ name = "bullseye potion", chance = 24490, maxCount = 5 },
 	{ name = "berserk potion", chance = 22449, maxCount = 5 },
 	{ name = "mastermind potion", chance = 18367, maxCount = 5 },
 	{ name = "raw watermelon tourmaline", chance = 7322, maxCount = 3 },
-	{ id = 22772, chance = 100, maxCount = 1 }, -- exp boost scroll
+	{ id = 22772, chance = 30, maxCount = 1 }, -- exp boost scroll
 
-	{ name = "winged boots", chance = 40 },
-	{ name = "tagralt blade", chance = 40 },
-	{ id = 30403, chance = 40 }, -- enchanted theurgic amulet
+	{ name = "winged boots", chance = 25 },
+	{ name = "tagralt blade", chance = 25 },
+	{ id = 30403, chance = 25 }, -- enchanted theurgic amulet
 
-	{ name = "falcon battleaxe", chance = 40 },
-	{ name = "falcon longsword", chance = 40 },
-	{ name = "falcon mace", chance = 40 },
-	{ name = "grant of arms", chance = 40 },
-	{ name = "falcon bow", chance = 40 },
-	{ name = "falcon circlet", chance = 40 },
-	{ name = "falcon coif", chance = 40 },
-	{ name = "falcon rod", chance = 40 },
-	{ name = "falcon wand", chance = 40 },
-	{ name = "falcon shield", chance = 40 },
-	{ name = "falcon greaves", chance = 40 },
-	{ name = "falcon plate", chance = 40 },
+	{ name = "falcon battleaxe", chance = 25 },
+	{ name = "falcon longsword", chance = 25 },
+	{ name = "falcon mace", chance = 25 },
+	{ name = "grant of arms", chance = 25 },
+	{ name = "falcon bow", chance = 25 },
+	{ name = "falcon circlet", chance = 25 },
+	{ name = "falcon coif", chance = 25 },
+	{ name = "falcon rod", chance = 25 },
+	{ name = "falcon wand", chance = 25 },
+	{ name = "falcon shield", chance = 25 },
+	{ name = "falcon greaves", chance = 25 },
+	{ name = "falcon plate", chance = 25 },
 
-	{ name = "dawnfire sherwani", chance = 40 },
-	{ name = "frostflower boots", chance = 40 },
-	{ name = "feverbloom boots", chance = 40 },
-	{ id = 39233, chance = 40 }, -- enchanted turtle amulet
-	{ name = "midnight tunic", chance = 40 },
-	{ name = "midnight sarong", chance = 40 },
-	{ name = "naga quiver", chance = 40 },
-	{ name = "naga sword", chance = 40 },
-	{ name = "naga axe", chance = 40 },
-	{ name = "naga club", chance = 40 },
-	{ name = "naga wand", chance = 40 },
-	{ name = "naga rod", chance = 40 },
-	{ name = "naga crossbow", chance = 40 },
+	{ name = "dawnfire sherwani", chance = 25 },
+	{ name = "frostflower boots", chance = 25 },
+	{ name = "feverbloom boots", chance = 25 },
+	{ id = 39233, chance = 25 }, -- enchanted turtle amulet
+	{ name = "midnight tunic", chance = 25 },
+	{ name = "midnight sarong", chance = 25 },
+	{ name = "naga quiver", chance = 25 },
+	{ name = "naga sword", chance = 25 },
+	{ name = "naga axe", chance = 25 },
+	{ name = "naga club", chance = 25 },
+	{ name = "naga wand", chance = 25 },
+	{ name = "naga rod", chance = 25 },
+	{ name = "naga crossbow", chance = 25 },
 
-	{ id = 32616, chance = 40 }, -- phantasmal axe
-	{ name = "ghost chestplate", chance = 40 },
-	{ name = "fabulous legs", chance = 40 },
-	{ name = "soulful legs", chance = 40 },
-	{ name = "galea mortis", chance = 40 },
-	{ name = "toga mortis", chance = 40 },
-	{ name = "gnome shield", chance = 40 },
-	{ name = "gnome armor", chance = 40 },
-	{ name = "gnome helmet", chance = 40 },
-	{ name = "gnome sword", chance = 40 },
+	{ id = 32616, chance = 25 }, -- phantasmal axe
+	{ name = "ghost chestplate", chance = 25 },
+	{ name = "fabulous legs", chance = 25 },
+	{ name = "soulful legs", chance = 25 },
+	{ name = "galea mortis", chance = 25 },
+	{ name = "toga mortis", chance = 25 },
+	{ name = "gnome shield", chance = 25 },
+	{ name = "gnome armor", chance = 25 },
+	{ name = "gnome helmet", chance = 25 },
+	{ name = "gnome sword", chance = 25 },
 
-	{ name = "unerring dragon scale armor", chance = 40 },
-	{ name = "dauntless dragon scale armor", chance = 40 },
-	{ name = "arcane dragon robe", chance = 40 },
-	{ name = "mystical dragon robe", chance = 40 },
+	{ name = "unerring dragon scale armor", chance = 25 },
+	{ name = "dauntless dragon scale armor", chance = 25 },
+	{ name = "arcane dragon robe", chance = 25 },
+	{ name = "mystical dragon robe", chance = 25 },
 
-	{ name = "amber crusher", chance = 250 },
-	{ id = 47375, chance = 40 }, -- amber axe
-	{ id = 47369, chance = 40 }, -- amber greataxe
-	{ id = 47368, chance = 40 }, -- amber slayer
-	{ id = 47374, chance = 40 }, -- amber sabre
-	{ id = 47376, chance = 40 }, -- amber cudgel
-	{ id = 47370, chance = 40 }, -- amber bludgeon
-	{ id = 47371, chance = 40 }, -- amber bow
-	{ id = 47377, chance = 40 }, -- amber crossbow
-	{ id = 47372, chance = 40 }, -- amber wand
-	{ id = 47373, chance = 40 }, -- amber rod
-	{ id = 48514, chance = 40 }, -- strange inedible fruit
+	{ name = "amber crusher", chance = 100 },
+	{ id = 47375, chance = 25 }, -- amber axe
+	{ id = 47369, chance = 25 }, -- amber greataxe
+	{ id = 47368, chance = 25 }, -- amber slayer
+	{ id = 47374, chance = 25 }, -- amber sabre
+	{ id = 47376, chance = 25 }, -- amber cudgel
+	{ id = 47370, chance = 25 }, -- amber bludgeon
+	{ id = 47371, chance = 25 }, -- amber bow
+	{ id = 47377, chance = 25 }, -- amber crossbow
+	{ id = 47372, chance = 25 }, -- amber wand
+	{ id = 47373, chance = 25 }, -- amber rod
+	{ id = 48514, chance = 25 }, -- strange inedible fruit
 
-	{ name = "eldritch breeches", chance = 40 },
-	{ name = "eldritch cowl", chance = 40 },
-	{ name = "eldritch hood", chance = 40 },
-	{ name = "eldritch bow", chance = 40 },
-	{ name = "eldritch quiver", chance = 40 },
-	{ name = "eldritch claymore", chance = 40 },
-	{ name = "eldritch greataxe", chance = 40 },
-	{ name = "eldritch warmace", chance = 40 },
-	{ name = "eldritch shield", chance = 40 },
-	{ name = "eldritch cuirass", chance = 40 },
-	{ name = "eldritch folio", chance = 40 },
-	{ name = "eldritch tome", chance = 40 },
-	{ name = "eldritch rod", chance = 40 },
-	{ name = "eldritch wand", chance = 40 },
-	{ name = "gilded eldritch claymore", chance = 40 },
-	{ name = "gilded eldritch greataxe", chance = 40 },
-	{ name = "gilded eldritch warmace", chance = 40 },
-	{ name = "gilded eldritch wand", chance = 40 },
-	{ name = "gilded eldritch rod", chance = 40 },
-	{ name = "gilded eldritch bow", chance = 40 },
+	{ name = "eldritch breeches", chance = 25 },
+	{ name = "eldritch cowl", chance = 25 },
+	{ name = "eldritch hood", chance = 25 },
+	{ name = "eldritch bow", chance = 25 },
+	{ name = "eldritch quiver", chance = 25 },
+	{ name = "eldritch claymore", chance = 25 },
+	{ name = "eldritch greataxe", chance = 25 },
+	{ name = "eldritch warmace", chance = 25 },
+	{ name = "eldritch shield", chance = 25 },
+	{ name = "eldritch cuirass", chance = 25 },
+	{ name = "eldritch folio", chance = 25 },
+	{ name = "eldritch tome", chance = 25 },
+	{ name = "eldritch rod", chance = 25 },
+	{ name = "eldritch wand", chance = 25 },
+	{ name = "gilded eldritch claymore", chance = 25 },
+	{ name = "gilded eldritch greataxe", chance = 25 },
+	{ name = "gilded eldritch warmace", chance = 25 },
+	{ name = "gilded eldritch wand", chance = 25 },
+	{ name = "gilded eldritch rod", chance = 25 },
+	{ name = "gilded eldritch bow", chance = 25 },
 }
 
 monster.attacks = {
