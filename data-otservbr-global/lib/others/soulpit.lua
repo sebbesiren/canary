@@ -153,6 +153,10 @@ SoulPit = {
 		return name:match("^(.-) soul core")
 	end,
 	onFuseSoulCores = function(player, item, target)
+		if not target then
+			return false
+		end
+
 		local itemCount = item:getCount(item:getId())
 		if item:getId() == target:getId() and itemCount <= 1 then
 			return false
