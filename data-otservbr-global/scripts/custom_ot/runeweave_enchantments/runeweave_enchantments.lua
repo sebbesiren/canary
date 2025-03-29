@@ -199,7 +199,7 @@ function setAffixConditions(player, condition, affixes, slot)
 		elseif affixName == "Atk" then
 			condition:setParameter(CONDITION_PARAM_BUFF_DAMAGEDEALT, 100 + value)
 		end
-		:: continue ::
+		::continue::
 	end
 end
 
