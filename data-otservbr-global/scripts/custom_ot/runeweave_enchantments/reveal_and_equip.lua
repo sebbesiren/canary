@@ -62,7 +62,7 @@ function resolveEquippedRuneweaveEnchantments(player)
 				local condition = Condition(CONDITION_ATTRIBUTES, slotConfig.ConditionId)
 				condition:setParameter(CONDITION_PARAM_SUBID, slotConfig.ConditionSubId)
 				condition:setParameter(CONDITION_PARAM_TICKS, -1)
-				setAffixConditions(condition, affixes, slotName)
+				setAffixConditions(player, condition, affixes, slotName)
 				player:addCondition(condition)
 			end
 		end

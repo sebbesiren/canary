@@ -150,7 +150,7 @@ function getAffixesFromDescription(item)
 	return affixes
 end
 
-function setAffixConditions(condition, affixes, slot)
+function setAffixConditions(player, condition, affixes, slot)
 	for _, affix in ipairs(affixes) do
 		local affixName = affix.name
 		if not config.Affixes[slot][affixName] then
@@ -178,13 +178,17 @@ function setAffixConditions(condition, affixes, slot)
 		elseif affixName == "Charm" then
 			condition:setParameter(CONDITION_PARAM_CHARM_CHANCE_MODIFIER, value)
 		elseif affixName == "Skills" then
-			condition:setParameter(CONDITION_PARAM_SKILL_DISTANCE, value)
-			condition:setParameter(CONDITION_PARAM_SKILL_SHIELD, value)
-			condition:setParameter(CONDITION_PARAM_SKILL_FIST, value)
-			condition:setParameter(CONDITION_PARAM_SKILL_CLUB, value)
-			condition:setParameter(CONDITION_PARAM_SKILL_SWORD, value)
-			condition:setParameter(CONDITION_PARAM_SKILL_AXE, value)
-			condition:setParameter(CONDITION_PARAM_STAT_MAGICPOINTS, value)
+			local vocationName = Vocation(player:getVocation():getBaseId()):getName()
+			if vocationName == "Sorcerer" or vocationName == "Druid" then
+				condition:setParameter(CONDITION_PARAM_STAT_MAGICPOINTS, value)
+			elseif vocationName == "Paladin" then
+				condition:setParameter(CONDITION_PARAM_SKILL_DISTANCE, value)
+			elseif vocationName == "Knight" then
+				condition:setParameter(CONDITION_PARAM_SKILL_SHIELD, value)
+				condition:setParameter(CONDITION_PARAM_SKILL_CLUB, value)
+				condition:setParameter(CONDITION_PARAM_SKILL_SWORD, value)
+				condition:setParameter(CONDITION_PARAM_SKILL_AXE, value)
+			end
 		elseif affixName == "Void" then
 			condition:setParameter(CONDITION_PARAM_SKILL_MANA_LEECH_AMOUNT, value * 100)
 			condition:setParameter(CONDITION_PARAM_SKILL_MANA_LEECH_CHANCE, 10000)
@@ -195,7 +199,7 @@ function setAffixConditions(condition, affixes, slot)
 		elseif affixName == "Atk" then
 			condition:setParameter(CONDITION_PARAM_BUFF_DAMAGEDEALT, 100 + value)
 		end
-		::continue::
+		:: continue ::
 	end
 end
 
