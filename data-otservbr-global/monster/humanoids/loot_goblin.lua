@@ -5,7 +5,7 @@ local LootGoblinConfig = {
 	Storage = {
 		SpawnTime = 1,
 	},
-	SecondsToDefeat = 180,
+	SecondsToDefeat = 120,
 }
 
 monster.description = "a loot goblin"
