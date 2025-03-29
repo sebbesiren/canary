@@ -29,7 +29,11 @@ local function updateHazardLevel(player, hazard, desiredLevel, hazardName)
 			local spectators = Game.getSpectators(player:getPosition(), false, false, 15, 15, 15, 15)
 			for _, spectator in ipairs(spectators) do
 				if spectator:isMonster() then
-					spectator:setHealth(spectator:getMaxHealth())
+					if spectator:getName() == "Loot Goblin" then
+						spectator:remove()
+					else
+						spectator:setHealth(spectator:getMaxHealth())
+					end
 				end
 			end
 		end
