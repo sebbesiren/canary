@@ -2,19 +2,19 @@ local config = {
 	Rarity = {
 		Uncommon = { Affixes = 1 },
 		Rare = { Affixes = 2 },
-		Epic = { Affixes = 3 }
+		Epic = { Affixes = 3 },
 	},
 
 	RevealChance = {
 		Uncommon = 55,
 		Rare = 30,
-		Epic = 15
+		Epic = 15,
 	},
 
 	AffixQualityChance = {
 		Weak = 55,
 		Strong = 30,
-		Powerful = 15
+		Powerful = 15,
 	},
 
 	Affixes = {
@@ -24,7 +24,7 @@ local config = {
 			AllResist = { Weak = 1, Strong = 2, Powerful = 4 },
 			Vampirism = { Weak = 2, Strong = 4, Powerful = 8 },
 			PhysResist = { Weak = 1, Strong = 2, Powerful = 4 },
-			Charm = { Weak = 5, Strong = 10, Powerful = 15 }
+			Charm = { Weak = 5, Strong = 10, Powerful = 15 },
 		},
 		Head = {
 			Health = { Weak = 1, Strong = 2, Powerful = 4 },
@@ -32,19 +32,19 @@ local config = {
 			Skills = { Weak = 1, Strong = 2, Powerful = 4 },
 			Void = { Weak = 1, Strong = 2, Powerful = 4 },
 			PhysResist = { Weak = 1, Strong = 2, Powerful = 4 },
-			Charm = { Weak = 5, Strong = 10, Powerful = 15 }
+			Charm = { Weak = 5, Strong = 10, Powerful = 15 },
 		},
 		Legs = {
 			Health = { Weak = 1, Strong = 2, Powerful = 4 },
 			Mana = { Weak = 1, Strong = 2, Powerful = 4 },
 			AllResist = { Weak = 1, Strong = 2, Powerful = 4 },
 			PhysResist = { Weak = 1, Strong = 2, Powerful = 4 },
-			Charm = { Weak = 5, Strong = 10, Powerful = 15 }
+			Charm = { Weak = 5, Strong = 10, Powerful = 15 },
 		},
 		Feet = {
 			Mana = { Weak = 1, Strong = 2, Powerful = 4 },
 			PhysResist = { Weak = 1, Strong = 2, Powerful = 4 },
-			Charm = { Weak = 5, Strong = 10, Powerful = 15 }
+			Charm = { Weak = 5, Strong = 10, Powerful = 15 },
 		},
 		Weapon = {
 			CritChance = { Weak = 2, Strong = 4, Powerful = 8 },
@@ -52,9 +52,9 @@ local config = {
 			Skills = { Weak = 1, Strong = 2, Powerful = 3 },
 			Vampirism = { Weak = 2, Strong = 4, Powerful = 8 },
 			Void = { Weak = 1, Strong = 2, Powerful = 4 },
-			Atk = { Weak = 1, Strong = 3, Powerful = 6 }
-		}
-	}
+			Atk = { Weak = 1, Strong = 3, Powerful = 6 },
+		},
+	},
 }
 
 function generateItemAffixes(slot)
@@ -102,13 +102,13 @@ function generateItemAffixes(slot)
 		table.insert(selectedAffixes, {
 			name = affix,
 			quality = quality,
-			value = availableAffixes[affix][quality]
+			value = availableAffixes[affix][quality],
 		})
 	end
 
 	return {
 		rarity = rarity,
-		affixes = selectedAffixes
+		affixes = selectedAffixes,
 	}
 end
 
@@ -142,7 +142,7 @@ function getAffixesFromDescription(item)
 		if quality and name then
 			table.insert(affixes, {
 				quality = quality,
-				name = name
+				name = name,
 			})
 		end
 	end
@@ -195,7 +195,7 @@ function setAffixConditions(condition, affixes, slot)
 		elseif affixName == "Atk" then
 			condition:setParameter(CONDITION_PARAM_BUFF_DAMAGEDEALT, 100 + value)
 		end
-		:: continue ::
+		::continue::
 	end
 end
 
@@ -225,7 +225,7 @@ function getSlotName(item)
 		[25] = "OffHand",
 		[ITEM_TYPE_AMULET] = "Neck",
 		[ITEM_TYPE_RING] = "Ring",
-		[ITEM_TYPE_CONTAINER] = "Backpack"
+		[ITEM_TYPE_CONTAINER] = "Backpack",
 	}
 
 	local slotName = typeMap[type]
@@ -244,7 +244,6 @@ function Monster:generateEnchantmentHammerLoot(playerLoot)
 	if roll < 30000 then
 		local itemType = ItemType(673)
 		playerLoot[itemType:getId()] = { count = 1 }
-
 	end
 	return playerLoot
 end

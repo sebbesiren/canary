@@ -28,28 +28,28 @@ function resolveEquippedRuneweaveEnchantments(player)
 		Armor = {
 			Slot = CONST_SLOT_ARMOR,
 			ConditionId = CONDITIONID_ARMOR,
-			ConditionSubId = 900
+			ConditionSubId = 900,
 		},
 		Head = {
 			Slot = CONST_SLOT_HEAD,
 			ConditionId = CONDITIONID_HEAD,
-			ConditionSubId = 901
+			ConditionSubId = 901,
 		},
 		Legs = {
 			Slot = CONST_SLOT_LEGS,
 			ConditionId = CONDITIONID_LEGS,
-			ConditionSubId = 902
+			ConditionSubId = 902,
 		},
 		Feet = {
 			Slot = CONST_SLOT_FEET,
 			ConditionId = CONDITIONID_FEET,
-			ConditionSubId = 903
+			ConditionSubId = 903,
 		},
 		Weapon = {
 			Slot = CONST_SLOT_LEFT,
 			ConditionId = CONDITIONID_LEFT,
-			ConditionSubId = 904
-		}
+			ConditionSubId = 904,
+		},
 	}
 
 	for slotName, slotConfig in pairs(config) do
@@ -82,5 +82,3 @@ function onInventoryUpdate.playerOnInventoryUpdate(player, item, count, fromPos,
 	return true
 end
 onInventoryUpdate:register()
-
-
