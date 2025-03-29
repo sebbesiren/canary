@@ -29,7 +29,7 @@ local config = {
 		Head = {
 			Health = { Weak = 1, Strong = 2, Powerful = 4 },
 			Mana = { Weak = 1, Strong = 2, Powerful = 4 },
-			Skills = { Weak = 1, Strong = 2, Powerful = 4 },
+			Skills = { Weak = 1, Strong = 2, Powerful = 3 },
 			Void = { Weak = 1, Strong = 2, Powerful = 4 },
 			PhysResist = { Weak = 1, Strong = 2, Powerful = 4 },
 			Charm = { Weak = 5, Strong = 10, Powerful = 15 },
