@@ -1375,12 +1375,13 @@
 			<attribute key="slot" value="hand"/>
 		</attribute>
 	</item>
-	<item id="673" article="a" name="fiery orcish maul">
+	<item id="673" article="a" name="runeweave enchantment hammer">
 		<attribute key="primarytype" value="club weapons"/>
-		<attribute key="elementfire" value="7"/>
-		<attribute key="attack" value="35"/>
-		<attribute key="defense" value="18"/>
-		<attribute key="weight" value="5400"/>
+		<attribute key="description" value="Use on equipment to add runeweave enchantments."/>
+		<attribute key="elementfire" value="1"/>
+		<attribute key="attack" value="1"/>
+		<attribute key="defense" value="1"/>
+		<attribute key="weight" value="100"/>
 		<attribute key="script" value="moveevent;weapon">
 			<attribute key="action" value="removecharge"/>
 			<attribute key="level" value="35"/>
