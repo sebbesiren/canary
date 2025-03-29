@@ -157,6 +157,40 @@ local itemTiers = {
 		},
 		tributeCostPer10 = 5000000,
 	},
+	["t6"] = {
+		items = {
+			{ itemName = "sanguine blade", clientId = 43864 },
+			{ itemName = "sanguine cudgel", clientId = 43866 },
+			{ itemName = "sanguine hatchet", clientId = 43868 },
+			{ itemName = "sanguine razor", clientId = 43870 },
+			{ itemName = "sanguine bludgeon", clientId = 43872 },
+			{ itemName = "sanguine battleaxe", clientId = 43874 },
+			{ itemName = "sanguine legs", clientId = 43876 },
+			{ itemName = "sanguine bow", clientId = 43877 },
+			{ itemName = "sanguine crossbow", clientId = 43879 },
+			{ itemName = "sanguine greaves", clientId = 43881 },
+			{ itemName = "sanguine coil", clientId = 43882 },
+			{ itemName = "sanguine boots", clientId = 43884 },
+			{ itemName = "sanguine rod", clientId = 43885 },
+			{ itemName = "sanguine galoshes", clientId = 43887 },
+		},
+		tributeCostPer10 = 7000000,
+	},
+	["t6.5"] = {
+		items = {
+			{ itemName = "grand sanguine blade", clientId = 43865 },
+			{ itemName = "grand sanguine cudgel", clientId = 43867 },
+			{ itemName = "grand sanguine hatchet", clientId = 43869 },
+			{ itemName = "grand sanguine razor", clientId = 43871 },
+			{ itemName = "grand sanguine bludgeon", clientId = 43873 },
+			{ itemName = "grand sanguine battleaxe", clientId = 43875 },
+			{ itemName = "grand sanguine bow", clientId = 43878 },
+			{ itemName = "grand sanguine crossbow", clientId = 43880 },
+			{ itemName = "grand sanguine coil", clientId = 43883 },
+			{ itemName = "grand sanguine rod", clientId = 43886 },
+		},
+		tributeCostPer10 = 7000000,
+	},
 }
 
 local function getItemAndTier(itemName)
