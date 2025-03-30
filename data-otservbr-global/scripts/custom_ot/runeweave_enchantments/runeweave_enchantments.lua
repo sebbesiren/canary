@@ -42,9 +42,11 @@ local config = {
 			Charm = { Weak = 5, Strong = 10, Powerful = 15 },
 		},
 		Feet = {
+			Health = { Weak = 1, Strong = 2, Powerful = 4 },
 			Mana = { Weak = 1, Strong = 2, Powerful = 4 },
 			PhysResist = { Weak = 1, Strong = 2, Powerful = 4 },
 			Charm = { Weak = 5, Strong = 10, Powerful = 15 },
+			HealReceived = { Weak = 1, Strong = 2, Powerful = 4 }
 		},
 		Weapon = {
 			CritChance = { Weak = 2, Strong = 4, Powerful = 8 },
@@ -198,8 +200,10 @@ function setAffixConditions(player, condition, affixes, slot)
 			condition:setParameter(CONDITION_PARAM_SKILL_CRITICAL_HIT_DAMAGE, value * 100)
 		elseif affixName == "Atk" then
 			condition:setParameter(CONDITION_PARAM_BUFF_DAMAGEDEALT, 100 + value)
+		elseif affixName == "HealReceived" then
+			condition:setParameter(CONDITION_PARAM_BUFF_HEALINGRECEIVED, 100 + value)
 		end
-		::continue::
+		:: continue ::
 	end
 end
 
@@ -245,7 +249,7 @@ function Monster:generateEnchantmentHammerLoot(playerLoot)
 	end
 
 	local roll = math.random(1, 100000)
-	if roll < 30000 then
+	if roll < 15000 then
 		local itemType = ItemType(673)
 		playerLoot[itemType:getId()] = { count = 1 }
 	end

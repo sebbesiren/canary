@@ -67,10 +67,10 @@ monster.light = {
 }
 
 monster.voices = {
-	interval = 5000,
-	chance = 10,
-	{ text = "Zig Zag! Gobo attack!", yell = false },
-	{ text = "Bugga! Bugga!", yell = false },
+	interval = 2000,
+	chance = 30,
+	{ text = "There is no cow level...", yell = true },
+	{ text = "Hi, I am one of the 30-40 monsters on your screen.", yell = true },
 	{ text = "My precious!", yell = true },
 	{ text = "Help! Goblinkiller!", yell = true },
 }

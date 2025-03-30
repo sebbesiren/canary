@@ -2402,6 +2402,70 @@ if not Quests then
 						[1] = "You succesfully killed all enemies. Return to Grizzly Adams for a reward.",
 					},
 				},
+				[106] = {
+					name = "Custom Task: Jaded Roots",
+					storageId = 65000 + 61, -- KILLSSTORAGE_BASE + id
+					missionId = 10617, -- For mission tracking
+					startValue = 0,
+					endValue = 2,
+					states = {
+						[0] = function(player)
+							local taskId = 61
+							local task = tasks.GrizzlyAdams[taskId]
+							local killCount = player:kv():scoped("killing-in-the-name-of"):get(taskId .. "-count") or 0
+							return string.format("%s: You have killed %d of %d enemies so far.", task.raceName, killCount, task.killsRequired)
+						end,
+						[1] = "You succesfully killed all enemies. Return to Grizzly Adams for a reward.",
+					},
+				},
+				[107] = {
+					name = "Custom Task: Darklight Core",
+					storageId = 65000 + 62, -- KILLSSTORAGE_BASE + id
+					missionId = 10618, -- For mission tracking
+					startValue = 0,
+					endValue = 2,
+					states = {
+						[0] = function(player)
+							local taskId = 62
+							local task = tasks.GrizzlyAdams[taskId]
+							local killCount = player:kv():scoped("killing-in-the-name-of"):get(taskId .. "-count") or 0
+							return string.format("%s: You have killed %d of %d enemies so far.", task.raceName, killCount, task.killsRequired)
+						end,
+						[1] = "You succesfully killed all enemies. Return to Grizzly Adams for a reward.",
+					},
+				},
+				[108] = {
+					name = "Custom Task: Gloom Pillars",
+					storageId = 65000 + 63, -- KILLSSTORAGE_BASE + id
+					missionId = 10619, -- For mission tracking
+					startValue = 0,
+					endValue = 2,
+					states = {
+						[0] = function(player)
+							local taskId = 63
+							local task = tasks.GrizzlyAdams[taskId]
+							local killCount = player:kv():scoped("killing-in-the-name-of"):get(taskId .. "-count") or 0
+							return string.format("%s: You have killed %d of %d enemies so far.", task.raceName, killCount, task.killsRequired)
+						end,
+						[1] = "You succesfully killed all enemies. Return to Grizzly Adams for a reward.",
+					},
+				},
+				[109] = {
+					name = "Custom Task: Putrefactory",
+					storageId = 65000 + 64, -- KILLSSTORAGE_BASE + id
+					missionId = 10620, -- For mission tracking
+					startValue = 0,
+					endValue = 2,
+					states = {
+						[0] = function(player)
+							local taskId = 64
+							local task = tasks.GrizzlyAdams[taskId]
+							local killCount = player:kv():scoped("killing-in-the-name-of"):get(taskId .. "-count") or 0
+							return string.format("%s: You have killed %d of %d enemies so far.", task.raceName, killCount, task.killsRequired)
+						end,
+						[1] = "You succesfully killed all enemies. Return to Grizzly Adams for a reward.",
+					},
+				},
 			},
 		},
 		[12] = {

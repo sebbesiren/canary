@@ -6,7 +6,7 @@
 	<announce delay="120000" type="event" message="Danger! Now the goblin leaders attack Kazordoon from Femor Hills!" />
 	<!--Single Spawns-->
 	<areaspawn delay="20000" fromx="32485" fromy="31835" fromz="7" tox="32621" toy="31911" toz="7">
-		<monster name="Goblin" amount="50" />
+		<monster name="Goblin" amount="20" />
 		<monster name="Goblin Scavenger" amount="15" />
 		<monster name="Goblin Assassin" amount="10" />
 	</areaspawn>
