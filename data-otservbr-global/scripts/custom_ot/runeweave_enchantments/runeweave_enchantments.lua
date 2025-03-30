@@ -46,7 +46,7 @@ local config = {
 			Mana = { Weak = 1, Strong = 2, Powerful = 4 },
 			PhysResist = { Weak = 1, Strong = 2, Powerful = 4 },
 			Charm = { Weak = 5, Strong = 10, Powerful = 15 },
-			HealReceived = { Weak = 1, Strong = 2, Powerful = 4 }
+			HealReceived = { Weak = 1, Strong = 2, Powerful = 4 },
 		},
 		Weapon = {
 			CritChance = { Weak = 2, Strong = 4, Powerful = 8 },
@@ -203,7 +203,7 @@ function setAffixConditions(player, condition, affixes, slot)
 		elseif affixName == "HealReceived" then
 			condition:setParameter(CONDITION_PARAM_BUFF_HEALINGRECEIVED, 100 + value)
 		end
-		:: continue ::
+		::continue::
 	end
 end
 
