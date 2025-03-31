@@ -1337,7 +1337,7 @@ tasks = {
 				{ type = "points", value = { 10 } },
 				{ type = "bosspoints", value = { 1 } },
 			},
-		}
+		},
 	},
 }
 
