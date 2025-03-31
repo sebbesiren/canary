@@ -1,7 +1,7 @@
 local hazard = Hazard.new({
 	name = "hazard.world",
-	from = Position(31900, 31000, 1),
-	to = Position(34000, 33100, 15),
+	from = Position(31800, 30900, 1),
+	to = Position(34200, 33200, 15),
 	--to = Position(34000, 33100, 1),
 	minLevel = 0,
 	maxLevel = 20,

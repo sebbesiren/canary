@@ -3155,6 +3155,18 @@ void Player::addExperience(const std::shared_ptr<Creature> &target, uint64_t exp
 	// Hazard system experience
 	const auto &monster = target && target->getMonster() ? target->getMonster() : nullptr;
 	auto points = getHazardSystemPoints();
+	if (m_party) {
+		for (const auto &partyMember : m_party->getMembers()) {
+			if (partyMember && partyMember->getHazardSystemPoints() < points) {
+				points = partyMember->getHazardSystemPoints();
+			}
+		}
+
+		if (m_party->getLeader() && m_party->getLeader()->getHazardSystemPoints() < points) {
+			points = m_party->getLeader()->getHazardSystemPoints();
+		}
+	}
+
 	const bool handleHazardExperience = monster && monster->getHazard() && points > 0;
 
 	const auto bonusExp = 0;

@@ -66,6 +66,18 @@ function Party:onDisband()
 end
 
 function Party:onShareExperience(exp)
+	local accountIds = {}
+	local members = self:getMembers()
+	table.insert(members, self:getLeader())
+	for _, member in ipairs(members) do
+		local accountId = member:getAccountId()
+		if table.contains(accountIds, accountId) then
+			return exp -- no bonus when grouped with yourself
+		else
+			table.insert(accountIds, accountId)
+		end
+	end
+
 	local uniqueVocationsCount = self:getUniqueVocationsCount()
 	local partySize = self:getMemberCount() + 1
 
