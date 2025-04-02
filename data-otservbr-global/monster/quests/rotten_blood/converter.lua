@@ -71,15 +71,15 @@ monster.light = {
 }
 
 monster.loot = {
-	{ name = "crystal coin", chance = 5230, maxCount = 1 },
-	{ name = "darklight obsidian axe", chance = 6963, maxCount = 1 },
-	{ name = "darklight matter", chance = 6927, maxCount = 1 },
-	{ name = "darklight core", chance = 10715, maxCount = 1 },
-	{ name = "wand of starstorm", chance = 8797, maxCount = 1 },
-	{ name = "blue gem", chance = 9372, maxCount = 1 },
+	{ name = "crystal coin", chance = 50230, maxCount = 2 },
+	{ name = "darklight obsidian axe", chance = 6963, maxCount = 2 },
+	{ name = "darklight matter", chance = 6927, maxCount = 2 },
+	{ name = "darklight core", chance = 10715, maxCount = 2 },
+	{ name = "wand of starstorm", chance = 8797, maxCount = 2 },
+	{ name = "blue gem", chance = 9372, maxCount = 2 },
 	{ name = "ultimate health potion", chance = 9851, maxCount = 5 },
-	{ name = "focus cape", chance = 6945, maxCount = 1 },
-	{ name = "white gem", chance = 14533, maxCount = 1 },
+	{ name = "focus cape", chance = 6945, maxCount = 2 },
+	{ name = "white gem", chance = 14533, maxCount = 2 },
 	{ id = 43895, chance = 40 }, -- Bag you covet
 	{ id = 43855, chance = 100 }, -- tainted heart
 	{ id = 43854, chance = 100 }, -- darklight heart

@@ -71,16 +71,16 @@ monster.light = {
 }
 
 monster.loot = {
-	{ name = "crystal coin", chance = 9000, maxCount = 1 },
-	{ name = "organic acid", chance = 7678, maxCount = 1 },
-	{ name = "terra boots", chance = 12369, maxCount = 1 },
-	{ name = "small amethyst", chance = 12859, maxCount = 1 },
-	{ name = "rotten roots", chance = 13133, maxCount = 1 },
-	{ name = "blue gem", chance = 9808, maxCount = 1 },
-	{ name = "dragonbone staff", chance = 6964, maxCount = 1 },
-	{ name = "worm sponge", chance = 7270, maxCount = 1 },
-	{ name = "violet gem", chance = 5084, maxCount = 1 },
-	{ name = "jade hammer", chance = 3073, maxCount = 1 },
+	{ name = "crystal coin", chance = 42860, maxCount = 2 },
+	{ name = "organic acid", chance = 7678, maxCount = 2 },
+	{ name = "terra boots", chance = 12369, maxCount = 2 },
+	{ name = "small amethyst", chance = 12859, maxCount = 2 },
+	{ name = "rotten roots", chance = 13133, maxCount = 2 },
+	{ name = "blue gem", chance = 9808, maxCount = 2 },
+	{ name = "dragonbone staff", chance = 6964, maxCount = 2 },
+	{ name = "worm sponge", chance = 7270, maxCount = 2 },
+	{ name = "violet gem", chance = 5084, maxCount = 2 },
+	{ name = "jade hammer", chance = 3073, maxCount = 2 },
 	{ id = 43895, chance = 40 }, -- Bag you covet
 	{ id = 43855, chance = 100 }, -- tainted heart
 	{ id = 43854, chance = 100 }, -- darklight heart

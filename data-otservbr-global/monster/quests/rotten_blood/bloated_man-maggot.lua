@@ -73,16 +73,16 @@ monster.light = {
 monster.voices = {}
 
 monster.loot = {
-	{ name = "crystal coin", chance = 12961, maxCount = 1 },
-	{ name = "organic acid", chance = 11678, maxCount = 1 },
-	{ name = "might ring", chance = 10020, maxCount = 1 },
+	{ name = "crystal coin", chance = 42860, maxCount = 2 },
+	{ name = "organic acid", chance = 11678, maxCount = 2 },
+	{ name = "might ring", chance = 10020, maxCount = 2 },
 	{ name = "small emerald", chance = 9133, maxCount = 5 },
-	{ name = "rotten roots", chance = 8637, maxCount = 1 },
-	{ name = "bloated maggot", chance = 8133, maxCount = 1 },
-	{ name = "terra rod", chance = 8078, maxCount = 1 },
-	{ name = "butcher's axe", chance = 7967, maxCount = 1 },
-	{ name = "blue gem", chance = 7808, maxCount = 1 },
-	{ name = "violet gem", chance = 7084, maxCount = 1 },
+	{ name = "rotten roots", chance = 8637, maxCount = 2 },
+	{ name = "bloated maggot", chance = 8133, maxCount = 2 },
+	{ name = "terra rod", chance = 8078, maxCount = 2 },
+	{ name = "butcher's axe", chance = 7967, maxCount = 2 },
+	{ name = "blue gem", chance = 7808, maxCount = 2 },
+	{ name = "violet gem", chance = 7084, maxCount = 2 },
 	{ id = 43895, chance = 40 }, -- Bag you covet
 	{ id = 43855, chance = 100 }, -- tainted heart
 	{ id = 43854, chance = 100 }, -- darklight heart

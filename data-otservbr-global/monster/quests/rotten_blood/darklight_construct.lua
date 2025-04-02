@@ -71,14 +71,14 @@ monster.light = {
 }
 
 monster.loot = {
-	{ name = "crystal coin", chance = 11290, maxCount = 1 },
-	{ name = "dark obsidian splinter", chance = 12735, maxCount = 1 },
-	{ id = 3039, chance = 8781, maxCount = 1 }, -- red gem
+	{ name = "crystal coin", chance = 43682, maxCount = 2 },
+	{ name = "dark obsidian splinter", chance = 12735, maxCount = 2 },
+	{ id = 3039, chance = 8781, maxCount = 2 }, -- red gem
 	{ name = "small emerald", chance = 6646, maxCount = 3 },
-	{ name = "zaoan shoes", chance = 8614, maxCount = 1 },
-	{ name = "darklight core", chance = 5659, maxCount = 1 },
-	{ name = "darklight obsidian axe", chance = 11129, maxCount = 1 },
-	{ name = "magma amulet", chance = 13240, maxCount = 1 },
+	{ name = "zaoan shoes", chance = 8614, maxCount = 2 },
+	{ name = "darklight core", chance = 5659, maxCount = 2 },
+	{ name = "darklight obsidian axe", chance = 11129, maxCount = 2 },
+	{ name = "magma amulet", chance = 13240, maxCount = 2 },
 	{ name = "small ruby", chance = 12458, maxCount = 3 },
 	{ id = 43895, chance = 40 }, -- Bag you covet
 	{ id = 43855, chance = 100 }, -- tainted heart
