@@ -36,6 +36,7 @@ local bosses = {
 	{ name = "Vemiath", position = Position(33078, 32333, 15), bossRaceId = 2365 },
 	{ name = "Chagorz", position = Position(33078, 32367, 15), bossRaceId = 2366 },
 	{ name = "Ichgahal", position = Position(32978, 32333, 15), bossRaceId = 2364 },
+	{ name = "The Pale Worm", position = Position(33772, 31504, 14), bossRaceId = 1881 },
 }
 
 local function sendBossTpModal(player)
