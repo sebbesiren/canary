@@ -1,5 +1,5 @@
 local nictrosPosition = Position(33426, 31437, 13)
-local baelocPosition = Position(33422, 31428, 13)
+local baelocPosition = Position(33422, 31441, 13)
 
 local config = {
 	boss = {
