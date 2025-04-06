@@ -1338,6 +1338,24 @@ tasks = {
 				{ type = "bosspoints", value = { 1 } },
 			},
 		},
+		[65] = {
+			killsRequired = 2000,
+			raceName = "Falcon Bastion",
+			custom = true,
+			level = { 130, 9999 },
+			repeatable = true,
+			premium = true,
+			creatures = {
+				"falcon paladin",
+				"falcon knight",
+			},
+			rewards = {
+				{ type = "exp", value = { 9000000 * 1.5 } },
+				{ type = "item", value = { 3043, 60 } },
+				{ type = "points", value = { 10 } },
+				{ type = "bosspoints", value = { 1 } },
+			},
+		},
 	},
 }
 
