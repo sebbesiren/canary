@@ -97,7 +97,7 @@ monster.loot = {
 	{ id = 3007, chance = 1830 }, -- crystal ring
 	{ id = 3006, chance = 1830 }, -- ring of the sky
 	{ id = 3029, chance = 1830, maxCount = 5 }, -- small sapphire
-	{ id = 12803, chance = 1220 }, -- elemental spikes
+	{ id = 12803, chance = 3500 }, -- elemental spikes
 	{ id = 2995, chance = 1220 }, -- piggy bank
 	{ id = 9045, chance = 1220 }, -- royal tapestry
 	{ id = 3079, chance = 610 }, -- boots of haste
