@@ -16,7 +16,7 @@ function energyEntrance.onStepIn(creature, item, position, fromPosition, toPosit
 	end
 
 	local function hasWarzoneAccess()
-		return player:getStorageValue(Storage.Quest.U9_60.BigfootsBurden.Warzone1Access) == 1 and player:getStorageValue(Storage.Quest.U9_60.BigfootsBurden.Warzone2Access) == 1 and player:getStorageValue(Storage.Quest.U9_60.BigfootsBurden.Warzone3Access) == 1
+		return player:getStorageValue(Storage.Quest.U9_60.BigfootsBurden.Warzone1Access) >= 1 and player:getStorageValue(Storage.Quest.U9_60.BigfootsBurden.Warzone2Access) >= 1 and player:getStorageValue(Storage.Quest.U9_60.BigfootsBurden.Warzone3Access) >= 1
 	end
 
 	if player:getPosition() == Position(33831, 32138, 14) then
