@@ -1192,6 +1192,16 @@ npcConfig.shop = {
 	{ itemName = "pastry dragon", clientId = 48256, sell = 95000 },
 	{ itemName = "demon root", clientId = 48510, sell = 950 },
 	{ itemName = "demon dust", clientId = 5906, sell = 300 },
+	{ itemName = "putrefactive figurine", clientId = 43962, sell = 3200000 },
+	{ itemName = "darklight figurine", clientId = 43961, sell = 3400000 },
+	{ itemName = "vemiath's infused basalt", clientId = 43967, sell = 1000000 },
+	{ itemName = "bakragore's amalgamation", clientId = 43968, sell = 2000000 },
+	{ itemName = "ichgahal's fungal infestation", clientId = 43964, sell = 900000 },
+	{ itemName = "blooded worm", clientId = 43857, sell = 4700 },
+	{ itemName = "decayed finger bone", clientId = 43846, sell = 5100 },
+	{ itemName = "bloody edge", clientId = 7416, sell = 30000 },
+	{ itemName = "worm sponge", clientId = 43848, sell = 4200 },
+	{ itemName = "rotten roots", clientId = 43849, sell = 3800 },
 }
 -- On buy npc shop message
 npcType.onBuyItem = function(npc, player, itemId, subType, amount, ignore, inBackpacks, totalCost)
@@ -1202,7 +1212,8 @@ npcType.onSellItem = function(npc, player, itemId, subtype, amount, ignore, name
 	player:sendTextMessage(MESSAGE_TRADE, string.format("Sold %ix %s for %i gold.", amount, name, totalCost))
 end
 -- On check npc shop message (look item)
-npcType.onCheckItem = function(npc, player, clientId, subType) end
+npcType.onCheckItem = function(npc, player, clientId, subType)
+end
 
 local function creatureSayCallback(npc, creature, type, message)
 	local player = Player(creature)
