@@ -1202,6 +1202,14 @@ npcConfig.shop = {
 	{ itemName = "bloody edge", clientId = 7416, sell = 30000 },
 	{ itemName = "worm sponge", clientId = 43848, sell = 4200 },
 	{ itemName = "rotten roots", clientId = 43849, sell = 3800 },
+
+	{ itemName = "mega lasting exercise rod", clientId = 35289, buy = 24000000, count = 344000 },
+	{ itemName = "mega lasting exercise wand", clientId = 35290, buy = 24000000, count = 344000 },
+	{ itemName = "mega lasting exercise axe", clientId = 35286, buy = 24000000, count = 344000 },
+	{ itemName = "mega lasting exercise bow", clientId = 35288, buy = 24000000, count = 344000 },
+	{ itemName = "mega lasting exercise club", clientId = 35287, buy = 24000000, count = 344000 },
+	{ itemName = "mega lasting exercise shield", clientId = 44067, buy = 24000000, count = 344000 },
+	{ itemName = "mega lasting exercise sword", clientId = 35285, buy = 24000000, count = 344000 },
 }
 -- On buy npc shop message
 npcType.onBuyItem = function(npc, player, itemId, subType, amount, ignore, inBackpacks, totalCost)
