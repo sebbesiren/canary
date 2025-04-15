@@ -18,7 +18,6 @@ local function sendShopModel(player)
 	for _, it in pairs(config.items) do
 		local iType = ItemType(it.id)
 		if iType then
-
 			local name = iType:getName() .. " x " .. it.charges .. " (" .. it.buy .. "g)"
 			window:addChoice(name, function(player, button, choice)
 				if button.name ~= "Select" then
