@@ -5,25 +5,24 @@ local config = {
 	storage = 9007,
 	cooldown = 1,
 	towns = {
-		{ name = "Hunt - Demonwar Crypt", teleport = Position(33259, 31939, 15) },
-		{ name = "Town - Ab'Dendriel", teleport = Position(32732, 31634, 7) },
-		{ name = "Town - Ankrahmun", teleport = Position(33194, 32853, 8) },
-		{ name = "Town - Carlin", teleport = Position(32360, 31782, 7) },
-		{ name = "Town - Darashia", teleport = Position(33213, 32454, 1) },
-		{ name = "Town - Edron", teleport = Position(33217, 31814, 8) },
-		{ name = "Town - Farmine", teleport = Position(33023, 31521, 11) },
-		{ name = "Town - Issavi", teleport = Position(33921, 31477, 5) },
-		{ name = "Town - Kazordoon", teleport = Position(32649, 31925, 11) },
-		{ name = "Town - Krailos", teleport = Position(33657, 31665, 8) },
-		{ name = "Town - Liberty Bay", teleport = Position(32317, 32826, 7) },
-		{ name = "Town - Marapur", teleport = Position(33842, 32853, 7) },
-		{ name = "Town - Port Hope", teleport = Position(32594, 32745, 7) },
-		{ name = "Town - Rathleton", teleport = Position(33594, 31899, 6) },
-		{ name = "Town - Roshamuul", teleport = Position(33513, 32363, 6) },
-		{ name = "Town - Svargrond", teleport = Position(32212, 31132, 7) },
-		{ name = "Town - Thais", teleport = Position(32369, 32241, 7) },
-		{ name = "Town - Venore", teleport = Position(32957, 32076, 7) },
-		{ name = "Town - Yalahar", teleport = Position(32787, 31276, 7) },
+		{ name = "Ab'Dendriel", teleport = Position(32732, 31634, 7) },
+		{ name = "Ankrahmun", teleport = Position(33194, 32853, 8) },
+		{ name = "Carlin", teleport = Position(32360, 31782, 7) },
+		{ name = "Darashia", teleport = Position(33213, 32454, 1) },
+		{ name = "Edron", teleport = Position(33217, 31814, 8) },
+		{ name = "Farmine", teleport = Position(33023, 31521, 11) },
+		{ name = "Issavi", teleport = Position(33921, 31477, 5) },
+		{ name = "Kazordoon", teleport = Position(32649, 31925, 11) },
+		{ name = "Krailos", teleport = Position(33657, 31665, 8) },
+		{ name = "Liberty Bay", teleport = Position(32317, 32826, 7) },
+		{ name = "Marapur", teleport = Position(33842, 32853, 7) },
+		{ name = "Port Hope", teleport = Position(32594, 32745, 7) },
+		{ name = "Rathleton", teleport = Position(33594, 31899, 6) },
+		{ name = "Roshamuul", teleport = Position(33513, 32363, 6) },
+		{ name = "Svargrond", teleport = Position(32212, 31132, 7) },
+		{ name = "Thais", teleport = Position(32369, 32241, 7) },
+		{ name = "Venore", teleport = Position(32957, 32076, 7) },
+		{ name = "Yalahar", teleport = Position(32787, 31276, 7) },
 	},
 }
 
@@ -78,7 +77,7 @@ function supremeCube.onUse(player, item, fromPosition, target, toPosition, isHot
 	end
 
 	local window = ModalWindow({
-		title = "Supreme Cube",
+		title = "Town Portal Cube",
 		message = "Select a City - Price: " .. config.price .. " gold.",
 	})
 

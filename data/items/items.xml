@@ -59318,11 +59318,11 @@ hands of its owner. Granted by TibiaRoyal.com"/>
 			<attribute key="slot" value="necklace"/>
 		</attribute>
 	</item>
-	<item id="31632" article="the" name="missing piece of the cube">
+	<item id="31632" article="the" name="hunt portal cube">
 		<attribute key="description" value="It's black and it's missing"/>
 		<attribute key="weight" value="100"/>
 	</item>
-	<item id="31633" article="the" name="supreme cube">
+	<item id="31633" article="the" name="town portal cube">
 		<attribute key="description" value="It's black and it's supreme"/>
 		<attribute key="weight" value="1000"/>
 	</item>
