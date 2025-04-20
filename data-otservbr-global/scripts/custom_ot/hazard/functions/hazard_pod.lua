@@ -79,8 +79,6 @@ local function removePortal(position)
 			table.remove(hazardPortals, i)
 		end
 	end
-
-
 end
 
 local function spawnPortal(position, monsterName)
