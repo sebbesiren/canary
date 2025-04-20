@@ -62,19 +62,25 @@ local function otherPortalTooClose(position)
 	return false
 end
 
-local function removePortal()
-	local hazardPortal = hazardPortals[1]
-	hazardPortal.spawnZone:unregister()
-	local position = hazardPortal.position
-	local tile = Tile(position)
-	for _, artefactId in ipairs(hazardPortalArtefacts) do
-		local gameArtefact = tile:getItemById(artefactId)
-		if gameArtefact then
-			gameArtefact:remove()
+local function removePortal(position)
+	for i, hazardPortal in ipairs(hazardPortals) do
+		if hazardPortal.position == position then
+			local hazardPortal = hazardPortals[1]
+			hazardPortal.spawnZone:unregister()
+			local position = hazardPortal.position
+			local tile = Tile(position)
+			for _, artefactId in ipairs(hazardPortalArtefacts) do
+				local gameArtefact = tile:getItemById(artefactId)
+				if gameArtefact then
+					gameArtefact:remove()
+				end
+			end
+
+			table.remove(hazardPortals, i)
 		end
 	end
 
-	table.remove(hazardPortals, 1)
+
 end
 
 local function spawnPortal(position, monsterName)
@@ -96,20 +102,20 @@ local function spawnPortal(position, monsterName)
 	spawnZone:configureMonster(monsterName, 1)
 	spawnZone:register()
 	table.insert(hazardPortals, { ["position"] = position, ["spawnZone"] = spawnZone })
-	addEvent(removePortal, 1000 * 60 * 30) -- 30min
+	addEvent(removePortal, 1000 * 60 * 60, position) -- 60min
 end
 
 local function spawnFewEnemies(position, monsterName)
 	---- 4 enemies
 	for i = 1, 4 do
-		spawnMonster(position, monsterName)
+		addEvent(spawnMonster, 250 * i, position, monsterName)
 	end
 end
 
 local function spawnManyEnemies(position, monsterName)
 	---- 8 enemies
 	for i = 1, 8 do
-		spawnMonster(position, monsterName)
+		addEvent(spawnMonster, 250 * i, position, monsterName)
 	end
 end
 

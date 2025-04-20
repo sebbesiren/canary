@@ -1051,6 +1051,7 @@ tasks = {
 				"dawnfire asura",
 				"midnight asura",
 				"frost flower asura",
+				"hellspawn"
 			},
 			rewards = {
 				{ type = "exp", value = { 1200000 * 1.5 } },

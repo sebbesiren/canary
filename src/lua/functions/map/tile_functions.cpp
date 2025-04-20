@@ -49,6 +49,7 @@ void TileFunctions::init(lua_State* L) {
 
 	Lua::registerMethod(L, "Tile", "hasProperty", TileFunctions::luaTileHasProperty);
 	Lua::registerMethod(L, "Tile", "hasFlag", TileFunctions::luaTileHasFlag);
+	Lua::registerMethod(L, "Tile", "setFlag", TileFunctions::luaTileSetFlag);
 
 	Lua::registerMethod(L, "Tile", "queryAdd", TileFunctions::luaTileQueryAdd);
 	Lua::registerMethod(L, "Tile", "addItem", TileFunctions::luaTileAddItem);
@@ -592,6 +593,19 @@ int TileFunctions::luaTileHasFlag(lua_State* L) {
 	if (tile) {
 		TileFlags_t flag = Lua::getNumber<TileFlags_t>(L, 2);
 		Lua::pushBoolean(L, tile->hasFlag(flag));
+	} else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int TileFunctions::luaTileSetFlag(lua_State* L) {
+	// tile:hasFlag(flag)
+	const auto &tile = Lua::getUserdataShared<Tile>(L, 1);
+	if (tile) {
+		TileFlags_t flag = Lua::getNumber<TileFlags_t>(L, 2);
+		tile->setFlag(flag);
+		Lua::pushBoolean(L, true);
 	} else {
 		lua_pushnil(L);
 	}
