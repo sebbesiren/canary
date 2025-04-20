@@ -31,6 +31,8 @@ local config = {
 		{ name = "Orc Fortress", teleport = Position({ x = 32865, y = 31772, z = 7 }) }, -- Orc Fortress near Thais
 		{ name = "Vengoth", teleport = Position({ x = 32953, y = 31490, z = 6 }) }, -- Vengoth castle entrance
 		{ name = "Soulpit", teleport = Position({ x = 32375, y = 31164, z = 8 }) },
+		{ name = "Drefia Grim Reapers", teleport = Position({x = 33029, y = 32450, z = 11}) },
+		{ name = "Nightmare Isles", teleport = Position({x = 33496, y = 32616, z = 8}) },
 	},
 }
 

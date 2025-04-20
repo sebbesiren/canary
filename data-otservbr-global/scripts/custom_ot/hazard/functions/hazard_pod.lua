@@ -105,15 +105,15 @@ end
 
 local function spawnFewEnemies(position, monsterName)
 	---- 4 enemies
-	for i = 1, 4 do
-		addEvent(spawnMonster, 250 * i, position, monsterName)
+	for i = 1, 6 do
+		addEvent(spawnMonster, 150 * (i - 1), position, monsterName)
 	end
 end
 
 local function spawnManyEnemies(position, monsterName)
 	---- 8 enemies
 	for i = 1, 8 do
-		addEvent(spawnMonster, 250 * i, position, monsterName)
+		addEvent(spawnMonster, 150 * (i - 1), position, monsterName)
 	end
 end
 

@@ -20,11 +20,16 @@ local function rstrip(s)
 	return s:match("(.-)%s*$")
 end
 
-local function updateHazardLevel(player, hazard, desiredLevel, hazardName)
+local function updateHazardLevel(player, selectedHazard, desiredLevel, hazardName)
+	local hazard = Hazard.getByName(selectedHazard.name)
+
 	local currentLevel = hazard:getPlayerCurrentLevel(player)
 
 	if hazard:setPlayerCurrentLevel(player, desiredLevel) then
-		player:sendTextMessage(MESSAGE_LOOK, "Hazard level for area '" .. hazardName .. "' set to " .. desiredLevel)
+		if hazardName then
+			player:sendTextMessage(MESSAGE_LOOK, "Hazard level for area '" .. hazardName .. "' set to " .. desiredLevel)
+		end
+
 		if desiredLevel > currentLevel then
 			local spectators = Game.getSpectators(player:getPosition(), false, false, 15, 15, 15, 15)
 			for _, spectator in ipairs(spectators) do
@@ -38,7 +43,9 @@ local function updateHazardLevel(player, hazard, desiredLevel, hazardName)
 			end
 		end
 	else
-		player:sendTextMessage(MESSAGE_LOOK, "You can't set your hazard level higher than your maximum unlocked level.")
+		if hazardName then
+			player:sendTextMessage(MESSAGE_LOOK, "You can't set your hazard level for " .. hazardName .. " higher than your maximum unlocked level.")
+		end
 	end
 end
 
@@ -46,6 +53,11 @@ function hazardlevel.onSay(player, words, param)
 	logger.debug("!hazardlevel executed")
 
 	local paramParts = param:split(",")
+
+	if #paramParts < 2 then
+		player:sendTextMessage(MESSAGE_LOOK, "Unknown input. Try !hazardlevel world, 1")
+		return true
+	end
 
 	if paramParts[1] == "list" then
 		player:sendTextMessage(MESSAGE_LOOK, "Available hazards: " .. table.concat(availableHazards, ", "))
@@ -58,7 +70,6 @@ function hazardlevel.onSay(player, words, param)
 		player:sendTextMessage(MESSAGE_LOOK, "Unknown hazard. Use one of: " .. table.concat(availableHazards, ", "))
 		return true
 	end
-	local hazard = Hazard.getByName(selectedHazard.name)
 
 	if not paramParts[2] then
 		player:sendTextMessage(MESSAGE_LOOK, "Invalid level")
@@ -78,7 +89,11 @@ function hazardlevel.onSay(player, words, param)
 
 	player:sendTextMessage(MESSAGE_LOOK, "Hazardlevel will be set in 5 seconds.")
 	addEvent(function()
-		updateHazardLevel(player, hazard, desiredLevel, hazardName)
+		updateHazardLevel(player, selectedHazard, desiredLevel, hazardName)
+
+		if hazardName == "world" then
+			updateHazardLevel(player, hazards["origin"], desiredLevel, nil)
+		end
 	end, 5000)
 
 	return true
