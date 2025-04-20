@@ -601,7 +601,7 @@ int TileFunctions::luaTileHasFlag(lua_State* L) {
 
 int TileFunctions::luaTileSetFlag(lua_State* L) {
 	// tile:hasFlag(flag)
-	const auto &tile = Lua::getUserdataShared<Tile>(L, 1);
+	const auto &tile = Lua::getUserdataShared<Tile>(L, 1, "Tile");
 	if (tile) {
 		TileFlags_t flag = Lua::getNumber<TileFlags_t>(L, 2);
 		tile->setFlag(flag);

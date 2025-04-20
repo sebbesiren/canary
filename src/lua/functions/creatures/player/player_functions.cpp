@@ -4938,7 +4938,7 @@ int PlayerFunctions::luaPlayerHasAnimusMastery(lua_State* L) {
 }
 
 int PlayerFunctions::luaPlayerCanDoPotionAction(lua_State* L) {
-	auto player = Lua::getUserdataShared<Player>(L, 1);
+	auto player = Lua::getUserdataShared<Player>(L, 1, "Player");
 	if (!player) {
 		Lua::reportErrorFunc(Lua::getErrorDesc(LUA_ERROR_PLAYER_NOT_FOUND));
 		return 1;
@@ -4951,7 +4951,7 @@ int PlayerFunctions::luaPlayerCanDoPotionAction(lua_State* L) {
 }
 
 int PlayerFunctions::luaPlayerSetNextPotionAction(lua_State* L) {
-	auto player = Lua::getUserdataShared<Player>(L, 1);
+	auto player = Lua::getUserdataShared<Player>(L, 1, "Player");
 	if (!player) {
 		Lua::reportErrorFunc(Lua::getErrorDesc(LUA_ERROR_PLAYER_NOT_FOUND));
 		return 1;
