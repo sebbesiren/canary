@@ -391,5 +391,10 @@ class PlayerFunctions {
 	static int luaPlayerCanDoPotionAction(lua_State* L);
 	static int luaPlayerSetNextPotionAction(lua_State* L);
 
+	static int luaPlayerGetMapShader(lua_State* L);
+	static int luaPlayerSetMapShader(lua_State* L);
+	static int luaPlayerAddCustomOutfit(lua_State* L);
+	static int luaPlayerRemoveCustomOutfit(lua_State* L);
+
 	friend class CreatureFunctions;
 };
