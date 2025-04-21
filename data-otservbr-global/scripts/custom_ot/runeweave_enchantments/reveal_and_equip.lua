@@ -19,9 +19,17 @@ local function newEnchantmentWindow(player, itemAffixes, item, slot, updateIndex
 		return true
 	end
 
+	local message
+	if updateIndex == nil then
+		message = "Add"
+	else
+		local replacingAffix = itemAffixes[updateIndex]
+		message = "Replacing: " .. replacingAffix.quality .. " " .. replacingAffix.name
+	end
+
 	local window = ModalWindow({
 		title = "Select enchantment",
-		message = "Your available enchantments for the slot",
+		message = message,
 	})
 
 	for _, availableAffix in ipairs(availableEnchantAffixes) do
