@@ -25,8 +25,6 @@ hazardZone:addArea({ x = 4000, y = 4000, z = 0 }, { x = 6500, y = 6500, z = 15 }
 -- Hazard Origin
 hazardZone:subtractArea({ x = 5067, y = 4907, z = 11 }, { x = 5096, y = 4928, z = 11 })
 
--- TODO: move zone handling for origin here. Create a switch in deathevent
-
 local deathEventName = "WorldHazardDeath"
 local spawnEvent = ZoneEvent(hazardZone)
 function spawnEvent.onSpawn(monster, position)
@@ -50,9 +48,6 @@ function deathEvent.onDeath(creature)
 	if points < 1 then
 		return true
 	end
-
-	-- TODO if origin => run origin handling
-	-- Else run regular event
 
 	if executeCreateHazardPod(player, points) then
 		createHazardPod(monster:getPosition(), monster:getName())

@@ -53771,9 +53771,9 @@ hands of its owner. Granted by TibiaRoyal.com"/>
 		<attribute key="containersize" value="20"/>
 	</item>
 	<item id="28649" article="a" name="cage"/>
-	<item id="28650" article="a" name="sealed scroll">
+	<item id="28650" article="a" name="runeweave scroll">
 		<attribute key="primarytype" value="documents and papers"/>
-		<attribute key="description" value="It is sealed with the symbol of Zathroth"/>
+		<attribute key="description" value="Right click to add a random enchantment to your collection. Use the runeweave enchantment hammer to apply enchantments to your equipment."/>
 		<attribute key="weight" value="110"/>
 	</item>
 	<item id="28651" article="a" name="seashell">

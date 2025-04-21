@@ -1,128 +1,153 @@
 local config = {
-	Rarity = {
-		Uncommon = { Affixes = 1 },
-		Rare = { Affixes = 2 },
-		Epic = { Affixes = 3 },
-	},
-
-	RevealChance = {
-		Uncommon = 55,
-		Rare = 30,
-		Epic = 15,
-	},
-
 	AffixQualityChance = {
-		Weak = 55,
-		Strong = 30,
-		Powerful = 15,
+		Weak = 65,
+		Strong = 25,
+		Powerful = 10,
 	},
-
-	Affixes = {
+	AffixesPerSlot = {
 		Armor = {
-			Health = { Weak = 1, Strong = 2, Powerful = 4 },
-			Mana = { Weak = 1, Strong = 2, Powerful = 4 },
-			AllResist = { Weak = 1, Strong = 2, Powerful = 4 },
-			Vampirism = { Weak = 2, Strong = 4, Powerful = 8 },
-			PhysResist = { Weak = 1, Strong = 2, Powerful = 4 },
-			Charm = { Weak = 5, Strong = 10, Powerful = 15 },
+			"Health",
+			"Mana",
+			"AllResist",
+			"Vampirism",
+			"PhysResist",
+			"Charm",
 		},
 		Head = {
-			Health = { Weak = 1, Strong = 2, Powerful = 4 },
-			Mana = { Weak = 1, Strong = 2, Powerful = 4 },
-			Skills = { Weak = 1, Strong = 2, Powerful = 3 },
-			Void = { Weak = 1, Strong = 2, Powerful = 4 },
-			PhysResist = { Weak = 1, Strong = 2, Powerful = 4 },
-			Charm = { Weak = 5, Strong = 10, Powerful = 15 },
+			"Health",
+			"Mana",
+			"Skills",
+			"Void",
+			"PhysResist",
+			"Charm",
 		},
 		Legs = {
-			Health = { Weak = 1, Strong = 2, Powerful = 4 },
-			Mana = { Weak = 1, Strong = 2, Powerful = 4 },
-			AllResist = { Weak = 1, Strong = 2, Powerful = 4 },
-			PhysResist = { Weak = 1, Strong = 2, Powerful = 4 },
-			Charm = { Weak = 5, Strong = 10, Powerful = 15 },
+			"Health",
+			"Mana",
+			"AllResist",
+			"PhysResist",
+			"Charm",
+			"HealReceived",
 		},
 		Feet = {
-			Health = { Weak = 1, Strong = 2, Powerful = 4 },
-			Mana = { Weak = 1, Strong = 2, Powerful = 4 },
-			PhysResist = { Weak = 1, Strong = 2, Powerful = 4 },
-			Charm = { Weak = 5, Strong = 10, Powerful = 15 },
-			HealReceived = { Weak = 1, Strong = 2, Powerful = 4 },
+			"Health",
+			"Mana",
+			"PhysResist",
+			"Charm",
+			"HealReceived",
 		},
 		Weapon = {
-			CritChance = { Weak = 2, Strong = 4, Powerful = 8 },
-			CritDmg = { Weak = 5, Strong = 10, Powerful = 20 },
-			Skills = { Weak = 1, Strong = 2, Powerful = 3 },
-			Vampirism = { Weak = 2, Strong = 4, Powerful = 8 },
-			Void = { Weak = 1, Strong = 2, Powerful = 4 },
-			Atk = { Weak = 1, Strong = 3, Powerful = 6 },
+			"CritChance",
+			"CritDmg",
+			"Skills",
+			"Vampirism",
+			"Void",
+			"Atk",
 		},
+	},
+	Affixes = {
+		Health = { Weak = 1, Strong = 2, Powerful = 4 },
+		Mana = { Weak = 1, Strong = 2, Powerful = 4 },
+		AllResist = { Weak = 1, Strong = 2, Powerful = 4 },
+		Vampirism = { Weak = 2, Strong = 4, Powerful = 8 },
+		PhysResist = { Weak = 1, Strong = 2, Powerful = 4 },
+		Charm = { Weak = 5, Strong = 10, Powerful = 15 },
+		Skills = { Weak = 1, Strong = 2, Powerful = 3 },
+		Void = { Weak = 1, Strong = 2, Powerful = 4 },
+		HealReceived = { Weak = 1, Strong = 2, Powerful = 4 },
+		CritChance = { Weak = 2, Strong = 4, Powerful = 8 },
+		CritDmg = { Weak = 5, Strong = 10, Powerful = 20 },
+		Atk = { Weak = 1, Strong = 3, Powerful = 6 },
 	},
 }
 
-function generateItemAffixes(slot)
-	local roll = math.random(1, 100)
-	local rarity = "Common"
-	local affixCount = 0
-
-	if roll <= config.RevealChance.Epic then
-		rarity = "Epic"
-		affixCount = config.Rarity.Epic.Affixes
-	elseif roll <= config.RevealChance.Rare + config.RevealChance.Epic then
-		rarity = "Rare"
-		affixCount = config.Rarity.Rare.Affixes
-	else
-		rarity = "Uncommon"
-		affixCount = config.Rarity.Uncommon.Affixes
-	end
-
-	local availableAffixes = config.Affixes[slot]
+function generateAffix()
 	local affixKeys = {}
-	for key in pairs(availableAffixes) do
+	for key in pairs(config.Affixes) do
 		table.insert(affixKeys, key)
 	end
 
-	local selectedAffixes = {}
-	local usedAffixes = {}
-	local maxAffixes = math.min(affixCount, #affixKeys)
-
-	for i = 1, maxAffixes do
-		local qualityRoll = math.random(1, 100)
-		local quality = "Weak"
-		if qualityRoll <= config.AffixQualityChance.Powerful then
-			quality = "Powerful"
-		elseif qualityRoll <= config.AffixQualityChance.Strong + config.AffixQualityChance.Powerful then
-			quality = "Strong"
-		end
-
-		local affix
-		repeat
-			affix = affixKeys[math.random(1, #affixKeys)]
-		until not usedAffixes[affix]
-
-		usedAffixes[affix] = true
-
-		table.insert(selectedAffixes, {
-			name = affix,
-			quality = quality,
-			value = availableAffixes[affix][quality],
-		})
+	local qualityRoll = math.random(1, 100)
+	local quality = "Weak"
+	if qualityRoll <= config.AffixQualityChance.Powerful then
+		quality = "Powerful"
+	elseif qualityRoll <= config.AffixQualityChance.Strong + config.AffixQualityChance.Powerful then
+		quality = "Strong"
 	end
 
+	local affixName = affixKeys[math.random(1, #affixKeys)]
+
 	return {
-		rarity = rarity,
-		affixes = selectedAffixes,
+		name = affixName,
+		quality = quality
 	}
 end
 
-function generateAffixDescription(affixResult)
+function getPlayerStoredAffixes(player)
+	local playerStoredAffixes = player:kv():scoped("runeweave"):get("stored-affixes") or {}
+
+	-- ensure all keys exists
+	for affixName in pairs(config.Affixes) do
+		if not playerStoredAffixes[affixName] then
+			playerStoredAffixes[affixName] = {}
+
+			for qualityName in pairs(config.AffixQualityChance) do
+				if not playerStoredAffixes[affixName][qualityName] then
+					playerStoredAffixes[affixName][qualityName] = 0
+				end
+			end
+		end
+	end
+
+	return playerStoredAffixes
+end
+
+function setPlayerStoredAffixes(player, playerStoredAffixes)
+	player:kv():scoped("runeweave"):set("stored-affixes", playerStoredAffixes)
+end
+
+function addAffixToStore(player, affixName, quality)
+	local playerStoredAffixes = getPlayerStoredAffixes(player)
+	playerStoredAffixes[affixName][quality] = playerStoredAffixes[affixName][quality] + 1
+	setPlayerStoredAffixes(player, playerStoredAffixes)
+
+	player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Enchantment " .. quality .. " " .. affixName .. " was added to your collection.")
+end
+
+function removeAffixFromStore(player, affixName, quality)
+	local playerStoredAffixes = getPlayerStoredAffixes(player)
+	playerStoredAffixes[affixName][quality] = playerStoredAffixes[affixName][quality] - 1
+	setPlayerStoredAffixes(player, playerStoredAffixes)
+end
+
+function getAvailableEnchantAffixes(player, slot, excludeAffixes)
+	availableAffixes = {
+		-- name/quality/count
+	}
+	local playerStoredAffixes = getPlayerStoredAffixes(player)
+	local slotAffixNames = config.AffixesPerSlot[slot]
+
+	for _, affixName in ipairs(slotAffixNames) do
+		if not table.contains(excludeAffixes, affixName) then
+			for k, v in pairs(playerStoredAffixes[affixName]) do
+				if v > 0 then
+					table.insert(availableAffixes, { quality = k, name = affixName, count = v })
+				end
+			end
+		end
+	end
+
+	return availableAffixes
+end
+
+function generateAffixDescription(affixes)
 	local affixStrings = {}
-	for _, affix in ipairs(affixResult.affixes) do
+	for _, affix in ipairs(affixes) do
 		local affixStr = string.format("%s %s", affix.quality, affix.name)
 		table.insert(affixStrings, affixStr)
 	end
 
-	local affixList = table.concat(affixStrings, ", ")
-	return string.format("%s (%d): %s", affixResult.rarity, #affixResult.affixes, affixList)
+	return "Enchantments: " .. table.concat(affixStrings, ", ")
 end
 
 function getAffixesFromDescription(item)
@@ -152,14 +177,15 @@ function getAffixesFromDescription(item)
 	return affixes
 end
 
-function setAffixConditions(player, condition, affixes, slot)
+function setAffixConditions(player, condition, affixes)
 	for _, affix in ipairs(affixes) do
 		local affixName = affix.name
-		if not config.Affixes[slot][affixName] then
+
+		if not config.Affixes[affixName] or not config.Affixes[affixName][affix.quality] then
 			goto continue
 		end
 
-		local value = config.Affixes[slot][affixName][affix.quality]
+		local value = config.Affixes[affixName][affix.quality]
 
 		if affixName == "Health" then
 			condition:setParameter(CONDITION_PARAM_STAT_MAXHITPOINTSPERCENT, 100 + value)
@@ -203,7 +229,7 @@ function setAffixConditions(player, condition, affixes, slot)
 		elseif affixName == "HealReceived" then
 			condition:setParameter(CONDITION_PARAM_BUFF_HEALINGRECEIVED, 100 + value)
 		end
-		::continue::
+		:: continue ::
 	end
 end
 
@@ -240,18 +266,45 @@ function getSlotName(item)
 	return slotName or "Unknown"
 end
 
-function Monster:generateEnchantmentHammerLoot(playerLoot)
+function Monster:generateEnchantmentScrollLoot(playerLoot)
+	if playerLoot == nil then
+		playerLoot = {}
+	end
+
 	local mType = self:getType()
 
+	local chance = 100
+	local count = 1
 	local is_archfoe = (mType:bossRace() or ""):lower() == "archfoe"
-	if not is_archfoe then
-		return playerLoot
+	if is_archfoe then
+		chance = 25000
+	else
+		local forgeClassification = self:getMonsterForgeClassification()
+		if forgeClassification == FORGE_INFLUENCED_MONSTER then
+			chance = 1000
+		elseif forgeClassification == FORGE_FIENDISH_MONSTER then
+			chance = 5000
+		end
 	end
 
 	local roll = math.random(1, 100000)
-	if roll < 15000 then
-		local itemType = ItemType(673)
-		playerLoot[itemType:getId()] = { count = 1 }
+	if roll < chance then
+		local itemType = ItemType(28650)
+		playerLoot[itemType:getId()] = { count = count }
 	end
 	return playerLoot
 end
+
+local lootCallback = EventCallback("MonsterOnDropRuneweaveEnchantment")
+function lootCallback.monsterOnDropLoot(monster, corpse)
+	if not monster or not corpse then
+		return
+	end
+	local player = Player(corpse:getCorpseOwner())
+	if not player or not player:canReceiveLoot() then
+		return
+	end
+	corpse:addLoot(monster:generateEnchantmentScrollLoot())
+end
+
+lootCallback:register()
