@@ -123,7 +123,11 @@ function deathEvent.onDeath(creature)
 		end
 
 		local bossName = bosses[math.random(#bosses)]
-		attemptStartUberBoss(bossName)
+		local item = player:addItem(5802, 1) -- Boss Essence
+		if item then
+			item:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, bossName)
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Received boss essence: " .. bossName)
+		end
 	end
 
 	return true

@@ -15598,8 +15598,9 @@
 			<attribute key="slot" value="backpack"/>
 		</attribute>
 	</item>
-	<item id="5802" article="a" name="message in a bottle">
-		<attribute key="weight" value="1200"/>
+	<item id="5802" article="a" name="Boss Essence">
+		<attribute key="description" value="It contains the essence of a boss. Right click to create a portal and slay the demon!"/>
+		<attribute key="weight" value="100"/>
 	</item>
 	<item id="5803" article="an" name="arbalest">
 		<attribute key="primarytype" value="distance weapons"/>

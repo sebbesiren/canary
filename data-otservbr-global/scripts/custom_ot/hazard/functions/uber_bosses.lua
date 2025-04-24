@@ -1,14 +1,14 @@
-local lobbyDuration = 60 * 3 -- 3 min
+local lobbyDuration = 60 * 1 -- 1 min
 local fightDuration = 60 * 15 -- 15min
 local teleportItemId = 25055
 local entryLocations = {
-	Position(5080, 4916, 11),
-	Position(5083, 4916, 11),
-	Position(5080, 4919, 11),
-	Position(5083, 4919, 11),
+	--Position(5080, 4916, 11),
+	--Position(5083, 4916, 11),
+	--Position(5080, 4919, 11),
+	--Position(5083, 4919, 11),
 	Position(32345, 32224, 7),
 	Position(32369, 32244, 7),
-	Position(5004, 4989, 11),
+	Position(5005, 4989, 11),
 }
 local exitLocations = {
 	Position(5078, 4809, 11),
@@ -112,8 +112,10 @@ function attemptStartUberBoss(bossName)
 			createExitLocation(exitLocation)
 		end
 		addEvent(startFight, lobbyDuration * 1000, bossName)
+		return true
 	else
 		logger.debug("Attempt to start uber boss {} failed", bossName)
+		return false
 	end
 end
 

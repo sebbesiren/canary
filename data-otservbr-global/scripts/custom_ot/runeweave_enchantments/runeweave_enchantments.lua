@@ -1,7 +1,7 @@
 local config = {
 	AffixQualityChance = {
 		Weak = 60,
-		Strong = 30,
+		Strong = 40,
 		Powerful = 7,
 		Legendary = 2,
 		Godly = 1,
@@ -71,9 +71,13 @@ function generateAffix()
 
 	local qualityRoll = math.random(1, 100)
 	local quality = "Weak"
-	if qualityRoll <= config.AffixQualityChance.Powerful then
+	if qualityRoll <= config.AffixQualityChance.Godly then
+		quality = "Godly"
+	elseif qualityRoll <= config.AffixQualityChance.Legendary + config.AffixQualityChance.Godly then
+		quality = "Legendary"
+	elseif qualityRoll <= config.AffixQualityChance.Powerful + config.AffixQualityChance.Legendary + config.AffixQualityChance.Godly then
 		quality = "Powerful"
-	elseif qualityRoll <= config.AffixQualityChance.Strong + config.AffixQualityChance.Powerful then
+	elseif qualityRoll <= config.AffixQualityChance.Strong + config.AffixQualityChance.Powerful + config.AffixQualityChance.Legendary + config.AffixQualityChance.Godly then
 		quality = "Strong"
 	end
 
@@ -92,11 +96,11 @@ function getPlayerStoredAffixes(player)
 	for affixName in pairs(config.Affixes) do
 		if not playerStoredAffixes[affixName] then
 			playerStoredAffixes[affixName] = {}
+		end
 
-			for qualityName in pairs(config.AffixQualityChance) do
-				if not playerStoredAffixes[affixName][qualityName] then
-					playerStoredAffixes[affixName][qualityName] = 0
-				end
+		for qualityName in pairs(config.AffixQualityChance) do
+			if not playerStoredAffixes[affixName][qualityName] then
+				playerStoredAffixes[affixName][qualityName] = 0
 			end
 		end
 	end
@@ -231,7 +235,7 @@ function setAffixConditions(player, condition, affixes)
 		elseif affixName == "HealReceived" then
 			condition:setParameter(CONDITION_PARAM_BUFF_HEALINGRECEIVED, 100 + value)
 		end
-		::continue::
+		:: continue ::
 	end
 end
 
