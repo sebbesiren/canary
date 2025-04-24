@@ -235,7 +235,7 @@ function setAffixConditions(player, condition, affixes)
 		elseif affixName == "HealReceived" then
 			condition:setParameter(CONDITION_PARAM_BUFF_HEALINGRECEIVED, 100 + value)
 		end
-		:: continue ::
+		::continue::
 	end
 end
 
