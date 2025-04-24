@@ -18,6 +18,9 @@ local config = {
 		},
 
 		container = {
+			{ 673, 1 }, -- Runeweave enchantment hammer
+			{ 31633, 1 }, -- Town teleporter
+			{ 36827, 1 }, -- Hunt teleporter
 			{ 3003, 1 }, -- rope
 			{ 5710, 1 }, -- light shovel
 			{ 268, 20 }, -- mana potion
@@ -36,6 +39,9 @@ local config = {
 		},
 
 		container = {
+			{ 673, 1 }, -- Runeweave enchantment hammer
+			{ 31633, 1 }, -- Town teleporter
+			{ 36827, 1 }, -- Hunt teleporter
 			{ 3003, 1 }, -- rope
 			{ 5710, 1 }, -- light shovel
 			{ 268, 20 }, -- mana potion
@@ -54,6 +60,9 @@ local config = {
 		},
 
 		container = {
+			{ 673, 1 }, -- Runeweave enchantment hammer
+			{ 31633, 1 }, -- Town teleporter
+			{ 36827, 1 }, -- Hunt teleporter
 			{ 3003, 1 }, -- rope
 			{ 5710, 1 }, -- light shovel
 			{ 266, 10 }, -- health potion
@@ -76,6 +85,9 @@ local config = {
 		},
 
 		container = {
+			{ 673, 1 }, -- Runeweave enchantment hammer
+			{ 31633, 1 }, -- Town teleporter
+			{ 36827, 1 }, -- Hunt teleporter
 			{ 3297, 1 }, -- serpent sword
 			{ 3282, 1 }, -- morning star
 			{ 3003, 1 }, -- rope
