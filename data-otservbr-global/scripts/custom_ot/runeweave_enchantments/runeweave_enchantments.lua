@@ -1,8 +1,10 @@
 local config = {
 	AffixQualityChance = {
-		Weak = 65,
-		Strong = 25,
-		Powerful = 10,
+		Weak = 60,
+		Strong = 30,
+		Powerful = 7,
+		Legendary = 2,
+		Godly = 1
 	},
 	AffixesPerSlot = {
 		Armor = {
@@ -46,18 +48,18 @@ local config = {
 		},
 	},
 	Affixes = {
-		Health = { Weak = 1, Strong = 2, Powerful = 4 },
-		Mana = { Weak = 1, Strong = 2, Powerful = 4 },
-		AllResist = { Weak = 1, Strong = 2, Powerful = 4 },
-		Vampirism = { Weak = 2, Strong = 4, Powerful = 8 },
-		PhysResist = { Weak = 1, Strong = 2, Powerful = 4 },
-		Charm = { Weak = 5, Strong = 10, Powerful = 15 },
-		Skills = { Weak = 1, Strong = 2, Powerful = 3 },
-		Void = { Weak = 1, Strong = 2, Powerful = 4 },
-		HealReceived = { Weak = 1, Strong = 2, Powerful = 4 },
-		CritChance = { Weak = 2, Strong = 4, Powerful = 8 },
-		CritDmg = { Weak = 5, Strong = 10, Powerful = 20 },
-		Atk = { Weak = 1, Strong = 3, Powerful = 6 },
+		Health = { Weak = 1, Strong = 2, Powerful = 4, Legendary = 8, Godly = 12 },
+		Mana = { Weak = 1, Strong = 2, Powerful = 4, Legendary = 8, Godly = 12 },
+		AllResist = { Weak = 1, Strong = 2, Powerful = 4, Legendary = 6, Godly = 8 },
+		Vampirism = { Weak = 2, Strong = 4, Powerful = 8, Legendary = 12, Godly = 16 },
+		PhysResist = { Weak = 1, Strong = 2, Powerful = 4, Legendary = 6, Godly = 8 },
+		Charm = { Weak = 4, Strong = 8, Powerful = 12, Legendary = 16, Godly = 20 },
+		Skills = { Weak = 1, Strong = 2, Powerful = 4, Legendary = 8, Godly = 12 },
+		Void = { Weak = 1, Strong = 2, Powerful = 4, Legendary = 8, Godly = 12 },
+		HealReceived = { Weak = 1, Strong = 2, Powerful = 4, Legendary = 8, Godly = 12 },
+		CritChance = { Weak = 2, Strong = 4, Powerful = 8, Legendary = 12, Godly = 16 },
+		CritDmg = { Weak = 5, Strong = 10, Powerful = 20, Legendary = 30, Godly = 40 },
+		Atk = { Weak = 2, Strong = 4, Powerful = 8, Legendary = 12, Godly = 16 },
 	},
 }
 
