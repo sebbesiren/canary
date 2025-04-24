@@ -4,7 +4,7 @@ local config = {
 		Strong = 30,
 		Powerful = 7,
 		Legendary = 2,
-		Godly = 1
+		Godly = 1,
 	},
 	AffixesPerSlot = {
 		Armor = {
