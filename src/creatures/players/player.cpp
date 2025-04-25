@@ -4957,8 +4957,8 @@ void Player::parseAttackRecvHazardSystem(CombatDamage &damage, const std::shared
 		damage.exString = "(Hazard)";
 
 		stage = (points - 1) * static_cast<uint16_t>(g_configManager().getNumber(HAZARD_CRITICAL_MULTIPLIER));
-		damage.primary.value += static_cast<int32_t>(std::ceil((static_cast<double>(damage.primary.value) * (5000 + stage)) / 10000));
-		damage.secondary.value += static_cast<int32_t>(std::ceil((static_cast<double>(damage.secondary.value) * (5000 + stage)) / 10000));
+		damage.primary.value += static_cast<int32_t>(std::ceil((static_cast<double>(damage.primary.value) * (5000 + stage)) / 10000.0));
+		damage.secondary.value += static_cast<int32_t>(std::ceil((static_cast<double>(damage.secondary.value) * (5000 + stage)) / 10000.0));
 		lastHazardSystemCriticalHit = OTSYS_TIME();
 	}
 
@@ -4967,7 +4967,6 @@ void Player::parseAttackRecvHazardSystem(CombatDamage &damage, const std::shared
 		//		stage = points * static_cast<uint16_t>(g_configManager().getNumber(HAZARD_DAMAGE_MULTIPLIER));
 
 		stage = points * static_cast<uint16_t>(g_configManager().getNumber(HAZARD_DAMAGE_MULTIPLIER) * std::pow(1.09, points));
-
 		if (stage != 0) {
 			damage.extension = true;
 			damage.exString = "(Hazard)";

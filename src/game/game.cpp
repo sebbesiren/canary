@@ -7412,7 +7412,7 @@ bool Game::combatChangeHealth(const std::shared_ptr<Creature> &attacker, const s
 		}
 
 		auto spectators = Spectators().find<Player>(targetPos, true);
-		if (targetPlayer && attackerMonster && damage.origin != ORIGIN_NONE) {
+		if (targetPlayer && attackerMonster) {
 			handleHazardSystemAttack(damage, targetPlayer, attackerMonster, false);
 		} else if (attackerPlayer && targetMonster) {
 			handleHazardSystemAttack(damage, attackerPlayer, targetMonster, true);
