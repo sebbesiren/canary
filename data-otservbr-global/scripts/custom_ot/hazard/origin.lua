@@ -96,10 +96,17 @@ function deathEvent.onDeath(creature)
 			"Duke Krule",
 			"Sir Baeloc",
 			"Mitmah Vanguard",
+			"Horestis",
+			"Ratmiral Blackwhiskers",
+			"Maxxenius",
+			"Alptramun",
+			"Plagueroot",
+			"Malofur Mangrinder",
+			"The Nightmare Beast"
 		}
 
 		if monsterMaxHealth > 2500 then
-			for _ = 1, 6 do
+			for _ = 1, 4 do
 				table.insert(bosses, "Balrog")
 				table.insert(bosses, "Mitmah Vanguard")
 				table.insert(bosses, "The Rootkraken")
@@ -107,7 +114,7 @@ function deathEvent.onDeath(creature)
 			end
 		end
 		if monsterMaxHealth > 5000 then
-			for _ = 1, 4 do
+			for _ = 1, 6 do
 				table.insert(bosses, "Balrog")
 				table.insert(bosses, "The Rootkraken")
 				table.insert(bosses, "Death Lord Athelstan")
