@@ -102,7 +102,7 @@ function deathEvent.onDeath(creature)
 			"Alptramun",
 			"Plagueroot",
 			"Malofur Mangrinder",
-			"The Nightmare Beast"
+			"The Nightmare Beast",
 		}
 
 		if monsterMaxHealth > 2500 then
