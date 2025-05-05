@@ -34,6 +34,7 @@ local config = {
 		{ name = "Drefia Grim Reapers", teleport = Position({ x = 33029, y = 32450, z = 11 }) },
 		{ name = "Nightmare Isles", teleport = Position({ x = 33496, y = 32616, z = 8 }) },
 		{ name = "Secret Library", teleport = Position(32522, 32537, 12) },
+		{ name = "Demon Helmet Quest", teleport = Position(33211, 31629, 13) },
 	},
 }
 
