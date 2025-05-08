@@ -39,8 +39,8 @@ function deathEvent.onDeath(creature)
 		return true
 	end
 
-	-- don't spawn pods if the monster is a reward boss
-	if monster:getType():isRewardBoss() then
+	-- don't spawn pods if the monster is a reward boss or summon
+	if monster:getType():isRewardBoss() or monster:getMaster() then
 		return true
 	end
 
