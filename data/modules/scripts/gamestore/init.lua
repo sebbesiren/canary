@@ -1781,15 +1781,12 @@ end
 function GameStore.processExpBoostPurchase(player)
 	local currentXpBoostTime = player:getXpBoostTime()
 	local expBoostCount = player:getStorageValue(GameStore.Storages.expBoostCount)
-
 	player:setXpBoostPercent(50)
 	player:setXpBoostTime(currentXpBoostTime + 3600)
 
-	if expBoostCount == -1 or expBoostCount == 10 then
+	if expBoostCount == -1 or expBoostCount == 0 or expBoostCount > 5 then
 		expBoostCount = 1
 	end
-
-	player:setStorageValue(GameStore.Storages.expBoostCount, expBoostCount + 1)
 end
 
 function GameStore.processPreyThirdSlot(player)
@@ -2071,11 +2068,32 @@ function Player.makeCoinTransaction(self, offer, desc)
 		desc = offer.name
 	end
 
-	local offerPrice = offer.type == GameStore.OfferTypes.OFFER_TYPE_EXPBOOST and GameStore.ExpBoostValues[self:getStorageValue(GameStore.Storages.expBoostCount) - 1] or offer.price
-	if offer.coinType == GameStore.CoinType.Coin and self:canRemoveCoins(offerPrice) then
-		op = self:removeCoinsBalance(offerPrice)
-	elseif offer.coinType == GameStore.CoinType.Transferable and self:canRemoveTransferableCoins(offerPrice) then
-		op = self:removeTransferableCoinsBalance(offerPrice)
+	if offer.Type == GameStore.OfferTypes.OFFER_TYPE_EXPBOOST or GameStore.OfferTypes.OFFER_TYPE_EXPBOOSTCUSTOM then
+		local expBoostCount = self:getStorageValue(GameStore.Storages.expBoostCount)
+
+		if expBoostCount == -1 or expBoostCount == 0 or expBoostCount > 5 then
+			expBoostCount = 1
+		end
+		if expBoostCount <= 1 then
+			offer.price = GameStore.ExpBoostValues[1]
+		elseif expBoostCount == 2 then
+			offer.price = GameStore.ExpBoostValues[2]
+		elseif expBoostCount == 3 then
+			offer.price = GameStore.ExpBoostValues[3]
+		elseif expBoostCount == 4 then
+			offer.price = GameStore.ExpBoostValues[4]
+		elseif expBoostCount == 5 then
+			offer.price = GameStore.ExpBoostValues[5]
+		else
+			offer.price = offer.price
+		end
+		self:setStorageValue(GameStore.Storages.expBoostCount, expBoostCount + 1)
+	end
+
+	if offer.coinType == GameStore.CoinType.Coin and self:canRemoveCoins(offer.price) then
+		op = self:removeCoinsBalance(offer.price)
+	elseif offer.coinType == GameStore.CoinType.Transferable and self:canRemoveTransferableCoins(offer.price) then
+		op = self:removeTransferableCoinsBalance(offer.price)
 	end
 
 	-- When the transaction is successful add to the history
