@@ -238,8 +238,8 @@ function executeCreateHazardPod(player, points, maxRoll)
 	maxRoll = maxRoll or 75
 	maxRoll = math.ceil(maxRoll - points * 2)
 
-	if maxRoll < 35 then
-		maxRoll = 35
+	if maxRoll < 30 then
+		maxRoll = 30
 	end
 
 	local chanceTo = math.random(1, maxRoll)

@@ -22,7 +22,7 @@ function executeLevelUpEvent(points, maxRoll)
 end
 
 function executeSpawnLootGoblin(points, monster)
-	local monsterHealthPoints = math.floor(monster:getMaxHealth() / 1500)
+	local monsterHealthPoints = math.floor(monster:getMaxHealth() / 750)
 
 	if monsterHealthPoints < 1 then
 		return false
